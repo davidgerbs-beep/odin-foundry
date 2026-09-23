@@ -53,6 +53,22 @@
   "Der Hüter": "gegner/npc-bing-31-thaumaturg-thaumaturgist-maennlich-2.webp",
   "Orlowas Vater": "gegner/npc-bing-16-scientist-physicist-weiblich-v2-2.webp",
   "Anführer der Jäger": "gegner/npc-bing-09-agent-saboteur-maennlich-v3-3.webp",
+  "Kantor, 1976": "gegner/npc-nl-kantor-1976.webp",
+  "Kjell Haugen": "gegner/npc-nl-haugen.webp",
+  "Psion des Kreises": "gegner/npc-nl-psion-kreis.webp",
+  "Söldner des Sammlers": "gegner/npc-nl-soeldner-sammler.webp",
+  "Söldner der Nachkriegszeit": "gegner/npc-nl-soeldner-nachkrieg.webp",
+  "Volkspolizisten": "gegner/npc-nl-volkspolizist.webp",
+  "Soldat der Staatssicherheit": "gegner/npc-nl-stasi-soldat.webp",
+  "Verbindungsoffizier der Staatssicherheit": "gegner/npc-nl-stasi-offizier.webp",
+  "Die Schwestern Lavigne": "gegner/npc-nl-lavigne.webp",
+  "Stimmen der Eskorte": "gegner/npc-nl-stimmen-eskorte.webp",
+  "Die Männer von 1909": "gegner/npc-nl-maenner-1909.webp",
+  "Kantor": "gegner/npc-di-kantor-alt.webp",
+  "Monsignore Emilio Vasari": "gegner/npc-di-vasari.webp",
+  "Don Matteo Riva": "gegner/npc-di-riva.webp",
+  "Renate Albers, genannt Elster": "gegner/npc-di-albers.webp",
+  "Liese Hartmann": "gegner/npc-ga-liese.webp",
   "Maarten de Vries": "gegner/welt-adept.webp",
   "Linus Voss": "gegner/atlas-chorkind.webp",
   "Evan Pryce als Spuk": "gegner/atlas-spuk.webp",
@@ -61,5 +77,18 @@
   "Martha Kellner, die Wartende": "gegner/atlas-wartende.webp",
   "Die Menge": "gegner/atlas-fahrgaeste.webp"
  },
- "agenten": {}
+ "agenten": {
+  "Garn (1947)": "portraets/npc-nl-garn-1947.webp",
+  "Garn (1977)": "portraets/npc-nl-garn-1977.webp",
+  "Lot (1947)": "portraets/npc-nl-lot-1947.webp",
+  "Lot (1977)": "portraets/npc-nl-lot-1977.webp",
+  "Möwe (1947)": "portraets/npc-nl-moewe-1947.webp",
+  "Möwe (1977)": "portraets/npc-nl-moewe-1977.webp",
+  "Salz (1947)": "portraets/npc-nl-salz-1947.webp",
+  "Salz (1977)": "portraets/npc-nl-salz-1977.webp",
+  "Schiefer (1947)": "portraets/npc-nl-schiefer-1947.webp",
+  "Schiefer (1977)": "portraets/npc-nl-schiefer-1977.webp",
+  "Zeuge (1947)": "portraets/npc-nl-zeuge-1947.webp",
+  "Zeuge (1977)": "portraets/npc-nl-zeuge-1977.webp"
+ }
 }
