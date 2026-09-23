@@ -2,7 +2,7 @@
   "id": "odin-rpg",
   "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
   "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,135 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.1.0/odin-rpg.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.2.0/odin-rpg.zip",
   "license": "LICENSE",
-  "readme": "README.md"
+  "readme": "README.md",
+  "packs": [
+    {
+      "name": "odin-agenten",
+      "label": "Fertige Agenten",
+      "path": "packs/odin-agenten",
+      "type": "Actor",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-waffen",
+      "label": "Waffen",
+      "path": "packs/odin-waffen",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-ruestungen",
+      "label": "Rüstungen",
+      "path": "packs/odin-ruestungen",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-ausruestung",
+      "label": "Ausrüstung und Artefakte",
+      "path": "packs/odin-ausruestung",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-kraefte",
+      "label": "Psi-Kräfte",
+      "path": "packs/odin-kraefte",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-zauber",
+      "label": "Zauber",
+      "path": "packs/odin-zauber",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-gegner",
+      "label": "Bedrohungsatlas",
+      "path": "packs/odin-gegner",
+      "type": "Actor",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "odin-abenteuer",
+      "label": "Einstiegsmission: Nexus-Splitter",
+      "path": "packs/odin-abenteuer",
+      "type": "JournalEntry",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "O.D.I.N.",
+      "sorting": "m",
+      "color": "#3a3330",
+      "packs": [],
+      "folders": [
+        {
+          "name": "Agenten und Ausrüstung",
+          "sorting": "m",
+          "packs": [
+            "odin-agenten",
+            "odin-waffen",
+            "odin-ruestungen",
+            "odin-ausruestung",
+            "odin-kraefte",
+            "odin-zauber"
+          ]
+        },
+        {
+          "name": "Spielleitung",
+          "sorting": "m",
+          "packs": [
+            "odin-gegner",
+            "odin-abenteuer"
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -5,6 +5,7 @@ import { AgentBogen, GegnerBogen, OdinItemBogen } from './module/blaetter.mjs';
 import * as aktionen from './module/aktionen.mjs';
 import * as wuerfel from './module/wuerfel.mjs';
 import { generatorImport } from './module/import.mjs';
+import * as baum from './module/baum.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -42,7 +43,11 @@ Hooks.once('init', () => {
   Handlebars.registerHelper('odinGleich', (a, b) => a === b);
   Handlebars.registerHelper('odinFert', (k) => wuerfel.fertName(k));
 
-  game.odin = { DATEN, aktionen, wuerfel, generatorImport };
+  foundry.applications.handlebars.loadTemplates({
+    odinZelle: 'systems/odin-rpg/templates/odin-zelle.hbs',
+    odinKnoten: 'systems/odin-rpg/templates/odin-knoten.hbs',
+  });
+  game.odin = { DATEN, aktionen, wuerfel, generatorImport, baum };
 });
 
 Hooks.on('renderChatMessageHTML', (message, html) => aktionen.chatKnoepfe(message, html));
