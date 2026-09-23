@@ -24,11 +24,12 @@
       "Item": "O.D.I.N. Item"
     },
     "Tab": {
-      "akte": "File",
+      "akte": "Sheet 1 · File",
       "fertigkeiten": "Skills",
       "kampf": "Combat",
-      "signatur": "Signature",
-      "notizen": "Notes"
+      "signatur": "Sheet 3 · Signature",
+      "notizen": "Dossier",
+      "einsatz": "Sheet 2 · Field"
     },
     "Kopf": {
       "Personalakte": "Personnel File",
@@ -41,7 +42,9 @@
       "Rang": "Rank",
       "Antrieb": "Drive / Archetype",
       "Alter": "Age",
-      "Herkunft": "Origin"
+      "Herkunft": "Origin",
+      "OhneKlasse": "Agent without class",
+      "VertraulichKurz": "Confidential"
     },
     "Block": {
       "Attribute": "Attributes",
@@ -58,7 +61,12 @@
       "Traumata": "Traumas",
       "Kontakte": "Contacts",
       "Laufbahn": "Career",
-      "WeitereFert": "Additional Skills"
+      "WeitereFert": "Additional Skills",
+      "WerteKurz": "Values",
+      "DeineWuerfel": "Your dice",
+      "Faehigkeiten": "Subclass abilities",
+      "SignaturNotizen": "Further pieces and notes",
+      "EigeneKnoten": "Custom nodes (house rules)"
     },
     "Spalte": {
       "Punkte": "Points",
@@ -68,7 +76,8 @@
       "Art": "Type",
       "Schaden": "Damage",
       "Durchschlag": "Pierce",
-      "Eigenschaften": "Properties"
+      "Eigenschaften": "Properties",
+      "Knoten": "Node"
     },
     "Werte": {
       "LP": "Life Points",
@@ -86,20 +95,26 @@
       "Dienst": "Requisitioned equipment",
       "Vertrauen": "Trust (0 to 5)",
       "EP": "Total XP",
-      "EPFrei": "Unspent XP"
+      "EPFrei": "Unspent XP",
+      "Gesamt": "total",
+      "Frei": "free"
     },
     "Knopf": {
       "Initiative": "Initiative",
       "Grauen": "Horror Check",
       "Auffuellen": "Restore",
       "Preis": "Roll the Price",
-      "Import": "Load from Generator"
+      "Import": "Load from Generator",
+      "Bearbeiten": "Points",
+      "ImportKurz": "Generator"
     },
     "Tip": {
       "Attribut": "Roll the attribute only",
       "Angriff": "Attack the targeted token",
       "Wirken": "Cast",
-      "Angelegt": "Worn"
+      "Angelegt": "Worn",
+      "Bearbeiten": "Assign points: circles become input fields",
+      "Wuerfeln": "Roll check"
     },
     "Hinweis": {
       "Attribute": "Base 1, 12 free points. Own points up to 4, with bonuses 5, through experience 6.",
@@ -113,7 +128,12 @@
       "Ungeuebt": "{f} cannot be attempted untrained (chapter IV).",
       "Rang": "This category requires the rank {rang}. Cast anyway?",
       "KeineKlasse": "No class set.",
-      "Aufgefuellt": "{name}: life points, PSI and magic energy restored."
+      "Aufgefuellt": "{name}: life points, PSI and magic energy restored.",
+      "Kreise": "hatched: subclass bonus · dashed circle: maximum 6, only through experience",
+      "RuestungQuelle": "worn armour",
+      "FertLegende": "◆ core skill · G basic training · last column: white + coloured dice",
+      "Fuss": "White dice (attribute) succeed on 5+ · coloured dice (skill) on 4+ · Easy 1 · Doable 2 · Hard 3 · Very hard 4 · Impossible 5",
+      "KeineSubklasse": "No subclass chosen yet."
     },
     "Warnung": {
       "AttrSumme": "{n} own attribute points (12 at creation, more only through experience).",
@@ -121,7 +141,8 @@
       "NurPsion": "Psionic skills are for Psions only.",
       "NurThaumaturg": "Magic skills are for Thaumaturges only.",
       "Nebengabe": "Secondary gift {f} above 4.",
-      "Subklasse": "The subclass does not belong to the class."
+      "Subklasse": "The subclass does not belong to the class.",
+      "Rang": "With {ep} XP the rank {rang} is due."
     },
     "Gruppe": {
       "koerper": "Physical",
@@ -141,7 +162,8 @@
       "Verteidigung": "Target's defence",
       "Ruestung": "Target's armour",
       "Wuerfeln": "Roll",
-      "Hinweis": "Bonus dice are white (at most +3). Penalty dice remove white dice first, then coloured dice."
+      "Hinweis": "Bonus dice are white (at most +3). Penalty dice remove white dice first, then coloured dice.",
+      "Knoten": "Matching class tree nodes (enter bonus yourself):"
     },
     "Schwierigkeit": {
       "Offen": "Open / opposed",
@@ -264,7 +286,9 @@
         "Agent": "Legends beyond the first, +1 per node IV or V in the false bottom. d6 on a fumbled Deception or Disguise or stress within a legend.",
         "Scientist": "Samples in prototypes, +1 per node V. d6 on a fumble with supernatural material or a prototype malfunction with a sample.",
         "Investigator": "Files with at least three threads, +1 per card of level V. d6 on an Investigation fumble or a failed horror check at a crime scene."
-      }
+      },
+      "Auto": "{preis} {n} comes from signature and nodes.",
+      "AutoHinweis": "Circles up to {n} come from signature and class tree. Click further circles for events in play."
     },
     "Gegner": {
       "Stufe": "Tier",
@@ -277,7 +301,8 @@
       "Beschreibung": "Description, omens, weaknesses",
       "GrauenKnopf": "Trigger horror",
       "GrauenAus": "Horror check, level {stufe}",
-      "GrauenHinweis": "Every agent rolls WIL + Mental Resistance (button “Horror Check” on the sheet)."
+      "GrauenHinweis": "Every agent rolls WIL + Mental Resistance (button “Horror Check” on the sheet).",
+      "Atlas": "Threat Atlas"
     },
     "Notiz": {
       "Hintergrund": "Background",
@@ -285,7 +310,8 @@
       "ErsterFall": "First case",
       "Detail": "Detail",
       "Anker": "Drive and anchor",
-      "Notizen": "Notes"
+      "Notizen": "Notes",
+      "AnkerKurz": "Anchor"
     },
     "Item": {
       "Kategorie": "Category",
@@ -305,7 +331,8 @@
       "Aktiv": "Active",
       "Beziehung": "Relationship",
       "Gefallen": "Open favours",
-      "Beschreibung": "Description"
+      "Beschreibung": "Description",
+      "Wirkung": "Effect"
     },
     "Import": {
       "Titel": "Load from generator: {name}",
@@ -314,6 +341,41 @@
       "Fehler": "Import failed: {f}",
       "KeineFigur": "This is not a character from the generator.",
       "Fertig": "{name} loaded."
+    },
+    "Steigern": {
+      "Tip": "Raise with XP (chapter VIII)",
+      "Senken": "Undo raise, refund XP",
+      "Max": "{n} is already at maximum.",
+      "Hinweis": "creation points · ▲ raises with XP, free: {frei}"
+    },
+    "Baum": {
+      "Unbekannt": "Unknown node.",
+      "Schon": "already bought",
+      "Rang": "requires rank {rang}",
+      "NurEigene": "masteries only in your own column",
+      "Voraussetzung": "requires {v}",
+      "Faden": "not connected by a thread to a card you own",
+      "Nachbar": "requires a stage {stufe} node in a neighbouring discipline",
+      "ZuWenigEP": "costs {k} XP, {frei} free",
+      "Abhaengig": "Undo first: {n}",
+      "Zuruecknehmen": "Undo {n} and refund {k} XP?",
+      "Kosten": "Cost: {k} XP (free: {frei})",
+      "PreisPlus": "This node raises {preis} by 1.",
+      "PreisPlusKurz": "raises the class price",
+      "Kaufen": "Buy node",
+      "Knoten": "Node",
+      "FremdWaehlen": "View another branch …",
+      "Fremd": "Foreign nodes",
+      "Aufpreis": "+2 XP, limits below",
+      "Regeln": "Rules",
+      "TipKaufen": "Buy node",
+      "TipZurueck": "bought · click to undo"
+    },
+    "Laufbahn": {
+      "Klein": "Rank by XP: {rang} · {ep} XP total, {frei} free",
+      "Datum": "Date",
+      "Mission": "File or mission",
+      "Fuer": "spent on"
     },
     "Attribut": {
       "ST": "Strength",

@@ -24,11 +24,12 @@
       "Item": "O.D.I.N. Gegenstand"
     },
     "Tab": {
-      "akte": "Akte",
+      "akte": "Blatt 1 · Akte",
       "fertigkeiten": "Fertigkeiten",
       "kampf": "Kampf",
-      "signatur": "Signatur",
-      "notizen": "Notizen"
+      "signatur": "Blatt 3 · Signatur",
+      "notizen": "Dossier",
+      "einsatz": "Blatt 2 · Einsatz"
     },
     "Kopf": {
       "Personalakte": "Personalakte",
@@ -41,7 +42,9 @@
       "Rang": "Rang",
       "Antrieb": "Antrieb / Archetyp",
       "Alter": "Alter",
-      "Herkunft": "Herkunft"
+      "Herkunft": "Herkunft",
+      "OhneKlasse": "Agent ohne Klasse",
+      "VertraulichKurz": "Vertraulich"
     },
     "Block": {
       "Attribute": "Attribute",
@@ -58,7 +61,12 @@
       "Traumata": "Traumata",
       "Kontakte": "Kontakte",
       "Laufbahn": "Laufbahn",
-      "WeitereFert": "Weitere Fertigkeiten"
+      "WeitereFert": "Weitere Fertigkeiten",
+      "WerteKurz": "Werte",
+      "DeineWuerfel": "Deine Würfel",
+      "Faehigkeiten": "Fähigkeiten der Subklasse",
+      "SignaturNotizen": "Weitere Stücke und Notizen",
+      "EigeneKnoten": "Eigene Knoten (Hausregeln)"
     },
     "Spalte": {
       "Punkte": "Punkte",
@@ -68,7 +76,8 @@
       "Art": "Art",
       "Schaden": "Schaden",
       "Durchschlag": "Durchschl.",
-      "Eigenschaften": "Eigenschaften"
+      "Eigenschaften": "Eigenschaften",
+      "Knoten": "Knoten"
     },
     "Werte": {
       "LP": "Lebenspunkte",
@@ -86,20 +95,26 @@
       "Dienst": "Angeforderte Dienstausrüstung",
       "Vertrauen": "Vertrauen (0 bis 5)",
       "EP": "EP gesamt",
-      "EPFrei": "EP frei"
+      "EPFrei": "EP frei",
+      "Gesamt": "gesamt",
+      "Frei": "frei"
     },
     "Knopf": {
       "Initiative": "Initiative",
       "Grauen": "Grauen-Probe",
       "Auffuellen": "Auffüllen",
       "Preis": "Würfel auf den Preis",
-      "Import": "Aus dem Generator laden"
+      "Import": "Aus dem Generator laden",
+      "Bearbeiten": "Punkte",
+      "ImportKurz": "Generator"
     },
     "Tip": {
       "Attribut": "Nur mit dem Attribut würfeln",
       "Angriff": "Angriff gegen das markierte Ziel",
       "Wirken": "Wirken",
-      "Angelegt": "Angelegt"
+      "Angelegt": "Angelegt",
+      "Bearbeiten": "Punkte verteilen: Kreise werden zu Eingabefeldern",
+      "Wuerfeln": "Probe würfeln"
     },
     "Hinweis": {
       "Attribute": "Basis 1, 12 freie Punkte. Aus eigenen Punkten höchstens 4, mit Boni 5, durch Erfahrung 6.",
@@ -113,7 +128,12 @@
       "Ungeuebt": "{f} lässt sich ungeübt nicht versuchen (Kapitel IV).",
       "Rang": "Diese Kategorie steht erst ab dem Rang {rang} offen. Trotzdem wirken?",
       "KeineKlasse": "Keine Klasse gesetzt.",
-      "Aufgefuellt": "{name}: LP, PSI und Magie-Energie aufgefüllt."
+      "Aufgefuellt": "{name}: LP, PSI und Magie-Energie aufgefüllt.",
+      "Kreise": "schraffiert: Bonus der Subklasse · gestrichelter Kreis: Höchstwert 6, nur durch Erfahrung",
+      "RuestungQuelle": "angelegte Rüstung",
+      "FertLegende": "◆ Kernfertigkeit · G Grundausbildung · letzte Spalte: weiße + bunte Würfel",
+      "Fuss": "Weiße Würfel (Attribut) gelingen ab 5 · bunte Würfel (Fertigkeit) ab 4 · Einfach 1 · Machbar 2 · Schwer 3 · Sehr schwer 4 · Unmöglich 5",
+      "KeineSubklasse": "Noch keine Subklasse gewählt."
     },
     "Warnung": {
       "AttrSumme": "{n} eigene Attributspunkte (bei der Erschaffung 12, mehr nur durch Erfahrung).",
@@ -121,7 +141,8 @@
       "NurPsion": "Psionische Fertigkeiten nur für Psionen.",
       "NurThaumaturg": "Magische Fertigkeiten nur für Thaumaturgen.",
       "Nebengabe": "Nebengabe {f} über 4.",
-      "Subklasse": "Die Subklasse gehört nicht zur Klasse."
+      "Subklasse": "Die Subklasse gehört nicht zur Klasse.",
+      "Rang": "Mit {ep} EP steht der Rang {rang} zu."
     },
     "Gruppe": {
       "koerper": "Körperlich",
@@ -141,7 +162,8 @@
       "Verteidigung": "Verteidigung des Ziels",
       "Ruestung": "Rüstung des Ziels",
       "Wuerfeln": "Würfeln",
-      "Hinweis": "Bonuswürfel sind weiß (höchstens +3). Maluswürfel nehmen zuerst weiße, dann bunte Würfel weg."
+      "Hinweis": "Bonuswürfel sind weiß (höchstens +3). Maluswürfel nehmen zuerst weiße, dann bunte Würfel weg.",
+      "Knoten": "Passende Knoten aus dem Klassenbaum (Bonus selbst eintragen):"
     },
     "Schwierigkeit": {
       "Offen": "Offen / vergleichend",
@@ -264,7 +286,9 @@
         "Agent": "Legenden über die erste, plus 1 je Knoten IV oder V im Doppelten Boden. W6 bei verpatzter Täuschung oder Verkleidung oder bei Belastung in einer Legende.",
         "Scientist": "Proben in Prototypen, plus 1 je Knoten V. W6 bei Patzer mit übernatürlichem Material oder Fehlfunktion mit Probe.",
         "Investigator": "Akten mit mindestens drei Fäden, plus 1 je Karte der Stufe V. W6 bei Patzer auf Ermittlung oder misslungener Grauen-Probe am Tatort."
-      }
+      },
+      "Auto": "{preis} {n} ergibt sich aus Signatur und Knoten.",
+      "AutoHinweis": "Gefüllte Kreise bis {n} ergeben sich aus Signatur und Klassenbaum. Weitere Kreise für Ereignisse im Spiel anklicken."
     },
     "Gegner": {
       "Stufe": "Stufe",
@@ -277,7 +301,8 @@
       "Beschreibung": "Beschreibung, Vorzeichen, Schwächen",
       "GrauenKnopf": "Grauen auslösen",
       "GrauenAus": "Grauen-Probe, Stufe {stufe}",
-      "GrauenHinweis": "Jeder Agent würfelt WK + Geistige Widerstandskraft (Knopf „Grauen-Probe“ auf dem Bogen)."
+      "GrauenHinweis": "Jeder Agent würfelt WK + Geistige Widerstandskraft (Knopf „Grauen-Probe“ auf dem Bogen).",
+      "Atlas": "Bedrohungsatlas"
     },
     "Notiz": {
       "Hintergrund": "Hintergrund",
@@ -285,7 +310,8 @@
       "ErsterFall": "Erster Fall",
       "Detail": "Detail",
       "Anker": "Antrieb und Anker",
-      "Notizen": "Notizen"
+      "Notizen": "Notizen",
+      "AnkerKurz": "Anker"
     },
     "Item": {
       "Kategorie": "Kategorie",
@@ -305,7 +331,8 @@
       "Aktiv": "Aktiv",
       "Beziehung": "Beziehung",
       "Gefallen": "Offene Gefallen",
-      "Beschreibung": "Beschreibung"
+      "Beschreibung": "Beschreibung",
+      "Wirkung": "Wirkung"
     },
     "Import": {
       "Titel": "Aus dem Generator laden: {name}",
@@ -314,6 +341,41 @@
       "Fehler": "Import fehlgeschlagen: {f}",
       "KeineFigur": "Das ist keine Figur aus dem Generator.",
       "Fertig": "{name} eingelesen."
+    },
+    "Steigern": {
+      "Tip": "Mit EP steigern (Kapitel VIII)",
+      "Senken": "Steigerung zurücknehmen, EP zurück",
+      "Max": "{n} ist schon am Höchstwert.",
+      "Hinweis": "Punkte der Erschaffung · ▲ steigert mit EP, frei: {frei}"
+    },
+    "Baum": {
+      "Unbekannt": "Unbekannter Knoten.",
+      "Schon": "bereits gekauft",
+      "Rang": "erst ab Rang {rang}",
+      "NurEigene": "Meisterschaften nur in der eigenen Säule",
+      "Voraussetzung": "braucht {v}",
+      "Faden": "nicht durch einen Faden mit einer eigenen Karte verbunden",
+      "Nachbar": "braucht einen Knoten der Stufe {stufe} in einer Nachbar-Disziplin",
+      "ZuWenigEP": "kostet {k} EP, frei sind {frei}",
+      "Abhaengig": "Erst zurücknehmen: {n}",
+      "Zuruecknehmen": "{n} zurücknehmen und {k} EP gutschreiben?",
+      "Kosten": "Kosten: {k} EP (frei: {frei})",
+      "PreisPlus": "Dieser Knoten erhöht {preis} um 1.",
+      "PreisPlusKurz": "erhöht den Preis der Klasse",
+      "Kaufen": "Knoten kaufen",
+      "Knoten": "Knoten",
+      "FremdWaehlen": "Fremden Ast ansehen …",
+      "Fremd": "Fremde Knoten",
+      "Aufpreis": "+2 EP, Grenzen siehe unten",
+      "Regeln": "Regeln",
+      "TipKaufen": "Knoten kaufen",
+      "TipZurueck": "gekauft · klicken zum Zurücknehmen"
+    },
+    "Laufbahn": {
+      "Klein": "Rang laut EP: {rang} · {ep} EP gesamt, {frei} frei",
+      "Datum": "Datum",
+      "Mission": "Akte oder Mission",
+      "Fuer": "ausgegeben für"
     },
     "Attribut": {
       "ST": "Stärke",
