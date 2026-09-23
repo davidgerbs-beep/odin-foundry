@@ -87,7 +87,7 @@ export async function posten(actor, content, roll, { verdeckt = false, flags = {
 }
 
 /* ---------------- Dialog ---------------- */
-export async function probenDialog(actor, { titel, attr, fert, schw = 2, mitAttr = true, mitFert = true, schwListe = SCHWIERIGKEITEN, schwLabel, felder = [] }) {
+export async function probenDialog(actor, { titel, attr, fert, schw = 2, mitAttr = true, mitFert = true, schwListe = SCHWIERIGKEITEN, schwLabel, felder = [], knotenHinweise = [] }) {
   const sys = actor.system;
   const opt = (liste, sel) => liste.map(([v, l]) => `<option value="${v}"${String(v) === String(sel) ? ' selected' : ''}>${esc(l)}</option>`).join('');
   const attrOpt = opt(DATEN.attribute.map((a) => [a, `${a} ${attrName(a)} (${sys.attribute?.[a]?.wert ?? 0})`]), attr);
@@ -101,7 +101,7 @@ export async function probenDialog(actor, { titel, attr, fert, schw = 2, mitAttr
     ${zusatz}
     <label>${L('Dialog.Bonus')}</label><input type="number" name="bonus" value="0" min="0" max="3">
     <label>${L('Dialog.Malus')}</label><input type="number" name="malus" value="0" min="0" max="20">
-  </div><p class="odin-dialog-hinweis">${L('Dialog.Hinweis')}</p>`;
+  </div>${knotenHinweise.length ? `<div class="odin-knotenhinweise"><b>${L('Dialog.Knoten')}</b>${knotenHinweise.map((n) => `<p><b>${esc(n.name)}</b>: ${esc(n.wirkung)}</p>`).join('')}</div>` : ''}<p class="odin-dialog-hinweis">${L('Dialog.Hinweis')}</p>`;
   const r = await foundry.applications.api.DialogV2.prompt({
     window: { title: titel },
     content,

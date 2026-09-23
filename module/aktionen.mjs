@@ -25,7 +25,8 @@ async function werfen(w, b, schw) {
 export async function fertigkeitsProbe(actor, fert, nurAttribut = false, attr) {
   attr ??= DATEN.fertigkeiten.find((d) => d.key === fert)?.attr ?? 'GE';
   const titel = nurAttribut ? L('Titel.Attributsprobe', { a: attrName(attr) }) : L('Titel.Probe', { f: fertName(fert) });
-  const r = await probenDialog(actor, { titel, attr, fert, mitFert: !nurAttribut });
+  const knotenHinweise = (actor.system.knotenListe ?? []).filter((n) => /Würfel|Erfolg|Stufe leichter/.test(n.wirkung) && !!fert && n.wirkung.includes(DATEN.fertigkeiten.find((d) => d.key === fert)?.name ?? '§'));
+  const r = await probenDialog(actor, { titel, attr, fert, mitFert: !nurAttribut, knotenHinweise });
   if (!r) return;
   const f = nurAttribut ? '' : r.fert;
   const [w, b] = pool(av(actor, r.attr), fv(actor, f), r.bonus, r.malus);
@@ -39,7 +40,8 @@ export async function fertigkeitsProbe(actor, fert, nurAttribut = false, attr) {
 
 /** Grauen-Probe: WK + Geistige Widerstandskraft, Belastung, Trauma (Kapitel VII). */
 export async function grauenProbe(actor, stufe = 2) {
-  const r = await probenDialog(actor, { titel: L('Titel.Grauen'), attr: 'WK', fert: 'geistige_widerstandskraft', schw: stufe, mitAttr: false, mitFert: false, schwListe: GRAUEN, schwLabel: L('Dialog.Stufe') });
+  const knotenHinweise = (actor.system.knotenListe ?? []).filter((n) => /Grauen/.test(n.wirkung));
+  const r = await probenDialog(actor, { knotenHinweise, titel: L('Titel.Grauen'), attr: 'WK', fert: 'geistige_widerstandskraft', schw: stufe, mitAttr: false, mitFert: false, schwListe: GRAUEN, schwLabel: L('Dialog.Stufe') });
   if (!r) return;
   const [w, b] = pool(av(actor, 'WK'), fv(actor, 'geistige_widerstandskraft'), r.bonus, r.malus);
   const { e, roll } = await werfen(w, b, r.schw);
@@ -162,8 +164,8 @@ export async function preisWurf(actor) {
   const sys = actor.system;
   if (!sys.preisName) return ui.notifications.warn(L('Hinweis.KeineKlasse'));
   const t = await new Roll('1d6').evaluate();
-  const trifft = t.total <= sys.preis;
-  const content = `<div class="odin-karte"><h3>${esc(actor.name)}: ${esc(sys.preisName)} ${sys.preis}</h3>
+  const trifft = t.total <= sys.preisWert;
+  const content = `<div class="odin-karte"><h3>${esc(actor.name)}: ${esc(sys.preisName)} ${sys.preisWert}</h3>
     <div class="odin-wuerfelreihe"><span class="odin-w weiss ok">${t.total}</span></div>
     ${balken(trifft ? 'patzer' : 'offen', trifft ? L(`Preis.Text.${sys.klasse}`) : L('Preis.Nichts'))}${hinweis(L(`Preis.Regel.${sys.klasse}`))}</div>`;
   return posten(actor, content, t, { verdeckt: true });

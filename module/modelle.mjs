@@ -13,9 +13,9 @@ export const RANG_INDEX = (rang) => Math.max(0, DATEN.raenge.indexOf(rang));
 export class AgentModell extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const attribute = {};
-    for (const a of DATEN.attribute) attribute[a] = new f.SchemaField({ punkte: zahl(0, 0, 5) });
+    for (const a of DATEN.attribute) attribute[a] = new f.SchemaField({ punkte: zahl(0, 0, 5), steig: zahl(0, 0, 6) });
     const fertigkeiten = {};
-    for (const x of DATEN.fertigkeiten) fertigkeiten[x.key] = new f.SchemaField({ punkte: zahl(0, 0, 6) });
+    for (const x of DATEN.fertigkeiten) fertigkeiten[x.key] = new f.SchemaField({ punkte: zahl(0, 0, 6), steig: zahl(0, 0, 6) });
     return {
       codename: text(), klarname: text(), klasse: text(), subklasse: text(), rang: text('Kadett'),
       antrieb: text(), alter: text(), herkunft: text(),
@@ -31,6 +31,12 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
       geldPrivat: text(), geldDienst: text(),
       hintergrund: html(), rekrutierung: html(), ersterFall: html(), detail: html(), anker: html(),
       notizen: html(), signatur: html(), klassenbaum: html(),
+      // Klassenbaum: gekaufte Knoten (ids aus DATEN.baeume)
+      baum: new f.ArrayField(new f.StringField({ blank: false })),
+      // Signatur der Klasse (Helm, Kristall, Silber, Legenden, Prototypen, Akten), frei strukturiert
+      sig: new f.ObjectField(),
+      // Laufbahn: Zeilen mit Datum, Mission, EP, ausgegeben für, Rang
+      laufbahn: new f.ObjectField(),
     };
   }
 
@@ -41,12 +47,12 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
     for (const a of DATEN.attribute) {
       const x = this.attribute[a];
       x.bonus = sub.attr[a] ?? 0;
-      x.wert = Math.min(6, 1 + x.punkte + x.bonus);
+      x.wert = Math.min(6, 1 + x.punkte + x.bonus + x.steig);
     }
     for (const d of DATEN.fertigkeiten) {
       const x = this.fertigkeiten[d.key];
       x.bonus = (kl && DATEN.grundausbildung.includes(d.key) ? 1 : 0) + (kl?.kern.includes(d.key) ? 1 : 0) + (sub.fert[d.key] ?? 0);
-      let w = Math.min(6, x.punkte + x.bonus);
+      let w = Math.min(6, x.punkte + x.bonus + x.steig);
       if (DATEN.psi.includes(d.key) && this.klasse !== 'Psion') w = 0;
       if (DATEN.magie.includes(d.key) && this.klasse !== 'Thaumaturg') w = 0;
       x.wert = w;
@@ -61,7 +67,23 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
     this.initiative = A('GE');
     this.verteidigung = 1 + Math.floor((A('GE') + F('ausweichen')) / 4);
     this.startkapital = (A('IN') + A('WE')) * 1000;
+    // Knoten des Klassenbaums: Boni aus passiven Knoten
+    const knoten = this.knotenListe;
+    const mod = { psi: 0, belastung: 0, lp: 0, me: 0, verteidigung: 0, initiative: 0, ruestung: 0 };
+    for (const n of knoten) for (const [k, v] of Object.entries(n.mod ?? {})) mod[k] += v;
+    this.lp.max += mod.lp; this.belastung.max += mod.belastung;
+    if (this.klasse === 'Psion') this.psi.max += mod.psi;
+    if (this.klasse === 'Thaumaturg') this.me.max += mod.me;
+    this.initiative += mod.initiative; this.verteidigung += mod.verteidigung;
+    this.knotenRuestung = mod.ruestung;
+    // Laufende Werte nie über dem Maximum (fertige Agenten starten mit vollen Leisten)
+    this.lp.value = Math.min(this.lp.value, this.lp.max);
+    this.psi.value = Math.min(this.psi.value, this.psi.max);
+    this.me.value = Math.min(this.me.value, this.me.max);
     this.preisName = kl?.preis ?? '';
+    this.preisAuto = this.berechnePreisAuto(knoten);
+    this.preisWert = Math.min(6, this.preisAuto + this.preis);
+    this.rangEp = DATEN.raenge[DATEN.rangEp.reduce((r, ep, i) => (this.ep >= ep ? i : r), 0)];
     this.signaturName = kl?.signatur ?? '';
     this.hauptgabe = DATEN.hauptgabe[this.subklasse] ?? '';
     this.rangIndex = RANG_INDEX(this.rang);
@@ -70,7 +92,38 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
   /** Rüstung aus angelegten Rüstungen (die beste zählt) plus Boni. Braucht die Items, deshalb am Actor berechnet. */
   berechneRuestung(items) {
     const angelegt = items.filter((i) => i.type === 'ruestung' && i.system.angelegt).map((i) => i.system.wert);
-    this.ruestung = (angelegt.length ? Math.max(...angelegt) : 0) + this.ruestungBonus;
+    this.ruestung = (angelegt.length ? Math.max(...angelegt) : 0) + this.ruestungBonus + (this.knotenRuestung ?? 0);
+  }
+
+  /** Alle Knoten des eigenen Klassenbaums (Gruppen und alle Subklassen), nach id. */
+  get baumDaten() { return DATEN.baeume[this.klasse] ?? null; }
+  static knotenIndex(klasse) {
+    const B = DATEN.baeume[klasse];
+    if (!B) return {};
+    const idx = {};
+    for (const g of B.gruppen) for (const n of g.knoten) idx[n.id] = { ...n, gruppe: g.id, preisPlus: n.preisPlus ?? g.preisPlus };
+    for (const [sub, sb] of Object.entries(B.subklassen)) for (const n of sb.knoten) idx[n.id] = { ...n, subklasse: sub };
+    return idx;
+  }
+  get knotenListe() {
+    const idx = AgentModell.knotenIndex(this.klasse);
+    return this.baum.map((id) => idx[id]).filter(Boolean);
+  }
+
+  /** Automatischer Anteil am Preis der Klasse (Grundregelwerk und Klassenbücher). */
+  berechnePreisAuto(knoten) {
+    const sig = this.sig ?? {};
+    const zeilen = (o) => Object.values(o ?? {}).filter((z) => z && typeof z === 'object');
+    const plus = knoten.filter((n) => n.preisPlus).length;
+    switch (this.klasse) {
+      case 'Psion': return plus;
+      case 'Thaumaturg': return plus + (Number(sig.steine) || 0);
+      case 'Soldier': return Math.max(0, zeilen(sig.silber).filter((z) => z.besitz).length - 4);
+      case 'Agent': return Math.max(0, zeilen(sig.legenden).filter((z) => z.name && z.stand !== 'verbrannt').length - 1) + plus;
+      case 'Scientist': return zeilen(sig.prototypen).filter((z) => z.probe).length + plus;
+      case 'Investigator': return zeilen(sig.akten).filter((z) => z.stand !== 'geschlossen' && (Number(z.faeden) || 0) >= 3).length + plus;
+      default: return 0;
+    }
   }
 
   /** Warnungen zu Punktbudgets und Obergrenzen (Änderungsliste 2). */
@@ -87,6 +140,7 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
       for (const k of DATEN.psi) if (k !== haupt && k !== 'psi_kampf' && this.fertigkeiten[k].wert > 4) w.push(game.i18n.format('ODIN.Warnung.Nebengabe', { f: game.i18n.localize(`ODIN.Fertigkeit.${k}`) }));
     }
     if (this.subklasse && this.klasse && !DATEN.klassen[this.klasse]?.subs.includes(this.subklasse)) w.push(game.i18n.localize('ODIN.Warnung.Subklasse'));
+    if (this.klasse && DATEN.raenge.indexOf(this.rangEp) > DATEN.raenge.indexOf(this.rang)) w.push(game.i18n.format('ODIN.Warnung.Rang', { rang: this.rangEp, ep: this.ep }));
     return w;
   }
 }
