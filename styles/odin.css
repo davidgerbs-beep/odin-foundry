@@ -1,0 +1,110 @@
+/* O.D.I.N. – Bögen im Stil der Personalakte */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600&display=swap');
+
+.odin.bogen {
+  --odin-papier: #f4efe3; --odin-papier2: #ece4d1; --odin-tinte: #1d1a15; --odin-rot: #7a2a20; --odin-linie: #b9a77f; --odin-grau: #5c5140;
+}
+.odin.bogen .window-content { background: var(--odin-papier); color: var(--odin-tinte); font-family: 'Barlow', sans-serif; padding: 8px 12px; }
+.odin.bogen input, .odin.bogen select { font-family: 'Special Elite', monospace; color: var(--odin-tinte); background: #fbf8f0; border: 1px solid #c9bb99; }
+.odin.bogen input[type=number] { text-align: center; }
+.odin.bogen h3 { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .08em; font-size: 14px; color: var(--odin-rot); border-bottom: 1px solid var(--odin-linie); margin: 10px 0 6px; padding-bottom: 2px; display: flex; justify-content: space-between; align-items: center; }
+.odin.bogen h3 .neu { color: var(--odin-rot); font-size: 12px; }
+.odin.bogen .hinweis { font-size: 11px; color: var(--odin-grau); font-style: italic; margin: 4px 0; }
+/* nur Knöpfe im Bogen, nicht die Fensterknöpfe */
+.odin.bogen .window-content button { background: var(--odin-rot); color: var(--odin-papier); border: 1px solid #4d1812; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .05em; }
+.odin.bogen .window-content button:hover { background: #9a3a2c; }
+
+/* Kopf */
+.odin .odin-kopf { display: flex; gap: 12px; border-bottom: 3px double var(--odin-rot); padding-bottom: 8px; margin-bottom: 4px; }
+.odin .odin-kopf .portrait { width: 110px; height: 140px; object-fit: cover; border: 1px solid var(--odin-linie); filter: sepia(.35); background: #ddd; }
+.odin .odin-kopf.klein .portrait { width: 64px; height: 64px; }
+.odin .kopf-daten { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.odin .stempelzeile { display: flex; align-items: baseline; gap: 12px; }
+.odin .stempel { font-family: 'Special Elite', monospace; font-size: 24px; color: var(--odin-rot); border: 3px solid var(--odin-rot); padding: 0 8px; transform: rotate(-3deg); letter-spacing: .12em; }
+.odin .aktentitel { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: .2em; }
+.odin .vertraulich { font-family: 'Special Elite', monospace; color: var(--odin-rot); font-size: 12px; margin-left: auto; }
+.odin .aktenname { font-size: 22px !important; height: auto; border: none !important; border-bottom: 1px solid var(--odin-linie) !important; background: transparent !important; }
+.odin .raster { display: grid; gap: 4px 10px; }
+.odin .raster-2 { grid-template-columns: repeat(2, 1fr); }
+.odin .raster-3 { grid-template-columns: repeat(3, 1fr); }
+.odin .raster-4 { grid-template-columns: repeat(4, 1fr); }
+.odin .raster label { display: flex; flex-direction: column; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--odin-grau); }
+.odin .raster label.breit { grid-column: span 2; }
+.odin .raster label input, .odin .raster label select { font-size: 13px; text-transform: none; }
+
+/* Reiter */
+.odin.bogen nav.sheet-tabs { border-bottom: 2px solid var(--odin-rot); margin: 6px 0; gap: 2px; justify-content: flex-start; }
+.odin.bogen nav.sheet-tabs a { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .06em; padding: 3px 12px; background: #d9ceb4; color: var(--odin-tinte); border: 1px solid var(--odin-linie); border-bottom: none; flex: 0 0 auto; }
+.odin.bogen nav.sheet-tabs a.active { background: var(--odin-rot); color: var(--odin-papier); text-shadow: none; }
+.odin.bogen section.tab { display: none; }
+.odin.bogen section.tab.active { display: block; }
+
+/* Zeilen */
+.odin .zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.odin .zeile { display: grid; grid-template-columns: 1fr 46px 34px 34px; align-items: center; gap: 4px; padding: 1px 0; border-bottom: 1px dotted #d3c7a8; }
+.odin .zeile.kopfzeile, .odin .itemzeile.kopfzeile, .odin .pool.kopfzeile { font-size: 10px; text-transform: uppercase; color: var(--odin-grau); border: none; }
+.odin .zeile input { height: 22px; }
+.odin .zeile .bonus { text-align: center; color: var(--odin-rot); font-size: 12px; }
+.odin .zeile .wert { text-align: center; font-weight: 700; font-size: 16px; font-family: 'Special Elite', monospace; }
+.odin .zeile.hauptgabe { background: rgba(122, 42, 32, .08); }
+.odin a.wurf { color: var(--odin-tinte); }
+.odin a.wurf i { color: var(--odin-rot); }
+.odin a.wurf:hover { color: var(--odin-rot); text-shadow: none; }
+.odin a.wurf small { color: #8d7f63; font-size: 10px; }
+.odin .grund { color: var(--odin-rot); }
+.odin .fert-raster { columns: 2; column-gap: 16px; }
+.odin .fert-raster .block { break-inside: avoid; margin-bottom: 10px; }
+.odin .fert-raster .block h3 { margin-top: 0; }
+.odin .werte { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.odin .werte > div { display: flex; flex-direction: column; align-items: center; background: var(--odin-papier2); border: 1px solid #d3c7a8; padding: 3px; }
+.odin .werte span { font-size: 10px; text-transform: uppercase; color: var(--odin-grau); }
+.odin .werte b { font-family: 'Special Elite', monospace; font-size: 18px; }
+.odin .werte input { width: 60px; }
+.odin .leiste { display: grid; grid-template-columns: 110px 56px 40px 1fr; align-items: center; gap: 6px; margin: 3px 0; }
+.odin .leiste .max { font-family: 'Special Elite', monospace; }
+.odin .balken { height: 8px; background: #d9ceb4; border: 1px solid var(--odin-linie); }
+.odin .balken .fuellung { height: 100%; }
+.odin .balken .lp { background: #3e5c35; }
+.odin .balken .bel { background: var(--odin-rot); }
+.odin .knoepfe { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+.odin .knoepfe button { flex: 0 0 auto; width: auto; padding: 0 10px; }
+.odin .preis { display: flex; align-items: center; gap: 8px; }
+.odin .preis input[type=range] { flex: 1; accent-color: var(--odin-rot); }
+.odin .preis .preiswert { font-family: 'Special Elite', monospace; font-size: 18px; width: 20px; text-align: center; }
+.odin .preis button { flex: 0 0 auto; width: auto; padding: 0 10px; }
+.odin .warnungen { background: #f3d9d3; border: 1px solid var(--odin-rot); padding: 4px 8px 4px 22px; margin: 4px 0; font-size: 12px; color: var(--odin-rot); }
+.odin .itemzeile { display: grid; grid-template-columns: 24px 1.6fr 1.3fr 60px 70px 1.4fr 20px; align-items: center; gap: 6px; padding: 2px 0; border-bottom: 1px dotted #d3c7a8; }
+.odin .liste.kraefte .itemzeile { grid-template-columns: 24px 1.6fr 1.3fr 70px 1.5fr 20px; }
+.odin .itemzeile.ruestung { grid-template-columns: 24px 2fr 60px 2fr 20px; }
+.odin .itemzeile.ausr { grid-template-columns: 2fr 60px 1fr 20px; }
+.odin .itemzeile.sig, .odin .itemzeile.knoten { grid-template-columns: 2fr 1fr 1fr 1fr 20px; }
+.odin .itemzeile.einfach { grid-template-columns: 1fr 20px; }
+.odin prose-mirror { min-height: 60px; background: #fbf8f0; border: 1px solid #d3c7a8; margin-bottom: 6px; display: block; }
+
+/* Gegner */
+.odin .pool { display: grid; grid-template-columns: 24px 1.6fr 46px 46px 56px 60px 1.6fr 20px; gap: 4px; align-items: center; margin: 2px 0; }
+.odin .lpwerte { display: flex; align-items: center; gap: 4px; }
+.odin .lpwerte input { width: 50px !important; }
+
+/* Dialog */
+.odin-dialog { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: center; }
+.odin-dialog-hinweis { font-size: 11px; font-style: italic; }
+
+/* Chatkarte */
+.odin-karte { border: 1px solid #6b5a3e; background: #f4efe3; color: #1d1a15; padding: 6px 8px; border-radius: 3px; font-family: 'Barlow', sans-serif; }
+.odin-karte h3 { margin: 0 0 3px; font-size: 15px; border-bottom: 1px solid #b9a77f; font-family: 'Special Elite', monospace; color: #1d1a15; }
+.odin-karte .odin-pool { font-size: 11px; color: #5c5140; margin-bottom: 4px; }
+.odin-karte .odin-wuerfelreihe { display: flex; flex-wrap: wrap; gap: 2px; align-items: center; }
+.odin-karte .trenner { width: 8px; }
+.odin-w { display: inline-block; min-width: 20px; height: 20px; line-height: 18px; text-align: center; border-radius: 3px; font-weight: 700; font-size: 12px; }
+.odin-w.weiss { background: #fff; border: 1px solid #999; color: #999; }
+.odin-w.weiss.ok { border: 2px solid #111; color: #111; }
+.odin-w.bunt { background: #9a6a63; border: 1px solid #4d1812; color: #e9d9d6; }
+.odin-w.bunt.ok { background: #7a2a20; border: 2px solid #d9b36c; color: #fff; }
+.odin-w.eins { text-decoration: underline; }
+.odin-karte .odin-zeile { display: flex; justify-content: space-between; gap: 6px; font-size: 12px; margin-top: 3px; }
+.odin-erg { margin-top: 4px; padding: 3px 6px; font-weight: 700; text-align: center; letter-spacing: .05em; text-transform: uppercase; font-size: 12px; color: #fff; }
+.odin-erg.erfolg { background: #3e5c35; } .odin-erg.grandios { background: #b68a2c; } .odin-erg.fehlschlag { background: #555; }
+.odin-erg.patzer { background: #7a1010; } .odin-erg.offen { background: #2d3d52; } .odin-erg.schaden { background: #4d1812; }
+.odin-hinweis { font-size: 11px; margin-top: 4px; font-style: italic; }
+.odin-karte .odin-knopf { margin-top: 5px; background: #7a2a20; color: #fff; border: 1px solid #4d1812; font-size: 12px; }
