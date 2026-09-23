@@ -2,7 +2,7 @@
   "id": "odin-rpg",
   "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
   "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,7 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.3.0/odin-rpg.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.4.0/odin-rpg.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
@@ -233,7 +233,7 @@
     },
     {
       "name": "odin-abenteuer",
-      "label": "Einstiegsmission: Nexus-Splitter",
+      "label": "Abenteuer und Kampagnen",
       "path": "packs/odin-abenteuer",
       "type": "JournalEntry",
       "system": "odin-rpg",
@@ -361,12 +361,44 @@
     },
     {
       "name": "odin-abenteuer-en",
-      "label": "Intro Mission: Nexus Shard",
+      "label": "Adventures and Campaigns",
       "path": "packs/odin-abenteuer-en",
       "type": "JournalEntry",
       "system": "odin-rpg",
       "ownership": {
         "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-arsenal",
+      "label": "Arsenal",
+      "path": "packs/odin-arsenal",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-arsenal-en",
+      "label": "Arsenal",
+      "path": "packs/odin-arsenal-en",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
@@ -391,6 +423,7 @@
             "odin-waffen",
             "odin-ruestungen",
             "odin-ausruestung",
+            "odin-arsenal",
             "odin-kraefte",
             "odin-zauber"
           ]
@@ -419,6 +452,7 @@
             "odin-waffen-en",
             "odin-ruestungen-en",
             "odin-ausruestung-en",
+            "odin-arsenal-en",
             "odin-kraefte-en",
             "odin-zauber-en"
           ]
