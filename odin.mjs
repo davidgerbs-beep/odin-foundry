@@ -6,6 +6,7 @@ import * as aktionen from './module/aktionen.mjs';
 import * as wuerfel from './module/wuerfel.mjs';
 import { generatorImport } from './module/import.mjs';
 import * as baum from './module/baum.mjs';
+import * as sprache from './module/sprache.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -42,12 +43,37 @@ Hooks.once('init', () => {
 
   Handlebars.registerHelper('odinGleich', (a, b) => a === b);
   Handlebars.registerHelper('odinFert', (k) => wuerfel.fertName(k));
+  Handlebars.registerHelper('odinAbk', (a) => sprache.abk(a));
 
   foundry.applications.handlebars.loadTemplates({
     odinZelle: 'systems/odin-rpg/templates/odin-zelle.hbs',
     odinKnoten: 'systems/odin-rpg/templates/odin-knoten.hbs',
   });
-  game.odin = { DATEN, aktionen, wuerfel, generatorImport, baum };
+  game.odin = { DATEN, aktionen, wuerfel, generatorImport, baum, sprache };
+});
+
+/* Kompendien nur in der eigenen Sprache zeigen (umschaltbar in den Einstellungen) */
+Hooks.once('init', () => {
+  game.settings.register('odin-rpg', 'alleSprachen', {
+    name: 'ODIN.Einstellung.AlleSprachen', hint: 'ODIN.Einstellung.AlleSprachenHinweis',
+    scope: 'client', config: true, type: Boolean, default: false, onChange: () => ui.compendium?.render(),
+  });
+});
+Hooks.on('renderCompendiumDirectory', (app, html) => {
+  if (game.settings.get('odin-rpg', 'alleSprachen')) return;
+  const root = html instanceof HTMLElement ? html : html?.[0];
+  if (!root) return;
+  const eigene = game.i18n.lang?.startsWith('en') ? 'en' : 'de';
+  for (const li of root.querySelectorAll('[data-pack]')) {
+    const sprache = game.packs.get(li.dataset.pack)?.metadata.flags?.['odin-rpg']?.sprache;
+    li.classList.toggle('odin-andere-sprache', !!sprache && sprache !== eigene);
+  }
+  // Ordner ohne sichtbare Einträge ausblenden, von innen nach außen
+  const ordner = [...root.querySelectorAll('.folder, [data-folder-id]')].reverse();
+  for (const f of ordner) {
+    const eintraege = [...f.querySelectorAll('[data-pack]')];
+    f.classList.toggle('odin-andere-sprache', eintraege.length > 0 && eintraege.every((li) => li.classList.contains('odin-andere-sprache')));
+  }
 });
 
 Hooks.on('renderChatMessageHTML', (message, html) => aktionen.chatKnoepfe(message, html));

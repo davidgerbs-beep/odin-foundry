@@ -2,7 +2,7 @@
   "id": "odin-rpg",
   "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
   "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,7 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.2.0/odin-rpg.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.3.0/odin-rpg.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
@@ -129,7 +129,11 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-waffen",
@@ -141,7 +145,11 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-ruestungen",
@@ -153,7 +161,11 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-ausruestung",
@@ -165,7 +177,11 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-kraefte",
@@ -177,7 +193,11 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-zauber",
@@ -189,7 +209,11 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-gegner",
@@ -201,7 +225,11 @@
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
     },
     {
       "name": "odin-abenteuer",
@@ -213,7 +241,139 @@
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
-      "flags": {}
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-agenten-en",
+      "label": "Ready-made Agents",
+      "path": "packs/odin-agenten-en",
+      "type": "Actor",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-waffen-en",
+      "label": "Weapons",
+      "path": "packs/odin-waffen-en",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-ruestungen-en",
+      "label": "Armour",
+      "path": "packs/odin-ruestungen-en",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-ausruestung-en",
+      "label": "Equipment and Artefacts",
+      "path": "packs/odin-ausruestung-en",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-kraefte-en",
+      "label": "Psi Powers",
+      "path": "packs/odin-kraefte-en",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-zauber-en",
+      "label": "Spells",
+      "path": "packs/odin-zauber-en",
+      "type": "Item",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-gegner-en",
+      "label": "Threat Atlas",
+      "path": "packs/odin-gegner-en",
+      "type": "Actor",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-abenteuer-en",
+      "label": "Intro Mission: Nexus Shard",
+      "path": "packs/odin-abenteuer-en",
+      "type": "JournalEntry",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
     }
   ],
   "packFolders": [
@@ -241,6 +401,34 @@
           "packs": [
             "odin-gegner",
             "odin-abenteuer"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "O.D.I.N. (English)",
+      "sorting": "m",
+      "color": "#3a3330",
+      "packs": [],
+      "folders": [
+        {
+          "name": "Agents and Equipment",
+          "sorting": "m",
+          "packs": [
+            "odin-agenten-en",
+            "odin-waffen-en",
+            "odin-ruestungen-en",
+            "odin-ausruestung-en",
+            "odin-kraefte-en",
+            "odin-zauber-en"
+          ]
+        },
+        {
+          "name": "Game Master",
+          "sorting": "m",
+          "packs": [
+            "odin-gegner-en",
+            "odin-abenteuer-en"
           ]
         }
       ]
