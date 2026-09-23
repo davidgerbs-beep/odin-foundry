@@ -36,13 +36,13 @@ https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.
 - **Grauen-Probe**: Belastung nach Stufe, bei voller Leiste Traumawurf, das Trauma landet als Eintrag auf dem Bogen.
 - **Psi-Kräfte und Zauber** als Items: Kosten, Überziehen, Rangprüfung, Rückkopplung und Kristallriss bei Patzern.
 - **Der Preis der Klasse** (Resonanz, Flüstern, Nachhall, Schwund, Kontamination, Verdacht): verdeckter W6 an die Spielleitung.
-- **Import** einer Figur aus dem Charaktergenerator (JSON).
+- **Import** einer Figur aus dem Charaktergenerator (JSON), auch mit Aufstieg: Steigerungen, Klassenbaum, EP, Rang, Laufbahn und Kräfte höherer Stufe kommen mit.
 - **Gegner-Bogen** mit Stufe, Ursprung, Grauen und beliebig vielen Pools „weiß + bunt“.
 - Item-Typen: Fertigkeit, Psi-Kraft, Zauber, Ausrüstung, Waffe, Rüstung, Signatur, Knoten, Trauma, Kontakt.
 
 Sprachen: Deutsch (Standard) und Englisch. Bögen, Klassenbäume, Signaturen, Kompendien, Szenen, Würfeltabellen und Makros gibt es in beiden Sprachen, jeweils mit dem Wortlaut der deutschen bzw. englischen Bücher. „Die anderen Dienste“ liegt auch auf Englisch vor („The Other Services“). Die Kompendienliste zeigt nur die Kompendien der eingestellten Sprache (in den Einstellungen umschaltbar). Der Import nimmt Figuren aus dem deutschen und dem englischen Charaktergenerator an.
 
-Languages: German (default) and English. Sheets, class trees, signatures, compendiums, scenes, roll tables and macros are available in both languages, using the wording of the German and English books. Characters from both the German and the English character generator can be imported.
+Languages: German (default) and English. Sheets, class trees, signatures, compendiums, scenes, roll tables and macros are available in both languages, using the wording of the German and English books. Characters from both the German and the English character generator can be imported, including their advancement (raised values, class tree, XP, rank, career log and higher-tier powers).
 
 ## Community und Neuigkeiten
 

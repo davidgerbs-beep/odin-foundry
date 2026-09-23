@@ -73,10 +73,40 @@ export function importDaten(j) {
   if (sig) upd['system.signatur'] = sig;
   if (S.photo && String(S.photo).startsWith('data:image')) upd.img = S.photo;
 
+  // Aufstieg aus dem Generator: Steigerungen, Klassenbaum, EP, Laufbahn, Zwischenzeit
+  const A = S.auf;
+  for (const a of DATEN.attribute) upd[`system.attribute.${a}.steig`] = 0;
+  for (const d of DATEN.fertigkeiten) upd[`system.fertigkeiten.${d.key}.steig`] = 0;
+  if (A && typeof A === 'object') {
+    for (const [k, v] of Object.entries(A.attr ?? {})) if (ATTR_NACH[k]) upd[`system.attribute.${ATTR_NACH[k]}.steig`] = Number(v) || 0;
+    for (const [n, v] of Object.entries(A.skills ?? {})) { const k = fertNachName(n); if (k) upd[`system.fertigkeiten.${k}.steig`] = Number(v) || 0; }
+    const ids = new Set([...(DATEN.baeume[klasse]?.gruppen ?? []).flatMap((g) => g.knoten), ...Object.values(DATEN.baeume[klasse]?.subklassen ?? {}).flatMap((s) => s.knoten)].map((n) => n.id));
+    upd['system.baum'] = (A.baum ?? []).filter((id) => ids.has(id));
+    const ep = Math.max(0, Number(A.ep) || 0);
+    upd['system.ep'] = ep;
+    upd['system.epFrei'] = Math.max(0, Number(A.frei) || 0);
+    upd['system.rang'] = DATEN.raenge[DATEN.rangEp.reduce((r, x, i) => (ep >= x ? i : r), 0)];
+    const lb = {};
+    (A.log ?? []).forEach((l, i) => { lb[i] = { datum: l.d ?? '', mission: l.m ?? '', ep: Number(l.e) || 0, fuer: (l.f ?? []).map((x) => `${x.t} (${x.c})`).join('; '), rang: l.r ?? '' }; });
+    upd['system.laufbahn'] = lb;
+    upd['flags.odin-rpg.zwischenzeit'] = Number(A.zz) || 0;
+    upd['flags.odin-rpg.attrZwischenzeit'] = Number.isFinite(A.attrZZ) ? A.attrZZ : -1;
+  }
+
   // Kräfte und Zauber als Items, Texte in der Sprache des Exports
   const P = I.powers, P2 = (en ? datenDe() : datenEn()).import.powers;
   const ueb = new RegExp(`${I.ueberschuss ?? 'Überschuss'}[^:]*:\\s*(.*)$`);
   const items = (S.powers ?? []).map((pw) => {
+    // Aufstieg: mächtige Kräfte, Major und Grand Magica bringen Probe und Text selbst mit
+    const KAT = psion ? { s: 'klein', m: 'mittel', g: 'maechtig' } : { s: 'trick', m: 'minor', g: 'major', x: 'grand' };
+    if (pw.t === 'g' || pw.t === 'x' || (pw.auf && pw.p)) {
+      const m = probeLesen(pw.p);
+      const teile = String(pw.p ?? '').split(',').map((s) => s.trim());
+      return {
+        name: pw.n, type: psion ? 'kraft' : 'zauber',
+        system: { kategorie: KAT[pw.t] ?? KAT.s, attr: m?.attr ?? (psion ? 'WK' : 'IN'), fertigkeit: m?.fert || (psion ? 'telepathie' : 'thaumaturgie'), reichweite: teile[1] ?? '', dauer: teile.slice(2).join(', '), ueberschuss: ueb.exec(pw.x ?? '')?.[1] ?? '', beschreibung: `<p>${esc(pw.x ?? '')}</p>` },
+      };
+    }
     const art = psion ? (pw.t === 'm' ? 'psi_mittel' : 'psi_klein') : (pw.t === 'm' ? 'z_minor' : 'z_trick');
     const liste = P?.[art] ?? [];
     // Name nicht gefunden? Dann in der anderen Sprache suchen und über die Position zuordnen
