@@ -27,7 +27,7 @@ async function werfen(w, b, schw) {
 
 export async function fertigkeitsProbe(actor, fert, nurAttribut = false, attr) {
   attr ??= DATEN.fertigkeiten.find((d) => d.key === fert)?.attr ?? 'GE';
-  const titel = nurAttribut ? L('Titel.Attributsprobe', { a: attrName(attr) }) : L('Titel.Probe', { f: fertName(fert) });
+  const titel = nurAttribut ? L('Titel.Attributsprobe', { a: attrName(attr) }) : fert ? L('Titel.Probe', { f: fertName(fert) }) : L('Titel.FreieProbe');
   const knotenHinweise = knotenDerKlasse(actor).filter((n) => /Würfel|Erfolg|Stufe leichter|\bdice\b|\bdie (?:on|to|for)\b|success|step easier/.test(n.wirkung) && !!fert && n.wirkung.includes(fertDatenName(fert) || '§'));
   const r = await probenDialog(actor, { titel, attr, fert, mitFert: !nurAttribut, knotenHinweise });
   if (!r) return;
@@ -194,4 +194,16 @@ export function chatKnoepfe(message, html) {
     ui.notifications.info(L('Kampf.Abgezogen', { name: ziel.name, alt: lp, neu: lp - d.n }));
     k.disabled = true;
   });
+}
+
+/** Freier Würfelpool: weiße und bunte Würfel frei wählen (auch ohne Figur). */
+export async function freierPool(actor = null) {
+  const r = await probenDialog(actor ?? { system: {} }, {
+    titel: L('Titel.Pool'), mitAttr: false, mitFert: false,
+    felder: [{ name: 'weiss', label: L('Dialog.Weiss'), wert: 3, max: 20 }, { name: 'bunt', label: L('Dialog.Bunt'), wert: 2, max: 20 }],
+  });
+  if (!r) return;
+  const [w, b] = pool(r.weiss, r.bunt, r.bonus, r.malus);
+  const { e, roll } = await werfen(w, b, r.schw);
+  return posten(actor, karte({ titel: L('Titel.Pool'), poolText: `${w} ${L('Karte.Weiss')} + ${b} ${L('Karte.Bunt')}`, e }), roll);
 }

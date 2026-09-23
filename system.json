@@ -2,7 +2,7 @@
   "id": "odin-rpg",
   "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
   "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,7 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.4.0/odin-rpg.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.4.1/odin-rpg.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
@@ -406,6 +406,96 @@
           "sprache": "en"
         }
       }
+    },
+    {
+      "name": "odin-szenen",
+      "label": "Szenen",
+      "path": "packs/odin-szenen",
+      "type": "Scene",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-szenen-en",
+      "label": "Scenes",
+      "path": "packs/odin-szenen-en",
+      "type": "Scene",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-tabellen",
+      "label": "Würfeltabellen",
+      "path": "packs/odin-tabellen",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-tabellen-en",
+      "label": "Roll Tables",
+      "path": "packs/odin-tabellen-en",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-makros",
+      "label": "Makros",
+      "path": "packs/odin-makros",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-makros-en",
+      "label": "Macros",
+      "path": "packs/odin-makros-en",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
     }
   ],
   "packFolders": [
@@ -425,7 +515,8 @@
             "odin-ausruestung",
             "odin-arsenal",
             "odin-kraefte",
-            "odin-zauber"
+            "odin-zauber",
+            "odin-makros"
           ]
         },
         {
@@ -433,7 +524,9 @@
           "sorting": "m",
           "packs": [
             "odin-gegner",
-            "odin-abenteuer"
+            "odin-abenteuer",
+            "odin-szenen",
+            "odin-tabellen"
           ]
         }
       ]
@@ -454,7 +547,8 @@
             "odin-ausruestung-en",
             "odin-arsenal-en",
             "odin-kraefte-en",
-            "odin-zauber-en"
+            "odin-zauber-en",
+            "odin-makros-en"
           ]
         },
         {
@@ -462,7 +556,9 @@
           "sorting": "m",
           "packs": [
             "odin-gegner-en",
-            "odin-abenteuer-en"
+            "odin-abenteuer-en",
+            "odin-szenen-en",
+            "odin-tabellen-en"
           ]
         }
       ]

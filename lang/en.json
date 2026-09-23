@@ -111,6 +111,7 @@
       "ImportKurz": "Generator"
     },
     "Tip": {
+      "Zuschlag": "Add-on: added to armour",
       "Attribut": "Roll the attribute only",
       "Angriff": "Attack the targeted token",
       "Wirken": "Cast",
@@ -119,6 +120,11 @@
       "Wuerfeln": "Roll check"
     },
     "Hinweis": {
+      "KeineFigur": "Select a token or assign yourself a character.",
+      "KeinAgent": "This only works with an agent.",
+      "KeineWaffe": "This character has no weapon.",
+      "NurSL": "Game master only.",
+      "WaffeWaehlen": "Choose weapon",
       "Attribute": "Base 1, 12 free points. Own points up to 4, with bonuses 5, through experience 6.",
       "Fertigkeiten": "25 free points. Class core skills +1, subclass bonuses and basic training (•) +1 to Dodge, Mental Resistance and Perception are calculated automatically. Without the skill you roll white dice only.",
       "Nebengaben": "Secondary gifts at most 4",
@@ -154,6 +160,8 @@
       "magie": "Magic"
     },
     "Dialog": {
+      "Weiss": "White dice",
+      "Bunt": "Coloured dice",
       "Attribut": "Attribute",
       "Fertigkeit": "Skill",
       "KeineFertigkeit": "– none –",
@@ -206,6 +214,8 @@
       "W6": "D6"
     },
     "Titel": {
+      "FreieProbe": "Test",
+      "Pool": "Free dice pool",
       "Probe": "Check: {f}",
       "Attributsprobe": "Attribute check: {a}",
       "Grauen": "Horror Check",
@@ -339,6 +349,7 @@
       "Dauer": "Duration",
       "Wert": "Value",
       "Angelegt": "Worn",
+      "Zuschlag": "Add-on (helmet, shield)",
       "Behinderung": "Encumbrance",
       "Anzahl": "Quantity",
       "Preis": "Price",

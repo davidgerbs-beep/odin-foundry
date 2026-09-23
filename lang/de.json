@@ -111,6 +111,7 @@
       "ImportKurz": "Generator"
     },
     "Tip": {
+      "Zuschlag": "Zuschlag: wird zur Rüstung addiert",
       "Attribut": "Nur mit dem Attribut würfeln",
       "Angriff": "Angriff gegen das markierte Ziel",
       "Wirken": "Wirken",
@@ -119,6 +120,11 @@
       "Wuerfeln": "Probe würfeln"
     },
     "Hinweis": {
+      "KeineFigur": "Bitte einen Token auswählen oder dir eine Figur zuweisen.",
+      "KeinAgent": "Das geht nur mit einem Agenten.",
+      "KeineWaffe": "Die Figur hat keine Waffe.",
+      "NurSL": "Nur für die Spielleitung.",
+      "WaffeWaehlen": "Waffe wählen",
       "Attribute": "Basis 1, 12 freie Punkte. Aus eigenen Punkten höchstens 4, mit Boni 5, durch Erfahrung 6.",
       "Fertigkeiten": "25 freie Punkte. Kernfertigkeiten der Klasse +1, Boni der Subklasse und Grundausbildung (•) +1 auf Ausweichen, Geistige Widerstandskraft und Wahrnehmung rechnet der Bogen selbst. Ohne Fertigkeit würfelt man nur mit weißen Würfeln.",
       "Nebengaben": "Nebengaben höchstens 4",
@@ -154,6 +160,8 @@
       "magie": "Magisch"
     },
     "Dialog": {
+      "Weiss": "Weiße Würfel",
+      "Bunt": "Bunte Würfel",
       "Attribut": "Attribut",
       "Fertigkeit": "Fertigkeit",
       "KeineFertigkeit": "– keine –",
@@ -206,6 +214,8 @@
       "W6": "W6"
     },
     "Titel": {
+      "FreieProbe": "Probe",
+      "Pool": "Freier Würfelpool",
       "Probe": "Probe: {f}",
       "Attributsprobe": "Attributsprobe: {a}",
       "Grauen": "Grauen-Probe",
@@ -339,6 +349,7 @@
       "Dauer": "Dauer",
       "Wert": "Wert",
       "Angelegt": "Angelegt",
+      "Zuschlag": "Zuschlag (Helm, Schild)",
       "Behinderung": "Behinderung",
       "Anzahl": "Anzahl",
       "Preis": "Preis",

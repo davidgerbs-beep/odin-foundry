@@ -94,8 +94,11 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
 
   /** Rüstung aus angelegten Rüstungen (die beste zählt) plus Boni. Braucht die Items, deshalb am Actor berechnet. */
   berechneRuestung(items) {
-    const angelegt = items.filter((i) => i.type === 'ruestung' && i.system.angelegt).map((i) => i.system.wert);
-    this.ruestung = (angelegt.length ? Math.max(...angelegt) : 0) + this.ruestungBonus + (this.knotenRuestung ?? 0);
+    // Grundrüstung: höchster angelegter Wert; Helm, Schild und Energieschild (zuschlag) kommen obendrauf
+    const angelegt = items.filter((i) => i.type === 'ruestung' && i.system.angelegt);
+    const grund = angelegt.filter((i) => !i.system.zuschlag).map((i) => i.system.wert);
+    const zuschlag = angelegt.filter((i) => i.system.zuschlag).reduce((s, i) => s + (i.system.wert ?? 0), 0);
+    this.ruestung = (grund.length ? Math.max(...grund) : 0) + zuschlag + this.ruestungBonus + (this.knotenRuestung ?? 0);
   }
 
   /** Alle Knoten des eigenen Klassenbaums (Gruppen und alle Subklassen), nach id. */
@@ -193,7 +196,7 @@ export class WaffeModell extends ItemBasis {
   }
 }
 export class RuestungModell extends ItemBasis {
-  static defineSchema() { return { ...this.basis(), wert: zahl(1, 0, 20), angelegt: new f.BooleanField({ initial: true }), behinderung: text() }; }
+  static defineSchema() { return { ...this.basis(), wert: zahl(1, 0, 20), angelegt: new f.BooleanField({ initial: true }), zuschlag: new f.BooleanField({ initial: false }), behinderung: text() }; }
 }
 export class SignaturModell extends ItemBasis {
   static defineSchema() { return { ...this.basis(), art: text(), nummer: text(), zustand: text() }; }
