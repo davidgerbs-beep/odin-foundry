@@ -4,24 +4,24 @@
   <div class="attribute3">
     {{#each attribute}}
     <div class="attrkarte">
-      <a class="attrname" data-action="attribut" data-attr="{{key}}" data-tooltip="{{localize "ODIN.Tip.Attribut"}}"><b>{{name}}</b><span>{{key}}</span></a>
+      <a class="attrname" data-action="attribut" data-attr="{{key}}" data-tooltip="{{localize "ODIN.Tip.Attribut"}}"><b>{{name}}</b><span>{{abk}}</span></a>
       <div class="attrwert">{{wert}}</div>
       <div class="pips">{{#each pips}}<i class="{{this}}"></i>{{/each}}</div>
       <div class="attrtext">{{kurz}}</div>
       {{#if ../bearbeiten}}<div class="punkte"><input type="number" name="system.attribute.{{key}}.punkte" value="{{punkte}}" min="0" max="5"> {{localize "ODIN.Spalte.Punkte"}}{{#if bonus}} · +{{bonus}} {{localize "ODIN.Spalte.Bonus"}}{{/if}}
-        <span class="steig">{{#if steig}}<a data-action="senken" data-art="attr" data-key="{{key}}" data-tooltip="{{localize "ODIN.Steigern.Senken"}}">▼</a> +{{steig}}{{/if}}{{#if steigKosten}} <a data-action="steigern" data-art="attr" data-key="{{key}}" data-tooltip="{{localize "ODIN.Steigern.Tip"}}">▲ {{steigKosten}} EP</a>{{/if}}</span></div>{{/if}}
+        <span class="steig">{{#if steig}}<a data-action="senken" data-art="attr" data-key="{{key}}" data-tooltip="{{localize "ODIN.Steigern.Senken"}}">▼</a> +{{steig}}{{/if}}{{#if steigKosten}} <a data-action="steigern" data-art="attr" data-key="{{key}}" data-tooltip="{{localize "ODIN.Steigern.Tip"}}">▲ {{steigKosten}} {{localize "ODIN.Werte.EPKurz"}}</a>{{/if}}</span></div>{{/if}}
     </div>
     {{/each}}
   </div>
 
   <div class="abschnitt"><span>{{localize "ODIN.Block.WerteKurz"}}</span></div>
   <div class="werte5">
-    <div class="wertkasten"><b>{{system.lp.max}}</b><span>{{localize "ODIN.Werte.LP"}}</span><small>6 + KO + {{localize "ODIN.Fertigkeit.zaehigkeit"}}</small></div>
-    <div class="wertkasten"><b>{{system.belastung.max}}</b><span>{{localize "ODIN.Werte.Belastbarkeit"}}</span><small>4 + WK + GL</small></div>
-    <div class="wertkasten"><b>{{system.initiative}}</b><span>{{localize "ODIN.Werte.Initiative"}}</span><small>GE</small></div>
-    <div class="wertkasten"><b>{{system.verteidigung}}</b><span>{{localize "ODIN.Werte.Verteidigung"}}</span><small>1 + (GE + Ausw.) ÷ 4</small></div>
-    {{#if istPsion}}<div class="wertkasten"><b>{{system.psi.value}}<em>/{{system.psi.max}}</em></b><span>{{localize "ODIN.Werte.PSI"}}</span><small>WK + WE + IN</small></div>
-    {{else if istThaumaturg}}<div class="wertkasten"><b>{{system.me.value}}<em>/{{system.me.max}}</em></b><span>{{localize "ODIN.Werte.ME"}}</span><small>CH + WE + IN</small></div>
+    <div class="wertkasten"><b>{{system.lp.max}}</b><span>{{localize "ODIN.Werte.LP"}}</span><small>{{formel.lp}}</small></div>
+    <div class="wertkasten"><b>{{system.belastung.max}}</b><span>{{localize "ODIN.Werte.Belastbarkeit"}}</span><small>{{formel.bel}}</small></div>
+    <div class="wertkasten"><b>{{system.initiative}}</b><span>{{localize "ODIN.Werte.Initiative"}}</span><small>{{formel.ini}}</small></div>
+    <div class="wertkasten"><b>{{system.verteidigung}}</b><span>{{localize "ODIN.Werte.Verteidigung"}}</span><small>{{formel.vert}}</small></div>
+    {{#if istPsion}}<div class="wertkasten"><b>{{system.psi.value}}<em>/{{system.psi.max}}</em></b><span>{{localize "ODIN.Werte.PSI"}}</span><small>{{formel.psi}}</small></div>
+    {{else if istThaumaturg}}<div class="wertkasten"><b>{{system.me.value}}<em>/{{system.me.max}}</em></b><span>{{localize "ODIN.Werte.ME"}}</span><small>{{formel.me}}</small></div>
     {{else}}<div class="wertkasten"><b>{{system.ruestung}}</b><span>{{localize "ODIN.Werte.Ruestung"}}</span><small>{{localize "ODIN.Hinweis.RuestungQuelle"}}</small></div>{{/if}}
   </div>
   <div class="spuren">
@@ -45,8 +45,8 @@
         {{else}}
         <div class="fertzeile{{#if kern}} kern{{/if}}{{#if hauptgabe}} hauptgabe{{/if}}">
           <a class="fertname" data-action="probe" data-fert="{{key}}" data-tooltip="{{tip}}">{{name}}{{#if kern}} ◆{{/if}}{{#if grund}} <em>G</em>{{/if}}</a>
-          <span class="fertattr">{{attr}}</span>
-          {{#if ../../bearbeiten}}<span class="fertedit"><input type="number" name="system.fertigkeiten.{{key}}.punkte" value="{{punkte}}" min="0" max="6" data-tooltip="{{localize "ODIN.Spalte.Punkte"}}">{{#if steig}}<a data-action="senken" data-art="fert" data-key="{{key}}" data-tooltip="{{localize "ODIN.Steigern.Senken"}}">▼</a>{{/if}}{{#if steigKosten}}<a data-action="steigern" data-art="fert" data-key="{{key}}" data-tooltip="{{steigKosten}} EP">▲</a>{{/if}}</span>
+          <span class="fertattr">{{attrAnz}}</span>
+          {{#if ../../bearbeiten}}<span class="fertedit"><input type="number" name="system.fertigkeiten.{{key}}.punkte" value="{{punkte}}" min="0" max="6" data-tooltip="{{localize "ODIN.Spalte.Punkte"}}">{{#if steig}}<a data-action="senken" data-art="fert" data-key="{{key}}" data-tooltip="{{localize "ODIN.Steigern.Senken"}}">▼</a>{{/if}}{{#if steigKosten}}<a data-action="steigern" data-art="fert" data-key="{{key}}" data-tooltip="{{steigKosten}} {{localize "ODIN.Werte.EPKurz"}}">▲</a>{{/if}}</span>
           {{else}}<span class="pips klein">{{#each pips}}<i class="{{this}}"></i>{{/each}}</span>{{/if}}
           <span class="pool">{{pool}}</span>
         </div>

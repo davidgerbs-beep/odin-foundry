@@ -16,7 +16,7 @@
       <div class="abschnitt"><span>{{localize "ODIN.Notiz.Notizen"}}</span></div>
       <prose-mirror name="system.notizen" button="true" editable="{{editable}}" toggled="true" value="{{source.notizen}}">{{{html.[system.notizen]}}}</prose-mirror>
       <div class="abschnitt"><span>{{localize "ODIN.Block.WeitereFert"}}</span><a class="neu" data-action="itemNeu" data-type="fertigkeit"><i class="fa-solid fa-plus"></i></a></div>
-      {{#each extraFert as |f|}}<div class="listenzeile einfach" data-item-id="{{f.id}}"><a data-action="itemBearbeiten">{{f.name}} <small>({{f.system.attr}} · {{f.system.wert}})</small></a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}
+      {{#each extraFert as |f|}}<div class="listenzeile einfach" data-item-id="{{f.id}}"><a data-action="itemBearbeiten">{{f.name}} <small>({{odinAbk f.system.attr}} · {{f.system.wert}})</small></a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}
       <div class="abschnitt"><span>{{localize "ODIN.Werte.Startkapital"}}</span></div>
       <p class="ankertext">{{system.startkapital}} €</p>
     </div>

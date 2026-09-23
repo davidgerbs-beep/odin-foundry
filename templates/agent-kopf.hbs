@@ -4,8 +4,8 @@
       <div class="emblem">{{{emblem}}}</div>
       <div>
         <div class="zweig">O.D.I.N. · {{zweig}}</div>
-        <div class="klassenname">{{#if system.klasse}}{{system.klasse}}{{else}}{{localize "ODIN.Kopf.OhneKlasse"}}{{/if}}</div>
-        <div class="subklassenname">{{#if system.subklasse}}{{system.subklasse}}{{else}}Subklasse ______________{{/if}}</div>
+        <div class="klassenname">{{#if system.klasse}}{{klasseAnzeige}}{{else}}{{localize "ODIN.Kopf.OhneKlasse"}}{{/if}}</div>
+        <div class="subklassenname">{{#if system.subklasse}}{{subAnzeige}}{{else}}{{localize "ODIN.Kopf.SubklasseLeer"}}{{/if}}</div>
       </div>
     </div>
     <div class="kopf-rechts">

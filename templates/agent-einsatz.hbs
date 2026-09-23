@@ -4,7 +4,7 @@
       <div class="abschnitt"><span>{{localize "ODIN.Block.DeineWuerfel"}}</span></div>
       <div class="wuerfeltabelle">
         {{#each deineWuerfel}}
-        <a class="wuerfelzeile" data-action="probe" data-fert="{{key}}"><span>{{name}}</span><span class="m">{{attr}} + {{name}}</span><span class="wuerfel">{{#each weiss}}<i class="w"></i>{{/each}}{{#each bunt}}<i class="b"></i>{{/each}}</span><span class="n">{{w}}+{{b}}</span></a>
+        <a class="wuerfelzeile" data-action="probe" data-fert="{{key}}"><span>{{name}}</span><span class="m">{{attrAnz}} + {{name}}</span><span class="wuerfel">{{#each weiss}}<i class="w"></i>{{/each}}{{#each bunt}}<i class="b"></i>{{/each}}</span><span class="n">{{w}}+{{b}}</span></a>
         {{/each}}
       </div>
       <div class="abschnitt"><span>{{localize "ODIN.Block.Faehigkeiten"}}</span></div>
@@ -58,7 +58,7 @@
       </div>
       <div class="spalten2 eng">
         <div><div class="abschnitt"><span>{{localize "ODIN.Notiz.AnkerKurz"}}</span></div><div class="ankertext">{{#if system.anker}}{{{html.[system.anker]}}}{{else}}<p>{{system.antrieb}}</p>{{/if}}</div></div>
-        <div><div class="abschnitt"><span>EP</span></div><div class="ep"><label><input type="number" name="system.ep" value="{{system.ep}}"><span>{{localize "ODIN.Werte.Gesamt"}}</span></label><label><input type="number" name="system.epFrei" value="{{system.epFrei}}"><span>{{localize "ODIN.Werte.Frei"}}</span></label></div></div>
+        <div><div class="abschnitt"><span>{{localize "ODIN.Werte.EPKurz"}}</span></div><div class="ep"><label><input type="number" name="system.ep" value="{{system.ep}}"><span>{{localize "ODIN.Werte.Gesamt"}}</span></label><label><input type="number" name="system.epFrei" value="{{system.epFrei}}"><span>{{localize "ODIN.Werte.Frei"}}</span></label></div></div>
       </div>
       <div class="raster raster-3 geld">
         <label>{{localize "ODIN.Werte.Privatgeld"}}<input type="text" name="system.geldPrivat" value="{{system.geldPrivat}}"></label>
