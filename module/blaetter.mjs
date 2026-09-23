@@ -203,7 +203,7 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
 
 /* ------------------------------------------------------------ */
 /** Gespeicherte (deutsche) Stufen und Ursprünge der Gegner -> Schlüssel in ODIN.Gegner.Stufen / .Urspruenge */
-const GEGNER_STUFEN = { Handlanger: 'Handlanger', Profi: 'Profi', Elite: 'Elite', 'Anführer': 'Anfuehrer', Kreatur: 'Kreatur' };
+const GEGNER_STUFEN = { Handlanger: 'Handlanger', Profi: 'Profi', Elite: 'Elite', 'Anführer': 'Anfuehrer', Kreatur: 'Kreatur', 'Verbündet': 'Verbuendet' };
 const URSPRUENGE = { 'Die Stimme': 'Stimme', 'Das Fremde': 'Fremde', 'Die Verwandelten': 'Verwandelte', 'Das Alte': 'Alte', 'Die Toten': 'Tote', 'Die Maschine': 'Maschine', 'Die Menschen': 'Menschen', 'Das Verschobene': 'Verschobene' };
 
 export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {

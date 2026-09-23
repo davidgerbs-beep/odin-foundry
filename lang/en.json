@@ -321,7 +321,8 @@
         "Profi": "Professional",
         "Elite": "Elite",
         "Anfuehrer": "Leader",
-        "Kreatur": "Creature"
+        "Kreatur": "Creature",
+        "Verbuendet": "Ally"
       },
       "Urspruenge": {
         "Stimme": "The Voice",
