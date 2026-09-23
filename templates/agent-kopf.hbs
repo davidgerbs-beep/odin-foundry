@@ -1,21 +1,30 @@
-<header class="odin-kopf">
-  <img class="portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}">
-  <div class="kopf-daten">
-    <div class="stempelzeile">
-      <span class="stempel">O.D.I.N.</span>
-      <span class="aktentitel">{{localize "ODIN.Kopf.Personalakte"}}</span>
-      <span class="vertraulich">{{localize "ODIN.Kopf.Vertraulich"}}</span>
+<header class="akte-kopf" style="--akzent: {{akzent}}">
+  <div class="kopfbalken">
+    <div class="kopf-links">
+      <div class="emblem">{{{emblem}}}</div>
+      <div>
+        <div class="zweig">O.D.I.N. · {{zweig}}</div>
+        <div class="klassenname">{{#if system.klasse}}{{system.klasse}}{{else}}{{localize "ODIN.Kopf.OhneKlasse"}}{{/if}}</div>
+        <div class="subklassenname">{{#if system.subklasse}}{{system.subklasse}}{{else}}Subklasse ______________{{/if}}</div>
+      </div>
     </div>
-    <input class="aktenname" type="text" name="name" value="{{actor.name}}" placeholder="{{localize "ODIN.Kopf.Codename"}}">
-    <div class="raster raster-4">
-      <label>{{localize "ODIN.Kopf.Codename"}}<input type="text" name="system.codename" value="{{system.codename}}"></label>
-      <label>{{localize "ODIN.Kopf.Name"}}<input type="text" name="system.klarname" value="{{system.klarname}}"></label>
-      <label>{{localize "ODIN.Kopf.Klasse"}}<select name="system.klasse">{{selectOptions klassen selected=system.klasse}}</select></label>
-      <label>{{localize "ODIN.Kopf.Subklasse"}}<select name="system.subklasse">{{selectOptions subklassen selected=system.subklasse}}</select></label>
-      <label>{{localize "ODIN.Kopf.Rang"}}<select name="system.rang">{{selectOptions raenge selected=system.rang}}</select></label>
-      <label>{{localize "ODIN.Kopf.Antrieb"}}<input type="text" name="system.antrieb" value="{{system.antrieb}}"></label>
-      <label>{{localize "ODIN.Kopf.Alter"}}<input type="text" name="system.alter" value="{{system.alter}}"></label>
-      <label>{{localize "ODIN.Kopf.Herkunft"}}<input type="text" name="system.herkunft" value="{{system.herkunft}}"></label>
+    <div class="kopf-rechts">
+      <div class="stempel-vertraulich">{{localize "ODIN.Kopf.Personalakte"}} · {{localize "ODIN.Kopf.VertraulichKurz"}}</div>
+      <div class="kopf-knoepfe"><a class="bearbeiten-knopf" data-action="import" data-tooltip="{{localize "ODIN.Knopf.Import"}}"><i class="fa-solid fa-file-import"></i> {{localize "ODIN.Knopf.ImportKurz"}}</a>
+      <a class="bearbeiten-knopf{{#if bearbeiten}} aktiv{{/if}}" data-action="bearbeiten" data-tooltip="{{localize "ODIN.Tip.Bearbeiten"}}"><i class="fa-solid fa-pen-to-square"></i> {{localize "ODIN.Knopf.Bearbeiten"}}</a></div>
     </div>
+  </div>
+  <div class="kopf-oben">
+    <div class="kopf-felder">
+      <label class="feld gross"><input type="text" name="name" value="{{actor.name}}"><span>{{localize "ODIN.Kopf.Codename"}}</span></label>
+      <label class="feld"><input type="text" name="system.klarname" value="{{system.klarname}}"><span>{{localize "ODIN.Kopf.Name"}}</span></label>
+      <label class="feld"><input type="text" name="system.alter" value="{{system.alter}}"><span>{{localize "ODIN.Kopf.Alter"}}</span></label>
+      <label class="feld"><input type="text" name="system.herkunft" value="{{system.herkunft}}"><span>{{localize "ODIN.Kopf.Herkunft"}}</span></label>
+      <label class="feld"><select name="system.rang">{{selectOptions raenge selected=system.rang}}</select><span>{{localize "ODIN.Kopf.Rang"}}</span></label>
+      <label class="feld"><input type="text" name="system.antrieb" value="{{system.antrieb}}"><span>{{localize "ODIN.Kopf.Antrieb"}}</span></label>
+      <label class="feld"><select name="system.klasse">{{selectOptions klassen selected=system.klasse}}</select><span>{{localize "ODIN.Kopf.Klasse"}}</span></label>
+      <label class="feld"><select name="system.subklasse">{{selectOptions subklassen selected=system.subklasse}}</select><span>{{localize "ODIN.Kopf.Subklasse"}}</span></label>
+    </div>
+    <div class="foto"><img src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}"><i class="klammer"></i></div>
   </div>
 </header>

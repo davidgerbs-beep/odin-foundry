@@ -1,32 +1,78 @@
-<section class="tab signatur {{tab.cssClass}}" data-group="primary" data-tab="signatur">
-  {{#if (or istPsion istThaumaturg)}}
-  <div class="block">
-    <h3>{{#if istPsion}}{{localize "ODIN.Block.Kraefte"}}{{else}}{{localize "ODIN.Block.Zauber"}}{{/if}}
-      <a class="neu" data-action="itemNeu" data-type="{{#if istPsion}}kraft{{else}}zauber{{/if}}"><i class="fa-solid fa-plus"></i></a></h3>
-    <div class="liste kraefte">
-      {{#each kraefte}}
-      <div class="itemzeile" data-item-id="{{k.id}}">
-        <a class="wurf" data-action="wirken" data-tooltip="{{localize "ODIN.Tip.Wirken"}}"><i class="fa-solid fa-wand-sparkles"></i></a>
-        <a data-action="itemBearbeiten">{{k.name}}</a><span>{{kat}}</span><span>{{kosten}} {{res}}</span><span>{{probe}}</span>
-        <a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a>
+<section class="tab blatt signatur {{tab.cssClass}}" data-group="primary" data-tab="signatur" style="--akzent: {{akzent}}">
+  <div class="spalten2">
+    <div>
+      {{#each sig.links as |b|}}
+        {{#if b.titel}}<div class="abschnitt"><span>{{b.titel}}</span>{{#if b.klein}}<small>{{b.klein}}</small>{{/if}}</div>{{/if}}
+        {{#if b.tabelle}}
+        <table class="t3">
+          <thead><tr>{{#each b.tabelle.kopf}}<th>{{this}}</th>{{/each}}</tr></thead>
+          <tbody>{{#each b.tabelle.zeilen as |z|}}<tr>{{#each z.zellen as |c|}}<td>{{> odinZelle c}}</td>{{/each}}</tr>{{/each}}</tbody>
+        </table>
+        {{/if}}
+        {{#if b.felder}}<div class="sigfelder">{{#each b.felder as |f|}}<label class="feld"><span>{{f.[0]}}</span>{{> odinZelle f.[1]}}</label>{{/each}}</div>{{/if}}
+        {{#if b.text}}<input class="linie" type="text" name="{{b.text.name}}" value="{{b.text.wert}}">{{/if}}
+        {{#if b.hinweis}}<p class="notiz">{{b.hinweis}}</p>{{/if}}
+      {{/each}}
+      {{#if istPsion}}<div class="abschnitt"><span>{{localize "ODIN.Werte.PSI"}}</span><small>WK + WE + IN · Kosten 1 / 2 / 3 / 6</small></div>
+        <div class="kaestchen" data-pfad="system.psi.value">{{#each psiKaestchen}}<i class="{{this.cls}}" data-action="kasten" data-n="{{this.n}}"></i>{{/each}}</div>{{/if}}
+      {{#if istThaumaturg}}<div class="abschnitt"><span>{{localize "ODIN.Werte.ME"}}</span><small>CH + WE + IN · Kosten 1 / 2 / 3 / 5 / 8</small></div>
+        <div class="kaestchen" data-pfad="system.me.value">{{#each meKaestchen}}<i class="{{this.cls}}" data-action="kasten" data-n="{{this.n}}"></i>{{/each}}</div>{{/if}}
+      {{#if system.preisName}}
+      <div class="preisspur">
+        <div class="preiskopf"><b>{{system.preisName}} {{system.preisWert}}</b><span>{{#if baum.preis.regel}}{{baum.preis.regel}}{{else}}{{localize (concat "ODIN.Preis.Regel." system.klasse)}}{{/if}}</span></div>
+        <div class="preisreihe">{{#each preisKaestchen}}<a class="preisstufe {{this.cls}}" data-action="preisKasten" data-n="{{this.n}}"><span>{{this.n}}</span><i></i></a>{{/each}}
+          <button type="button" data-action="preis"><i class="fa-solid fa-skull"></i> {{localize "ODIN.Knopf.Preis"}}</button></div>
+        {{#if system.preisAuto}}<p class="notiz">{{localize "ODIN.Preis.AutoHinweis" n=system.preisAuto}}</p>{{/if}}
       </div>
-      {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineKraefte"}}</p>{{/each}}
+      {{/if}}
+      <div class="abschnitt"><span>{{localize "ODIN.Block.SignaturNotizen"}}</span><a class="neu" data-action="itemNeu" data-type="signatur" data-tooltip="{{localize "TYPES.Item.signatur"}}"><i class="fa-solid fa-plus"></i></a></div>
+      {{#each signaturen as |s|}}
+      <div class="listenzeile sig" data-item-id="{{s.id}}"><a data-action="itemBearbeiten">{{s.name}}</a><span>{{s.system.art}}</span><span>{{s.system.nummer}}</span><span>{{s.system.zustand}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+      {{/each}}
+      <prose-mirror name="system.signatur" button="true" editable="{{editable}}" toggled="true" value="{{source.signatur}}">{{{html.[system.signatur]}}}</prose-mirror>
     </div>
-    <p class="hinweis">{{localize "ODIN.Hinweis.Kraefte"}}</p>
+    <div>
+      {{#if baum}}
+        {{#each baum.gruppen as |g|}}
+          <div class="abschnitt"><span>{{g.titel}}</span>{{#if g.hinweis}}<small>{{g.hinweis}}</small>{{/if}}</div>
+          {{> odinKnoten knoten=g.knoten spalten=../baum.spalten}}
+        {{/each}}
+        {{#if baum.eigen}}
+          <div class="abschnitt"><span>{{baum.eigen.titel}}</span><small>{{baum.eigen.sub}}</small></div>
+          {{> odinKnoten knoten=baum.eigen.knoten spalten=baum.spalten}}
+        {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineSubklasse"}}</p>{{/if}}
+        <div class="abschnitt"><span>{{localize "ODIN.Baum.Fremd"}}</span><small>{{localize "ODIN.Baum.Aufpreis"}}</small></div>
+        {{#if baum.fremdGekauft.length}}{{> odinKnoten knoten=baum.fremdGekauft spalten=baum.spalten}}{{/if}}
+        <select class="fremd-ast">{{selectOptions baum.subOptionen selected=baum.fremdSub}}</select>
+        {{#if baum.fremd}}{{> odinKnoten knoten=baum.fremd.knoten spalten=baum.spalten}}{{/if}}
+        {{#if baum.fremdGrenze}}<p class="notiz">{{baum.fremdGrenze}}</p>{{/if}}
+        <details class="regeln"><summary>{{localize "ODIN.Baum.Regeln"}}: {{baum.name}}</summary>
+          <table class="t3 klein"><thead><tr><th>{{localize "ODIN.Item.Stufe"}}</th><th>{{localize "ODIN.Kopf.Rang"}}</th><th>EP</th></tr></thead>
+          <tbody>{{#each baum.stufen}}<tr><td>{{stufe}}{{#if titel}} · {{titel}}{{/if}}</td><td>{{rang}}</td><td>{{kosten}}</td></tr>{{/each}}</tbody></table>
+          {{#each baum.regeln}}<p class="notiz">{{this}}</p>{{/each}}
+        </details>
+      {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineKlasse"}}</p>{{/if}}
+      <div class="abschnitt"><span>{{localize "ODIN.Block.EigeneKnoten"}}</span><a class="neu" data-action="itemNeu" data-type="knoten"><i class="fa-solid fa-plus"></i></a></div>
+      {{#each knoten as |k|}}
+      <div class="listenzeile sig" data-item-id="{{k.id}}"><a data-action="itemBearbeiten">{{k.name}}</a><span>{{k.system.stufe}}</span><span>{{k.system.baum}}</span><span>{{k.system.kosten}} EP</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+      {{/each}}
+    </div>
   </div>
-  {{/if}}
-  <div class="block">
-    <h3>{{#if system.signaturName}}{{system.signaturName}}{{else}}{{localize "ODIN.Block.Signatur"}}{{/if}} <a class="neu" data-action="itemNeu" data-type="signatur"><i class="fa-solid fa-plus"></i></a></h3>
-    {{#each signaturen as |s|}}
-    <div class="itemzeile sig" data-item-id="{{s.id}}"><a data-action="itemBearbeiten">{{s.name}}</a><span>{{s.system.art}}</span><span>{{s.system.nummer}}</span><span>{{s.system.zustand}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
-    {{/each}}
-    <prose-mirror name="system.signatur" button="true" editable="{{editable}}" toggled="true" value="{{source.signatur}}">{{{html.[system.signatur]}}}</prose-mirror>
+
+  <div class="abschnitt"><span>{{localize "ODIN.Block.Laufbahn"}}</span><small>{{localize "ODIN.Laufbahn.Klein" rang=system.rangEp ep=system.ep frei=system.epFrei}}</small><a class="neu" data-action="laufbahnNeu"><i class="fa-solid fa-plus"></i></a></div>
+  <div class="ep laufbahn-ep">
+    <label><input type="number" name="system.ep" value="{{system.ep}}"><span>{{localize "ODIN.Werte.EP"}} {{localize "ODIN.Werte.Gesamt"}}</span></label>
+    <label><input type="number" name="system.epFrei" value="{{system.epFrei}}"><span>{{localize "ODIN.Werte.Frei"}}</span></label>
   </div>
-  <div class="block">
-    <h3>{{localize "ODIN.Block.Klassenbaum"}} <a class="neu" data-action="itemNeu" data-type="knoten"><i class="fa-solid fa-plus"></i></a></h3>
-    {{#each knoten as |k|}}
-    <div class="itemzeile knoten" data-item-id="{{k.id}}"><a data-action="itemBearbeiten">{{k.name}}</a><span>{{k.system.baum}}</span><span>{{k.system.stufe}}</span><span>{{k.system.kosten}} EP</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
-    {{/each}}
-    <prose-mirror name="system.klassenbaum" button="true" editable="{{editable}}" toggled="true" value="{{source.klassenbaum}}">{{{html.[system.klassenbaum]}}}</prose-mirror>
-  </div>
+  <table class="t3 laufbahn">
+    <thead><tr><th>{{localize "ODIN.Laufbahn.Datum"}}</th><th>{{localize "ODIN.Laufbahn.Mission"}}</th><th>EP</th><th>{{localize "ODIN.Laufbahn.Fuer"}}</th><th>{{localize "ODIN.Kopf.Rang"}}</th><th></th></tr></thead>
+    <tbody>{{#each laufbahn as |z|}}<tr data-zeile="{{z.i}}">
+      <td><input type="text" name="system.laufbahn.{{z.i}}.datum" value="{{z.datum}}"></td>
+      <td><input type="text" name="system.laufbahn.{{z.i}}.mission" value="{{z.mission}}"></td>
+      <td><input type="number" name="system.laufbahn.{{z.i}}.ep" value="{{z.ep}}"></td>
+      <td><input type="text" name="system.laufbahn.{{z.i}}.fuer" value="{{z.fuer}}"></td>
+      <td><input type="text" name="system.laufbahn.{{z.i}}.rang" value="{{z.rang}}"></td>
+      <td><a data-action="laufbahnLoeschen"><i class="fa-solid fa-trash"></i></a></td></tr>{{/each}}</tbody>
+  </table>
+  <div class="wasserzeichen">{{{emblem}}}</div>
 </section>

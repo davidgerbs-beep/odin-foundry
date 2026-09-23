@@ -1,0 +1,11 @@
+<table class="t3 knoten">
+  <thead><tr><th></th><th>{{localize "ODIN.Item.Stufe"}}</th><th>{{localize "ODIN.Spalte.Knoten"}}</th><th>{{localize "ODIN.Item.Wirkung"}}</th><th>EP</th></tr></thead>
+  <tbody>{{#each knoten as |n|}}
+    <tr class="{{#if n.hat}}hat{{else if n.offen}}offen{{else}}zu{{/if}}{{#if n.meisterschaft}} meister{{/if}}" data-knoten="{{n.id}}">
+      <td><a class="ck" data-action="knoten" data-tooltip="{{#if n.hat}}{{localize "ODIN.Baum.TipZurueck"}}{{else if n.offen}}{{localize "ODIN.Baum.TipKaufen"}}{{else}}{{n.grund}}{{/if}}"><i class="fa-{{#if n.hat}}solid fa-square-check{{else}}regular fa-square{{/if}}"></i></a></td>
+      <td class="nw">{{n.stufe}}</td>
+      <td><b>{{n.name}}</b>{{#if n.spalte}}<small class="spalte">{{n.spalte}}</small>{{/if}}{{#if n.zeigeSub}}<small class="spalte">{{n.zeigeSub}}</small>{{/if}}{{#if n.preisPlus}} <i class="fa-solid fa-skull preisplus" data-tooltip="{{localize "ODIN.Baum.PreisPlusKurz"}}"></i>{{/if}}</td>
+      <td class="wirkung">{{n.wirkung}}</td>
+      <td class="nw">{{n.kosten}}</td>
+    </tr>{{/each}}</tbody>
+</table>

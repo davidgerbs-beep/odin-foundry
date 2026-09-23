@@ -1,0 +1,71 @@
+<section class="tab blatt einsatz {{tab.cssClass}}" data-group="primary" data-tab="einsatz" style="--akzent: {{akzent}}">
+  <div class="spalten2">
+    <div>
+      <div class="abschnitt"><span>{{localize "ODIN.Block.DeineWuerfel"}}</span></div>
+      <div class="wuerfeltabelle">
+        {{#each deineWuerfel}}
+        <a class="wuerfelzeile" data-action="probe" data-fert="{{key}}"><span>{{name}}</span><span class="m">{{attr}} + {{name}}</span><span class="wuerfel">{{#each weiss}}<i class="w"></i>{{/each}}{{#each bunt}}<i class="b"></i>{{/each}}</span><span class="n">{{w}}+{{b}}</span></a>
+        {{/each}}
+      </div>
+      <div class="abschnitt"><span>{{localize "ODIN.Block.Faehigkeiten"}}</span></div>
+      {{#each faehigkeiten}}
+      <div class="faehigkeit">
+        <div class="fkopf"><b>{{name}}</b><span>{{probe}}</span>{{#if fert}}<a class="wurf" data-action="faehigkeit" data-attr="{{attr}}" data-fert="{{fert}}" data-tooltip="{{localize "ODIN.Tip.Wuerfeln"}}"><i class="fa-solid fa-dice-d6"></i></a>{{/if}}</div>
+        <p>{{text}}</p>
+      </div>
+      {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineSubklasse"}}</p>{{/each}}
+      {{#if (or istPsion istThaumaturg)}}
+      <div class="abschnitt"><span>{{#if istPsion}}{{localize "ODIN.Block.Kraefte"}}{{else}}{{localize "ODIN.Block.Zauber"}}{{/if}}</span><a class="neu" data-action="itemNeu" data-type="{{#if istPsion}}kraft{{else}}zauber{{/if}}"><i class="fa-solid fa-plus"></i></a></div>
+      <div class="liste">
+        {{#each kraefte}}
+        <div class="listenzeile kraft" data-item-id="{{k.id}}">
+          <a class="wurf" data-action="wirken" data-tooltip="{{localize "ODIN.Tip.Wirken"}}"><i class="fa-solid fa-wand-sparkles"></i></a>
+          <a data-action="itemBearbeiten">{{k.name}}</a><span>{{kat}}</span><span>{{kosten}} {{res}}</span><span>{{probe}}</span>
+          <a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a>
+        </div>
+        {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineKraefte"}}</p>{{/each}}
+      </div>
+      {{/if}}
+    </div>
+    <div>
+      <div class="sigkasten">
+        <div class="sigkopf"><span>{{#if system.signaturName}}{{system.signaturName}}{{else}}{{localize "ODIN.Block.Signatur"}}{{/if}}</span><b>{{localize "ODIN.Block.Preis"}}: {{system.preisName}}</b></div>
+        {{#each sig.kurz}}<div class="sigfeld"><span>{{this.[0]}}</span><div>{{this.[1]}}&nbsp;</div></div>{{/each}}
+        {{#each signaturen as |s|}}<div class="sigfeld" data-item-id="{{s.id}}"><span>{{s.system.art}}</span><div><a data-action="itemBearbeiten">{{s.name}}</a>{{#if s.system.nummer}} · {{s.system.nummer}}{{/if}}{{#if s.system.zustand}} · {{s.system.zustand}}{{/if}}</div></div>{{/each}}
+        <div class="sigfeld"><span>{{system.preisName}} {{system.preisWert}}</span><div class="kaestchen preis">{{#each preisKaestchen}}<i class="{{this.cls}}" data-action="preisKasten" data-n="{{this.n}}"></i>{{/each}} <a class="wurf" data-action="preis" data-tooltip="{{localize "ODIN.Knopf.Preis"}}"><i class="fa-solid fa-skull"></i></a></div></div>
+      </div>
+      <div class="abschnitt"><span>{{localize "ODIN.Block.Waffen"}}</span><a class="neu" data-action="itemNeu" data-type="waffe"><i class="fa-solid fa-plus"></i></a></div>
+      <div class="tabelle waffen">
+        <div class="tkopf"><span></span><span>{{localize "ODIN.Spalte.Name"}}</span><span>{{localize "ODIN.Spalte.Schaden"}}</span><span>{{localize "ODIN.Item.Reichweite"}}</span><span>{{localize "ODIN.Spalte.Eigenschaften"}}</span><span></span></div>
+        {{#each waffen}}
+        <div class="tzeile" data-item-id="{{w.id}}"><a class="wurf" data-action="angriff" data-tooltip="{{localize "ODIN.Tip.Angriff"}}"><i class="fa-solid fa-crosshairs"></i></a><a data-action="itemBearbeiten">{{w.name}}</a><span>{{w.system.schaden}}{{#if w.system.durchschlag}} (D{{w.system.durchschlag}}){{/if}}</span><span>{{w.system.reichweite}}</span><span>{{w.system.eigenschaften}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+        {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineWaffen"}}</p>{{/each}}
+      </div>
+      <div class="abschnitt"><span>{{localize "ODIN.Block.Ruestungen"}}</span><small>{{localize "ODIN.Werte.Ruestung"}} {{system.ruestung}} · {{localize "ODIN.Werte.RuestungBonus"}} <input class="mini" type="number" name="system.ruestungBonus" value="{{system.ruestungBonus}}"></small><a class="neu" data-action="itemNeu" data-type="ruestung"><i class="fa-solid fa-plus"></i></a></div>
+      {{#each ruestungen as |r|}}
+      <div class="listenzeile ruestung" data-item-id="{{r.id}}"><a data-action="ruestungToggle" data-tooltip="{{localize "ODIN.Tip.Angelegt"}}"><i class="fa-{{#if r.system.angelegt}}solid{{else}}regular{{/if}} fa-square-check"></i></a><a data-action="itemBearbeiten">{{r.name}}</a><span>{{r.system.wert}}</span><span>{{r.system.behinderung}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+      {{/each}}
+      <div class="abschnitt"><span>{{localize "ODIN.Block.Ausruestung"}}</span><a class="neu" data-action="itemNeu" data-type="ausruestung"><i class="fa-solid fa-plus"></i></a></div>
+      <p class="grundausruestung">{{grundausruestung}}</p>
+      {{#each ausruestung as |a|}}
+      <div class="listenzeile ausr" data-item-id="{{a.id}}"><a data-action="itemBearbeiten">{{a.name}}</a><span>{{a.system.anzahl}}</span><span>{{a.system.preis}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+      {{/each}}
+      <div class="spalten2 eng">
+        <div><div class="abschnitt"><span>{{localize "ODIN.Block.Kontakte"}}</span><a class="neu" data-action="itemNeu" data-type="kontakt"><i class="fa-solid fa-plus"></i></a></div>
+          {{#each kontakte as |k|}}<div class="listenzeile einfach" data-item-id="{{k.id}}"><a data-action="itemBearbeiten">{{k.name}}</a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}</div>
+        <div><div class="abschnitt"><span>{{localize "ODIN.Block.Traumata"}}</span><a class="neu" data-action="itemNeu" data-type="trauma"><i class="fa-solid fa-plus"></i></a></div>
+          {{#each traumata as |t|}}<div class="listenzeile einfach" data-item-id="{{t.id}}"><a data-action="itemBearbeiten">{{t.name}}</a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}</div>
+      </div>
+      <div class="spalten2 eng">
+        <div><div class="abschnitt"><span>{{localize "ODIN.Notiz.AnkerKurz"}}</span></div><div class="ankertext">{{#if system.anker}}{{{html.[system.anker]}}}{{else}}<p>{{system.antrieb}}</p>{{/if}}</div></div>
+        <div><div class="abschnitt"><span>EP</span></div><div class="ep"><label><input type="number" name="system.ep" value="{{system.ep}}"><span>{{localize "ODIN.Werte.Gesamt"}}</span></label><label><input type="number" name="system.epFrei" value="{{system.epFrei}}"><span>{{localize "ODIN.Werte.Frei"}}</span></label></div></div>
+      </div>
+      <div class="raster raster-3 geld">
+        <label>{{localize "ODIN.Werte.Privatgeld"}}<input type="text" name="system.geldPrivat" value="{{system.geldPrivat}}"></label>
+        <label>{{localize "ODIN.Werte.Dienst"}}<input type="text" name="system.geldDienst" value="{{system.geldDienst}}"></label>
+        <label>{{localize "ODIN.Werte.Vertrauen"}}<input type="number" name="system.vertrauen" value="{{system.vertrauen}}" min="0" max="5"></label>
+      </div>
+    </div>
+  </div>
+  <div class="wasserzeichen">{{{emblem}}}</div>
+</section>

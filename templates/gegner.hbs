@@ -1,46 +1,57 @@
 <div class="gegner-bogen">
-  <header class="odin-kopf">
-    <img class="portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}">
-    <div class="kopf-daten">
-      <div class="stempelzeile"><span class="stempel">O.D.I.N.</span><span class="aktentitel">{{localize "ODIN.Kopf.Bedrohungsakte"}}</span></div>
-      <input class="aktenname" type="text" name="name" value="{{actor.name}}">
-      <div class="raster raster-4">
-        <label>{{localize "ODIN.Gegner.Stufe"}}<select name="system.stufe">{{selectOptions stufen selected=system.stufe}}</select></label>
-        <label>{{localize "ODIN.Gegner.Ursprung"}}<select name="system.ursprung">{{selectOptions urspruenge selected=system.ursprung}}</select></label>
-        <label>{{localize "ODIN.Gegner.Grauen"}}<select name="system.grauen" data-dtype="Number">{{selectOptions grauenStufen selected=system.grauen}}</select></label>
-        <label>{{localize "ODIN.Gegner.Aktionen"}}<input type="number" name="system.aktionen" value="{{system.aktionen}}"></label>
+<header class="akte-kopf" style="--akzent: {{akzent}}">
+  <div class="kopfbalken">
+    <div class="kopf-links">
+      <div class="emblem"><svg viewBox="0 0 100 100"><path d="M8 50 Q50 12 92 50 Q50 88 8 50Z" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="14" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="5" fill="currentColor"/><path d="M50 8 V20 M50 80 V92 M16 22 L24 30 M84 22 L76 30" stroke="currentColor" stroke-width="3" opacity=".6"/></svg></div>
+      <div>
+        <div class="zweig">O.D.I.N. · {{localize "ODIN.Gegner.Atlas"}}</div>
+        <div class="klassenname">{{actor.name}}</div>
+        <div class="subklassenname">{{system.stufe}} · {{system.ursprung}}</div>
       </div>
     </div>
-  </header>
-  <div class="werte">
-    <div><span>{{localize "ODIN.Werte.Initiative"}}</span><input type="number" name="system.initiative" value="{{system.initiative}}"></div>
-    <div><span>{{localize "ODIN.Werte.Verteidigung"}}</span><input type="number" name="system.verteidigung" value="{{system.verteidigung}}"></div>
-    <div><span>{{localize "ODIN.Werte.Ruestung"}}</span><input type="number" name="system.ruestung" value="{{system.ruestung}}"></div>
-    <div><span>{{localize "ODIN.Werte.LP"}}</span><span class="lpwerte"><input type="number" name="system.lp.value" value="{{system.lp.value}}"> / <input type="number" name="system.lp.max" value="{{system.lp.max}}"></span></div>
-  </div>
-  <div class="balken"><div class="fuellung lp" style="width:{{lpProzent}}%"></div></div>
-  <div class="block">
-    <h3>{{localize "ODIN.Gegner.Pools"}} <a class="neu" data-action="poolNeu"><i class="fa-solid fa-plus"></i></a></h3>
-    <div class="pool kopfzeile"><span></span><span>{{localize "ODIN.Spalte.Name"}}</span><span>{{localize "ODIN.Karte.Weiss"}}</span><span>{{localize "ODIN.Karte.Bunt"}}</span><span>{{localize "ODIN.Spalte.Schaden"}}</span><span>{{localize "ODIN.Spalte.Durchschlag"}}</span><span>{{localize "ODIN.Spalte.Eigenschaften"}}</span><span></span></div>
-    {{#each system.pools as |p i|}}
-    <div class="pool" data-index="{{i}}">
-      <a class="wurf" data-action="pool"><i class="fa-solid fa-dice-d6"></i></a>
-      <input type="text" name="system.pools.{{i}}.name" value="{{p.name}}">
-      <input type="number" name="system.pools.{{i}}.weiss" value="{{p.weiss}}">
-      <input type="number" name="system.pools.{{i}}.bunt" value="{{p.bunt}}">
-      <input type="number" name="system.pools.{{i}}.schaden" value="{{p.schaden}}">
-      <input type="number" name="system.pools.{{i}}.durchschlag" value="{{p.durchschlag}}">
-      <input type="text" name="system.pools.{{i}}.notiz" value="{{p.notiz}}">
-      <a data-action="poolLoeschen"><i class="fa-solid fa-trash"></i></a>
+    <div class="kopf-rechts">
+      <div class="stempel-vertraulich">{{localize "ODIN.Kopf.Bedrohungsakte"}} · {{localize "ODIN.Kopf.VertraulichKurz"}}</div>
+      {{#if quelle}}<div class="zweig">{{quelle}}</div>{{/if}}
     </div>
-    {{/each}}
-    <p class="hinweis">{{localize "ODIN.Hinweis.Pools"}}</p>
-    {{#if system.grauen}}<button type="button" data-action="grauenAusloesen"><i class="fa-solid fa-ghost"></i> {{localize "ODIN.Gegner.GrauenKnopf"}}</button>{{/if}}
   </div>
-  <div class="block">
-    <h3>{{localize "ODIN.Gegner.Besonderheit"}}</h3>
-    <prose-mirror name="system.besonderheit" button="true" editable="{{editable}}" toggled="true" value="{{system._source.besonderheit}}">{{{html.[system.besonderheit]}}}</prose-mirror>
-    <h3>{{localize "ODIN.Gegner.Beschreibung"}}</h3>
-    <prose-mirror name="system.beschreibung" button="true" editable="{{editable}}" toggled="true" value="{{system._source.beschreibung}}">{{{html.[system.beschreibung]}}}</prose-mirror>
+  <div class="kopf-oben">
+    <div class="kopf-felder">
+      <label class="feld gross"><input type="text" name="name" value="{{actor.name}}"><span>{{localize "ODIN.Spalte.Name"}}</span></label>
+      <label class="feld"><select name="system.stufe">{{selectOptions stufen selected=system.stufe}}</select><span>{{localize "ODIN.Gegner.Stufe"}}</span></label>
+      <label class="feld"><select name="system.ursprung">{{selectOptions urspruenge selected=system.ursprung}}</select><span>{{localize "ODIN.Gegner.Ursprung"}}</span></label>
+      <label class="feld"><select name="system.grauen" data-dtype="Number">{{selectOptions grauenStufen selected=system.grauen}}</select><span>{{localize "ODIN.Gegner.Grauen"}}</span></label>
+      <label class="feld"><input type="number" name="system.aktionen" value="{{system.aktionen}}"><span>{{localize "ODIN.Gegner.Aktionen"}}</span></label>
+    </div>
+    <div class="foto"><img src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}"><i class="klammer"></i></div>
   </div>
+</header>
+<div class="gegner-inhalt" style="--akzent: {{akzent}}">
+  <div class="abschnitt"><span>{{localize "ODIN.Block.WerteKurz"}}</span></div>
+  <div class="werte4">
+    <div class="wertkasten"><input type="number" name="system.initiative" value="{{system.initiative}}"><span>{{localize "ODIN.Werte.Initiative"}}</span></div>
+    <div class="wertkasten"><input type="number" name="system.verteidigung" value="{{system.verteidigung}}"><span>{{localize "ODIN.Werte.Verteidigung"}}</span></div>
+    <div class="wertkasten"><input type="number" name="system.ruestung" value="{{system.ruestung}}"><span>{{localize "ODIN.Werte.Ruestung"}}</span></div>
+    <div class="wertkasten"><span class="lpwerte"><input type="number" name="system.lp.value" value="{{system.lp.value}}">/<input type="number" name="system.lp.max" value="{{system.lp.max}}"></span><span>{{localize "ODIN.Werte.LP"}}</span></div>
+  </div>
+  <div class="spuren"><div class="spur" data-pfad="system.lp.value"><b>{{localize "ODIN.Werte.LP"}}</b><span class="kaestchen">{{#each lpKaestchen}}<i class="{{this.cls}}" data-action="kasten" data-n="{{this.n}}"></i>{{/each}}</span><em>{{system.lp.value}}/{{system.lp.max}}</em></div></div>
+  <div class="abschnitt"><span>{{localize "ODIN.Gegner.Pools"}}</span><small>{{localize "ODIN.Hinweis.Pools"}}</small><a class="neu" data-action="poolNeu"><i class="fa-solid fa-plus"></i></a></div>
+  <table class="t3 pools">
+    <thead><tr><th></th><th>{{localize "ODIN.Spalte.Name"}}</th><th>{{localize "ODIN.Karte.Weiss"}}</th><th>{{localize "ODIN.Karte.Bunt"}}</th><th>{{localize "ODIN.Spalte.Schaden"}}</th><th>{{localize "ODIN.Spalte.Durchschlag"}}</th><th>{{localize "ODIN.Spalte.Eigenschaften"}}</th><th></th></tr></thead>
+    <tbody>{{#each system.pools as |p i|}}<tr data-index="{{i}}">
+      <td><a class="wurf" data-action="pool" data-tooltip="{{localize "ODIN.Tip.Wuerfeln"}}"><i class="fa-solid fa-dice-d6"></i></a></td>
+      <td><input type="text" name="system.pools.{{i}}.name" value="{{p.name}}"></td>
+      <td class="zahl"><input type="number" name="system.pools.{{i}}.weiss" value="{{p.weiss}}"></td>
+      <td class="zahl"><input type="number" name="system.pools.{{i}}.bunt" value="{{p.bunt}}"></td>
+      <td class="zahl"><input type="number" name="system.pools.{{i}}.schaden" value="{{p.schaden}}"></td>
+      <td class="zahl"><input type="number" name="system.pools.{{i}}.durchschlag" value="{{p.durchschlag}}"></td>
+      <td><input type="text" name="system.pools.{{i}}.notiz" value="{{p.notiz}}" data-tooltip="{{p.notiz}}"></td>
+      <td><a data-action="poolLoeschen"><i class="fa-solid fa-trash"></i></a></td></tr>{{/each}}</tbody>
+  </table>
+  {{#if system.grauen}}<div class="spur-knoepfe"><button type="button" data-action="grauenAusloesen"><i class="fa-solid fa-ghost"></i> {{localize "ODIN.Gegner.GrauenKnopf"}}</button></div>{{/if}}
+  <div class="abschnitt"><span>{{localize "ODIN.Gegner.Besonderheit"}}</span></div>
+  <prose-mirror name="system.besonderheit" button="true" editable="{{editable}}" toggled="true" value="{{system._source.besonderheit}}">{{{html.[system.besonderheit]}}}</prose-mirror>
+  <div class="abschnitt"><span>{{localize "ODIN.Gegner.Beschreibung"}}</span></div>
+  <prose-mirror name="system.beschreibung" button="true" editable="{{editable}}" toggled="true" value="{{system._source.beschreibung}}">{{{html.[system.beschreibung]}}}</prose-mirror>
+  <div class="wasserzeichen"><svg viewBox="0 0 100 100"><path d="M8 50 Q50 12 92 50 Q50 88 8 50Z" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="14" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="5" fill="currentColor"/><path d="M50 8 V20 M50 80 V92 M16 22 L24 30 M84 22 L76 30" stroke="currentColor" stroke-width="3" opacity=".6"/></svg></div>
+</div>
 </div>

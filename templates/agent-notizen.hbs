@@ -1,29 +1,24 @@
-<section class="tab notizen {{tab.cssClass}}" data-group="primary" data-tab="notizen">
+<section class="tab blatt notizen {{tab.cssClass}}" data-group="primary" data-tab="notizen" style="--akzent: {{akzent}}">
   <div class="zwei-spalten">
     <div class="block">
-      <h3>{{localize "ODIN.Notiz.Hintergrund"}}</h3>
+      <div class="abschnitt"><span>{{localize "ODIN.Notiz.Hintergrund"}}</span></div>
       <prose-mirror name="system.hintergrund" button="true" editable="{{editable}}" toggled="true" value="{{source.hintergrund}}">{{{html.[system.hintergrund]}}}</prose-mirror>
-      <h3>{{localize "ODIN.Notiz.Rekrutierung"}}</h3>
+      <div class="abschnitt"><span>{{localize "ODIN.Notiz.Rekrutierung"}}</span></div>
       <prose-mirror name="system.rekrutierung" button="true" editable="{{editable}}" toggled="true" value="{{source.rekrutierung}}">{{{html.[system.rekrutierung]}}}</prose-mirror>
-      <h3>{{localize "ODIN.Notiz.ErsterFall"}}</h3>
+      <div class="abschnitt"><span>{{localize "ODIN.Notiz.ErsterFall"}}</span></div>
       <prose-mirror name="system.ersterFall" button="true" editable="{{editable}}" toggled="true" value="{{source.ersterFall}}">{{{html.[system.ersterFall]}}}</prose-mirror>
-      <h3>{{localize "ODIN.Notiz.Detail"}}</h3>
+      <div class="abschnitt"><span>{{localize "ODIN.Notiz.Detail"}}</span></div>
       <prose-mirror name="system.detail" button="true" editable="{{editable}}" toggled="true" value="{{source.detail}}">{{{html.[system.detail]}}}</prose-mirror>
-      <h3>{{localize "ODIN.Notiz.Anker"}}</h3>
+      <div class="abschnitt"><span>{{localize "ODIN.Notiz.Anker"}}</span></div>
       <prose-mirror name="system.anker" button="true" editable="{{editable}}" toggled="true" value="{{source.anker}}">{{{html.[system.anker]}}}</prose-mirror>
     </div>
     <div class="block">
-      <h3>{{localize "ODIN.Block.Traumata"}} <a class="neu" data-action="itemNeu" data-type="trauma"><i class="fa-solid fa-plus"></i></a></h3>
-      {{#each traumata as |t|}}<div class="itemzeile einfach" data-item-id="{{t.id}}"><a data-action="itemBearbeiten">{{t.name}}</a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}
-      <h3>{{localize "ODIN.Block.Kontakte"}} <a class="neu" data-action="itemNeu" data-type="kontakt"><i class="fa-solid fa-plus"></i></a></h3>
-      {{#each kontakte as |k|}}<div class="itemzeile einfach" data-item-id="{{k.id}}"><a data-action="itemBearbeiten">{{k.name}}</a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}
-      <h3>{{localize "ODIN.Notiz.Notizen"}}</h3>
+      <div class="abschnitt"><span>{{localize "ODIN.Notiz.Notizen"}}</span></div>
       <prose-mirror name="system.notizen" button="true" editable="{{editable}}" toggled="true" value="{{source.notizen}}">{{{html.[system.notizen]}}}</prose-mirror>
-      <h3>{{localize "ODIN.Block.Laufbahn"}}</h3>
-      <div class="raster raster-2">
-        <label>{{localize "ODIN.Werte.EP"}}<input type="number" name="system.ep" value="{{system.ep}}"></label>
-        <label>{{localize "ODIN.Werte.EPFrei"}}<input type="number" name="system.epFrei" value="{{system.epFrei}}"></label>
-      </div>
+      <div class="abschnitt"><span>{{localize "ODIN.Block.WeitereFert"}}</span><a class="neu" data-action="itemNeu" data-type="fertigkeit"><i class="fa-solid fa-plus"></i></a></div>
+      {{#each extraFert as |f|}}<div class="listenzeile einfach" data-item-id="{{f.id}}"><a data-action="itemBearbeiten">{{f.name}} <small>({{f.system.attr}} · {{f.system.wert}})</small></a><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>{{/each}}
+      <div class="abschnitt"><span>{{localize "ODIN.Werte.Startkapital"}}</span></div>
+      <p class="ankertext">{{system.startkapital}} €</p>
     </div>
   </div>
 </section>
