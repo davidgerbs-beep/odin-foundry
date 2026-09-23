@@ -44,7 +44,8 @@
       "Alter": "Age",
       "Herkunft": "Origin",
       "OhneKlasse": "Agent without class",
-      "VertraulichKurz": "Confidential"
+      "VertraulichKurz": "Confidential",
+      "SubklasseLeer": "Subclass ______________"
     },
     "Block": {
       "Attribute": "Attributes",
@@ -97,7 +98,8 @@
       "EP": "Total XP",
       "EPFrei": "Unspent XP",
       "Gesamt": "total",
-      "Frei": "free"
+      "Frei": "free",
+      "EPKurz": "XP"
     },
     "Knopf": {
       "Initiative": "Initiative",
@@ -200,7 +202,8 @@
       "Bunt": "coloured",
       "Bonus": "bonus",
       "Malus": "penalty",
-      "Verzweiflung": "empty pool: desperation roll, only a 6 counts"
+      "Verzweiflung": "empty pool: desperation roll, only a 6 counts",
+      "W6": "D6"
     },
     "Titel": {
       "Probe": "Check: {f}",
@@ -264,7 +267,7 @@
       "fern": "Firearms (DEX)",
       "energie": "Energy weapons (DEX)",
       "nah": "Melee (STR)",
-      "hand": "Brawl (STR)",
+      "hand": "Brawling (STR)",
       "schwer": "Heavy weapons (STR)",
       "wurf": "Thrown, grenade (DEX + Athletics)"
     },
@@ -302,7 +305,24 @@
       "GrauenKnopf": "Trigger horror",
       "GrauenAus": "Horror check, level {stufe}",
       "GrauenHinweis": "Every agent rolls WIL + Mental Resistance (button “Horror Check” on the sheet).",
-      "Atlas": "Threat Atlas"
+      "Atlas": "Threat Atlas",
+      "Stufen": {
+        "Handlanger": "Henchman",
+        "Profi": "Professional",
+        "Elite": "Elite",
+        "Anfuehrer": "Leader",
+        "Kreatur": "Creature"
+      },
+      "Urspruenge": {
+        "Stimme": "The Voice",
+        "Fremde": "The Alien",
+        "Verwandelte": "The Transformed",
+        "Alte": "The Old",
+        "Tote": "The Dead",
+        "Maschine": "The Machine",
+        "Menschen": "The Humans",
+        "Verschobene": "The Shifted"
+      }
     },
     "Notiz": {
       "Hintergrund": "Background",
@@ -377,6 +397,142 @@
       "Mission": "File or mission",
       "Fuer": "spent on"
     },
+    "Formel": {
+      "Verteidigung": "1 + ({ge} + Dodge) ÷ 4",
+      "Kosten": "Cost"
+    },
+    "Sig": {
+      "Nr": "No. {n}",
+      "Psion": {
+        "Helm": "The Helmet",
+        "Modell": "Model",
+        "Seriennummer": "Serial number",
+        "Helmbindung": "Helmet bond",
+        "Aufzeichnung": "Recording",
+        "AufzeichnungStandard": "encrypted",
+        "Umbauten": "Modifications",
+        "Bruchstuecke": "Fragments",
+        "BruchstueckeKlein": "memories that do not fit your own life",
+        "HelmKurz": "Helmet"
+      },
+      "Thaumaturg": {
+        "Kristall": "The Crystal",
+        "Nummer": "Number in the Crystal Ledger",
+        "Meister": "Crystal Master",
+        "Name": "Name of the crystal",
+        "Fundort": "Place of discovery",
+        "Beschreibung": "Description",
+        "Sorte": "Type",
+        "Zustand": "Condition",
+        "Risse": "Rifts",
+        "Steine": "Nexus crystals and Nordlicht stones kept overnight",
+        "KristallKurz": "Crystal",
+        "RisseN": "{n} rifts",
+        "Sorten": {
+          "splitter": "Crystal shard",
+          "klar": "Clear crystal",
+          "resonanz": "Resonance crystal",
+          "anatolisch": "Anatolian shard",
+          "anden": "Andes crystal",
+          "kloster": "Monastery stone",
+          "nordlicht": "Nordlicht stone",
+          "riss": "Rift find"
+        },
+        "Zustaende": {
+          "klar": "clear",
+          "trueb": "cloudy",
+          "erschoepft": "exhausted"
+        }
+      },
+      "Soldier": {
+        "Silber": "The Silver",
+        "SilberKlein": "{n} of at most {max} pieces ({rang})",
+        "Platz": "Slot",
+        "Variante": "Variant",
+        "Nr": "No.",
+        "Vorbesitzer": "Previous owner",
+        "Fuer": "Awarded for",
+        "Stuecke": "Pieces",
+        "Plaetze": {
+          "messer": "Knife",
+          "armschiene": "Vambrace",
+          "brustplatte": "Breastplate",
+          "schulter": "Pauldrons",
+          "handschuh": "Gauntlet",
+          "laufmantel": "Barrel Jacket",
+          "beinschienen": "Greaves",
+          "visier": "Visor"
+        },
+        "Hinweis": "Limit: Cadet 2 · Agent 3 · Senior Agent 5 · Veteran 7 · Shadow Officer 8. One piece per rank, one per mission for a deed, never for kills. Thresholds: 3 Recognisable to creatures · 5 immune to horror up to Disturbing, Echo begins · 8 Full Harness.",
+        "Gefallene": "The fallen I knew"
+      },
+      "Agent": {
+        "Legenden": "The Legends",
+        "LegendenKlein": "at most {n} legends, depth up to {t}",
+        "NameBerufOrt": "Name, profession and place",
+        "Tiefe": "Depth",
+        "Kontakt": "Contact",
+        "Stand": "Status",
+        "Staende": {
+          "aktiv": "active",
+          "verbrannt": "burned"
+        },
+        "Hinweis": "Maximum: Cadet 1 · Agent 2 · Senior Agent 3 · Veteran 4 · Shadow Officer 5. Depth at most: Cadet 2 · Agent 3 · Senior Agent 4 · from Veteran 5. Depth 2: +1 die on Deception and Disguise · 3: a contact · 4: +2 dice, background checks pass · 5: one favour per mission.",
+        "EigenerName": "Your own name",
+        "EigenerNameKlein": "in case it is forgotten",
+        "Briefkasten": "Dead Drop",
+        "LegendeN": "Legend {n}",
+        "Klarname": "Real name"
+      },
+      "Scientist": {
+        "Prototypen": "The Prototypes",
+        "PrototypenKlein": "at most {n}, maturity up to {r}",
+        "NrArt": "No. and type",
+        "Was": "What it does",
+        "Reife": "Maturity",
+        "Probe": "Sample",
+        "Hinweis": "Maximum by rank 1 to 5. Maturity 3: +1 die, +1 damage or +1 armour · 4: +2 dice · 5: special property. Maturity 4 and 5 each need a supernatural sample from a mission.",
+        "Fehlfunktion": "Malfunction (D6)",
+        "Fehl": {
+          "1": "in reverse",
+          "2": "loud, bright, gives you away",
+          "3": "fails for the scene",
+          "4": "fails for the mission",
+          "5": "2 damage to the Scientist",
+          "6": "does something else"
+        },
+        "Proben": "Samples held",
+        "Herkunft": "Source",
+        "Gelagert": "Stored",
+        "Frage": "Your Question",
+        "FrageKlein": "why you do research",
+        "PrototypN": "Prototype {n}",
+        "Zweck": "Purpose",
+        "ProbenKurz": "Samples"
+      },
+      "Investigator": {
+        "Akten": "The Open Cases",
+        "Frage": "Question",
+        "Eroeffnet": "opened",
+        "Faeden": "Threads",
+        "Stand": "Status",
+        "Staende": {
+          "offen": "open",
+          "geschlossen": "closed"
+        },
+        "Hinweis": "Pull a thread, once per scene: Trail, one more success · Pressure, one true answer · Head Start, the cell acts first · Cross-Connection, the thread moves to another case. Close the case with five threads in a confrontation: +2 dice for the cell, deception seen through, a certainty, afterwards a piece of evidence and Suspicion −1.",
+        "Beweise": "Pieces of Evidence",
+        "Beweisstueck": "Piece of evidence",
+        "Fall": "From the case",
+        "Wirkung": "Effect",
+        "NichtVergessen": "What I cannot forget",
+        "AkteN": "Open case {n}"
+      }
+    },
+    "Einstellung": {
+      "AlleSprachen": "Show compendiums in all languages",
+      "AlleSprachenHinweis": "Otherwise the compendium list only shows the O.D.I.N. compendiums in the current language."
+    },
     "Attribut": {
       "ST": "Strength",
       "GE": "Dexterity",
@@ -390,28 +546,28 @@
     },
     "Fertigkeit": {
       "athletik": "Athletics",
-      "handgemenge": "Brawl",
+      "handgemenge": "Brawling",
       "nahkampf": "Melee",
       "schwere_waffen": "Heavy Weapons",
       "akrobatik": "Acrobatics",
       "ausweichen": "Dodge",
       "energiewaffen": "Energy Weapons",
-      "fahren": "Drive",
+      "fahren": "Driving",
       "fingerfertigkeit": "Sleight of Hand",
       "heimlichkeit": "Stealth",
-      "pilotieren": "Pilot",
+      "pilotieren": "Piloting",
       "schusswaffen": "Firearms",
       "sicherheitssysteme": "Security Systems",
       "ausdauer": "Endurance",
       "zaehigkeit": "Toughness",
-      "akademisches_wissen": "Academics",
+      "akademisches_wissen": "Academic Knowledge",
       "biologie": "Biology",
       "chemie": "Chemistry",
       "energiemanipulation": "Energy Manipulation",
       "ermittlung": "Investigation",
       "geschichte": "History",
       "hacking": "Hacking",
-      "handwerk": "Crafting",
+      "handwerk": "Craft",
       "ingenieurwesen": "Engineering",
       "kryptografie": "Cryptography",
       "kybernetik": "Cybernetics",
@@ -432,7 +588,7 @@
       "wahrnehmung": "Perception",
       "geistige_widerstandskraft": "Mental Resistance",
       "konzentration": "Concentration",
-      "auftreten": "Presence",
+      "auftreten": "Performance",
       "fuehrung": "Leadership",
       "kontakte": "Contacts",
       "ueberzeugen": "Persuasion",

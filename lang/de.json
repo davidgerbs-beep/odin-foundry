@@ -44,7 +44,8 @@
       "Alter": "Alter",
       "Herkunft": "Herkunft",
       "OhneKlasse": "Agent ohne Klasse",
-      "VertraulichKurz": "Vertraulich"
+      "VertraulichKurz": "Vertraulich",
+      "SubklasseLeer": "Subklasse ______________"
     },
     "Block": {
       "Attribute": "Attribute",
@@ -97,7 +98,8 @@
       "EP": "EP gesamt",
       "EPFrei": "EP frei",
       "Gesamt": "gesamt",
-      "Frei": "frei"
+      "Frei": "frei",
+      "EPKurz": "EP"
     },
     "Knopf": {
       "Initiative": "Initiative",
@@ -200,7 +202,8 @@
       "Bunt": "bunt",
       "Bonus": "Bonus",
       "Malus": "Malus",
-      "Verzweiflung": "leerer Pool: Verzweiflungswurf, nur eine 6 zählt"
+      "Verzweiflung": "leerer Pool: Verzweiflungswurf, nur eine 6 zählt",
+      "W6": "W6"
     },
     "Titel": {
       "Probe": "Probe: {f}",
@@ -302,7 +305,24 @@
       "GrauenKnopf": "Grauen auslösen",
       "GrauenAus": "Grauen-Probe, Stufe {stufe}",
       "GrauenHinweis": "Jeder Agent würfelt WK + Geistige Widerstandskraft (Knopf „Grauen-Probe“ auf dem Bogen).",
-      "Atlas": "Bedrohungsatlas"
+      "Atlas": "Bedrohungsatlas",
+      "Stufen": {
+        "Handlanger": "Handlanger",
+        "Profi": "Profi",
+        "Elite": "Elite",
+        "Anfuehrer": "Anführer",
+        "Kreatur": "Kreatur"
+      },
+      "Urspruenge": {
+        "Stimme": "Die Stimme",
+        "Fremde": "Das Fremde",
+        "Verwandelte": "Die Verwandelten",
+        "Alte": "Das Alte",
+        "Tote": "Die Toten",
+        "Maschine": "Die Maschine",
+        "Menschen": "Die Menschen",
+        "Verschobene": "Das Verschobene"
+      }
     },
     "Notiz": {
       "Hintergrund": "Hintergrund",
@@ -376,6 +396,142 @@
       "Datum": "Datum",
       "Mission": "Akte oder Mission",
       "Fuer": "ausgegeben für"
+    },
+    "Formel": {
+      "Verteidigung": "1 + ({ge} + Ausw.) ÷ 4",
+      "Kosten": "Kosten"
+    },
+    "Sig": {
+      "Nr": "Nr. {n}",
+      "Psion": {
+        "Helm": "Der Helm",
+        "Modell": "Modell",
+        "Seriennummer": "Seriennummer",
+        "Helmbindung": "Helmbindung",
+        "Aufzeichnung": "Aufzeichnung",
+        "AufzeichnungStandard": "verschlüsselt",
+        "Umbauten": "Umbauten",
+        "Bruchstuecke": "Bruchstücke",
+        "BruchstueckeKlein": "Erinnerungen, die nicht zum eigenen Leben passen",
+        "HelmKurz": "Helm"
+      },
+      "Thaumaturg": {
+        "Kristall": "Der Kristall",
+        "Nummer": "Nummer im Kristallbuch",
+        "Meister": "Kristallmeister",
+        "Name": "Name des Kristalls",
+        "Fundort": "Fundort",
+        "Beschreibung": "Beschreibung",
+        "Sorte": "Sorte",
+        "Zustand": "Zustand",
+        "Risse": "Risse",
+        "Steine": "Nexus- und Nordlichtsteine über Nacht",
+        "KristallKurz": "Kristall",
+        "RisseN": "{n} Risse",
+        "Sorten": {
+          "splitter": "Kristallsplitter",
+          "klar": "Klarer Kristall",
+          "resonanz": "Resonanzkristall",
+          "anatolisch": "Anatolischer Splitter",
+          "anden": "Andenkristall",
+          "kloster": "Klosterstein",
+          "nordlicht": "Nordlichtstein",
+          "riss": "Rissfund"
+        },
+        "Zustaende": {
+          "klar": "klar",
+          "trueb": "trüb",
+          "erschoepft": "erschöpft"
+        }
+      },
+      "Soldier": {
+        "Silber": "Das Silber",
+        "SilberKlein": "{n} von höchstens {max} Stücken ({rang})",
+        "Platz": "Platz",
+        "Variante": "Variante",
+        "Nr": "Nr.",
+        "Vorbesitzer": "Vorbesitzer",
+        "Fuer": "Verliehen für",
+        "Stuecke": "Stücke",
+        "Plaetze": {
+          "messer": "Messer",
+          "armschiene": "Armschiene",
+          "brustplatte": "Brustplatte",
+          "schulter": "Schulterstücke",
+          "handschuh": "Handschuh",
+          "laufmantel": "Laufmantel",
+          "beinschienen": "Beinschienen",
+          "visier": "Visier"
+        },
+        "Hinweis": "Obergrenze: Kadett 2 · Agent 3 · Senior-Agent 5 · Veteran 7 · Schattenoffizier 8. Ein Stück pro Rang, eins pro Mission für eine Tat, nie für Abschüsse. Schwellen: 3 erkennbar für Wesen · 5 immun gegen Grauen bis Verstörend, Nachhall beginnt · 8 Vollharnisch.",
+        "Gefallene": "Die Gefallenen, die ich kannte"
+      },
+      "Agent": {
+        "Legenden": "Die Legenden",
+        "LegendenKlein": "höchstens {n} Legenden, Tiefe bis {t}",
+        "NameBerufOrt": "Name, Beruf und Ort",
+        "Tiefe": "Tiefe",
+        "Kontakt": "Kontakt",
+        "Stand": "Stand",
+        "Staende": {
+          "aktiv": "aktiv",
+          "verbrannt": "verbrannt"
+        },
+        "Hinweis": "Höchstzahl: Kadett 1 · Agent 2 · Senior-Agent 3 · Veteran 4 · Schattenoffizier 5. Tiefe höchstens: Kadett 2 · Agent 3 · Senior-Agent 4 · ab Veteran 5. Tiefe 2: +1 Würfel Täuschung und Verkleidung · 3: ein Kontakt · 4: +2 Würfel, Hintergrundprüfungen bestanden · 5: ein Gefallen pro Mission.",
+        "EigenerName": "Der eigene Name",
+        "EigenerNameKlein": "für den Fall, dass er vergessen wird",
+        "Briefkasten": "Toter Briefkasten",
+        "LegendeN": "Legende {n}",
+        "Klarname": "Klarname"
+      },
+      "Scientist": {
+        "Prototypen": "Die Prototypen",
+        "PrototypenKlein": "höchstens {n}, Reife bis {r}",
+        "NrArt": "Nr. und Art",
+        "Was": "Was er tut",
+        "Reife": "Reife",
+        "Probe": "Probe",
+        "Hinweis": "Höchstzahl nach Rang 1 bis 5. Reife 3: +1 Würfel, +1 Schaden oder +1 Rüstung · 4: +2 Würfel · 5: besondere Eigenschaft. Für Reife 4 und 5 je ein übernatürliches Material aus einem Einsatz.",
+        "Fehlfunktion": "Fehlfunktion (W6)",
+        "Fehl": {
+          "1": "umgekehrt",
+          "2": "laut, hell, verrät",
+          "3": "fällt für die Szene aus",
+          "4": "fällt für die Mission aus",
+          "5": "2 Schaden am Scientist",
+          "6": "tut etwas anderes"
+        },
+        "Proben": "Proben im Besitz",
+        "Herkunft": "Herkunft",
+        "Gelagert": "Gelagert",
+        "Frage": "Deine Frage",
+        "FrageKlein": "warum du forschst",
+        "PrototypN": "Prototyp {n}",
+        "Zweck": "Zweck",
+        "ProbenKurz": "Proben"
+      },
+      "Investigator": {
+        "Akten": "Die offenen Akten",
+        "Frage": "Frage",
+        "Eroeffnet": "eröffnet",
+        "Faeden": "Fäden",
+        "Stand": "Stand",
+        "Staende": {
+          "offen": "offen",
+          "geschlossen": "geschlossen"
+        },
+        "Hinweis": "Faden ziehen, einmal pro Szene: Spur, ein Erfolg mehr · Druck, eine wahre Antwort · Vorsprung, die Zelle handelt zuerst · Querverbindung, Faden in eine andere Akte. Den Fall schließen mit fünf Fäden in einer Konfrontation: +2 Würfel für die Zelle, Täuschung durchschaut, eine Gewissheit, danach ein Beweisstück und Verdacht −1.",
+        "Beweise": "Beweisstücke",
+        "Beweisstueck": "Beweisstück",
+        "Fall": "Aus dem Fall",
+        "Wirkung": "Wirkung",
+        "NichtVergessen": "Was ich nicht vergessen kann",
+        "AkteN": "Offene Akte {n}"
+      }
+    },
+    "Einstellung": {
+      "AlleSprachen": "Kompendien in allen Sprachen zeigen",
+      "AlleSprachenHinweis": "Sonst zeigt die Kompendienliste nur die O.D.I.N.-Kompendien in der eingestellten Sprache."
     },
     "Attribut": {
       "ST": "Stärke",
