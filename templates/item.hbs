@@ -1,0 +1,59 @@
+<div class="item-bogen typ-{{typ}}">
+  <header class="odin-kopf klein">
+    <img class="portrait" src="{{item.img}}" data-edit="img" data-action="editImage" alt="{{item.name}}">
+    <div class="kopf-daten">
+      <span class="aktentitel">{{localize (concat "TYPES.Item." typ)}}</span>
+      <input class="aktenname" type="text" name="name" value="{{item.name}}">
+    </div>
+  </header>
+  <div class="raster raster-2">
+    {{#if istKraft}}
+      <label>{{localize "ODIN.Item.Kategorie"}}<select name="system.kategorie">{{selectOptions kategorien selected=system.kategorie}}</select></label>
+      <label>{{localize "ODIN.Dialog.Attribut"}}<select name="system.attr">{{selectOptions attribute selected=system.attr}}</select></label>
+      <label>{{localize "ODIN.Dialog.Fertigkeit"}}<select name="system.fertigkeit">{{selectOptions fertigkeiten selected=system.fertigkeit}}</select></label>
+      <label>{{localize "ODIN.Item.Reichweite"}}<input type="text" name="system.reichweite" value="{{system.reichweite}}"></label>
+      <label>{{localize "ODIN.Item.Dauer"}}<input type="text" name="system.dauer" value="{{system.dauer}}"></label>
+      <label>{{localize "ODIN.Kraft.Ueberschuss"}}<input type="text" name="system.ueberschuss" value="{{system.ueberschuss}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "waffe")}}
+      <label>{{localize "ODIN.Spalte.Art"}}<select name="system.art">{{selectOptions waffenArten selected=system.art}}</select></label>
+      <label>{{localize "ODIN.Spalte.Schaden"}}<input type="number" name="system.schaden" value="{{system.schaden}}"></label>
+      <label>{{localize "ODIN.Spalte.Durchschlag"}}<input type="number" name="system.durchschlag" value="{{system.durchschlag}}"></label>
+      <label>{{localize "ODIN.Item.Reichweite"}}<input type="text" name="system.reichweite" value="{{system.reichweite}}"></label>
+      <label class="breit">{{localize "ODIN.Spalte.Eigenschaften"}}<input type="text" name="system.eigenschaften" value="{{system.eigenschaften}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "ruestung")}}
+      <label>{{localize "ODIN.Item.Wert"}}<input type="number" name="system.wert" value="{{system.wert}}"></label>
+      <label>{{localize "ODIN.Item.Angelegt"}}<input type="checkbox" name="system.angelegt" {{checked system.angelegt}}></label>
+      <label class="breit">{{localize "ODIN.Item.Behinderung"}}<input type="text" name="system.behinderung" value="{{system.behinderung}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "ausruestung")}}
+      <label>{{localize "ODIN.Item.Anzahl"}}<input type="number" name="system.anzahl" value="{{system.anzahl}}"></label>
+      <label>{{localize "ODIN.Item.Preis"}}<input type="text" name="system.preis" value="{{system.preis}}"></label>
+      <label>{{localize "ODIN.Item.Verfuegbarkeit"}}<input type="text" name="system.verfuegbarkeit" value="{{system.verfuegbarkeit}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "fertigkeit")}}
+      <label>{{localize "ODIN.Dialog.Attribut"}}<select name="system.attr">{{selectOptions attribute selected=system.attr}}</select></label>
+      <label>{{localize "ODIN.Spalte.Wert"}}<input type="number" name="system.wert" value="{{system.wert}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "signatur")}}
+      <label>{{localize "ODIN.Spalte.Art"}}<input type="text" name="system.art" value="{{system.art}}"></label>
+      <label>{{localize "ODIN.Item.Nummer"}}<input type="text" name="system.nummer" value="{{system.nummer}}"></label>
+      <label>{{localize "ODIN.Item.Zustand"}}<input type="text" name="system.zustand" value="{{system.zustand}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "knoten")}}
+      <label>{{localize "ODIN.Item.Baum"}}<input type="text" name="system.baum" value="{{system.baum}}"></label>
+      <label>{{localize "ODIN.Item.Stufe"}}<input type="number" name="system.stufe" value="{{system.stufe}}"></label>
+      <label>{{localize "ODIN.Item.Kosten"}}<input type="number" name="system.kosten" value="{{system.kosten}}"></label>
+    {{/if}}
+    {{#if (odinGleich typ "trauma")}}
+      <label>{{localize "ODIN.Item.Aktiv"}}<input type="checkbox" name="system.aktiv" {{checked system.aktiv}}></label>
+    {{/if}}
+    {{#if (odinGleich typ "kontakt")}}
+      <label>{{localize "ODIN.Item.Beziehung"}}<input type="text" name="system.beziehung" value="{{system.beziehung}}"></label>
+      <label>{{localize "ODIN.Item.Gefallen"}}<input type="number" name="system.gefallen" value="{{system.gefallen}}"></label>
+    {{/if}}
+  </div>
+  <h3>{{localize "ODIN.Item.Beschreibung"}}</h3>
+  <prose-mirror name="system.beschreibung" button="true" editable="{{editable}}" toggled="true" value="{{system._source.beschreibung}}">{{{beschreibung}}}</prose-mirror>
+</div>

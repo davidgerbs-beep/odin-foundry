@@ -1,0 +1,52 @@
+<section class="tab akte {{tab.cssClass}}" data-group="primary" data-tab="akte">
+  {{#if warnungen.length}}<ul class="warnungen">{{#each warnungen}}<li><i class="fa-solid fa-triangle-exclamation"></i> {{this}}</li>{{/each}}</ul>{{/if}}
+  <div class="zwei-spalten">
+    <div class="block">
+      <h3>{{localize "ODIN.Block.Attribute"}}</h3>
+      <div class="zeile kopfzeile"><span></span><span>{{localize "ODIN.Spalte.Punkte"}}</span><span>{{localize "ODIN.Spalte.Bonus"}}</span><span>{{localize "ODIN.Spalte.Wert"}}</span></div>
+      {{#each attribute}}
+      <div class="zeile">
+        <a class="wurf" data-action="attribut" data-attr="{{key}}" data-tooltip="{{localize "ODIN.Tip.Attribut"}}"><i class="fa-solid fa-dice-d6"></i> <b>{{key}}</b> {{name}}</a>
+        <input type="number" name="system.attribute.{{key}}.punkte" value="{{punkte}}" min="0" max="5">
+        <span class="bonus">{{#if bonus}}+{{bonus}}{{/if}}</span>
+        <span class="wert">{{wert}}</span>
+      </div>
+      {{/each}}
+      <p class="hinweis">{{localize "ODIN.Hinweis.Attribute"}}</p>
+    </div>
+    <div class="block">
+      <h3>{{localize "ODIN.Block.Werte"}}</h3>
+      <div class="werte">
+        <div><span>{{localize "ODIN.Werte.LP"}}</span><b>{{system.lp.max}}</b></div>
+        <div><span>{{localize "ODIN.Werte.Belastbarkeit"}}</span><b>{{system.belastung.max}}</b></div>
+        <div><span>{{localize "ODIN.Werte.Initiative"}}</span><b>{{system.initiative}}</b></div>
+        <div><span>{{localize "ODIN.Werte.Verteidigung"}}</span><b>{{system.verteidigung}}</b></div>
+        <div><span>{{localize "ODIN.Werte.Ruestung"}}</span><b>{{system.ruestung}}</b></div>
+        <div><span>{{localize "ODIN.Werte.Startkapital"}}</span><b>{{system.startkapital}} €</b></div>
+        {{#if istPsion}}<div><span>{{localize "ODIN.Werte.PSI"}}</span><b>{{system.psi.max}}</b></div>{{/if}}
+        {{#if istThaumaturg}}<div><span>{{localize "ODIN.Werte.ME"}}</span><b>{{system.me.max}}</b></div>{{/if}}
+      </div>
+      <h3>{{localize "ODIN.Block.Laufend"}}</h3>
+      <div class="leiste"><span>{{localize "ODIN.Werte.LP"}}</span><input type="number" name="system.lp.value" value="{{system.lp.value}}"><span class="max">/ {{system.lp.max}}</span><div class="balken"><div class="fuellung lp" style="width:{{lpProzent}}%"></div></div></div>
+      <div class="leiste"><span>{{localize "ODIN.Werte.Belastung"}}</span><input type="number" name="system.belastung.value" value="{{system.belastung.value}}"><span class="max">/ {{system.belastung.max}}</span><div class="balken"><div class="fuellung bel" style="width:{{belProzent}}%"></div></div></div>
+      {{#if istPsion}}<div class="leiste"><span>{{localize "ODIN.Werte.PSI"}}</span><input type="number" name="system.psi.value" value="{{system.psi.value}}"><span class="max">/ {{system.psi.max}}</span></div>{{/if}}
+      {{#if istThaumaturg}}<div class="leiste"><span>{{localize "ODIN.Werte.ME"}}</span><input type="number" name="system.me.value" value="{{system.me.value}}"><span class="max">/ {{system.me.max}}</span></div>{{/if}}
+      <div class="knoepfe">
+        <button type="button" data-action="initiative"><i class="fa-solid fa-bolt"></i> {{localize "ODIN.Knopf.Initiative"}}</button>
+        <button type="button" data-action="grauen"><i class="fa-solid fa-ghost"></i> {{localize "ODIN.Knopf.Grauen"}}</button>
+        <button type="button" data-action="auffuellen"><i class="fa-solid fa-bed"></i> {{localize "ODIN.Knopf.Auffuellen"}}</button>
+      </div>
+      {{#if system.preisName}}
+      <h3>{{localize "ODIN.Block.Preis"}}: {{system.preisName}}</h3>
+      <div class="preis">
+        <input type="range" name="system.preis" value="{{system.preis}}" min="0" max="6" step="1">
+        <span class="preiswert">{{system.preis}}</span>
+        <button type="button" data-action="preis"><i class="fa-solid fa-skull"></i> {{localize "ODIN.Knopf.Preis"}}</button>
+      </div>
+      <p class="hinweis">{{localize (concat "ODIN.Preis.Regel." system.klasse)}}</p>
+      {{/if}}
+      {{#if istPsion}}<p class="hauptgabe">{{localize "ODIN.Werte.Hauptgabe"}}: <b>{{odinFert system.hauptgabe}}</b> · {{localize "ODIN.Hinweis.Nebengaben"}}</p>{{/if}}
+      <div class="knoepfe"><button type="button" data-action="import"><i class="fa-solid fa-file-import"></i> {{localize "ODIN.Knopf.Import"}}</button></div>
+    </div>
+  </div>
+</section>

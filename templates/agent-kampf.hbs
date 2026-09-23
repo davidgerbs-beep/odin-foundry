@@ -1,0 +1,43 @@
+<section class="tab kampf {{tab.cssClass}}" data-group="primary" data-tab="kampf">
+  <div class="werte">
+    <div><span>{{localize "ODIN.Werte.Initiative"}}</span><b>{{system.initiative}}</b></div>
+    <div><span>{{localize "ODIN.Werte.Verteidigung"}}</span><b>{{system.verteidigung}}</b></div>
+    <div><span>{{localize "ODIN.Werte.Ruestung"}}</span><b>{{system.ruestung}}</b></div>
+    <div><span>{{localize "ODIN.Werte.RuestungBonus"}}</span><input type="number" name="system.ruestungBonus" value="{{system.ruestungBonus}}"></div>
+  </div>
+  <div class="block">
+    <h3>{{localize "ODIN.Block.Waffen"}} <a class="neu" data-action="itemNeu" data-type="waffe"><i class="fa-solid fa-plus"></i></a></h3>
+    <div class="liste waffen">
+      <div class="itemzeile kopfzeile"><span></span><span>{{localize "ODIN.Spalte.Name"}}</span><span>{{localize "ODIN.Spalte.Art"}}</span><span>{{localize "ODIN.Spalte.Schaden"}}</span><span>{{localize "ODIN.Spalte.Durchschlag"}}</span><span>{{localize "ODIN.Spalte.Eigenschaften"}}</span><span></span></div>
+      {{#each waffen}}
+      <div class="itemzeile" data-item-id="{{w.id}}">
+        <a class="wurf" data-action="angriff" data-tooltip="{{localize "ODIN.Tip.Angriff"}}"><i class="fa-solid fa-crosshairs"></i></a>
+        <a data-action="itemBearbeiten">{{w.name}}</a><span>{{art}}</span><span>{{w.system.schaden}}</span><span>{{w.system.durchschlag}}</span><span>{{w.system.eigenschaften}}</span>
+        <a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{else}}<p class="hinweis">{{localize "ODIN.Hinweis.KeineWaffen"}}</p>{{/each}}
+    </div>
+    <p class="hinweis">{{localize "ODIN.Hinweis.Schaden"}}</p>
+  </div>
+  <div class="block">
+    <h3>{{localize "ODIN.Block.Ruestungen"}} <a class="neu" data-action="itemNeu" data-type="ruestung"><i class="fa-solid fa-plus"></i></a></h3>
+    {{#each ruestungen as |r|}}
+    <div class="itemzeile ruestung" data-item-id="{{r.id}}">
+      <a data-action="ruestungToggle" data-tooltip="{{localize "ODIN.Tip.Angelegt"}}"><i class="fa-{{#if r.system.angelegt}}solid{{else}}regular{{/if}} fa-square-check"></i></a>
+      <a data-action="itemBearbeiten">{{r.name}}</a><span>{{r.system.wert}}</span><span>{{r.system.behinderung}}</span>
+      <a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a>
+    </div>
+    {{/each}}
+  </div>
+  <div class="block">
+    <h3>{{localize "ODIN.Block.Ausruestung"}} <a class="neu" data-action="itemNeu" data-type="ausruestung"><i class="fa-solid fa-plus"></i></a></h3>
+    {{#each ausruestung as |a|}}
+    <div class="itemzeile ausr" data-item-id="{{a.id}}"><a data-action="itemBearbeiten">{{a.name}}</a><span>{{a.system.anzahl}}</span><span>{{a.system.preis}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+    {{/each}}
+    <div class="raster raster-3">
+      <label>{{localize "ODIN.Werte.Privatgeld"}}<input type="text" name="system.geldPrivat" value="{{system.geldPrivat}}"></label>
+      <label>{{localize "ODIN.Werte.Dienst"}}<input type="text" name="system.geldDienst" value="{{system.geldDienst}}"></label>
+      <label>{{localize "ODIN.Werte.Vertrauen"}}<input type="number" name="system.vertrauen" value="{{system.vertrauen}}" min="0" max="5"></label>
+    </div>
+  </div>
+</section>

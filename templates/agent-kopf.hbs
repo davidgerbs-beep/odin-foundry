@@ -1,0 +1,21 @@
+<header class="odin-kopf">
+  <img class="portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="{{actor.name}}">
+  <div class="kopf-daten">
+    <div class="stempelzeile">
+      <span class="stempel">O.D.I.N.</span>
+      <span class="aktentitel">{{localize "ODIN.Kopf.Personalakte"}}</span>
+      <span class="vertraulich">{{localize "ODIN.Kopf.Vertraulich"}}</span>
+    </div>
+    <input class="aktenname" type="text" name="name" value="{{actor.name}}" placeholder="{{localize "ODIN.Kopf.Codename"}}">
+    <div class="raster raster-4">
+      <label>{{localize "ODIN.Kopf.Codename"}}<input type="text" name="system.codename" value="{{system.codename}}"></label>
+      <label>{{localize "ODIN.Kopf.Name"}}<input type="text" name="system.klarname" value="{{system.klarname}}"></label>
+      <label>{{localize "ODIN.Kopf.Klasse"}}<select name="system.klasse">{{selectOptions klassen selected=system.klasse}}</select></label>
+      <label>{{localize "ODIN.Kopf.Subklasse"}}<select name="system.subklasse">{{selectOptions subklassen selected=system.subklasse}}</select></label>
+      <label>{{localize "ODIN.Kopf.Rang"}}<select name="system.rang">{{selectOptions raenge selected=system.rang}}</select></label>
+      <label>{{localize "ODIN.Kopf.Antrieb"}}<input type="text" name="system.antrieb" value="{{system.antrieb}}"></label>
+      <label>{{localize "ODIN.Kopf.Alter"}}<input type="text" name="system.alter" value="{{system.alter}}"></label>
+      <label>{{localize "ODIN.Kopf.Herkunft"}}<input type="text" name="system.herkunft" value="{{system.herkunft}}"></label>
+    </div>
+  </div>
+</header>
