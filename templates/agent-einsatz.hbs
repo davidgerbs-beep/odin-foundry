@@ -43,7 +43,7 @@
       </div>
       <div class="abschnitt"><span>{{localize "ODIN.Block.Ruestungen"}}</span><small>{{localize "ODIN.Werte.Ruestung"}} {{system.ruestung}} · {{localize "ODIN.Werte.RuestungBonus"}} <input class="mini" type="number" name="system.ruestungBonus" value="{{system.ruestungBonus}}"></small><a class="neu" data-action="itemNeu" data-type="ruestung"><i class="fa-solid fa-plus"></i></a></div>
       {{#each ruestungen as |r|}}
-      <div class="listenzeile ruestung" data-item-id="{{r.id}}"><a data-action="ruestungToggle" data-tooltip="{{localize "ODIN.Tip.Angelegt"}}"><i class="fa-{{#if r.system.angelegt}}solid{{else}}regular{{/if}} fa-square-check"></i></a><a data-action="itemBearbeiten">{{r.name}}</a><span>{{r.system.wert}}</span><span>{{r.system.behinderung}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
+      <div class="listenzeile ruestung" data-item-id="{{r.id}}"><a data-action="ruestungToggle" data-tooltip="{{localize "ODIN.Tip.Angelegt"}}"><i class="fa-{{#if r.system.angelegt}}solid{{else}}regular{{/if}} fa-square-check"></i></a><a data-action="itemBearbeiten">{{r.name}}</a><span>{{#if r.system.zuschlag}}<span data-tooltip="{{localize "ODIN.Tip.Zuschlag"}}">+{{r.system.wert}}</span>{{else}}{{r.system.wert}}{{/if}}</span><span>{{r.system.behinderung}}</span><a data-action="itemLoeschen"><i class="fa-solid fa-trash"></i></a></div>
       {{/each}}
       <div class="abschnitt"><span>{{localize "ODIN.Block.Ausruestung"}}</span><a class="neu" data-action="itemNeu" data-type="ausruestung"><i class="fa-solid fa-plus"></i></a></div>
       <p class="grundausruestung">{{grundausruestung}}</p>

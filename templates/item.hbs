@@ -25,6 +25,7 @@
     {{#if (odinGleich typ "ruestung")}}
       <label>{{localize "ODIN.Item.Wert"}}<input type="number" name="system.wert" value="{{system.wert}}"></label>
       <label>{{localize "ODIN.Item.Angelegt"}}<input type="checkbox" name="system.angelegt" {{checked system.angelegt}}></label>
+      <label>{{localize "ODIN.Item.Zuschlag"}}<input type="checkbox" name="system.zuschlag" {{checked system.zuschlag}}></label>
       <label class="breit">{{localize "ODIN.Item.Behinderung"}}<input type="text" name="system.behinderung" value="{{system.behinderung}}"></label>
     {{/if}}
     {{#if (odinGleich typ "ausruestung")}}
