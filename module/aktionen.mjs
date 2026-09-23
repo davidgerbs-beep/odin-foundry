@@ -207,3 +207,44 @@ export async function freierPool(actor = null) {
   const { e, roll } = await werfen(w, b, r.schw);
   return posten(actor, karte({ titel: L('Titel.Pool'), poolText: `${w} ${L('Karte.Weiss')} + ${b} ${L('Karte.Bunt')}`, e }), roll);
 }
+
+
+/* ---- EP nach der Mission (Änderungsliste 3): Grundwert nach Aktenfarbe, Ziel, persönlicher Bonus, Fäden ---- */
+export const EP_FARBEN = { weiss: 2, grau: 4, rot: 5, schwarz: 7, ohne: 2 };
+export async function epNachMission() {
+  const L = (k, d) => game.i18n.format(`ODIN.EpMission.${k}`, d ?? {});
+  const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
+  if (!game.user.isGM) return ui.notifications.warn(game.i18n.localize('ODIN.Hinweis.NurSL'));
+  let agenten = (canvas.tokens?.controlled ?? []).map((t) => t.actor).filter((a) => a?.type === 'agent');
+  if (!agenten.length) agenten = game.users.filter((u) => !u.isGM && u.character?.type === 'agent').map((u) => u.character);
+  agenten = [...new Map(agenten.map((a) => [a.id, a])).values()];
+  if (!agenten.length) return ui.notifications.warn(L('KeineAgenten'));
+  const farben = Object.keys(EP_FARBEN).map((f) => `<option value="${f}"${f === 'grau' ? ' selected' : ''}>${L(`Farbe.${f}`)} (${EP_FARBEN[f]})</option>`).join('');
+  const zeilen = agenten.map((a) => `<label style="display:block"><input type="checkbox" name="bonus" value="${a.id}"> ${esc(a.name)}</label>`).join('');
+  const r = await foundry.applications.api.DialogV2.prompt({
+    window: { title: L('Titel') },
+    content: `<label>${L('Mission')} <input type="text" name="mission" style="width:100%"></label>
+      <label>${L('Aktenfarbe')} <select name="farbe">${farben}</select></label>
+      <label style="display:block"><input type="checkbox" name="ziel" checked> ${L('Ziel')}</label>
+      <label>${L('Faeden')} <input type="number" name="faeden" value="0" min="0" max="9" style="width:4em"></label>
+      <p><b>${L('Bonus')}</b></p>${zeilen}`,
+    ok: { callback: (ev, btn) => { const e = btn.form.elements; return { mission: e.mission.value.trim(), farbe: e.farbe.value, ziel: e.ziel.checked, faeden: Math.max(0, Number(e.faeden.value) || 0), bonus: [...btn.form.querySelectorAll('input[name=bonus]:checked')].map((i) => i.value) }; } },
+    rejectClose: false,
+  });
+  if (!r) return;
+  const basis = EP_FARBEN[r.farbe] + (r.ziel ? 1 : 0) + r.faeden;
+  const zeilenChat = [];
+  for (const a of agenten) {
+    const ep = basis + (r.bonus.includes(a.id) ? 1 : 0);
+    const s = a.system;
+    const lb = s.laufbahn ?? {};
+    const n = Math.max(-1, ...Object.keys(lb).map(Number).filter(Number.isFinite)) + 1;
+    await a.update({
+      'system.ep': (s.ep ?? 0) + ep, 'system.epFrei': (s.epFrei ?? 0) + ep,
+      [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: r.mission, ep, fuer: L(`Farbe.${r.farbe}`), rang: s.rang },
+      'flags.odin-rpg.zwischenzeit': (a.getFlag('odin-rpg', 'zwischenzeit') ?? 0) + 1,
+    });
+    zeilenChat.push(`<p><b>${esc(a.name)}</b>: +${ep} ${L('Einheit')}</p>`);
+  }
+  ChatMessage.create({ content: `<div class="odin-karte"><h3>${L('Titel')}${r.mission ? ': ' + esc(r.mission) : ''}</h3><p>${L(`Farbe.${r.farbe}`)} ${EP_FARBEN[r.farbe]}${r.ziel ? ` · ${L('Ziel')} +1` : ''}${r.faeden ? ` · ${L('Faeden')} +${r.faeden}` : ''}</p>${zeilenChat.join('')}<p class="odin-hinweis">${L('Zwischenzeit')}</p></div>` });
+}

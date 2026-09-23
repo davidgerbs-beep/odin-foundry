@@ -112,7 +112,28 @@ export async function steigern(actor, art, key, richtung = 1) {
   const k = steigerKosten(actor, art, key);
   if (k == null) return ui.notifications.warn(L('Steigern.Max', { n: name }));
   if (s.epFrei < k) return ui.notifications.warn(L('Baum.ZuWenigEP', { k, frei: s.epFrei }));
-  await actor.update({ [`${pfad}.steig`]: x.steig + 1, 'system.epFrei': s.epFrei - k, ...logZeile(actor, `${name} ${x.wert} → ${x.wert + 1}`, k) });
+  // Änderungsliste 3: Attribute kosten die ganze Zwischenzeit (höchstens eines), neue Fertigkeiten eine Handlung Trainieren mit Lehrer
+  let zusatz = '';
+  const extra = {};
+  if (art === 'attr') {
+    const zz = actor.getFlag('odin-rpg', 'zwischenzeit') ?? 0;
+    const schon = (actor.getFlag('odin-rpg', 'attrZwischenzeit') ?? -1) === zz;
+    const content = `<p>${L('Steigern.AttrText', { n: esc(name), w: x.wert + 1, k })}</p>${schon ? `<p class="odin-dialog-hinweis">${L('Steigern.AttrSchon')}</p>` : ''}`;
+    if (schon && !game.user.isGM) return ui.notifications.warn(L('Steigern.AttrSchon'));
+    const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: L('Steigern.AttrTitel') }, content });
+    if (!ok) return;
+    extra['flags.odin-rpg.attrZwischenzeit'] = zz;
+    zusatz = ` (${L('Steigern.AttrLog')})`;
+  } else if (x.wert === 0) {
+    const lehrer = await foundry.applications.api.DialogV2.prompt({
+      window: { title: L('Steigern.FertTitel') },
+      content: `<p>${L('Steigern.FertText', { n: esc(name) })}</p><label>${L('Steigern.Lehrer')} <input type="text" name="lehrer" style="width:100%"></label>`,
+      ok: { callback: (ev, btn) => btn.form.elements.lehrer.value.trim() || '?' }, rejectClose: false,
+    });
+    if (!lehrer) return;
+    zusatz = ` (${L('Steigern.LehrerLog', { l: lehrer })})`;
+  }
+  await actor.update({ [`${pfad}.steig`]: x.steig + 1, 'system.epFrei': s.epFrei - k, ...extra, ...logZeile(actor, `${name} ${x.wert} → ${x.wert + 1}${zusatz}`, k) });
 }
 
 /** Kontext für Blatt 3: Gruppen und Äste mit Status. */

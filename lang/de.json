@@ -378,7 +378,15 @@
       "Tip": "Mit EP steigern (Kapitel VIII)",
       "Senken": "Steigerung zurücknehmen, EP zurück",
       "Max": "{n} ist schon am Höchstwert.",
-      "Hinweis": "Punkte der Erschaffung · ▲ steigert mit EP, frei: {frei}"
+      "Hinweis": "Punkte der Erschaffung · ▲ steigert mit EP, frei: {frei}",
+      "AttrTitel": "Attribut steigern",
+      "AttrText": "{n} auf {w} steigern kostet {k} EP und beide Handlungen dieser Zwischenzeit (Trainieren). Pro Zwischenzeit steigt höchstens ein Attribut.",
+      "AttrSchon": "In dieser Zwischenzeit wurde schon ein Attribut gesteigert. Nur die Spielleitung kann eine Ausnahme machen.",
+      "AttrLog": "Zwischenzeit, Trainieren",
+      "FertTitel": "Neue Fertigkeit lernen",
+      "FertText": "{n} neu zu lernen braucht eine Handlung Trainieren mit einem Lehrer, der die Fertigkeit auf mindestens 3 beherrscht: ein Mitglied der Zelle, ein Kontakt ab Stufe 2 oder das Personal eines Horts.",
+      "Lehrer": "Lehrer",
+      "LehrerLog": "Trainieren bei {l}"
     },
     "Baum": {
       "Unbekannt": "Unbekannter Knoten.",
@@ -546,6 +554,24 @@
       "AlleSprachenHinweis": "Sonst zeigt die Kompendienliste nur die O.D.I.N.-Kompendien in der eingestellten Sprache.",
       "BuntSpielerfarbe": "Bunte Würfel in Spielerfarbe",
       "BuntSpielerfarbeHinweis": "Mit Dice So Nice erscheinen die bunten Würfel (Fertigkeit) in der Farbe des würfelnden Spielers, die weißen bleiben weiß. Ausgeschaltet sind die bunten Würfel dunkelrot."
+    },
+    "EpMission": {
+      "Titel": "EP nach der Mission",
+      "Mission": "Mission",
+      "Aktenfarbe": "Aktenfarbe",
+      "Ziel": "Missionsziel erreicht",
+      "Faeden": "Fäden eines Geheimnisses",
+      "Bonus": "Persönlicher Bonus (+1): gute Idee oder Szene, Antrieb ausgespielt oder Trauma überstanden",
+      "KeineAgenten": "Keine Agenten gefunden. Token markieren oder den Spielern Figuren zuweisen.",
+      "Zwischenzeit": "Die Zwischenzeit beginnt: zwei Handlungen pro Agent.",
+      "Farbe": {
+        "weiss": "Weiße Akte",
+        "grau": "Graue Akte",
+        "rot": "Rote Akte",
+        "schwarz": "Schwarze Akte",
+        "ohne": "Mission ohne Akte"
+      },
+      "Einheit": "EP"
     },
     "Attribut": {
       "ST": "Stärke",

@@ -378,7 +378,15 @@
       "Tip": "Raise with XP (chapter VIII)",
       "Senken": "Undo raise, refund XP",
       "Max": "{n} is already at maximum.",
-      "Hinweis": "creation points · ▲ raises with XP, free: {frei}"
+      "Hinweis": "creation points · ▲ raises with XP, free: {frei}",
+      "AttrTitel": "Raise attribute",
+      "AttrText": "Raising {n} to {w} costs {k} XP and both actions of this downtime (Train). At most one attribute per downtime.",
+      "AttrSchon": "An attribute has already been raised in this downtime. Only the game master can make an exception.",
+      "AttrLog": "downtime, Train",
+      "FertTitel": "Learn a new skill",
+      "FertText": "Learning {n} from scratch takes one Train action with a teacher who has the skill at 3 or more: a member of the cell, a contact of level 2 or higher, or the staff of a Hold.",
+      "Lehrer": "Teacher",
+      "LehrerLog": "trained with {l}"
     },
     "Baum": {
       "Unbekannt": "Unknown node.",
@@ -546,6 +554,24 @@
       "AlleSprachenHinweis": "Otherwise the compendium list only shows the O.D.I.N. compendiums in the current language.",
       "BuntSpielerfarbe": "Coloured dice in player colour",
       "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player, the white dice stay white. When off, the coloured dice are dark red."
+    },
+    "EpMission": {
+      "Titel": "XP after the mission",
+      "Mission": "Mission",
+      "Aktenfarbe": "File colour",
+      "Ziel": "Mission objective achieved",
+      "Faeden": "Threads of a secret",
+      "Bonus": "Personal bonus (+1): great idea or scene, drive played well or trauma survived",
+      "KeineAgenten": "No agents found. Select tokens or assign characters to the players.",
+      "Zwischenzeit": "Downtime begins: two actions per agent.",
+      "Farbe": {
+        "weiss": "White File",
+        "grau": "Grey File",
+        "rot": "Red File",
+        "schwarz": "Black File",
+        "ohne": "Mission without a file"
+      },
+      "Einheit": "XP"
     },
     "Attribut": {
       "ST": "Strength",
