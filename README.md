@@ -25,8 +25,8 @@ https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.
 - **Würfeltabellen**: 281 Tabellen aus allen Büchern, darunter Trauma, Rückkopplung, Kristallriss, der Preis jeder Klasse, Vorzeichen, unbekannte Artefakte, Zufallsmission und „Eine Akte in zehn Minuten“, dazu alle Tabellen zur Charaktererschaffung aus den Klassenbüchern. Gewürfelt wird nur mit W6: Tabellen mit zwölf Zeilen nutzen zwei W6 (der erste gibt die Zeile, der zweite die Hälfte), W66-Tabellen zwei W6 für Zehner und Einer.
 - **Makros**: Probe würfeln, Grauen-Probe für markierte Token, Angriff mit Waffe, Preis der Klasse, freier Würfelpool, Auffüllen, EP nach der Mission sowie Zufallsmission und Akte in zehn Minuten als Chatkarte für die Spielleitung.
 - **Regeln zum Nachschlagen**: Kompendium „Regeln“ mit elf Journalen aus dem Grundregelwerk (Kurzreferenz, Würfelsystem, Fertigkeiten, Kampf, Belastung und Grauen, Psi-Kräfte, Thaumaturgie, Aufstieg, Ressourcen und Artefakte, Spielleitung, Glossar). Würfeltabellen darin sind direkt verlinkt, Spieler dürfen das Kompendium lesen.
-- **Gegner auf den Karten**: Die acht Karten der Grauen Akten tragen die Gegner der Akte als versteckte Token an ihren Orten. Die Spielleitung deckt sie im richtigen Moment auf.
-- **Runde Token** für Agenten (Messingrand) und Gegner (roter Rand), aus den Porträts und Bildern des Bedrohungsatlas.
+- **Gegner auf den Karten**: Die acht Karten der Grauen Akten und die Karten von Nordlicht 1977 tragen die Gegner als versteckte Token an ihren Orten. Die Spielleitung deckt sie im richtigen Moment auf.
+- **Runde Token** für Agenten (Messingrand) und Gegner (roter Rand), aus den Porträts und Bildern des Bedrohungsatlas. Die Leute aus Die anderen Dienste, den Grauen Akten und Nordlicht 1977 haben eigene Porträts im Sepia-Ton der Bücher.
 - **Bunte Würfel in Spielerfarbe** mit Dice So Nice (abschaltbar in den Einstellungen).
 - **Empfohlene Module**: German [Core] (lang-de) für die deutsche Foundry-Oberfläche und Dice So Nice.
 - **Eigene Kompendium-Banner** im Aktenlook aus der Kunst der Bücher.
