@@ -2,7 +2,7 @@
   "id": "odin-rpg",
   "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
   "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,7 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.4.2/odin-rpg.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.5.0/odin-rpg.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
@@ -496,6 +496,36 @@
           "sprache": "en"
         }
       }
+    },
+    {
+      "name": "odin-abenteuerpakete",
+      "label": "Abenteuer zum Importieren",
+      "path": "packs/odin-abenteuerpakete",
+      "type": "Adventure",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-abenteuerpakete-en",
+      "label": "Adventures (one-click import)",
+      "path": "packs/odin-abenteuerpakete-en",
+      "type": "Adventure",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
     }
   ],
   "packFolders": [
@@ -523,6 +553,7 @@
           "name": "Spielleitung",
           "sorting": "m",
           "packs": [
+            "odin-abenteuerpakete",
             "odin-gegner",
             "odin-abenteuer",
             "odin-szenen",
@@ -555,6 +586,7 @@
           "name": "Game Master",
           "sorting": "m",
           "packs": [
+            "odin-abenteuerpakete-en",
             "odin-gegner-en",
             "odin-abenteuer-en",
             "odin-szenen-en",

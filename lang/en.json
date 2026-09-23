@@ -140,7 +140,7 @@
       "Kreise": "hatched: subclass bonus · dashed circle: maximum 6, only through experience",
       "RuestungQuelle": "worn armour",
       "FertLegende": "◆ core skill · G basic training · last column: white + coloured dice",
-      "Fuss": "White dice (attribute) succeed on 5+ · coloured dice (skill) on 4+ · Easy 1 · Doable 2 · Hard 3 · Very hard 4 · Impossible 5",
+      "Fuss": "White dice (attribute) succeed on 5+ · coloured dice (skill) on 4+ · Easy 1 · Doable 2 · Hard 3 · Very Hard 4 · Impossible 5",
       "KeineSubklasse": "No subclass chosen yet."
     },
     "Warnung": {
@@ -178,14 +178,14 @@
     "Schwierigkeit": {
       "Offen": "Open / opposed",
       "Einfach": "Easy",
-      "Machbar": "Feasible",
+      "Machbar": "Doable",
       "Schwer": "Hard",
-      "SehrSchwer": "Very hard",
+      "SehrSchwer": "Very Hard",
       "Unmoeglich": "Impossible"
     },
     "Grauen": {
       "Kein": "no horror",
-      "Unheimlich": "Eerie",
+      "Unheimlich": "Uncanny",
       "Verstoerend": "Disturbing",
       "Grauenhaft": "Horrifying",
       "Wahnsinnig": "Maddening",
