@@ -1,0 +1,121 @@
+{
+  "id": "odin-rpg",
+  "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
+  "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.368"
+  },
+  "authors": [
+    {
+      "name": "David Ger",
+      "url": "https://odin-rpg.pages.dev"
+    }
+  ],
+  "esmodules": [
+    "odin.mjs"
+  ],
+  "styles": [
+    "styles/odin.css"
+  ],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "agent": {
+        "htmlFields": [
+          "hintergrund",
+          "rekrutierung",
+          "ersterFall",
+          "detail",
+          "anker",
+          "notizen",
+          "signatur",
+          "klassenbaum"
+        ]
+      },
+      "gegner": {
+        "htmlFields": [
+          "beschreibung",
+          "besonderheit"
+        ]
+      }
+    },
+    "Item": {
+      "fertigkeit": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "kraft": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "zauber": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "ausruestung": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "waffe": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "ruestung": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "signatur": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "knoten": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "trauma": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      },
+      "kontakt": {
+        "htmlFields": [
+          "beschreibung"
+        ]
+      }
+    }
+  },
+  "initiative": "@ini + @we / 10 + 1d6 / 100",
+  "grid": {
+    "distance": 1,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "lp",
+  "secondaryTokenAttribute": "belastung",
+  "socket": false,
+  "url": "https://github.com/davidgerbs-beep/odin-foundry",
+  "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.1.0/odin-rpg.zip",
+  "license": "LICENSE",
+  "readme": "README.md"
+}
