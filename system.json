@@ -2,7 +2,7 @@
   "id": "odin-rpg",
   "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
   "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,7 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.5.1/odin-rpg.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.6.0/odin-rpg.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
@@ -552,6 +552,40 @@
         }
       },
       "banner": "systems/odin-rpg/assets/banner/abenteuerpakete.webp"
+    },
+    {
+      "name": "odin-regeln",
+      "label": "Regeln",
+      "path": "packs/odin-regeln",
+      "type": "JournalEntry",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      },
+      "banner": "systems/odin-rpg/assets/banner/regeln.webp"
+    },
+    {
+      "name": "odin-regeln-en",
+      "label": "Rules",
+      "path": "packs/odin-regeln-en",
+      "type": "JournalEntry",
+      "system": "odin-rpg",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      },
+      "banner": "systems/odin-rpg/assets/banner/regeln.webp"
     }
   ],
   "packFolders": [
@@ -559,7 +593,9 @@
       "name": "O.D.I.N.",
       "sorting": "m",
       "color": "#3a3330",
-      "packs": [],
+      "packs": [
+        "odin-regeln"
+      ],
       "folders": [
         {
           "name": "Agenten und Ausrüstung",
@@ -592,7 +628,9 @@
       "name": "O.D.I.N. (English)",
       "sorting": "m",
       "color": "#3a3330",
-      "packs": [],
+      "packs": [
+        "odin-regeln-en"
+      ],
       "folders": [
         {
           "name": "Agents and Equipment",
@@ -642,6 +680,30 @@
       "type": "screenshot",
       "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/04_tabellen.webp",
       "caption": "152 roll tables from all books, drawn straight into the chat"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/05_token.webp",
+      "caption": "Hidden adversary tokens on a Grey Files map, round agent tokens"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/06_regeln.webp",
+      "caption": "Rules compendium: the core rules as journals"
     }
-  ]
+  ],
+  "relationships": {
+    "recommends": [
+      {
+        "id": "lang-de",
+        "type": "module",
+        "reason": "Deutsche Oberfläche für Foundry selbst (Knöpfe, Menüs). / German translation of the Foundry core interface."
+      },
+      {
+        "id": "dice-so-nice",
+        "type": "module",
+        "reason": "3D-Würfel: weiße und bunte Würfel farblich getrennt. / 3D dice with white and coloured dice kept apart."
+      }
+    ]
+  }
 }

@@ -542,7 +542,9 @@
     },
     "Einstellung": {
       "AlleSprachen": "Show compendiums in all languages",
-      "AlleSprachenHinweis": "Otherwise the compendium list only shows the O.D.I.N. compendiums in the current language."
+      "AlleSprachenHinweis": "Otherwise the compendium list only shows the O.D.I.N. compendiums in the current language.",
+      "BuntSpielerfarbe": "Coloured dice in player colour",
+      "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player, the white dice stay white. When off, the coloured dice are dark red."
     },
     "Attribut": {
       "ST": "Strength",

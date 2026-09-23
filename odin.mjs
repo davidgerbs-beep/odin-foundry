@@ -58,6 +58,10 @@ Hooks.once('init', () => {
     name: 'ODIN.Einstellung.AlleSprachen', hint: 'ODIN.Einstellung.AlleSprachenHinweis',
     scope: 'client', config: true, type: Boolean, default: false, onChange: () => ui.compendium?.render(),
   });
+  game.settings.register('odin-rpg', 'buntSpielerfarbe', {
+    name: 'ODIN.Einstellung.BuntSpielerfarbe', hint: 'ODIN.Einstellung.BuntSpielerfarbeHinweis',
+    scope: 'world', config: true, type: Boolean, default: true,
+  });
 });
 Hooks.on('renderCompendiumDirectory', (app, html) => {
   if (game.settings.get('odin-rpg', 'alleSprachen')) return;
@@ -83,9 +87,21 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   dice3d.addColorset({ name: 'odin-weiss', description: 'O.D.I.N. weiß', category: 'O.D.I.N.', foreground: '#1d1a15', background: '#f4efe3', outline: '#1d1a15', edge: '#c9bb99', material: 'plastic' });
   dice3d.addColorset({ name: 'odin-bunt', description: 'O.D.I.N. bunt', category: 'O.D.I.N.', foreground: '#f4efe3', background: '#7a2a20', outline: '#4d1812', edge: '#4d1812', material: 'plastic' });
 });
+/* Bunte Würfel in der Farbe des würfelnden Spielers (Einstellung), Schrift je nach Helligkeit hell oder dunkel */
+function spielerFarbe(id, ctx) {
+  if (!game.settings.get('odin-rpg', 'buntSpielerfarbe')) return null;
+  const nutzer = ctx?.user ?? game.messages.get(id)?.author ?? game.user;
+  const c = foundry.utils.Color.from(nutzer?.color ?? '#7a2a20');
+  if (!Number.isFinite(c.valueOf())) return null;
+  const [r, g, b] = c.rgb;
+  const hell = 0.299 * r + 0.587 * g + 0.114 * b > 0.6;
+  const rand = c.multiply(0.6).css;
+  return { colorset: 'custom', background: c.css, foreground: hell ? '#1d1a15' : '#f4efe3', outline: hell ? '#1d1a15' : rand, edge: rand, material: 'plastic' };
+}
 Hooks.on('diceSoNiceRollStart', (id, ctx) => {
+  const eigen = spielerFarbe(id, ctx);
   for (const d of ctx.roll?.dice ?? []) {
     if (d.flavor === 'weiss') d.options.appearance = { colorset: 'odin-weiss' };
-    if (d.flavor === 'bunt') d.options.appearance = { colorset: 'odin-bunt' };
+    if (d.flavor === 'bunt') d.options.appearance = eigen ?? { colorset: 'odin-bunt' };
   }
 });
