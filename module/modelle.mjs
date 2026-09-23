@@ -1,5 +1,6 @@
 // Datenmodelle für Actor und Item (TypeDataModel)
 import { DATEN } from './daten.mjs';
+import { T, rangName } from './sprache.mjs';
 
 const f = foundry.data.fields;
 const zahl = (initial = 0, min = 0, max = 99) => new f.NumberField({ required: true, nullable: false, integer: true, initial, min, max });
@@ -80,11 +81,13 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
     this.lp.value = Math.min(this.lp.value, this.lp.max);
     this.psi.value = Math.min(this.psi.value, this.psi.max);
     this.me.value = Math.min(this.me.value, this.me.max);
-    this.preisName = kl?.preis ?? '';
+    const kl2 = T().klassen[this.klasse];
+    this.preisName = kl2?.preis ?? kl?.preis ?? '';
     this.preisAuto = this.berechnePreisAuto(knoten);
     this.preisWert = Math.min(6, this.preisAuto + this.preis);
     this.rangEp = DATEN.raenge[DATEN.rangEp.reduce((r, ep, i) => (this.ep >= ep ? i : r), 0)];
-    this.signaturName = kl?.signatur ?? '';
+    this.rangEpName = rangName(this.rangEp);
+    this.signaturName = kl2?.signatur ?? kl?.signatur ?? '';
     this.hauptgabe = DATEN.hauptgabe[this.subklasse] ?? '';
     this.rangIndex = RANG_INDEX(this.rang);
   }
@@ -140,7 +143,7 @@ export class AgentModell extends foundry.abstract.TypeDataModel {
       for (const k of DATEN.psi) if (k !== haupt && k !== 'psi_kampf' && this.fertigkeiten[k].wert > 4) w.push(game.i18n.format('ODIN.Warnung.Nebengabe', { f: game.i18n.localize(`ODIN.Fertigkeit.${k}`) }));
     }
     if (this.subklasse && this.klasse && !DATEN.klassen[this.klasse]?.subs.includes(this.subklasse)) w.push(game.i18n.localize('ODIN.Warnung.Subklasse'));
-    if (this.klasse && DATEN.raenge.indexOf(this.rangEp) > DATEN.raenge.indexOf(this.rang)) w.push(game.i18n.format('ODIN.Warnung.Rang', { rang: this.rangEp, ep: this.ep }));
+    if (this.klasse && DATEN.raenge.indexOf(this.rangEp) > DATEN.raenge.indexOf(this.rang)) w.push(game.i18n.format('ODIN.Warnung.Rang', { rang: rangName(this.rangEp), ep: this.ep }));
     return w;
   }
 }

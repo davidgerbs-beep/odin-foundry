@@ -1,5 +1,6 @@
 // Würfelsystem: zwei Farben, weiß ab 5, bunt ab 4 (Grundregelwerk, Kapitel IV)
 import { DATEN } from './daten.mjs';
+import { abk } from './sprache.mjs';
 
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
@@ -90,7 +91,7 @@ export async function posten(actor, content, roll, { verdeckt = false, flags = {
 export async function probenDialog(actor, { titel, attr, fert, schw = 2, mitAttr = true, mitFert = true, schwListe = SCHWIERIGKEITEN, schwLabel, felder = [], knotenHinweise = [] }) {
   const sys = actor.system;
   const opt = (liste, sel) => liste.map(([v, l]) => `<option value="${v}"${String(v) === String(sel) ? ' selected' : ''}>${esc(l)}</option>`).join('');
-  const attrOpt = opt(DATEN.attribute.map((a) => [a, `${a} ${attrName(a)} (${sys.attribute?.[a]?.wert ?? 0})`]), attr);
+  const attrOpt = opt(DATEN.attribute.map((a) => [a, `${abk(a)} ${attrName(a)} (${sys.attribute?.[a]?.wert ?? 0})`]), attr);
   const fertOpt = opt([['', L('Dialog.KeineFertigkeit')], ...DATEN.fertigkeiten.map((d) => [d.key, `${fertName(d.key)} (${sys.fertigkeiten?.[d.key]?.wert ?? 0})`])], fert);
   const schwOpt = !schwListe ? '' : opt([...(schwListe === SCHWIERIGKEITEN ? [[0, L('Schwierigkeit.Offen')]] : []), ...schwListe.map(([v, k]) => [v, `${L((schwListe === GRAUEN ? 'Grauen.' : 'Schwierigkeit.') + k)} (${v})`])], schw);
   const zusatz = felder.map((x) => `<label>${esc(x.label)}</label><input type="number" name="${x.name}" value="${x.wert ?? 0}" min="${x.min ?? 0}" max="${x.max ?? 30}">`).join('');

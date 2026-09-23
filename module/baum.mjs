@@ -2,6 +2,7 @@
 import { DATEN } from './daten.mjs';
 import { AgentModell } from './modelle.mjs';
 import { attrName, fertName } from './wuerfel.mjs';
+import { baumAnzeige, knotenLokal, knotenName, rangName, subName } from './sprache.mjs';
 
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
@@ -30,20 +31,23 @@ export function kaufbar(actor, id) {
   if (hat.has(id)) return { ok: false, grund: L('Baum.Schon') };
   const fremd = !!n.subklasse && n.subklasse !== s.subklasse;
   const kosten = knotenKosten(s, n);
-  const r = { ok: true, kosten, fremd, knoten: n, warnung: fremd ? (B.fremdGrenze ?? '') : '' };
-  if (rangIndex(s.rang) < rangIndex(n.rang)) return { ...r, ok: false, grund: L('Baum.Rang', { rang: n.rang }) };
+  const BA = baumAnzeige(s.klasse) ?? B;
+  const nL = knotenLokal(s.klasse, n);
+  const name = (x) => knotenName(s.klasse, x);
+  const r = { ok: true, kosten, fremd, knoten: n, warnung: fremd ? (BA.fremdGrenze ?? B.fremdGrenze ?? '') : '' };
+  if (rangIndex(s.rang) < rangIndex(n.rang)) return { ...r, ok: false, grund: L('Baum.Rang', { rang: rangName(n.rang) }) };
   // Voraussetzungen
   const vor = n.voraussetzung;
   if (s.klasse === 'Investigator') {
     const eigeneEins = !fremd && n.stufe === 'I';
     if (n.meisterschaft && fremd) return { ...r, ok: false, grund: L('Baum.NurEigene') };
-    if (n.meisterschaft && !hat.has(vor)) return { ...r, ok: false, grund: L('Baum.Voraussetzung', { v: idx[vor]?.name ?? vor }) };
+    if (n.meisterschaft && !hat.has(vor)) return { ...r, ok: false, grund: L('Baum.Voraussetzung', { v: name(vor) }) };
     if (!eigeneEins && !(n.verbunden ?? []).some((x) => hat.has(x))) return { ...r, ok: false, grund: L('Baum.Faden') };
   } else if (Array.isArray(vor) && vor.length) {
     const erfuellt = n.voraussetzungModus === 'eine' ? vor.some((x) => hat.has(x)) : vor.every((x) => hat.has(x));
-    if (!erfuellt) return { ...r, ok: false, grund: L('Baum.Voraussetzung', { v: vor.map((x) => idx[x]?.name ?? x).join(n.voraussetzungModus === 'eine' ? ' / ' : ', ') }) };
-  } else if (vor && !hat.has(vor)) return { ...r, ok: false, grund: L('Baum.Voraussetzung', { v: idx[vor]?.name ?? vor }) };
-  if (n.voraussetzungText) r.warnung = [r.warnung, n.voraussetzungText].filter(Boolean).join(' ');
+    if (!erfuellt) return { ...r, ok: false, grund: L('Baum.Voraussetzung', { v: vor.map(name).join(n.voraussetzungModus === 'eine' ? ' / ' : ', ') }) };
+  } else if (vor && !hat.has(vor)) return { ...r, ok: false, grund: L('Baum.Voraussetzung', { v: name(vor) }) };
+  if (n.voraussetzungText) r.warnung = [r.warnung, nL.voraussetzungText].filter(Boolean).join(' ');
   if (n.nachbarVoraussetzung && s.klasse === 'Scientist') {
     const nb = B.nachbarn ?? [];
     const i = nb.indexOf(n.subklasse);
@@ -58,26 +62,27 @@ export function kaufbar(actor, id) {
 function logZeile(actor, text, ep) {
   const lb = foundry.utils.deepClone(actor.system.laufbahn ?? {});
   const n = Math.max(-1, ...Object.keys(lb ?? {}).map(Number).filter(Number.isFinite)) + 1;
-  return { [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString('de-DE'), mission: '', ep: -ep, fuer: text, rang: actor.system.rang } };
+  return { [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: '', ep: -ep, fuer: text, rang: rangName(actor.system.rang) } };
 }
 
 export async function knotenUmschalten(actor, id) {
   const s = actor.system;
   const idx = AgentModell.knotenIndex(s.klasse);
-  const n = idx[id];
-  if (!n) return;
+  const n0 = idx[id];
+  if (!n0) return;
+  const n = knotenLokal(s.klasse, n0);
   if (s.baum.includes(id)) {
     // Zurücknehmen: nur wenn kein anderer Knoten darauf aufbaut
     const abh = s.baum.filter((x) => { const v = idx[x]?.voraussetzung; return Array.isArray(v) ? v.includes(id) && !(idx[x].voraussetzungModus === 'eine' && v.some((y) => y !== id && s.baum.includes(y))) : v === id; });
-    if (abh.length) return ui.notifications.warn(L('Baum.Abhaengig', { n: abh.map((x) => idx[x].name).join(', ') }));
-    const k = knotenKosten(s, n);
+    if (abh.length) return ui.notifications.warn(L('Baum.Abhaengig', { n: abh.map((x) => knotenName(s.klasse, x)).join(', ') }));
+    const k = knotenKosten(s, n0);
     const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: n.name }, content: `<p>${L('Baum.Zuruecknehmen', { n: esc(n.name), k })}</p>` });
     if (!ok) return;
     return actor.update({ 'system.baum': s.baum.filter((x) => x !== id), 'system.epFrei': s.epFrei + k });
   }
   const r = kaufbar(actor, id);
   if (!r.ok) return ui.notifications.warn(`${n.name}: ${r.grund}`);
-  const content = `<p><b>${esc(n.name)}</b> (${esc(n.stufe)}${n.subklasse ? ', ' + esc(n.subklasse) : ''})</p><p>${esc(n.wirkung)}</p>
+  const content = `<p><b>${esc(n.name)}</b> (${esc(n.stufe)}${n.subklasse ? ', ' + esc(subName(n.subklasse)) : ''})</p><p>${esc(n.wirkung)}</p>
     <p>${L('Baum.Kosten', { k: r.kosten, frei: s.epFrei })}</p>${r.warnung ? `<p class="odin-dialog-hinweis">${esc(r.warnung)}</p>` : ''}${n.preisPlus ? `<p class="odin-dialog-hinweis">${L('Baum.PreisPlus', { preis: esc(s.preisName) })}</p>` : ''}`;
   const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: L('Baum.Kaufen') }, content });
   if (!ok) return;
@@ -115,26 +120,29 @@ export function baumKontext(actor, zeigeSub) {
   const s = actor.system;
   const B = DATEN.baeume[s.klasse];
   if (!B) return null;
+  const BA = baumAnzeige(s.klasse) ?? B;
   const hat = new Set(s.baum);
-  const knoten = (liste) => liste.map((n0) => {
+  const knoten = (liste) => liste.filter(Boolean).map((n0) => {
     const id = n0.id;
     const r = hat.has(id) ? null : kaufbar(actor, id);
-    return { ...n0, hat: hat.has(id), offen: !!r?.ok, grund: r?.grund ?? '', kosten: r?.kosten ?? n0.kosten, zeigeSub: n0.subklasse && n0.subklasse !== s.subklasse ? n0.subklasse : '' };
+    return { ...knotenLokal(s.klasse, n0), hat: hat.has(id), offen: !!r?.ok, grund: r?.grund ?? '', kosten: r?.kosten ?? n0.kosten, zeigeSub: n0.subklasse && n0.subklasse !== s.subklasse ? subName(n0.subklasse) : '' };
   });
   const idx = AgentModell.knotenIndex(s.klasse);
-  const gruppen = B.gruppen.map((g) => ({ ...g, knoten: knoten(g.knoten.map((n) => idx[n.id])) }));
+  const gruppen = B.gruppen.map((g, i) => ({ ...g, titel: BA.gruppen?.[i]?.titel ?? g.titel, hinweis: BA.gruppen?.[i]?.hinweis ?? g.hinweis, knoten: knoten(g.knoten.map((n) => idx[n.id])) }));
   const eigen = B.subklassen[s.subklasse];
+  const titel = (sub) => BA.subklassen?.[sub]?.titel ?? B.subklassen[sub]?.titel ?? '';
   const subs = Object.keys(B.subklassen).filter((x) => x !== s.subklasse);
   const fremdSub = zeigeSub && subs.includes(zeigeSub) ? zeigeSub : null;
   const fremdGekauft = s.baum.map((x) => idx[x]).filter((n) => n?.subklasse && n.subklasse !== s.subklasse);
   return {
-    name: B.baumName, regeln: B.regeln, preis: B.preis, stufen: B.stufen, spalten: B.spalten ?? null,
+    name: BA.baumName ?? B.baumName, regeln: BA.regeln ?? B.regeln, preis: BA.preis ?? B.preis,
+    stufen: BA.stufen ?? B.stufen, spalten: BA.spalten ?? B.spalten ?? null,
     gruppen,
-    eigen: eigen ? { titel: eigen.titel, sub: s.subklasse, knoten: knoten(eigen.knoten.map((n) => idx[n.id])) } : null,
-    fremd: fremdSub ? { titel: B.subklassen[fremdSub].titel, sub: fremdSub, knoten: knoten(B.subklassen[fremdSub].knoten.map((n) => idx[n.id])) } : null,
+    eigen: eigen ? { titel: titel(s.subklasse), sub: subName(s.subklasse), knoten: knoten(eigen.knoten.map((n) => idx[n.id])) } : null,
+    fremd: fremdSub ? { titel: titel(fremdSub), sub: subName(fremdSub), knoten: knoten(B.subklassen[fremdSub].knoten.map((n) => idx[n.id])) } : null,
     fremdGekauft: knoten(fremdGekauft),
-    subOptionen: Object.fromEntries([['', L('Baum.FremdWaehlen')], ...subs.map((x) => [x, x])]),
+    subOptionen: Object.fromEntries([['', L('Baum.FremdWaehlen')], ...subs.map((x) => [x, subName(x)])]),
     fremdSub: fremdSub ?? '',
-    fremdGrenze: B.fremdGrenze ?? '',
+    fremdGrenze: BA.fremdGrenze ?? B.fremdGrenze ?? '',
   };
 }

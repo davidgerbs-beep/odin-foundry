@@ -1,5 +1,6 @@
 // Proben und Aktionen der Agenten und Gegner
 import { DATEN } from './daten.mjs';
+import { abk, rangName, knotenLokal, fertDatenName } from './sprache.mjs';
 import { pool, auswerten, wurf, karte, hinweis, balken, posten, probenDialog, preisHinweis, attrName, fertName, GRAUEN, KATEGORIEN, WAFFEN_ARTEN } from './wuerfel.mjs';
 
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
@@ -7,9 +8,11 @@ const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
 const TABELLE = (key) => [1, 2, 3, 4, 5, 6].map((i) => L(`${key}.${i}`));
 const av = (actor, a) => actor.system.attribute?.[a]?.wert ?? 0;
 const fv = (actor, k) => (k ? actor.system.fertigkeiten?.[k]?.wert ?? 0 : 0);
+/** Gekaufte Knoten mit Name und Wirkung in der Sprache der Oberfläche. */
+const knotenDerKlasse = (actor) => (actor.system.knotenListe ?? []).map((n) => knotenLokal(actor.system.klasse, n));
 
 function poolText(actor, attr, fert, w, b, r) {
-  let t = `${attr} ${av(actor, attr)}${fert ? ` + ${fertName(fert)} ${fv(actor, fert)}` : ''} → ${w} ${L('Karte.Weiss')} + ${b} ${L('Karte.Bunt')}`;
+  let t = `${abk(attr)} ${av(actor, attr)}${fert ? ` + ${fertName(fert)} ${fv(actor, fert)}` : ''} → ${w} ${L('Karte.Weiss')} + ${b} ${L('Karte.Bunt')}`;
   if (r.bonus) t += ` (+${Math.min(3, r.bonus)} ${L('Karte.Bonus')})`;
   if (r.malus) t += ` (−${r.malus} ${L('Karte.Malus')})`;
   return t;
@@ -25,7 +28,7 @@ async function werfen(w, b, schw) {
 export async function fertigkeitsProbe(actor, fert, nurAttribut = false, attr) {
   attr ??= DATEN.fertigkeiten.find((d) => d.key === fert)?.attr ?? 'GE';
   const titel = nurAttribut ? L('Titel.Attributsprobe', { a: attrName(attr) }) : L('Titel.Probe', { f: fertName(fert) });
-  const knotenHinweise = (actor.system.knotenListe ?? []).filter((n) => /Würfel|Erfolg|Stufe leichter/.test(n.wirkung) && !!fert && n.wirkung.includes(DATEN.fertigkeiten.find((d) => d.key === fert)?.name ?? '§'));
+  const knotenHinweise = knotenDerKlasse(actor).filter((n) => /Würfel|Erfolg|Stufe leichter|\bdice\b|\bdie (?:on|to|for)\b|success|step easier/.test(n.wirkung) && !!fert && n.wirkung.includes(fertDatenName(fert) || '§'));
   const r = await probenDialog(actor, { titel, attr, fert, mitFert: !nurAttribut, knotenHinweise });
   if (!r) return;
   const f = nurAttribut ? '' : r.fert;
@@ -34,13 +37,13 @@ export async function fertigkeitsProbe(actor, fert, nurAttribut = false, attr) {
   let zusatz = '';
   if (f && fv(actor, f) === 0 && DATEN.ungeuebtVerboten.includes(f)) zusatz += hinweis(L('Hinweis.Ungeuebt', { f: fertName(f) }));
   if (e.patzer) zusatz += preisHinweis(actor, f);
-  const t = f ? `${fertName(f)} (${r.attr})` : `${attrName(r.attr)} (${r.attr})`;
+  const t = f ? `${fertName(f)} (${abk(r.attr)})` : `${attrName(r.attr)} (${abk(r.attr)})`;
   return posten(actor, karte({ titel: t, poolText: poolText(actor, r.attr, f, w, b, r), e, zusatz }), roll);
 }
 
 /** Grauen-Probe: WK + Geistige Widerstandskraft, Belastung, Trauma (Kapitel VII). */
 export async function grauenProbe(actor, stufe = 2) {
-  const knotenHinweise = (actor.system.knotenListe ?? []).filter((n) => /Grauen/.test(n.wirkung));
+  const knotenHinweise = knotenDerKlasse(actor).filter((n) => /Grauen|horror/i.test(n.wirkung));
   const r = await probenDialog(actor, { knotenHinweise, titel: L('Titel.Grauen'), attr: 'WK', fert: 'geistige_widerstandskraft', schw: stufe, mitAttr: false, mitFert: false, schwListe: GRAUEN, schwLabel: L('Dialog.Stufe') });
   if (!r) return;
   const [w, b] = pool(av(actor, 'WK'), fv(actor, 'geistige_widerstandskraft'), r.bonus, r.malus);
@@ -110,7 +113,7 @@ export async function wirken(actor, item) {
   const psi = kat.res === 'psi';
   const sys = actor.system;
   if ((sys.rangIndex ?? 0) < kat.rang) {
-    const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: item.name }, content: `<p>${L('Hinweis.Rang', { rang: DATEN.raenge[kat.rang] })}</p>` });
+    const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: item.name }, content: `<p>${L('Hinweis.Rang', { rang: rangName(DATEN.raenge[kat.rang]) })}</p>` });
     if (!ok) return;
   }
   const r = await probenDialog(actor, { titel: `${L(psi ? 'Titel.Kraft' : 'Titel.Zauber')}: ${item.name}`, attr: item.system.attr, fert: item.system.fertigkeit, schw: kat.schw });
@@ -125,7 +128,7 @@ export async function wirken(actor, item) {
   if (e.patzer) {
     const t = await new Roll('1d6').evaluate();
     const tab = TABELLE(psi ? 'Rueckkopplung' : 'Kristallriss');
-    zusatz += balken('patzer', `${L(psi ? 'Kraft.Rueckkopplung' : 'Kraft.Kristallriss')} (W6: ${t.total})`) + hinweis(tab[t.total - 1]);
+    zusatz += balken('patzer', `${L(psi ? 'Kraft.Rueckkopplung' : 'Kraft.Kristallriss')} (${L('Karte.W6')}: ${t.total})`) + hinweis(tab[t.total - 1]);
     if (t.total <= 2) bel += 2;
     if ((psi && (t.total === 3 || t.total === 4)) || (!psi && t.total === 3)) lp -= 2;
     zusatz += preisHinweis(actor, psi ? 'psi-patzer' : 'zauber-patzer');

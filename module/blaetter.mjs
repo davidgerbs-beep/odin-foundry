@@ -5,6 +5,7 @@ import { generatorDialog } from './import.mjs';
 import { baumKontext, knotenUmschalten, steigern, steigerKosten } from './baum.mjs';
 import { signaturKontext } from './signatur.mjs';
 import { attrName, fertName, KATEGORIEN, WAFFEN_ARTEN } from './wuerfel.mjs';
+import { T, abk, klasseName, subName, rangName, probeLesen } from './sprache.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2, ItemSheetV2 } = foundry.applications.sheets;
@@ -18,7 +19,6 @@ async function anreichern(obj, felder) {
 }
 
 /* ------------------------------------------------------------ */
-const nachFertName = Object.fromEntries(DATEN.fertigkeiten.map((d) => [d.name.toLowerCase(), d.key]));
 /** Kreise wie auf dem Papierbogen: gefüllt, schraffiert (Bonus), der sechste gestrichelt. */
 function pips(wert, bonus = 0, max = 6) {
   return Array.from({ length: max }, (_, i) => [i < wert ? (i >= wert - bonus ? 'bonus' : 'an') : '', i === 5 ? 'sechs' : ''].filter(Boolean).join(' '));
@@ -71,6 +71,8 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
     const s = actor.system;
     if (this._bearbeiten === null) this._bearbeiten = !s.klasse;
     const K = DATEN.klassen[s.klasse];
+    const TL = T();
+    const KL = TL.klassen[s.klasse];
     const items = (t) => actor.items.filter((i) => i.type === t).sort((a, b) => a.sort - b.sort);
 
     // Fertigkeiten in drei Spalten wie auf Blatt 1
@@ -81,11 +83,11 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
       for (const d of DATEN.fertigkeiten.filter((x) => x.gruppe === g)) {
         const f = s.fertigkeiten[d.key];
         alle.push({
-          key: d.key, name: fertName(d.key), attr: d.attr, punkte: f.punkte, wert: f.wert,
+          key: d.key, name: fertName(d.key), attr: d.attr, attrAnz: abk(d.attr), punkte: f.punkte, wert: f.wert,
           pips: pips(f.wert, Math.min(f.wert, f.bonus + f.steig)), pool: `${s.attribute[d.attr].wert}+${f.wert}`, steig: f.steig,
           steigKosten: steigerKosten(actor, 'fert', d.key),
           kern: !!K?.kern.includes(d.key), grund: DATEN.grundausbildung.includes(d.key), hauptgabe: s.hauptgabe === d.key,
-          tip: DATEN.beschreibung[d.key] ?? '',
+          tip: TL.beschreibung[d.key] ?? DATEN.beschreibung[d.key] ?? '',
         });
       }
     }
@@ -100,20 +102,24 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
       .map((x) => ({ ...x, weiss: Array(x.w).fill(0), bunt: Array(x.b).fill(0) }));
 
     // Fähigkeiten der Subklasse mit Probe
-    const faehigkeiten = (DATEN.faehigkeiten[s.subklasse] ?? []).map((f) => {
+    // "(ATTR + Fertigkeit, …)" im Namen, deutsch oder englisch; gewürfelt wird mit den internen Schlüsseln
+    const faehigkeiten = (TL.faehigkeiten[s.subklasse] ?? DATEN.faehigkeiten[s.subklasse] ?? []).map((f) => {
       const probe = (f.name.match(/\((.*)\)/) ?? ['', ''])[1];
-      const m = /^(ST|GE|KO|IN|WE|WK|CH|MA|GL)\s*\+\s*([^,]+)/.exec(probe);
-      return { name: f.name.split(' (')[0], probe, text: f.text, attr: m?.[1] ?? '', fert: m ? (nachFertName[m[2].trim().toLowerCase()] ?? '') : '' };
+      const m = probeLesen(probe);
+      return { name: f.name.split(' (')[0], probe, text: f.text, attr: m?.fert ? m.attr : '', fert: m?.fert ?? '' };
     });
-    const grundausruestung = [K?.ausruestung, DATEN.subAusruestung[s.subklasse]].filter(Boolean).join('; ');
+    const grundausruestung = [KL?.ausruestung ?? K?.ausruestung, TL.subAusruestung[s.subklasse] ?? DATEN.subAusruestung[s.subklasse]].filter(Boolean).join('; ');
+    const A3 = (...a) => a.map(abk).join(' + ');
 
     const klassen = Object.keys(DATEN.klassen);
     Object.assign(ctx, {
       actor, system: s, source: actor.system._source, editable: this.isEditable, bearbeiten: this._bearbeiten,
-      akzent: K?.akzent ?? '#5c5140', emblem: K?.emblem ?? '', zweig: K?.zweig ?? 'Occult Dynamics Intelligence Network',
+      akzent: K?.akzent ?? '#5c5140', emblem: K?.emblem ?? '', zweig: KL?.zweig ?? K?.zweig ?? 'Occult Dynamics Intelligence Network',
+      klasseAnzeige: klasseName(s.klasse), subAnzeige: subName(s.subklasse),
+      formel: { lp: `6 + ${abk('KO')} + ${fertName('zaehigkeit')}`, bel: `4 + ${A3('WK', 'GL')}`, ini: abk('GE'), vert: L('Formel.Verteidigung', { ge: abk('GE') }), psi: A3('WK', 'WE', 'IN'), me: A3('CH', 'WE', 'IN') },
       attribute: DATEN.attribute.map((a) => {
         const x = s.attribute[a];
-        return { key: a, name: attrName(a), kurz: DATEN.attrKurz[a] ?? '', ...x, pips: pips(x.wert, Math.min(x.wert, x.bonus)), steigKosten: steigerKosten(actor, 'attr', a) };
+        return { key: a, abk: abk(a), name: attrName(a), kurz: TL.attrKurz[a] ?? DATEN.attrKurz[a] ?? '', ...x, pips: pips(x.wert, Math.min(x.wert, x.bonus)), steigKosten: steigerKosten(actor, 'attr', a) };
       }),
       fertSpalten, deineWuerfel, faehigkeiten, grundausruestung,
       lpKaestchen: kaestchen(s.lp.value, s.lp.max),
@@ -124,14 +130,14 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
       baum: baumKontext(actor, this._fremdSub),
       sig: signaturKontext(actor),
       laufbahn: Object.entries(s.laufbahn ?? {}).filter(([, z]) => z && typeof z === 'object').map(([i, z]) => ({ i, ...z })),
-      klassen: Object.fromEntries([['', '–'], ...klassen.map((k) => [k, k])]),
-      subklassen: Object.fromEntries([['', '–'], ...(K?.subs ?? Object.values(DATEN.klassen).flatMap((k) => k.subs)).map((x) => [x, x])]),
-      raenge: Object.fromEntries(DATEN.raenge.map((r) => [r, r])),
+      klassen: Object.fromEntries([['', '–'], ...klassen.map((k) => [k, klasseName(k)])]),
+      subklassen: Object.fromEntries([['', '–'], ...(K?.subs ?? Object.values(DATEN.klassen).flatMap((k) => k.subs)).map((x) => [x, subName(x)])]),
+      raenge: Object.fromEntries(DATEN.raenge.map((r) => [r, rangName(r)])),
       warnungen: s.warnungen,
       istPsion: s.klasse === 'Psion', istThaumaturg: s.klasse === 'Thaumaturg',
       waffen: items('waffe').map((w) => ({ w, art: L(`Waffe.${w.system.art}`) })),
       ruestungen: items('ruestung'), ausruestung: items('ausruestung'),
-      kraefte: [...items('kraft'), ...items('zauber')].map((k) => ({ k, kat: L(`Kategorie.${k.system.kategorie}`), kosten: KATEGORIEN[k.system.kategorie]?.kosten, res: KATEGORIEN[k.system.kategorie]?.res === 'psi' ? 'PSI' : 'ME', probe: `${k.system.attr} + ${fertName(k.system.fertigkeit)}` })),
+      kraefte: [...items('kraft'), ...items('zauber')].map((k) => ({ k, kat: L(`Kategorie.${k.system.kategorie}`), kosten: KATEGORIEN[k.system.kategorie]?.kosten, res: KATEGORIEN[k.system.kategorie]?.res === 'psi' ? 'PSI' : 'ME', probe: `${abk(k.system.attr)} + ${fertName(k.system.fertigkeit)}` })),
       signaturen: items('signatur'), knoten: items('knoten'), traumata: items('trauma'), kontakte: items('kontakt'), extraFert: items('fertigkeit'),
       html: await anreichern(actor, ['system.hintergrund', 'system.rekrutierung', 'system.ersterFall', 'system.detail', 'system.anker', 'system.notizen', 'system.signatur', 'system.klassenbaum']),
     });
@@ -169,7 +175,7 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #senken(ev, el) { steigern(this.actor, el.dataset.art, el.dataset.key, -1); }
   static #laufbahnNeu() {
     const n = Math.max(-1, ...Object.keys(this.actor.system.laufbahn ?? {}).map(Number).filter(Number.isFinite)) + 1;
-    this.actor.update({ [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString('de-DE'), mission: '', ep: 0, fuer: '', rang: this.actor.system.rang } });
+    this.actor.update({ [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: '', ep: 0, fuer: '', rang: rangName(this.actor.system.rang) } });
   }
   static #laufbahnLoeschen(ev, el) { this.actor.update({ [`system.laufbahn.-=${el.closest('[data-zeile]').dataset.zeile}`]: null }); }
   static #bearbeiten() { this._bearbeiten = !this._bearbeiten; this.render(); }
@@ -196,6 +202,10 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
 }
 
 /* ------------------------------------------------------------ */
+/** Gespeicherte (deutsche) Stufen und Ursprünge der Gegner -> Schlüssel in ODIN.Gegner.Stufen / .Urspruenge */
+const GEGNER_STUFEN = { Handlanger: 'Handlanger', Profi: 'Profi', Elite: 'Elite', 'Anführer': 'Anfuehrer', Kreatur: 'Kreatur' };
+const URSPRUENGE = { 'Die Stimme': 'Stimme', 'Das Fremde': 'Fremde', 'Die Verwandelten': 'Verwandelte', 'Das Alte': 'Alte', 'Die Toten': 'Tote', 'Die Maschine': 'Maschine', 'Die Menschen': 'Menschen', 'Das Verschobene': 'Verschobene' };
+
 export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
     classes: ['odin', 'bogen', 'akte', 'gegner'],
@@ -211,8 +221,10 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
     const s = this.actor.system;
     Object.assign(ctx, {
       actor: this.actor, system: s, editable: this.isEditable,
-      stufen: Object.fromEntries(['Handlanger', 'Profi', 'Elite', 'Anführer', 'Kreatur'].map((x) => [x, x])),
-      urspruenge: Object.fromEntries(['Die Stimme', 'Das Fremde', 'Die Verwandelten', 'Das Alte', 'Die Toten', 'Die Maschine', 'Die Menschen', 'Das Verschobene'].map((x) => [x, x])),
+      stufen: Object.fromEntries(Object.entries(GEGNER_STUFEN).map(([x, k]) => [x, L(`Gegner.Stufen.${k}`)])),
+      urspruenge: Object.fromEntries(Object.entries(URSPRUENGE).map(([x, k]) => [x, L(`Gegner.Urspruenge.${k}`)])),
+      stufeAnzeige: GEGNER_STUFEN[s.stufe] ? L(`Gegner.Stufen.${GEGNER_STUFEN[s.stufe]}`) : s.stufe,
+      ursprungAnzeige: URSPRUENGE[s.ursprung] ? L(`Gegner.Urspruenge.${URSPRUENGE[s.ursprung]}`) : s.ursprung,
       grauenStufen: Object.fromEntries([[0, L('Grauen.Kein')], [1, L('Grauen.Unheimlich')], [2, L('Grauen.Verstoerend')], [3, L('Grauen.Grauenhaft')], [4, L('Grauen.Wahnsinnig')], [5, L('Grauen.Kosmisch')]]),
       html: await anreichern(this.actor, ['system.beschreibung', 'system.besonderheit']),
       akzent: '#5E1B16', quelle: this.actor.getFlag('odin-rpg', 'quelle') ?? '',
@@ -252,7 +264,7 @@ export class OdinItemBogen extends HandlebarsApplicationMixin(ItemSheetV2) {
     const psi = item.type === 'kraft';
     Object.assign(ctx, {
       item, system: item.system, typ: item.type, editable: this.isEditable,
-      attribute: Object.fromEntries(DATEN.attribute.map((a) => [a, `${a} ${attrName(a)}`])),
+      attribute: Object.fromEntries(DATEN.attribute.map((a) => [a, `${abk(a)} ${attrName(a)}`])),
       fertigkeiten: Object.fromEntries(DATEN.fertigkeiten.map((d) => [d.key, fertName(d.key)])),
       kategorien: Object.fromEntries(Object.entries(KATEGORIEN).filter(([, k]) => (psi ? k.res === 'psi' : k.res === 'me')).map(([id]) => [id, L(`Kategorie.${id}`)])),
       waffenArten: Object.fromEntries(Object.keys(WAFFEN_ARTEN).map((id) => [id, L(`Waffe.${id}`)])),
