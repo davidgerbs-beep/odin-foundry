@@ -553,7 +553,7 @@
       "AlleSprachen": "Show compendiums in all languages",
       "AlleSprachenHinweis": "Otherwise the compendium list only shows the O.D.I.N. compendiums in the current language.",
       "BuntSpielerfarbe": "Coloured dice in player colour",
-      "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player, the white dice stay white. When off, the coloured dice are dark red."
+      "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player instead of the colour of their class. The white dice stay white."
     },
     "EpMission": {
       "Titel": "XP after the mission",
