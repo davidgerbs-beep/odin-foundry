@@ -10,6 +10,22 @@ In Foundry unter **Spielsysteme → System installieren** diese Manifest-URL ein
 https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json
 ```
 
+## So sieht es aus
+
+Drei kurze Mitschnitte aus einer laufenden Welt (englische Oberfläche).
+
+**Probe:** Fertigkeitsprobe direkt aus dem Bogen, mit weißen und bunten Würfeln und dem Ergebnis im Chat.
+
+https://github.com/user-attachments/assets/d6edc4d6-7cc9-47af-baa8-349d08ab3b5f
+
+**Kampf:** Initiative, Angriff und Schaden auf einer Karte aus den Abenteuern.
+
+https://github.com/user-attachments/assets/8c4abb3f-9e96-4dbc-a32a-9c93bc4af188
+
+**Psi-Kraft:** eine Kraft aus dem Bogen einsetzen, mit PSI-Kosten und Wirkung.
+
+https://github.com/user-attachments/assets/f81e8008-41bc-400e-9a4f-e21297ea524e
+
 ## Was das System kann
 
 - **Personalakte in drei Blättern**, gestaltet wie die Klassenbögen aus dem Charaktergenerator: Kopfbalken in der Farbe der Klasse mit Emblem, Attributkarten mit Kreisen, Kästchenleisten für Lebenspunkte, Belastung, PSI und Magie-Energie, Fertigkeiten in drei Spalten mit weißen und bunten Würfeln. Blatt 2 zeigt „Deine Würfel“, die Fähigkeiten der Subklasse zum Anklicken, Waffen, Ausrüstung und die Signatur. Blatt 3 enthält Signatur, Klassenbaum und Laufbahn.
