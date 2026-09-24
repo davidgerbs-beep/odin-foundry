@@ -62,6 +62,10 @@ Hooks.once('init', () => {
     name: 'ODIN.Einstellung.BuntSpielerfarbe', hint: 'ODIN.Einstellung.BuntSpielerfarbeHinweis',
     scope: 'world', config: true, type: Boolean, default: false,
   });
+  game.settings.register('odin-rpg', 'autoBesiegt', {
+    name: 'ODIN.Einstellung.AutoBesiegt', hint: 'ODIN.Einstellung.AutoBesiegtHinweis',
+    scope: 'world', config: true, type: Boolean, default: true,
+  });
 });
 Hooks.on('renderCompendiumDirectory', (app, html) => {
   if (game.settings.get('odin-rpg', 'alleSprachen')) return;
@@ -130,5 +134,22 @@ Hooks.on('diceSoNiceRollStart', (id, ctx) => {
   for (const d of ctx.roll?.dice ?? []) {
     if (d.flavor === 'weiss') d.options.appearance = { colorset: 'odin-weiss', system: `odin-hell${nach}` };
     if (d.flavor === 'bunt') d.options.appearance = bunt;
+    /* Würfel ohne Farbangabe (Initiative, Preis, Trauma, Rückkopplung): weiße O.D.I.N.-Würfel */
+    if (!d.flavor && d.faces === 6 && !d.options.appearance) d.options.appearance = { colorset: 'odin-weiss', system: `odin-hell${nach}` };
+  }
+});
+
+/* LP auf 0: Gegner gelten als besiegt (Totenkopf, im Kampf markiert), Agenten als kampfunfähig.
+   Steigen die LP wieder, wird die Markierung zurückgenommen. Nur die aktive Spielleitung schreibt. */
+Hooks.on('updateActor', async (actor, changes) => {
+  if (!game.users.activeGM?.isSelf || !game.settings.get('odin-rpg', 'autoBesiegt')) return;
+  if (foundry.utils.getProperty(changes, 'system.lp.value') === undefined) return;
+  const unten = (actor.system.lp?.value ?? 1) <= 0;
+  const status = actor.type === 'gegner' ? 'dead' : actor.type === 'agent' ? 'unconscious' : null;
+  if (!status) return;
+  if (actor.statuses.has(status) !== unten) await actor.toggleStatusEffect(status, { active: unten, overlay: true });
+  if (actor.type !== 'gegner') return;
+  for (const k of game.combats) for (const c of k.combatants) {
+    if (c.actor?.uuid === actor.uuid && c.defeated !== unten) await c.update({ defeated: unten });
   }
 });

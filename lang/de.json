@@ -553,7 +553,9 @@
       "AlleSprachen": "Kompendien in allen Sprachen zeigen",
       "AlleSprachenHinweis": "Sonst zeigt die Kompendienliste nur die O.D.I.N.-Kompendien in der eingestellten Sprache.",
       "BuntSpielerfarbe": "Bunte Würfel in Spielerfarbe",
-      "BuntSpielerfarbeHinweis": "Mit Dice So Nice erscheinen die bunten Würfel (Fertigkeit) in der Farbe des würfelnden Spielers statt in der Farbe seiner Klasse. Die weißen Würfel bleiben weiß."
+      "BuntSpielerfarbeHinweis": "Mit Dice So Nice erscheinen die bunten Würfel (Fertigkeit) in der Farbe des würfelnden Spielers statt in der Farbe seiner Klasse. Die weißen Würfel bleiben weiß.",
+      "AutoBesiegt": "Besiegt automatisch markieren",
+      "AutoBesiegtHinweis": "Fallen die LP eines Gegners auf 0, erhält er den Totenkopf und gilt im Kampf als besiegt. Ein Agent bei 0 LP wird als bewusstlos markiert. Steigen die LP wieder, verschwindet die Markierung."
     },
     "EpMission": {
       "Titel": "EP nach der Mission",

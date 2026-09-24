@@ -553,7 +553,9 @@
       "AlleSprachen": "Show compendiums in all languages",
       "AlleSprachenHinweis": "Otherwise the compendium list only shows the O.D.I.N. compendiums in the current language.",
       "BuntSpielerfarbe": "Coloured dice in player colour",
-      "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player instead of the colour of their class. The white dice stay white."
+      "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player instead of the colour of their class. The white dice stay white.",
+      "AutoBesiegt": "Mark defeated automatically",
+      "AutoBesiegtHinweis": "When an adversary drops to 0 LP, it gets the skull and counts as defeated in combat. An agent at 0 LP is marked unconscious. If the LP rise again, the marker is removed."
     },
     "EpMission": {
       "Titel": "XP after the mission",
