@@ -1,4 +1,4 @@
-// Würfelsystem: zwei Farben, weiß ab 5, bunt ab 4 (Grundregelwerk, Kapitel IV)
+// Würfelsystem: zwei Farben, weiß ab 5, bunt ab 4, Bonuswürfel sind weiß (Grundregelwerk, Kapitel II „Das Würfelsystem“)
 import { DATEN } from './daten.mjs';
 import { abk } from './sprache.mjs';
 
