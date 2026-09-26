@@ -357,3 +357,53 @@
 .odin-knotenhinweise { font-size: 11px; margin-top: 6px; border-left: 2px solid #8B2A20; padding-left: 8px; }
 .odin-knotenhinweise p { margin: 2px 0; }
 #compendium .odin-andere-sprache { display: none !important; }
+
+/* ---- Zentrale: Stimmung und Fernschreiben ---- */
+#odin-stimmung { position: fixed; inset: 0; pointer-events: none; }
+#odin-stimmung.odin-st-flackern { animation: odin-flackern 7s steps(1) infinite; }
+#odin-stimmung.odin-st-nebel { background-size: 140% 140%; animation: odin-nebel 40s ease-in-out infinite alternate; }
+#odin-stimmung.odin-st-funkeln { animation: odin-funkeln 5s ease-in-out infinite alternate; }
+@keyframes odin-flackern { 0%, 71%, 74%, 90%, 92%, 100% { opacity: 1; } 72%, 91% { opacity: .25; background-color: rgba(0, 0, 0, .35); } }
+@keyframes odin-nebel { from { background-position: 0% 0%; } to { background-position: 100% 60%; } }
+@keyframes odin-funkeln { from { opacity: .75; } to { opacity: 1; } }
+.odin-zentrale .z-block { margin: 0 0 12px; }
+.odin-zentrale .z-block h3 { margin: 0 0 4px; font-family: 'Special Elite', monospace; }
+.odin-zentrale .hinweis { margin: 0 0 6px; font-size: .85em; opacity: .8; }
+.odin-zentrale .z-knoepfe { display: flex; flex-wrap: wrap; gap: 4px; }
+.odin-zentrale .z-knoepfe button { flex: 0 0 auto; width: auto; padding: 2px 8px; }
+.odin-zentrale .z-knoepfe button.aktiv { background: #8b2a20; color: #fff; }
+.odin-zentrale .z-regler { display: flex; gap: 8px; align-items: center; margin-top: 6px; }
+.odin-zentrale textarea { width: 100%; margin: 4px 0; font-family: 'Special Elite', monospace; }
+#odin-fern { position: fixed; left: 50%; top: 14%; transform: translateX(-50%); width: min(600px, 90vw); height: min(440px, 70vh); z-index: 1000; background: #1f1b16; padding: 34px 16px 16px; box-shadow: 0 12px 40px rgba(0, 0, 0, .7); border-radius: 6px; }
+#odin-fern .odin-fern-zu { position: absolute; top: 6px; right: 8px; width: auto; padding: 0 8px; line-height: 22px; }
+#odin-fern pre { margin: 0; height: 100%; box-sizing: border-box; padding: 18px 22px; overflow: auto; white-space: pre-wrap; cursor: pointer; background: #f3ecd8; color: #231b13; font: 17px/1.55 'Special Elite', 'Courier New', monospace;
+  background-image: linear-gradient(90deg, transparent 0 14px, rgba(139, 42, 32, .25) 14px 15px, transparent 15px), repeating-linear-gradient(transparent 0 26px, rgba(35, 27, 19, .06) 26px 27px); }
+#odin-fern pre::after { content: '▌'; animation: odin-blink .9s steps(1) infinite; }
+#odin-fern pre.fertig::after { content: ''; }
+@keyframes odin-blink { 50% { opacity: 0; } }
+.odin-fern-chat { background: #f3ecd8; color: #231b13; padding: 6px 8px; font-family: 'Special Elite', 'Courier New', monospace; }
+.odin-fern-chat .odin-fern-kopf { font-size: .8em; opacity: .75; border-bottom: 1px solid rgba(35, 27, 19, .3); margin-bottom: 4px; }
+.odin-fern-chat .odin-fern-text { white-space: pre-wrap; }
+.odin-fern-chat button { margin-top: 6px; font-size: .8em; }
+
+/* ---- Registratur: Was die Akte sagt ---- */
+.odin-zentrale .reg-suche { width: 100%; margin-bottom: 4px; }
+.odin-zentrale .reg-liste { display: flex; flex-wrap: wrap; gap: 3px; max-height: 150px; overflow: auto; margin-bottom: 6px; }
+.odin-zentrale .reg-liste button { flex: 0 0 auto; width: auto; padding: 1px 6px; font-size: .85em; }
+.odin-zentrale .reg-liste button.aktiv { background: #8b2a20; color: #fff; }
+.odin-reg-karte { background: #f3ecd8; color: #231b13; padding: 8px; margin-bottom: 6px; }
+.odin-reg-karte img { float: right; width: 110px; margin: 0 0 6px 8px; border: 1px solid #b8a67f; }
+.odin-reg-karte h3 { margin: 0 0 4px; font-family: 'Special Elite', monospace; }
+.odin-reg-karte h3 small { font-size: .7em; opacity: .7; }
+.odin-reg-karte blockquote { margin: 0 0 6px; font-style: italic; font-size: .9em; }
+.odin-reg-karte blockquote cite { display: block; font-size: .85em; opacity: .75; }
+.odin-reg-karte table, .odin-reg-ergebnis table { width: 100%; border-collapse: collapse; font-size: .85em; clear: both; }
+.odin-reg-karte th, .odin-reg-ergebnis th { text-align: left; vertical-align: top; width: 32%; padding: 2px 4px; }
+.odin-reg-karte td, .odin-reg-ergebnis td { padding: 2px 4px; }
+.odin-reg-karte table.akte tr, .odin-reg-ergebnis tr { border-top: 1px solid rgba(35, 27, 19, .2); }
+.odin-reg-ergebnis tr.zu td { opacity: .55; }
+.odin-reg-anfrage { display: flex; gap: 8px; align-items: flex-start; }
+.odin-reg-anfrage img { width: 64px; border: 1px solid #b8a67f; }
+.odin-reg-anfrage h3 { margin: 0 0 2px; }
+.odin-reg-anfrage p { margin: 0 0 4px; font-size: .9em; }
+.odin-reg-dialog .odin-check { display: block; }
