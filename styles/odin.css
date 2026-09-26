@@ -393,7 +393,8 @@
 .odin-zentrale .reg-liste button.aktiv { background: #8b2a20; color: #fff; }
 .odin-reg-karte { background: #f3ecd8; color: #231b13; padding: 8px; margin-bottom: 6px; }
 .odin-reg-karte img { float: right; width: 110px; margin: 0 0 6px 8px; border: 1px solid #b8a67f; }
-.odin-reg-karte h3 { margin: 0 0 4px; font-family: 'Special Elite', monospace; }
+.odin-reg-karte h3 { margin: 0 0 4px; font-family: 'Special Elite', monospace; color: #231b13; }
+.odin-reg-karte table th, .odin-reg-karte table td { color: #231b13; }
 .odin-reg-karte h3 small { font-size: .7em; opacity: .7; }
 .odin-reg-karte blockquote { margin: 0 0 6px; font-style: italic; font-size: .9em; }
 .odin-reg-karte blockquote cite { display: block; font-size: .85em; opacity: .75; }
