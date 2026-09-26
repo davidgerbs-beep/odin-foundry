@@ -1,5 +1,6 @@
 // Bögen für Agenten, Gegner und Items (ApplicationV2)
 import { DATEN } from './daten.mjs';
+import * as registratur from './registratur.mjs';
 import * as A from './aktionen.mjs';
 import { generatorDialog } from './import.mjs';
 import { baumKontext, knotenUmschalten, steigern, steigerKosten } from './baum.mjs';
@@ -202,6 +203,12 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
 }
 
 /* ------------------------------------------------------------ */
+/** Karteikarten-Code eines Registratur-Gegners: Flag aus dem Kompendium, sonst aus dem Bildnamen (REG-S-0211.webp). */
+function regCode(actor) {
+  return actor.getFlag('odin-rpg', 'registratur') ?? /REG-[A-Z]-\d{4}/.exec(actor.img ?? '')?.[0] ?? null;
+}
+
+/* ------------------------------------------------------------ */
 /** Gespeicherte (deutsche) Stufen und Ursprünge der Gegner -> Schlüssel in ODIN.Gegner.Stufen / .Urspruenge */
 const GEGNER_STUFEN = { Handlanger: 'Handlanger', Profi: 'Profi', Elite: 'Elite', 'Anführer': 'Anfuehrer', Kreatur: 'Kreatur', 'Verbündet': 'Verbuendet' };
 const URSPRUENGE = { 'Die Stimme': 'Stimme', 'Das Fremde': 'Fremde', 'Die Verwandelten': 'Verwandelte', 'Das Alte': 'Alte', 'Die Toten': 'Tote', 'Die Maschine': 'Maschine', 'Die Menschen': 'Menschen', 'Das Verschobene': 'Verschobene', Gedankenform: 'Gedankenform' };
@@ -212,7 +219,7 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
     position: { width: 780, height: 820 },
     window: { resizable: true },
     form: { submitOnChange: true },
-    actions: { kasten: GegnerBogen.#kasten, pool: GegnerBogen.#pool, poolNeu: GegnerBogen.#poolNeu, poolLoeschen: GegnerBogen.#poolLoeschen, grauenAusloesen: GegnerBogen.#grauen },
+    actions: { kasten: GegnerBogen.#kasten, pool: GegnerBogen.#pool, poolNeu: GegnerBogen.#poolNeu, poolLoeschen: GegnerBogen.#poolLoeschen, grauenAusloesen: GegnerBogen.#grauen, regAnfordern: GegnerBogen.#regAnfordern, regKarte: GegnerBogen.#regKarte },
   };
   static PARTS = { haupt: { template: 'systems/odin-rpg/templates/gegner.hbs', scrollable: [''] } };
 
@@ -229,6 +236,8 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
       html: await anreichern(this.actor, ['system.beschreibung', 'system.besonderheit']),
       akzent: '#5E1B16', quelle: this.actor.getFlag('odin-rpg', 'quelle') ?? '',
       lpKaestchen: kaestchen(s.lp.value, Math.min(s.lp.max, 60)),
+      regCode: game.user.isGM ? regCode(this.actor) : null,
+      knoepfe: !!s.grauen || (game.user.isGM && !!regCode(this.actor)),
     });
     return ctx;
   }
@@ -241,6 +250,12 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #pool(ev, el) { A.gegnerPool(this.actor, Number(el.closest('[data-index]').dataset.index)); }
   static #poolNeu() { const p = [...this.actor.system.toObject().pools, { name: L('Gegner.NeuerPool'), weiss: 3, bunt: 3, schaden: 0, durchschlag: 0, notiz: '' }]; this.actor.update({ 'system.pools': p }); }
   static #poolLoeschen(ev, el) { const i = Number(el.closest('[data-index]').dataset.index); const p = this.actor.system.toObject().pools; p.splice(i, 1); this.actor.update({ 'system.pools': p }); }
+  static #regAnfordern() { const c = regCode(this.actor); if (c) registratur.anfordern(c); }
+  static async #regKarte() {
+    const e = await registratur.eintrag(regCode(this.actor));
+    if (!e) { ui.notifications.warn(game.i18n.localize('ODIN.Registratur.Fehlt')); return; }
+    new foundry.applications.api.DialogV2({ window: { title: `${e.name} (${e.code})` }, position: { width: 560 }, content: `<div class="odin-reg-dialog">${registratur.karteHTML(e)}</div>`, buttons: [{ action: 'ok', label: 'OK', default: true }] }).render(true);
+  }
   static #grauen() {
     const s = this.actor.system;
     if (!s.grauen) return;
