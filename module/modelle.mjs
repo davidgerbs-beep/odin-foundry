@@ -158,8 +158,8 @@ export class GegnerModell extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       stufe: text('Profi'), ursprung: text('Die Menschen'), grauen: zahl(0, 0, 5), aktionen: zahl(1, 1, 5),
-      initiative: zahl(2, 0, 20), verteidigung: zahl(2, 1, 10), ruestung: zahl(0, 0, 20),
-      lp: new f.SchemaField({ value: zahl(8, -99, 999), max: zahl(8, 1, 999) }),
+      initiative: zahl(2, 0, 20), verteidigung: zahl(2, 0, 10), ruestung: zahl(0, 0, 20),
+      lp: new f.SchemaField({ value: zahl(8, -99, 999), max: zahl(8, 0, 999) }),
       pools: new f.ArrayField(new f.SchemaField({
         name: text(), weiss: zahl(3, 0, 20), bunt: zahl(3, 0, 20), schaden: zahl(0, 0, 30), durchschlag: zahl(0, 0, 10), notiz: text(),
       })),
