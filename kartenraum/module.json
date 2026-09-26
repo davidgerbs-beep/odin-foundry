@@ -1,0 +1,104 @@
+{
+  "id": "odin-kartenraum",
+  "title": "O.D.I.N. Der Kartenraum / The Map Room",
+  "version": "1.0.0",
+  "description": "<p>Band 23 „Der Kartenraum“: 146 Karten als Szenen, deutsch und englisch, je mit Spielerfassung und verborgener Fassung für die Spielleitung. Volume 23 “The Map Room”: 146 maps as scenes, German and English, each with a player version and a hidden game master version.</p>",
+  "authors": [
+    {
+      "name": "David Ger",
+      "url": "https://odin-rpg.pages.dev"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.368"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "odin-rpg",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "odin-kartenraum-szenen",
+      "label": "Der Kartenraum: Karten",
+      "path": "packs/odin-kartenraum-szenen",
+      "type": "Scene",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-kartenraum-verzeichnis",
+      "label": "Der Kartenraum: Verzeichnis",
+      "path": "packs/odin-kartenraum-verzeichnis",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "de"
+        }
+      }
+    },
+    {
+      "name": "odin-kartenraum-szenen-en",
+      "label": "The Map Room: Maps",
+      "path": "packs/odin-kartenraum-szenen-en",
+      "type": "Scene",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    },
+    {
+      "name": "odin-kartenraum-verzeichnis-en",
+      "label": "The Map Room: Index",
+      "path": "packs/odin-kartenraum-verzeichnis-en",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "odin-rpg": {
+          "sprache": "en"
+        }
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "O.D.I.N. Der Kartenraum",
+      "sorting": "m",
+      "color": "#3a3330",
+      "packs": [
+        "odin-kartenraum-szenen",
+        "odin-kartenraum-verzeichnis",
+        "odin-kartenraum-szenen-en",
+        "odin-kartenraum-verzeichnis-en"
+      ]
+    }
+  ],
+  "url": "https://github.com/davidgerbs-beep/odin-foundry",
+  "manifest": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/kartenraum/module.json",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/kartenraum-v1.0.0/odin-kartenraum.zip",
+  "license": "LICENSE"
+}
