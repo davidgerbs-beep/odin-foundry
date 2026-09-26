@@ -207,6 +207,13 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
 function regCode(actor) {
   return actor.getFlag('odin-rpg', 'registratur') ?? /REG-[A-Z]-\d{4}/.exec(actor.img ?? '')?.[0] ?? null;
 }
+/** Sprache der Karteikarte = Sprache des Gegners (deutsches oder englisches Kompendium), nicht der Oberfläche. */
+function regSprache(actor) {
+  const q = actor.getFlag('odin-rpg', 'quelle');
+  if (q === 'The Registry') return 'en';
+  if (q === 'Die Registratur') return 'de';
+  return game.i18n.lang?.startsWith('en') ? 'en' : 'de';
+}
 
 /* ------------------------------------------------------------ */
 /** Gespeicherte (deutsche) Stufen und Ursprünge der Gegner -> Schlüssel in ODIN.Gegner.Stufen / .Urspruenge */
@@ -250,9 +257,9 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #pool(ev, el) { A.gegnerPool(this.actor, Number(el.closest('[data-index]').dataset.index)); }
   static #poolNeu() { const p = [...this.actor.system.toObject().pools, { name: L('Gegner.NeuerPool'), weiss: 3, bunt: 3, schaden: 0, durchschlag: 0, notiz: '' }]; this.actor.update({ 'system.pools': p }); }
   static #poolLoeschen(ev, el) { const i = Number(el.closest('[data-index]').dataset.index); const p = this.actor.system.toObject().pools; p.splice(i, 1); this.actor.update({ 'system.pools': p }); }
-  static #regAnfordern() { const c = regCode(this.actor); if (c) registratur.anfordern(c); }
+  static #regAnfordern() { const c = regCode(this.actor); if (c) registratur.anfordern(c, regSprache(this.actor)); }
   static async #regKarte() {
-    const e = await registratur.eintrag(regCode(this.actor));
+    const e = await registratur.eintrag(regCode(this.actor), regSprache(this.actor));
     if (!e) { ui.notifications.warn(game.i18n.localize('ODIN.Registratur.Fehlt')); return; }
     new foundry.applications.api.DialogV2({ window: { title: `${e.name} (${e.code})` }, position: { width: 560 }, content: `<div class="odin-reg-dialog">${registratur.karteHTML(e)}</div>`, buttons: [{ action: 'ok', label: 'OK', default: true }] }).render(true);
   }

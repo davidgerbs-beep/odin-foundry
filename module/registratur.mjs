@@ -41,20 +41,20 @@ export function karteHTML(e, { mitAkte = true } = {}) {
 }
 
 /** Spielleitung: fordert die Wissensprobe bei allen am Tisch an. */
-export async function anfordern(code) {
-  const e = await eintrag(code);
+export async function anfordern(code, spr = sprache()) {
+  const e = await eintrag(code, spr);
   if (!e) return;
   await ChatMessage.create({
     content: `<div class="odin-reg-anfrage"><img src="${foto(e)}" alt=""><div><h3>${esc(e.name)}</h3><p>${esc(e.probe?.text)}</p>
       <button type="button" data-odin-aktion="akte">${L('Wuerfeln')}</button></div></div>`,
     speaker: { alias: 'O.D.I.N.' },
-    flags: { [SYS]: { akte: { code } } },
+    flags: { [SYS]: { akte: { code, spr } } },
   });
 }
 
 /** Spieler: würfelt die Wissensprobe mit der eigenen Figur und bekommt die erreichten Zeilen. */
-export async function wissensprobe(code) {
-  const e = await eintrag(code);
+export async function wissensprobe(code, spr = sprache()) {
+  const e = await eintrag(code, spr);
   if (!e) { ui.notifications.warn(L('Fehlt')); return; }
   const actor = canvas?.tokens?.controlled?.[0]?.actor ?? game.user.character;
   if (!actor || actor.type !== 'agent') { ui.notifications.warn(L('KeinAgent')); return; }
@@ -101,6 +101,6 @@ export function einrichten() {
   Hooks.on('renderChatMessageHTML', (msg, html) => {
     const k = html.querySelector('[data-odin-aktion="akte"]');
     if (!k) return;
-    k.addEventListener('click', () => { const d = msg.getFlag(SYS, 'akte'); if (d?.code) wissensprobe(d.code); });
+    k.addEventListener('click', () => { const d = msg.getFlag(SYS, 'akte'); if (d?.code) wissensprobe(d.code, d.spr); });
   });
 }
