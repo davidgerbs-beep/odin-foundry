@@ -64,7 +64,7 @@ Languages: German (default) and English. Sheets, class trees, signatures, compen
 
 ## Community und Neuigkeiten
 
-- Discord (Funkraum, Deutsch und Englisch): [discord.gg/hCw4C4Kh6](https://discord.gg/hCw4C4Kh6)
+- Discord (Funkraum, Deutsch und Englisch): [discord.gg/HVZu67uAZa](https://discord.gg/HVZu67uAZa)
 - Neuigkeiten als RSS-Feed: [Deutsch](https://odin-rpg.pages.dev/feed.xml) · [English](https://odin-rpg.pages.dev/en/feed.xml)
 - Fehler und Wünsche: [GitHub Issues](https://github.com/davidgerbs-beep/odin-foundry/issues)
 
