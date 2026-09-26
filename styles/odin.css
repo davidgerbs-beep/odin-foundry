@@ -404,6 +404,9 @@
 .odin-reg-karte th, .odin-reg-ergebnis th { text-align: left; vertical-align: top; width: 32%; padding: 2px 4px; }
 .odin-reg-karte td, .odin-reg-ergebnis td { padding: 2px 4px; }
 .odin-reg-karte table.akte tr, .odin-reg-ergebnis tr { border-top: 1px solid rgba(35, 27, 19, .2); }
+.odin-reg-karte table, .odin-reg-karte table tr, .odin-reg-karte table th, .odin-reg-karte table td { background: transparent; border: none; }
+.odin-reg-karte table tr { border-top: 1px solid rgba(35, 27, 19, .2); }
+.odin-reg-karte table tr:nth-child(even) { background: rgba(35, 27, 19, .05); }
 .odin-reg-ergebnis tr.zu td { opacity: .55; }
 .odin-reg-anfrage { display: flex; gap: 8px; align-items: flex-start; }
 .odin-reg-anfrage img { width: 64px; border: 1px solid #b8a67f; }
