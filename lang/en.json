@@ -625,7 +625,8 @@
       "KeinAgent": "Select your agent's token first, or assign yourself a character in the user settings.",
       "Fehlt": "This index card is not available.",
       "NichtErreicht": "not reached",
-      "AkteSagt": "What the file says"
+      "AkteSagt": "What the file says",
+      "KarteZeigen": "View index card"
     },
     "Attribut": {
       "ST": "Strength",

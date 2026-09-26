@@ -625,7 +625,8 @@
       "KeinAgent": "Wähle zuerst den Token deines Agenten aus oder weise dir in den Benutzereinstellungen eine Figur zu.",
       "Fehlt": "Diese Karteikarte ist nicht verfügbar.",
       "NichtErreicht": "nicht erreicht",
-      "AkteSagt": "Was die Akte sagt"
+      "AkteSagt": "Was die Akte sagt",
+      "KarteZeigen": "Karteikarte ansehen"
     },
     "Attribut": {
       "ST": "Stärke",
