@@ -47,7 +47,7 @@
       <td><input type="text" name="system.pools.{{i}}.notiz" value="{{p.notiz}}" data-tooltip="{{p.notiz}}"></td>
       <td><a data-action="poolLoeschen"><i class="fa-solid fa-trash"></i></a></td></tr>{{/each}}</tbody>
   </table>
-  {{#if system.grauen}}<div class="spur-knoepfe"><button type="button" data-action="grauenAusloesen"><i class="fa-solid fa-ghost"></i> {{localize "ODIN.Gegner.GrauenKnopf"}}</button></div>{{/if}}
+  {{#if knoepfe}}<div class="spur-knoepfe">{{#if system.grauen}}<button type="button" data-action="grauenAusloesen"><i class="fa-solid fa-ghost"></i> {{localize "ODIN.Gegner.GrauenKnopf"}}</button>{{/if}}{{#if regCode}}<button type="button" data-action="regAnfordern" data-tooltip="{{localize "ODIN.Registratur.BlockHinweis"}}"><i class="fa-solid fa-folder-open"></i> {{localize "ODIN.Registratur.Anfordern"}}</button><button type="button" data-action="regKarte"><i class="fa-solid fa-id-card"></i> {{localize "ODIN.Registratur.KarteZeigen"}}</button>{{/if}}</div>{{/if}}
   <div class="abschnitt"><span>{{localize "ODIN.Gegner.Besonderheit"}}</span></div>
   <prose-mirror name="system.besonderheit" button="true" editable="{{editable}}" toggled="true" value="{{system._source.besonderheit}}">{{{html.[system.besonderheit]}}}</prose-mirror>
   <div class="abschnitt"><span>{{localize "ODIN.Gegner.Beschreibung"}}</span></div>
