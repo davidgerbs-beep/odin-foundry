@@ -332,7 +332,7 @@
           "mod": 1
         },
         {
-          "wer": "Thaumaturgist",
+          "wer": "Alchemist",
           "mod": 1
         }
       ],
@@ -2536,7 +2536,7 @@
           "mod": 1
         },
         {
-          "wer": "whoever was healed by him",
+          "wer": "anyone he has healed",
           "mod": -1
         }
       ],
@@ -3013,7 +3013,7 @@
       {
         "stufe": "4 or more",
         "min": 4,
-        "text": "Medical findings, 1991: the agent deployed at the fire in 1979 was fatally wounded in Marseille, shot in the chest. He is alive. For three weeks a grey shell has been growing over his back. Attached is the operation report from 1979, with a note in the margin in another hand: “One of the corpses coughed.”"
+        "text": "Medical findings, November 1991: the agent deployed at the fire in 1979 was fatally wounded in Marseille, shot in the chest. He is alive. For three weeks a grey shell has been growing over his back. Attached is the operation report from 1979, with a note in the margin in another hand: “One of the corpses coughed.”"
       }
     ],
     "seite": 121,
@@ -4037,7 +4037,7 @@
     "haeufigkeit": "Rare. According to the legends in every river in Japan; the Registry knows of three",
     "verstand": "Human. Speaks the Japanese of the 18th century and keeps every agreement literally",
     "regionen": "East Asia. Japan, the Kokai, a tributary of the Tone in the south of Ibaraki Prefecture, at the hamlet of Numabe",
-    "ersteSichtung": "21 August 1954, dyke of the Kokai near Numabe. Report by a lone agent under the legend of an ethnologist with a teaching post in Tokyo, with six photos",
+    "ersteSichtung": "21 August 1954, dyke of the Kokai near Numabe. Report by a lone agent under cover as an ethnologist with a teaching post in Tokyo, with six photos",
     "letzteSichtung": "12 July 2026, phone video by a cyclist on the dyke, 300,000 views. Declared a mascot by the tourist office",
     "verluste": "None. Three children from Numabe, summer 1955, listed as bathing accidents",
     "signatur": [
@@ -4949,7 +4949,7 @@
     "haeufigkeit": "Rare. The legends know her everywhere in the snow country along the Sea of Japan",
     "verstand": "Human. She speaks little and always asks politely",
     "regionen": "East Asia. Japan, the Akiyamagō in the south of Niigata Prefecture, a valley on the border with Nagano, often cut off for days in winter",
-    "ersteSichtung": "30 January 2013. Report by a lone agent under legend as a translator: while clearing a roof, a man from the valley says that since 1985 he has held a stranger’s child every hard winter",
+    "ersteSichtung": "30 January 2013. Report by a lone agent under cover as a translator: while clearing a roof, a man from the valley says that since 1985 he has held a stranger’s child every hard winter",
     "letzteSichtung": "6 February 2026, 03:20, dashboard camera of a municipal snowplough",
     "verluste": "No agents. Two dead in one house, February 2018, in the snow accident statistics",
     "signatur": [
@@ -6122,7 +6122,7 @@
   {
     "code": "REG-M-0733",
     "name": "The Border Guard of 1983",
-    "zitat": "“There was no tower in the woods and no one there. But someone shouted ‘Halt! Stay where you are!’, and someone fired.”",
+    "zitat": "“There was no tower in the woods and no one there. But someone shouted ‘Halt! Stand still!’, and someone fired.”",
     "zitatQuelle": "Feldstecher, Veteran, Tactical Branch",
     "ursprung": "The Machine",
     "familie": "War Machines",
@@ -6139,11 +6139,11 @@
     "signatur": [
       {
         "sinn": "Smell",
-        "text": "Wet beech leaves. In three places on the slope, gun oil, as if someone had just cleaned a rifle."
+        "text": "Wet beech leaves. At three spots on the slope, gun oil, like a freshly cleaned rifle."
       },
       {
         "sinn": "Sound",
-        "text": "Before the challenge, a crackle like an old station announcement. Then a young man’s voice: “Halt! Stay where you are! Border guard! Hands up!” When a position turns, something rasps softly in the ground."
+        "text": "First a crackle like an old station tannoy. Then a young man’s voice: “Halt! Stand still! Border guard! Hands up!” A turning position rasps softly in the ground."
       },
       {
         "sinn": "Temperature",
