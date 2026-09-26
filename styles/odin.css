@@ -347,7 +347,9 @@
 .odin.bogen.gegner prose-mirror { min-height: 90px; background: #FFFDF8; border: .8px solid #CDBFA4; display: block; font-size: 12.5px; margin-bottom: 6px; }
 .odin.bogen.gegner .spur-knoepfe { margin: 4px 0 0; }
 .odin.bogen.gegner .gegner-bogen { display: flex; flex-direction: column; height: 100%; min-height: 0; }
-.odin.bogen.gegner .kopf-felder { grid-template-columns: 1.6fr 1fr 1.2fr 1fr .8fr; }
+.odin.bogen.gegner .kopf-felder { grid-template-columns: 1fr 1.2fr 1fr .8fr; }
+.odin.bogen.gegner .kopf-felder .feld.gross { grid-column: 1 / -1; }
+.odin.bogen.gegner .kopf-felder .feld.gross input { font-size: 20px; height: 26px; text-overflow: ellipsis; }
 .odin.bogen.akte prose-mirror { height: auto; }
 .odin.bogen.akte prose-mirror .editor-content { height: auto; max-height: none; overflow: visible; }
 /* Kästchen statt Foundry-Kontrollkästchen */
@@ -407,4 +409,4 @@
 .odin-reg-anfrage img { width: 64px; border: 1px solid #b8a67f; }
 .odin-reg-anfrage h3 { margin: 0 0 2px; }
 .odin-reg-anfrage p { margin: 0 0 4px; font-size: .9em; }
-.odin-reg-dialog .odin-check { display: block; }
+.odin-reg-dialog > p, .odin-reg-dialog .odin-check { grid-column: 1 / -1; display: flex; gap: 6px; align-items: center; margin: 2px 0; }
