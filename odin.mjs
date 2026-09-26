@@ -7,6 +7,7 @@ import * as wuerfel from './module/wuerfel.mjs';
 import { generatorImport } from './module/import.mjs';
 import * as baum from './module/baum.mjs';
 import * as sprache from './module/sprache.mjs';
+import * as zentrale from './module/zentrale.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -49,7 +50,7 @@ Hooks.once('init', () => {
     odinZelle: 'systems/odin-rpg/templates/odin-zelle.hbs',
     odinKnoten: 'systems/odin-rpg/templates/odin-knoten.hbs',
   });
-  game.odin = { DATEN, aktionen, wuerfel, generatorImport, baum, sprache };
+  game.odin = { DATEN, aktionen, wuerfel, generatorImport, baum, sprache, zentrale };
 });
 
 /* Kompendien nur in der eigenen Sprache zeigen (umschaltbar in den Einstellungen) */
@@ -85,6 +86,7 @@ Hooks.on('renderCompendiumDirectory', (app, html) => {
 });
 
 Hooks.on('renderChatMessageHTML', (message, html) => aktionen.chatKnoepfe(message, html));
+zentrale.einrichten();
 
 /* Dice So Nice: eigene O.D.I.N.-Würfel. Weiß für das Attribut, bunt in der Farbe der Klasse für die Fertigkeit.
    Augen statt Zahlen, auf der Sechs das Zeichen der Klasse (ohne Klasse die Windrose), Oberfläche wie gealtertes Bakelit. */
