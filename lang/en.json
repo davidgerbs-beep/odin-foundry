@@ -373,6 +373,7 @@
       "Einlesen": "Load",
       "Fehler": "Import failed: {f}",
       "KeineFigur": "This is not a character from the generator.",
+      "Platzhalter": "Export from the German or English generator, e.g. {\"odin\":\"character\",…} or {\"odin\":\"charakter\",…}",
       "Fertig": "{name} loaded."
     },
     "Steigern": {

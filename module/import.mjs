@@ -3,15 +3,18 @@
 // Englische Exporte werden erkannt (Klassenname, Fertigkeiten, Attributkürzel, Kräfte) und auf die internen
 // (deutschen) Schlüssel abgebildet; die Texte kommen aus den Daten in der Sprache des Exports.
 import { DATEN } from './daten.mjs';
-import { datenDe, datenEn, ATTR_NACH, fertNachName, probeLesen } from './sprache.mjs';
+import { datenDe, datenEn, ATTR_NACH, fertNachName, probeLesen, rangNachName } from './sprache.mjs';
 
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
 
+/** Platzhalter des Importdialogs in der Sprache der Oberfläche (localize, weil format die geschweiften Klammern ersetzen würde). */
+export const importPlatzhalter = () => game.i18n.localize('ODIN.Import.Platzhalter');
+
 export async function generatorDialog(actor) {
   const content = `<p>${L('Import.Text')}</p>
     <input type="file" name="datei" accept=".json,.odin,application/json">
-    <textarea name="text" rows="6" placeholder='{"odin":"charakter","version":1,"state":{…}}'></textarea>`;
+    <textarea name="text" rows="6" placeholder="${esc(importPlatzhalter())}"></textarea>`;
   const eingabe = await foundry.applications.api.DialogV2.prompt({
     window: { title: L('Import.Titel', { name: actor.name }) },
     content,
@@ -98,7 +101,8 @@ export function importDaten(j) {
     upd['system.epFrei'] = Math.max(0, Number(A.frei) || 0);
     upd['system.rang'] = DATEN.raenge[DATEN.rangEp.reduce((r, x, i) => (ep >= x ? i : r), 0)];
     const lb = {};
-    (A.log ?? []).forEach((l, i) => { lb[i] = { datum: l.d ?? '', mission: l.m ?? '', ep: Number(l.e) || 0, fuer: (l.f ?? []).map((x) => `${x.t} (${x.c})`).join('; '), rang: l.r ?? '' }; });
+    // Rang der Laufbahn als interner Schlüssel wie Klasse und Fertigkeiten; die Anzeige übersetzt ihn
+    (A.log ?? []).forEach((l, i) => { lb[i] = { datum: l.d ?? '', mission: l.m ?? '', ep: Number(l.e) || 0, fuer: (l.f ?? []).map((x) => `${x.t} (${x.c})`).join('; '), rang: rangNachName(l.r) || String(l.r ?? '') }; });
     upd['system.laufbahn'] = lb;
     upd['flags.odin-rpg.zwischenzeit'] = Number(A.zz) || 0;
     upd['flags.odin-rpg.attrZwischenzeit'] = Number.isFinite(A.attrZZ) ? A.attrZZ : -1;

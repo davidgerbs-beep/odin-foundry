@@ -373,6 +373,7 @@
       "Einlesen": "Einlesen",
       "Fehler": "Import fehlgeschlagen: {f}",
       "KeineFigur": "Das ist keine Figur aus dem Generator.",
+      "Platzhalter": "Export aus dem deutschen oder englischen Generator, z. B. {\"odin\":\"charakter\",…} oder {\"odin\":\"character\",…}",
       "Fertig": "{name} eingelesen."
     },
     "Steigern": {

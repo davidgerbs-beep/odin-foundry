@@ -35,6 +35,25 @@ export const T = () => (istEnglisch() && DATEN.en ? DATEN.en : datenDe());
 export const klasseName = (k) => (k ? T().klassen[k]?.name ?? k : '');
 export const subName = (s) => (s ? T().subklassen?.[s] ?? s : '');
 export const rangName = (r) => { const i = DATEN.raenge.indexOf(r); return i < 0 ? (r ?? '') : (T().raenge[i] ?? r); };
+
+/* ---------------- Ränge lesen, deutsch und englisch ---------------- */
+// Zuordnung aus den Rang-Listen beider Sprachen (gleiche Reihenfolge): "Cadet" und "Kadett" -> "Kadett".
+// Groß- und Kleinschreibung sowie Bindestrich oder Leerzeichen spielen keine Rolle ("Senior Agent" = "Senior-Agent").
+const rangForm = (n) => String(n ?? '').trim().toLowerCase().replace(/[\s-]+/g, ' ');
+const RANG_NACH = {};
+for (const liste of [DATEN.en?.raenge ?? [], DATEN.raenge]) liste.forEach((n, i) => { RANG_NACH[rangForm(n)] = DATEN.raenge[i]; });
+/** Rangname (deutsch oder englisch) -> interner Schlüssel aus DATEN.raenge, sonst ''. */
+export const rangNachName = (n) => RANG_NACH[rangForm(n)] ?? '';
+/** Rang für die Anzeige in der Sprache der Oberfläche; unbekannte Texte bleiben, wie sie sind. */
+export const rangAnzeige = (r) => rangName(rangNachName(r) || r);
+/** Setzt bekannte Rangnamen in Laufbahn-Einträgen (auch Teil-Updates) auf den internen Schlüssel. Ändert das Objekt direkt. */
+export function laufbahnRaengeNormalisieren(laufbahn) {
+  if (!laufbahn || typeof laufbahn !== 'object') return laufbahn;
+  for (const z of Object.values(laufbahn)) {
+    if (z && typeof z === 'object' && typeof z.rang === 'string') z.rang = rangNachName(z.rang) || z.rang;
+  }
+  return laufbahn;
+}
 /** Attributkürzel der Anzeige: ST/GE … auf Deutsch, STR/DEX … auf Englisch. */
 export const abk = (a) => (a ? T().attrAbk?.[a] ?? a : '');
 /** Fertigkeitsname der Spieldaten (so, wie er in Fähigkeiten und Knoten steht). */

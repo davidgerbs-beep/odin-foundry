@@ -62,7 +62,7 @@ export function kaufbar(actor, id) {
 function logZeile(actor, text, ep) {
   const lb = foundry.utils.deepClone(actor.system.laufbahn ?? {});
   const n = Math.max(-1, ...Object.keys(lb ?? {}).map(Number).filter(Number.isFinite)) + 1;
-  return { [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: '', ep: -ep, fuer: text, rang: rangName(actor.system.rang) } };
+  return { [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: '', ep: -ep, fuer: text, rang: actor.system.rang } };
 }
 
 export async function knotenUmschalten(actor, id) {

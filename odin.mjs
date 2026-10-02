@@ -25,6 +25,11 @@ class OdinActor extends Actor {
     if ((await super._preCreate(data, options, user)) === false) return false;
     if (this.type === 'agent') this.updateSource({ prototypeToken: { actorLink: true, disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY } });
   }
+  /** Ränge der Laufbahn werden als interner Schlüssel gespeichert, auch wenn sie im Bogen übersetzt eingetragen werden. */
+  async _preUpdate(changed, options, user) {
+    if ((await super._preUpdate(changed, options, user)) === false) return false;
+    sprache.laufbahnRaengeNormalisieren(changed.system?.laufbahn);
+  }
 }
 
 Hooks.once('init', () => {
