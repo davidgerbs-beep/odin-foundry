@@ -6,7 +6,7 @@ import { generatorDialog } from './import.mjs';
 import { baumKontext, knotenUmschalten, steigern, steigerKosten } from './baum.mjs';
 import { signaturKontext } from './signatur.mjs';
 import { attrName, fertName, KATEGORIEN, WAFFEN_ARTEN } from './wuerfel.mjs';
-import { T, abk, klasseName, subName, rangName, probeLesen } from './sprache.mjs';
+import { T, abk, klasseName, subName, rangName, rangAnzeige, probeLesen } from './sprache.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2, ItemSheetV2 } = foundry.applications.sheets;
@@ -130,7 +130,7 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
       preisKaestchen: Array.from({ length: 6 }, (_, i) => ({ n: i + 1, cls: i < s.preisAuto ? 'auto' : (i < s.preisWert ? 'an' : '') })),
       baum: baumKontext(actor, this._fremdSub),
       sig: signaturKontext(actor),
-      laufbahn: Object.entries(s.laufbahn ?? {}).filter(([, z]) => z && typeof z === 'object').map(([i, z]) => ({ i, ...z })),
+      laufbahn: Object.entries(s.laufbahn ?? {}).filter(([, z]) => z && typeof z === 'object').map(([i, z]) => ({ i, ...z, rang: rangAnzeige(z.rang) })),
       klassen: Object.fromEntries([['', '–'], ...klassen.map((k) => [k, klasseName(k)])]),
       subklassen: Object.fromEntries([['', '–'], ...(K?.subs ?? Object.values(DATEN.klassen).flatMap((k) => k.subs)).map((x) => [x, subName(x)])]),
       raenge: Object.fromEntries(DATEN.raenge.map((r) => [r, rangName(r)])),
@@ -176,7 +176,7 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #senken(ev, el) { steigern(this.actor, el.dataset.art, el.dataset.key, -1); }
   static #laufbahnNeu() {
     const n = Math.max(-1, ...Object.keys(this.actor.system.laufbahn ?? {}).map(Number).filter(Number.isFinite)) + 1;
-    this.actor.update({ [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: '', ep: 0, fuer: '', rang: rangName(this.actor.system.rang) } });
+    this.actor.update({ [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: '', ep: 0, fuer: '', rang: this.actor.system.rang } });
   }
   static #laufbahnLoeschen(ev, el) { this.actor.update({ [`system.laufbahn.-=${el.closest('[data-zeile]').dataset.zeile}`]: null }); }
   static #bearbeiten() { this._bearbeiten = !this._bearbeiten; this.render(); }
