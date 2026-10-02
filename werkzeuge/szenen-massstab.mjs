@@ -13,6 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lesePack } from './leveldb.mjs';
 import { stelleUm, kartenSchluessel } from './massstab.mjs';
+import { schreibePack } from './packschreiber.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const massstab = JSON.parse(fs.readFileSync(path.join(wurzel, 'daten/szenen_massstab.json'), 'utf8'));
@@ -70,20 +71,6 @@ function paketPack(daten, pack) {
     }
   }
   return anzahl;
-}
-
-async function schreibePack(ordner, daten) {
-  const { ClassicLevel } = await import('classic-level');
-  const neu = `${ordner}.neu`;
-  fs.rmSync(neu, { recursive: true, force: true });
-  const db = new ClassicLevel(neu, { keyEncoding: 'utf8', valueEncoding: 'json' });
-  const schluessel = [...daten.keys()].sort();
-  await db.batch(schluessel.map((key) => ({ type: 'put', key, value: daten.get(key) })));
-  await db.compactRange('\u0000', '￿');
-  await db.close();
-  for (const name of ['LOCK', 'LOG', 'LOG.old']) fs.rmSync(path.join(neu, name), { force: true });
-  fs.rmSync(ordner, { recursive: true, force: true });
-  fs.renameSync(neu, ordner);
 }
 
 for (const [packs, umstellen] of [[SZENEN, szenenPack], [PAKETE, paketPack]]) {
