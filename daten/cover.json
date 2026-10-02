@@ -1,0 +1,16 @@
+{
+  "_hinweis": "Buchcover im System. Quelle der Bilder: https://odin-rpg.pages.dev/bilder/cover/<datei> (520 x 736). Deutsche Packs bekommen das deutsche Cover, englische das englische. ersetzt nennt alte Bilder, die nirgends mehr vorkommen dürfen. Angewendet von werkzeuge/cover-tauschen.mjs, geprüft von tests/cover.test.mjs.",
+  "cover": [
+    {
+      "band": "Die anderen Dienste",
+      "de": "assets/cover/die-anderen-dienste.webp",
+      "en": "assets/cover/en-the-other-services.webp",
+      "ersetzt": ["assets/abenteuer/dienste/bilder/titelbild.webp"]
+    }
+  ],
+  "banner": {
+    "de": "assets/banner/abenteuerpakete.webp",
+    "en": "assets/banner/abenteuerpakete-en.webp",
+    "hinweis": "Vierte Kachel ist ein Ausschnitt des Covers von Die anderen Dienste. Die Windrose im Wasserzeichen trägt O (deutsch) oder E (englisch), deshalb ein Banner je Sprache."
+  }
+}
