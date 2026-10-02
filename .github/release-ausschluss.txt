@@ -1,0 +1,35 @@
+# Dateien, die im Repo liegen, aber nicht ins Release-ZIP gehören (genaue Pfade, eine Zeile je Datei).
+# Gelesen von .github/workflows/release-assets.yml, geprüft von tests/release.test.mjs:
+# Kein Eintrag darf vom System verwendet werden (Packs, Code, Vorlagen, Zuordnungen).
+
+# Daten der Werkzeuge unter werkzeuge/, nur zum Bauen der Packs
+daten/cover.json
+daten/szenen_massstab.json
+
+# Token-Bilder ohne Verwendung (fehlten auch im ZIP von v0.10.7)
+assets/token/npc-bing-03-agent-negotiator-maennlich-5.webp
+assets/token/npc-bing-03-agent-negotiator-maennlich-v2-3.webp
+assets/token/npc-bing-04-agent-negotiator-weiblich-v2-4.webp
+assets/token/npc-bing-05-agent-assassin-maennlich-v2-1.webp
+assets/token/npc-bing-07-agent-spy-maennlich-v2-1.webp
+assets/token/npc-bing-07-agent-spy-maennlich-v2-2.webp
+assets/token/npc-bing-07-agent-spy-maennlich-v2-4.webp
+assets/token/npc-bing-09-agent-saboteur-maennlich-v3-3.webp
+assets/token/npc-bing-09-agent-saboteur-maennlich-v3-4.webp
+assets/token/npc-bing-11-scientist-biochemist-maennlich-v2-2.webp
+assets/token/npc-bing-11-scientist-biochemist-maennlich-v2-4.webp
+assets/token/npc-bing-12-scientist-biochemist-weiblich-v2-2.webp
+assets/token/npc-bing-14-scientist-astrobiologist-weiblich-2.webp
+assets/token/npc-bing-15-scientist-physicist-maennlich-1.webp
+assets/token/npc-bing-15-scientist-physicist-maennlich-v2-1.webp
+assets/token/npc-bing-15-scientist-physicist-maennlich-v2-3.webp
+assets/token/npc-bing-31-thaumaturg-thaumaturgist-maennlich-2.webp
+assets/token/npc-bing-37-thaumaturg-chronomancer-maennlich-v2-1.webp
+assets/token/npc-bing-41-soldier-stormbreaker-maennlich-v2-4.webp
+assets/token/npc-bing-47-soldier-nanotech-veteran-maennlich-v2-1.webp
+assets/token/npc-bing-51-investigator-profiler-maennlich-v2-2.webp
+assets/token/npc-bing-54-investigator-journalist-weiblich-v2-4.webp
+assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-1.webp
+assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-3.webp
+assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-4.webp
+assets/token/npc-bing-59-investigator-paranormal-detective-maennlich-v2-3.webp
