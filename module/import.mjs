@@ -1,5 +1,5 @@
 // Import einer Figur aus dem Charaktergenerator (odin-rpg.pages.dev/generator/), deutsch oder englisch
-// Format: {odin: "charakter", version: 1, state: {...}}
+// Format: {odin: "charakter", version: 1, state: {...}}, der englische Generator schreibt odin: "character"
 // Englische Exporte werden erkannt (Klassenname, Fertigkeiten, Attributkürzel, Kräfte) und auf die internen
 // (deutschen) Schlüssel abgebildet; die Texte kommen aus den Daten in der Sprache des Exports.
 import { DATEN } from './daten.mjs';
@@ -22,10 +22,21 @@ export async function generatorDialog(actor) {
   try { await generatorImport(actor, JSON.parse(eingabe)); } catch (err) { ui.notifications.error(L('Import.Fehler', { f: err.message })); }
 }
 
+/** Kennungen im Feld "odin": deutscher und englischer Generator. */
+export const GENERATOR_KENNUNGEN = ['charakter', 'character'];
+
+/** true, wenn die Kennung zu einer Figur aus dem Generator passt. Fehlt sie, wird die Datei wie bisher angenommen. */
+export function kennungGueltig(odin) {
+  return !odin || GENERATOR_KENNUNGEN.includes(odin);
+}
+
 /** true, wenn der Export aus dem englischen Generator stammt. */
 export function istEnglischerExport(j, S = j?.state ?? j) {
   const lang = String(j?.lang ?? j?.sprache ?? S?.lang ?? '').toLowerCase();
   if (lang) return lang.startsWith('en');
+  // Die Kennung verrät die Sprache des Generators eindeutig
+  if (j?.odin === 'character') return true;
+  if (j?.odin === 'charakter') return false;
   const N = DATEN.en?.namen;
   if (!N || !S) return false;
   if (N.klassen[S.cls] && !DATEN.klassen[S.cls]) return true;
@@ -41,7 +52,7 @@ export function istEnglischerExport(j, S = j?.state ?? j) {
 /** Wandelt einen Export (deutsch oder englisch) in Updates und Items um, ohne Foundry-Dokumente anzufassen. */
 export function importDaten(j) {
   const S = j?.state ?? j;
-  if (!S?.cls || (j.odin && j.odin !== 'charakter')) throw new Error(L('Import.KeineFigur'));
+  if (!S?.cls || !kennungGueltig(j.odin)) throw new Error(L('Import.KeineFigur'));
   const en = istEnglischerExport(j, S);
   const Q = en ? datenEn() : datenDe();
   const N = en ? (DATEN.en?.namen ?? {}) : {};
