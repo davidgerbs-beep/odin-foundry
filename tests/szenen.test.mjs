@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lesePack } from '../werkzeuge/leveldb.mjs';
 import { RASTER_MIN, bildRechteck, kartenSchluessel, stelleUm } from '../werkzeuge/massstab.mjs';
+import { tokenGroesseAnpassen } from '../module/szenen.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const massstab = JSON.parse(fs.readFileSync(path.join(wurzel, 'daten/szenen_massstab.json'), 'utf8'));
@@ -86,10 +87,15 @@ for (const { pack, szene, teile, src } of szenen) {
     assert.deepEqual([szene.width, szene.height], [w, h]);
   });
 
-  test(`${name}: Token einer Person 0,8 bis 1,2 m`, () => {
+  test(`${name}: Token einer Person 0,8 bis 1,2 m, auf Lageplänen tokenFelder`, () => {
+    assert.equal(szene.flags?.['odin-rpg']?.massstab?.tokenFelder, eintrag.tokenFelder);
     for (const t of teile.tokens) {
       assert.equal(t.width, t.height, t.name);
       assert.equal(t.width * 2, Math.round(t.width * 2), `${t.name}: Breite ${t.width} nicht in Schritten von 0,5`);
+      if (eintrag.tokenFelder) {
+        assert.equal(t.width, eintrag.tokenFelder, t.name);
+        continue;
+      }
       const meter = (t.width * szene.grid.size) / eintrag.pxProMeter;
       assert.ok(meter >= 0.8 && meter <= 1.2, `${t.name}: ${meter.toFixed(2)} m`);
     }
@@ -145,4 +151,49 @@ test('Umrechnung: Bildpunkte bleiben, Token behält Mittelpunkt, zweiter Lauf ä
   const stand = JSON.stringify([szene, teile]);
   stelleUm(szene, teile, eintrag);
   assert.equal(JSON.stringify([szene, teile]), stand);
+});
+
+test('Lagepläne: Karten 1 und 5 haben 1,5 Felder, alle anderen keine eigene Token-Größe', () => {
+  for (const [k, e] of Object.entries(massstab.karten)) {
+    assert.equal(e.tokenFelder, ['grauakten/01', 'grauakten/05'].includes(k) ? 1.5 : undefined, k);
+  }
+});
+
+test('Umrechnung: tokenFelder setzt die Breite, Mittelpunkt bleibt, Maßstab bleibt', () => {
+  const szene = { padding: 0.1, width: 1400, height: 990, grid: { size: 22, distance: 2, units: 'm' } };
+  const teile = { tokens: [{ name: 'A', x: 700, y: 400, width: 0.5, height: 0.5 }] };
+  stelleUm(szene, teile, { pxProMeter: 11.2, rasterMeter: 2, tokenFelder: 1.5 });
+  assert.deepEqual(szene.grid, { size: 22, distance: 2, units: 'm' });
+  assert.equal(teile.tokens[0].width, 1.5);
+  assert.equal(teile.tokens[0].x + 16.5, 705.5);
+  assert.equal(szene.flags['odin-rpg'].massstab.tokenFelder, 1.5);
+});
+
+// Hook für neu gezogene Token mit Platzhaltern statt Foundry-Dokumenten
+function neuerToken(szeneFlags, groesse, vorlage) {
+  return {
+    parent: { flags: szeneFlags },
+    width: groesse, height: groesse,
+    actor: vorlage ? { prototypeToken: { width: vorlage, height: vorlage } } : null,
+    updateSource(d) { Object.assign(this, d); },
+  };
+}
+
+test('Hook: neu gezogener Akteur bekommt auf Lageplänen 1,5 Felder', () => {
+  const t = neuerToken({ 'odin-rpg': { massstab: { tokenFelder: 1.5 } } }, 1, 1);
+  tokenGroesseAnpassen(t);
+  assert.equal(t.width, 1.5);
+  assert.equal(t.height, 1.5);
+});
+
+test('Hook: andere Szenen und bewusst geänderte Größen bleiben', () => {
+  const ohne = neuerToken({ 'odin-rpg': { massstab: { pxProMeter: 24.2 } } }, 1, 1);
+  tokenGroesseAnpassen(ohne);
+  assert.equal(ohne.width, 1);
+  const leer = neuerToken({}, 1, 1);
+  tokenGroesseAnpassen(leer);
+  assert.equal(leer.width, 1);
+  const kopie = neuerToken({ 'odin-rpg': { massstab: { tokenFelder: 1.5 } } }, 3, 1);
+  tokenGroesseAnpassen(kopie);
+  assert.equal(kopie.width, 3);
 });

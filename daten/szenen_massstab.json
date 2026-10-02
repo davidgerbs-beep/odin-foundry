@@ -1,10 +1,11 @@
 {
-  "_hinweis": "Gemessener Maßstab der Kartenbilder unter assets/abenteuer/<abenteuer>/karten_<sprache>/<nr>.webp. Deutsche und englische Fassung sind deckungsgleich. pxProMeter ist der echte Maßstab des Bildes, rasterMeter die Kantenlänge eines Rasterfelds in Metern (1 oder 2, damit ein Token von 1 m eine Breite von 1 oder 0,5 Feldern hat; Foundry erlaubt Token-Breiten nur in Schritten von 0,5). Die Rastergröße ergibt sich als round(pxProMeter * rasterMeter). ablage ist ein freier Platz im Bild (Bildkoordinaten) für Token, die bisher außerhalb des Bildes lagen. Angewendet von werkzeuge/szenen-massstab.mjs, geprüft von tests/szenen.test.mjs.",
+  "_hinweis": "Gemessener Maßstab der Kartenbilder unter assets/abenteuer/<abenteuer>/karten_<sprache>/<nr>.webp. Deutsche und englische Fassung sind deckungsgleich. pxProMeter ist der echte Maßstab des Bildes, rasterMeter die Kantenlänge eines Rasterfelds in Metern (1 oder 2, damit ein Token von 1 m eine Breite von 1 oder 0,5 Feldern hat; Foundry erlaubt Token-Breiten nur in Schritten von 0,5). Die Rastergröße ergibt sich als round(pxProMeter * rasterMeter). tokenFelder setzt auf Lageplänen eine größere Token-Breite, weil eine Person in echter Größe dort am Tisch nicht mehr zu sehen ist; der Maßstab des Rasters bleibt, die Szene trägt den Wert als Flag, und neu gezogene Akteure bekommen ihn auch (module/szenen.mjs). ablage ist ein freier Platz im Bild (Bildkoordinaten) für Token, die bisher außerhalb des Bildes lagen. Angewendet von werkzeuge/szenen-massstab.mjs, geprüft von tests/szenen.test.mjs.",
   "personMeter": 1,
   "karten": {
     "grauakten/01": {
       "pxProMeter": 10,
       "rasterMeter": 2,
+      "tokenFelder": 1.5,
       "messung": "Skizze laut Bild nicht maßstabsgetreu, nur die Röhren sind verkürzt. Röhrenbreite 6 m (Legende) = 59 bis 63 px, Schachtdurchmesser 22 m = 220 px."
     },
     "grauakten/02": {
@@ -28,6 +29,7 @@
     "grauakten/05": {
       "pxProMeter": 11.2,
       "rasterMeter": 2,
+      "tokenFelder": 1.5,
       "messung": "Maßstabsleiste 10 m = 112 px (x 198 bis 310). Probe: Volksschule 225 x 115 px, also 20 x 10 m."
     },
     "grauakten/06": {

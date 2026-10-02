@@ -8,6 +8,7 @@ import { generatorImport } from './module/import.mjs';
 import * as baum from './module/baum.mjs';
 import * as sprache from './module/sprache.mjs';
 import * as zentrale from './module/zentrale.mjs';
+import { tokenGroesseAnpassen } from './module/szenen.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -89,6 +90,9 @@ Hooks.on('renderCompendiumDirectory', (app, html) => {
     f.classList.toggle('odin-andere-sprache', eintraege.length > 0 && eintraege.every((li) => li.classList.contains('odin-andere-sprache')));
   }
 });
+
+/* Lagepläne mit eigener Token-Größe (Graue Akten, Karte 1 und 5): neu gezogene Token anpassen */
+Hooks.on('preCreateToken', (token) => tokenGroesseAnpassen(token));
 
 Hooks.on('renderChatMessageHTML', (message, html) => aktionen.chatKnoepfe(message, html));
 zentrale.einrichten();

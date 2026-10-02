@@ -29,7 +29,8 @@ export function kartenSchluessel(src) {
 /** Zielwerte für eine Karte aus den Messdaten. */
 export function zielWerte(eintrag, personMeter = 1) {
   const size = Math.round(eintrag.pxProMeter * eintrag.rasterMeter);
-  const tokenFelder = personMeter / eintrag.rasterMeter;
+  // Eigene Token-Größe für Lagepläne, auf denen eine Person in echter Größe nur ein Punkt wäre
+  const tokenFelder = eintrag.tokenFelder ?? personMeter / eintrag.rasterMeter;
   if (size < RASTER_MIN) throw new Error(`Rastergröße ${size} kleiner als ${RASTER_MIN}`);
   if (Math.round(tokenFelder * 2) !== tokenFelder * 2) throw new Error(`Token-Breite ${tokenFelder} ist kein Vielfaches von 0,5`);
   return { size, distance: eintrag.rasterMeter, tokenFelder };
@@ -41,7 +42,7 @@ const runde = (wert, stellen = 2) => Math.round(wert * 10 ** stellen) / 10 ** st
  * Stellt eine Szene auf neues Raster um. Das Bild bleibt unverändert, alles Platzierte
  * bleibt an derselben Stelle des Bildes:
  * - Positionen wandern um die Änderung des Rands vor dem Bild mit,
- * - Token behalten ihren Mittelpunkt und bekommen die Breite einer Person,
+ * - Token behalten ihren Mittelpunkt und bekommen die Breite einer Person (oder tokenFelder),
  * - Lichtradien (in Metern) werden so umgerechnet, dass sie im Bild gleich groß bleiben,
  * - Token außerhalb des Bildes kommen auf den Ablageplatz.
  * `teile` enthält die eingebetteten Dokumente als Arrays (tokens, lights, notes, walls ...).
@@ -99,7 +100,11 @@ export function stelleUm(szene, teile, eintrag, personMeter = 1) {
   szene.flags ??= {};
   szene.flags['odin-rpg'] = {
     ...(szene.flags['odin-rpg'] ?? {}),
-    massstab: { pxProMeter: eintrag.pxProMeter, messung: eintrag.messung },
+    massstab: {
+      pxProMeter: eintrag.pxProMeter,
+      messung: eintrag.messung,
+      ...(eintrag.tokenFelder ? { tokenFelder: eintrag.tokenFelder } : {}),
+    },
   };
   return { alt, ziel, dx, dy, faktor, tokenAlt, abgelegt: draussen.map((t) => t.name) };
 }
