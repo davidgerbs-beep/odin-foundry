@@ -1,0 +1,50 @@
+{
+  "_hinweis": "Gemessener Maßstab der Kartenbilder unter assets/abenteuer/<abenteuer>/karten_<sprache>/<nr>.webp. Deutsche und englische Fassung sind deckungsgleich. pxProMeter ist der echte Maßstab des Bildes, rasterMeter die Kantenlänge eines Rasterfelds in Metern (1 oder 2, damit ein Token von 1 m eine Breite von 1 oder 0,5 Feldern hat; Foundry erlaubt Token-Breiten nur in Schritten von 0,5). Die Rastergröße ergibt sich als round(pxProMeter * rasterMeter). ablage ist ein freier Platz im Bild (Bildkoordinaten) für Token, die bisher außerhalb des Bildes lagen. Angewendet von werkzeuge/szenen-massstab.mjs, geprüft von tests/szenen.test.mjs.",
+  "personMeter": 1,
+  "karten": {
+    "grauakten/01": {
+      "pxProMeter": 10,
+      "rasterMeter": 2,
+      "messung": "Skizze laut Bild nicht maßstabsgetreu, nur die Röhren sind verkürzt. Röhrenbreite 6 m (Legende) = 59 bis 63 px, Schachtdurchmesser 22 m = 220 px."
+    },
+    "grauakten/02": {
+      "pxProMeter": 24.2,
+      "rasterMeter": 1,
+      "messung": "Maßstabsleiste 5 m = 121 px (x 124 bis 245). Probe: Raum 4/12 mit 4 x 5 m = 98 x 118 px, Flur von 1977 mit 3 x 10 m = 75 x 240 px.",
+      "ablage": [1330, 940]
+    },
+    "grauakten/03": {
+      "pxProMeter": 25.4,
+      "rasterMeter": 1,
+      "messung": "Maßstabsleiste 5 m = 127 px (x 160 bis 287). Probe: Verkaufsraum mit 8 x 4 m = 208 x 103 px, Gasse 2 m = 50 px.",
+      "ablage": [1330, 940]
+    },
+    "grauakten/04": {
+      "pxProMeter": 23.6,
+      "rasterMeter": 1,
+      "messung": "Maßstabsleiste 5 m = 118 px (x 93 bis 211). Probe: Türen 22 bis 25 px, also rund 1 m.",
+      "ablage": [1160, 1690]
+    },
+    "grauakten/05": {
+      "pxProMeter": 11.2,
+      "rasterMeter": 2,
+      "messung": "Maßstabsleiste 10 m = 112 px (x 198 bis 310). Probe: Volksschule 225 x 115 px, also 20 x 10 m."
+    },
+    "grauakten/06": {
+      "pxProMeter": 29,
+      "rasterMeter": 1,
+      "messung": "Maßstabsleiste 5 m = 145 px (x 76 bis 221). Probe: Speisesaal 235 px breit, also 8 m, Türen rund 28 px."
+    },
+    "grauakten/07": {
+      "pxProMeter": 20.2,
+      "rasterMeter": 1,
+      "messung": "Maßstabsleiste 5 m = 101 px (x 154 bis 255). Probe: Haupthaus 355 px breit, also 17,5 m, Türen rund 20 px.",
+      "ablage": [1330, 940]
+    },
+    "grauakten/08": {
+      "pxProMeter": 105,
+      "rasterMeter": 1,
+      "messung": "Maßstabsleiste 1 m = 105 px (x 109 bis 214). Probe: Holztreppe 1 m breit = 102 px, Kreidekreis 2 m = 210 px."
+    }
+  }
+}
