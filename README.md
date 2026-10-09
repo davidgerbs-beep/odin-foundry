@@ -10,6 +10,14 @@ In Foundry unter **Spielsysteme → System installieren** diese Manifest-URL ein
 https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json
 ```
 
+### Halloween-Würfel (kostenloses Modul)
+
+Knochen und Kürbis für Dice So Nice, schwarze Augen, auf der Sechs ein Kürbisgesicht. Mit dem System O.D.I.N. würfeln die Proben im Oktober damit (in den Moduleinstellungen auch immer oder nie), in anderen Systemen ist es ein Würfelsatz zum Auswählen. Unter **Module → Modul installieren** diese Manifest-URL eintragen:
+
+```
+https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/halloween/module.json
+```
+
 ## So sieht es aus
 
 Drei kurze Mitschnitte aus einer laufenden Welt (englische Oberfläche).

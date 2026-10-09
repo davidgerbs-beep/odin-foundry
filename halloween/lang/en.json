@@ -1,0 +1,15 @@
+{
+  "ODIN_HALLOWEEN": {
+    "System": "O.D.I.N. Halloween (jack-o'-lantern on the six)",
+    "Knochen": "O.D.I.N. Halloween: Bone",
+    "Kuerbis": "O.D.I.N. Halloween: Pumpkin",
+    "Kategorie": "O.D.I.N. Halloween",
+    "Einst": {
+      "Name": "Halloween dice for O.D.I.N. rolls",
+      "Hinweis": "Only with the O.D.I.N. system: white dice become bone, coloured dice pumpkin. In other systems, choose the dice set in the Dice So Nice settings.",
+      "Oktober": "In October",
+      "Immer": "Always",
+      "Nie": "Never"
+    }
+  }
+}
