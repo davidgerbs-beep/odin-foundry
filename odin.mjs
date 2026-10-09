@@ -9,6 +9,7 @@ import * as baum from './module/baum.mjs';
 import * as sprache from './module/sprache.mjs';
 import * as zentrale from './module/zentrale.mjs';
 import { tokenGroesseAnpassen } from './module/szenen.mjs';
+import * as zaehler from './module/zaehler.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -96,6 +97,7 @@ Hooks.on('preCreateToken', (token) => tokenGroesseAnpassen(token));
 
 Hooks.on('renderChatMessageHTML', (message, html) => aktionen.chatKnoepfe(message, html));
 zentrale.einrichten();
+zaehler.einrichten();
 
 /* Dice So Nice: eigene O.D.I.N.-Würfel. Weiß für das Attribut, bunt in der Farbe der Klasse für die Fertigkeit.
    Augen statt Zahlen, auf der Sechs das Zeichen der Klasse (ohne Klasse die Windrose), Oberfläche wie gealtertes Bakelit. */
