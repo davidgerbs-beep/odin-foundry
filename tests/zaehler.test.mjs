@@ -81,5 +81,5 @@ test('Netzfehler bleiben still', async () => {
 test('Sprache und Tag', () => {
   assert.deepEqual(['de', 'de-AT', 'en', 'EN-us', 'fr', '', undefined].map(spracheKurz), ['de', 'de', 'en', 'en', 'andere', 'andere', 'andere']);
   assert.equal(tagHeute(new Date('2026-10-09T23:30:00-02:00')), '2026-10-10');
-  assert.equal(typeof ZAEHLER_URL, 'string');
+  assert.equal(ZAEHLER_URL, 'https://odin-zaehler.david-ger-bs.workers.dev', 'Adresse des Workers (odin-werkstatt/zaehler)');
 });

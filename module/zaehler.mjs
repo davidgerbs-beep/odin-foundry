@@ -5,7 +5,7 @@
 const SYS = 'odin-rpg';
 
 /** Adresse des Zählers (ohne /ping). Leer: es wird nichts gesendet. */
-export const ZAEHLER_URL = '';
+export const ZAEHLER_URL = 'https://odin-zaehler.david-ger-bs.workers.dev';
 
 /** Tag nach UTC wie im Zähler, damit „einmal am Tag“ auf beiden Seiten derselbe Tag ist. */
 export const tagHeute = (d = new Date()) => d.toISOString().slice(0, 10);
