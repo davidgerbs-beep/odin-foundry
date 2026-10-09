@@ -1,0 +1,60 @@
+# Hängt an ein veröffentlichtes Release des Moduls „O.D.I.N. Halloween-Würfel“ die Assets odin-halloween.zip und module.json.
+# Das Release selbst wird im Browser angelegt; der Tag muss halloween-v<version aus halloween/module.json> heißen.
+# Inhalt des ZIP: alle Dateien aus halloween/ im Repo, flach im Wurzelordner (module.json oben, wie beim Kartenraum).
+name: Halloween-Würfel
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  assets:
+    if: startsWith(github.event.release.tag_name, 'halloween-v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stand des Tags auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Tag, Version und Download-Link prüfen
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          VERSION=$(jq -r .version halloween/module.json)
+          if [ "$TAG" != "halloween-v$VERSION" ]; then
+            echo "::error::Tag $TAG passt nicht zur Version $VERSION in halloween/module.json (erwartet halloween-v$VERSION)."
+            exit 1
+          fi
+          DOWNLOAD=$(jq -r .download halloween/module.json)
+          ERWARTET="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/odin-halloween.zip"
+          if [ "$DOWNLOAD" != "$ERWARTET" ]; then
+            echo "::error::Download-Link in halloween/module.json ist $DOWNLOAD, erwartet $ERWARTET."
+            exit 1
+          fi
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Tests
+        run: node --test tests/halloween.test.mjs
+
+      - name: odin-halloween.zip bauen
+        run: |
+          cd halloween
+          git ls-files | zip -X -q ../odin-halloween.zip -@
+          cd ..
+          unzip -l odin-halloween.zip
+          unzip -l odin-halloween.zip module.json halloween.mjs > /dev/null
+          cp halloween/module.json module.json
+
+      - name: Assets an das Release hängen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" odin-halloween.zip module.json --clobber --repo "$GITHUB_REPOSITORY"

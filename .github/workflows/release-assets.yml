@@ -1,6 +1,6 @@
 # Hängt an ein veröffentlichtes Release die Assets odin-rpg.zip und system.json.
 # Das Release selbst wird im Browser angelegt; der Tag muss v<version aus system.json> heißen.
-# Inhalt des ZIP: alle Dateien des Systems aus dem Repo, ohne tests, werkzeuge, kartenraum,
+# Inhalt des ZIP: alle Dateien des Systems aus dem Repo, ohne tests, werkzeuge, kartenraum, halloween,
 # media, .github und Punktdateien, ohne die Dateien aus .github/release-ausschluss.txt,
 # flach im Wurzelordner wie bei den bisherigen Releases.
 name: Release-Assets
@@ -14,6 +14,8 @@ permissions:
 
 jobs:
   assets:
+    # Nur Releases des Systems (v…); Module wie kartenraum-v… und halloween-v… haben eigene Tags
+    if: startsWith(github.event.release.tag_name, 'v')
     runs-on: ubuntu-latest
     steps:
       - name: Stand des Tags auschecken
@@ -49,7 +51,7 @@ jobs:
         run: |
           grep -v -E '^(#|$)' .github/release-ausschluss.txt > "$RUNNER_TEMP/ausschluss.txt"
           git ls-files \
-            | grep -v -E '^(tests|werkzeuge|kartenraum|media|\.github)/|^\.' \
+            | grep -v -E '^(tests|werkzeuge|kartenraum|halloween|media|\.github)/|^\.' \
             | grep -v -x -F -f "$RUNNER_TEMP/ausschluss.txt" \
             | zip -X -q odin-rpg.zip -@
           unzip -l odin-rpg.zip | tail -1
