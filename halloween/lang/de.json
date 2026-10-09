@@ -1,0 +1,15 @@
+{
+  "ODIN_HALLOWEEN": {
+    "System": "O.D.I.N. Halloween (Kürbisgesicht auf der Sechs)",
+    "Knochen": "O.D.I.N. Halloween: Knochen",
+    "Kuerbis": "O.D.I.N. Halloween: Kürbis",
+    "Kategorie": "O.D.I.N. Halloween",
+    "Einst": {
+      "Name": "Halloween-Würfel bei O.D.I.N.-Proben",
+      "Hinweis": "Nur mit dem System O.D.I.N.: weiße Würfel werden Knochen, bunte Würfel Kürbis. In anderen Systemen den Würfelsatz in den Einstellungen von Dice So Nice wählen.",
+      "Oktober": "Im Oktober",
+      "Immer": "Immer",
+      "Nie": "Nie"
+    }
+  }
+}
