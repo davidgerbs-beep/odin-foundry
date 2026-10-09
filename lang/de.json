@@ -557,7 +557,9 @@
       "BuntSpielerfarbe": "Bunte Würfel in Spielerfarbe",
       "BuntSpielerfarbeHinweis": "Mit Dice So Nice erscheinen die bunten Würfel (Fertigkeit) in der Farbe des würfelnden Spielers statt in der Farbe seiner Klasse. Die weißen Würfel bleiben weiß.",
       "AutoBesiegt": "Besiegt automatisch markieren",
-      "AutoBesiegtHinweis": "Fallen die LP eines Gegners auf 0, erhält er den Totenkopf und gilt im Kampf als besiegt. Ein Agent bei 0 LP wird als bewusstlos markiert. Steigen die LP wieder, verschwindet die Markierung."
+      "AutoBesiegtHinweis": "Fallen die LP eines Gegners auf 0, erhält er den Totenkopf und gilt im Kampf als besiegt. Ein Agent bei 0 LP wird als bewusstlos markiert. Steigen die LP wieder, verschwindet die Markierung.",
+      "Zaehler": "Anonym mitzählen",
+      "ZaehlerHinweis": "Einmal am Tag meldet die Welt beim Start, dass mit O.D.I.N. gespielt wird. Gesendet werden nur „Foundry“ und die Sprache, keine Namen und keine Kennung der Welt. IP-Adressen speichert der Zähler nicht. So sehen wir, ob das System genutzt wird."
     },
     "EpMission": {
       "Titel": "EP nach der Mission",

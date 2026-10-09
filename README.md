@@ -62,6 +62,12 @@ Sprachen: Deutsch (Standard) und Englisch. Bögen, Klassenbäume, Signaturen, Ko
 
 Languages: German (default) and English. Sheets, class trees, signatures, compendiums, scenes, roll tables and macros are available in both languages, using the wording of the German and English books. The Nordlicht 1977 campaign is available in English as well, with English maps and handouts. Characters from both the German and the English character generator can be imported, including their advancement (raised values, class tree, XP, rank, career log and higher-tier powers).
 
+## Datenschutz
+
+Beim Start einer Welt meldet das System einmal am Tag anonym, dass mit O.D.I.N. gespielt wird: nur „Foundry“ und die Sprache, an einen Zähler bei Cloudflare, der je Tag nur eine Zahl speichert. Keine Namen, keine Kennung der Welt, keine Cookies; IP-Adressen speichert der Zähler nicht. Es sendet nur die aktive Spielleitung. Abschalten in den Systemeinstellungen unter „Anonym mitzählen“.
+
+Privacy: once a day, when a world starts, the system sends an anonymous count (only “Foundry” and the language) to a counter on Cloudflare that stores one number per day. No names, no world ID, no cookies; the counter stores no IP addresses. Only the active GM sends it. Switch it off in the system settings under “Anonymous usage count”.
+
 ## Community und Neuigkeiten
 
 - Discord (Funkraum, Deutsch und Englisch): [discord.gg/HVZu67uAZa](https://discord.gg/HVZu67uAZa)

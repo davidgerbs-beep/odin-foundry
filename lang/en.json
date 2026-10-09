@@ -557,7 +557,9 @@
       "BuntSpielerfarbe": "Coloured dice in player colour",
       "BuntSpielerfarbeHinweis": "With Dice So Nice the coloured dice (skill) take the colour of the rolling player instead of the colour of their class. The white dice stay white.",
       "AutoBesiegt": "Mark defeated automatically",
-      "AutoBesiegtHinweis": "When an adversary drops to 0 LP, it gets the skull and counts as defeated in combat. An agent at 0 LP is marked unconscious. If the LP rise again, the marker is removed."
+      "AutoBesiegtHinweis": "When an adversary drops to 0 LP, it gets the skull and counts as defeated in combat. An agent at 0 LP is marked unconscious. If the LP rise again, the marker is removed.",
+      "Zaehler": "Anonymous usage count",
+      "ZaehlerHinweis": "Once a day the world reports on startup that O.D.I.N. is being played. Only “Foundry” and the language are sent, no names and no world ID. The counter stores no IP addresses. This lets us see whether the system is used."
     },
     "EpMission": {
       "Titel": "XP after the mission",
