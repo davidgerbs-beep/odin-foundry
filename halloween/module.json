@@ -1,8 +1,8 @@
 {
   "id": "odin-halloween",
   "title": "O.D.I.N. Halloween-Würfel / Halloween Dice",
-  "version": "1.0.0",
-  "description": "<p>Halloween-Würfel für Dice So Nice: Knochen und Kürbis, schwarze Augen, auf der Sechs ein Kürbisgesicht. Mit dem System O.D.I.N. würfeln Proben im Oktober damit (einstellbar), in jedem anderen System als Würfelsatz zum Auswählen. Kostenlos. Halloween dice for Dice So Nice: bone and pumpkin, black pips, a jack-o'-lantern face on the six. With the O.D.I.N. system, rolls use them in October (configurable); in any other system they are a dice set to choose. Free.</p>",
+  "version": "1.1.0",
+  "description": "<p>Halloween-Würfel für Dice So Nice: Knochen und Kürbis, schwarze Augen, auf der Sechs ein Kürbisgesicht. Ab Dice So Nice 6.4 auch als 3D-Modell: Knochen mit eingekerbter Tinte, Kürbis durchgeschnitzt und innen leuchtend. Mit dem System O.D.I.N. würfeln Proben im Oktober damit (einstellbar), in jedem anderen System als Würfelsatz zum Auswählen. Kostenlos. Halloween dice for Dice So Nice: bone and pumpkin, black pips, a jack-o'-lantern face on the six. With Dice So Nice 6.4 or later also as 3D models: bone with inked notches, pumpkin carved through and glowing inside. With the O.D.I.N. system, rolls use them in October (configurable); in any other system they are a dice set to choose. Free.</p>",
   "authors": [
     {
       "name": "David Ger",
@@ -39,6 +39,6 @@
   ],
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/halloween/module.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/halloween-v1.0.0/odin-halloween.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/halloween-v1.1.0/odin-halloween.zip",
   "license": "LICENSE"
 }
