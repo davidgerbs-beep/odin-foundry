@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { FARBSAETZE, AUGEN, halloweenAn, aussehen } from '../halloween/halloween.mjs';
+import { FARBSAETZE, AUGEN, MODELLE, halloweenAn, aussehen, mindestens } from '../halloween/halloween.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ordner = path.join(wurzel, 'halloween');
@@ -73,4 +73,34 @@ test('Das System-ZIP lässt halloween/ aus, und nur Tags halloween-v… bauen da
   assert.match(system, /startsWith\(github\.event\.release\.tag_name, 'v'\)/);
   const eigen = fs.readFileSync(path.join(wurzel, '.github/workflows/halloween-release.yml'), 'utf8');
   assert.match(eigen, /startsWith\(github\.event\.release\.tag_name, 'halloween-v'\)/);
+});
+
+test('Aussehen: klassisch Etiketten, mit Modell die 3D-Würfel, Farbsatz bleibt als Rückfall', () => {
+  assert.deepEqual(aussehen({ faces: 6, flavor: 'weiss' }), { colorset: 'odin-halloween-knochen', system: 'odin-halloween' });
+  assert.deepEqual(aussehen({ faces: 6, flavor: 'bunt' }), { colorset: 'odin-halloween-kuerbis', system: 'odin-halloween' });
+  assert.deepEqual(aussehen({ faces: 6 }, true), { colorset: 'odin-halloween-knochen', system: 'odin-halloween-v2-knochen' });
+  assert.deepEqual(aussehen({ faces: 6, flavor: 'bunt' }, true), { colorset: 'odin-halloween-kuerbis', system: 'odin-halloween-v2-kuerbis' });
+  assert.equal(aussehen({ faces: 8, flavor: 'bunt' }, true), null);
+  assert.equal(aussehen({ faces: 6, flavor: 'schaden' }, true), null);
+  assert.deepEqual(MODELLE, { knochen: 'odin-halloween-v2-knochen', kuerbis: 'odin-halloween-v2-kuerbis' });
+  assert.equal(mindestens('6.4.0', '6.4.0'), true);
+  assert.equal(mindestens('6.3.12', '6.4.0'), false);
+});
+
+test('3D-Modelle Knochen und Kürbis: Dateien vorhanden, Kürbis leuchtet mit halber Stärke (Dice So Nice), Knochen nicht', () => {
+  const lade = (k) => JSON.parse(fs.readFileSync(path.join(ordner, 'assets/v2', k, 'dice_6.gltf'), 'utf8'));
+  for (const k of ['knochen', 'kuerbis']) {
+    const g = lade(k), d = path.join(ordner, 'assets/v2', k);
+    for (const u of [...g.buffers.map((b) => b.uri), ...g.images.map((b) => b.uri)]) assert.ok(fs.existsSync(path.join(d, u)), `${k}/${u}`);
+    assert.equal(g.extensionsRequired, undefined);
+    assert.ok(g.materials[0].extensions.KHR_materials_clearcoat, k);
+  }
+  assert.equal(lade('kuerbis').materials[0].extensions.KHR_materials_emissive_strength.emissiveStrength, 1.2);
+  assert.equal(lade('knochen').materials[0].extensions.KHR_materials_emissive_strength, undefined);
+  const code = fs.readFileSync(path.join(ordner, 'halloween.mjs'), 'utf8');
+  assert.match(code, /modelFile: `\$\{BILDER\}v2\/\$\{k\}\/dice_6\.gltf`/);
+  for (const s of ['de', 'en']) {
+    const m = JSON.parse(fs.readFileSync(path.join(ordner, `lang/${s}.json`), 'utf8')).ODIN_HALLOWEEN.Modell;
+    assert.ok(m.Knochen && m.Kuerbis, s);
+  }
 });

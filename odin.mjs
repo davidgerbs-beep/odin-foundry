@@ -10,6 +10,7 @@ import * as sprache from './module/sprache.mjs';
 import * as zentrale from './module/zentrale.mjs';
 import { tokenGroesseAnpassen } from './module/szenen.mjs';
 import * as zaehler from './module/zaehler.mjs';
+import * as dsn from './module/dsn.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -70,6 +71,11 @@ Hooks.once('init', () => {
     name: 'ODIN.Einstellung.BuntSpielerfarbe', hint: 'ODIN.Einstellung.BuntSpielerfarbeHinweis',
     scope: 'world', config: true, type: Boolean, default: false,
   });
+  game.settings.register('odin-rpg', 'wuerfelDarstellung', {
+    name: 'ODIN.Einstellung.WuerfelDarstellung', hint: 'ODIN.Einstellung.WuerfelDarstellungHinweis',
+    scope: 'client', config: true, type: String, default: '3d',
+    choices: { '3d': 'ODIN.Einstellung.WuerfelDarstellung3d', klassisch: 'ODIN.Einstellung.WuerfelDarstellungKlassisch' },
+  });
   game.settings.register('odin-rpg', 'autoBesiegt', {
     name: 'ODIN.Einstellung.AutoBesiegt', hint: 'ODIN.Einstellung.AutoBesiegtHinweis',
     scope: 'world', config: true, type: Boolean, default: true,
@@ -100,7 +106,8 @@ zentrale.einrichten();
 zaehler.einrichten();
 
 /* Dice So Nice: eigene O.D.I.N.-Würfel. Weiß für das Attribut, bunt in der Farbe der Klasse für die Fertigkeit.
-   Augen statt Zahlen, auf der Sechs das Zeichen der Klasse (ohne Klasse die Windrose), Oberfläche wie gealtertes Bakelit. */
+   Augen statt Zahlen, auf der Sechs das Zeichen der Klasse (ohne Klasse die Windrose), Oberfläche wie gealtertes Bakelit.
+   Ab Dice So Nice 6.4 als 3D-Modell (Realm-Würfel Fassung 2, module/dsn.mjs), umschaltbar auf die klassischen Würfel. */
 const WUERFEL = 'systems/odin-rpg/assets/wuerfel/';
 const KLASSENFARBE = { Soldier: '#4e595c', Investigator: '#8c2a20', Scientist: '#2e6b54', Thaumaturg: '#896423', Agent: '#36322f', Psion: '#42607f' };
 const BUNT_STANDARD = '#7a2a20';
@@ -123,6 +130,13 @@ Hooks.once('diceSoNiceReady', async (dice3d) => {
   await satz('odin-weiss', 'O.D.I.N. weiß (Attribut)', '#ebe2cd', '#26201a', '#d8cbad');
   await satz('odin-bunt', 'O.D.I.N. bunt (Fertigkeit)', BUNT_STANDARD, '#eee5d2', '#4d1812');
   for (const [k, c] of Object.entries(KLASSENFARBE)) await satz(`odin-${k.toLowerCase()}`, `O.D.I.N. ${k}`, c, '#eee5d2', c);
+  // 3D-Modelle (modelFile) erst ab Dice So Nice 6.4; ältere Fassungen würfeln klassisch
+  if (!dsn.mindestens(game.modules.get('dice-so-nice')?.version, dsn.DSN_MODELL_AB)) return;
+  for (const [id, ordner] of Object.entries(dsn.MODELLE)) {
+    const name = ordner.replace(/^odin-/, '').split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ');
+    dice3d.addSystem({ id, name: `O.D.I.N. ${name} (3D)`, group: 'O.D.I.N.' }, 'default');
+    dice3d.addDicePreset({ type: 'd6', modelFile: `${dsn.V2}${ordner}/dice_6.gltf`, system: id });
+  }
 });
 /* Bunte Würfel: Farbe der Klasse des würfelnden Agenten. Mit der Einstellung "Spielerfarbe" die Farbe des Spielers,
    Augen dann je nach Helligkeit hell oder dunkel. Gegner und Figuren ohne Klasse würfeln dunkelrot. */
@@ -139,16 +153,15 @@ function spielerFarbe(id, ctx) {
 Hooks.on('diceSoNiceRollStart', (id, ctx) => {
   const msg = game.messages.get(id);
   const actor = msg ? ChatMessage.getSpeakerActor(msg.speaker) : null;
-  const kl = klasseVon(actor);
-  const nach = kl ? `-${kl.toLowerCase()}` : '';
+  const kl = klasseVon(actor)?.toLowerCase() ?? null;
   const eigen = spielerFarbe(id, ctx);
-  if (eigen) eigen.system += nach;
-  const bunt = eigen ?? { colorset: kl ? `odin-${kl.toLowerCase()}` : 'odin-bunt', system: `odin-dunkel${nach}` };
+  if (eigen && kl) eigen.system += `-${kl}`;
+  const modell = dsn.modellAn(game.settings.get('odin-rpg', 'wuerfelDarstellung'), game.modules.get('dice-so-nice')?.version);
   for (const d of ctx.roll?.dice ?? []) {
-    if (d.flavor === 'weiss') d.options.appearance = { colorset: 'odin-weiss', system: `odin-hell${nach}` };
-    if (d.flavor === 'bunt') d.options.appearance = bunt;
     /* Würfel ohne Farbangabe (Initiative, Preis, Trauma, Rückkopplung): weiße O.D.I.N.-Würfel */
-    if (!d.flavor && d.faces === 6 && !d.options.appearance) d.options.appearance = { colorset: 'odin-weiss', system: `odin-hell${nach}` };
+    if (!d.flavor && d.options.appearance) continue;
+    const a = dsn.aussehen(d, { kl, modell, eigen });
+    if (a) d.options.appearance = a;
   }
 });
 

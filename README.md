@@ -12,7 +12,7 @@ https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.
 
 ### Halloween-Würfel (kostenloses Modul)
 
-Knochen und Kürbis für Dice So Nice, schwarze Augen, auf der Sechs ein Kürbisgesicht. Mit dem System O.D.I.N. würfeln die Proben im Oktober damit (in den Moduleinstellungen auch immer oder nie), in anderen Systemen ist es ein Würfelsatz zum Auswählen. Unter **Module → Modul installieren** diese Manifest-URL eintragen:
+Knochen und Kürbis für Dice So Nice, schwarze Augen, auf der Sechs ein Kürbisgesicht. Ab Dice So Nice 6.4 auch als 3D-Modell: Knochen mit eingekerbter Tinte, Kürbis durchgeschnitzt und innen leuchtend. Mit dem System O.D.I.N. würfeln die Proben im Oktober damit (in den Moduleinstellungen auch immer oder nie), in anderen Systemen ist es ein Würfelsatz zum Auswählen. Unter **Module → Modul installieren** diese Manifest-URL eintragen:
 
 ```
 https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/halloween/module.json
@@ -51,7 +51,7 @@ https://github.com/user-attachments/assets/f81e8008-41bc-400e-9a4f-e21297ea524e
 - **Regeln zum Nachschlagen**: Kompendium „Regeln“ mit elf Journalen aus dem Grundregelwerk (Kurzreferenz, Würfelsystem, Fertigkeiten, Kampf, Belastung und Grauen, Psi-Kräfte, Thaumaturgie, Aufstieg, Ressourcen und Artefakte, Spielleitung, Glossar). Würfeltabellen darin sind direkt verlinkt, Spieler dürfen das Kompendium lesen.
 - **Gegner auf den Karten**: Die acht Karten der Grauen Akten und die Karten von Nordlicht 1977 tragen die Gegner als versteckte Token an ihren Orten. Die Spielleitung deckt sie im richtigen Moment auf.
 - **Runde Token** für Agenten und Verbündete (Messingrand) und Gegner (roter Rand), aus den Porträts und Bildern des Bedrohungsatlas. Die Leute aus Die anderen Dienste, den Grauen Akten, Horte der Welt und Nordlicht 1977 haben eigene Porträts im Sepia-Ton der Bücher.
-- **Eigene O.D.I.N.-Würfel für Dice So Nice**: weiße Würfel für das Attribut, bunte in der Farbe der Klasse für die Fertigkeit, mit Augen statt Zahlen, dem Zeichen der Klasse auf der Sechs und einer Oberfläche wie altes Bakelit. Wahlweise bunte Würfel in der Farbe des Spielers (Einstellung).
+- **Eigene O.D.I.N.-Würfel für Dice So Nice**: weiße Würfel für das Attribut, bunte in der Farbe der Klasse für die Fertigkeit, mit Augen statt Zahlen, dem Zeichen der Klasse auf der Sechs und einer Oberfläche wie altes Bakelit. Ab Dice So Nice 6.4 als 3D-Modell mit gerundeten Kanten (dieselben Würfel wie auf Realm VTT und im Spieltisch), beim Klassenwurf tragen dann weiß und bunt das Zeichen der Klasse; je Gerät umschaltbar auf die klassischen Würfel. Wahlweise bunte Würfel in der Farbe des Spielers (Einstellung, dann klassisch). Die Modelle übernimmt `node werkzeuge/wuerfel-v2.mjs <odin-werkstatt>` aus `realm/wuerfel/` der Werkstatt.
 - **Kartenstapel aus Band 8** „Kartensets und Spielhilfen“: Psi-Kräfte (43), Zauber (57) und Ausrüstung (288) als Kartenstapel zum Mischen, Austeilen und Zeigen, auf Deutsch und Englisch.
 - **Empfohlene Module**: German [Core] (lang-de) für die deutsche Foundry-Oberfläche und Dice So Nice.
 - **Eigene Kompendium-Banner** im Aktenlook aus der Kunst der Bücher.

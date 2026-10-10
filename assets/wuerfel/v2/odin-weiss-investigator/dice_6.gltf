@@ -1,0 +1,187 @@
+{
+ "asset": {
+  "copyright": "O.D.I.N. (odin-rpg.pages.dev)",
+  "generator": "odin-werkstatt realm/wuerfel (Überarbeitung 2026, gerundet) / O.D.I.N. für Dice So Nice (odin-foundry werkzeuge/wuerfel-v2.mjs)",
+  "version": "2.0"
+ },
+ "extensionsUsed": [
+  "KHR_materials_clearcoat"
+ ],
+ "scene": 0,
+ "scenes": [
+  {
+   "name": "Scene",
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "dice_6"
+  }
+ ],
+ "materials": [
+  {
+   "name": "ODIN_Weiss_Investigator_d6",
+   "doubleSided": true,
+   "pbrMetallicRoughness": {
+    "baseColorTexture": {
+     "index": 2
+    },
+    "metallicRoughnessTexture": {
+     "index": 3
+    },
+    "metallicFactor": 0,
+    "roughnessFactor": 1
+   },
+   "normalTexture": {
+    "index": 1
+   },
+   "occlusionTexture": {
+    "index": 3
+   },
+   "emissiveTexture": {
+    "index": 0
+   },
+   "emissiveFactor": [
+    1,
+    1,
+    1
+   ],
+   "extensions": {
+    "KHR_materials_clearcoat": {
+     "clearcoatFactor": 0.6,
+     "clearcoatRoughnessFactor": 0.15
+    }
+   }
+  }
+ ],
+ "meshes": [
+  {
+   "name": "Realm_ODIN_Weiss_Investigator_d6",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1,
+      "TEXCOORD_0": 2
+     },
+     "indices": 3,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "textures": [
+  {
+   "sampler": 0,
+   "source": 0
+  },
+  {
+   "sampler": 0,
+   "source": 1
+  },
+  {
+   "sampler": 0,
+   "source": 2
+  },
+  {
+   "sampler": 0,
+   "source": 3
+  }
+ ],
+ "images": [
+  {
+   "name": "ODIN_Weiss_Investigator_d6_Emissive",
+   "uri": "textures/ODIN_Weiss_Investigator_d6_Emissive.webp",
+   "mimeType": "image/webp"
+  },
+  {
+   "name": "ODIN_Weiss_Investigator_d6_Normal",
+   "uri": "textures/ODIN_Weiss_Investigator_d6_Normal.webp",
+   "mimeType": "image/webp"
+  },
+  {
+   "name": "ODIN_Weiss_Investigator_d6_BaseColor",
+   "uri": "textures/ODIN_Weiss_Investigator_d6_BaseColor.webp",
+   "mimeType": "image/webp"
+  },
+  {
+   "name": "ODIN_Weiss_Investigator_d6_MetallicRoughness",
+   "uri": "textures/ODIN_Weiss_Investigator_d6_MetallicRoughness.webp",
+   "mimeType": "image/webp"
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 2400,
+   "max": [
+    51.96153259277344,
+    51.96153259277344,
+    51.96153259277344
+   ],
+   "min": [
+    -51.96153259277344,
+    -51.96153259277344,
+    -51.96153259277344
+   ],
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 2400,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5126,
+   "count": 2400,
+   "type": "VEC2"
+  },
+  {
+   "bufferView": 3,
+   "componentType": 5123,
+   "count": 10404,
+   "type": "SCALAR"
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteLength": 28800,
+   "byteOffset": 0
+  },
+  {
+   "buffer": 0,
+   "byteLength": 28800,
+   "byteOffset": 28800
+  },
+  {
+   "buffer": 0,
+   "byteLength": 19200,
+   "byteOffset": 57600
+  },
+  {
+   "buffer": 0,
+   "byteLength": 20808,
+   "byteOffset": 76800
+  }
+ ],
+ "samplers": [
+  {
+   "magFilter": 9729,
+   "minFilter": 9987
+  }
+ ],
+ "buffers": [
+  {
+   "byteLength": 97608,
+   "uri": "dice_6.bin"
+  }
+ ]
+}
