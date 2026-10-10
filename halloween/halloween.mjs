@@ -16,6 +16,8 @@ export const FARBSAETZE = {
 export const AUGEN = '#1a120c';
 export const MODELLE = { knochen: `${SYSTEM}-v2-knochen`, kuerbis: `${SYSTEM}-v2-kuerbis` };
 export const DSN_MODELL_AB = '6.4.0';
+/** O.D.I.N. mit Bildern und der Kern ohne KI-Bilder (gleicher Code, eigene ID). */
+export const ODIN_SYSTEME = ['odin-rpg', 'odin-rpg-core'];
 
 /** Versionen „a.b.c“ vergleichen: true, wenn v mindestens min ist (wie module/dsn.mjs im System). */
 export function mindestens(v, min) {
@@ -64,10 +66,10 @@ if (globalThis.Hooks) {
 
   /* Läuft nach dem Haken des Systems (Module laden nach dem System) und ersetzt dessen Aussehen für die W6 der Probe. */
   Hooks.on('diceSoNiceRollStart', (id, ctx) => {
-    if (game.system.id !== 'odin-rpg' || !halloweenAn(game.settings.get(MODUL, 'odinProben'))) return;
+    if (!ODIN_SYSTEME.includes(game.system.id) || !halloweenAn(game.settings.get(MODUL, 'odinProben'))) return;
     // Einstellung des Systems (ab 0.10.11); ältere Systeme kennen sie nicht, dann 3D
     let darstellung = '3d';
-    try { darstellung = game.settings.get('odin-rpg', 'wuerfelDarstellung'); } catch { /* nicht registriert */ }
+    try { darstellung = game.settings.get(game.system.id, 'wuerfelDarstellung'); } catch { /* nicht registriert */ }
     const modell = darstellung !== 'klassisch' && modellMoeglich();
     for (const d of ctx.roll?.dice ?? []) {
       const a = aussehen(d, modell);

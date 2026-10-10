@@ -3,8 +3,8 @@
 // Fernschreiben laufen als Chatnachricht mit Flag, jeder Client zeigt sie beim Eintreffen als Fernschreiber-Streifen.
 
 import * as registratur from './registratur.mjs';
+import { SYS } from './system.mjs';
 
-const SYS = 'odin-rpg';
 const L = (k, d) => (d ? game.i18n.format(`ODIN.Zentrale.${k}`, d) : game.i18n.localize(`ODIN.Zentrale.${k}`));
 
 /* ---------------- Stimmung ---------------- */

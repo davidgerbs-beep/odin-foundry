@@ -11,6 +11,7 @@ import * as zentrale from './module/zentrale.mjs';
 import { tokenGroesseAnpassen } from './module/szenen.mjs';
 import * as zaehler from './module/zaehler.mjs';
 import * as dsn from './module/dsn.mjs';
+import { SYS, PFAD } from './module/system.mjs';
 
 class OdinActor extends Actor {
   prepareDerivedData() {
@@ -46,48 +47,48 @@ Hooks.once('init', () => {
   CONFIG.Combat.initiative = { formula: '@ini + @we / 10 + 1d6 / 100', decimals: 2 };
 
   const DSC = foundry.applications.apps.DocumentSheetConfig;
-  DSC.registerSheet(Actor, 'odin-rpg', AgentBogen, { types: ['agent'], makeDefault: true, label: 'ODIN.Bogen.Agent' });
-  DSC.registerSheet(Actor, 'odin-rpg', GegnerBogen, { types: ['gegner'], makeDefault: true, label: 'ODIN.Bogen.Gegner' });
-  DSC.registerSheet(Item, 'odin-rpg', OdinItemBogen, { makeDefault: true, label: 'ODIN.Bogen.Item' });
+  DSC.registerSheet(Actor, SYS, AgentBogen, { types: ['agent'], makeDefault: true, label: 'ODIN.Bogen.Agent' });
+  DSC.registerSheet(Actor, SYS, GegnerBogen, { types: ['gegner'], makeDefault: true, label: 'ODIN.Bogen.Gegner' });
+  DSC.registerSheet(Item, SYS, OdinItemBogen, { makeDefault: true, label: 'ODIN.Bogen.Item' });
 
   Handlebars.registerHelper('odinGleich', (a, b) => a === b);
   Handlebars.registerHelper('odinFert', (k) => wuerfel.fertName(k));
   Handlebars.registerHelper('odinAbk', (a) => sprache.abk(a));
 
   foundry.applications.handlebars.loadTemplates({
-    odinZelle: 'systems/odin-rpg/templates/odin-zelle.hbs',
-    odinKnoten: 'systems/odin-rpg/templates/odin-knoten.hbs',
+    odinZelle: `${PFAD}templates/odin-zelle.hbs`,
+    odinKnoten: `${PFAD}templates/odin-knoten.hbs`,
   });
   game.odin = { DATEN, aktionen, wuerfel, generatorImport, baum, sprache, zentrale };
 });
 
 /* Kompendien nur in der eigenen Sprache zeigen (umschaltbar in den Einstellungen) */
 Hooks.once('init', () => {
-  game.settings.register('odin-rpg', 'alleSprachen', {
+  game.settings.register(SYS, 'alleSprachen', {
     name: 'ODIN.Einstellung.AlleSprachen', hint: 'ODIN.Einstellung.AlleSprachenHinweis',
     scope: 'client', config: true, type: Boolean, default: false, onChange: () => ui.compendium?.render(),
   });
-  game.settings.register('odin-rpg', 'buntSpielerfarbe', {
+  game.settings.register(SYS, 'buntSpielerfarbe', {
     name: 'ODIN.Einstellung.BuntSpielerfarbe', hint: 'ODIN.Einstellung.BuntSpielerfarbeHinweis',
     scope: 'world', config: true, type: Boolean, default: false,
   });
-  game.settings.register('odin-rpg', 'wuerfelDarstellung', {
+  game.settings.register(SYS, 'wuerfelDarstellung', {
     name: 'ODIN.Einstellung.WuerfelDarstellung', hint: 'ODIN.Einstellung.WuerfelDarstellungHinweis',
     scope: 'client', config: true, type: String, default: '3d',
     choices: { '3d': 'ODIN.Einstellung.WuerfelDarstellung3d', klassisch: 'ODIN.Einstellung.WuerfelDarstellungKlassisch' },
   });
-  game.settings.register('odin-rpg', 'autoBesiegt', {
+  game.settings.register(SYS, 'autoBesiegt', {
     name: 'ODIN.Einstellung.AutoBesiegt', hint: 'ODIN.Einstellung.AutoBesiegtHinweis',
     scope: 'world', config: true, type: Boolean, default: true,
   });
 });
 Hooks.on('renderCompendiumDirectory', (app, html) => {
-  if (game.settings.get('odin-rpg', 'alleSprachen')) return;
+  if (game.settings.get(SYS, 'alleSprachen')) return;
   const root = html instanceof HTMLElement ? html : html?.[0];
   if (!root) return;
   const eigene = game.i18n.lang?.startsWith('en') ? 'en' : 'de';
   for (const li of root.querySelectorAll('[data-pack]')) {
-    const sprache = game.packs.get(li.dataset.pack)?.metadata.flags?.['odin-rpg']?.sprache;
+    const sprache = game.packs.get(li.dataset.pack)?.metadata.flags?.[SYS]?.sprache;
     li.classList.toggle('odin-andere-sprache', !!sprache && sprache !== eigene);
   }
   // Ordner ohne sichtbare Einträge ausblenden, von innen nach außen
@@ -108,7 +109,7 @@ zaehler.einrichten();
 /* Dice So Nice: eigene O.D.I.N.-Würfel. Weiß für das Attribut, bunt in der Farbe der Klasse für die Fertigkeit.
    Augen statt Zahlen, auf der Sechs das Zeichen der Klasse (ohne Klasse die Windrose), Oberfläche wie gealtertes Bakelit.
    Ab Dice So Nice 6.4 als 3D-Modell (Realm-Würfel Fassung 2, module/dsn.mjs), umschaltbar auf die klassischen Würfel. */
-const WUERFEL = 'systems/odin-rpg/assets/wuerfel/';
+const WUERFEL = `${PFAD}assets/wuerfel/`;
 const KLASSENFARBE = { Soldier: '#4e595c', Investigator: '#8c2a20', Scientist: '#2e6b54', Thaumaturg: '#896423', Agent: '#36322f', Psion: '#42607f' };
 const BUNT_STANDARD = '#7a2a20';
 const klasseVon = (actor) => {
@@ -141,7 +142,7 @@ Hooks.once('diceSoNiceReady', async (dice3d) => {
 /* Bunte Würfel: Farbe der Klasse des würfelnden Agenten. Mit der Einstellung "Spielerfarbe" die Farbe des Spielers,
    Augen dann je nach Helligkeit hell oder dunkel. Gegner und Figuren ohne Klasse würfeln dunkelrot. */
 function spielerFarbe(id, ctx) {
-  if (!game.settings.get('odin-rpg', 'buntSpielerfarbe')) return null;
+  if (!game.settings.get(SYS, 'buntSpielerfarbe')) return null;
   const nutzer = ctx?.user ?? game.messages.get(id)?.author ?? game.user;
   const c = foundry.utils.Color.from(nutzer?.color ?? BUNT_STANDARD);
   if (!Number.isFinite(c.valueOf())) return null;
@@ -156,7 +157,7 @@ Hooks.on('diceSoNiceRollStart', (id, ctx) => {
   const kl = klasseVon(actor)?.toLowerCase() ?? null;
   const eigen = spielerFarbe(id, ctx);
   if (eigen && kl) eigen.system += `-${kl}`;
-  const modell = dsn.modellAn(game.settings.get('odin-rpg', 'wuerfelDarstellung'), game.modules.get('dice-so-nice')?.version);
+  const modell = dsn.modellAn(game.settings.get(SYS, 'wuerfelDarstellung'), game.modules.get('dice-so-nice')?.version);
   for (const d of ctx.roll?.dice ?? []) {
     /* Würfel ohne Farbangabe (Initiative, Preis, Trauma, Rückkopplung): weiße O.D.I.N.-Würfel */
     if (!d.flavor && d.options.appearance) continue;
@@ -168,7 +169,7 @@ Hooks.on('diceSoNiceRollStart', (id, ctx) => {
 /* LP auf 0: Gegner gelten als besiegt (Totenkopf, im Kampf markiert), Agenten als kampfunfähig.
    Steigen die LP wieder, wird die Markierung zurückgenommen. Nur die aktive Spielleitung schreibt. */
 Hooks.on('updateActor', async (actor, changes) => {
-  if (!game.users.activeGM?.isSelf || !game.settings.get('odin-rpg', 'autoBesiegt')) return;
+  if (!game.users.activeGM?.isSelf || !game.settings.get(SYS, 'autoBesiegt')) return;
   if (foundry.utils.getProperty(changes, 'system.lp.value') === undefined) return;
   const unten = (actor.system.lp?.value ?? 1) <= 0;
   const status = actor.type === 'gegner' ? 'dead' : actor.type === 'agent' ? 'unconscious' : null;

@@ -1,7 +1,7 @@
 {
-  "id": "odin-rpg",
-  "title": "O.D.I.N. – Occult Dynamics Intelligence Network",
-  "description": "Spielsystem für O.D.I.N., das Pen-&-Paper-Rollenspiel um okkulte Agenten (Zweite Edition). Zwei Würfelfarben: weiß ab 5, bunt ab 4. Bögen für Agenten und Gegner, Proben, Kampf, Grauen, Psi-Kräfte und Zauber, Preis der Klasse, Import aus dem Charaktergenerator. Regelwerk kostenlos auf odin-rpg.pages.dev.",
+  "id": "odin-rpg-core",
+  "title": "O.D.I.N. Core (no art)",
+  "description": "Core rules for O.D.I.N., the pen-and-paper RPG of occult agents (Second Edition), without illustrations: character and enemy sheets, rolls with white and coloured dice (white succeed on 5+, coloured on 4+), combat, horror, psi and spells, class price, import from the character generator, compendia with rules, equipment, enemies and adventures as text. German and English. The illustrated edition (portraits, tokens, scene art) is installed separately via its manifest link on odin-rpg.pages.dev; worlds are not interchangeable between the two. / Grundregeln für O.D.I.N. ohne Illustrationen: Bögen, Proben, Kampf, Grauen, Kompendien mit Texten. Die bebilderte Fassung gibt es separat über ihren Manifest-Link auf odin-rpg.pages.dev.",
   "version": "0.10.13",
   "compatibility": {
     "minimum": "14",
@@ -114,8 +114,8 @@
   "secondaryTokenAttribute": "belastung",
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
-  "manifest": "https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/v0.10.13/odin-rpg.zip",
+  "manifest": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/kern/system.json",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/core-v0.10.13/odin-rpg-core.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
@@ -124,306 +124,288 @@
       "label": "Fertige Agenten",
       "path": "packs/odin-agenten",
       "type": "Actor",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/agenten.webp"
+      }
     },
     {
       "name": "odin-waffen",
       "label": "Waffen",
       "path": "packs/odin-waffen",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/waffen.webp"
+      }
     },
     {
       "name": "odin-ruestungen",
       "label": "Rüstungen",
       "path": "packs/odin-ruestungen",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/ruestungen.webp"
+      }
     },
     {
       "name": "odin-ausruestung",
       "label": "Ausrüstung und Artefakte",
       "path": "packs/odin-ausruestung",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/ausruestung.webp"
+      }
     },
     {
       "name": "odin-kraefte",
       "label": "Psi-Kräfte",
       "path": "packs/odin-kraefte",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/kraefte.webp"
+      }
     },
     {
       "name": "odin-zauber",
       "label": "Zauber",
       "path": "packs/odin-zauber",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/zauber.webp"
+      }
     },
     {
       "name": "odin-gegner",
       "label": "Bedrohungsatlas",
       "path": "packs/odin-gegner",
       "type": "Actor",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/gegner.webp"
+      }
     },
     {
       "name": "odin-abenteuer",
       "label": "Abenteuer und Kampagnen",
       "path": "packs/odin-abenteuer",
       "type": "JournalEntry",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/abenteuer.webp"
+      }
     },
     {
       "name": "odin-agenten-en",
       "label": "Ready-made Agents",
       "path": "packs/odin-agenten-en",
       "type": "Actor",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/agenten.webp"
+      }
     },
     {
       "name": "odin-waffen-en",
       "label": "Weapons",
       "path": "packs/odin-waffen-en",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/waffen.webp"
+      }
     },
     {
       "name": "odin-ruestungen-en",
       "label": "Armour",
       "path": "packs/odin-ruestungen-en",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/ruestungen.webp"
+      }
     },
     {
       "name": "odin-ausruestung-en",
       "label": "Equipment and Artefacts",
       "path": "packs/odin-ausruestung-en",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/ausruestung.webp"
+      }
     },
     {
       "name": "odin-kraefte-en",
       "label": "Psi Powers",
       "path": "packs/odin-kraefte-en",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/kraefte.webp"
+      }
     },
     {
       "name": "odin-zauber-en",
       "label": "Spells",
       "path": "packs/odin-zauber-en",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/zauber.webp"
+      }
     },
     {
       "name": "odin-gegner-en",
       "label": "Threat Atlas",
       "path": "packs/odin-gegner-en",
       "type": "Actor",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/gegner.webp"
+      }
     },
     {
       "name": "odin-abenteuer-en",
       "label": "Adventures and Campaigns",
       "path": "packs/odin-abenteuer-en",
       "type": "JournalEntry",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/abenteuer.webp"
+      }
     },
     {
       "name": "odin-arsenal",
       "label": "Arsenal",
       "path": "packs/odin-arsenal",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/arsenal.webp"
+      }
     },
     {
       "name": "odin-arsenal-en",
       "label": "Arsenal",
       "path": "packs/odin-arsenal-en",
       "type": "Item",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/arsenal.webp"
+      }
     },
     {
       "name": "odin-szenen",
@@ -435,11 +417,10 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/szenen.webp"
+      }
     },
     {
       "name": "odin-szenen-en",
@@ -451,11 +432,10 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/szenen.webp"
+      }
     },
     {
       "name": "odin-tabellen",
@@ -467,11 +447,10 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/tabellen.webp"
+      }
     },
     {
       "name": "odin-tabellen-en",
@@ -483,11 +462,10 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/tabellen.webp"
+      }
     },
     {
       "name": "odin-makros",
@@ -499,28 +477,26 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/makros.webp"
+      }
     },
     {
       "name": "odin-karten",
       "label": "Kartensets",
       "path": "packs/odin-karten",
       "type": "Cards",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/makros.webp"
+      }
     },
     {
       "name": "odin-makros-en",
@@ -532,28 +508,26 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/makros.webp"
+      }
     },
     {
       "name": "odin-karten-en",
       "label": "Card Sets",
       "path": "packs/odin-karten-en",
       "type": "Cards",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/makros.webp"
+      }
     },
     {
       "name": "odin-abenteuerpakete",
@@ -565,11 +539,10 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/abenteuerpakete.webp"
+      }
     },
     {
       "name": "odin-abenteuerpakete-en",
@@ -581,45 +554,42 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/abenteuerpakete-en.webp"
+      }
     },
     {
       "name": "odin-regeln",
       "label": "Regeln",
       "path": "packs/odin-regeln",
       "type": "JournalEntry",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "de"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/regeln.webp"
+      }
     },
     {
       "name": "odin-regeln-en",
       "label": "Rules",
       "path": "packs/odin-regeln-en",
       "type": "JournalEntry",
-      "system": "odin-rpg",
+      "system": "odin-rpg-core",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
       "flags": {
-        "odin-rpg": {
+        "odin-rpg-core": {
           "sprache": "en"
         }
-      },
-      "banner": "systems/odin-rpg/assets/banner/regeln.webp"
+      }
     }
   ],
   "packFolders": [
@@ -694,38 +664,6 @@
           ]
         }
       ]
-    }
-  ],
-  "media": [
-    {
-      "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/01_karte.webp",
-      "caption": "Grey Files: map scene with notes on every numbered location, journal alongside"
-    },
-    {
-      "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/02_bogen.webp",
-      "caption": "Agent sheet (personnel file) and chat cards: free dice pool, random mission"
-    },
-    {
-      "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/03_abenteuer.webp",
-      "caption": "One-click adventure import and the English compendiums"
-    },
-    {
-      "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/04_tabellen.webp",
-      "caption": "281 roll tables from all books, drawn straight into the chat"
-    },
-    {
-      "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/05_token.webp",
-      "caption": "Hidden adversary tokens on a Grey Files map, round agent tokens"
-    },
-    {
-      "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/media/06_regeln.webp",
-      "caption": "Rules compendium: the core rules as journals"
     }
   ],
   "relationships": {

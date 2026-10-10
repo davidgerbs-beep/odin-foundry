@@ -1,6 +1,7 @@
 // Würfelsystem: zwei Farben, weiß ab 5, bunt ab 4, Bonuswürfel sind weiß (Grundregelwerk, Kapitel II „Das Würfelsystem“)
 import { DATEN } from './daten.mjs';
 import { abk } from './sprache.mjs';
+import { SYS } from './system.mjs';
 
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
@@ -82,7 +83,7 @@ export const hinweis = (t) => `<div class="odin-hinweis">${t}</div>`;
 export const balken = (cls, t) => `<div class="odin-erg ${cls}">${t}</div>`;
 
 export async function posten(actor, content, roll, { verdeckt = false, flags = {} } = {}) {
-  const data = { speaker: ChatMessage.getSpeaker({ actor }), content, rolls: roll ? [roll] : [], flags: { 'odin-rpg': flags } };
+  const data = { speaker: ChatMessage.getSpeaker({ actor }), content, rolls: roll ? [roll] : [], flags: { [SYS]: flags } };
   if (verdeckt) { data.whisper = ChatMessage.getWhisperRecipients('GM').map((u) => u.id); data.blind = true; }
   return ChatMessage.create(data);
 }

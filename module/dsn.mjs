@@ -7,8 +7,9 @@
    - „klassisch“: die bisherigen Würfel mit Etiketten (assets/wuerfel/*.png) und Farbsätzen.
    Ohne Dice So Nice 6.4 und bei bunten Würfeln in Spielerfarbe (frei wählbare Farbe, Modelle lassen sich nicht einfärben)
    gelten die klassischen Würfel. */
+import { PFAD } from './system.mjs';
 
-export const V2 = 'systems/odin-rpg/assets/wuerfel/v2/';
+export const V2 = `${PFAD}assets/wuerfel/v2/`;
 export const KLASSEN = ['soldier', 'investigator', 'scientist', 'thaumaturg', 'agent', 'psion'];
 export const DSN_MODELL_AB = '6.4.0';
 

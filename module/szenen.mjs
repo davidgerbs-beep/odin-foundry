@@ -1,9 +1,10 @@
-// Token-Größe auf Lageplänen: Szenen mit flags["odin-rpg"].massstab.tokenFelder geben neu
+// Token-Größe auf Lageplänen: Szenen mit flags[SYS].massstab.tokenFelder geben neu
 // gezogenen Token diese Größe. Szenen ohne den Wert bleiben unberührt.
 
 /** Token-Breite in Feldern, die eine Szene vorgibt, sonst null. */
+import { SYS } from './system.mjs';
 export function tokenFelderDerSzene(szene) {
-  const felder = Number(szene?.flags?.['odin-rpg']?.massstab?.tokenFelder);
+  const felder = Number(szene?.flags?.[SYS]?.massstab?.tokenFelder);
   return felder > 0 ? felder : null;
 }
 

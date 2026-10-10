@@ -2,6 +2,7 @@
 import { DATEN } from './daten.mjs';
 import { abk, rangName, knotenLokal, fertDatenName } from './sprache.mjs';
 import { pool, auswerten, wurf, karte, hinweis, balken, posten, probenDialog, preisHinweis, attrName, fertName, GRAUEN, KATEGORIEN, WAFFEN_ARTEN } from './wuerfel.mjs';
+import { SYS } from './system.mjs';
 
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
@@ -186,7 +187,7 @@ export function chatKnoepfe(message, html) {
   if (!k) return;
   if (!game.user.isGM) { k.remove(); return; }
   k.addEventListener('click', async () => {
-    const d = message.getFlag('odin-rpg', 'schaden');
+    const d = message.getFlag(SYS, 'schaden');
     const ziel = d && await fromUuid(d.uuid);
     if (!ziel) return;
     const lp = ziel.system.lp.value;
@@ -242,7 +243,7 @@ export async function epNachMission() {
     await a.update({
       'system.ep': (s.ep ?? 0) + ep, 'system.epFrei': (s.epFrei ?? 0) + ep,
       [`system.laufbahn.${n}`]: { datum: new Date().toLocaleDateString(game.i18n.lang), mission: r.mission, ep, fuer: L(`Farbe.${r.farbe}`), rang: s.rang },
-      'flags.odin-rpg.zwischenzeit': (a.getFlag('odin-rpg', 'zwischenzeit') ?? 0) + 1,
+      [`flags.${SYS}.zwischenzeit`]: (a.getFlag(SYS, 'zwischenzeit') ?? 0) + 1,
     });
     zeilenChat.push(`<p><b>${esc(a.name)}</b>: +${ep} ${L('Einheit')}</p>`);
   }

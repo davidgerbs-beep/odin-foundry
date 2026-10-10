@@ -4,6 +4,7 @@
 // (deutschen) Schlüssel abgebildet; die Texte kommen aus den Daten in der Sprache des Exports.
 import { DATEN } from './daten.mjs';
 import { datenDe, datenEn, ATTR_NACH, fertNachName, probeLesen, rangNachName } from './sprache.mjs';
+import { SYS } from './system.mjs';
 
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
@@ -104,8 +105,8 @@ export function importDaten(j) {
     // Rang der Laufbahn als interner Schlüssel wie Klasse und Fertigkeiten; die Anzeige übersetzt ihn
     (A.log ?? []).forEach((l, i) => { lb[i] = { datum: l.d ?? '', mission: l.m ?? '', ep: Number(l.e) || 0, fuer: (l.f ?? []).map((x) => `${x.t} (${x.c})`).join('; '), rang: rangNachName(l.r) || String(l.r ?? '') }; });
     upd['system.laufbahn'] = lb;
-    upd['flags.odin-rpg.zwischenzeit'] = Number(A.zz) || 0;
-    upd['flags.odin-rpg.attrZwischenzeit'] = Number.isFinite(A.attrZZ) ? A.attrZZ : -1;
+    upd[`flags.${SYS}.zwischenzeit`] = Number(A.zz) || 0;
+    upd[`flags.${SYS}.attrZwischenzeit`] = Number.isFinite(A.attrZZ) ? A.attrZZ : -1;
   }
 
   // Kräfte und Zauber als Items, Texte in der Sprache des Exports

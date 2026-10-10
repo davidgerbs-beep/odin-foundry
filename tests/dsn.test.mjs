@@ -94,7 +94,7 @@ test('Andere Würfel bleiben unverändert', () => {
 
 test('Einstellung „Würfel von Dice So Nice“ in odin.mjs mit Texten in DE und EN', () => {
   const code = fs.readFileSync(path.join(wurzel, 'odin.mjs'), 'utf8');
-  assert.match(code, /register\('odin-rpg', 'wuerfelDarstellung'/);
+  assert.match(code, /register\(SYS, 'wuerfelDarstellung'/);
   assert.match(code, /modelFile: `\$\{dsn\.V2\}\$\{ordner\}\/dice_6\.gltf`/);
   for (const s of ['de', 'en']) {
     const e = lies(path.join(wurzel, `lang/${s}.json`)).ODIN.Einstellung;

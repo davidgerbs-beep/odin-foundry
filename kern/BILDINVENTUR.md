@@ -1,0 +1,2296 @@
+# Bildinventur odin-foundry (Stand 11.10.2026)
+
+Grundlage für den Kern ohne KI-Bilder (`werkzeuge/kern.mjs`, System `odin-rpg-core`). Zweifelsfälle hat Dave am 11.10.2026 entschieden: Lagepläne sind eigene Grafik, alle Handouts bleiben (auch die etwa 16 Seiten mit Fotos, abschaltbar mit `--ohne-fotohandouts`), Karteikarten sind eigene Grafik, Bildschirmfotos für die Paketseite werden neu gemacht.
+
+2230 Bilddateien (PNG, JPG, WebP; keine SVG). Herkunft je Ordner, eingeschätzt aus Stichproben, Werkzeugen und Doku.
+
+| Ordner | Dateien | Herkunft | Inhalt |
+|---|---|---|---|
+| `assets/abenteuer/dienste/bilder/` | 24 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/abenteuer/grauakten/bilder/` | 9 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/abenteuer/grauakten/handouts_de/` | 24 | eigene Grafik (entschieden) | Handout-Seiten (gesetzter Text), teils mit Fotos |
+| `assets/abenteuer/grauakten/handouts_en/` | 24 | eigene Grafik (entschieden) | Handout-Seiten (gesetzter Text), teils mit Fotos |
+| `assets/abenteuer/grauakten/karten_de/` | 8 | eigene Grafik (entschieden) | Lagepläne (gezeichnet wirkend), Herkunft unklar |
+| `assets/abenteuer/grauakten/karten_en/` | 8 | eigene Grafik (entschieden) | Lagepläne (gezeichnet wirkend), Herkunft unklar |
+| `assets/abenteuer/horte/bilder/` | 30 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/abenteuer/horte/karten_de/` | 9 | eigene Grafik (entschieden) | Lagepläne, Herkunft unklar |
+| `assets/abenteuer/horte/karten_en/` | 9 | eigene Grafik (entschieden) | Lagepläne, Herkunft unklar |
+| `assets/abenteuer/nordlicht/bilder/` | 46 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/abenteuer/nordlicht/handouts/` | 51 | eigene Grafik (entschieden) | Handout-Seiten (gesetzter Text), teils mit Fotos und Passbildern |
+| `assets/abenteuer/nordlicht/handouts_en/` | 51 | eigene Grafik (entschieden) | Handout-Seiten (gesetzter Text), teils mit Fotos und Passbildern |
+| `assets/abenteuer/nordlicht/karten/` | 12 | eigene Grafik (entschieden) | Lagepläne und Übersichtskarten, Herkunft unklar |
+| `assets/abenteuer/nordlicht/karten_en/` | 12 | eigene Grafik (entschieden) | Lagepläne und Übersichtskarten, Herkunft unklar |
+| `assets/abenteuer/schnellstart/bilder/` | 1 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/abenteuer/schnellstart/handouts_de/` | 2 | eigene Grafik (entschieden) | Handout-Seiten (Brief, Zeitungsausschnitt mit Foto) |
+| `assets/abenteuer/schnellstart/handouts_en/` | 2 | eigene Grafik (entschieden) | Handout-Seiten (Brief, Zeitungsausschnitt mit Foto) |
+| `assets/abenteuer/tuer/bilder/` | 27 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/abenteuer/tuer/handouts_de/` | 29 | eigene Grafik (entschieden) | Handout-Seiten (gesetzter Text), teils mit Fotos |
+| `assets/abenteuer/tuer/handouts_en/` | 29 | eigene Grafik (entschieden) | Handout-Seiten (gesetzter Text), teils mit Fotos |
+| `assets/abenteuer/zufall/bilder/` | 16 | KI-generiert | Bilder der Missionen/Kapitel (Fotostil, sepia) |
+| `assets/artefakte/` | 32 | KI-generiert | Artefakt-Bilder (Fotostil) |
+| `assets/banner/` | 15 | KI-generiert | Kompendium-Banner (Collagen aus KI-Bildern) |
+| `assets/cover/` | 2 | KI-generiert | Cover mit KI-Hintergrund und Titelschrift |
+| `assets/gegner/` | 236 | KI-generiert | Porträts der Gegner |
+| `assets/karten/de/` | 391 | eigene Grafik/Render | Karteikarten der Ausrüstung/Kräfte: Text mit Klassenzeichen, gerendert |
+| `assets/karten/en/` | 391 | eigene Grafik/Render | Karteikarten der Ausrüstung/Kräfte: Text mit Klassenzeichen, gerendert |
+| `assets/portraets/` | 72 | KI-generiert | Porträts der Agenten |
+| `assets/registratur/` | 105 | KI-generiert | Fotos der Registratur-Karteikarten |
+| `assets/szenen/grauakten/karten_de/` | 8 | eigene Grafik (entschieden) | Szenenbilder = Lagepläne, Herkunft unklar |
+| `assets/szenen/grauakten/karten_en/` | 8 | eigene Grafik (entschieden) | Szenenbilder = Lagepläne, Herkunft unklar |
+| `assets/szenen/horte/karten_de/` | 9 | eigene Grafik (entschieden) | Szenenbilder = Lagepläne, Herkunft unklar |
+| `assets/szenen/horte/karten_en/` | 9 | eigene Grafik (entschieden) | Szenenbilder = Lagepläne, Herkunft unklar |
+| `assets/szenen/nordlicht/karten/` | 12 | eigene Grafik (entschieden) | Szenenbilder = Lagepläne, Herkunft unklar |
+| `assets/szenen/nordlicht/karten_en/` | 12 | eigene Grafik (entschieden) | Szenenbilder = Lagepläne, Herkunft unklar |
+| `assets/szenen/schnellstart/bilder/` | 1 | KI-generiert | Szenenbilder (Fotos, Illustrationen) |
+| `assets/szenen/tuer/bilder/` | 23 | KI-generiert | Szenenbilder (Fotos, Illustrationen) |
+| `assets/token/` | 361 | KI-generiert | Token (KI-Porträts im Ring) |
+| `assets/wuerfel/` | 38 | eigene Grafik/Render | Würfelseiten, Augen, Klassenzeichen, Windrose, Korn (laut Auftrag erlaubt) |
+| `assets/wuerfel/v2/*/` | 56 | eigene Grafik/Render | 3D-Würfel, gerendert aus den eigenen Realm-Würfeln (Fassung 2) |
+| `halloween/assets/` | 12 | eigene Grafik/Render | Würfelseiten, aus Augen des Systems und Daves Kürbisgesicht (werkzeuge/halloween-wuerfel.mjs) |
+| `halloween/assets/v2/*/` | 8 | eigene Grafik/Render | 3D-Würfel Knochen/Kürbis (Realm Fassung 2) |
+| `media/` | 6 | nicht im Kern | Bildschirmfotos für die Paketseite, zeigen KI-Token und -Bilder; nicht im Release-ZIP |
+
+| Herkunft | Dateien |
+|---|---|
+| KI-generiert | 1000 |
+| eigene Grafik (entschieden) | 328 |
+| nicht im Kern (media) | 6 |
+| eigene Grafik/Render | 896 |
+
+Foundry-Kern und Fremdlizenz: keine Bilddateien im Repo. Fremdlizenz nur Schriften (`fonts/`: Barlow, Special Elite).
+Bilder, die der Code direkt nennt: Banner in `system.json`, Würfel in `odin.mjs` und `module/dsn.mjs`, Registratur-Fotos in `module/registratur.mjs`; alle übrigen hängen in den Kompendien.
+
+Im Kern: alle Bilder mit Herkunft „eigene Grafik“, keine mit „KI-generiert“; geprüft von `tests/kern.test.mjs`.
+
+## Alle Dateien
+
+- `assets/abenteuer/dienste/bilder/abteilung-13.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/das-siebte-buero.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/der-abend.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/die-erleuchteten.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/die-offenen.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/die-partner.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/die-saenger.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/freimaurer-und-illuminaten.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/grey-meridian.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-1-asklepios.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-2-kulte.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-3-fremde-dienste.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-4-bruderschaften.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-5-abtruennige-und-sammler.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-6-plaene-im-verbund.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kapitel-einfuehrung.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kleine-kulte.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/kongregation-vom-stillen-wort.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/loge-zum-schweigenden-kreis.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/morrow-biologics.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/plaene-im-verbund-diagramm.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/stiftung-in-basel.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/stillwater.webp`: KI-generiert
+- `assets/abenteuer/dienste/bilder/zwoelf-von-asklepios.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/00.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/01.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/02.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/03.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/04.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/05.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/06.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/07.webp`: KI-generiert
+- `assets/abenteuer/grauakten/bilder/08.webp`: KI-generiert
+- `assets/abenteuer/grauakten/handouts_de/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/09.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/13.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/14.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/15.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/16.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/17.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/18.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/19.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/20.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/21.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/22.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/23.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_de/24.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/09.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/13.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/14.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/15.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/16.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/17.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/18.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/19.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/20.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/21.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/22.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/23.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/handouts_en/24.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_de/08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/grauakten/karten_en/08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/bilder/de_b03_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b08_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b09_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b14_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b19_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b25_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b26_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b31_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b36_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b41_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b47_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b48_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b54_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b60_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/de_b66_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b03_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b08_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b09_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b14_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b19_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b25_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b26_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b31_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b36_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b41_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b47_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b48_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b53_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b59_1.webp`: KI-generiert
+- `assets/abenteuer/horte/bilder/en_b65_1.webp`: KI-generiert
+- `assets/abenteuer/horte/karten_de/hort-1.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-2.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-3.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-4.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-5.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-6.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-7.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-8.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_de/hort-9.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-1.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-2.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-3.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-4.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-5.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-6.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-7.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-8.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/horte/karten_en/hort-9.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/bilder/de_b04_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b09_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b108_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b109_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b117_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b126_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b137_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b139_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b148_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b157_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b15_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b164_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b22_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b32_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b33_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b41_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b51_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b62_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b71_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b72_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b80_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b89_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/de_b98_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b04_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b09_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b105_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b106_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b114_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b122_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b133_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b136_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b144_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b153_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b15_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b160_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b22_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b31_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b32_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b40_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b49_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b60_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b69_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b70_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b78_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b86_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/bilder/en_b95_1.webp`: KI-generiert
+- `assets/abenteuer/nordlicht/handouts/seite-02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-09.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-13.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-14.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-15.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-16.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-17.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-18.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-19.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-20.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-21.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-22.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-23.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-24.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-25.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-26.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-27.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-28.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-29.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-30.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-31.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-32.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-33.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-34.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-35.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-36.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-37.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-38.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-39.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-40.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-41.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-42.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-43.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-44.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-45.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-46.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-47.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-48.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-49.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-50.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-51.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts/seite-52.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-09.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-13.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-14.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-15.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-16.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-17.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-18.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-19.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-20.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-21.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-22.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-23.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-24.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-25.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-26.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-27.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-28.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-29.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-30.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-31.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-32.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-33.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-34.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-35.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-36.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-37.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-38.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-39.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-40.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-41.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-42.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-43.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-44.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-45.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-46.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-47.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-48.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-49.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-50.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-51.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/handouts_en/seite-52.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k1.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k2.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k3.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k4.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k5.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k6.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k7.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k8.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten/k9.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k1.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k2.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k3.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k4.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k5.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k6.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k7.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k8.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/nordlicht/karten_en/k9.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/schnellstart/bilder/stausee.webp`: KI-generiert
+- `assets/abenteuer/schnellstart/handouts_de/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/schnellstart/handouts_de/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/schnellstart/handouts_en/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/schnellstart/handouts_en/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/bilder/tuer-01.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-02.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-03.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-04.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-05.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-06.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-07.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-08.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-09.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-10.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-11.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-12.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-13.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-14.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-15.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-16.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-17.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-18.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-20.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-21.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-22.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-23.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-24.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-akt2.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-akt3.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-ch4.webp`: KI-generiert
+- `assets/abenteuer/tuer/bilder/tuer-ch5.webp`: KI-generiert
+- `assets/abenteuer/tuer/handouts_de/00.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/09.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/13.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/14.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/15.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/16.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/17.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/18.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/19.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/20.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/21.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/22.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/23.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/24.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/25.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/26.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/27.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_de/28.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/00.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/01.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/02.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/03.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/04.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/05.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/06.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/07.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/08.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/09.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/10.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/11.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/12.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/13.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/14.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/15.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/16.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/17.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/18.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/19.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/20.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/21.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/22.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/23.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/24.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/25.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/26.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/27.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/tuer/handouts_en/28.webp`: eigene Grafik (entschieden)
+- `assets/abenteuer/zufall/bilder/de_b03_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b06_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b15_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b23_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b32_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b43_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b51_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/de_b58_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b03_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b06_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b15_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b22_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b31_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b42_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b49_1.webp`: KI-generiert
+- `assets/abenteuer/zufall/bilder/en_b56_1.webp`: KI-generiert
+- `assets/artefakte/art-ampulle-s1.webp`: KI-generiert
+- `assets/artefakte/art-atemglas.webp`: KI-generiert
+- `assets/artefakte/art-automat.webp`: KI-generiert
+- `assets/artefakte/art-bamberger-spiegel.webp`: KI-generiert
+- `assets/artefakte/art-brautkranz.webp`: KI-generiert
+- `assets/artefakte/art-bullauge.webp`: KI-generiert
+- `assets/artefakte/art-chitinweste.webp`: KI-generiert
+- `assets/artefakte/art-enigma.webp`: KI-generiert
+- `assets/artefakte/art-fahrschein.webp`: KI-generiert
+- `assets/artefakte/art-gaestebuch.webp`: KI-generiert
+- `assets/artefakte/art-geisterkamera.webp`: KI-generiert
+- `assets/artefakte/art-handschuh.webp`: KI-generiert
+- `assets/artefakte/art-kompass.webp`: KI-generiert
+- `assets/artefakte/art-korallenstab.webp`: KI-generiert
+- `assets/artefakte/art-kristallherz.webp`: KI-generiert
+- `assets/artefakte/art-kuechenradio.webp`: KI-generiert
+- `assets/artefakte/art-logbuch.webp`: KI-generiert
+- `assets/artefakte/art-maske.webp`: KI-generiert
+- `assets/artefakte/art-mb7.webp`: KI-generiert
+- `assets/artefakte/art-pass.webp`: KI-generiert
+- `assets/artefakte/art-roehre.webp`: KI-generiert
+- `assets/artefakte/art-sargnaegel.webp`: KI-generiert
+- `assets/artefakte/art-siegelring.webp`: KI-generiert
+- `assets/artefakte/art-spieluhr.webp`: KI-generiert
+- `assets/artefakte/art-stab.webp`: KI-generiert
+- `assets/artefakte/art-sternkarte.webp`: KI-generiert
+- `assets/artefakte/art-stimmgabel.webp`: KI-generiert
+- `assets/artefakte/art-stoppuhr.webp`: KI-generiert
+- `assets/artefakte/art-totenmuenze.webp`: KI-generiert
+- `assets/artefakte/art-tunguska.webp`: KI-generiert
+- `assets/artefakte/art-wanduhr.webp`: KI-generiert
+- `assets/artefakte/art-wardenclyffe.webp`: KI-generiert
+- `assets/banner/abenteuer.webp`: KI-generiert
+- `assets/banner/abenteuerpakete-en.webp`: KI-generiert
+- `assets/banner/abenteuerpakete.webp`: KI-generiert
+- `assets/banner/agenten.webp`: KI-generiert
+- `assets/banner/arsenal.webp`: KI-generiert
+- `assets/banner/ausruestung.webp`: KI-generiert
+- `assets/banner/gegner.webp`: KI-generiert
+- `assets/banner/kraefte.webp`: KI-generiert
+- `assets/banner/makros.webp`: KI-generiert
+- `assets/banner/regeln.webp`: KI-generiert
+- `assets/banner/ruestungen.webp`: KI-generiert
+- `assets/banner/szenen.webp`: KI-generiert
+- `assets/banner/tabellen.webp`: KI-generiert
+- `assets/banner/waffen.webp`: KI-generiert
+- `assets/banner/zauber.webp`: KI-generiert
+- `assets/cover/die-anderen-dienste.webp`: KI-generiert
+- `assets/cover/en-the-other-services.webp`: KI-generiert
+- `assets/gegner/atlas-anlage.webp`: KI-generiert
+- `assets/gegner/atlas-ariadne.webp`: KI-generiert
+- `assets/gegner/atlas-beobachter.webp`: KI-generiert
+- `assets/gegner/atlas-besessener.webp`: KI-generiert
+- `assets/gegner/atlas-chimaere.webp`: KI-generiert
+- `assets/gegner/atlas-chorkind.webp`: KI-generiert
+- `assets/gegner/atlas-cleaner.webp`: KI-generiert
+- `assets/gegner/atlas-doppel.webp`: KI-generiert
+- `assets/gegner/atlas-fahrgaeste.webp`: KI-generiert
+- `assets/gegner/atlas-familie.webp`: KI-generiert
+- `assets/gegner/atlas-fanatiker.webp`: KI-generiert
+- `assets/gegner/atlas-fixer.webp`: KI-generiert
+- `assets/gegner/atlas-glasmensch.webp`: KI-generiert
+- `assets/gegner/atlas-golem.webp`: KI-generiert
+- `assets/gegner/atlas-hausgeist.webp`: KI-generiert
+- `assets/gegner/atlas-henker.webp`: KI-generiert
+- `assets/gegner/atlas-hybridhunde.webp`: KI-generiert
+- `assets/gegner/atlas-irrlicht.webp`: KI-generiert
+- `assets/gegner/atlas-keimling.webp`: KI-generiert
+- `assets/gegner/atlas-kolonie.webp`: KI-generiert
+- `assets/gegner/atlas-kristallwaechter.webp`: KI-generiert
+- `assets/gegner/atlas-medium.webp`: KI-generiert
+- `assets/gegner/atlas-nachzehrer.webp`: KI-generiert
+- `assets/gegner/atlas-namensfresser.webp`: KI-generiert
+- `assets/gegner/atlas-nanitenwildling.webp`: KI-generiert
+- `assets/gegner/atlas-perchta.webp`: KI-generiert
+- `assets/gegner/atlas-pilot.webp`: KI-generiert
+- `assets/gegner/atlas-rissling.webp`: KI-generiert
+- `assets/gegner/atlas-sammler.webp`: KI-generiert
+- `assets/gegner/atlas-schleife.webp`: KI-generiert
+- `assets/gegner/atlas-schwarm.webp`: KI-generiert
+- `assets/gegner/atlas-schwarzer-hund.webp`: KI-generiert
+- `assets/gegner/atlas-schwellenhueter.webp`: KI-generiert
+- `assets/gegner/atlas-seefrau.webp`: KI-generiert
+- `assets/gegner/atlas-sendung.webp`: KI-generiert
+- `assets/gegner/atlas-spuk.webp`: KI-generiert
+- `assets/gegner/atlas-strasse.webp`: KI-generiert
+- `assets/gegner/atlas-tiefenkreis.webp`: KI-generiert
+- `assets/gegner/atlas-vergessene.webp`: KI-generiert
+- `assets/gegner/atlas-verlorener-veteran.webp`: KI-generiert
+- `assets/gegner/atlas-wachsystem.webp`: KI-generiert
+- `assets/gegner/atlas-waldgaenger.webp`: KI-generiert
+- `assets/gegner/atlas-wanderraum.webp`: KI-generiert
+- `assets/gegner/atlas-wartende.webp`: KI-generiert
+- `assets/gegner/atlas-weisse-frau.webp`: KI-generiert
+- `assets/gegner/atlas-wiederkehrer.webp`: KI-generiert
+- `assets/gegner/atlas-wucherer.webp`: KI-generiert
+- `assets/gegner/npc-at-abtr-leser.webp`: KI-generiert
+- `assets/gegner/npc-at-abtr-psion.webp`: KI-generiert
+- `assets/gegner/npc-at-daemon.webp`: KI-generiert
+- `assets/gegner/npc-at-dienst-agent.webp`: KI-generiert
+- `assets/gegner/npc-at-elite-soeldner.webp`: KI-generiert
+- `assets/gegner/npc-at-gewachsene.webp`: KI-generiert
+- `assets/gegner/npc-at-grauer-mann.webp`: KI-generiert
+- `assets/gegner/npc-at-kristalljaeger.webp`: KI-generiert
+- `assets/gegner/npc-at-kristallmutant.webp`: KI-generiert
+- `assets/gegner/npc-at-namenloser.webp`: KI-generiert
+- `assets/gegner/npc-at-offener.webp`: KI-generiert
+- `assets/gegner/npc-at-praxis.webp`: KI-generiert
+- `assets/gegner/npc-at-revisor.webp`: KI-generiert
+- `assets/gegner/npc-at-rueckkehrer.webp`: KI-generiert
+- `assets/gegner/npc-at-saenger.webp`: KI-generiert
+- `assets/gegner/npc-at-schattenwesen.webp`: KI-generiert
+- `assets/gegner/npc-at-silberdieb.webp`: KI-generiert
+- `assets/gegner/npc-at-techniker-stollen.webp`: KI-generiert
+- `assets/gegner/npc-bing-03-agent-negotiator-maennlich-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-03-agent-negotiator-maennlich-5.webp`: KI-generiert
+- `assets/gegner/npc-bing-03-agent-negotiator-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-04-agent-negotiator-weiblich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-04-agent-negotiator-weiblich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-05-agent-assassin-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-05-agent-assassin-maennlich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-07-agent-spy-maennlich-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-07-agent-spy-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-07-agent-spy-maennlich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-07-agent-spy-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-07-agent-spy-maennlich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-08-agent-spy-weiblich-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-09-agent-saboteur-maennlich-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-09-agent-saboteur-maennlich-v3-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-09-agent-saboteur-maennlich-v3-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-09-agent-saboteur-maennlich-v3-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-10-agent-saboteur-weiblich-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-11-scientist-biochemist-maennlich-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-11-scientist-biochemist-maennlich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-11-scientist-biochemist-maennlich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-12-scientist-biochemist-weiblich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-12-scientist-biochemist-weiblich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-14-scientist-astrobiologist-weiblich-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-14-scientist-astrobiologist-weiblich-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-15-scientist-physicist-maennlich-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-15-scientist-physicist-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-15-scientist-physicist-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-15-scientist-physicist-maennlich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-16-scientist-physicist-weiblich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-31-thaumaturg-thaumaturgist-maennlich-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-31-thaumaturg-thaumaturgist-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-32-thaumaturg-thaumaturgist-weiblich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-37-thaumaturg-chronomancer-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-37-thaumaturg-chronomancer-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-38-thaumaturg-chronomancer-weiblich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-41-soldier-stormbreaker-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-41-soldier-stormbreaker-maennlich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-47-soldier-nanotech-veteran-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-47-soldier-nanotech-veteran-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-51-investigator-profiler-maennlich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-51-investigator-profiler-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-52-investigator-profiler-weiblich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-53-investigator-journalist-maennlich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-54-investigator-journalist-weiblich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-54-investigator-journalist-weiblich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-57-investigator-antiquarian-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-57-investigator-antiquarian-maennlich-v2-2.webp`: KI-generiert
+- `assets/gegner/npc-bing-57-investigator-antiquarian-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-57-investigator-antiquarian-maennlich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-bing-59-investigator-paranormal-detective-maennlich-v2-1.webp`: KI-generiert
+- `assets/gegner/npc-bing-59-investigator-paranormal-detective-maennlich-v2-3.webp`: KI-generiert
+- `assets/gegner/npc-bing-60-investigator-paranormal-detective-weiblich-v2-4.webp`: KI-generiert
+- `assets/gegner/npc-di-albers.webp`: KI-generiert
+- `assets/gegner/npc-di-albrecht.webp`: KI-generiert
+- `assets/gegner/npc-di-archivarin.webp`: KI-generiert
+- `assets/gegner/npc-di-bieter.webp`: KI-generiert
+- `assets/gegner/npc-di-brandsma.webp`: KI-generiert
+- `assets/gegner/npc-di-bruder.webp`: KI-generiert
+- `assets/gegner/npc-di-cweber.webp`: KI-generiert
+- `assets/gegner/npc-di-ferris.webp`: KI-generiert
+- `assets/gegner/npc-di-hartl.webp`: KI-generiert
+- `assets/gegner/npc-di-holm.webp`: KI-generiert
+- `assets/gegner/npc-di-kantor-alt.webp`: KI-generiert
+- `assets/gegner/npc-di-leuenberger.webp`: KI-generiert
+- `assets/gegner/npc-di-luca.webp`: KI-generiert
+- `assets/gegner/npc-di-marchetti.webp`: KI-generiert
+- `assets/gegner/npc-di-riva.webp`: KI-generiert
+- `assets/gegner/npc-di-saenger.webp`: KI-generiert
+- `assets/gegner/npc-di-vasari.webp`: KI-generiert
+- `assets/gegner/npc-di-webb.webp`: KI-generiert
+- `assets/gegner/npc-di-wendlinger.webp`: KI-generiert
+- `assets/gegner/npc-fk-ferris.webp`: KI-generiert
+- `assets/gegner/npc-fk-hoeven.webp`: KI-generiert
+- `assets/gegner/npc-fk-whitlock.webp`: KI-generiert
+- `assets/gegner/npc-ga-cerny.webp`: KI-generiert
+- `assets/gegner/npc-ga-eleitner.webp`: KI-generiert
+- `assets/gegner/npc-ga-gwynne.webp`: KI-generiert
+- `assets/gegner/npc-ga-hand.webp`: KI-generiert
+- `assets/gegner/npc-ga-hartley.webp`: KI-generiert
+- `assets/gegner/npc-ga-liese.webp`: KI-generiert
+- `assets/gegner/npc-ga-vane.webp`: KI-generiert
+- `assets/gegner/npc-ho-adeyemi.webp`: KI-generiert
+- `assets/gegner/npc-ho-ahlgren.webp`: KI-generiert
+- `assets/gegner/npc-ho-ahrens.webp`: KI-generiert
+- `assets/gegner/npc-ho-aydin.webp`: KI-generiert
+- `assets/gegner/npc-ho-balogun.webp`: KI-generiert
+- `assets/gegner/npc-ho-bell.webp`: KI-generiert
+- `assets/gegner/npc-ho-bergstroem.webp`: KI-generiert
+- `assets/gegner/npc-ho-bevan.webp`: KI-generiert
+- `assets/gegner/npc-ho-birch.webp`: KI-generiert
+- `assets/gegner/npc-ho-brandl.webp`: KI-generiert
+- `assets/gegner/npc-ho-brandstetter.webp`: KI-generiert
+- `assets/gegner/npc-ho-brodersen.webp`: KI-generiert
+- `assets/gegner/npc-ho-ccahuantico.webp`: KI-generiert
+- `assets/gegner/npc-ho-chamaeleon.webp`: KI-generiert
+- `assets/gegner/npc-ho-cleo.webp`: KI-generiert
+- `assets/gegner/npc-ho-colquhoun.webp`: KI-generiert
+- `assets/gegner/npc-ho-dorje.webp`: KI-generiert
+- `assets/gegner/npc-ho-dulac.webp`: KI-generiert
+- `assets/gegner/npc-ho-dvorakova.webp`: KI-generiert
+- `assets/gegner/npc-ho-eckhardt.webp`: KI-generiert
+- `assets/gegner/npc-ho-eze.webp`: KI-generiert
+- `assets/gegner/npc-ho-finch.webp`: KI-generiert
+- `assets/gegner/npc-ho-gjones.webp`: KI-generiert
+- `assets/gegner/npc-ho-hansen.webp`: KI-generiert
+- `assets/gegner/npc-ho-havel.webp`: KI-generiert
+- `assets/gegner/npc-ho-huanaco.webp`: KI-generiert
+- `assets/gegner/npc-ho-hueter.webp`: KI-generiert
+- `assets/gegner/npc-ho-imhof.webp`: KI-generiert
+- `assets/gegner/npc-ho-kopecka.webp`: KI-generiert
+- `assets/gegner/npc-ho-kowalczyk.webp`: KI-generiert
+- `assets/gegner/npc-ho-lewis.webp`: KI-generiert
+- `assets/gegner/npc-ho-lowe.webp`: KI-generiert
+- `assets/gegner/npc-ho-macleod.webp`: KI-generiert
+- `assets/gegner/npc-ho-mahler.webp`: KI-generiert
+- `assets/gegner/npc-ho-mamani.webp`: KI-generiert
+- `assets/gegner/npc-ho-menon.webp`: KI-generiert
+- `assets/gegner/npc-ho-novakova.webp`: KI-generiert
+- `assets/gegner/npc-ho-nowak.webp`: KI-generiert
+- `assets/gegner/npc-ho-nummer.webp`: KI-generiert
+- `assets/gegner/npc-ho-nwosu.webp`: KI-generiert
+- `assets/gegner/npc-ho-nystroem.webp`: KI-generiert
+- `assets/gegner/npc-ho-okonjo.webp`: KI-generiert
+- `assets/gegner/npc-ho-oyelaran.webp`: KI-generiert
+- `assets/gegner/npc-ho-pfleger.webp`: KI-generiert
+- `assets/gegner/npc-ho-pospisil.webp`: KI-generiert
+- `assets/gegner/npc-ho-pryce.webp`: KI-generiert
+- `assets/gegner/npc-ho-quayle.webp`: KI-generiert
+- `assets/gegner/npc-ho-quispe.webp`: KI-generiert
+- `assets/gegner/npc-ho-registratorin.webp`: KI-generiert
+- `assets/gegner/npc-ho-reyes.webp`: KI-generiert
+- `assets/gegner/npc-ho-rhys.webp`: KI-generiert
+- `assets/gegner/npc-ho-rojas.webp`: KI-generiert
+- `assets/gegner/npc-ho-schluesselmacherin.webp`: KI-generiert
+- `assets/gegner/npc-ho-shah.webp`: KI-generiert
+- `assets/gegner/npc-ho-simkova.webp`: KI-generiert
+- `assets/gegner/npc-ho-solheim.webp`: KI-generiert
+- `assets/gegner/npc-ho-stadler.webp`: KI-generiert
+- `assets/gegner/npc-ho-thiessen.webp`: KI-generiert
+- `assets/gegner/npc-ho-thorne.webp`: KI-generiert
+- `assets/gegner/npc-ho-tremblay.webp`: KI-generiert
+- `assets/gegner/npc-ho-vaughan.webp`: KI-generiert
+- `assets/gegner/npc-ho-vesela.webp`: KI-generiert
+- `assets/gegner/npc-ho-walker.webp`: KI-generiert
+- `assets/gegner/npc-ho-wimmer.webp`: KI-generiert
+- `assets/gegner/npc-ho-wren.webp`: KI-generiert
+- `assets/gegner/npc-nl-fahrer.webp`: KI-generiert
+- `assets/gegner/npc-nl-haugen.webp`: KI-generiert
+- `assets/gegner/npc-nl-jaegerfuehrer.webp`: KI-generiert
+- `assets/gegner/npc-nl-kantor-1976.webp`: KI-generiert
+- `assets/gegner/npc-nl-lavigne.webp`: KI-generiert
+- `assets/gegner/npc-nl-maenner-1909.webp`: KI-generiert
+- `assets/gegner/npc-nl-marsh.webp`: KI-generiert
+- `assets/gegner/npc-nl-partneroffizier.webp`: KI-generiert
+- `assets/gegner/npc-nl-psion-kreis.webp`: KI-generiert
+- `assets/gegner/npc-nl-soeldner-nachkrieg.webp`: KI-generiert
+- `assets/gegner/npc-nl-soeldner-sammler.webp`: KI-generiert
+- `assets/gegner/npc-nl-stasi-offizier.webp`: KI-generiert
+- `assets/gegner/npc-nl-stasi-soldat.webp`: KI-generiert
+- `assets/gegner/npc-nl-stimmen-eskorte.webp`: KI-generiert
+- `assets/gegner/npc-nl-volkspolizist.webp`: KI-generiert
+- `assets/gegner/welt-abteilung13.webp`: KI-generiert
+- `assets/gegner/welt-adept.webp`: KI-generiert
+- `assets/gegner/welt-exorzist.webp`: KI-generiert
+- `assets/gegner/welt-grey-meridian.webp`: KI-generiert
+- `assets/gegner/welt-kurator.webp`: KI-generiert
+- `assets/gegner/welt-meister.webp`: KI-generiert
+- `assets/gegner/welt-morrow.webp`: KI-generiert
+- `assets/gegner/welt-prediger.webp`: KI-generiert
+- `assets/gegner/welt-stillwater.webp`: KI-generiert
+- `assets/karten/de/A_001.webp`: eigene Grafik/Render
+- `assets/karten/de/A_002.webp`: eigene Grafik/Render
+- `assets/karten/de/A_003.webp`: eigene Grafik/Render
+- `assets/karten/de/A_004.webp`: eigene Grafik/Render
+- `assets/karten/de/A_005.webp`: eigene Grafik/Render
+- `assets/karten/de/A_006.webp`: eigene Grafik/Render
+- `assets/karten/de/A_007.webp`: eigene Grafik/Render
+- `assets/karten/de/A_008.webp`: eigene Grafik/Render
+- `assets/karten/de/A_009.webp`: eigene Grafik/Render
+- `assets/karten/de/A_010.webp`: eigene Grafik/Render
+- `assets/karten/de/A_011.webp`: eigene Grafik/Render
+- `assets/karten/de/A_012.webp`: eigene Grafik/Render
+- `assets/karten/de/A_013.webp`: eigene Grafik/Render
+- `assets/karten/de/A_014.webp`: eigene Grafik/Render
+- `assets/karten/de/A_015.webp`: eigene Grafik/Render
+- `assets/karten/de/A_016.webp`: eigene Grafik/Render
+- `assets/karten/de/A_017.webp`: eigene Grafik/Render
+- `assets/karten/de/A_018.webp`: eigene Grafik/Render
+- `assets/karten/de/A_019.webp`: eigene Grafik/Render
+- `assets/karten/de/A_020.webp`: eigene Grafik/Render
+- `assets/karten/de/A_021.webp`: eigene Grafik/Render
+- `assets/karten/de/A_022.webp`: eigene Grafik/Render
+- `assets/karten/de/A_023.webp`: eigene Grafik/Render
+- `assets/karten/de/A_024.webp`: eigene Grafik/Render
+- `assets/karten/de/A_025.webp`: eigene Grafik/Render
+- `assets/karten/de/A_026.webp`: eigene Grafik/Render
+- `assets/karten/de/A_027.webp`: eigene Grafik/Render
+- `assets/karten/de/A_028.webp`: eigene Grafik/Render
+- `assets/karten/de/A_029.webp`: eigene Grafik/Render
+- `assets/karten/de/A_030.webp`: eigene Grafik/Render
+- `assets/karten/de/A_031.webp`: eigene Grafik/Render
+- `assets/karten/de/A_032.webp`: eigene Grafik/Render
+- `assets/karten/de/A_033.webp`: eigene Grafik/Render
+- `assets/karten/de/A_034.webp`: eigene Grafik/Render
+- `assets/karten/de/A_035.webp`: eigene Grafik/Render
+- `assets/karten/de/A_036.webp`: eigene Grafik/Render
+- `assets/karten/de/A_037.webp`: eigene Grafik/Render
+- `assets/karten/de/A_038.webp`: eigene Grafik/Render
+- `assets/karten/de/A_039.webp`: eigene Grafik/Render
+- `assets/karten/de/A_040.webp`: eigene Grafik/Render
+- `assets/karten/de/A_041.webp`: eigene Grafik/Render
+- `assets/karten/de/A_042.webp`: eigene Grafik/Render
+- `assets/karten/de/A_043.webp`: eigene Grafik/Render
+- `assets/karten/de/A_044.webp`: eigene Grafik/Render
+- `assets/karten/de/A_045.webp`: eigene Grafik/Render
+- `assets/karten/de/A_046.webp`: eigene Grafik/Render
+- `assets/karten/de/A_047.webp`: eigene Grafik/Render
+- `assets/karten/de/A_048.webp`: eigene Grafik/Render
+- `assets/karten/de/A_049.webp`: eigene Grafik/Render
+- `assets/karten/de/A_050.webp`: eigene Grafik/Render
+- `assets/karten/de/A_051.webp`: eigene Grafik/Render
+- `assets/karten/de/A_052.webp`: eigene Grafik/Render
+- `assets/karten/de/A_053.webp`: eigene Grafik/Render
+- `assets/karten/de/A_054.webp`: eigene Grafik/Render
+- `assets/karten/de/A_055.webp`: eigene Grafik/Render
+- `assets/karten/de/A_056.webp`: eigene Grafik/Render
+- `assets/karten/de/A_057.webp`: eigene Grafik/Render
+- `assets/karten/de/A_058.webp`: eigene Grafik/Render
+- `assets/karten/de/A_059.webp`: eigene Grafik/Render
+- `assets/karten/de/A_060.webp`: eigene Grafik/Render
+- `assets/karten/de/A_061.webp`: eigene Grafik/Render
+- `assets/karten/de/A_062.webp`: eigene Grafik/Render
+- `assets/karten/de/A_063.webp`: eigene Grafik/Render
+- `assets/karten/de/A_064.webp`: eigene Grafik/Render
+- `assets/karten/de/A_065.webp`: eigene Grafik/Render
+- `assets/karten/de/A_066.webp`: eigene Grafik/Render
+- `assets/karten/de/A_067.webp`: eigene Grafik/Render
+- `assets/karten/de/A_068.webp`: eigene Grafik/Render
+- `assets/karten/de/A_069.webp`: eigene Grafik/Render
+- `assets/karten/de/A_070.webp`: eigene Grafik/Render
+- `assets/karten/de/A_071.webp`: eigene Grafik/Render
+- `assets/karten/de/A_072.webp`: eigene Grafik/Render
+- `assets/karten/de/A_073.webp`: eigene Grafik/Render
+- `assets/karten/de/A_074.webp`: eigene Grafik/Render
+- `assets/karten/de/A_075.webp`: eigene Grafik/Render
+- `assets/karten/de/A_076.webp`: eigene Grafik/Render
+- `assets/karten/de/A_077.webp`: eigene Grafik/Render
+- `assets/karten/de/A_078.webp`: eigene Grafik/Render
+- `assets/karten/de/A_079.webp`: eigene Grafik/Render
+- `assets/karten/de/A_080.webp`: eigene Grafik/Render
+- `assets/karten/de/A_081.webp`: eigene Grafik/Render
+- `assets/karten/de/A_082.webp`: eigene Grafik/Render
+- `assets/karten/de/A_083.webp`: eigene Grafik/Render
+- `assets/karten/de/A_084.webp`: eigene Grafik/Render
+- `assets/karten/de/A_085.webp`: eigene Grafik/Render
+- `assets/karten/de/A_086.webp`: eigene Grafik/Render
+- `assets/karten/de/A_087.webp`: eigene Grafik/Render
+- `assets/karten/de/A_088.webp`: eigene Grafik/Render
+- `assets/karten/de/A_089.webp`: eigene Grafik/Render
+- `assets/karten/de/A_090.webp`: eigene Grafik/Render
+- `assets/karten/de/A_091.webp`: eigene Grafik/Render
+- `assets/karten/de/A_092.webp`: eigene Grafik/Render
+- `assets/karten/de/A_093.webp`: eigene Grafik/Render
+- `assets/karten/de/A_094.webp`: eigene Grafik/Render
+- `assets/karten/de/A_095.webp`: eigene Grafik/Render
+- `assets/karten/de/A_096.webp`: eigene Grafik/Render
+- `assets/karten/de/A_097.webp`: eigene Grafik/Render
+- `assets/karten/de/A_098.webp`: eigene Grafik/Render
+- `assets/karten/de/A_099.webp`: eigene Grafik/Render
+- `assets/karten/de/A_100.webp`: eigene Grafik/Render
+- `assets/karten/de/A_101.webp`: eigene Grafik/Render
+- `assets/karten/de/A_102.webp`: eigene Grafik/Render
+- `assets/karten/de/A_103.webp`: eigene Grafik/Render
+- `assets/karten/de/A_104.webp`: eigene Grafik/Render
+- `assets/karten/de/A_105.webp`: eigene Grafik/Render
+- `assets/karten/de/A_106.webp`: eigene Grafik/Render
+- `assets/karten/de/A_107.webp`: eigene Grafik/Render
+- `assets/karten/de/A_108.webp`: eigene Grafik/Render
+- `assets/karten/de/A_109.webp`: eigene Grafik/Render
+- `assets/karten/de/A_110.webp`: eigene Grafik/Render
+- `assets/karten/de/A_111.webp`: eigene Grafik/Render
+- `assets/karten/de/A_112.webp`: eigene Grafik/Render
+- `assets/karten/de/A_113.webp`: eigene Grafik/Render
+- `assets/karten/de/A_114.webp`: eigene Grafik/Render
+- `assets/karten/de/A_115.webp`: eigene Grafik/Render
+- `assets/karten/de/A_116.webp`: eigene Grafik/Render
+- `assets/karten/de/A_117.webp`: eigene Grafik/Render
+- `assets/karten/de/A_118.webp`: eigene Grafik/Render
+- `assets/karten/de/A_119.webp`: eigene Grafik/Render
+- `assets/karten/de/A_120.webp`: eigene Grafik/Render
+- `assets/karten/de/A_121.webp`: eigene Grafik/Render
+- `assets/karten/de/A_122.webp`: eigene Grafik/Render
+- `assets/karten/de/A_123.webp`: eigene Grafik/Render
+- `assets/karten/de/A_124.webp`: eigene Grafik/Render
+- `assets/karten/de/A_125.webp`: eigene Grafik/Render
+- `assets/karten/de/A_126.webp`: eigene Grafik/Render
+- `assets/karten/de/A_127.webp`: eigene Grafik/Render
+- `assets/karten/de/A_128.webp`: eigene Grafik/Render
+- `assets/karten/de/A_129.webp`: eigene Grafik/Render
+- `assets/karten/de/A_130.webp`: eigene Grafik/Render
+- `assets/karten/de/A_131.webp`: eigene Grafik/Render
+- `assets/karten/de/A_132.webp`: eigene Grafik/Render
+- `assets/karten/de/A_133.webp`: eigene Grafik/Render
+- `assets/karten/de/A_134.webp`: eigene Grafik/Render
+- `assets/karten/de/A_135.webp`: eigene Grafik/Render
+- `assets/karten/de/A_136.webp`: eigene Grafik/Render
+- `assets/karten/de/A_137.webp`: eigene Grafik/Render
+- `assets/karten/de/A_138.webp`: eigene Grafik/Render
+- `assets/karten/de/A_139.webp`: eigene Grafik/Render
+- `assets/karten/de/A_140.webp`: eigene Grafik/Render
+- `assets/karten/de/A_141.webp`: eigene Grafik/Render
+- `assets/karten/de/A_142.webp`: eigene Grafik/Render
+- `assets/karten/de/A_143.webp`: eigene Grafik/Render
+- `assets/karten/de/A_144.webp`: eigene Grafik/Render
+- `assets/karten/de/A_145.webp`: eigene Grafik/Render
+- `assets/karten/de/A_146.webp`: eigene Grafik/Render
+- `assets/karten/de/A_147.webp`: eigene Grafik/Render
+- `assets/karten/de/A_148.webp`: eigene Grafik/Render
+- `assets/karten/de/A_149.webp`: eigene Grafik/Render
+- `assets/karten/de/A_150.webp`: eigene Grafik/Render
+- `assets/karten/de/A_151.webp`: eigene Grafik/Render
+- `assets/karten/de/A_152.webp`: eigene Grafik/Render
+- `assets/karten/de/A_153.webp`: eigene Grafik/Render
+- `assets/karten/de/A_154.webp`: eigene Grafik/Render
+- `assets/karten/de/A_155.webp`: eigene Grafik/Render
+- `assets/karten/de/A_156.webp`: eigene Grafik/Render
+- `assets/karten/de/A_157.webp`: eigene Grafik/Render
+- `assets/karten/de/A_158.webp`: eigene Grafik/Render
+- `assets/karten/de/A_159.webp`: eigene Grafik/Render
+- `assets/karten/de/A_160.webp`: eigene Grafik/Render
+- `assets/karten/de/A_161.webp`: eigene Grafik/Render
+- `assets/karten/de/A_162.webp`: eigene Grafik/Render
+- `assets/karten/de/A_163.webp`: eigene Grafik/Render
+- `assets/karten/de/A_164.webp`: eigene Grafik/Render
+- `assets/karten/de/A_165.webp`: eigene Grafik/Render
+- `assets/karten/de/A_166.webp`: eigene Grafik/Render
+- `assets/karten/de/A_167.webp`: eigene Grafik/Render
+- `assets/karten/de/A_168.webp`: eigene Grafik/Render
+- `assets/karten/de/A_169.webp`: eigene Grafik/Render
+- `assets/karten/de/A_170.webp`: eigene Grafik/Render
+- `assets/karten/de/A_171.webp`: eigene Grafik/Render
+- `assets/karten/de/A_172.webp`: eigene Grafik/Render
+- `assets/karten/de/A_173.webp`: eigene Grafik/Render
+- `assets/karten/de/A_174.webp`: eigene Grafik/Render
+- `assets/karten/de/A_175.webp`: eigene Grafik/Render
+- `assets/karten/de/A_176.webp`: eigene Grafik/Render
+- `assets/karten/de/A_177.webp`: eigene Grafik/Render
+- `assets/karten/de/A_178.webp`: eigene Grafik/Render
+- `assets/karten/de/A_179.webp`: eigene Grafik/Render
+- `assets/karten/de/A_180.webp`: eigene Grafik/Render
+- `assets/karten/de/A_181.webp`: eigene Grafik/Render
+- `assets/karten/de/A_182.webp`: eigene Grafik/Render
+- `assets/karten/de/A_183.webp`: eigene Grafik/Render
+- `assets/karten/de/A_184.webp`: eigene Grafik/Render
+- `assets/karten/de/A_185.webp`: eigene Grafik/Render
+- `assets/karten/de/A_186.webp`: eigene Grafik/Render
+- `assets/karten/de/A_187.webp`: eigene Grafik/Render
+- `assets/karten/de/A_188.webp`: eigene Grafik/Render
+- `assets/karten/de/A_189.webp`: eigene Grafik/Render
+- `assets/karten/de/A_190.webp`: eigene Grafik/Render
+- `assets/karten/de/A_191.webp`: eigene Grafik/Render
+- `assets/karten/de/A_192.webp`: eigene Grafik/Render
+- `assets/karten/de/A_193.webp`: eigene Grafik/Render
+- `assets/karten/de/A_194.webp`: eigene Grafik/Render
+- `assets/karten/de/A_195.webp`: eigene Grafik/Render
+- `assets/karten/de/A_196.webp`: eigene Grafik/Render
+- `assets/karten/de/A_197.webp`: eigene Grafik/Render
+- `assets/karten/de/A_198.webp`: eigene Grafik/Render
+- `assets/karten/de/A_199.webp`: eigene Grafik/Render
+- `assets/karten/de/A_200.webp`: eigene Grafik/Render
+- `assets/karten/de/A_201.webp`: eigene Grafik/Render
+- `assets/karten/de/A_202.webp`: eigene Grafik/Render
+- `assets/karten/de/A_203.webp`: eigene Grafik/Render
+- `assets/karten/de/A_204.webp`: eigene Grafik/Render
+- `assets/karten/de/A_205.webp`: eigene Grafik/Render
+- `assets/karten/de/A_206.webp`: eigene Grafik/Render
+- `assets/karten/de/A_207.webp`: eigene Grafik/Render
+- `assets/karten/de/A_208.webp`: eigene Grafik/Render
+- `assets/karten/de/A_209.webp`: eigene Grafik/Render
+- `assets/karten/de/A_210.webp`: eigene Grafik/Render
+- `assets/karten/de/A_211.webp`: eigene Grafik/Render
+- `assets/karten/de/A_212.webp`: eigene Grafik/Render
+- `assets/karten/de/A_213.webp`: eigene Grafik/Render
+- `assets/karten/de/A_214.webp`: eigene Grafik/Render
+- `assets/karten/de/A_215.webp`: eigene Grafik/Render
+- `assets/karten/de/A_216.webp`: eigene Grafik/Render
+- `assets/karten/de/A_217.webp`: eigene Grafik/Render
+- `assets/karten/de/A_218.webp`: eigene Grafik/Render
+- `assets/karten/de/A_219.webp`: eigene Grafik/Render
+- `assets/karten/de/A_220.webp`: eigene Grafik/Render
+- `assets/karten/de/A_221.webp`: eigene Grafik/Render
+- `assets/karten/de/A_222.webp`: eigene Grafik/Render
+- `assets/karten/de/A_223.webp`: eigene Grafik/Render
+- `assets/karten/de/A_224.webp`: eigene Grafik/Render
+- `assets/karten/de/A_225.webp`: eigene Grafik/Render
+- `assets/karten/de/A_226.webp`: eigene Grafik/Render
+- `assets/karten/de/A_227.webp`: eigene Grafik/Render
+- `assets/karten/de/A_228.webp`: eigene Grafik/Render
+- `assets/karten/de/A_229.webp`: eigene Grafik/Render
+- `assets/karten/de/A_230.webp`: eigene Grafik/Render
+- `assets/karten/de/A_231.webp`: eigene Grafik/Render
+- `assets/karten/de/A_232.webp`: eigene Grafik/Render
+- `assets/karten/de/A_233.webp`: eigene Grafik/Render
+- `assets/karten/de/A_234.webp`: eigene Grafik/Render
+- `assets/karten/de/A_235.webp`: eigene Grafik/Render
+- `assets/karten/de/A_236.webp`: eigene Grafik/Render
+- `assets/karten/de/A_237.webp`: eigene Grafik/Render
+- `assets/karten/de/A_238.webp`: eigene Grafik/Render
+- `assets/karten/de/A_239.webp`: eigene Grafik/Render
+- `assets/karten/de/A_240.webp`: eigene Grafik/Render
+- `assets/karten/de/A_241.webp`: eigene Grafik/Render
+- `assets/karten/de/A_242.webp`: eigene Grafik/Render
+- `assets/karten/de/A_243.webp`: eigene Grafik/Render
+- `assets/karten/de/A_244.webp`: eigene Grafik/Render
+- `assets/karten/de/A_245.webp`: eigene Grafik/Render
+- `assets/karten/de/A_246.webp`: eigene Grafik/Render
+- `assets/karten/de/A_247.webp`: eigene Grafik/Render
+- `assets/karten/de/A_248.webp`: eigene Grafik/Render
+- `assets/karten/de/A_249.webp`: eigene Grafik/Render
+- `assets/karten/de/A_250.webp`: eigene Grafik/Render
+- `assets/karten/de/A_251.webp`: eigene Grafik/Render
+- `assets/karten/de/A_252.webp`: eigene Grafik/Render
+- `assets/karten/de/A_253.webp`: eigene Grafik/Render
+- `assets/karten/de/A_254.webp`: eigene Grafik/Render
+- `assets/karten/de/A_255.webp`: eigene Grafik/Render
+- `assets/karten/de/A_256.webp`: eigene Grafik/Render
+- `assets/karten/de/A_257.webp`: eigene Grafik/Render
+- `assets/karten/de/A_258.webp`: eigene Grafik/Render
+- `assets/karten/de/A_259.webp`: eigene Grafik/Render
+- `assets/karten/de/A_260.webp`: eigene Grafik/Render
+- `assets/karten/de/A_261.webp`: eigene Grafik/Render
+- `assets/karten/de/A_262.webp`: eigene Grafik/Render
+- `assets/karten/de/A_263.webp`: eigene Grafik/Render
+- `assets/karten/de/A_264.webp`: eigene Grafik/Render
+- `assets/karten/de/A_265.webp`: eigene Grafik/Render
+- `assets/karten/de/A_266.webp`: eigene Grafik/Render
+- `assets/karten/de/A_267.webp`: eigene Grafik/Render
+- `assets/karten/de/A_268.webp`: eigene Grafik/Render
+- `assets/karten/de/A_269.webp`: eigene Grafik/Render
+- `assets/karten/de/A_270.webp`: eigene Grafik/Render
+- `assets/karten/de/A_271.webp`: eigene Grafik/Render
+- `assets/karten/de/A_272.webp`: eigene Grafik/Render
+- `assets/karten/de/A_273.webp`: eigene Grafik/Render
+- `assets/karten/de/A_274.webp`: eigene Grafik/Render
+- `assets/karten/de/A_275.webp`: eigene Grafik/Render
+- `assets/karten/de/A_276.webp`: eigene Grafik/Render
+- `assets/karten/de/A_277.webp`: eigene Grafik/Render
+- `assets/karten/de/A_278.webp`: eigene Grafik/Render
+- `assets/karten/de/A_279.webp`: eigene Grafik/Render
+- `assets/karten/de/A_280.webp`: eigene Grafik/Render
+- `assets/karten/de/A_281.webp`: eigene Grafik/Render
+- `assets/karten/de/A_282.webp`: eigene Grafik/Render
+- `assets/karten/de/A_283.webp`: eigene Grafik/Render
+- `assets/karten/de/A_284.webp`: eigene Grafik/Render
+- `assets/karten/de/A_285.webp`: eigene Grafik/Render
+- `assets/karten/de/A_286.webp`: eigene Grafik/Render
+- `assets/karten/de/A_287.webp`: eigene Grafik/Render
+- `assets/karten/de/A_288.webp`: eigene Grafik/Render
+- `assets/karten/de/A_rueck.webp`: eigene Grafik/Render
+- `assets/karten/de/P_001.webp`: eigene Grafik/Render
+- `assets/karten/de/P_002.webp`: eigene Grafik/Render
+- `assets/karten/de/P_003.webp`: eigene Grafik/Render
+- `assets/karten/de/P_004.webp`: eigene Grafik/Render
+- `assets/karten/de/P_005.webp`: eigene Grafik/Render
+- `assets/karten/de/P_006.webp`: eigene Grafik/Render
+- `assets/karten/de/P_007.webp`: eigene Grafik/Render
+- `assets/karten/de/P_008.webp`: eigene Grafik/Render
+- `assets/karten/de/P_009.webp`: eigene Grafik/Render
+- `assets/karten/de/P_010.webp`: eigene Grafik/Render
+- `assets/karten/de/P_011.webp`: eigene Grafik/Render
+- `assets/karten/de/P_012.webp`: eigene Grafik/Render
+- `assets/karten/de/P_013.webp`: eigene Grafik/Render
+- `assets/karten/de/P_014.webp`: eigene Grafik/Render
+- `assets/karten/de/P_015.webp`: eigene Grafik/Render
+- `assets/karten/de/P_016.webp`: eigene Grafik/Render
+- `assets/karten/de/P_017.webp`: eigene Grafik/Render
+- `assets/karten/de/P_018.webp`: eigene Grafik/Render
+- `assets/karten/de/P_019.webp`: eigene Grafik/Render
+- `assets/karten/de/P_020.webp`: eigene Grafik/Render
+- `assets/karten/de/P_021.webp`: eigene Grafik/Render
+- `assets/karten/de/P_022.webp`: eigene Grafik/Render
+- `assets/karten/de/P_023.webp`: eigene Grafik/Render
+- `assets/karten/de/P_024.webp`: eigene Grafik/Render
+- `assets/karten/de/P_025.webp`: eigene Grafik/Render
+- `assets/karten/de/P_026.webp`: eigene Grafik/Render
+- `assets/karten/de/P_027.webp`: eigene Grafik/Render
+- `assets/karten/de/P_028.webp`: eigene Grafik/Render
+- `assets/karten/de/P_029.webp`: eigene Grafik/Render
+- `assets/karten/de/P_030.webp`: eigene Grafik/Render
+- `assets/karten/de/P_031.webp`: eigene Grafik/Render
+- `assets/karten/de/P_032.webp`: eigene Grafik/Render
+- `assets/karten/de/P_033.webp`: eigene Grafik/Render
+- `assets/karten/de/P_034.webp`: eigene Grafik/Render
+- `assets/karten/de/P_035.webp`: eigene Grafik/Render
+- `assets/karten/de/P_036.webp`: eigene Grafik/Render
+- `assets/karten/de/P_037.webp`: eigene Grafik/Render
+- `assets/karten/de/P_038.webp`: eigene Grafik/Render
+- `assets/karten/de/P_039.webp`: eigene Grafik/Render
+- `assets/karten/de/P_040.webp`: eigene Grafik/Render
+- `assets/karten/de/P_041.webp`: eigene Grafik/Render
+- `assets/karten/de/P_042.webp`: eigene Grafik/Render
+- `assets/karten/de/P_043.webp`: eigene Grafik/Render
+- `assets/karten/de/P_rueck.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_001.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_002.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_003.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_004.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_005.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_006.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_007.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_008.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_009.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_010.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_011.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_012.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_013.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_014.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_015.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_016.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_017.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_018.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_019.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_020.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_021.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_022.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_023.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_024.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_025.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_026.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_027.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_028.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_029.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_030.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_031.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_032.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_033.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_034.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_035.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_036.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_037.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_038.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_039.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_040.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_041.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_042.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_043.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_044.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_045.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_046.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_047.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_048.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_049.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_050.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_051.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_052.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_053.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_054.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_055.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_056.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_057.webp`: eigene Grafik/Render
+- `assets/karten/de/Z_rueck.webp`: eigene Grafik/Render
+- `assets/karten/en/A_001.webp`: eigene Grafik/Render
+- `assets/karten/en/A_002.webp`: eigene Grafik/Render
+- `assets/karten/en/A_003.webp`: eigene Grafik/Render
+- `assets/karten/en/A_004.webp`: eigene Grafik/Render
+- `assets/karten/en/A_005.webp`: eigene Grafik/Render
+- `assets/karten/en/A_006.webp`: eigene Grafik/Render
+- `assets/karten/en/A_007.webp`: eigene Grafik/Render
+- `assets/karten/en/A_008.webp`: eigene Grafik/Render
+- `assets/karten/en/A_009.webp`: eigene Grafik/Render
+- `assets/karten/en/A_010.webp`: eigene Grafik/Render
+- `assets/karten/en/A_011.webp`: eigene Grafik/Render
+- `assets/karten/en/A_012.webp`: eigene Grafik/Render
+- `assets/karten/en/A_013.webp`: eigene Grafik/Render
+- `assets/karten/en/A_014.webp`: eigene Grafik/Render
+- `assets/karten/en/A_015.webp`: eigene Grafik/Render
+- `assets/karten/en/A_016.webp`: eigene Grafik/Render
+- `assets/karten/en/A_017.webp`: eigene Grafik/Render
+- `assets/karten/en/A_018.webp`: eigene Grafik/Render
+- `assets/karten/en/A_019.webp`: eigene Grafik/Render
+- `assets/karten/en/A_020.webp`: eigene Grafik/Render
+- `assets/karten/en/A_021.webp`: eigene Grafik/Render
+- `assets/karten/en/A_022.webp`: eigene Grafik/Render
+- `assets/karten/en/A_023.webp`: eigene Grafik/Render
+- `assets/karten/en/A_024.webp`: eigene Grafik/Render
+- `assets/karten/en/A_025.webp`: eigene Grafik/Render
+- `assets/karten/en/A_026.webp`: eigene Grafik/Render
+- `assets/karten/en/A_027.webp`: eigene Grafik/Render
+- `assets/karten/en/A_028.webp`: eigene Grafik/Render
+- `assets/karten/en/A_029.webp`: eigene Grafik/Render
+- `assets/karten/en/A_030.webp`: eigene Grafik/Render
+- `assets/karten/en/A_031.webp`: eigene Grafik/Render
+- `assets/karten/en/A_032.webp`: eigene Grafik/Render
+- `assets/karten/en/A_033.webp`: eigene Grafik/Render
+- `assets/karten/en/A_034.webp`: eigene Grafik/Render
+- `assets/karten/en/A_035.webp`: eigene Grafik/Render
+- `assets/karten/en/A_036.webp`: eigene Grafik/Render
+- `assets/karten/en/A_037.webp`: eigene Grafik/Render
+- `assets/karten/en/A_038.webp`: eigene Grafik/Render
+- `assets/karten/en/A_039.webp`: eigene Grafik/Render
+- `assets/karten/en/A_040.webp`: eigene Grafik/Render
+- `assets/karten/en/A_041.webp`: eigene Grafik/Render
+- `assets/karten/en/A_042.webp`: eigene Grafik/Render
+- `assets/karten/en/A_043.webp`: eigene Grafik/Render
+- `assets/karten/en/A_044.webp`: eigene Grafik/Render
+- `assets/karten/en/A_045.webp`: eigene Grafik/Render
+- `assets/karten/en/A_046.webp`: eigene Grafik/Render
+- `assets/karten/en/A_047.webp`: eigene Grafik/Render
+- `assets/karten/en/A_048.webp`: eigene Grafik/Render
+- `assets/karten/en/A_049.webp`: eigene Grafik/Render
+- `assets/karten/en/A_050.webp`: eigene Grafik/Render
+- `assets/karten/en/A_051.webp`: eigene Grafik/Render
+- `assets/karten/en/A_052.webp`: eigene Grafik/Render
+- `assets/karten/en/A_053.webp`: eigene Grafik/Render
+- `assets/karten/en/A_054.webp`: eigene Grafik/Render
+- `assets/karten/en/A_055.webp`: eigene Grafik/Render
+- `assets/karten/en/A_056.webp`: eigene Grafik/Render
+- `assets/karten/en/A_057.webp`: eigene Grafik/Render
+- `assets/karten/en/A_058.webp`: eigene Grafik/Render
+- `assets/karten/en/A_059.webp`: eigene Grafik/Render
+- `assets/karten/en/A_060.webp`: eigene Grafik/Render
+- `assets/karten/en/A_061.webp`: eigene Grafik/Render
+- `assets/karten/en/A_062.webp`: eigene Grafik/Render
+- `assets/karten/en/A_063.webp`: eigene Grafik/Render
+- `assets/karten/en/A_064.webp`: eigene Grafik/Render
+- `assets/karten/en/A_065.webp`: eigene Grafik/Render
+- `assets/karten/en/A_066.webp`: eigene Grafik/Render
+- `assets/karten/en/A_067.webp`: eigene Grafik/Render
+- `assets/karten/en/A_068.webp`: eigene Grafik/Render
+- `assets/karten/en/A_069.webp`: eigene Grafik/Render
+- `assets/karten/en/A_070.webp`: eigene Grafik/Render
+- `assets/karten/en/A_071.webp`: eigene Grafik/Render
+- `assets/karten/en/A_072.webp`: eigene Grafik/Render
+- `assets/karten/en/A_073.webp`: eigene Grafik/Render
+- `assets/karten/en/A_074.webp`: eigene Grafik/Render
+- `assets/karten/en/A_075.webp`: eigene Grafik/Render
+- `assets/karten/en/A_076.webp`: eigene Grafik/Render
+- `assets/karten/en/A_077.webp`: eigene Grafik/Render
+- `assets/karten/en/A_078.webp`: eigene Grafik/Render
+- `assets/karten/en/A_079.webp`: eigene Grafik/Render
+- `assets/karten/en/A_080.webp`: eigene Grafik/Render
+- `assets/karten/en/A_081.webp`: eigene Grafik/Render
+- `assets/karten/en/A_082.webp`: eigene Grafik/Render
+- `assets/karten/en/A_083.webp`: eigene Grafik/Render
+- `assets/karten/en/A_084.webp`: eigene Grafik/Render
+- `assets/karten/en/A_085.webp`: eigene Grafik/Render
+- `assets/karten/en/A_086.webp`: eigene Grafik/Render
+- `assets/karten/en/A_087.webp`: eigene Grafik/Render
+- `assets/karten/en/A_088.webp`: eigene Grafik/Render
+- `assets/karten/en/A_089.webp`: eigene Grafik/Render
+- `assets/karten/en/A_090.webp`: eigene Grafik/Render
+- `assets/karten/en/A_091.webp`: eigene Grafik/Render
+- `assets/karten/en/A_092.webp`: eigene Grafik/Render
+- `assets/karten/en/A_093.webp`: eigene Grafik/Render
+- `assets/karten/en/A_094.webp`: eigene Grafik/Render
+- `assets/karten/en/A_095.webp`: eigene Grafik/Render
+- `assets/karten/en/A_096.webp`: eigene Grafik/Render
+- `assets/karten/en/A_097.webp`: eigene Grafik/Render
+- `assets/karten/en/A_098.webp`: eigene Grafik/Render
+- `assets/karten/en/A_099.webp`: eigene Grafik/Render
+- `assets/karten/en/A_100.webp`: eigene Grafik/Render
+- `assets/karten/en/A_101.webp`: eigene Grafik/Render
+- `assets/karten/en/A_102.webp`: eigene Grafik/Render
+- `assets/karten/en/A_103.webp`: eigene Grafik/Render
+- `assets/karten/en/A_104.webp`: eigene Grafik/Render
+- `assets/karten/en/A_105.webp`: eigene Grafik/Render
+- `assets/karten/en/A_106.webp`: eigene Grafik/Render
+- `assets/karten/en/A_107.webp`: eigene Grafik/Render
+- `assets/karten/en/A_108.webp`: eigene Grafik/Render
+- `assets/karten/en/A_109.webp`: eigene Grafik/Render
+- `assets/karten/en/A_110.webp`: eigene Grafik/Render
+- `assets/karten/en/A_111.webp`: eigene Grafik/Render
+- `assets/karten/en/A_112.webp`: eigene Grafik/Render
+- `assets/karten/en/A_113.webp`: eigene Grafik/Render
+- `assets/karten/en/A_114.webp`: eigene Grafik/Render
+- `assets/karten/en/A_115.webp`: eigene Grafik/Render
+- `assets/karten/en/A_116.webp`: eigene Grafik/Render
+- `assets/karten/en/A_117.webp`: eigene Grafik/Render
+- `assets/karten/en/A_118.webp`: eigene Grafik/Render
+- `assets/karten/en/A_119.webp`: eigene Grafik/Render
+- `assets/karten/en/A_120.webp`: eigene Grafik/Render
+- `assets/karten/en/A_121.webp`: eigene Grafik/Render
+- `assets/karten/en/A_122.webp`: eigene Grafik/Render
+- `assets/karten/en/A_123.webp`: eigene Grafik/Render
+- `assets/karten/en/A_124.webp`: eigene Grafik/Render
+- `assets/karten/en/A_125.webp`: eigene Grafik/Render
+- `assets/karten/en/A_126.webp`: eigene Grafik/Render
+- `assets/karten/en/A_127.webp`: eigene Grafik/Render
+- `assets/karten/en/A_128.webp`: eigene Grafik/Render
+- `assets/karten/en/A_129.webp`: eigene Grafik/Render
+- `assets/karten/en/A_130.webp`: eigene Grafik/Render
+- `assets/karten/en/A_131.webp`: eigene Grafik/Render
+- `assets/karten/en/A_132.webp`: eigene Grafik/Render
+- `assets/karten/en/A_133.webp`: eigene Grafik/Render
+- `assets/karten/en/A_134.webp`: eigene Grafik/Render
+- `assets/karten/en/A_135.webp`: eigene Grafik/Render
+- `assets/karten/en/A_136.webp`: eigene Grafik/Render
+- `assets/karten/en/A_137.webp`: eigene Grafik/Render
+- `assets/karten/en/A_138.webp`: eigene Grafik/Render
+- `assets/karten/en/A_139.webp`: eigene Grafik/Render
+- `assets/karten/en/A_140.webp`: eigene Grafik/Render
+- `assets/karten/en/A_141.webp`: eigene Grafik/Render
+- `assets/karten/en/A_142.webp`: eigene Grafik/Render
+- `assets/karten/en/A_143.webp`: eigene Grafik/Render
+- `assets/karten/en/A_144.webp`: eigene Grafik/Render
+- `assets/karten/en/A_145.webp`: eigene Grafik/Render
+- `assets/karten/en/A_146.webp`: eigene Grafik/Render
+- `assets/karten/en/A_147.webp`: eigene Grafik/Render
+- `assets/karten/en/A_148.webp`: eigene Grafik/Render
+- `assets/karten/en/A_149.webp`: eigene Grafik/Render
+- `assets/karten/en/A_150.webp`: eigene Grafik/Render
+- `assets/karten/en/A_151.webp`: eigene Grafik/Render
+- `assets/karten/en/A_152.webp`: eigene Grafik/Render
+- `assets/karten/en/A_153.webp`: eigene Grafik/Render
+- `assets/karten/en/A_154.webp`: eigene Grafik/Render
+- `assets/karten/en/A_155.webp`: eigene Grafik/Render
+- `assets/karten/en/A_156.webp`: eigene Grafik/Render
+- `assets/karten/en/A_157.webp`: eigene Grafik/Render
+- `assets/karten/en/A_158.webp`: eigene Grafik/Render
+- `assets/karten/en/A_159.webp`: eigene Grafik/Render
+- `assets/karten/en/A_160.webp`: eigene Grafik/Render
+- `assets/karten/en/A_161.webp`: eigene Grafik/Render
+- `assets/karten/en/A_162.webp`: eigene Grafik/Render
+- `assets/karten/en/A_163.webp`: eigene Grafik/Render
+- `assets/karten/en/A_164.webp`: eigene Grafik/Render
+- `assets/karten/en/A_165.webp`: eigene Grafik/Render
+- `assets/karten/en/A_166.webp`: eigene Grafik/Render
+- `assets/karten/en/A_167.webp`: eigene Grafik/Render
+- `assets/karten/en/A_168.webp`: eigene Grafik/Render
+- `assets/karten/en/A_169.webp`: eigene Grafik/Render
+- `assets/karten/en/A_170.webp`: eigene Grafik/Render
+- `assets/karten/en/A_171.webp`: eigene Grafik/Render
+- `assets/karten/en/A_172.webp`: eigene Grafik/Render
+- `assets/karten/en/A_173.webp`: eigene Grafik/Render
+- `assets/karten/en/A_174.webp`: eigene Grafik/Render
+- `assets/karten/en/A_175.webp`: eigene Grafik/Render
+- `assets/karten/en/A_176.webp`: eigene Grafik/Render
+- `assets/karten/en/A_177.webp`: eigene Grafik/Render
+- `assets/karten/en/A_178.webp`: eigene Grafik/Render
+- `assets/karten/en/A_179.webp`: eigene Grafik/Render
+- `assets/karten/en/A_180.webp`: eigene Grafik/Render
+- `assets/karten/en/A_181.webp`: eigene Grafik/Render
+- `assets/karten/en/A_182.webp`: eigene Grafik/Render
+- `assets/karten/en/A_183.webp`: eigene Grafik/Render
+- `assets/karten/en/A_184.webp`: eigene Grafik/Render
+- `assets/karten/en/A_185.webp`: eigene Grafik/Render
+- `assets/karten/en/A_186.webp`: eigene Grafik/Render
+- `assets/karten/en/A_187.webp`: eigene Grafik/Render
+- `assets/karten/en/A_188.webp`: eigene Grafik/Render
+- `assets/karten/en/A_189.webp`: eigene Grafik/Render
+- `assets/karten/en/A_190.webp`: eigene Grafik/Render
+- `assets/karten/en/A_191.webp`: eigene Grafik/Render
+- `assets/karten/en/A_192.webp`: eigene Grafik/Render
+- `assets/karten/en/A_193.webp`: eigene Grafik/Render
+- `assets/karten/en/A_194.webp`: eigene Grafik/Render
+- `assets/karten/en/A_195.webp`: eigene Grafik/Render
+- `assets/karten/en/A_196.webp`: eigene Grafik/Render
+- `assets/karten/en/A_197.webp`: eigene Grafik/Render
+- `assets/karten/en/A_198.webp`: eigene Grafik/Render
+- `assets/karten/en/A_199.webp`: eigene Grafik/Render
+- `assets/karten/en/A_200.webp`: eigene Grafik/Render
+- `assets/karten/en/A_201.webp`: eigene Grafik/Render
+- `assets/karten/en/A_202.webp`: eigene Grafik/Render
+- `assets/karten/en/A_203.webp`: eigene Grafik/Render
+- `assets/karten/en/A_204.webp`: eigene Grafik/Render
+- `assets/karten/en/A_205.webp`: eigene Grafik/Render
+- `assets/karten/en/A_206.webp`: eigene Grafik/Render
+- `assets/karten/en/A_207.webp`: eigene Grafik/Render
+- `assets/karten/en/A_208.webp`: eigene Grafik/Render
+- `assets/karten/en/A_209.webp`: eigene Grafik/Render
+- `assets/karten/en/A_210.webp`: eigene Grafik/Render
+- `assets/karten/en/A_211.webp`: eigene Grafik/Render
+- `assets/karten/en/A_212.webp`: eigene Grafik/Render
+- `assets/karten/en/A_213.webp`: eigene Grafik/Render
+- `assets/karten/en/A_214.webp`: eigene Grafik/Render
+- `assets/karten/en/A_215.webp`: eigene Grafik/Render
+- `assets/karten/en/A_216.webp`: eigene Grafik/Render
+- `assets/karten/en/A_217.webp`: eigene Grafik/Render
+- `assets/karten/en/A_218.webp`: eigene Grafik/Render
+- `assets/karten/en/A_219.webp`: eigene Grafik/Render
+- `assets/karten/en/A_220.webp`: eigene Grafik/Render
+- `assets/karten/en/A_221.webp`: eigene Grafik/Render
+- `assets/karten/en/A_222.webp`: eigene Grafik/Render
+- `assets/karten/en/A_223.webp`: eigene Grafik/Render
+- `assets/karten/en/A_224.webp`: eigene Grafik/Render
+- `assets/karten/en/A_225.webp`: eigene Grafik/Render
+- `assets/karten/en/A_226.webp`: eigene Grafik/Render
+- `assets/karten/en/A_227.webp`: eigene Grafik/Render
+- `assets/karten/en/A_228.webp`: eigene Grafik/Render
+- `assets/karten/en/A_229.webp`: eigene Grafik/Render
+- `assets/karten/en/A_230.webp`: eigene Grafik/Render
+- `assets/karten/en/A_231.webp`: eigene Grafik/Render
+- `assets/karten/en/A_232.webp`: eigene Grafik/Render
+- `assets/karten/en/A_233.webp`: eigene Grafik/Render
+- `assets/karten/en/A_234.webp`: eigene Grafik/Render
+- `assets/karten/en/A_235.webp`: eigene Grafik/Render
+- `assets/karten/en/A_236.webp`: eigene Grafik/Render
+- `assets/karten/en/A_237.webp`: eigene Grafik/Render
+- `assets/karten/en/A_238.webp`: eigene Grafik/Render
+- `assets/karten/en/A_239.webp`: eigene Grafik/Render
+- `assets/karten/en/A_240.webp`: eigene Grafik/Render
+- `assets/karten/en/A_241.webp`: eigene Grafik/Render
+- `assets/karten/en/A_242.webp`: eigene Grafik/Render
+- `assets/karten/en/A_243.webp`: eigene Grafik/Render
+- `assets/karten/en/A_244.webp`: eigene Grafik/Render
+- `assets/karten/en/A_245.webp`: eigene Grafik/Render
+- `assets/karten/en/A_246.webp`: eigene Grafik/Render
+- `assets/karten/en/A_247.webp`: eigene Grafik/Render
+- `assets/karten/en/A_248.webp`: eigene Grafik/Render
+- `assets/karten/en/A_249.webp`: eigene Grafik/Render
+- `assets/karten/en/A_250.webp`: eigene Grafik/Render
+- `assets/karten/en/A_251.webp`: eigene Grafik/Render
+- `assets/karten/en/A_252.webp`: eigene Grafik/Render
+- `assets/karten/en/A_253.webp`: eigene Grafik/Render
+- `assets/karten/en/A_254.webp`: eigene Grafik/Render
+- `assets/karten/en/A_255.webp`: eigene Grafik/Render
+- `assets/karten/en/A_256.webp`: eigene Grafik/Render
+- `assets/karten/en/A_257.webp`: eigene Grafik/Render
+- `assets/karten/en/A_258.webp`: eigene Grafik/Render
+- `assets/karten/en/A_259.webp`: eigene Grafik/Render
+- `assets/karten/en/A_260.webp`: eigene Grafik/Render
+- `assets/karten/en/A_261.webp`: eigene Grafik/Render
+- `assets/karten/en/A_262.webp`: eigene Grafik/Render
+- `assets/karten/en/A_263.webp`: eigene Grafik/Render
+- `assets/karten/en/A_264.webp`: eigene Grafik/Render
+- `assets/karten/en/A_265.webp`: eigene Grafik/Render
+- `assets/karten/en/A_266.webp`: eigene Grafik/Render
+- `assets/karten/en/A_267.webp`: eigene Grafik/Render
+- `assets/karten/en/A_268.webp`: eigene Grafik/Render
+- `assets/karten/en/A_269.webp`: eigene Grafik/Render
+- `assets/karten/en/A_270.webp`: eigene Grafik/Render
+- `assets/karten/en/A_271.webp`: eigene Grafik/Render
+- `assets/karten/en/A_272.webp`: eigene Grafik/Render
+- `assets/karten/en/A_273.webp`: eigene Grafik/Render
+- `assets/karten/en/A_274.webp`: eigene Grafik/Render
+- `assets/karten/en/A_275.webp`: eigene Grafik/Render
+- `assets/karten/en/A_276.webp`: eigene Grafik/Render
+- `assets/karten/en/A_277.webp`: eigene Grafik/Render
+- `assets/karten/en/A_278.webp`: eigene Grafik/Render
+- `assets/karten/en/A_279.webp`: eigene Grafik/Render
+- `assets/karten/en/A_280.webp`: eigene Grafik/Render
+- `assets/karten/en/A_281.webp`: eigene Grafik/Render
+- `assets/karten/en/A_282.webp`: eigene Grafik/Render
+- `assets/karten/en/A_283.webp`: eigene Grafik/Render
+- `assets/karten/en/A_284.webp`: eigene Grafik/Render
+- `assets/karten/en/A_285.webp`: eigene Grafik/Render
+- `assets/karten/en/A_286.webp`: eigene Grafik/Render
+- `assets/karten/en/A_287.webp`: eigene Grafik/Render
+- `assets/karten/en/A_288.webp`: eigene Grafik/Render
+- `assets/karten/en/A_rueck.webp`: eigene Grafik/Render
+- `assets/karten/en/P_001.webp`: eigene Grafik/Render
+- `assets/karten/en/P_002.webp`: eigene Grafik/Render
+- `assets/karten/en/P_003.webp`: eigene Grafik/Render
+- `assets/karten/en/P_004.webp`: eigene Grafik/Render
+- `assets/karten/en/P_005.webp`: eigene Grafik/Render
+- `assets/karten/en/P_006.webp`: eigene Grafik/Render
+- `assets/karten/en/P_007.webp`: eigene Grafik/Render
+- `assets/karten/en/P_008.webp`: eigene Grafik/Render
+- `assets/karten/en/P_009.webp`: eigene Grafik/Render
+- `assets/karten/en/P_010.webp`: eigene Grafik/Render
+- `assets/karten/en/P_011.webp`: eigene Grafik/Render
+- `assets/karten/en/P_012.webp`: eigene Grafik/Render
+- `assets/karten/en/P_013.webp`: eigene Grafik/Render
+- `assets/karten/en/P_014.webp`: eigene Grafik/Render
+- `assets/karten/en/P_015.webp`: eigene Grafik/Render
+- `assets/karten/en/P_016.webp`: eigene Grafik/Render
+- `assets/karten/en/P_017.webp`: eigene Grafik/Render
+- `assets/karten/en/P_018.webp`: eigene Grafik/Render
+- `assets/karten/en/P_019.webp`: eigene Grafik/Render
+- `assets/karten/en/P_020.webp`: eigene Grafik/Render
+- `assets/karten/en/P_021.webp`: eigene Grafik/Render
+- `assets/karten/en/P_022.webp`: eigene Grafik/Render
+- `assets/karten/en/P_023.webp`: eigene Grafik/Render
+- `assets/karten/en/P_024.webp`: eigene Grafik/Render
+- `assets/karten/en/P_025.webp`: eigene Grafik/Render
+- `assets/karten/en/P_026.webp`: eigene Grafik/Render
+- `assets/karten/en/P_027.webp`: eigene Grafik/Render
+- `assets/karten/en/P_028.webp`: eigene Grafik/Render
+- `assets/karten/en/P_029.webp`: eigene Grafik/Render
+- `assets/karten/en/P_030.webp`: eigene Grafik/Render
+- `assets/karten/en/P_031.webp`: eigene Grafik/Render
+- `assets/karten/en/P_032.webp`: eigene Grafik/Render
+- `assets/karten/en/P_033.webp`: eigene Grafik/Render
+- `assets/karten/en/P_034.webp`: eigene Grafik/Render
+- `assets/karten/en/P_035.webp`: eigene Grafik/Render
+- `assets/karten/en/P_036.webp`: eigene Grafik/Render
+- `assets/karten/en/P_037.webp`: eigene Grafik/Render
+- `assets/karten/en/P_038.webp`: eigene Grafik/Render
+- `assets/karten/en/P_039.webp`: eigene Grafik/Render
+- `assets/karten/en/P_040.webp`: eigene Grafik/Render
+- `assets/karten/en/P_041.webp`: eigene Grafik/Render
+- `assets/karten/en/P_042.webp`: eigene Grafik/Render
+- `assets/karten/en/P_043.webp`: eigene Grafik/Render
+- `assets/karten/en/P_rueck.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_001.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_002.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_003.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_004.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_005.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_006.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_007.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_008.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_009.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_010.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_011.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_012.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_013.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_014.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_015.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_016.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_017.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_018.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_019.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_020.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_021.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_022.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_023.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_024.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_025.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_026.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_027.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_028.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_029.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_030.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_031.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_032.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_033.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_034.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_035.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_036.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_037.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_038.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_039.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_040.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_041.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_042.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_043.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_044.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_045.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_046.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_047.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_048.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_049.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_050.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_051.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_052.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_053.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_054.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_055.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_056.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_057.webp`: eigene Grafik/Render
+- `assets/karten/en/Z_rueck.webp`: eigene Grafik/Render
+- `assets/portraets/Alchemist_maennlich.webp`: KI-generiert
+- `assets/portraets/Alchemist_weiblich.webp`: KI-generiert
+- `assets/portraets/Antiquarian_maennlich.webp`: KI-generiert
+- `assets/portraets/Antiquarian_weiblich.webp`: KI-generiert
+- `assets/portraets/Assassin_maennlich.webp`: KI-generiert
+- `assets/portraets/Assassin_weiblich.webp`: KI-generiert
+- `assets/portraets/Astrobiologist_maennlich.webp`: KI-generiert
+- `assets/portraets/Astrobiologist_weiblich.webp`: KI-generiert
+- `assets/portraets/Biochemist_maennlich.webp`: KI-generiert
+- `assets/portraets/Biochemist_weiblich.webp`: KI-generiert
+- `assets/portraets/Chronomancer_maennlich.webp`: KI-generiert
+- `assets/portraets/Chronomancer_weiblich.webp`: KI-generiert
+- `assets/portraets/Cryptanalyst_maennlich.webp`: KI-generiert
+- `assets/portraets/Cryptanalyst_weiblich.webp`: KI-generiert
+- `assets/portraets/Cyberneticist_maennlich.webp`: KI-generiert
+- `assets/portraets/Cyberneticist_weiblich.webp`: KI-generiert
+- `assets/portraets/Echo-Operative_maennlich.webp`: KI-generiert
+- `assets/portraets/Echo-Operative_weiblich.webp`: KI-generiert
+- `assets/portraets/Elementarist_maennlich.webp`: KI-generiert
+- `assets/portraets/Elementarist_weiblich.webp`: KI-generiert
+- `assets/portraets/Engineer_maennlich.webp`: KI-generiert
+- `assets/portraets/Engineer_weiblich.webp`: KI-generiert
+- `assets/portraets/Illusionist_maennlich.webp`: KI-generiert
+- `assets/portraets/Illusionist_weiblich.webp`: KI-generiert
+- `assets/portraets/Infiltrator_maennlich.webp`: KI-generiert
+- `assets/portraets/Infiltrator_weiblich.webp`: KI-generiert
+- `assets/portraets/Invoker_maennlich.webp`: KI-generiert
+- `assets/portraets/Invoker_weiblich.webp`: KI-generiert
+- `assets/portraets/Journalist_maennlich.webp`: KI-generiert
+- `assets/portraets/Journalist_weiblich.webp`: KI-generiert
+- `assets/portraets/Nanotech_Veteran_maennlich.webp`: KI-generiert
+- `assets/portraets/Nanotech_Veteran_weiblich.webp`: KI-generiert
+- `assets/portraets/Negotiator_maennlich.webp`: KI-generiert
+- `assets/portraets/Negotiator_weiblich.webp`: KI-generiert
+- `assets/portraets/Paranormal_Detective_maennlich.webp`: KI-generiert
+- `assets/portraets/Paranormal_Detective_weiblich.webp`: KI-generiert
+- `assets/portraets/Physicist_maennlich.webp`: KI-generiert
+- `assets/portraets/Physicist_weiblich.webp`: KI-generiert
+- `assets/portraets/Precognitive_maennlich.webp`: KI-generiert
+- `assets/portraets/Precognitive_weiblich.webp`: KI-generiert
+- `assets/portraets/Profiler_maennlich.webp`: KI-generiert
+- `assets/portraets/Profiler_weiblich.webp`: KI-generiert
+- `assets/portraets/Psychic_Healer_maennlich.webp`: KI-generiert
+- `assets/portraets/Psychic_Healer_weiblich.webp`: KI-generiert
+- `assets/portraets/Saboteur_maennlich.webp`: KI-generiert
+- `assets/portraets/Saboteur_weiblich.webp`: KI-generiert
+- `assets/portraets/Shadow_Paratrooper_maennlich.webp`: KI-generiert
+- `assets/portraets/Shadow_Paratrooper_weiblich.webp`: KI-generiert
+- `assets/portraets/Spy_maennlich.webp`: KI-generiert
+- `assets/portraets/Spy_weiblich.webp`: KI-generiert
+- `assets/portraets/Stormbreaker_maennlich.webp`: KI-generiert
+- `assets/portraets/Stormbreaker_weiblich.webp`: KI-generiert
+- `assets/portraets/Techno-Stormtrooper_maennlich.webp`: KI-generiert
+- `assets/portraets/Techno-Stormtrooper_weiblich.webp`: KI-generiert
+- `assets/portraets/Telekinetic_maennlich.webp`: KI-generiert
+- `assets/portraets/Telekinetic_weiblich.webp`: KI-generiert
+- `assets/portraets/Telepath_maennlich.webp`: KI-generiert
+- `assets/portraets/Telepath_weiblich.webp`: KI-generiert
+- `assets/portraets/Thaumaturgist_maennlich.webp`: KI-generiert
+- `assets/portraets/Thaumaturgist_weiblich.webp`: KI-generiert
+- `assets/portraets/npc-nl-garn-1947.webp`: KI-generiert
+- `assets/portraets/npc-nl-garn-1977.webp`: KI-generiert
+- `assets/portraets/npc-nl-lot-1947.webp`: KI-generiert
+- `assets/portraets/npc-nl-lot-1977.webp`: KI-generiert
+- `assets/portraets/npc-nl-moewe-1947.webp`: KI-generiert
+- `assets/portraets/npc-nl-moewe-1977.webp`: KI-generiert
+- `assets/portraets/npc-nl-salz-1947.webp`: KI-generiert
+- `assets/portraets/npc-nl-salz-1977.webp`: KI-generiert
+- `assets/portraets/npc-nl-schiefer-1947.webp`: KI-generiert
+- `assets/portraets/npc-nl-schiefer-1977.webp`: KI-generiert
+- `assets/portraets/npc-nl-zeuge-1947.webp`: KI-generiert
+- `assets/portraets/npc-nl-zeuge-1977.webp`: KI-generiert
+- `assets/registratur/REG-A-0503.webp`: KI-generiert
+- `assets/registratur/REG-A-0509.webp`: KI-generiert
+- `assets/registratur/REG-A-0512.webp`: KI-generiert
+- `assets/registratur/REG-A-0518.webp`: KI-generiert
+- `assets/registratur/REG-A-0521.webp`: KI-generiert
+- `assets/registratur/REG-A-0524.webp`: KI-generiert
+- `assets/registratur/REG-A-0527.webp`: KI-generiert
+- `assets/registratur/REG-A-0530.webp`: KI-generiert
+- `assets/registratur/REG-A-0533.webp`: KI-generiert
+- `assets/registratur/REG-A-0536.webp`: KI-generiert
+- `assets/registratur/REG-A-0539.webp`: KI-generiert
+- `assets/registratur/REG-A-0542.webp`: KI-generiert
+- `assets/registratur/REG-A-0548.webp`: KI-generiert
+- `assets/registratur/REG-A-0551.webp`: KI-generiert
+- `assets/registratur/REG-A-0557.webp`: KI-generiert
+- `assets/registratur/REG-A-0563.webp`: KI-generiert
+- `assets/registratur/REG-A-0569.webp`: KI-generiert
+- `assets/registratur/REG-A-0572.webp`: KI-generiert
+- `assets/registratur/REG-A-0575.webp`: KI-generiert
+- `assets/registratur/REG-A-0578.webp`: KI-generiert
+- `assets/registratur/REG-F-0303.webp`: KI-generiert
+- `assets/registratur/REG-F-0306.webp`: KI-generiert
+- `assets/registratur/REG-F-0309.webp`: KI-generiert
+- `assets/registratur/REG-F-0315.webp`: KI-generiert
+- `assets/registratur/REG-F-0318.webp`: KI-generiert
+- `assets/registratur/REG-F-0321.webp`: KI-generiert
+- `assets/registratur/REG-F-0327.webp`: KI-generiert
+- `assets/registratur/REG-F-0330.webp`: KI-generiert
+- `assets/registratur/REG-F-0333.webp`: KI-generiert
+- `assets/registratur/REG-F-0336.webp`: KI-generiert
+- `assets/registratur/REG-F-0342.webp`: KI-generiert
+- `assets/registratur/REG-F-0345.webp`: KI-generiert
+- `assets/registratur/REG-G-1003.webp`: KI-generiert
+- `assets/registratur/REG-G-1006.webp`: KI-generiert
+- `assets/registratur/REG-G-1009.webp`: KI-generiert
+- `assets/registratur/REG-G-1012.webp`: KI-generiert
+- `assets/registratur/REG-G-1015.webp`: KI-generiert
+- `assets/registratur/REG-G-1018.webp`: KI-generiert
+- `assets/registratur/REG-H-0803.webp`: KI-generiert
+- `assets/registratur/REG-H-0806.webp`: KI-generiert
+- `assets/registratur/REG-H-0809.webp`: KI-generiert
+- `assets/registratur/REG-H-0812.webp`: KI-generiert
+- `assets/registratur/REG-M-0703.webp`: KI-generiert
+- `assets/registratur/REG-M-0706.webp`: KI-generiert
+- `assets/registratur/REG-M-0709.webp`: KI-generiert
+- `assets/registratur/REG-M-0712.webp`: KI-generiert
+- `assets/registratur/REG-M-0715.webp`: KI-generiert
+- `assets/registratur/REG-M-0718.webp`: KI-generiert
+- `assets/registratur/REG-M-0724.webp`: KI-generiert
+- `assets/registratur/REG-M-0727.webp`: KI-generiert
+- `assets/registratur/REG-M-0730.webp`: KI-generiert
+- `assets/registratur/REG-M-0733.webp`: KI-generiert
+- `assets/registratur/REG-M-0739.webp`: KI-generiert
+- `assets/registratur/REG-M-0742.webp`: KI-generiert
+- `assets/registratur/REG-M-0748.webp`: KI-generiert
+- `assets/registratur/REG-S-0203.webp`: KI-generiert
+- `assets/registratur/REG-S-0206.webp`: KI-generiert
+- `assets/registratur/REG-S-0211.webp`: KI-generiert
+- `assets/registratur/REG-S-0214.webp`: KI-generiert
+- `assets/registratur/REG-S-0218.webp`: KI-generiert
+- `assets/registratur/REG-S-0225.webp`: KI-generiert
+- `assets/registratur/REG-S-0228.webp`: KI-generiert
+- `assets/registratur/REG-S-0232.webp`: KI-generiert
+- `assets/registratur/REG-S-0235.webp`: KI-generiert
+- `assets/registratur/REG-S-0239.webp`: KI-generiert
+- `assets/registratur/REG-S-0243.webp`: KI-generiert
+- `assets/registratur/REG-T-0603.webp`: KI-generiert
+- `assets/registratur/REG-T-0609.webp`: KI-generiert
+- `assets/registratur/REG-T-0612.webp`: KI-generiert
+- `assets/registratur/REG-T-0615.webp`: KI-generiert
+- `assets/registratur/REG-T-0618.webp`: KI-generiert
+- `assets/registratur/REG-T-0621.webp`: KI-generiert
+- `assets/registratur/REG-T-0627.webp`: KI-generiert
+- `assets/registratur/REG-T-0630.webp`: KI-generiert
+- `assets/registratur/REG-T-0633.webp`: KI-generiert
+- `assets/registratur/REG-T-0636.webp`: KI-generiert
+- `assets/registratur/REG-T-0639.webp`: KI-generiert
+- `assets/registratur/REG-T-0642.webp`: KI-generiert
+- `assets/registratur/REG-V-0104.webp`: KI-generiert
+- `assets/registratur/REG-V-0107.webp`: KI-generiert
+- `assets/registratur/REG-V-0109.webp`: KI-generiert
+- `assets/registratur/REG-V-0112.webp`: KI-generiert
+- `assets/registratur/REG-V-0115.webp`: KI-generiert
+- `assets/registratur/REG-V-0118.webp`: KI-generiert
+- `assets/registratur/REG-V-0121.webp`: KI-generiert
+- `assets/registratur/REG-V-0123.webp`: KI-generiert
+- `assets/registratur/REG-V-0126.webp`: KI-generiert
+- `assets/registratur/REG-V-0129.webp`: KI-generiert
+- `assets/registratur/REG-V-0131.webp`: KI-generiert
+- `assets/registratur/REG-V-0134.webp`: KI-generiert
+- `assets/registratur/REG-V-0137.webp`: KI-generiert
+- `assets/registratur/REG-V-0140.webp`: KI-generiert
+- `assets/registratur/REG-V-0143.webp`: KI-generiert
+- `assets/registratur/REG-W-0403.webp`: KI-generiert
+- `assets/registratur/REG-W-0406.webp`: KI-generiert
+- `assets/registratur/REG-W-0409.webp`: KI-generiert
+- `assets/registratur/REG-W-0412.webp`: KI-generiert
+- `assets/registratur/REG-W-0415.webp`: KI-generiert
+- `assets/registratur/REG-W-0421.webp`: KI-generiert
+- `assets/registratur/REG-W-0424.webp`: KI-generiert
+- `assets/registratur/REG-W-0427.webp`: KI-generiert
+- `assets/registratur/REG-W-0430.webp`: KI-generiert
+- `assets/registratur/REG-W-0433.webp`: KI-generiert
+- `assets/registratur/REG-W-0436.webp`: KI-generiert
+- `assets/registratur/REG-W-0439.webp`: KI-generiert
+- `assets/szenen/grauakten/karten_de/01.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/02.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/03.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/04.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/05.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/06.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/07.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_de/08.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/01.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/02.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/03.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/04.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/05.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/06.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/07.webp`: eigene Grafik (entschieden)
+- `assets/szenen/grauakten/karten_en/08.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-1.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-2.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-3.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-4.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-5.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-6.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-7.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-8.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_de/hort-9.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-1.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-2.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-3.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-4.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-5.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-6.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-7.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-8.webp`: eigene Grafik (entschieden)
+- `assets/szenen/horte/karten_en/hort-9.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k1.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k10.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k11.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k12.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k2.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k3.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k4.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k5.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k6.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k7.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k8.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten/k9.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k1.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k10.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k11.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k12.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k2.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k3.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k4.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k5.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k6.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k7.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k8.webp`: eigene Grafik (entschieden)
+- `assets/szenen/nordlicht/karten_en/k9.webp`: eigene Grafik (entschieden)
+- `assets/szenen/schnellstart/bilder/stausee.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-01.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-02.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-03.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-04.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-05.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-06.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-07.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-08.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-09.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-10.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-11.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-12.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-13.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-14.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-15.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-16.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-17.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-18.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-20.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-21.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-22.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-23.webp`: KI-generiert
+- `assets/szenen/tuer/bilder/tuer-24.webp`: KI-generiert
+- `assets/token/Biochemist_weiblich.webp`: KI-generiert
+- `assets/token/Infiltrator_weiblich.webp`: KI-generiert
+- `assets/token/Paranormal_Detective_weiblich.webp`: KI-generiert
+- `assets/token/REG-A-0503.webp`: KI-generiert
+- `assets/token/REG-A-0509.webp`: KI-generiert
+- `assets/token/REG-A-0512.webp`: KI-generiert
+- `assets/token/REG-A-0518.webp`: KI-generiert
+- `assets/token/REG-A-0521.webp`: KI-generiert
+- `assets/token/REG-A-0524.webp`: KI-generiert
+- `assets/token/REG-A-0527.webp`: KI-generiert
+- `assets/token/REG-A-0530.webp`: KI-generiert
+- `assets/token/REG-A-0533.webp`: KI-generiert
+- `assets/token/REG-A-0536.webp`: KI-generiert
+- `assets/token/REG-A-0539.webp`: KI-generiert
+- `assets/token/REG-A-0542.webp`: KI-generiert
+- `assets/token/REG-A-0548.webp`: KI-generiert
+- `assets/token/REG-A-0551.webp`: KI-generiert
+- `assets/token/REG-A-0557.webp`: KI-generiert
+- `assets/token/REG-A-0563.webp`: KI-generiert
+- `assets/token/REG-A-0569.webp`: KI-generiert
+- `assets/token/REG-A-0572.webp`: KI-generiert
+- `assets/token/REG-A-0575.webp`: KI-generiert
+- `assets/token/REG-A-0578.webp`: KI-generiert
+- `assets/token/REG-F-0303.webp`: KI-generiert
+- `assets/token/REG-F-0306.webp`: KI-generiert
+- `assets/token/REG-F-0309.webp`: KI-generiert
+- `assets/token/REG-F-0315.webp`: KI-generiert
+- `assets/token/REG-F-0318.webp`: KI-generiert
+- `assets/token/REG-F-0321.webp`: KI-generiert
+- `assets/token/REG-F-0327.webp`: KI-generiert
+- `assets/token/REG-F-0330.webp`: KI-generiert
+- `assets/token/REG-F-0333.webp`: KI-generiert
+- `assets/token/REG-F-0336.webp`: KI-generiert
+- `assets/token/REG-F-0342.webp`: KI-generiert
+- `assets/token/REG-F-0345.webp`: KI-generiert
+- `assets/token/REG-G-1003.webp`: KI-generiert
+- `assets/token/REG-G-1006.webp`: KI-generiert
+- `assets/token/REG-G-1009.webp`: KI-generiert
+- `assets/token/REG-G-1012.webp`: KI-generiert
+- `assets/token/REG-G-1015.webp`: KI-generiert
+- `assets/token/REG-G-1018.webp`: KI-generiert
+- `assets/token/REG-H-0803.webp`: KI-generiert
+- `assets/token/REG-H-0806.webp`: KI-generiert
+- `assets/token/REG-H-0809.webp`: KI-generiert
+- `assets/token/REG-H-0812.webp`: KI-generiert
+- `assets/token/REG-M-0703.webp`: KI-generiert
+- `assets/token/REG-M-0706.webp`: KI-generiert
+- `assets/token/REG-M-0709.webp`: KI-generiert
+- `assets/token/REG-M-0712.webp`: KI-generiert
+- `assets/token/REG-M-0715.webp`: KI-generiert
+- `assets/token/REG-M-0718.webp`: KI-generiert
+- `assets/token/REG-M-0724.webp`: KI-generiert
+- `assets/token/REG-M-0727.webp`: KI-generiert
+- `assets/token/REG-M-0730.webp`: KI-generiert
+- `assets/token/REG-M-0733.webp`: KI-generiert
+- `assets/token/REG-M-0739.webp`: KI-generiert
+- `assets/token/REG-M-0742.webp`: KI-generiert
+- `assets/token/REG-M-0748.webp`: KI-generiert
+- `assets/token/REG-S-0203.webp`: KI-generiert
+- `assets/token/REG-S-0206.webp`: KI-generiert
+- `assets/token/REG-S-0211.webp`: KI-generiert
+- `assets/token/REG-S-0214.webp`: KI-generiert
+- `assets/token/REG-S-0218.webp`: KI-generiert
+- `assets/token/REG-S-0225.webp`: KI-generiert
+- `assets/token/REG-S-0228.webp`: KI-generiert
+- `assets/token/REG-S-0232.webp`: KI-generiert
+- `assets/token/REG-S-0235.webp`: KI-generiert
+- `assets/token/REG-S-0239.webp`: KI-generiert
+- `assets/token/REG-S-0243.webp`: KI-generiert
+- `assets/token/REG-T-0603.webp`: KI-generiert
+- `assets/token/REG-T-0609.webp`: KI-generiert
+- `assets/token/REG-T-0612.webp`: KI-generiert
+- `assets/token/REG-T-0615.webp`: KI-generiert
+- `assets/token/REG-T-0618.webp`: KI-generiert
+- `assets/token/REG-T-0621.webp`: KI-generiert
+- `assets/token/REG-T-0627.webp`: KI-generiert
+- `assets/token/REG-T-0630.webp`: KI-generiert
+- `assets/token/REG-T-0633.webp`: KI-generiert
+- `assets/token/REG-T-0636.webp`: KI-generiert
+- `assets/token/REG-T-0639.webp`: KI-generiert
+- `assets/token/REG-T-0642.webp`: KI-generiert
+- `assets/token/REG-V-0104.webp`: KI-generiert
+- `assets/token/REG-V-0107.webp`: KI-generiert
+- `assets/token/REG-V-0109.webp`: KI-generiert
+- `assets/token/REG-V-0112.webp`: KI-generiert
+- `assets/token/REG-V-0115.webp`: KI-generiert
+- `assets/token/REG-V-0118.webp`: KI-generiert
+- `assets/token/REG-V-0121.webp`: KI-generiert
+- `assets/token/REG-V-0123.webp`: KI-generiert
+- `assets/token/REG-V-0126.webp`: KI-generiert
+- `assets/token/REG-V-0129.webp`: KI-generiert
+- `assets/token/REG-V-0131.webp`: KI-generiert
+- `assets/token/REG-V-0134.webp`: KI-generiert
+- `assets/token/REG-V-0137.webp`: KI-generiert
+- `assets/token/REG-V-0140.webp`: KI-generiert
+- `assets/token/REG-V-0143.webp`: KI-generiert
+- `assets/token/REG-W-0403.webp`: KI-generiert
+- `assets/token/REG-W-0406.webp`: KI-generiert
+- `assets/token/REG-W-0409.webp`: KI-generiert
+- `assets/token/REG-W-0412.webp`: KI-generiert
+- `assets/token/REG-W-0415.webp`: KI-generiert
+- `assets/token/REG-W-0421.webp`: KI-generiert
+- `assets/token/REG-W-0424.webp`: KI-generiert
+- `assets/token/REG-W-0427.webp`: KI-generiert
+- `assets/token/REG-W-0430.webp`: KI-generiert
+- `assets/token/REG-W-0433.webp`: KI-generiert
+- `assets/token/REG-W-0436.webp`: KI-generiert
+- `assets/token/REG-W-0439.webp`: KI-generiert
+- `assets/token/Stormbreaker_maennlich.webp`: KI-generiert
+- `assets/token/Telepath_weiblich.webp`: KI-generiert
+- `assets/token/Thaumaturgist_maennlich.webp`: KI-generiert
+- `assets/token/atlas-anlage.webp`: KI-generiert
+- `assets/token/atlas-ariadne.webp`: KI-generiert
+- `assets/token/atlas-beobachter.webp`: KI-generiert
+- `assets/token/atlas-besessener.webp`: KI-generiert
+- `assets/token/atlas-chimaere.webp`: KI-generiert
+- `assets/token/atlas-chorkind.webp`: KI-generiert
+- `assets/token/atlas-cleaner.webp`: KI-generiert
+- `assets/token/atlas-doppel.webp`: KI-generiert
+- `assets/token/atlas-fahrgaeste.webp`: KI-generiert
+- `assets/token/atlas-familie.webp`: KI-generiert
+- `assets/token/atlas-fanatiker.webp`: KI-generiert
+- `assets/token/atlas-fixer.webp`: KI-generiert
+- `assets/token/atlas-glasmensch.webp`: KI-generiert
+- `assets/token/atlas-golem.webp`: KI-generiert
+- `assets/token/atlas-hausgeist.webp`: KI-generiert
+- `assets/token/atlas-henker.webp`: KI-generiert
+- `assets/token/atlas-hybridhunde.webp`: KI-generiert
+- `assets/token/atlas-irrlicht.webp`: KI-generiert
+- `assets/token/atlas-keimling.webp`: KI-generiert
+- `assets/token/atlas-kolonie.webp`: KI-generiert
+- `assets/token/atlas-kristallwaechter.webp`: KI-generiert
+- `assets/token/atlas-medium.webp`: KI-generiert
+- `assets/token/atlas-nachzehrer.webp`: KI-generiert
+- `assets/token/atlas-namensfresser.webp`: KI-generiert
+- `assets/token/atlas-nanitenwildling.webp`: KI-generiert
+- `assets/token/atlas-perchta.webp`: KI-generiert
+- `assets/token/atlas-pilot.webp`: KI-generiert
+- `assets/token/atlas-rissling.webp`: KI-generiert
+- `assets/token/atlas-sammler.webp`: KI-generiert
+- `assets/token/atlas-schleife.webp`: KI-generiert
+- `assets/token/atlas-schwarm.webp`: KI-generiert
+- `assets/token/atlas-schwarzer-hund.webp`: KI-generiert
+- `assets/token/atlas-schwellenhueter.webp`: KI-generiert
+- `assets/token/atlas-seefrau.webp`: KI-generiert
+- `assets/token/atlas-sendung.webp`: KI-generiert
+- `assets/token/atlas-spuk.webp`: KI-generiert
+- `assets/token/atlas-strasse.webp`: KI-generiert
+- `assets/token/atlas-tiefenkreis.webp`: KI-generiert
+- `assets/token/atlas-vergessene.webp`: KI-generiert
+- `assets/token/atlas-verlorener-veteran.webp`: KI-generiert
+- `assets/token/atlas-wachsystem.webp`: KI-generiert
+- `assets/token/atlas-waldgaenger.webp`: KI-generiert
+- `assets/token/atlas-wanderraum.webp`: KI-generiert
+- `assets/token/atlas-wartende.webp`: KI-generiert
+- `assets/token/atlas-weisse-frau.webp`: KI-generiert
+- `assets/token/atlas-wiederkehrer.webp`: KI-generiert
+- `assets/token/atlas-wucherer.webp`: KI-generiert
+- `assets/token/npc-at-abtr-leser.webp`: KI-generiert
+- `assets/token/npc-at-abtr-psion.webp`: KI-generiert
+- `assets/token/npc-at-daemon.webp`: KI-generiert
+- `assets/token/npc-at-dienst-agent.webp`: KI-generiert
+- `assets/token/npc-at-elite-soeldner.webp`: KI-generiert
+- `assets/token/npc-at-gewachsene.webp`: KI-generiert
+- `assets/token/npc-at-grauer-mann.webp`: KI-generiert
+- `assets/token/npc-at-kristalljaeger.webp`: KI-generiert
+- `assets/token/npc-at-kristallmutant.webp`: KI-generiert
+- `assets/token/npc-at-namenloser.webp`: KI-generiert
+- `assets/token/npc-at-offener.webp`: KI-generiert
+- `assets/token/npc-at-praxis.webp`: KI-generiert
+- `assets/token/npc-at-revisor.webp`: KI-generiert
+- `assets/token/npc-at-rueckkehrer.webp`: KI-generiert
+- `assets/token/npc-at-saenger.webp`: KI-generiert
+- `assets/token/npc-at-schattenwesen.webp`: KI-generiert
+- `assets/token/npc-at-silberdieb.webp`: KI-generiert
+- `assets/token/npc-at-techniker-stollen.webp`: KI-generiert
+- `assets/token/npc-bing-03-agent-negotiator-maennlich-1.webp`: KI-generiert
+- `assets/token/npc-bing-03-agent-negotiator-maennlich-5.webp`: KI-generiert
+- `assets/token/npc-bing-03-agent-negotiator-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-04-agent-negotiator-weiblich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-04-agent-negotiator-weiblich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-05-agent-assassin-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-05-agent-assassin-maennlich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-07-agent-spy-maennlich-4.webp`: KI-generiert
+- `assets/token/npc-bing-07-agent-spy-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-07-agent-spy-maennlich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-07-agent-spy-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-07-agent-spy-maennlich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-08-agent-spy-weiblich-1.webp`: KI-generiert
+- `assets/token/npc-bing-09-agent-saboteur-maennlich-1.webp`: KI-generiert
+- `assets/token/npc-bing-09-agent-saboteur-maennlich-v3-1.webp`: KI-generiert
+- `assets/token/npc-bing-09-agent-saboteur-maennlich-v3-3.webp`: KI-generiert
+- `assets/token/npc-bing-09-agent-saboteur-maennlich-v3-4.webp`: KI-generiert
+- `assets/token/npc-bing-10-agent-saboteur-weiblich-1.webp`: KI-generiert
+- `assets/token/npc-bing-11-scientist-biochemist-maennlich-2.webp`: KI-generiert
+- `assets/token/npc-bing-11-scientist-biochemist-maennlich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-11-scientist-biochemist-maennlich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-12-scientist-biochemist-weiblich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-12-scientist-biochemist-weiblich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-14-scientist-astrobiologist-weiblich-1.webp`: KI-generiert
+- `assets/token/npc-bing-14-scientist-astrobiologist-weiblich-2.webp`: KI-generiert
+- `assets/token/npc-bing-15-scientist-physicist-maennlich-1.webp`: KI-generiert
+- `assets/token/npc-bing-15-scientist-physicist-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-15-scientist-physicist-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-15-scientist-physicist-maennlich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-16-scientist-physicist-weiblich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-31-thaumaturg-thaumaturgist-maennlich-2.webp`: KI-generiert
+- `assets/token/npc-bing-31-thaumaturg-thaumaturgist-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-32-thaumaturg-thaumaturgist-weiblich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-37-thaumaturg-chronomancer-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-37-thaumaturg-chronomancer-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-38-thaumaturg-chronomancer-weiblich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-41-soldier-stormbreaker-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-41-soldier-stormbreaker-maennlich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-47-soldier-nanotech-veteran-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-47-soldier-nanotech-veteran-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-51-investigator-profiler-maennlich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-51-investigator-profiler-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-52-investigator-profiler-weiblich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-53-investigator-journalist-maennlich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-54-investigator-journalist-weiblich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-54-investigator-journalist-weiblich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-2.webp`: KI-generiert
+- `assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-57-investigator-antiquarian-maennlich-v2-4.webp`: KI-generiert
+- `assets/token/npc-bing-59-investigator-paranormal-detective-maennlich-v2-1.webp`: KI-generiert
+- `assets/token/npc-bing-59-investigator-paranormal-detective-maennlich-v2-3.webp`: KI-generiert
+- `assets/token/npc-bing-60-investigator-paranormal-detective-weiblich-v2-4.webp`: KI-generiert
+- `assets/token/npc-di-albers.webp`: KI-generiert
+- `assets/token/npc-di-albrecht.webp`: KI-generiert
+- `assets/token/npc-di-archivarin.webp`: KI-generiert
+- `assets/token/npc-di-bieter.webp`: KI-generiert
+- `assets/token/npc-di-brandsma.webp`: KI-generiert
+- `assets/token/npc-di-bruder.webp`: KI-generiert
+- `assets/token/npc-di-cweber.webp`: KI-generiert
+- `assets/token/npc-di-ferris.webp`: KI-generiert
+- `assets/token/npc-di-hartl.webp`: KI-generiert
+- `assets/token/npc-di-holm.webp`: KI-generiert
+- `assets/token/npc-di-kantor-alt.webp`: KI-generiert
+- `assets/token/npc-di-leuenberger.webp`: KI-generiert
+- `assets/token/npc-di-luca.webp`: KI-generiert
+- `assets/token/npc-di-marchetti.webp`: KI-generiert
+- `assets/token/npc-di-riva.webp`: KI-generiert
+- `assets/token/npc-di-saenger.webp`: KI-generiert
+- `assets/token/npc-di-vasari.webp`: KI-generiert
+- `assets/token/npc-di-webb.webp`: KI-generiert
+- `assets/token/npc-di-wendlinger.webp`: KI-generiert
+- `assets/token/npc-fk-ferris.webp`: KI-generiert
+- `assets/token/npc-fk-hoeven.webp`: KI-generiert
+- `assets/token/npc-fk-whitlock.webp`: KI-generiert
+- `assets/token/npc-ga-cerny.webp`: KI-generiert
+- `assets/token/npc-ga-eleitner.webp`: KI-generiert
+- `assets/token/npc-ga-gwynne.webp`: KI-generiert
+- `assets/token/npc-ga-hand.webp`: KI-generiert
+- `assets/token/npc-ga-hartley.webp`: KI-generiert
+- `assets/token/npc-ga-liese.webp`: KI-generiert
+- `assets/token/npc-ga-vane.webp`: KI-generiert
+- `assets/token/npc-ho-adeyemi.webp`: KI-generiert
+- `assets/token/npc-ho-ahlgren.webp`: KI-generiert
+- `assets/token/npc-ho-ahrens.webp`: KI-generiert
+- `assets/token/npc-ho-aydin.webp`: KI-generiert
+- `assets/token/npc-ho-balogun.webp`: KI-generiert
+- `assets/token/npc-ho-bell.webp`: KI-generiert
+- `assets/token/npc-ho-bergstroem.webp`: KI-generiert
+- `assets/token/npc-ho-bevan.webp`: KI-generiert
+- `assets/token/npc-ho-birch.webp`: KI-generiert
+- `assets/token/npc-ho-brandl.webp`: KI-generiert
+- `assets/token/npc-ho-brandstetter.webp`: KI-generiert
+- `assets/token/npc-ho-brodersen.webp`: KI-generiert
+- `assets/token/npc-ho-ccahuantico.webp`: KI-generiert
+- `assets/token/npc-ho-chamaeleon.webp`: KI-generiert
+- `assets/token/npc-ho-cleo.webp`: KI-generiert
+- `assets/token/npc-ho-colquhoun.webp`: KI-generiert
+- `assets/token/npc-ho-dorje.webp`: KI-generiert
+- `assets/token/npc-ho-dulac.webp`: KI-generiert
+- `assets/token/npc-ho-dvorakova.webp`: KI-generiert
+- `assets/token/npc-ho-eckhardt.webp`: KI-generiert
+- `assets/token/npc-ho-eze.webp`: KI-generiert
+- `assets/token/npc-ho-finch.webp`: KI-generiert
+- `assets/token/npc-ho-gjones.webp`: KI-generiert
+- `assets/token/npc-ho-hansen.webp`: KI-generiert
+- `assets/token/npc-ho-havel.webp`: KI-generiert
+- `assets/token/npc-ho-huanaco.webp`: KI-generiert
+- `assets/token/npc-ho-hueter.webp`: KI-generiert
+- `assets/token/npc-ho-imhof.webp`: KI-generiert
+- `assets/token/npc-ho-kopecka.webp`: KI-generiert
+- `assets/token/npc-ho-kowalczyk.webp`: KI-generiert
+- `assets/token/npc-ho-lewis.webp`: KI-generiert
+- `assets/token/npc-ho-lowe.webp`: KI-generiert
+- `assets/token/npc-ho-macleod.webp`: KI-generiert
+- `assets/token/npc-ho-mahler.webp`: KI-generiert
+- `assets/token/npc-ho-mamani.webp`: KI-generiert
+- `assets/token/npc-ho-menon.webp`: KI-generiert
+- `assets/token/npc-ho-novakova.webp`: KI-generiert
+- `assets/token/npc-ho-nowak.webp`: KI-generiert
+- `assets/token/npc-ho-nummer.webp`: KI-generiert
+- `assets/token/npc-ho-nwosu.webp`: KI-generiert
+- `assets/token/npc-ho-nystroem.webp`: KI-generiert
+- `assets/token/npc-ho-okonjo.webp`: KI-generiert
+- `assets/token/npc-ho-oyelaran.webp`: KI-generiert
+- `assets/token/npc-ho-pfleger.webp`: KI-generiert
+- `assets/token/npc-ho-pospisil.webp`: KI-generiert
+- `assets/token/npc-ho-pryce.webp`: KI-generiert
+- `assets/token/npc-ho-quayle.webp`: KI-generiert
+- `assets/token/npc-ho-quispe.webp`: KI-generiert
+- `assets/token/npc-ho-registratorin.webp`: KI-generiert
+- `assets/token/npc-ho-reyes.webp`: KI-generiert
+- `assets/token/npc-ho-rhys.webp`: KI-generiert
+- `assets/token/npc-ho-rojas.webp`: KI-generiert
+- `assets/token/npc-ho-schluesselmacherin.webp`: KI-generiert
+- `assets/token/npc-ho-shah.webp`: KI-generiert
+- `assets/token/npc-ho-simkova.webp`: KI-generiert
+- `assets/token/npc-ho-solheim.webp`: KI-generiert
+- `assets/token/npc-ho-stadler.webp`: KI-generiert
+- `assets/token/npc-ho-thiessen.webp`: KI-generiert
+- `assets/token/npc-ho-thorne.webp`: KI-generiert
+- `assets/token/npc-ho-tremblay.webp`: KI-generiert
+- `assets/token/npc-ho-vaughan.webp`: KI-generiert
+- `assets/token/npc-ho-vesela.webp`: KI-generiert
+- `assets/token/npc-ho-walker.webp`: KI-generiert
+- `assets/token/npc-ho-wimmer.webp`: KI-generiert
+- `assets/token/npc-ho-wren.webp`: KI-generiert
+- `assets/token/npc-nl-fahrer.webp`: KI-generiert
+- `assets/token/npc-nl-garn-1947.webp`: KI-generiert
+- `assets/token/npc-nl-garn-1977.webp`: KI-generiert
+- `assets/token/npc-nl-haugen.webp`: KI-generiert
+- `assets/token/npc-nl-jaegerfuehrer.webp`: KI-generiert
+- `assets/token/npc-nl-kantor-1976.webp`: KI-generiert
+- `assets/token/npc-nl-lavigne.webp`: KI-generiert
+- `assets/token/npc-nl-lot-1947.webp`: KI-generiert
+- `assets/token/npc-nl-lot-1977.webp`: KI-generiert
+- `assets/token/npc-nl-maenner-1909.webp`: KI-generiert
+- `assets/token/npc-nl-marsh.webp`: KI-generiert
+- `assets/token/npc-nl-moewe-1947.webp`: KI-generiert
+- `assets/token/npc-nl-moewe-1977.webp`: KI-generiert
+- `assets/token/npc-nl-partneroffizier.webp`: KI-generiert
+- `assets/token/npc-nl-psion-kreis.webp`: KI-generiert
+- `assets/token/npc-nl-salz-1947.webp`: KI-generiert
+- `assets/token/npc-nl-salz-1977.webp`: KI-generiert
+- `assets/token/npc-nl-schiefer-1947.webp`: KI-generiert
+- `assets/token/npc-nl-schiefer-1977.webp`: KI-generiert
+- `assets/token/npc-nl-soeldner-nachkrieg.webp`: KI-generiert
+- `assets/token/npc-nl-soeldner-sammler.webp`: KI-generiert
+- `assets/token/npc-nl-stasi-offizier.webp`: KI-generiert
+- `assets/token/npc-nl-stasi-soldat.webp`: KI-generiert
+- `assets/token/npc-nl-stimmen-eskorte.webp`: KI-generiert
+- `assets/token/npc-nl-volkspolizist.webp`: KI-generiert
+- `assets/token/npc-nl-zeuge-1947.webp`: KI-generiert
+- `assets/token/npc-nl-zeuge-1977.webp`: KI-generiert
+- `assets/token/person.webp`: KI-generiert
+- `assets/token/unbekannt.webp`: KI-generiert
+- `assets/token/welt-abteilung13.webp`: KI-generiert
+- `assets/token/welt-adept.webp`: KI-generiert
+- `assets/token/welt-exorzist.webp`: KI-generiert
+- `assets/token/welt-grey-meridian.webp`: KI-generiert
+- `assets/token/welt-kurator.webp`: KI-generiert
+- `assets/token/welt-meister.webp`: KI-generiert
+- `assets/token/welt-morrow.webp`: KI-generiert
+- `assets/token/welt-prediger.webp`: KI-generiert
+- `assets/token/welt-stillwater.webp`: KI-generiert
+- `assets/wuerfel/dunkel_1.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_2.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_3.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_4.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_5.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6_agent.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6_investigator.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6_psion.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6_scientist.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6_soldier.png`: eigene Grafik/Render
+- `assets/wuerfel/dunkel_6_thaumaturg.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_1.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_2.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_3.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_4.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_5.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6_agent.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6_investigator.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6_psion.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6_scientist.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6_soldier.png`: eigene Grafik/Render
+- `assets/wuerfel/hell_6_thaumaturg.png`: eigene Grafik/Render
+- `assets/wuerfel/korn.png`: eigene Grafik/Render
+- `assets/wuerfel/korn_relief.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_1.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_2.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_3.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_4.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_5.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6_agent.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6_investigator.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6_psion.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6_scientist.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6_soldier.png`: eigene Grafik/Render
+- `assets/wuerfel/relief_6_thaumaturg.png`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-agent/textures/ODIN_Agent_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-agent/textures/ODIN_Agent_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-agent/textures/ODIN_Agent_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-agent/textures/ODIN_Agent_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-bunt/textures/ODIN_Bunt_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-bunt/textures/ODIN_Bunt_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-bunt/textures/ODIN_Bunt_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-bunt/textures/ODIN_Bunt_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-investigator/textures/ODIN_Investigator_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-investigator/textures/ODIN_Investigator_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-investigator/textures/ODIN_Investigator_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-investigator/textures/ODIN_Investigator_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-psion/textures/ODIN_Psion_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-psion/textures/ODIN_Psion_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-psion/textures/ODIN_Psion_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-psion/textures/ODIN_Psion_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-scientist/textures/ODIN_Scientist_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-scientist/textures/ODIN_Scientist_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-scientist/textures/ODIN_Scientist_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-scientist/textures/ODIN_Scientist_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-soldier/textures/ODIN_Soldier_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-soldier/textures/ODIN_Soldier_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-soldier/textures/ODIN_Soldier_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-soldier/textures/ODIN_Soldier_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-thaumaturg/textures/ODIN_Thaumaturg_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-thaumaturg/textures/ODIN_Thaumaturg_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-thaumaturg/textures/ODIN_Thaumaturg_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-thaumaturg/textures/ODIN_Thaumaturg_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-agent/textures/ODIN_Weiss_Agent_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-agent/textures/ODIN_Weiss_Agent_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-agent/textures/ODIN_Weiss_Agent_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-agent/textures/ODIN_Weiss_Agent_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-investigator/textures/ODIN_Weiss_Investigator_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-investigator/textures/ODIN_Weiss_Investigator_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-investigator/textures/ODIN_Weiss_Investigator_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-investigator/textures/ODIN_Weiss_Investigator_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-psion/textures/ODIN_Weiss_Psion_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-psion/textures/ODIN_Weiss_Psion_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-psion/textures/ODIN_Weiss_Psion_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-psion/textures/ODIN_Weiss_Psion_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-scientist/textures/ODIN_Weiss_Scientist_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-scientist/textures/ODIN_Weiss_Scientist_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-scientist/textures/ODIN_Weiss_Scientist_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-scientist/textures/ODIN_Weiss_Scientist_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-soldier/textures/ODIN_Weiss_Soldier_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-soldier/textures/ODIN_Weiss_Soldier_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-soldier/textures/ODIN_Weiss_Soldier_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-soldier/textures/ODIN_Weiss_Soldier_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-thaumaturg/textures/ODIN_Weiss_Thaumaturg_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-thaumaturg/textures/ODIN_Weiss_Thaumaturg_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-thaumaturg/textures/ODIN_Weiss_Thaumaturg_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss-thaumaturg/textures/ODIN_Weiss_Thaumaturg_d6_Normal.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss/textures/ODIN_Weiss_d6_BaseColor.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss/textures/ODIN_Weiss_d6_Emissive.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss/textures/ODIN_Weiss_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `assets/wuerfel/v2/odin-weiss/textures/ODIN_Weiss_d6_Normal.webp`: eigene Grafik/Render
+- `halloween/assets/augen_1.png`: eigene Grafik/Render
+- `halloween/assets/augen_2.png`: eigene Grafik/Render
+- `halloween/assets/augen_3.png`: eigene Grafik/Render
+- `halloween/assets/augen_4.png`: eigene Grafik/Render
+- `halloween/assets/augen_5.png`: eigene Grafik/Render
+- `halloween/assets/augen_6.png`: eigene Grafik/Render
+- `halloween/assets/relief_1.png`: eigene Grafik/Render
+- `halloween/assets/relief_2.png`: eigene Grafik/Render
+- `halloween/assets/relief_3.png`: eigene Grafik/Render
+- `halloween/assets/relief_4.png`: eigene Grafik/Render
+- `halloween/assets/relief_5.png`: eigene Grafik/Render
+- `halloween/assets/relief_6.png`: eigene Grafik/Render
+- `halloween/assets/v2/knochen/textures/ODIN_Knochen_d6_BaseColor.webp`: eigene Grafik/Render
+- `halloween/assets/v2/knochen/textures/ODIN_Knochen_d6_Emissive.webp`: eigene Grafik/Render
+- `halloween/assets/v2/knochen/textures/ODIN_Knochen_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `halloween/assets/v2/knochen/textures/ODIN_Knochen_d6_Normal.webp`: eigene Grafik/Render
+- `halloween/assets/v2/kuerbis/textures/ODIN_Kuerbis_d6_BaseColor.webp`: eigene Grafik/Render
+- `halloween/assets/v2/kuerbis/textures/ODIN_Kuerbis_d6_Emissive.webp`: eigene Grafik/Render
+- `halloween/assets/v2/kuerbis/textures/ODIN_Kuerbis_d6_MetallicRoughness.webp`: eigene Grafik/Render
+- `halloween/assets/v2/kuerbis/textures/ODIN_Kuerbis_d6_Normal.webp`: eigene Grafik/Render
+- `media/01_karte.webp`: nicht im Kern
+- `media/02_bogen.webp`: nicht im Kern
+- `media/03_abenteuer.webp`: nicht im Kern
+- `media/04_tabellen.webp`: nicht im Kern
+- `media/05_token.webp`: nicht im Kern
+- `media/06_regeln.webp`: nicht im Kern

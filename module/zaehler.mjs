@@ -2,9 +2,9 @@
 // Gesendet werden nur die Plattform „foundry“ und die Sprache der Oberfläche, den Tag setzt der Zähler selbst. Keine Kennung der Welt,
 // keine Namen, keine Cookies, kein Referrer. Nur die aktive Spielleitung sendet, damit eine Welt nicht je Spieler zählt; den Tag des
 // letzten Pings merkt sich die Welt in einer versteckten Einstellung. Abschaltbar in den Einstellungen des Systems.
-const SYS = 'odin-rpg';
 
 /** Adresse des Zählers (ohne /ping). Leer: es wird nichts gesendet. */
+import { SYS } from './system.mjs';
 export const ZAEHLER_URL = 'https://odin-zaehler.david-ger-bs.workers.dev';
 
 /** Tag nach UTC wie im Zähler, damit „einmal am Tag“ auf beiden Seiten derselbe Tag ist. */
