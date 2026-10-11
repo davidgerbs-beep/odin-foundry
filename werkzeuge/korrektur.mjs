@@ -62,13 +62,31 @@ export const BAENDE = {
     de: { ordner: ['Fremdkörper'], abenteuer: [], pdf: ['buecher/ODIN_24_Fremdkoerper.pdf'] },
     en: { ordner: ['Foreign Bodies'], abenteuer: [], pdf: ['en/books/ODIN_EN_24_Foreign_Bodies.pdf'] },
   },
+  'die-anderen-dienste': {
+    kuerzel: 'AD', titel: 'Die anderen Dienste',
+    de: { ordner: ['Die anderen Dienste'], abenteuer: ['Die anderen Dienste'], pdf: ['buecher/ODIN_15_Die_anderen_Dienste.pdf'] },
+    en: { ordner: ['The Other Services'], abenteuer: ['The Other Services'], pdf: ['en/books/ODIN_EN_15_The_Other_Services.pdf'] },
+  },
+  // Kräfte, Zauber und Ausrüstung, deren Name im Band steht (Beschreibung satzweise); keine Journale, keine eigenen Gegner
+  schattenoffiziere: {
+    kuerzel: 'SO', titel: 'Schattenoffiziere (Kräfte, Zauber, Ausrüstung)', nurGegenstaende: true,
+    de: { ordner: [], abenteuer: [], pdf: ['buecher/ODIN_19_Schattenoffiziere.pdf'] },
+    en: { ordner: [], abenteuer: [], pdf: ['en/books/ODIN_EN_19_Shadow_Officers.pdf'] },
+  },
+  registratur: {
+    kuerzel: 'RG', titel: 'Die Registratur (Gegner)', nurGegner: true,
+    de: { ordner: ['Die Registratur'], abenteuer: [], pdf: ['buecher/ODIN_22_Registratur.pdf'] },
+    en: { ordner: ['The Registry'], abenteuer: [], pdf: ['en/books/ODIN_EN_22_The_Registry.pdf'] },
+  },
 };
 // Nur zum Abgleich: Werte und Sätze, die im Spielleiterbuch (Bedrohungsatlas) stehen, gelten als gefunden.
 const ABGLEICH = { de: 'buecher/ODIN_08_Spielleiterbuch.pdf', en: 'en/books/ODIN_EN_08_Game_Masters_Book.pdf' };
 const PACKS = {
-  de: { abenteuer: 'odin-abenteuer', pakete: 'odin-abenteuerpakete', gegner: 'odin-gegner' },
-  en: { abenteuer: 'odin-abenteuer-en', pakete: 'odin-abenteuerpakete-en', gegner: 'odin-gegner-en' },
+  de: { abenteuer: 'odin-abenteuer', pakete: 'odin-abenteuerpakete', gegner: 'odin-gegner', kraefte: 'odin-kraefte', zauber: 'odin-zauber', ausruestung: 'odin-ausruestung' },
+  en: { abenteuer: 'odin-abenteuer-en', pakete: 'odin-abenteuerpakete-en', gegner: 'odin-gegner-en', kraefte: 'odin-kraefte-en', zauber: 'odin-zauber-en', ausruestung: 'odin-ausruestung-en' },
 };
+// Packs mit Gegenständen (Feld system.beschreibung), für Bände wie Schattenoffiziere
+const GEGENSTAND_PACKS = ['kraefte', 'zauber', 'ausruestung'];
 const SPRACHE = { de: 'Deutsch', en: 'Englisch' };
 
 // Schwellen des Satzvergleichs (wie in der Bestandsaufnahme): ab 0,75 gleicher Satz mit Änderung, ab 0,85 „sicher“;
@@ -421,6 +439,18 @@ export function gegnerDesBandes(spr, cfg, packs = PACKORDNER) {
 }
 
 /** Zeilen der Gegnerwerte aus dem Feld „besonderheit“: [{ label, wert, html }] */
+/** Gegenstände (Kräfte, Zauber, Ausrüstung), deren Name im Band steht: als Seiten { journal: Packart, seite: Name, html } */
+export function gegenstaendeDesBandes(spr, pdf, packs = PACKORDNER) {
+  const aus = [];
+  for (const art of GEGENSTAND_PACKS) {
+    for (const [k, v] of lesePack(path.join(packs, PACKS[spr][art]))) {
+      if (!k.startsWith('!items!') || !v.name || v.name.length < 5 || !v.system?.beschreibung || !pdf.roh.includes(v.name)) continue;
+      aus.push({ journal: art, seite: v.name, html: v.system.beschreibung });
+    }
+  }
+  return aus;
+}
+
 export function zeilen(html) {
   const aus = [];
   for (const m of (html ?? '').matchAll(/<p><strong>(.*?)<\/strong>\s*(.*?)<\/p>/gs)) {
@@ -692,7 +722,8 @@ export function schreibeFreigabe(band, cfg, teile, alt = []) {
   const z = [];
   z.push(`# Korrekturvorschläge: ${cfg.titel}`, '');
   z.push(`Erzeugt mit \`node werkzeuge/korrektur.mjs vorschlaege ${band}\` aus den Bänden auf odin-rpg.pages.dev (Prüfsummen unten je Sprache).`);
-  z.push('Verglichen wird jeder Satz der Journalseiten und jede Zeile der Gegnerwerte in Foundry mit dem Text des Bandes.', '');
+  z.push(cfg.nurGegenstaende ? 'Verglichen wird jeder Satz der Beschreibung von Kräften, Zaubern und Ausrüstung in Foundry, deren Name im Band steht, mit dem Text des Bandes.'
+    : 'Verglichen wird jeder Satz der Journalseiten und jede Zeile der Gegnerwerte in Foundry mit dem Text des Bandes.', '');
   z.push('**Freigabe:** In jedem Eintrag „Freigabe: offen“ durch „ja“ oder „nein“ ersetzen. Die Zeile „neu“ darf von Hand nachgebessert werden,');
   z.push('übernommen wird genau dieser Text. Übernommen werden nur Einträge mit „ja“, mit');
   z.push(`\`node werkzeuge/korrektur.mjs anwenden ${band} --probelauf\` lässt sich vorher ansehen, was sich ändern würde. Ein neuer Lauf von`);
@@ -707,7 +738,7 @@ export function schreibeFreigabe(band, cfg, teile, alt = []) {
     const verw = Object.entries(ss?.verworfen ?? {}).map(([g, n]) => `${g} ${n}`).join(', ') || 'keine';
     z.push(`Bände: ${t.pdfs.map((p) => `${p.name} (Seiten ${p.seiten.length}, Prüfsumme ${p.pruef})`).join(', ')}.`, '');
     if (ss) {
-      z.push(`Journalseiten ${ss.seiten}, Sätze ${ss.saetze}, davon gleich ${ss.gleich}, im Band nicht gefunden ${ss.nichtGefunden} (umgeschrieben, gestrichen oder nur in Foundry).`);
+      z.push(`${cfg.nurGegenstaende ? 'Gegenstände mit Namen im Band' : 'Journalseiten'} ${ss.seiten}, Sätze ${ss.saetze}, davon gleich ${ss.gleich}, im Band nicht gefunden ${ss.nichtGefunden} (umgeschrieben, gestrichen oder nur in Foundry).`);
       z.push(`Vorschläge zu Sätzen: ${t.saetze.vorschlaege.length} (sicher ${t.saetze.vorschlaege.filter((v) => v.stufe === 'sicher').length}). Als Fehltreffer aussortiert: ${verw}.`);
     }
     if (gs) z.push(`Gegner ${gs.gegner} mit ${gs.zeilen} Zeilen, gleich ${gs.zeilen ? gs.gleich : 0}; Vorschläge ${t.gegner.vorschlaege.length}.`);
@@ -722,15 +753,16 @@ export function schreibeFreigabe(band, cfg, teile, alt = []) {
         benutzt.add(id);
         const e = entscheidung.get(id);
         const neu = e?.neu && e.alt === v.alt ? e.neu : v.neu;
-        const wo = v.art === 'satz' ? v.fundstellen.map(([j, s]) => (j === s ? `„${j}“` : `„${j}“ › „${s}“`)).join('; ') : `Gegner „${v.name}“, Zeile „${v.label}“`;
+        const wo = v.art === 'satz' ? v.fundstellen.map(([j, s]) => (j === s ? `„${j}“` : `„${j}“ › „${s}“`)).join('; ')
+          : v.art === 'gegenstand' ? v.fundstellen.map(([a, n]) => `${PACKS[t.spr][a]} › „${n}“`).join('; ') : `Gegner „${v.name}“, Zeile „${v.label}“`;
         z.push(`#### ${id} · ${wo} · ${fundPdf(v.pdf)} · ${v.stufe}${v.umformuliert ? ', umformuliert' : ''}`);
         z.push(`Freigabe: ${e?.freigabe ?? 'offen'}`, '');
         z.push(`- alt: ${v.alt}`, `- neu: ${neu}`, `- Änderung: ${anzeige(unterschiede(v.alt, neu))}`);
-        const daten = v.art === 'satz' ? { art: 'satz', fundstellen: v.fundstellen } : { art: 'gegner', name: v.name, label: v.label };
+        const daten = v.art === 'gegner' ? { art: 'gegner', name: v.name, label: v.label } : { art: v.art, fundstellen: v.fundstellen };
         z.push(`<!-- daten: ${JSON.stringify(daten)} -->`, '');
       }
     };
-    abschnitt('Journalsätze', t.saetze.vorschlaege);
+    abschnitt(cfg.nurGegenstaende ? 'Kräfte, Zauber, Ausrüstung' : 'Journalsätze', t.saetze.vorschlaege);
     abschnitt('Gegnerwerte', t.gegner?.vorschlaege ?? []);
     const hinweise = [...(t.saetze.hinweise ?? []), ...(t.gegner?.hinweise ?? [])];
     if (hinweise.length) {
@@ -875,6 +907,15 @@ export function wendeAn(eintraege, packs) {
       for (const st of stellen) {
         const r = ersetzeSatz(st.seite.text.content, e.alt, e.neu);
         if (r.status === 'ok') { st.seite.text.content = r.html; p.geaendert.add(st.pack); }
+        bericht.push({ id: e.id, wo: st.wo, status: r.status, grund: r.grund });
+      }
+    } else if (e.art === 'gegenstand') {
+      for (const [art, name] of e.daten.fundstellen) {
+        for (const [k, v] of p[art] ?? []) if (k.startsWith('!items!') && v.name === name && v.system?.beschreibung) stellen.push({ wo: `${PACKS[e.spr][art]}: ${name}`, item: v, pack: art });
+      }
+      for (const st of stellen) {
+        const r = ersetzeSatz(st.item.system.beschreibung, e.alt, e.neu);
+        if (r.status === 'ok') { st.item.system.beschreibung = r.html; p.geaendert.add(st.pack); }
         bericht.push({ id: e.id, wo: st.wo, status: r.status, grund: r.grund });
       }
     } else {
@@ -1159,7 +1200,11 @@ function vorschlaege(band) {
     const pdf = new BandText(pdfs);
     const abgleich = new BandText([ladePdf(ABGLEICH[spr])]);
     const t = { spr, pdfs, saetze: { vorschlaege: [], statistik: null } };
-    if (!cfg.nurGegner) {
+    if (cfg.nurGegenstaende) {
+      t.saetze = satzVorschlaege(gegenstaendeDesBandes(spr, pdf), pdf, abgleich);
+      for (const v of t.saetze.vorschlaege) v.art = 'gegenstand';
+      t.saetze.vorschlaege.sort((a, b) => a.pdf.pos - b.pdf.pos);
+    } else if (!cfg.nurGegner) {
       t.saetze = satzVorschlaege(journalSeiten(spr, c), pdf, abgleich);
       t.saetze.vorschlaege.sort((a, b) => a.pdf.pos - b.pdf.pos);
     }

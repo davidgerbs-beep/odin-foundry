@@ -10,7 +10,7 @@ import { lesePack } from '../werkzeuge/leveldb.mjs';
 import {
   Abgleich, normMitIndex, bereinigeSeite, textKarte, text, saetze, vergleicheSatz, unterschiede, BandText, satzVorschlaege,
   gegnerVorschlaege, wertImBlock, ersetzeSatz, ersetzeZeile, zieheZahlenNach, leseFreigabe, schreibeFreigabe, pruefeFreigaben,
-  zeilen, BAENDE, ZIEL, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
+  zeilen, BAENDE, ZIEL, wendeAn, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
 } from '../werkzeuge/korrektur.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -143,6 +143,18 @@ test('Anwenden: Gegnerzeile ändern und Zahlen nachziehen', () => {
   assert.deepEqual(zeilen('<p><strong>Stufe laut Buch:</strong> Profi</p><p><strong>Psi:</strong> 4 + 4</p>').map((z) => z.label), ['Psi']);
 });
 
+test('Anwenden: Satz in der Beschreibung einer Kraft (Gegenstand)', () => {
+  const kraft = { name: 'Schwerer Griff', system: { beschreibung: '<p>Er wirft sie einmal: Angriff gegen die Verteidigung, Schaden 5.</p>' } };
+  const packs = { de: { geaendert: new Set(), kraefte: new Map([['!items!abc', kraft]]) } };
+  const e = { id: 'SO-de-x', spr: 'de', art: 'gegenstand', alt: 'Er wirft sie einmal: Angriff gegen die Verteidigung, Schaden 5.',
+    neu: 'Er wirft sie einmal: Angriff mit den Erfolgen der Kraftprobe gegen die Verteidigung, Schaden 5.', daten: { art: 'gegenstand', fundstellen: [['kraefte', 'Schwerer Griff']] } };
+  const [b] = wendeAn([e], packs);
+  assert.equal(b.status, 'ok');
+  assert.match(kraft.system.beschreibung, /mit den Erfolgen der Kraftprobe/);
+  assert.ok(packs.de.geaendert.has('kraefte'));
+  assert.equal(wendeAn([e], packs)[0].status, 'schon');
+});
+
 test('Freigabedatei: schreiben, lesen, Entscheidungen bleiben', () => {
   const cfg = BAENDE['graue-akten'];
   const teil = (neu) => ({
@@ -224,6 +236,10 @@ test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Pa
         const journale = new Map([...d].filter(([k]) => k.startsWith('!journal!')).map(([, v]) => [v._id, v.name]));
         const ok = e.daten.fundstellen.some(([j, s]) => [...d].some(([k, v]) => k.startsWith('!journal.pages!') && journale.get(k.slice(15).split('.')[0]) === j && v.name === s
           && text(v.text?.content ?? '').replace(/\s+/g, ' ').includes(e.alt)));
+        if (!ok) fehlt.push(`${f}: ${e.id}`);
+      } else if (e.art === 'gegenstand') {
+        const ok = e.daten.fundstellen.some(([art, name]) => [...pack(`odin-${art}${en}`).values()].some((v) => v.name === name
+          && text(v.system?.beschreibung ?? '').replace(/\s+/g, ' ').includes(e.alt)));
         if (!ok) fehlt.push(`${f}: ${e.id}`);
       } else {
         const akteure = [...pack(`odin-gegner${en}`).values(), ...[...pack(`odin-abenteuerpakete${en}`).values()].flatMap((a) => a.actors ?? [])];
