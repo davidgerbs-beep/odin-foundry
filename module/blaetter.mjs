@@ -7,6 +7,7 @@ import { baumKontext, knotenUmschalten, steigern, steigerKosten } from './baum.m
 import { signaturKontext } from './signatur.mjs';
 import { attrName, fertName, KATEGORIEN, WAFFEN_ARTEN } from './wuerfel.mjs';
 import { T, abk, klasseName, subName, rangName, rangAnzeige, probeLesen } from './sprache.mjs';
+import { SYS, PFAD } from './system.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2, ItemSheetV2 } = foundry.applications.sheets;
@@ -45,12 +46,12 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    kopf: { template: 'systems/odin-rpg/templates/agent-kopf.hbs' },
+    kopf: { template: `${PFAD}templates/agent-kopf.hbs` },
     tabs: { template: 'templates/generic/tab-navigation.hbs' },
-    akte: { template: 'systems/odin-rpg/templates/agent-akte.hbs', scrollable: [''] },
-    einsatz: { template: 'systems/odin-rpg/templates/agent-einsatz.hbs', scrollable: [''] },
-    signatur: { template: 'systems/odin-rpg/templates/agent-signatur.hbs', scrollable: [''] },
-    notizen: { template: 'systems/odin-rpg/templates/agent-notizen.hbs', scrollable: [''] },
+    akte: { template: `${PFAD}templates/agent-akte.hbs`, scrollable: [''] },
+    einsatz: { template: `${PFAD}templates/agent-einsatz.hbs`, scrollable: [''] },
+    signatur: { template: `${PFAD}templates/agent-signatur.hbs`, scrollable: [''] },
+    notizen: { template: `${PFAD}templates/agent-notizen.hbs`, scrollable: [''] },
   };
 
   static TABS = {
@@ -205,11 +206,11 @@ export class AgentBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
 /* ------------------------------------------------------------ */
 /** Karteikarten-Code eines Registratur-Gegners: Flag aus dem Kompendium, sonst aus dem Bildnamen (REG-S-0211.webp). */
 function regCode(actor) {
-  return actor.getFlag('odin-rpg', 'registratur') ?? /REG-[A-Z]-\d{4}/.exec(actor.img ?? '')?.[0] ?? null;
+  return actor.getFlag(SYS, 'registratur') ?? /REG-[A-Z]-\d{4}/.exec(actor.img ?? '')?.[0] ?? null;
 }
 /** Sprache der Karteikarte = Sprache des Gegners (deutsches oder englisches Kompendium), nicht der Oberfläche. */
 function regSprache(actor) {
-  const q = actor.getFlag('odin-rpg', 'quelle');
+  const q = actor.getFlag(SYS, 'quelle');
   if (q === 'The Registry') return 'en';
   if (q === 'Die Registratur') return 'de';
   return game.i18n.lang?.startsWith('en') ? 'en' : 'de';
@@ -228,7 +229,7 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
     form: { submitOnChange: true },
     actions: { kasten: GegnerBogen.#kasten, pool: GegnerBogen.#pool, poolNeu: GegnerBogen.#poolNeu, poolLoeschen: GegnerBogen.#poolLoeschen, grauenAusloesen: GegnerBogen.#grauen, regAnfordern: GegnerBogen.#regAnfordern, regKarte: GegnerBogen.#regKarte },
   };
-  static PARTS = { haupt: { template: 'systems/odin-rpg/templates/gegner.hbs', scrollable: [''] } };
+  static PARTS = { haupt: { template: `${PFAD}templates/gegner.hbs`, scrollable: [''] } };
 
   async _prepareContext(options) {
     const ctx = await super._prepareContext(options);
@@ -241,7 +242,7 @@ export class GegnerBogen extends HandlebarsApplicationMixin(ActorSheetV2) {
       ursprungAnzeige: URSPRUENGE[s.ursprung] ? L(`Gegner.Urspruenge.${URSPRUENGE[s.ursprung]}`) : s.ursprung,
       grauenStufen: Object.fromEntries([[0, L('Grauen.Kein')], [1, L('Grauen.Unheimlich')], [2, L('Grauen.Verstoerend')], [3, L('Grauen.Grauenhaft')], [4, L('Grauen.Wahnsinnig')], [5, L('Grauen.Kosmisch')]]),
       html: await anreichern(this.actor, ['system.beschreibung', 'system.besonderheit']),
-      akzent: '#5E1B16', quelle: this.actor.getFlag('odin-rpg', 'quelle') ?? '',
+      akzent: '#5E1B16', quelle: this.actor.getFlag(SYS, 'quelle') ?? '',
       lpKaestchen: kaestchen(s.lp.value, Math.min(s.lp.max, 60)),
       regCode: game.user.isGM ? regCode(this.actor) : null,
       knoepfe: !!s.grauen || (game.user.isGM && !!regCode(this.actor)),
@@ -278,7 +279,7 @@ export class OdinItemBogen extends HandlebarsApplicationMixin(ItemSheetV2) {
     window: { resizable: true },
     form: { submitOnChange: true },
   };
-  static PARTS = { haupt: { template: 'systems/odin-rpg/templates/item.hbs', scrollable: [''] } };
+  static PARTS = { haupt: { template: `${PFAD}templates/item.hbs`, scrollable: [''] } };
 
   async _prepareContext(options) {
     const ctx = await super._prepareContext(options);

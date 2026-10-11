@@ -1,0 +1,70 @@
+# Hängt an ein veröffentlichtes Release des Kerns „O.D.I.N. Core (no art)“ (System odin-rpg-core, ohne KI-Bilder, für die
+# Paketliste von foundryvtt.com) die Assets odin-rpg-core.zip und system.json.
+# Das Release selbst wird im Browser angelegt: Tag core-v<version aus system.json>, Haken bei „Set as a pre-release“.
+# Pre-release ist Pflicht: Das Manifest des bebilderten Systems odin-rpg zeigt auf releases/latest, ein normales Release des
+# Kerns würde dort zum neuesten. Das Manifest des Kerns hängt nicht an latest (kern/system.json auf main).
+# Inhalt des ZIP: node werkzeuge/kern.mjs (Dateien wie odin-rpg.zip ohne KI-Bilder, Packs umgeschrieben), flach im Wurzelordner.
+name: Kern ohne KI-Bilder
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  assets:
+    if: startsWith(github.event.release.tag_name, 'core-v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stand des Tags auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Pre-release, Tag, Version und Download-Link prüfen
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          VORAB: ${{ github.event.release.prerelease }}
+        run: |
+          if [ "$VORAB" != "true" ]; then
+            echo "::error::Release $TAG ist kein Pre-release. Sonst wird es releases/latest, und das Manifest von odin-rpg zeigt darauf. Bitte als Pre-release markieren und den Workflow neu starten."
+            exit 1
+          fi
+          VERSION=$(jq -r .version kern/system.json)
+          if [ "$TAG" != "core-v$VERSION" ]; then
+            echo "::error::Tag $TAG passt nicht zur Version $VERSION in kern/system.json (erwartet core-v$VERSION)."
+            exit 1
+          fi
+          DOWNLOAD=$(jq -r .download kern/system.json)
+          ERWARTET="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/odin-rpg-core.zip"
+          if [ "$DOWNLOAD" != "$ERWARTET" ]; then
+            echo "::error::Download-Link in kern/system.json ist $DOWNLOAD, erwartet $ERWARTET."
+            exit 1
+          fi
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Tests
+        run: node --test
+
+      - name: Kern bauen und prüfen
+        run: |
+          npm install --no-save --no-audit --no-fund classic-level@1.4.1
+          node werkzeuge/kern.mjs build/odin-rpg-core --zip
+          ODIN_KERN=build/odin-rpg-core node --test tests/kern.test.mjs
+          cmp build/odin-rpg-core/system.json kern/system.json
+          cp build/odin-rpg-core.zip odin-rpg-core.zip
+          cp kern/system.json system.json
+          unzip -l odin-rpg-core.zip | tail -1
+          unzip -l odin-rpg-core.zip system.json odin.mjs > /dev/null
+
+      - name: Assets an das Release hängen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" odin-rpg-core.zip system.json --clobber --repo "$GITHUB_REPOSITORY"

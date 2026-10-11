@@ -10,6 +10,16 @@ In Foundry unter **Spielsysteme → System installieren** diese Manifest-URL ein
 https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.json
 ```
 
+### O.D.I.N. Core (no art): Kern ohne KI-Bilder
+
+Für die Paketliste von foundryvtt.com (und damit den Forge-Bazaar) gibt es das System zusätzlich als Kern ohne Illustrationen, eigene ID `odin-rpg-core`. Regeln, Bögen, Würfel (auch die 3D-Würfel), Einstellungen und alle Kompendien-Texte sind gleich; Porträts, Token, Szenen-, Artefakt- und Registraturbilder fehlen (Symbole des Foundry-Kerns statt Porträts). Lagepläne, Handouts und Karteikarten sind dabei. Welten lassen sich zwischen den beiden Systemen nicht tauschen. Manifest-URL:
+
+```
+https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/kern/system.json
+```
+
+Gebaut wird der Kern aus diesem Repo mit `node werkzeuge/kern.mjs` (braucht `npm install --no-save classic-level@1.4.1`), geprüft mit `ODIN_KERN=build/odin-rpg-core node --test tests/kern.test.mjs`. Nach einer Versionsänderung `node werkzeuge/kern.mjs --manifest` (schreibt `kern/system.json`). Releases mit Tag `core-v<version>` und immer als Pre-release, damit `releases/latest` beim bebilderten System bleibt; der Workflow `kern-release.yml` hängt ZIP und Manifest an.
+
 ### Halloween-Würfel (kostenloses Modul)
 
 Knochen und Kürbis für Dice So Nice, schwarze Augen, auf der Sechs ein Kürbisgesicht. Ab Dice So Nice 6.4 auch als 3D-Modell: Knochen mit eingekerbter Tinte, Kürbis durchgeschnitzt und innen leuchtend. Mit dem System O.D.I.N. würfeln die Proben im Oktober damit (in den Moduleinstellungen auch immer oder nie), in anderen Systemen ist es ein Würfelsatz zum Auswählen. Unter **Module → Modul installieren** diese Manifest-URL eintragen:

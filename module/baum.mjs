@@ -3,6 +3,7 @@ import { DATEN } from './daten.mjs';
 import { AgentModell } from './modelle.mjs';
 import { attrName, fertName } from './wuerfel.mjs';
 import { baumAnzeige, knotenLokal, knotenName, rangName, subName } from './sprache.mjs';
+import { SYS } from './system.mjs';
 
 const L = (k, d) => game.i18n.format(`ODIN.${k}`, d ?? {});
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
@@ -116,13 +117,13 @@ export async function steigern(actor, art, key, richtung = 1) {
   let zusatz = '';
   const extra = {};
   if (art === 'attr') {
-    const zz = actor.getFlag('odin-rpg', 'zwischenzeit') ?? 0;
-    const schon = (actor.getFlag('odin-rpg', 'attrZwischenzeit') ?? -1) === zz;
+    const zz = actor.getFlag(SYS, 'zwischenzeit') ?? 0;
+    const schon = (actor.getFlag(SYS, 'attrZwischenzeit') ?? -1) === zz;
     const content = `<p>${L('Steigern.AttrText', { n: esc(name), w: x.wert + 1, k })}</p>${schon ? `<p class="odin-dialog-hinweis">${L('Steigern.AttrSchon')}</p>` : ''}`;
     if (schon && !game.user.isGM) return ui.notifications.warn(L('Steigern.AttrSchon'));
     const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: L('Steigern.AttrTitel') }, content });
     if (!ok) return;
-    extra['flags.odin-rpg.attrZwischenzeit'] = zz;
+    extra[`flags.${SYS}.attrZwischenzeit`] = zz;
     zusatz = ` (${L('Steigern.AttrLog')})`;
   } else if (x.wert === 0) {
     const lehrer = await foundry.applications.api.DialogV2.prompt({

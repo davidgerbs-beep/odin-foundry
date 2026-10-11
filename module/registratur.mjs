@@ -1,9 +1,9 @@
 // „Was die Akte sagt“: Wesen aus Band 22 „Die Registratur“ mit Wissensprobe am Tisch.
 // Die Daten (daten/registratur_de.json, _en.json) und Fotos (assets/registratur/) liegen nur im Paket, wenn der Band erschienen ist.
-// Fehlen sie, bleibt der Block in der Zentrale weg.
+// Fehlen sie, bleibt der Block in der Zentrale weg. Der Kern ohne KI-Bilder (module/system.mjs, KERN) hat die Daten, aber keine Fotos.
 import { pool, wurf, auswerten, karte, posten, attrName, fertName } from './wuerfel.mjs';
+import { SYS, PFAD, KERN } from './system.mjs';
 
-const SYS = 'odin-rpg';
 const L = (k, d) => (d ? game.i18n.format(`ODIN.Registratur.${k}`, d) : game.i18n.localize(`ODIN.Registratur.${k}`));
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ''));
 const FERT = {
@@ -12,13 +12,14 @@ const FERT = {
   physik: 'physik', physics: 'physik', ermittlung: 'ermittlung', investigation: 'ermittlung',
 };
 const sprache = () => (game.i18n.lang?.startsWith('en') ? 'en' : 'de');
-const foto = (e) => `systems/${SYS}/assets/registratur/${e.foto || e.code + '.webp'}`;
+/** Foto der Karteikarte als <img>, im Kern ohne Bild. */
+const foto = (e) => (KERN ? '' : `<img src="${PFAD}assets/registratur/${e.foto || e.code + '.webp'}" alt="">`);
 
 const cache = {};
 export async function daten(spr = sprache()) {
   if (spr in cache) return cache[spr];
   try {
-    const r = await fetch(`systems/${SYS}/daten/registratur_${spr}.json`);
+    const r = await fetch(`${PFAD}daten/registratur_${spr}.json`);
     cache[spr] = r.ok ? await r.json() : null;
   } catch (e) { cache[spr] = null; }
   return cache[spr];
@@ -31,7 +32,7 @@ export async function eintrag(code, spr = sprache()) {
 export function karteHTML(e, { mitAkte = true } = {}) {
   const zeile = (k, v) => (v ? `<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>` : '');
   return `<div class="odin-reg-karte">
-    <img src="${foto(e)}" alt="">
+    ${foto(e)}
     <h3>${esc(e.name)} <small>${esc(e.code)}</small></h3>
     ${e.zitat ? `<blockquote>${esc(e.zitat)}<cite>${esc(e.zitatQuelle)}</cite></blockquote>` : ''}
     <table>${zeile(L('Ursprung'), [e.ursprung, e.familie].filter(Boolean).join(', '))}${zeile(L('Form'), e.form)}${zeile(L('Rolle'), e.rolle)}${zeile(L('Grauen'), e.grauen)}${zeile(L('Aktenfarbe'), e.aktenfarbe)}${zeile(L('Regionen'), e.regionen)}</table>
@@ -45,7 +46,7 @@ export async function anfordern(code, spr = sprache()) {
   const e = await eintrag(code, spr);
   if (!e) return;
   await ChatMessage.create({
-    content: `<div class="odin-reg-anfrage"><img src="${foto(e)}" alt=""><div><h3>${esc(e.name)}</h3><p>${esc(e.probe?.text)}</p>
+    content: `<div class="odin-reg-anfrage">${foto(e)}<div><h3>${esc(e.name)}</h3><p>${esc(e.probe?.text)}</p>
       <button type="button" data-odin-aktion="akte">${L('Wuerfeln')}</button></div></div>`,
     speaker: { alias: 'O.D.I.N.' },
     flags: { [SYS]: { akte: { code, spr } } },
