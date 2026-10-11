@@ -4,7 +4,9 @@ Erzeugt aus dem Vergleich der Kompendien mit dem Stand 0.10.14 (main), absatzwei
 die Kopien in `odin-abenteuerpakete(-en)` haben denselben Text (geprüft). Quellen: Freigabelisten in diesem Ordner (Einträge mit „ja“),
 Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege`, Rest von Hand) und Zahlenfelder der Gegner nach den Werteblöcken der Bände.
 
-## Journale Deutsch (289 Absätze)
+Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für einen Absatz- oder Zeilenwechsel innerhalb eines Eintrags, „Zahlen: {…}“ fasst die Zahlenfelder eines Gegners zusammen (i Initiative, v Verteidigung, r Rüstung, lp LP, g Grauen, p Pools als Name weiß+bunt/Schaden).
+
+## Journale Deutsch (322 Absätze)
 
 ### Kapitel 4: Die Figuren der Zeit › Porträts
 
@@ -12,13 +14,22 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: Hallström ist ein Mann der Akten. Er trägt graue Anzüge, eine Lupe in der Brusttasche, eine Salzdose in der Manteltasche. Seine Hände sind ruhig. Seine Stimme ist leise und präzise. Er stellt Fragen, auf die er die Antwort schon kennt. Er hört zu, ohne zu unterbrechen. Er notiert in schwarze Wachstuchhefte, einundsechzig Stück, von 1938 bis 1985. Er weigert sich, einen Computer anzufassen. Sein Stahlschrank hat zwei Schlösser und zwei Fächer. Im zweiten liegen Notizbuch null, die Seite von 1871, die Schwarze Akte Nordlicht mit dem Vergleich der beiden Uhrzeiten, Sanders Brief von 1957.
 
 - alt: In den Sechzigern wird Wendland zum Gewissen des Instituts. Er arbeitet mit Marchand, Gysin und Hainz; Ekberg geht 1961 ohne Abschied. Er treibt die Technik voran, die Messkoffer, die Rissdetektoren, die Beryllium- Isolierung. Er misstraut dem Rat, aber er liefert. Er misstraut dem Kollegium, aber er misst. 1971, nach der Kaskade, sagt er zum ersten Mal öffentlich, dass die Stimme nicht nur sendet, sondern empfängt. Das Institut rechnet mit Mercier an den Frequenzen. Er tut es ohne Freude.
-- neu: In den Sechzigern wird Wendland zum Gewissen des Instituts. Er arbeitet mit Marchand, Gysin und Hainz; Ekberg geht 1961 ohne Abschied. Er treibt die Technik voran, die Messkoffer, die Rissdetektoren, die Beryllium- Isolierung. Er misstraut dem Rat, aber er liefert. Er misstraut dem Kollegium, aber er misst. 1971, nach der Kaskade, sagt er zum ersten Mal öffentlich, dass die Stimme sendet und empfängt. Das Institut rechnet mit Mercier an den Frequenzen. Er tut es ohne Freude.
+- neu: In den Sechzigern wird Wendland zum Gewissen des Instituts. Er arbeitet mit Marchand, Gysin und Hainz; Ekberg geht 1961 ohne Abschied. Er treibt die Technik voran, die Messkoffer, die Rissdetektoren, die Beryllium-Isolierung. Er misstraut dem Rat, aber er liefert. Er misstraut dem Kollegium, aber er misst. 1971, nach der Kaskade, sagt er zum ersten Mal öffentlich, dass die Stimme sendet und empfängt. Das Institut rechnet mit Mercier an den Frequenzen. Er tut es ohne Freude.
 
 - alt: Ashgrove ist ein Mann des Befehls. Er trägt Uniform, auch wenn es keine gibt. Seine Stimme ist ruhig, tief, ohne Eile. Er spricht selten über Gefühle, nie über Angst. Er nennt die Männer beim Namen, nicht beim Rang. Er isst mit ihnen, schläft neben ihnen, trägt die Verwundeten selbst. Er mag den Spitznamen „Hammer“ nicht. Er sagt: „Ein Hammer zerbricht. Ich will nicht zerbrechen.“ 1955 bekommt er das Messer Nr. 1 aus Aschesilber. Er trägt es bis 1988. Er sagt, es ist warm. Er sagt, das gibt sich. Es hat sich nicht gegeben.
 - neu: Ashgrove ist ein Mann des Befehls. Er trägt Uniform, auch wenn es keine gibt. Seine Stimme ist ruhig, tief, ohne Eile. Er spricht selten über Gefühle, nie über Angst. Er nennt die Männer beim Namen, nicht beim Rang. Er isst mit ihnen, schläft neben ihnen, trägt die Verwundeten selbst. Er mag den Spitznamen nicht, den der Flurfunk ab 1954 seinem Zweig gibt: „Hammer“. Er sagt: „Ein Hammer kennt nur ein Problem.“ 1955 bekommt er das Messer Nr. 1 aus Aschesilber. Er trägt es bis 1988. Er sagt, es ist warm. Er sagt, das gibt sich. Es hat sich nicht gegeben.
 
 - alt: Marsh gibt der Gruppe die Tarnung. Sie zeigt, wie man verschwindet, wie man lügt, wie man überlebt. Sie nimmt den Spielern die Naivität, indem sie zeigt, was Tarnung kostet. Sie nimmt ihnen die Sicherheit, indem sie zeigt, dass niemand die ganze Wahrheit kennt. Sie tritt auf in den Einsätzen 1, 3, 7, 8, 9 und 11. Meist als Stimme, als Brief, als Frau, die am Rand steht und zuschaut.
 - neu: Marsh gibt der Gruppe die Tarnung. Sie zeigt, wie man verschwindet, wie man lügt, wie man überlebt. Sie nimmt den Spielern die Naivität, indem sie zeigt, was Tarnung kostet. Sie nimmt ihnen die Sicherheit, indem sie zeigt, dass niemand die ganze Wahrheit kennt. Sie tritt auf in den Einsätzen 1, 3, 7, 8, 9, 10 und 11. Meist als Stimme, als Brief, als Frau, die am Rand steht und zuschaut.
+
+- alt: 1947 ist Holloway achtundfünfzig. Sie ist die Seele des Kollegiums. Sie verhandelt den Vertrag mit der Organisation, die noch keinen festen Namen hat. Kristalle gegen Schutz. Das Kollegium behält die Kristallhoheit. Das Kristallbuch wird Pflicht. Nicht im Vertrag: Der Rat bekommt jedes Jahr heimlich Nexus- Kristalle. Holloway weiß das. Sie sagt es nicht. In den Fünfzigern altert sie sichtbar. Sie schreibt schneller, spricht leiser, blickt länger auf die Steine. 1959, im Herbst, liest sie den siebten Kreis. Sie geht durch die Tür.
+- neu: 1947 ist Holloway achtundfünfzig. Sie ist die Seele des Kollegiums. Sie verhandelt den Vertrag mit der Organisation, die noch keinen festen Namen hat. Kristalle gegen Schutz. Das Kollegium behält die Kristallhoheit. Das Kristallbuch wird Pflicht. Nicht im Vertrag: Der Rat bekommt jedes Jahr heimlich Nexus-Kristalle. Holloway weiß das. Sie sagt es nicht. In den Fünfzigern altert sie sichtbar. Sie schreibt schneller, spricht leiser, blickt länger auf die Steine. 1959, im Herbst, liest sie den siebten Kreis. Sie geht durch die Tür.
+
+- alt: Akustiker aus Frankreich, geboren 1941. Arbeitet in einem Schallwaffenprogramm, bis der Tinnitus kommt. 1973 wird er angeworben. 1974 übernimmt er die Echo- Operative. 1976 führt er den Einsatz im Kloster Sfântul Ioan. Er setzt die erste Frequenzüberlagerung ein. Danach löst er nie wieder selbst eine aus. Er leitet die Echo-Operative bis 1998. Sein Enkel führt 2027 einen Echo-Trupp.
+- neu: Akustiker aus Frankreich, geboren 1941. Arbeitet in einem Schallwaffenprogramm, bis der Tinnitus kommt. 1973 wird er angeworben. 1974 übernimmt er die Echo-Operative. 1976 führt er den Einsatz im Kloster Sfântul Ioan. Er setzt die erste Frequenzüberlagerung ein. Danach löst er nie wieder selbst eine aus. Er leitet die Echo-Operative bis 1998. Sein Enkel führt 2027 einen Echo-Trupp.
+
+- alt: 1976 ist Mercier fünfunddreißig. Er führt die Echo- Operative ins Kloster. Sieben Offene werden festgenommen, ohne Schuss, ohne Verluste. Einer ist fünfzehn. Mercier setzt die Überlagerung ein. Er sieht, was sie anrichtet. Er schreibt den Nachtrag: „… warum wir ihn nicht hören wollten. Ich hatte keine Antwort.“ Danach überlässt er das Auslösen anderen. Er bleibt der Leiter. Er bleibt verantwortlich. 1977 ist er nicht in Nordlicht. Er leitet die Echo-Operative bis 1998. Heute lebt er in der Provence.
+- neu: 1976 ist Mercier fünfunddreißig. Er führt die Echo-Operative ins Kloster. Sieben Offene werden festgenommen, ohne Schuss, ohne Verluste. Einer ist fünfzehn. Mercier setzt die Überlagerung ein. Er sieht, was sie anrichtet. Er schreibt den Nachtrag: „… warum wir ihn nicht hören wollten. Ich hatte keine Antwort.“ Danach überlässt er das Auslösen anderen. Er bleibt der Leiter. Er bleibt verantwortlich. 1977 ist er nicht in Nordlicht. Er leitet die Echo-Operative bis 1998. Heute lebt er in der Provence.
 
 - alt: 1947 ist Astrid dreizehn. Sie lebt in Bergen, lernt das Uhrmacherhandwerk. 1954 findet sie den Kristall. 1956 tritt sie ins Kollegium ein. Penhallow stellt die Regel auf: jeder Chronomancer nur unter Aufsicht eines zweiten. Astrid hält sich daran, meistens. In den Sechzigern wird sie zur Lehrerin. Sie bildet eine Handvoll Schüler aus, alle Chronomancer. Sie entwirft die Zeitmessanlage für Nordlicht. Sie arbeitet für den Stützpunkt, ist aber nicht stationiert. Sie steht nicht auf dem Dienstplan. 1977, am 14. Februar, sitzt sie mit Ingrid im verspäteten Zug nach Narvik. Um 22:10 läuft Ingrids Taschenuhr in unter einer Minute eine ganze Nacht ab. Astrid kommt gut drei Stunden zu spät.
 - neu: 1947 ist Astrid dreizehn. Sie lebt in Bergen, lernt das Uhrmacherhandwerk. 1954 findet sie den Kristall. 1956 tritt sie ins Kollegium ein. Penhallow stellt die Regel auf: jeder Chronomancer nur unter Aufsicht eines zweiten. Astrid hält sich daran, meistens. In den Sechzigern wird sie zur Lehrerin. Sie bildet eine Handvoll Schüler aus, alle Chronomancer. Sie entwirft die Zeitmessanlage für Nordlicht. Sie arbeitet für den Stützpunkt, ist aber nicht stationiert. Sie steht nicht auf dem Dienstplan. 1977, am 14. Februar, sitzt sie mit Ingrid im verspäteten Zug nach Narvik. Um 22:10 läuft die Taschenuhr in Ingrids Hand in unter einer Minute eine ganze Nacht ab. Astrid kommt gut drei Stunden zu spät.
@@ -32,7 +43,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: Name Rolle Passt in Einsatz
 
 - alt: Martin Hofer Ingenieur, baut Prototyp 0417 9, 10, 11, 12
-- neu: Dr. Martin Hofer Physicist des Instituts, baut den Detektor 0417 9, 10, 11, 12
+- neu: Dr. Martin Hofer Physiker des Instituts, baut den Detektor 0417 9, 10, 11, 12
 
 - alt: Name Rolle Einsätze
 - neu: Name Rolle Passt in Einsatz
@@ -69,7 +80,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: Buchhalter, Freimaurer, verschwunden. Er war das vorsichtigste Mitglied, hatte den Logenabend abgesagt, um zu Maarten zu fahren. Sein Logenkalender ist der rote Hering. Er hielt das Ritual für ein Spiel.
 
 - alt: Krankenschwester, verschwunden. Sie hatte in der Gruppe zuletzt gepostet: „Das Licht ist kein Licht. Es ist ein Auge.“ Sie ahnte etwas, aber zu spät.
-- neu: Krankenschwester, verschwunden. Ihr letzter Beitrag in der Gruppe endet mit: „Sagt ihm, das Licht ist kein Licht.“ Sie hatte geträumt, das Licht sei ein Auge.“ Sie ahnte etwas, aber zu spät.
+- neu: Krankenschwester, verschwunden. Ihr letzter Beitrag in der Gruppe endet mit: „Sagt ihm, das Licht ist kein Licht.“ Sie hatte geträumt, das Licht sei ein Auge. Sie ahnte etwas, aber zu spät.
 
 ### 08 Das Zweite Licht › Nachspiel
 
@@ -314,13 +325,29 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 ### Kapitel 2: Wie man das erste Team spielt › Aufbau eines Einsatzes
 
+- alt: Jeder Einsatz enthält zudem die Figuren der Zeit mit Alter, Handouts und Verbindungen. Der Dienstbuch- Eintrag gehört zum Nachspiel. Die Zwischenjahre schließen den Einsatz ab und führen zum nächsten.
+- neu: Jeder Einsatz enthält zudem die Figuren der Zeit mit Alter, Handouts und Verbindungen. Der Dienstbuch-Eintrag gehört zum Nachspiel. Die Zwischenjahre schließen den Einsatz ab und führen zum nächsten.
+
 - alt: Die Kanonpunkte, die der Tisch nicht ändert. Bei Elf: Die Eskorte geht mit 14 Mann in den Stollen. Drei überleben. Elf Soldaten kommen nicht zurück. Das Kollegium schickt zwei Thaumaturgen. Einer zieht den Bannkreis, antwortet und bleibt drüben; der andere spricht nie wieder über Kiruna. Die Maske wird gefunden. Am 12. März führt Hallström die Weiße Akte ein. Ashgrove überlebt und schreibt die Namen nicht auf. WAS DER TISCH ENTSCHEIDET Die offenen Punkte, mit Folgen für spätere Einsätze. Bei Elf: Welche Spieleragenten zu den vierzehn gehören. Höchstens zwei überleben neben Ashgrove. Ob ein Spielerthaumaturg im Kreis bleibt oder der ist, der schweigt. Ob ein Agent einen Mann rettet und dafür einen Preis zahlt. Ob ein Schützling zum ersten Mal sieht, was ein Riss ist. Ob ein Agent dem Ding antwortet, statt zu schießen.
 - neu: Die Kanonpunkte, die der Tisch nicht ändert. Bei Elf: Die Eskorte geht mit 14 Mann in den Stollen. Drei überleben. Elf Soldaten kommen nicht zurück. Das Kollegium schickt zwei Thaumaturgen. Einer zieht einen Kreis, der kein Bannkreis ist, antwortet dem Ding in der Wand und bleibt drüben; der andere spricht nie wieder über Kiruna. Die Maske wird gefunden. Am 12. März führt Hallström die Weiße Akte ein. Ashgrove überlebt und schreibt die Namen nicht auf. WAS DER TISCH ENTSCHEIDET Die offenen Punkte, mit Folgen für spätere Einsätze. Bei Elf: Welche Spieleragenten zu den vierzehn gehören. Höchstens zwei überleben neben Ashgrove. Ob ein Spielerthaumaturg im Kreis bleibt oder der ist, der schweigt. Ob ein Agent einen Mann rettet und dafür einen Preis zahlt. Ob ein Schützling zum ersten Mal sieht, was ein Riss ist. Ob ein Agent dem Ding antwortet, statt zu schießen.
+
+### Nach Nordlicht › Die einundvierzig Beerdigungen
+
+- alt: Die Todesanzeigen der Bleibenden stehen im Handout- Heft. Sechs Zeitungsseiten, norwegisch, schwedisch, englisch. Für die Spieleragenten, die im Stützpunkt waren, gibt es leere Anzeigen. Die Gruppe kann sie selbst ausfüllen.
+- neu: Die Todesanzeigen der Bleibenden stehen im Handout-Heft. Sechs Zeitungsseiten, norwegisch, schwedisch, englisch. Für die Spieleragenten, die im Stützpunkt waren, gibt es leere Anzeigen. Die Gruppe kann sie selbst ausfüllen.
+
+### Nach Nordlicht › Brücken zu „Graue Akten“
+
+- alt: Pryce und die Aschesilber- Werkstatt (Einsatz 5) Nummer 341 Das Silber, die Namen innen, die Regel der Verteilung
+- neu: Pryce und die Aschesilber-Werkstatt (Einsatz 5) Nummer 341 Das Silber, die Namen innen, die Regel der Verteilung
 
 ### Nach Nordlicht › Die Tage danach
 
 - alt: Wer als Spieleragent in der Registratur arbeitet, kann in dieser Szene anwesend sein. Hallström erklärt nichts. Wer fragt, bekommt die Antwort: „Schreiben Sie auf, was Sie gesehen haben. In Ihren eigenen Worten. Nicht für die Akte.“ Das ist die einzige Probe der Szene: keine Fertigkeit, nur die Entscheidung, was der Agent aufschreibt und was nicht.
 - neu: Wer als Spieleragent in der Registratur arbeitet und zu spät kam, erlebt die Szene nach der Rückkehr aus dem Norden: Hallström hat die Seite noch aufgeschlagen, als der Agent sein Büro betritt. Hallström erklärt nichts. Wer fragt, bekommt die Antwort: „Schreiben Sie auf, was Sie gesehen haben. In Ihren eigenen Worten. Nicht für die Akte.“ Das ist die einzige Probe der Szene: keine Fertigkeit, nur die Entscheidung, was der Agent aufschreibt und was nicht.
+
+- alt: Wer verschwindet, bekommt einen Tod. Jeder. Nach Nordlicht gibt es in diesem Band keinen Einsatz mehr. Die Spielleitung liest die Regeln in einer Epilogszene vor, etwa wenn ein Agent, der zu spät kam, in seinen Hort zurückkehrt und das Fernschreiben am Brett hängt. Wer nachfragt, bekommt die Antwort: „Das ist die Regel der Verteilung.“ Oder: „Das ist die Zwölf- Agenten-Regel.“ Mehr nicht.
+- neu: Wer verschwindet, bekommt einen Tod. Jeder. Nach Nordlicht gibt es in diesem Band keinen Einsatz mehr. Die Spielleitung liest die Regeln in einer Epilogszene vor, etwa wenn ein Agent, der zu spät kam, in seinen Hort zurückkehrt und das Fernschreiben am Brett hängt. Wer nachfragt, bekommt die Antwort: „Das ist die Regel der Verteilung.“ Oder: „Das ist die Zwölf-Agenten-Regel.“ Mehr nicht.
 
 ### Nach Nordlicht › Einleitung
 
@@ -425,6 +452,19 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Sundqvist fragt nach den Kreisen von Kiruna. Sie will wissen, ob die Anordnung der Plättchen auf der Kappe mit den Kreisen an der Wand von Solberg übereinstimmt.
 - neu: Sundqvist fragt nach den Kreisen von Solberg. Sie will wissen, ob die Anordnung der Plättchen auf der Kappe mit den Kreisen an der Wand von Solberg übereinstimmt.
 
+- alt: Alterung: Zu Beginn des nächsten Abschnitts gilt für jeden Agenten ab 45: minus 1 auf ein körperliches Attribut nach Wahl (ST, GE, KO, nicht unter 1), dafür plus 1 auf WE oder GL (Höchstwert 6). Ab 60 zusätzlich minus 1 auf Athletik oder Ausdauer. EP-Stufe: Die Agenten beginnen Abschnitt I mit 20 EP (Kriegserfahrung). Nach vier Einsätzen liegen sie typisch bei etwa 45 EP. Wer Abschnitt II mit weniger als 60 EP beginnt, wird auf 60 angehoben. Titel gibt es noch nicht. Alte Dienstgrade gelten als Anrede. Die Kreise des Kollegiums gelten für Thaumaturgen. Übergaben: Jeder Agent benennt ab Einsatz 2 einen Schützling. Der Schützling erhält die Hälfte der EP, die sein Mentor ab der Benennung bekommt. Einmal je Abschnitt spielt der Spieler eine kurze Ausbildungsszene. Danach bekommt der Schützling plus 1 auf eine Fertigkeit, die der Mentor auf 4 oder höher hat. Stirbt ein Agent, übernimmt der Schützling. Seine EP: die gesammelten Schützlings- EP, mindestens aber die Mindest-EP des laufenden Abschnitts. Dazu ein Vermächtnis: plus 1 auf eine Fertigkeit des Mentors oder ein Gegenstand oder ein Kontakt oder, nach Tod oder Ruhestand, der Codename als Reihe. Die alte Hand: Wer abtritt, ohne zu sterben, wird Nichtspielerfigur. Sein Spieler darf ihn einmal je Einsatz für eine Szene spielen. Der nächste Abschnitt: Abschnitt II „Das Silber“ beginnt 1955. Die Einsätze heißen „Innenseite“ (April 1955, Cardiff), „Ozon“ (September 1957, Cornwall), „Grüne Planen“ (November 1958, Paris) und „Die zwölfte Partei“ (Herbst 1959 bis 1961). Beim Eintritt in Abschnitt II gilt Mindest-EP 60. Die EP je Zwischenzeit von plus 10 gelten für die Zwischenjahre in Abschnitt II.
+- neu: Alterung: Zu Beginn des nächsten Abschnitts gilt für jeden Agenten ab 45: minus 1 auf ein körperliches Attribut nach Wahl (ST, GE, KO, nicht unter 1), dafür plus 1 auf WE oder GL (Höchstwert 6). Ab 60 zusätzlich minus 1 auf Athletik oder Ausdauer. EP-Stufe: Die Agenten beginnen Abschnitt I mit 20 EP (Kriegserfahrung). Nach vier Einsätzen liegen sie typisch bei etwa 45 EP. Wer Abschnitt II mit weniger als 60 EP beginnt, wird auf 60 angehoben. Titel gibt es noch nicht. Alte Dienstgrade gelten als Anrede. Die Kreise des Kollegiums gelten für Thaumaturgen. Übergaben: Jeder Agent benennt ab Einsatz 2 einen Schützling. Der Schützling erhält die Hälfte der EP, die sein Mentor ab der Benennung bekommt. Einmal je Abschnitt spielt der Spieler eine kurze Ausbildungsszene. Danach bekommt der Schützling plus 1 auf eine Fertigkeit, die der Mentor auf 4 oder höher hat. Stirbt ein Agent, übernimmt der Schützling. Seine EP: die gesammelten Schützlings-EP, mindestens aber die Mindest-EP des laufenden Abschnitts. Dazu ein Vermächtnis: plus 1 auf eine Fertigkeit des Mentors oder ein Gegenstand oder ein Kontakt oder, nach Tod oder Ruhestand, der Codename als Reihe. Die alte Hand: Wer abtritt, ohne zu sterben, wird Nichtspielerfigur. Sein Spieler darf ihn einmal je Einsatz für eine Szene spielen. Der nächste Abschnitt: Abschnitt II „Das Silber“ beginnt 1955. Die Einsätze heißen „Innenseite“ (April 1955, Cardiff), „Ozon“ (September 1957, Cornwall), „Grüne Planen“ (November 1958, Paris) und „Die zwölfte Partei“ (Herbst 1959 bis 1961). Beim Eintritt in Abschnitt II gilt Mindest-EP 60. Die EP je Zwischenzeit von plus 10 gelten für die Zwischenjahre in Abschnitt II.
+
+### 04 Hort-3, Hamburg › Grundriss
+
+- alt: 11 Kristallkammer. Ein mit Blei ausgekleideter Raum mit Stahltür. Hier liegen Kristallsplitter in Beryllium- Isolierbehältern, jeder in seinem eigenen Fach.
+- neu: 11 Kristallkammer. Ein mit Blei ausgekleideter Raum mit Stahltür. Hier liegen Kristallsplitter in Beryllium-Isolierbehältern, jeder in seinem eigenen Fach.
+
+### 04 Hort-3, Hamburg › Was es hier gibt
+
+- alt: Besonders: Schalldämpfer, UV-Waffenlichter aus der Werkstatt, Salzbläser, Salzgranaten, Wachssiegel mit Salzkern, Handschellen aus Weicheisen, Aschesilber- Stücke für den Appell. Brandmunition mit Kristallstaub ist knapp und wird nur nach Einsatzlage ausgegeben.
+- neu: Besonders: Schalldämpfer, UV-Waffenlichter aus der Werkstatt, Salzbläser, Salzgranaten, Wachssiegel mit Salzkern, Handschellen aus Weicheisen, Aschesilber-Stücke für den Appell. Brandmunition mit Kristallstaub ist knapp und wird nur nach Einsatzlage ausgegeben.
+
 ### Einsatz 2: Stille › Nachspiel
 
 - alt: Bis zum nächsten Einsatz: 1950 kommt Greta Sundqvist in die Registratur und fragt nach den Kreisen von Kiruna; Marek schreibt Wendland: „Wir bauen ihnen keine Käfige …“ 1951 tötet Lerche in Göteborg drei Männer eines fremden Dienstes, ab Sommer bekommt jeder Psion einen Beobachter. 1952 trägt Lerche den ersten Sperrhelm. Legendenbüro und Hundemeldung folgen erst in Einsatz 3 und danach. Jede dieser Szenen ist ein kurzes Zwischenspiel, keine eigene Mission.
@@ -455,8 +495,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 ### Abschnitt III: Die Kaskade (1969 bis 1976) › Zwischenjahre 1970 bis 1975
 
-- alt: Die Spieler erzählen, was ihre Agenten in den zwei Jahren seit der Kaskade getan haben. Eine Sache jeder. Eine Reise. Ein Gespräch. Ein Bericht. Ein Schützling, der eine Prüfung bestanden hat.
-- neu: Die Spieler erzählen, was ihre Agenten in dem Jahr seit der Kaskade getan haben. Eine Sache jeder. Eine Reise. Ein Gespräch. Ein Bericht. Ein Schützling, der eine Prüfung bestanden hat.
+- alt: Die Spielleitung erzählt ein festes Ereignis. Der Neuro- Helm Mk. II mit Plombe und Magnetband wird eingeführt. Ein versiegelter Umschlag der Präkognitiven liegt bereit. ¶ Die Spieler erzählen, was ihre Agenten in den zwei Jahren seit der Kaskade getan haben. Eine Sache jeder. Eine Reise. Ein Gespräch. Ein Bericht. Ein Schützling, der eine Prüfung bestanden hat.
+- neu: Die Spielleitung erzählt ein festes Ereignis. Der Neuro-Helm Mk. II mit Plombe und Magnetband wird eingeführt. Ein versiegelter Umschlag der Präkognitiven liegt bereit. ¶ Die Spieler erzählen, was ihre Agenten in dem Jahr seit der Kaskade getan haben. Eine Sache jeder. Eine Reise. Ein Gespräch. Ein Bericht. Ein Schützling, der eine Prüfung bestanden hat.
+
+- alt: Die Gruppe hat die Kaskade überlebt. Sie hat Marek verabschiedet. Sie hat Kantor gehen sehen. Sie hat die ersten Kristalle nach Nordlicht gebracht. Sie ist älter geworden. Sie ist erfahrener geworden. Sie hat Schützlinge ausgebildet. Sie hat Verluste erlitten. Sie hat Siege errungen. Die Agenten haben jetzt einen Ruf. Sie sind Senior- Agenten oder Veteranen. Sie haben EP in Höhe von etwa 150 Punkten. Sie haben Fertigkeiten, die über das normale Maß hinausgehen. Sie haben Wunden, die nicht heilen. Die EP je Zwischenzeit dieses Abschnitts betragen +20, einmal für alle Zwischenjahre von 1962 bis 1975. Die Alterung gilt. Jeder Agent ab 45 wählt ein körperliches Attribut (ST, GE oder KO, nicht unter 1), das um 1 sinkt, und erhöht dafür WE oder GL um 1. Ab 60 sinkt zusätzlich Athletik oder Ausdauer um 1. Für den nächsten Abschnitt gilt ein Mindest-EP von 150; die EP je Zwischenzeit betragen dort +10. Die Schützlinge sind bereit. Sie haben die Hälfte der EP, die ihre Mentoren seit der Benennung bekamen. Sie haben eigene Bögen. Sie haben eigene Namen. Sie haben eigene Geschichten. Sie haben eigene Ängste. Der nächste Abschnitt beginnt. Es ist November 1976. Es ist der Einsatz Zweihundertzwölf. Es ist der Weg der letzten Kristalle nach Nordlicht. Es ist der Weg über die Ofotbanen. Es ist der Weg nach Narvik. Es ist das Jahr vor Nordlicht.
+- neu: Die Gruppe hat die Kaskade überlebt. Sie hat Marek verabschiedet. Sie hat Kantor gehen sehen. Sie hat die ersten Kristalle nach Nordlicht gebracht. Sie ist älter geworden. Sie ist erfahrener geworden. Sie hat Schützlinge ausgebildet. Sie hat Verluste erlitten. Sie hat Siege errungen. Die Agenten haben jetzt einen Ruf. Sie sind Senior-Agenten oder Veteranen. Sie haben EP in Höhe von etwa 150 Punkten. Sie haben Fertigkeiten, die über das normale Maß hinausgehen. Sie haben Wunden, die nicht heilen. Die EP je Zwischenzeit dieses Abschnitts betragen +20, einmal für alle Zwischenjahre von 1962 bis 1975. Die Alterung gilt. Jeder Agent ab 45 wählt ein körperliches Attribut (ST, GE oder KO, nicht unter 1), das um 1 sinkt, und erhöht dafür WE oder GL um 1. Ab 60 sinkt zusätzlich Athletik oder Ausdauer um 1. Für den nächsten Abschnitt gilt ein Mindest-EP von 150; die EP je Zwischenzeit betragen dort +10. Die Schützlinge sind bereit. Sie haben die Hälfte der EP, die ihre Mentoren seit der Benennung bekamen. Sie haben eigene Bögen. Sie haben eigene Namen. Sie haben eigene Geschichten. Sie haben eigene Ängste. Der nächste Abschnitt beginnt. Es ist November 1976. Es ist der Einsatz Zweihundertzwölf. Es ist der Weg der letzten Kristalle nach Nordlicht. Es ist der Weg über die Ofotbanen. Es ist der Weg nach Narvik. Es ist das Jahr vor Nordlicht.
 
 ### 24 Die Nacht › Die anderen Türen
 
@@ -471,14 +514,25 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Weicheisenschrot vor 1947
 - neu: Weicheisenschrot vor 1947 nur über die Werkstatt, im Jagdgeschäft erst nach dem Bleiverbot
 
+- alt: Drachenschwanz- Schwert nie
+- neu: Drachenschwanz-Schwert nie
+
 - alt: Leichte Rüstung ab 1953 Behelf (Ofentür)
 - neu: Leichte Rüstung ab 1953 Behelf (Ofentür, Werte Kapitel 3)
+
+- alt: Sicherheitswerkzeug- Set vor 1947
+- neu: Sicherheitswerkzeug-Set vor 1947
 
 - alt: EMF-Detektor ab 1960
 - neu: EMF-Detektor ab 1960 als Rissdetektor aus Holz und Messing (Kapitel 3)
 
 - alt: Taschenlampe mit UV- Funktion vor 1947
-- neu: Taschenlampe mit UV- Funktion vor 1947 Taschenlampe mit Filter, eingeschränkt
+- neu: Taschenlampe mit UV-Funktion vor 1947 Taschenlampe mit Filter, eingeschränkt
+
+### Einsatz 9: Elster › Briefing
+
+- alt: Was die Gruppe bekommt: eine Reisekasse von 400 D- Mark, zwei Tonbandgeräte mit leeren Spulen, einen Kurzwellenempfänger, eine Minox-Kamera, eine Liste der auffälligen Mitarbeiter, die Adresse des Fernamts, die Telefonnummer eines toten Briefkastens in Charlottenburg.
+- neu: Was die Gruppe bekommt: eine Reisekasse von 400 D-Mark, zwei Tonbandgeräte mit leeren Spulen, einen Kurzwellenempfänger, eine Minox-Kamera, eine Liste der auffälligen Mitarbeiter, die Adresse des Fernamts, die Telefonnummer eines toten Briefkastens in Charlottenburg.
 
 ### Einsatz 9: Elster › Personen
 
@@ -556,13 +610,26 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Donnerstag, 10. Februar: Die Schulklasse im Tal. Ein Junge fragt nach dem Lied, das er nachts gehört hat. Wenn die Gruppe nicht da ist, hört sie am Freitag davon. Grauen-Probe: Verstörend (2), wenn sie erkennt, dass das Lied nicht von hier ist.
 - neu: Donnerstag, 10. Februar: Eine deutsche Schulklasse bezieht die Hütte im Tal. Ein Junge fragt nach der Station mit den Antennen. Wenn die Gruppe nicht da ist, hört sie am Freitag davon.
 
+- alt: Sonntag, 13. Februar: Wer fährt, steigt in Stockholm in den Nachtzug. Wer bleibt, sieht am Abend die elf in der Kantine sitzen, ohne dass sie lesen. Grauen- Probe: Verstörend (2), wenn ein Agent die Kreidekreise auf dem Boden sieht.
+- neu: Sonntag, 13. Februar: Wer fährt, steigt in Stockholm in den Nachtzug. Wer bleibt, sieht am Abend die elf in der Kantine sitzen, ohne dass sie lesen. Grauen-Probe: Verstörend (2), wenn ein Agent die Kreidekreise auf dem Boden sieht.
+
 ### Einsatz 13: Nordlicht › Nachspiel
 
 - alt: Was O.D.I.N. bekommt: Haugens Bericht SA-1977-02. Die Wanduhr aus der Kantine, stehen geblieben um 22:10 Uhr. Das Küchenradio, das am Morgen einen Chor spielt. Die 212 grauen Kristalle. Die Sonde, die 41 Menschen drüben misst. Die elf Akten des Nachtarbeiters. Die Schwarze Akte Nordlicht.
-- neu: Was O.D.I.N. bekommt: Haugens Bericht SA-1977-02. Die Wanduhr aus der Kantine, stehen geblieben um 22:10 Uhr. Das Küchenradio, das am Morgen einen Chor spielt. Die 212 grauen Kristalle. Die Sonde, die 41 Menschen drüben misst. Die Personalakten der elf Thaumaturgen (2014 die elf Akten des Nachtarbeiters. Die Schwarze Akte Nordlicht.
+- neu: Was O.D.I.N. bekommt: Haugens Bericht SA-1977-02. Die Wanduhr aus der Kantine, stehen geblieben um 22:10 Uhr. Das Küchenradio, das am Morgen einen Chor spielt. Die 212 grauen Kristalle. Die Sonde, die 41 Menschen drüben misst. Die Personalakten der elf Thaumaturgen (2014 die elf Akten des Nachtarbeiters). Die Schwarze Akte Nordlicht.
 
 - alt: Dienstplan Nordlicht, Februar 1977, Tabelle mit 41 Namen, Hakenspalte für den 14.2., Radierspuren an den Zeilen 3, 14, 15, 17, 26, 34, 35. Fundort: Büro des Stationsleiters. - N43: Brief der Frau des Funkers aus Tromsø an die Wetterstation einer Firma mit Briefkasten in Oslo; sie fragt, wann er nach Hause kommt. Fundort: Krankenstation und Post. - N44: Kinderzeichnung „Ingrid, 3 Jahre. Für Papa.“, Mann im blauen Pullover, Rückseite in Astrids Handschrift. Fundort: Krankenstation und Post. - N45: Fahrkarte Stockholm nach Narvik, 13./14.2.1977. Wer fährt, bekommt sie am Sonntag in Stockholm. Astrid trägt ihre bei sich. - Karte K12: Stützpunkt Nordlicht, Grundriss Erdgeschoss und Keller: Kantine über dem Archiv, Sonde am Treppenabgang, Werkstatt im Erdgeschoss, Wellblechschuppen als eigener Bau, elf Schlafräume zu vier Betten mit Zuordnung nach Dienstplan, ein Gästezimmer für die Gruppe.
 - neu: Dienstplan Nordlicht, Februar 1977, Tabelle mit 41 Namen, Hakenspalte für den 14.2., Radierspuren an den Zeilen 3, 14, 15, 17, 26, 34, 35. Fundort: Büro des Stationsleiters. - N43: Brief der Frau des Funkers aus Tromsø an die Wetterstation einer Firma mit Briefkasten in Oslo; sie fragt, wann er nach Hause kommt. Fundort: Krankenstation und Post. - N44: Kinderzeichnung „Ingrid, 3 Jahre. Für Papa.“, Mann im blauen Pullover, Rückseite in Astrids Handschrift. Fundort: Krankenstation und Post. - N45: Fahrkarte Stockholm nach Narvik, 13./14.2.1977. Wer fährt, bekommt sie am Sonntag in Stockholm. Astrid trägt ihre bei sich. - Karte K11: Stützpunkt Nordlicht, Lageplan: Hauptbau, Wellblechschuppen, Landeplatz, Straße nach Narvik. - Karte K12: Stützpunkt Nordlicht, Grundriss Erdgeschoss und Keller: Kantine über dem Archiv, Sonde am Treppenabgang, Werkstatt im Erdgeschoss, Wellblechschuppen als eigener Bau, zehn Schlafräume zu vier Betten und eine Kammer für den Stationsleiter, mit Zuordnung nach Dienstplan, ein Gästezimmer für die Gruppe.
+
+### 05 Hort-5, Wien › Was es hier gibt
+
+- alt: Waffenkammer: Häufige Ausrüstung sofort: Pistolen, Taserpistolen, Schockgranaten, Schutzwesten, Nachtsichtgeräte. Seltenes innerhalb eines Tages, wenn der Führungsoffizier unterschreibt: Sturmgewehre, Scharfschützengewehre, Brandmunition in kleinen Mengen. Was es besonders gibt: Magnesium- Blendpatronen (nur gegen Sonderfreigabe, jede Patrone wird einzeln gezählt), Aktenkoffer mit Halterung für eine Maschinenpistole für Kuriere. ¶ Werkstatt: Helmreparaturen innerhalb von zwei Tagen, kinetische Schilde innerhalb einer Woche. Was es besonders gibt: Ersatzteile und Wartung für den Neuro- Helm Mk. IV , Beryllium-Isolierbehälter für Proben.
+- neu: Waffenkammer: Häufige Ausrüstung sofort: Pistolen, Taserpistolen, Schockgranaten, Schutzwesten, Nachtsichtgeräte. Seltenes innerhalb eines Tages, wenn der Führungsoffizier unterschreibt: Sturmgewehre, Scharfschützengewehre, Brandmunition in kleinen Mengen. Was es besonders gibt: Magnesium-Blendpatronen (nur gegen Sonderfreigabe, jede Patrone wird einzeln gezählt), Aktenkoffer mit Halterung für eine Maschinenpistole für Kuriere. ¶ Werkstatt: Helmreparaturen innerhalb von zwei Tagen, kinetische Schilde innerhalb einer Woche. Was es besonders gibt: Ersatzteile und Wartung für den Neuro-Helm Mk. IV , Beryllium-Isolierbehälter für Proben.
+
+### 05 Hort-5, Wien › Hort-5, Wien
+
+- alt: Leitung Hermine Stadler, Negotiatorin, Senior- Agentin
+- neu: Leitung Hermine Stadler, Negotiatorin, Senior-Agentin
 
 ### Die Tür: Einleitung › Aufbau der Kampagne
 
@@ -573,6 +640,16 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: 1955. Evan Pryce übergibt Ashgrove das erste Messer aus Aschesilber. Ashgrove gibt es in die Waffenkammer von Hort-1, wo es bis heute liegt.
 - neu: 1955. Evan Pryce übergibt Ashgrove das erste Messer aus Aschesilber. Ashgrove trägt es bis zu seinem Tod; seitdem liegt es in der Waffenkammer von Hort-1.
+
+### 07 Kapitel VII: Grauen am Tisch › Wenn Belastung sichtbar wird
+
+- alt: Diese Tabellen sind Werkzeuge, keine Vorschriften. Die Spielleitung würfelt niemals gegen die Grenzen der Runde. Wenn ein Ergebnis eine Grenze berührt, die am Tisch vereinbart wurde, überspringt sie es oder wählt ein anderes. Die Tabellen sollen das Grauen spielbar machen, nicht den Spaß beenden. Die Regeln für Grenzen, Schleier und die X- Karte aus dem Spielleiterbuch gelten auch hier. Jeder am Tisch kann jederzeit unterbrechen, wenn eine Szene zu weit geht. Das ist kein Scheitern der Spielleitung, sondern Teil des Spiels.
+- neu: Diese Tabellen sind Werkzeuge, keine Vorschriften. Die Spielleitung würfelt niemals gegen die Grenzen der Runde. Wenn ein Ergebnis eine Grenze berührt, die am Tisch vereinbart wurde, überspringt sie es oder wählt ein anderes. Die Tabellen sollen das Grauen spielbar machen, nicht den Spaß beenden. Die Regeln für Grenzen, Schleier und die X-Karte aus dem Spielleiterbuch gelten auch hier. Jeder am Tisch kann jederzeit unterbrechen, wenn eine Szene zu weit geht. Das ist kein Scheitern der Spielleitung, sondern Teil des Spiels.
+
+### 07 Kapitel VII: Grauen am Tisch › Grauen-Szenen
+
+- alt: W12 Szene Grauen- Probe
+- neu: W12 Szene Grauen-Probe
 
 ### Anhang A: Sechs fertige Agenten › Dr. Ingeborg Rask, „Lot“
 
@@ -606,7 +683,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 ### Anhang A: Sechs fertige Agenten › Ilga Ozola, „Möwe“
 
 - alt: Fertigkeiten 1947: Telepathie 5, Menschenkenntnis 4, Konzentration 3, Geistige Widerstandskraft 3, Wahrnehmung 2, Ausweichen 1, Psi-Kampf 1, Überzeugen 1, Heimlichkeit 1, Medizin 1. ¶ Fertigkeiten 1977: Telepathie 6, Konzentration 5, Psi- Kampf 3, Menschenkenntnis 5, Geistige Widerstandskraft 4, Wahrnehmung 3, Ausweichen 2, Überzeugen 1, Heimlichkeit 1, Medizin 1.
-- neu: Fertigkeiten 1947: Telepathie 5, Menschenkenntnis 4, Konzentration 4, Geistige Widerstandskraft 3, Überzeugen 3, Wahrnehmung 3, Täuschung 2, Psi-Kampf 2, Heimlichkeit 2, Medizin 2, Ausweichen 1, Etikette 1, Akademisches Wissen 1, Geschichte 1, Fahren 1. ¶ Fertigkeiten 1977: Telepathie 6, Konzentration 6, Menschenkenntnis 5, Psi- Kampf 4, Geistige Widerstandskraft 4, Wahrnehmung 4, Überzeugen 3, Täuschung 2, Heimlichkeit 2, Medizin 2, Ausweichen 2, Etikette 1, Akademisches Wissen 1, Geschichte 1, Fahren 1.
+- neu: Fertigkeiten 1947: Telepathie 5, Menschenkenntnis 4, Konzentration 4, Geistige Widerstandskraft 3, Überzeugen 3, Wahrnehmung 3, Täuschung 2, Psi-Kampf 2, Heimlichkeit 2, Medizin 2, Ausweichen 1, Etikette 1, Akademisches Wissen 1, Geschichte 1, Fahren 1. ¶ Fertigkeiten 1977: Telepathie 6, Konzentration 6, Menschenkenntnis 5, Psi-Kampf 4, Geistige Widerstandskraft 4, Wahrnehmung 4, Überzeugen 3, Täuschung 2, Heimlichkeit 2, Medizin 2, Ausweichen 2, Etikette 1, Akademisches Wissen 1, Geschichte 1, Fahren 1.
 
 ### Anhang A: Sechs fertige Agenten › Torsten Ekvall, „Zeuge“
 
@@ -614,7 +691,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: Fertigkeiten 1947: Ermittlung 4, Wahrnehmung 4, Menschenkenntnis 3, Fahren 3, Okkultismus 3, Spurenlesen 3, Schusswaffen 2, Geschichte 2, Überzeugen 2, Heimlichkeit 2, Ausweichen 1, Geistige Widerstandskraft 1, Zähigkeit 1, Akademisches Wissen 1, Einschüchtern 1, Medizin 1, Sicherheitssysteme 1. ¶ Fertigkeiten 1977: Ermittlung 6, Menschenkenntnis 5, Okkultismus 5, Wahrnehmung 5, Spurenlesen 4, Fahren 3, Schusswaffen 2, Geschichte 2, Überzeugen 2, Heimlichkeit 2, Ausweichen 2, Geistige Widerstandskraft 2, Zähigkeit 1, Akademisches Wissen 1, Einschüchtern 1, Medizin 1, Sicherheitssysteme 1. Ab 60: Athletik oder Ausdauer um 1 gesenkt. Ekvall hat beide auf 0, der Abzug entfällt.
 
 - alt: Fäden: Ekvall ist Hallströms erster Mann in der Registratur. Er kennt alle Aktenfarben, bevor sie offiziell werden. 1948 packt er mit Hallström die Ahnenerbe- Kiste aus. Hallström findet das Foto der Kreise von 1937 und hängt es an die Wand der Registratur. 1950 liest Ekvall das Protokoll der Apothekerin. Am Rand steht die Zahl 32, nicht von ihr. Ekvall fragt Hallström: „Wer hat die Zahl geschrieben?“ Hallström antwortet: „Ich weiß es nicht. Und ich will es nicht wissen.“ 1962 ist Ekvall dabei, als Britt Holm nach dem Zugunglück im Harz identifiziert wird. Er findet in ihrer Tasche eine Notiz: „Wer holt sie?“ Er gibt sie Hallström. Hallström legt sie in Notizbuch null. Nach der Nacht von Nordlicht bleibt der Stützpunkt versiegelt. Bis zur Räumung am 20. Februar bleiben alle außer einem Scientist mit Wendland am Draht. Wo Ekvall in der Nacht ist, im Stützpunkt oder mit Astrid im Zug, entscheidet der Spieler. Auf dem Dienstplan vertritt Lönn die Registratur (T1).
-- neu: Fäden: Ekvall ist Hallströms erster Mann in der Registratur. Er kennt alle Aktenfarben, bevor sie offiziell werden. 1948 packt er mit Hallström die Ahnenerbe- Kiste aus. Hallström findet das Foto der Kreise von 1937 und hängt es an die Wand der Registratur. 1950 liest Ekvall das Protokoll der Apothekerin. Am Rand steht die Zahl 32, nicht von ihr. Ekvall fragt Hallström: „Wer hat die Zahl geschrieben?“ Hallström antwortet: „Ich weiß es nicht. Und ich will es nicht wissen.“ 1962 ist Ekvall dabei, als Britt Holm nach dem Zugunglück im Harz identifiziert wird. Ihre Aktentasche mit der Akte und Hallströms Zettel wird nie gefunden. Ekvall meldet es Hallström. Hallström schreibt in Notizbuch null: „Akte Holm nicht angekommen.“ Nach der Nacht von Nordlicht bleibt der Stützpunkt gesperrt und wird erst nach der Räumung versiegelt. Während der Räumung ab dem 20. Februar bleiben alle außer einem Scientist mit Wendland am Draht. Wo Ekvall in der Nacht ist, im Stützpunkt oder mit Astrid im Zug, entscheidet der Spieler. Auf dem Dienstplan vertritt Lönn die Registratur (T1).
+- neu: Fäden: Ekvall ist Hallströms erster Mann in der Registratur. Er kennt alle Aktenfarben, bevor sie offiziell werden. 1948 packt er mit Hallström die Ahnenerbe-Kiste aus. Hallström findet das Foto der Kreise von 1937 und hängt es an die Wand der Registratur. 1950 liest Ekvall das Protokoll der Apothekerin. Am Rand steht die Zahl 32, nicht von ihr. Ekvall fragt Hallström: „Wer hat die Zahl geschrieben?“ Hallström antwortet: „Ich weiß es nicht. Und ich will es nicht wissen.“ 1962 ist Ekvall dabei, als Britt Holm nach dem Zugunglück im Harz identifiziert wird. Ihre Aktentasche mit der Akte und Hallströms Zettel wird nie gefunden. Ekvall meldet es Hallström. Hallström schreibt in Notizbuch null: „Akte Holm nicht angekommen.“ Nach der Nacht von Nordlicht bleibt der Stützpunkt gesperrt und wird erst nach der Räumung versiegelt. Während der Räumung ab dem 20. Februar bleiben alle außer einem Scientist mit Wendland am Draht. Wo Ekvall in der Nacht ist, im Stützpunkt oder mit Astrid im Zug, entscheidet der Spieler. Auf dem Dienstplan vertritt Lönn die Registratur (T1).
 
 ### Anhang A: Sechs fertige Agenten › Anhang A: Sechs fertige Agenten
 
@@ -630,6 +707,21 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: EP: 5 pro Charakter, +1 für die Lösung mit der Wahrheit.
 - neu: EP: Graue Akte, Grundwert 4 EP. Dazu +1 EP, wenn die Familie lebend aus dem Haus kommt, höchstens +1 EP persönlicher Bonus, etwa für die Lösung mit der Wahrheit, und +1 EP, wenn die Zelle den Kristall im Seegrund findet (ein Faden).
+
+### 07 Hort-9, Prag › Lage und Tarnung
+
+- alt: Eingänge: Der Haupteingang führt durch den Hinterhof. Eine graue Stahltür, daneben ein Kartenleser mit der Aufschrift „Vltava Logistics, Zutritt nur für Befugte“. Der zweite Eingang liegt im Kellergeschoss des Nachbarhauses, hinter einer Trockenbauwand, die wie die Rückwand des Kaffeehaus-Lagers aussieht, und führt in den Nordflur. Der Notausgang führt durch einen Wartungsschacht zu einem Versorgungstunnel der U- Bahn-Linie B nahe der Station Náměstí Republiky und endet dort hinter einem Gitter.
+- neu: Eingänge: Der Haupteingang führt durch den Hinterhof. Eine graue Stahltür, daneben ein Kartenleser mit der Aufschrift „Vltava Logistics, Zutritt nur für Befugte“. Der zweite Eingang liegt im Kellergeschoss des Nachbarhauses, hinter einer Trockenbauwand, die wie die Rückwand des Kaffeehaus-Lagers aussieht, und führt in den Nordflur. Der Notausgang führt durch einen Wartungsschacht zu einem Versorgungstunnel der U-Bahn-Linie B nahe der Station Náměstí Republiky und endet dort hinter einem Gitter.
+
+### 07 Hort-9, Prag › Was es hier gibt
+
+- alt: Krankenstation. Kleine Wunden, Verbrennungen, Knochenbrüche und leichte Vergiftungen werden hier versorgt. Für schwere Fälle steht ein Abtransport nach Wien bereit, der sechs Stunden braucht. Taubnessel- Pflaster und Verbandsmaterial sind sofort zu bekommen, Heilende Kristalle nur mit Genehmigung des Kristallmeisters. ¶ Archiv. Das Hortarchiv im Erdgeschoss enthält die Einsatzberichte des Horts seit 1992 und Stadtpläne mit allen Rissmeldungen. In der Messstation liegen die Messreihen seit 2011. Ein Investigator mit Antiquarian- Subklasse findet in zwei Stunden, was andere in einem Tag suchen.
+- neu: Krankenstation. Kleine Wunden, Verbrennungen, Knochenbrüche und leichte Vergiftungen werden hier versorgt. Für schwere Fälle steht ein Abtransport nach Wien bereit, der sechs Stunden braucht. Taubnessel-Pflaster und Verbandsmaterial sind sofort zu bekommen, Heilende Kristalle nur mit Genehmigung des Kristallmeisters. ¶ Archiv. Das Hortarchiv im Erdgeschoss enthält die Einsatzberichte des Horts seit 1992 und Stadtpläne mit allen Rissmeldungen. In der Messstation liegen die Messreihen seit 2011. Ein Investigator mit Antiquarian-Subklasse findet in zwei Stunden, was andere in einem Tag suchen.
+
+### 07 Hort-9, Prag › Gerüchte
+
+- alt: 2 „Barbora Veselá hat einen Zähler, der nachts in der Messstation von allein anschlägt. Sie sagt, es sei die U- Bahn. Sie wechselt die Batterien trotzdem jede Woche.“
+- neu: 2 „Barbora Veselá hat einen Zähler, der nachts in der Messstation von allein anschlägt. Sie sagt, es sei die U-Bahn. Sie wechselt die Batterien trotzdem jede Woche.“
 
 ### 01 Pflegefall › Knoten 4: S-Bahn-Station Neugraben
 
@@ -864,6 +956,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: (Werte: Bedrohungsatlas, Spielleiterbuch. Abweichung der Zeit: Die Wächter tragen die Kleidung von Bergleuten, die im Stollen verschwunden sind, unter einer Kruste aus Stein. Vor der ersten Brandmunition im Herbst 1953 gilt die Kiruna-Regel auch für sie, aber sie zerfallen, wenn der Kristall erschöpft wird.)
 - neu: (Werte: Bedrohungsatlas, Spielleiterbuch. Abweichung der Zeit: Die Wächter tragen die Kleidung von Bergleuten, die im Stollen verschwunden sind, unter einer Kruste aus Stein. Vor der ersten Brandmunition im Herbst 1953 gilt die Kiruna-Regel auch für sie, aber sie zerfallen, wenn der Bannkreis steht und das Ding den Thaumaturgen nimmt (Werte: Einsatz 4).)
 
+### Anhang B: Gegner der Epoche › Jäger der Abteilung 13
+
+- alt: Stufe: Elite · Ursprung: Menschen · Einsatz 11 und 12 Die Abteilung 13 ist die sowjetische Arbeitsgruppe „Psychotronik“, die 1954 entsteht und 1957 die Tunguska-Stücke erhält. Ihre Jäger tragen in den Siebzigern gefütterte Jacken, Pelzmützen und Stiefel für den Winter. Im Schnee tragen sie weiße Tarnanzüge darüber. Sie führen Sturmgewehre mit Schalldämpfer, Munition mit sibirischem Kristallstaub und tragbare Funkgeräte. Sie sprechen Russisch, handeln in kleinen Trupps und haben den Befehl, O.D.I.N.-Agenten als feindliche Kombattanten zu behandeln, seit die Echo- Operative 1976 sieben Offene in den Karpaten festnahmen, ohne Schuss, ohne Verluste. Einer der Offenen war fünfzehn.
+- neu: Stufe: Elite · Ursprung: Menschen · Einsatz 11 und 12 Die Abteilung 13 ist die sowjetische Arbeitsgruppe „Psychotronik“, die 1954 entsteht und 1957 die Tunguska-Stücke erhält. Ihre Jäger tragen in den Siebzigern gefütterte Jacken, Pelzmützen und Stiefel für den Winter. Im Schnee tragen sie weiße Tarnanzüge darüber. Sie führen Sturmgewehre mit Schalldämpfer, Munition mit sibirischem Kristallstaub und tragbare Funkgeräte. Sie sprechen Russisch, handeln in kleinen Trupps und haben den Befehl, O.D.I.N.-Agenten als feindliche Kombattanten zu behandeln, seit die Echo-Operative 1976 sieben Offene in den Karpaten festnahmen, ohne Schuss, ohne Verluste. Einer der Offenen war fünfzehn.
+
 ### Einsatz 8: Die zwölfte Partei › Nachspiel
 
 - alt: Erfahrung: Schwarze Akte: 7 EP, +1 für das erreichte Ziel, höchstens +1 persönlicher Bonus, dazu +1 je aufgenommenem Faden. Die Fäden: die zwölfte Partei (offen), Holloways Brief (offen), die Zahlenstation (offen).
@@ -875,7 +972,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 ### Kapitel 3: Epochenregeln › Brandmunition ab 1953
 
 - alt: Vor der ersten Charge im Herbst 1953 gilt die Kiruna- Regel. Danach gibt der Rüstmeister ein Magazin je Einsatz aus. Brandmunition wirkt gegen die Stimme, nicht gegen Tote oder Fremde. Gegen Tote hilft sie so wenig wie gewöhnliche Munition. Gegen Fremde hilft nur, was die Spielleitung für den einzelnen Fremden festlegt.
-- neu: Vor der ersten Charge im Herbst 1953 gilt die Kiruna- Regel. Danach gibt der Rüstmeister ein Magazin je Einsatz aus. Brandmunition wirkt gegen die Stimme, nicht gegen Tote oder Fremde. Gegen Tote hilft sie so wenig wie gewöhnliche Munition. Gegen Fremde wirken gewöhnliche Waffen voll; Brandmunition hilft nicht besser.
+- neu: Vor der ersten Charge im Herbst 1953 gilt die Kiruna-Regel. Danach gibt der Rüstmeister ein Magazin je Einsatz aus. Brandmunition wirkt gegen die Stimme, nicht gegen Tote oder Fremde. Gegen Tote hilft sie so wenig wie gewöhnliche Munition. Gegen Fremde wirken gewöhnliche Waffen voll; Brandmunition hilft nicht besser.
 
 - alt: Vor der ersten Charge Brandmunition im Herbst 1953 verursachen gewöhnliche Waffen gegen Wesen aus Rissen keinen Schaden. Schutz bieten nur Bannkreise, Zauber und Rückzug. Salz hält vielleicht auf. Niemand weiß, ob es nicht doch geholfen hat. Wer in Kiruna dabei war, sagt nichts. Wer überlebt hat, zählt die Namen.
 - neu: Vor der ersten Charge Brandmunition im Herbst 1953 verursachen gewöhnliche Waffen gegen Wesen aus Rissen keinen Schaden. Schutz bieten nur Bannkreise, Zauber und Rückzug. Salz hält vielleicht auf. Niemand weiß, ob es nicht doch geholfen hat. Wer in Kiruna dabei war, sagt nichts. Wer überlebt hat, zählt die Namen. Ab Herbst 1953 gelten für gewöhnliche Waffen die Werte des Bedrohungsatlas.
@@ -887,8 +984,8 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 ### Kapitel 3: Epochenregeln › Subklassen nach Jahr
 
-- alt: Agent Infiltrator, Negotiator, Assassin, Spy, Saboteur Keine neuen Subklassen im Band
-- neu: Agent Infiltrator, Negotiator, Assassin, Spy; Saboteur ab 1957 (Werkstatt Graz) Keine neuen Subklassen im Band
+- alt: Soldier Eskorte-Veteran Shadow Paratrooper 1961, Echo- Operative 1974; Stormbreaker, Techno, Nanotech nicht im Band ¶ Agent Infiltrator, Negotiator, Assassin, Spy, Saboteur Keine neuen Subklassen im Band ¶ Scientist Als zivile Fachkraft; im Institut ab 1948 Physicist, Engineer, Biochemist Astrobiologist nur als Pennington- Nachfolge; Cyberneticist nie
+- neu: Soldier Eskorte-Veteran Shadow Paratrooper 1961, Echo-Operative 1974; Stormbreaker, Techno, Nanotech nicht im Band ¶ Agent Infiltrator, Negotiator, Assassin, Spy; Saboteur ab 1957 (Werkstatt Graz) Keine neuen Subklassen im Band ¶ Scientist Als zivile Fachkraft; im Institut ab 1948 Physicist, Engineer, Biochemist Astrobiologist nur als Pennington-Nachfolge; Cyberneticist nie
 
 - alt: Epochen-Subklasse für Soldier, verfügbar 1947. Attribute: +2 KO, +1 GL. Fertigkeiten: +1 Schusswaffen, +1 Ausdauer, +1 Taktik. Ausrüstung: Maschinenpistole oder Karabiner aus dem Krieg, Stahlhelm, Armeemantel, Notizbuch. Spezialfähigkeiten nach Ashgroves Lehre, die er später im Lager weitergibt: Rücken zählen. Nach einem Kampf weiß der Veteran, wer fehlt. Er erhält +1 Würfel auf Taktik beim Rückzug ohne Rennen. (passiv) Neben Bleikisten schlafen. Der Veteran erhält +2 Würfel auf Geistige Widerstandskraft gegen Flüstern. (passiv) Den Thaumaturgen decken. Ein Thaumaturg im Bannkreis neben dem Veteran erhält +1 Verteidigung. (aktiv, 1× pro Szene)
 - neu: Epochen-Subklasse für Soldier, verfügbar 1947. Attribute: +2 KO, +1 GL. Fertigkeiten: +2 Schusswaffen, +1 Ausdauer, +1 Taktik. Ausrüstung: Maschinenpistole oder Karabiner aus dem Krieg, Stahlhelm, Armeemantel, Notizbuch. Spezialfähigkeiten nach Ashgroves Lehre, die er später im Lager weitergibt: Rücken zählen. Nach einem Kampf weiß der Veteran, wer fehlt. Er erhält +1 Würfel auf Taktik beim Rückzug ohne Rennen. (passiv) Neben Bleikisten schlafen. Der Veteran erhält +2 Würfel auf Geistige Widerstandskraft gegen Flüstern. (passiv) Den Thaumaturgen decken. Ein Thaumaturg im Bannkreis neben dem Veteran erhält +1 Verteidigung. (aktiv, 1× pro Szene)
@@ -908,8 +1005,24 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: (nichts)
 - neu: Sturmgewehr, Kampfanzug mit Helm, Hochexplosiv-Granaten Karabiner oder Maschinenpistole, Stahlhelm, Handgranaten der Zeit Sturmgewehre erst 1977 ¶ Leichte Rüstung, Schleichrüstung Wie Schutzweste Je nach Jahr ¶ Bio-Scanner, tragbarer Scanner Mikroskop, Lupe, Spurensicherungskoffer Kein Scanner im Feld ¶ Dokumentenscanner Minox oder Kleinbildkamera Fotografiert auf Film ¶ Verstärktes Kommunikationsgerät Feldtelefon oder Kurzwellenfunk Je nach Einsatzort ¶ Vorhersagegerät, Datenkristall Entfällt Existiert vor 1977 nicht
 
+- alt: Schutzweste Keine vor 1953, dann Ofentür, in den Siebzigern Keramik-Kevlar- Anzug Ofentür: schwer, kaum wirksam; Keramik-Kevlar-Anzug: erst in den Siebzigern
+- neu: Schutzweste Keine vor 1953, dann Ofentür, in den Siebzigern Keramik-Kevlar-Anzug Ofentür: schwer, kaum wirksam; Keramik-Kevlar-Anzug: erst in den Siebzigern
+
 - alt: Mental-Fokusgerät Kappe oder Helm Je nach Jahr
 - neu: Mental-Fokusgerät, Neuro-Helm Vor 1949 keiner, jede Psi-Probe ist dann eine Stufe schwerer; ab 1949 Kappe, ab 1963 Mk. I, ab 1972 Mk. II Die Kappe schützt nicht gegen psionische Angriffe
+
+- alt: Infraschall- Generator Ab 1974 als Schallgerät der Echo-Operative Kastenförmig und schwer; vorher entfällt er
+- neu: Infraschall-Generator Ab 1974 als Schallgerät der Echo-Operative Kastenförmig und schwer; vorher entfällt er
+
+### Kapitel 3: Epochenregeln › Grundregelwerk und Arsenal
+
+- alt: Jede Zeile der Arsenal-Übersicht und der Ausrüstung im Grundregelwerk bekommt eine Spalte „ab“. Die vollständige Jahresspalte steht in Anhang C. Beispiele: Armeerevolver, Bajonett, Bockflinte, Brecheisen, Feuerwehraxt, Eisenkette, Feldtelefon, Bleischürze und Enterhaken gibt es vor 1947. Der tragbare Geigerzähler kommt ab 1950. Gummigeschoss, Beanbag-Patrone und Compoundbogen gibt es ab 1970. Der ballistische Helm aus Aramid kommt ab 1978. Dienstpistole .40, DNA- Tupfer-Set, automatischer Defibrillator, farbige Kontaktlinsen, Funk-Bewegungsmelder und Abschirmbeutel gibt es erst nach 1977. Energie- und Plasmawaffen, Laptop, Satellitentelefon, faltbare Drohne, EMP, Naniten, Implantate, Neuralverstärker der heutigen Art und Mental-Scanner kommen im Band nie vor.
+- neu: Jede Zeile der Arsenal-Übersicht und der Ausrüstung im Grundregelwerk bekommt eine Spalte „ab“. Die vollständige Jahresspalte steht in Anhang C. Beispiele: Armeerevolver, Bajonett, Bockflinte, Brecheisen, Feuerwehraxt, Eisenkette, Feldtelefon, Bleischürze und Enterhaken gibt es vor 1947. Der tragbare Geigerzähler kommt ab 1950. Gummigeschoss, Beanbag-Patrone und Compoundbogen gibt es ab 1970. Der ballistische Helm aus Aramid kommt ab 1978. Dienstpistole .40, DNA-Tupfer-Set, automatischer Defibrillator, farbige Kontaktlinsen, Funk-Bewegungsmelder und Abschirmbeutel gibt es erst nach 1977. Energie- und Plasmawaffen, Laptop, Satellitentelefon, faltbare Drohne, EMP, Naniten, Implantate, Neuralverstärker der heutigen Art und Mental-Scanner kommen im Band nie vor.
+
+### Die Nacht › Der Abend im Stützpunkt
+
+- alt: Bei jedem Chronomancer, wo immer er ist, bleiben die Uhren stehen, und sein Stein wird grau. Das Kollegium trägt später bei allen Nordlicht- Einträgen im Kristallbuch dieselbe Erschöpfungszeit ein: 22:10. Es sind die einzigen gleichen Uhrzeiten im ganzen Buch. (Handout N50) In Prag faltet sich im Keller eines Gebäudes, das später Hort-9 wird, ein Raum aus der Zeit: Raum 4/12. In der Hütte im Tal, in der die deutsche Schulklasse schläft, wacht ein Gymnasiast auf und hört eine Melodie. Die Akte der Registratur über ihn wird nie geschlossen.
+- neu: Bei jedem Chronomancer, wo immer er ist, bleiben die Uhren stehen, und sein Stein wird grau. Das Kollegium trägt später bei allen Nordlicht-Einträgen im Kristallbuch dieselbe Erschöpfungszeit ein: 22:10. Es sind die einzigen gleichen Uhrzeiten im ganzen Buch. (Handout N50) In Prag faltet sich im Keller eines Gebäudes, das später Hort-9 wird, ein Raum aus der Zeit: Raum 4/12. In der Hütte im Tal, in der die deutsche Schulklasse schläft, wacht ein Gymnasiast auf und hört eine Melodie. Die Akte der Registratur über ihn wird nie geschlossen.
 
 ### Die Nacht › Haugens Suchtrupp
 
@@ -920,6 +1033,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: Wie ein Spieleragent auf den Plan kommt. Am Samstag, 12. Februar, entscheidet jeder Spieler einzeln, ob sein Agent bleibt oder fährt. Wer bleibt, übernimmt einen Tauschplatz passender Funktion: T1 Verbindung, T2 Thaumaturg, T3 Archivgehilfin, T4 Physiker, T5 Funkerin, T6 Wache, T7 Horcherin. Ein Spielerthaumaturg auf T2 gehört zu den elf und liest mit. Wer bleiben, aber nicht lesen will, nimmt T3. Stehen mehr Spieleragenten derselben Funktion bereit als Tauschplätze, ersetzen sie weitere Namen passender Funktion. Die Zahl 41 bricht nicht.
 - neu: Wie ein Spieleragent auf den Plan kommt. Am Samstag, 12. Februar, entscheidet jeder Spieler einzeln, ob sein Agent bleibt oder fährt. Wer bleibt, übernimmt einen Tauschplatz passender Funktion: T1 Verbindung, T2 Thaumaturg, T3 Archivgehilfin, T4 Physiker, T5 Funkerin, T6 Wache, T7 Horcherin. Ein Spielerthaumaturg auf T2 gehört zu den elf und liest mit. Wer bleiben, aber nicht lesen will, nimmt T3. Stehen mehr Spieleragenten derselben Funktion bereit als Tauschplätze, ersetzen sie weitere Namen passender Funktion, nie aber Einar Vatne und Arne Kvalvik. Die Zahl 41 bricht nicht.
+
+### Die Nacht › Wie man die Nacht spielt
+
+- alt: Bleiben alle Agenten im Stützpunkt, fällt der Zug als Schauplatz weg; die Spielleitung erzählt Astrids Weg dann in wenigen Sätzen nach dem Bild von 22:10 Uhr. Fahren alle, spielt der Abend im Stützpunkt nur in kurzen Bildern, die die Spielleitung zwischen die Szenen im Zug setzt: der Appell, die Tassen, der Puls, das Funklog. Bewährt hat sich ein fester Wechsel: vormittags und nachmittags je eine Szene an jedem Schauplatz, ab 21:00 Uhr Schnitte im Abstand von Minuten, um 22:10 Uhr zuerst das Bild im Stützpunkt, dann das im Zug. Grauen- Proben folgen den üblichen Regeln; wer fährt, nimmt die Belastung mit nach Narvik.
+- neu: Bleiben alle Agenten im Stützpunkt, fällt der Zug als Schauplatz weg; die Spielleitung erzählt Astrids Weg dann in wenigen Sätzen nach dem Bild von 22:10 Uhr. Fahren alle, spielt der Abend im Stützpunkt nur in kurzen Bildern, die die Spielleitung zwischen die Szenen im Zug setzt: der Appell, die Tassen, der Puls, das Funklog. Bewährt hat sich ein fester Wechsel: vormittags und nachmittags je eine Szene an jedem Schauplatz, ab 21:00 Uhr Schnitte im Abstand von Minuten, um 22:10 Uhr zuerst das Bild im Stützpunkt, dann das im Zug. Grauen-Proben folgen den üblichen Regeln; wer fährt, nimmt die Belastung mit nach Narvik.
 
 ### Die Nacht › Astrid Solheims Weg
 
@@ -1071,6 +1189,21 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Ein Agent oder Negotiator bekommt mit einer Probe auf Menschenkenntnis gegen Machbar (2) heraus, dass er etwas verschweigt: dass im Grundbuch ein Vermerk steht. Er ist der rote Hering. Wer ihn für den Täter hält, verliert Zeit.
 - neu: Wer ihn mit einer Probe auf Menschenkenntnis gegen Machbar (2) liest, etwa Echo oder Raven, merkt, dass er etwas verschweigt: dass im Grundbuch ein Vermerk steht. Er ist der rote Hering. Wer ihn für den Täter hält, verliert Zeit.
 
+### 06 Hort-7, Lyon › Was es hier gibt
+
+- alt: Waffenkammer. Häufiges sofort, Seltenes mit einem Tag Wartezeit, Prototypen nur mit Freigabe des Führungsoffiziers. Besonders vorhanden: Resonanzpistolen, schallabsorbierende Stiefel, EMF- Detektoren, Salz, Feldscanner. Brandmunition ist oft nicht da. ¶ Werkstatt. Reparaturen an Waffen und Fahrzeugen dauern einen Tag, Modifikationen zwei Tage, Prototypen eine Woche. Besonders vorhanden: Ersatzteile für Resonanzpistolen, Schalldämpfer, Zielgeräte mit Echo- Modul, Beryllium-Isolierbehälter.
+- neu: Waffenkammer. Häufiges sofort, Seltenes mit einem Tag Wartezeit, Prototypen nur mit Freigabe des Führungsoffiziers. Besonders vorhanden: Resonanzpistolen, schallabsorbierende Stiefel, EMF-Detektoren, Salz, Feldscanner. Brandmunition ist oft nicht da. ¶ Werkstatt. Reparaturen an Waffen und Fahrzeugen dauern einen Tag, Modifikationen zwei Tage, Prototypen eine Woche. Besonders vorhanden: Ersatzteile für Resonanzpistolen, Schalldämpfer, Zielgeräte mit Echo-Modul, Beryllium-Isolierbehälter.
+
+### 06 Hort-7, Lyon › Hort-7, Lyon
+
+- alt: Hort-7 in Lyon ist ein Stützpunkt des Operativen Zweigs, getarnt als ehemaliges Lagerhaus einer erloschenen Spedition. Elf Agenten sind dauerhaft stationiert, dazu wechselndes Personal. Der Hort bildet Zellen vor ihrem ersten Einsatz aus und ist bis heute mit den Echo- Operative verbunden, mit denen er gegründet wurde. Die Nachbarschaft an der Rue Garibaldi sieht nur einen Laden, der nie Kundschaft hat, und gelegentlichen Lieferverkehr.
+- neu: Hort-7 in Lyon ist ein Stützpunkt des Operativen Zweigs, getarnt als ehemaliges Lagerhaus einer erloschenen Spedition. Elf Agenten sind dauerhaft stationiert, dazu wechselndes Personal. Der Hort bildet Zellen vor ihrem ersten Einsatz aus und ist bis heute mit den Echo-Operative verbunden, mit denen er gegründet wurde. Die Nachbarschaft an der Rue Garibaldi sieht nur einen Laden, der nie Kundschaft hat, und gelegentlichen Lieferverkehr.
+
+### 06 Hort-7, Lyon › Aufhänger
+
+- alt: Graue Akte „Brummen unter dem Pflaster“. Eine Echo- Operative auf der Durchreise hört in der Rue Garibaldi ein tiefes Brummen unter dem Pflaster, das nicht von den Geräten des Horts stammt. Seit drei Tagen wird es lauter. Die Zelle soll die Quelle finden, ohne die Nachbarschaft aufzuschrecken.
+- neu: Graue Akte „Brummen unter dem Pflaster“. Eine Echo-Operative auf der Durchreise hört in der Rue Garibaldi ein tiefes Brummen unter dem Pflaster, das nicht von den Geräten des Horts stammt. Seit drei Tagen wird es lauter. Die Zelle soll die Quelle finden, ohne die Nachbarschaft aufzuschrecken.
+
 ### Einsatz 7: Grüne Planen › Briefing
 
 - alt: Was die Gruppe bekommt: einen Dienstwagen (grauer Peugeot 403, Papiere auf eine Scheinfirma), Bargeld, am Tisch 25.000 Francs (intern umgerechnet 600 Euro), eine Karte der Vogesen, die Nummer des Hotelzimmers in Reims, eine Minox. ¶ Spesen: am Tisch in Francs, intern in Euro.
@@ -1083,8 +1216,8 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 ### Einsatz 7: Grüne Planen › Was wirklich geschah
 
-- alt: Die drei Tage. Die eine und die andere schlafen nicht. Die Illusion verlangt, dass eine von ihnen wacht, während die andere döst. Am dritten Tag sehen die Wände des Zimmers aus wie Wald. Nicht weil die Schwestern es wollen, sondern weil etwas in den Vogesen die Illusion mag und sie zu sich zieht. Die Schwestern streiten. Die eine will abbrechen. Die andere will weitermachen, weil sie spürt, dass etwas im Wald auf sie wartet, und weil sie zum ersten Mal nicht nur Bilder macht, sondern gerufen wird.
-- neu: Die drei Tage. Die eine und die andere schlafen nicht. Die Illusion verlangt, dass eine von ihnen wacht, während die andere döst. Am dritten Tag sehen die Wände des Zimmers aus wie Wald. Nicht weil die Schwestern es wollen, sondern weil etwas in den Vogesen die Illusion mag und sie zu sich zieht. Die Schwestern streiten. Die eine will abbrechen. Die andere will weitermachen, weil sie spürt, dass etwas im Wald auf sie wartet, und weil zum ersten Mal etwas sie ruft, während sie Bilder macht.
+- alt: Marshs Plan. Evelyn Marsh kennt die Lavigne- Schwestern seit ihrer Aufnahme ins Kollegium. Beide sind starke Illusionistinnen, unausgebildet im Feld, aber einander so nah, dass sie eine Illusion gemeinsam länger halten können als jede einzelne. Marsh mietet ein Zimmer im Hôtel de la Cathédrale in Reims, drei Tage, zwei Betten, ein Telefon. Die Schwestern erschaffen den zweiten Konvoi: vier Lastwagen, grüne Planen, ein Stück der Straße von Paris nach Osten. Der echte Konvoi fährt zuerst, der falsche folgt als Bild. Der Citroën soll dem falschen folgen. ¶ Die drei Tage. Die eine und die andere schlafen nicht. Die Illusion verlangt, dass eine von ihnen wacht, während die andere döst. Am dritten Tag sehen die Wände des Zimmers aus wie Wald. Nicht weil die Schwestern es wollen, sondern weil etwas in den Vogesen die Illusion mag und sie zu sich zieht. Die Schwestern streiten. Die eine will abbrechen. Die andere will weitermachen, weil sie spürt, dass etwas im Wald auf sie wartet, und weil sie zum ersten Mal nicht nur Bilder macht, sondern gerufen wird.
+- neu: Marshs Plan. Evelyn Marsh kennt die Lavigne-Schwestern seit ihrer Aufnahme ins Kollegium. Beide sind starke Illusionistinnen, unausgebildet im Feld, aber einander so nah, dass sie eine Illusion gemeinsam länger halten können als jede einzelne. Marsh mietet ein Zimmer im Hôtel de la Cathédrale in Reims, drei Tage, zwei Betten, ein Telefon. Die Schwestern erschaffen den zweiten Konvoi: vier Lastwagen, grüne Planen, ein Stück der Straße von Paris nach Osten. Der echte Konvoi fährt zuerst, der falsche folgt als Bild. Der Citroën soll dem falschen folgen. ¶ Die drei Tage. Die eine und die andere schlafen nicht. Die Illusion verlangt, dass eine von ihnen wacht, während die andere döst. Am dritten Tag sehen die Wände des Zimmers aus wie Wald. Nicht weil die Schwestern es wollen, sondern weil etwas in den Vogesen die Illusion mag und sie zu sich zieht. Die Schwestern streiten. Die eine will abbrechen. Die andere will weitermachen, weil sie spürt, dass etwas im Wald auf sie wartet, und weil zum ersten Mal etwas sie ruft, während sie Bilder macht.
 
 ### Einsatz 7: Grüne Planen › Eskalation
 
@@ -1121,7 +1254,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: Der Nachtzug auf der Erzbahn, zwischen Abisko und Riksgränsen. Polarnacht, Schnee, Wind. Die Kisten stehen im Güterwagen, Haugen und die Gruppe im Personenwagen dahinter. Die Jäger kommen mit Schneemobilen von der Seite, vier Mann, Elite, Sturmgewehre mit Schalldämpfern. Der Zug fährt langsam, weil ein Signal auf Rot steht. Die Strecke ist ein Funkloch. Kein Anruf, keine Verstärkung, kein Zeuge.
 
 - alt: Die Strecke zeigt die Karte der Ofotbanen (Karte K10).
-- neu: Die Strecke zeigt Karte K10).
+- neu: Die Strecke zeigt Karte K10.
 
 - alt: Ohne Kampf: Die Gruppe lässt die Jäger die Kisten nehmen und verfolgt sie. Die Kisten sind nicht die echten. Ashgrove hat in Stockholm Scheinkisten mit Sand und Gewichten verladen lassen, die auf den Frachtpapieren stehen. Die echten Kisten stehen in einem zweiten Wagen, der in Kiruna umgeladen wurde. Die Gruppe fährt weiter nach Narvik und holt die echten Kisten aus dem Lagerhaus. Haugen lernt, dass Rückzug kein Verlust ist. Der Preis: Die Abteilung weiß jetzt, dass O.D.I.N. sie erwartet hat. Der nächste Versuch wird leiser.
 - neu: Ohne Kampf: Die Gruppe lässt die Jäger die Kisten nehmen und verfolgt sie. Die Kisten sind nicht die echten. Auf Ashgroves Anweisung hat Haugen in Stockholm Scheinkisten mit Sand und Gewichten in den Güterwagen stellen lassen; sie stehen so auf den Frachtpapieren. Die echten Kisten laufen in einem zweiten Güterwagen, den Haugen in Kiruna abhängen ließ und der mit dem nächsten Erzzug nach Narvik kommt. Die Gruppe fährt weiter und holt die echten Kisten am nächsten Tag aus dem Lagerhaus. Greift Abteilung 13 schon vor Kiruna an, entfällt diese Lösung. Haugen lernt, dass Rückzug kein Verlust ist. Der Preis: Die Abteilung weiß jetzt, dass O.D.I.N. sie erwartet hat. Der nächste Versuch wird leiser.
@@ -1130,6 +1263,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: Wenn ein Agent in Kiruna aussteigt und den Stimmen folgt, verpasst er den Zug. Die Ofotbanen wartet nicht. Eine Straße von Kiruna nach Narvik gibt es nicht. Er nimmt den nächsten Zug oder einen Erzzug, um in Narvik wieder zur Gruppe zu stoßen. Die Stimmen wollen ihn nicht aufhalten. Sie rufen ihn an. Wer bleibt, hört länger, als er wollte.
 - neu: Wenn ein Agent in Kiruna aussteigt und den Stimmen folgt, verpasst er den Zug. Die Erzbahn wartet nicht. Eine Straße von Kiruna nach Narvik gibt es nicht. Er nimmt den nächsten Zug oder einen Erzzug, um in Narvik wieder zur Gruppe zu stoßen. Die Stimmen wollen ihn nicht aufhalten. Sie rufen ihn an. Wer bleibt, hört länger, als er wollte.
+
+### 06 Kapitel VI: Zwischen den Akten › Ereignisse in der Zwischenzeit
+
+- alt: 63 Ein Mitglied der Zelle findet einen alten Brief in seiner Unterkunft. Der Brief ist von einem früheren Bewohner. Wer ihn liest, würfelt eine Grauen- Probe auf WK + Geistige Widerstandskraft gegen Einfach (1).
+- neu: 63 Ein Mitglied der Zelle findet einen alten Brief in seiner Unterkunft. Der Brief ist von einem früheren Bewohner. Wer ihn liest, würfelt eine Grauen-Probe auf WK + Geistige Widerstandskraft gegen Einfach (1).
 
 ### Einsatz 5: Innenseite › Die Knoten
 
@@ -1210,6 +1348,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Ein Wesen der Stimme, das dem Ton Elsters nach Leipzig gefolgt ist und sich im Hinterhof festgesetzt hat, weil der Splitter des Kollegiums es anzieht wie ein offenes Fenster. Es frisst zuerst die Namen der Schusterkinder. Es spricht Menschen mit ihren eigenen Stimmen an. Es hat kein Gesicht, das man behalten kann.
 - neu: Ein Wesen der Stimme, das in Leipzig dem Ton Elsters gefolgt ist und sich im Hinterhof festgesetzt hat, weil der Splitter des Kollegiums es anzieht wie ein offenes Fenster. Es frisst zuerst die Namen der Schusterkinder. Es spricht Menschen mit ihren eigenen Stimmen an. Es hat kein Gesicht, das man behalten kann.
 
+### Einsatz 3: Tod und Leben › Briefing
+
+- alt: Was die Gruppe bekommt: Reisegeld in Franken und D- Mark, die ersten Legenden der Druckerei, je ein Legendenblatt für jeden Agenten, eine Leica mit zwei Filmen, einen Stadtplan von Leipzig von 1943, ein Bleikästchen des Kollegiums für alles, was flüstert, und Märtas Meldung, mehr nicht: ein Ton, sechs Jahre, die Stadt Leipzig. Dazu die nötigen Interzonenpässe und Aufenthaltsgenehmigungen für die DDR, für Schweizer Papiere ein Visum.
+- neu: Was die Gruppe bekommt: Reisegeld in Franken und D-Mark, die ersten Legenden der Druckerei, je ein Legendenblatt für jeden Agenten, eine Leica mit zwei Filmen, einen Stadtplan von Leipzig von 1943, ein Bleikästchen des Kollegiums für alles, was flüstert, und Märtas Meldung, mehr nicht: ein Ton, sechs Jahre, die Stadt Leipzig. Dazu die nötigen Interzonenpässe und Aufenthaltsgenehmigungen für die DDR, für Schweizer Papiere ein Visum.
+
 ### Einsatz 3: Tod und Leben › Eskalation
 
 - alt: Stufe 3: Vorladung. Der Verbindungsoffizier der jungen Staatssicherheit lädt die Gruppe in sein Büro in der Leipziger Innenstadt, Tür ohne Schild, zwei Stockwerke, ein Raum mit Kartei. Er fragt nach dem Zweck der Reise, dem Interesse am Hof, der Familie. Wer sich in Widersprüche verwickelt, bleibt 48 Stunden in einer Zelle im Polizeipräsidium. Danach wird die Gruppe ausgewiesen. Die Kamera und die Filme sind beschlagnahmt. Das Foto gibt es trotzdem: Ein Agent hat den ersten Film nach dem ersten Besuch aus der Leica genommen und im Mantelfutter versteckt, die Volkspolizei findet nur den zweiten (Umweg).
@@ -1247,7 +1390,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Zwischen Teil A und Teil B liegt ein Zwischenjahr. Es verbindet die beiden Teile, einen Hinweis auf das Kloster gibt es darin nicht. Jeder Spieler erzählt eine Sache, die sein Agent in dieser Zeit tat; die Spielleitung erzählt die festen Ereignisse. Danach Alterung und Übergaben nach Kapitel 2.
 - neu: Zwischen Teil A und Teil B liegt ein Zwischenjahr. Es verbindet die beiden Teile, einen Hinweis auf das Kloster gibt es darin nicht. Jeder Spieler erzählt eine Sache, die sein Agent in dieser Zeit tat; die Spielleitung erzählt die festen Ereignisse. Danach Übergaben nach Kapitel 2. Die Alterung gilt erst zu Beginn von Abschnitt IV.
 
-## Journale Englisch (289 Absätze)
+## Journale Englisch (299 Absätze)
 
 ### After Nordlicht › Introduction
 
@@ -1378,6 +1521,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: The loose thread: The group can find out that the numbers are answers, not questions. Whoever compares the groups of five with the old transcripts from 1961 sees that they change when someone writes to the house without a number. This leads to 1971, when the broadcast ends, and to 2026, when the Grey File Kessler and The Door M7 Basel need Elster’s code.
 - neu: The loose thread: The group can find out that the numbers are answers, not questions. Whoever compares the groups of five with the old transcripts from 1961 sees that they change when someone writes to the house without a number. This leads to 1971, when the broadcast ends, and to 2026, when Elster reappears in the Grey File Kessler and in The Door, M7 Basel.
 
+### Mission 9: Elster › Escalation
+
+- alt: Anyone who recognises the broadcast for the first time for what it is also rolls horror against Disturbing (2). Anyone who sees the machine in the listening post running without power rolls Mental Resistance against Eerie (1). A Psion without a helmet rolls against Disturbing (2) because they hear the broadcast twice. Anyone who enters the basement of the long- distance exchange and sees the numbers on the walls rolls Mental Resistance against Eerie (1). Anyone who loses counts along quietly for one round.
+- neu: Anyone who recognises the broadcast for the first time for what it is also rolls horror against Disturbing (2). Anyone who sees the machine in the listening post running without power rolls Mental Resistance against Eerie (1). A Psion without a helmet rolls against Disturbing (2) because they hear the broadcast twice. Anyone who enters the basement of the long-distance exchange and sees the numbers on the walls rolls Mental Resistance against Eerie (1). Anyone who loses counts along quietly for one round.
+
 ### Section II: The Silver (1955 to 1961) › Interlude Years
 
 - alt: In Lisbon a closed auction takes place. No auction house. No catalogues. A hall in a private house, three interpreters, ten bidders from six countries. Three crystals from old European private ownership are offered. The Collegium has asked the group to bid on its behalf. Those involved call the event only “the Evening”. ¶ Possible scene: An Agent of the group sits in the hall. They wear an inconspicuous suit and a cardboard number. The crystals lie in lead boxes on a walnut table. The auctioneer speaks quietly. The bids rise in small steps. For one crystal the room stays silent. It is milky and small. Two bidders raise their hands. Whether the group’s Agent wins the bid is decided by the table. What they experience on the way to the harbour and to whom they hand the case is told by the player.
@@ -1385,6 +1533,9 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: The legend “Ferdinand Aigner” is created. It is a single legend, worn successively by four Agents of the Operations Branch from 1956 to 1991. The first is an Agent of the group. Ferdinand Aigner is a sewing machine salesman from Graz, born in 1919. He drives a grey Opel. He smokes cigarillos. He has three stories he tells on request: one about the roads of Styria, one about a widow in Wiener Neustadt, one about a customs officer in Salzburg. He has a hat rule: when entering a shop he takes off his hat, when entering a flat he keeps it on until a woman gives him her hand. The Print Shop in Zurich has not prepared a wallet with a photograph. Aigner has no wife, no child, no siblings. Whoever wears him learns the name, the biography, the signature. They practise the walk, the voice, the way of folding a map. A legend is not a costume. It is a second memory.
 - neu: The legend “Ferdinand Aigner” is created. It is a single legend, worn successively by four Agents of the Operations Branch from 1956 to 1991. The first is an Agent of the group. Ferdinand Aigner is a sewing machine salesman from Graz, born in 1919. He drives a grey Opel. He smokes cigarillos. He has three stories he tells on request: one about the roads of Styria, one about a widow in Wiener Neustadt, one about a customs officer in Salzburg. He has a habit with his hat: when entering a shop he takes off his hat, when entering a flat he keeps it on until a woman gives him her hand. The Print Shop in Zurich has not prepared a wallet with a photograph. Aigner has no wife, no child, no siblings. Whoever wears him learns the name, the biography, the signature. They practise the walk, the voice, the way of folding a map. A legend is not a costume. It is a second memory.
+
+- alt: Possible scene: an agent of the group stands at the door. He is invited because he accompanies one of the Thirty- One as an Observer. He is not allowed to speak. What he sees, how the psions look at one another, whether someone weeps, whether someone raises a hand, the player tells. After the roll call there is tea and cake. What the survivors talk about and what the agent writes in his report in the evening is decided by the table.
+- neu: Possible scene: an agent of the group stands at the door. He is invited because he accompanies one of the Thirty-One as an Observer. He is not allowed to speak. What he sees, how the psions look at one another, whether someone weeps, whether someone raises a hand, the player tells. After the roll call there is tea and cake. What the survivors talk about and what the agent writes in his report in the evening is decided by the table.
 
 - alt: Nachtigall reads one hundred and forty guests in Vienna. She wears a black dress. She does not speak. She stands at the edge of the hall and listens. Afterwards she writes fourteen pages. The Investigation Branch sends the group. An agent reads the pages. They contain names, fears, lies. One name is underlined three times. The agent does not ask who underlined it. He places the pages in a grey envelope. The envelope goes to Hallström. At the Institute, beryllium isolation begins. After twelve years, Greta Sundqvist finishes her work on the circles: not a code, but a language. ¶ On 20 December 1962, Britt Holm travels from Stockholm to the Harz. She is a secretary in the Registry. She wears a coat and carries a small bag. Hallström gave her the assignment: “Who is fetching her? Do not ask Marek. Ask the Print Shop.” It is about a Harz village with singing children. The group takes her to the train in Stockholm. One agent lifts her bag into the compartment. Another hands her a thermos flask. She smiles. She says: “I’ll come back.” The train departs. On 21 December 1962 it derails in the Harz. Thirty-six dead. Britt Holm’s name is on the list.
 - neu: Nachtigall reads one hundred and forty guests at an embassy reception in Vienna. She wears a black dress and sits at the grand piano as a pianist, between Chopin and Schubert. She does not speak. She plays and listens. Afterwards she writes fourteen pages. The Investigation Branch sends the group. An agent reads the pages. They contain names, fears, lies. One name is underlined three times. The agent does not ask who underlined it. He places the pages in a grey envelope. The envelope goes to Hallström. At the Institute, beryllium isolation begins. After twelve years, Greta Sundqvist finishes her work on the circles: not a code, but a language. ¶ On 20 December 1962, Britt Holm takes the night train from Stockholm to Hamburg; on 21 December she changes there to the train into the Harz. She is a secretary in the Registry. She wears a coat and carries a small bag. Hallström gave her the assignment: “Who is fetching her? Do not ask Marek. Ask the Print Shop.” It is about a Harz village with singing children. The group takes her to the train in Stockholm. One agent lifts her bag into the compartment. Another hands her a thermos flask. She smiles. She says: “I’ll come back.” The train departs. On 21 December 1962 her connecting train from Hamburg derails in the Harz. Thirty-six dead. Britt Holm’s name is on the list.
@@ -1418,7 +1569,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 ### Mission 13: Nordlicht › Aftermath
 
 - alt: What O.D.I.N. gets: Haugen’s report SA-1977-02. The wall clock from the canteen, stopped at 22:10. The kitchen radio, which plays a choir in the morning. The 212 grey crystals. The probe that measures 41 people over there. The eleven files of the night worker. The Black File Nordlicht.
-- neu: What O.D.I.N. gets: Haugen’s report SA-1977-02. The wall clock from the canteen, stopped at 22:10. The kitchen radio, which plays a choir in the morning. The 212 grey crystals. The probe that measures 41 people over there. The personnel files of the eleven Thaumaturges (in 2014 the eleven files of the night worker. The Black File Nordlicht.
+- neu: What O.D.I.N. gets: Haugen’s report SA-1977-02. The wall clock from the canteen, stopped at 22:10. The kitchen radio, which plays a choir in the morning. The 212 grey crystals. The probe that measures 41 people over there. The personnel files of the eleven Thaumaturges (in 2014 the eleven files of the night worker). The Black File Nordlicht.
 
 - alt: Nordlicht duty roster, February 1977, table with 41 names, tick column for 14.2., erasure marks on rows 3, 14, 15, 17, 26, 34, 35. Find Site: station chief’s office. - N43: Letter from the radio operator’s wife in Tromsø to the weather station of a company with a post office box in Oslo; she asks when he is coming home. Find Site: sick bay and post room. - N44: Child’s drawing “Ingrid, 3 years. For Papa.”, man in a blue jumper, reverse in Astrid’s handwriting. Find Site: sick bay and post room. - N45: Ticket Stockholm to Narvik, 13./14.2.1977. Whoever leaves receives it on Sunday in Stockholm. Astrid carries hers with her. - Map K12: Nordlicht Station, Floor Plan ground floor and basement: canteen above the archive, probe at the stairway, workshop on the ground floor, corrugated-iron shed as a separate building, eleven sleeping rooms with four beds each, assigned according to the duty roster, one guest room for the group.
 - neu: Nordlicht duty roster, February 1977, table with 41 names, tick column for 14.2., erasure marks on rows 3, 14, 15, 17, 26, 34, 35. Find Site: station chief’s office. - N43: Letter from the radio operator’s wife in Tromsø to the weather station of a company with a post office box in Oslo; she asks when he is coming home. Find Site: sick bay and post room. - N44: Child’s drawing “Ingrid, 3 years. For Papa.”, man in a blue jumper, reverse in Astrid’s handwriting. Find Site: sick bay and post room. - N45: Ticket Stockholm to Narvik, 13./14.2.1977. Whoever leaves receives it on Sunday in Stockholm. Astrid carries hers with her. - Map K11: Nordlicht Station, site plan: main building, corrugated-iron shed, landing site, road to Narvik. - Map K12: Nordlicht Station, Floor Plan ground floor and basement: canteen above the archive, probe at the stairway, workshop on the ground floor, corrugated-iron shed as a separate building, ten sleeping rooms with four beds each and a room for the station chief, assigned according to the duty roster, one guest room for the group.
@@ -1539,6 +1690,12 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Marsh gives the group cover. She shows how to disappear, how to lie, how to survive. She takes naivety from the players by showing what cover costs. She takes security from them by showing that no one knows the whole truth. She appears in missions 1, 3, 7, 8, 9 and 11. Mostly as a voice, as a letter, as a woman standing at the edge and watching.
 - neu: Marsh gives the group cover. She shows how to disappear, how to lie, how to survive. She takes naivety from the players by showing what cover costs. She takes security from them by showing that no one knows the whole truth. She appears in missions 1, 3, 7, 8, 9, 10 and 11. Mostly as a voice, as a letter, as a woman standing at the edge and watching.
 
+- alt: Acoustician from France, born 1941. Works in a sonic weapons programme until the tinnitus comes. In 1973 he is recruited. In 1974 he takes over the Echo- Operatives. In 1976 he leads the mission at the monastery of Sfântul Ioan. He deploys the first frequency overlay. After that he never triggers one himself again. He leads the Echo-Operatives until 1998. His grandson leads an Echo squad in 2027.
+- neu: Acoustician from France, born 1941. Works in a sonic weapons programme until the tinnitus comes. In 1973 he is recruited. In 1974 he takes over the Echo-Operatives. In 1976 he leads the mission at the monastery of Sfântul Ioan. He deploys the first frequency overlay. After that he never triggers one himself again. He leads the Echo-Operatives until 1998. His grandson leads an Echo squad in 2027.
+
+- alt: In 1976 Mercier is thirty-five. He leads the Echo- Operatives into the monastery. Seven Open Ones are arrested, without a shot, without losses. One is fifteen. Mercier deploys the overlay. He sees what it does. He writes the addendum: “… why we did not want to hear him. I had no answer.” After that he leaves the triggering to others. He remains the leader. He remains responsible. In 1977 he is not in Nordlicht. He leads the Echo-Operatives until 1998. Today he lives in Provence.
+- neu: In 1976 Mercier is thirty-five. He leads the Echo-Operatives into the monastery. Seven Open Ones are arrested, without a shot, without losses. One is fifteen. Mercier deploys the overlay. He sees what it does. He writes the addendum: “… why we did not want to hear him. I had no answer.” After that he leaves the triggering to others. He remains the leader. He remains responsible. In 1977 he is not in Nordlicht. He leads the Echo-Operatives until 1998. Today he lives in Provence.
+
 - alt: In 1947 Astrid is thirteen. She lives in Bergen, learns the watchmaking trade. In 1954 she finds the crystal. In 1956 she joins the Collegium. Penhallow establishes the rule: every Chronomancer only under the supervision of a second. Astrid mostly follows it. In the sixties she becomes a teacher. She trains a handful of students, all Chronomancers. She designs the time-measuring installation for Nordlicht. She works for the station but is not stationed there. She is not on the duty roster. In 1977, on 14 February, she sits with Ingrid on the delayed train to Narvik. At 22:10 Ingrid’s pocket watch runs through a whole night in under a minute. Astrid arrives a good three hours too late.
 - neu: In 1947 Astrid is thirteen. She lives in Bergen, learns the watchmaking trade. In 1954 she finds the crystal. In 1956 she joins the Collegium. Penhallow establishes the rule: every Chronomancer only under the supervision of a second. Astrid mostly follows it. In the sixties she becomes a teacher. She trains a handful of students, all Chronomancers. She designs the time-measuring installation for Nordlicht. She works for the station but is not stationed there. She is not on the duty roster. In 1977, on 14 February, she sits with Ingrid on the delayed train to Narvik. At 22:10 the pocket watch in Ingrid’s hand runs through a whole night in under a minute. Astrid arrives a good three hours too late.
 
@@ -1583,6 +1740,9 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: 1950 Sundqvist arrives; Wendland puts up the apothecary’s protocol Sundqvist asks about the circles of Kiruna
 - neu: 1950 Sundqvist arrives; Wendland puts up the apothecary’s protocol Sundqvist asks about the circles of Solberg
+
+- alt: 1960 Of the 31, 22 are still alive; Margot marries Roll call of the Thirty- One
+- neu: 1960 Of the 31, 22 are still alive; Margot marries Roll call of the Thirty-One
 
 - alt: 1968 Liège; Adeyemi; Dorje dies; the watchmaker’s special train; the Enlightened the Print Shop has a hundred signet rings made (GF “Second Light”)
 - neu: 1968 Liège; Adeyemi; Dorje dies; the watchmaker’s special train; the Enlightened the Print Shop has a hundred signet rings made (GF, File 8 “The Second Light”)
@@ -1806,7 +1966,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: Accountant, Freemason, disappeared. He was the most cautious member, had cancelled the lodge evening to drive to Maarten’s. His lodge calendar is the red herring. He thought the ritual was a game.
 
 - alt: Nurse, disappeared. She had last posted in the group: “The light is not a light. It is an eye.” She suspected something, but too late.
-- neu: Nurse, disappeared. Her last post in the group ends with: “Tell him the light is not a light.” She had dreamt that the light was an eye.” She suspected something, but too late.
+- neu: Nurse, disappeared. Her last post in the group ends with: “Tell him the light is not a light.” She had dreamt that the light was an eye. She suspected something, but too late.
 
 ### 08 The Second Light › The Conclusions
 
@@ -1911,6 +2071,9 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: (nichts)
 - neu: Assault rifle, combat suit with helmet, high-explosive grenades Carbine or submachine gun, steel helmet, hand grenades of the era Assault rifles only in 1977 ¶ Light armour, stealth armour As protective vest Depending on year ¶ Bio-scanner, portable scanner Microscope, magnifying glass, forensic kit No scanner in the field ¶ Document scanner Minox or 35 mm camera Photographs on film ¶ Reinforced communication device Field telephone or shortwave radio Depending on location ¶ Prediction device, data crystal Omitted Does not exist before 1977
 
+- alt: Protective vest None before 1953, then oven door, in the seventies ceramic- Kevlar suit Oven door: heavy, barely effective; ceramic-Kevlar suit: only in the seventies
+- neu: Protective vest None before 1953, then oven door, in the seventies ceramic-Kevlar suit Oven door: heavy, barely effective; ceramic-Kevlar suit: only in the seventies
+
 - alt: Mental focus device Cap or helmet Depending on year
 - neu: Mental focus device, Neuro-Helm None before 1949, every Psi test is then one level harder; from 1949 Cap, from 1963 Mk. I, from 1972 Mk. II The Cap does not protect against psionic attacks
 
@@ -1944,6 +2107,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: In the morning after the night, Planck sits with the cell in the canteen and has three sheets of paper in front of her. On the first, her curve of the pulses. On the second, the numbers from the station that the cell’s Registry sent, with the interval between transmissions, which is also getting shorter. On the third, the running of the wall clock from the canteen at Nordlicht, which hangs in a display case two floors above the Institute’s canteen and runs backwards. Planck has long since calculated when it will arrive, and had taken the date for a coincidence.
 - neu: In the morning after the night, Planck sits with the cell in the canteen and has three sheets of paper in front of her. On the first, her curve of the pulses. On the second, the numbers from the station that the cell’s Registry sent, with the pauses between the number groups, which are also getting shorter. On the third, the running of the wall clock from the canteen at Nordlicht, which hangs in a display case two floors above the Institute’s canteen and runs backwards. Planck has long since calculated when it will arrive, and had taken the date for a coincidence.
 
+### 06 Hold-7, Lyon › Hooks
+
+- alt: Grey File “Humming under the Pavement”. An Echo- Operative passing through hears a deep hum under the pavement in Rue Garibaldi that does not come from the hold’s equipment. It has been getting louder for three days. The cell is to find the source without alarming the neighbourhood.
+- neu: Grey File “Humming under the Pavement”. An Echo-Operative passing through hears a deep hum under the pavement in Rue Garibaldi that does not come from the hold’s equipment. It has been getting louder for three days. The cell is to find the source without alarming the neighbourhood.
+
 ### Mission 4: Eleven › Aftermath
 
 - alt: Experience: Red File: 5 XP, +1 for the objective achieved, at most +1 personal bonus, plus 1 for each thread taken up. Duration: two to three sessions.
@@ -1964,6 +2132,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: What the group gets: A train pass to Kiruna, a map of the mine that does not show the tunnel (Map K3), expenses in Swedish kronor.
 - neu: What the group gets: A train pass to Kiruna, a map of the mine that does not show the tunnel (of Map K3 the game master shows only the cage, main gallery and cavity), expenses in Swedish kronor.
+
+### 03 Hold-4, Oxford › Location and Cover
+
+- alt: The Warbury Foundation lies on a quiet side street in the Jericho area, between an antiquarian bookshop and a row of narrow workers’ houses. The building is a neo- Gothic brick structure from 1887, four storeys high, with a narrow inner courtyard and a delivery yard at the rear. The library on the ground floor and first floor is open to the public, but only by appointment. It rarely has more than a dozen visitors a day. The reading room smells of floor polish, old paper and tea from the small canteen on the first floor. The shelves hold old manuscripts, many of them in scripts that hardly anyone can read. The foundation runs the collection as a scholarly special library for medieval and early modern manuscripts. That explains the silence, the dust and the patience of the staff.
+- neu: The Warbury Foundation lies on a quiet side street in the Jericho area, between an antiquarian bookshop and a row of narrow workers’ houses. The building is a neo-Gothic brick structure from 1887, four storeys high, with a narrow inner courtyard and a delivery yard at the rear. The library on the ground floor and first floor is open to the public, but only by appointment. It rarely has more than a dozen visitors a day. The reading room smells of floor polish, old paper and tea from the small canteen on the first floor. The shelves hold old manuscripts, many of them in scripts that hardly anyone can read. The foundation runs the collection as a scholarly special library for medieval and early modern manuscripts. That explains the silence, the dust and the patience of the staff.
 
 ### Mission 2: Silence › The Nodes
 
@@ -2153,6 +2326,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: 1955. Evan Pryce hands Ashgrove the first knife made of ashsilver. Ashgrove places it in the armoury of Hold-1, where it lies to this day.
 - neu: 1955. Evan Pryce hands Ashgrove the first knife made of ashsilver. Ashgrove carries it until his death; since then it has lain in the armoury of Hold-1.
 
+### Mission 11: Seven › What Really Happened
+
+- alt: Kantor escapes in 1974. The group can get close to him, speak to him, but not catch him. A fight is possible, but Kantor is prepared: he uses his telepathy to disarm the group without hurting anyone. Price: strain for all who wanted to hurt him. - The Echo-Operatives come into being in 1974. The group witnesses their first assignment. They cannot stop the Operatives, only accompany them. - In the monastery, seven arrests without a shot and without losses, one is fifteen. The Open Ones do not fight. They wait. The arrest is a scene of silence. If the group wants to shoot, Mercier and the Operatives intervene. Price: loss of trust among the Echo- Operatives. - Kantor is not there. The monastery is empty of him. The group finds his traces: a bowl, a book, a sentence on a wall. - Department 13 comes away empty; from then on, O.D.I.N. agents in Russia are considered hostile combatants. The men of Department 13 are on site, but too late. The group can speak with them, but not negotiate. They want the Open Ones for their research. - Mercier writes his addendum and never again triggers an overlay himself. The group can witness Mercier looking at the fifteen-yearold and having no answer. - The village no longer ages. The group can notice it: no births, no deaths, children who have been the same age for months.
+- neu: Kantor escapes in 1974. The group can get close to him, speak to him, but not catch him. A fight is possible, but Kantor is prepared: he uses his telepathy to disarm the group without hurting anyone. Price: strain for all who wanted to hurt him. - The Echo-Operatives come into being in 1974. The group witnesses their first assignment. They cannot stop the Operatives, only accompany them. - In the monastery, seven arrests without a shot and without losses, one is fifteen. The Open Ones do not fight. They wait. The arrest is a scene of silence. If the group wants to shoot, Mercier and the Operatives intervene. Price: loss of trust among the Echo-Operatives. - Kantor is not there. The monastery is empty of him. The group finds his traces: a bowl, a book, a sentence on a wall. - Department 13 comes away empty; from then on, O.D.I.N. agents in Russia are considered hostile combatants. The men of Department 13 are on site, but too late. The group can speak with them, but not negotiate. They want the Open Ones for their research. - Mercier writes his addendum and never again triggers an overlay himself. The group can witness Mercier looking at the fifteen-yearold and having no answer. - The village no longer ages. The group can notice it: no births, no deaths, children who have been the same age for months.
+
 ### Mission 11: Seven › Opponents
 
 - alt: A former head of the Psionic Core who disappeared in 1974 and founded the Open Ones. He appears in Part A at the border. He does not fight. He talks.
@@ -2162,6 +2340,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: 4. Mercier gives the signal. The devices switch on. A deep tone, not loud, but everyone in the room feels it. The Open Ones fall unconscious, one after another, without a shot, without resistance. The fifteen-year-old looks at Mercier before he collapses. A player Psion with Mk. II is also hit by the overlay: They roll WIL + Mental Resistance against Hard (3), otherwise they lose consciousness for one round.
 - neu: 4. Mercier gives the signal. The devices switch on. A deep tone, not loud, but everyone in the room feels it. The Open Ones fall unconscious, one after another, without a shot, without resistance. The fifteen-year-old looks at Mercier before he collapses. A player Psion with Mk. II is also hit by the overlay: forewarned, they roll all Psi tests with −1 die for three rounds.
+
+### Mission 11: Seven › What It Is About
+
+- alt: Part A: Kantor has lived sidelined in the silence of Hold-2 Cardiff since the Cascade of 1971. He has no students and no task. If he leaves the silence, he wears a Blocking Helmet. The supervision is discreet but complete. One morning in October 1974 he is gone. The first assignment of the new Echo-Operatives is confidential: find him. The group accompanies the operatives. The trail leads to Vienna, where children’s voices are heard in an old wine cellar, and from there to the Austrian- Hungarian border. There it ends. Kantor is allowed to talk. He is not caught. ¶ Part B: Two years later O.D.I.N. knows the monastery of Sfântul Ioan in the Carpathians. Department 13 wants the Open Ones inside for itself. Mercier leads the Echo- Operatives, the group accompanies them. In the village below the monastery, no one has aged since the winter. The Open Ones are seven. One is fifteen. Kantor is not there.
+- neu: Part A: Kantor has lived sidelined in the silence of Hold-2 Cardiff since the Cascade of 1971. He has no students and no task. If he leaves the silence, he wears a Blocking Helmet. The supervision is discreet but complete. One morning in October 1974 he is gone. The first assignment of the new Echo-Operatives is confidential: find him. The group accompanies the operatives. The trail leads to Vienna, where children’s voices are heard in an old wine cellar, and from there to the Austrian-Hungarian border. There it ends. Kantor is allowed to talk. He is not caught. ¶ Part B: Two years later O.D.I.N. knows the monastery of Sfântul Ioan in the Carpathians. Department 13 wants the Open Ones inside for itself. Mercier leads the Echo-Operatives, the group accompanies them. In the village below the monastery, no one has aged since the winter. The Open Ones are seven. One is fifteen. Kantor is not there.
 
 ### Mission 11: Seven › The Nodes
 
@@ -2289,7 +2472,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - neu: The Veil: The neighbours saw the boiling aquarium, but the police were not called, except by Mr Kowalski, who reported a break-in two weeks ago and called the patrol last night. An agent can close the file: The Kowalskis get an explanation: a faulty heating element. The Vosses get a new legend for Linus’ disappearance: a boarding school, a cure. The S-Bahn recordings are secured and deleted.
 
 - alt: Experience: 5 XP per character. Plus 1 XP for a solution without combat. Plus 1 XP for saving the crystal.
-- neu: Experience: 4 XP per character, 5 if the file has turned red. +1 XP if Linus is safe. At most +1 XP personal bonus, for example for a solution without combat. +1 XP for each thread the cell takes up, for example the abbreviation in the Crystal Ledger. Plus 1 XP for a solution without combat. Plus 1 XP for saving the crystal.
+- neu: Experience: 4 XP per character, 5 if the file has turned red. +1 XP if Linus is safe. At most +1 XP personal bonus, for example for a solution without combat. +1 XP for each thread the cell takes up, for example the abbreviation in the Crystal Ledger.
 
 ### 01 Foster Child › People
 
