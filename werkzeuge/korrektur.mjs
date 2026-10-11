@@ -13,6 +13,10 @@
 //   Initiative, Grauen, Würfel der Angriffe). Stellen, die über Formatierung oder Verweise laufen, meldet es als
 //   „von Hand“. Braucht classic-level (npm install --no-save classic-level@1.4.1), Foundry vorher beenden.
 // Prüfen: node werkzeuge/korrektur.mjs pruefen (Freigabedateien lesbar, ids eindeutig, „alt“ steht noch in den Packs)
+// Nachträge: node werkzeuge/korrektur.mjs nachtraege <writer_nachtraege_<Band>.md> … [--probelauf]
+//   Für Stellen, die der Satzvergleich nicht findet: je Stelle Absatz alt und neu aus den Buchquellen. Gesucht wird der passende
+//   Absatz in den Journalen (zuerst im Ordner des Bandes) und in den Texten der Gegner; die Änderung wird wortweise übertragen,
+//   auch wenn das Journal in Kleinigkeiten abweicht. Was sich so nicht sicher übertragen lässt, meldet es als „von Hand“.
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -806,9 +810,10 @@ export function zieheZahlenNach(system, label, wert) {
   } else if (label === 'Initiative') {
     if (/^\d+$/.test(wert)) setze('initiative', +wert);
   } else if (/^(Grauen|Horror)$/.test(label)) {
+    // „Keines. Würfelt selbst gegen Unheimlich (1)“: der Gegner selbst hat kein Grauen, die Zahl ist der Wurf der Leute
     const m = /\((\d+)\)/.exec(wert);
-    if (m) setze('grauen', +m[1]);
-    else if (/^(Kein|None|No )/.test(wert)) setze('grauen', 0);
+    if (/^(Kein|None|No\b)/.test(wert)) setze('grauen', 0);
+    else if (m) setze('grauen', +m[1]);
   } else if (/^(Angriff|Attack|Psi)/.test(label)) {
     const angriffe = [...wert.matchAll(/(?:^|,\s*(?:oder|or)\s+|;\s*|,\s*)([^,;]+?)\s+(\d+)\s*\+\s*(\d+)(?:,\s*(?:Schaden|[Dd]amage)\s*(\d+))?/g)];
     const pools = system.pools ?? [];
@@ -887,6 +892,262 @@ export function wendeAn(eintraege, packs) {
 }
 
 // ---------------------------------------------------------------------------------------------------------------
+// Nachträge des Writers: Absatz alt und neu aus den Buchquellen, für Stellen, die der Satzvergleich nicht findet
+
+/** Markdown der Buchquellen als Text: Aufzählung, Fett, Kursiv, Links und Tabellenstriche heraus */
+export function mdText(s) {
+  let t = s.trim().replace(/^(?:[-*>]\s+|#+\s+|\d+\.\s+)/, '');
+  // Satzbefehle der Buchquellen: [entry - Name Untertitel] und [table Spaltenköpfe @ Breiten]
+  t = t.replace(/^\[entry\s*-?\s*(.*)\]$/, '$1').replace(/^\[table\s+(.*?)(?:\s+@[\d\s]*)?\]$/, '$1');
+  if (/\s\|\s/.test(t)) t = t.replace(/^\|/, '').replace(/\|$/, '').split('|').map((x) => x.trim()).filter(Boolean).join(' ');
+  return t.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\*\*([^*]*)\*\*/g, '$1').replace(/(^|[\s(„"])\*([^*\s][^*]*)\*/g, '$1$2')
+    .replace(/\\([\\`*_[\]()#+\-.!|])/g, '$1').replace(/\s+/g, ' ').trim();
+}
+
+/** Liest eine Nachtragsdatei: [{ spr, ort, alt, neu }] (alt und neu als Text) */
+export function leseNachtraege(md) {
+  const aus = [];
+  let spr = null, akt = null;
+  for (const zeile of md.split('\n')) {
+    const sp = /^## (Deutsch|Englisch)\b/.exec(zeile);
+    if (sp) { spr = sp[1] === 'Deutsch' ? 'de' : 'en'; akt = null; continue; }
+    const k = /^### (.*)$/.exec(zeile);
+    if (k && spr) { akt = { spr, ort: k[1].trim(), alt: '', neu: null }; aus.push(akt); continue; }
+    if (!akt) continue;
+    let m;
+    if ((m = /^\*\*alt:\*\*\s?(.*)$/.exec(zeile))) akt.alt = mdText(m[1]);
+    else if ((m = /^\*\*neu:\*\*\s?(.*)$/.exec(zeile))) akt.neu = mdText(m[1]);
+  }
+  return aus.filter((e) => e.neu !== null);
+}
+
+/**
+ * Überträgt die Änderung alt → neu (Absatz aus dem Band) auf einen Absatz in Foundry, der vom alten Absatz in Kleinigkeiten
+ * abweichen darf (Satzzeichen, Anführungszeichen, schon übernommene Vorschläge). Verglichen wird wortweise über die
+ * normalisierten Wörter; die neuen Wörter kommen aus dem Band. Rückgabe: { neu } oder { konflikt }.
+ */
+export function uebertrage(alt, neu, absatz) {
+  const aw = woerter(alt), nw = woerter(neu), fw = woerter(absatz);
+  const ak = aw.map(norm), nk = nw.map(norm), fk = fw.map(norm);
+  // alt → Foundry und neu → Foundry: welches Wort steht wo im Journal
+  const karte = (k) => {
+    const z = new Array(k.length).fill(-1);
+    for (const [i, j, n] of new Abgleich(k, fk).bloecke()) for (let x = 0; x < n; x++) z[i + x] = j + x;
+    return z;
+  };
+  const zuF = karte(ak), nzuF = karte(nk);
+  const zusammen = (f) => f.length && f.every((x) => x >= 0) && f.at(-1) - f[0] === f.length - 1;
+  let ops = [];
+  for (const [art, i1, i2, j1, j2] of new Abgleich(ak, nk).schritte()) {
+    if (art === 'gleich') continue;
+    let a1 = i1, a2 = i2, b1 = j1, b2 = j2;
+    // Nachbarwörter mit geändertem Satzzeichen (etwa ein neues Satzende) gehören dazu
+    if (a1 > 0 && b1 > 0 && aw[a1 - 1] !== nw[b1 - 1]) { a1--; b1--; }
+    if (a2 < aw.length && b2 < nw.length && aw[a2] !== nw[b2]) { a2++; b2++; }
+    const vorige = ops.at(-1);
+    if (vorige && a1 <= vorige.a2) { vorige.a2 = Math.max(vorige.a2, a2); vorige.b2 = Math.max(vorige.b2, b2); continue; }
+    ops.push({ a1, a2, b1, b2 });
+  }
+  // Schon im Journal (etwa über einen freigegebenen Vorschlag): neue Wörter stehen dort, alte nicht mehr
+  ops = ops.filter((o) => {
+    const neuDa = o.b1 === o.b2 || zusammen(nzuF.slice(o.b1, o.b2));
+    const altWeg = o.a1 === o.a2 || zuF.slice(o.a1, o.a2).every((x) => x < 0);
+    const nurSatzzeichen = ak.slice(o.a1, o.a2).join('') === nk.slice(o.b1, o.b2).join('');
+    // (auch wenn die neuen Wörter im Journal nicht an derselben Stelle zugeordnet sind, aber dort stehen)
+    const neuIrgendwo = o.b1 < o.b2 && norm(absatz).includes(nk.slice(o.b1, o.b2).join(''));
+    return !((neuDa || neuIrgendwo) && altWeg) && !(nurSatzzeichen && neuDa);
+  });
+  if (!ops.length) return { neu: absatz };
+  const edits = [];
+  for (const o of ops) {
+    const rein = nw.slice(o.b1, o.b2);
+    if (o.a1 < o.a2) {
+      const f = zuF.slice(o.a1, o.a2);
+      if (!zusammen(f)) return { konflikt: `„${aw.slice(o.a1, o.a2).join(' ')}“ steht so nicht im Journal` };
+      edits.push([f[0], f.at(-1) + 1, rein]);
+    } else if (o.a1 > 0 && zuF[o.a1 - 1] >= 0) edits.push([zuF[o.a1 - 1] + 1, zuF[o.a1 - 1] + 1, rein]);
+    else if (o.a1 < aw.length && zuF[o.a1] >= 0) edits.push([zuF[o.a1], zuF[o.a1], rein]);
+    else return { konflikt: 'Einfügestelle nicht im Journal' };
+  }
+  edits.sort((x, y) => y[0] - x[0]);
+  for (let k = 1; k < edits.length; k++) if (edits[k][1] > edits[k - 1][0]) return { konflikt: 'Änderungen überlappen' };
+  const out = [...fw];
+  for (const [von, bis, rein] of edits) out.splice(von, bis - von, ...rein);
+  return { neu: out.join(' ') };
+}
+
+/**
+ * Fügt hinter dem Block (li, p), dessen Text genau ankerText ist, einen gleichartigen Block mit neuText ein. Beginnt der Anker mit
+ * einem fetten Etikett („Hinweis:“) und der neue Text auch, wird es genauso ausgezeichnet. Rückgabe: neues HTML oder null.
+ */
+export function fuegeAbsatzEin(html, ankerText, neuText) {
+  const { text: t, zeichen } = textKarte(html);
+  const zeilen = t.split('\n');
+  let pos = 0, treffer = [];
+  for (const z of zeilen) { if (z.trim() === ankerText.trim()) treffer.push(pos + z.indexOf(z.trim())); pos += z.length + 1; }
+  if (treffer.length !== 1) return null;
+  const start = zeichen[treffer[0]].von;
+  const offen = [...html.slice(0, start).matchAll(/<(li|p)\b[^>]*>/g)].at(-1);
+  if (!offen) return null;
+  const tag = offen[1], ende = html.indexOf(`</${tag}>`, start);
+  if (ende < 0) return null;
+  const nach = ende + tag.length + 3;
+  const innen = html.slice(offen.index + offen[0].length, ende);
+  const etikett = /^<(b|strong)>([^<]*?):\s*<\/\1>/.exec(innen);
+  const m = /^([^:]{1,40}):\s+(.*)$/s.exec(neuText);
+  const inhalt = etikett && m ? `<${etikett[1]}>${esc(m[1])}:</${etikett[1]}> ${esc(m[2])}` : esc(neuText);
+  return html.slice(0, nach) + `<${tag}>${inhalt}</${tag}>` + html.slice(nach);
+}
+
+/** Teilt Absätze mit mehreren Listenpunkten („… - Hinweis: …“) in einzelne Punkte und ordnet alte und neue Punkte einander zu. */
+export function teileListe(e) {
+  const teile = (x) => (x ? x.split(/\s-\s(?=[„"(\p{Lu}])/u) : []);
+  const a = teile(e.alt), n = teile(e.neu);
+  if (a.length <= 1 && n.length <= 1) return [e];
+  const aus = [];
+  let i = 0;
+  for (let j = 0; j < n.length; j++) {
+    // nächster alter Punkt, der zu diesem neuen passt (gleich oder ähnlich), sonst ist der neue Punkt eingefügt
+    let k = -1;
+    for (let x = i; x < a.length; x++) if (new Abgleich(norm(a[x]), norm(n[j])).quote() >= 0.6) { k = x; break; }
+    if (k < 0) { aus.push({ ...e, alt: null, neu: n[j], nach: j > 0 ? n[j - 1] : null, nachAlt: j > 0 && i > 0 ? a[i - 1] : null }); continue; }
+    for (let x = i; x < k; x++) aus.push({ ...e, alt: a[x], neu: null });
+    if (a[k] !== n[j]) aus.push({ ...e, alt: a[k], neu: n[j] });
+    i = k + 1;
+  }
+  for (let x = i; x < a.length; x++) aus.push({ ...e, alt: a[x], neu: null });
+  return aus;
+}
+
+/** Textstellen einer Sprache, an denen Nachträge landen können: Journalseiten (mit allen Kopien) und Texte der Gegner */
+function nachtragsZiele(packs, spr) {
+  const p = packs[spr], ziele = [];
+  const journale = new Map([...p.abenteuer].filter(([k]) => k.startsWith('!journal!')).map(([, v]) => [v._id, v]));
+  const ordner = new Map([...p.abenteuer].filter(([k]) => k.startsWith('!folders!')).map(([, v]) => [v._id, v]));
+  const wurzel = ordnerWurzel(ordner);
+  const kopien = new Map();
+  const merke = (schluessel, obj) => { if (!kopien.has(schluessel)) kopien.set(schluessel, []); kopien.get(schluessel).push(obj); };
+  for (const [k, s] of p.abenteuer) {
+    if (!k.startsWith('!journal.pages!') || !s.text?.content) continue;
+    const j = journale.get(k.slice(15).split('.')[0]);
+    if (!j) continue;
+    // gleichnamige Journale gibt es in mehreren Bänden (Das Haus am Stausee in Schnellstart und Die Tür): Band gehört zum Schlüssel
+    const key = `s\u0000${wurzel(j.folder)}\u0000${j.name}\u0000${s.name}`;
+    merke(key, { ziel: s.text, feld: 'content', pack: 'abenteuer' });
+    ziele.push({ key, wo: `${j.name} › ${s.name}`, ordner: wurzel(j.folder), html: () => s.text.content });
+  }
+  for (const ad of p.pakete.values()) for (const j of ad.journal ?? []) for (const s of j.pages ?? []) if (s.text?.content) merke(`s\u0000${ad.name}\u0000${j.name}\u0000${s.name}`, { ziel: s.text, feld: 'content', pack: 'pakete' });
+  const gegner = [...[...p.gegner].filter(([k]) => k.startsWith('!actors!')).map(([, a]) => [a, 'gegner']),
+    ...[...p.pakete.values()].flatMap((ad) => (ad.actors ?? []).map((a) => [a, 'pakete']))].filter(([a]) => a.type === 'gegner');
+  const gesehen = new Set();
+  for (const [a, pack] of gegner) for (const feld of ['beschreibung', 'besonderheit']) {
+    if (!a.system?.[feld]) continue;
+    const key = `g\u0000${a.name}\u0000${feld}`;
+    merke(key, { ziel: a.system, feld, pack, akteur: a });
+    if (!gesehen.has(key)) { gesehen.add(key); ziele.push({ key, wo: `Gegner ${a.name} (${feld})`, ordner: null, html: () => a.system[feld] }); }
+  }
+  return { ziele, kopien };
+}
+
+/**
+ * Arbeitet Nachträge ein: je Stelle der passende Absatz in Foundry (bevorzugt in den Ordnern des Bandes), dann die Änderung
+ * wortweise in jede Kopie (Abenteuer, Abenteuerpakete; bei Gegnern jede Fassung gleichen Namens, Zahlen werden nachgezogen).
+ * Rückgabe: [{ stelle, status: 'ok'|'schon'|'nur Form'|'nicht gefunden'|'von Hand', wo, grund }]
+ */
+export function wendeNachtraegeAn(stellen, packs, bandOrdner = {}) {
+  const bericht = [];
+  const cache = {};
+  for (const e of stellen.flatMap(teileListe)) {
+    if (e.neu === null) { bericht.push({ stelle: e, status: 'von Hand', grund: 'Listenpunkt gestrichen' }); continue; }
+    if (!e.alt) {
+      // neuer Absatz: hinter dem Vorgänger (in neuer oder alter Fassung) einfügen, wenn der eindeutig auf einer Seite des Bandes steht
+      const c = (cache[e.spr] ??= nachtragsZiele(packs, e.spr));
+      const nN = norm(e.neu);
+      const hier = [];
+      for (const z of c.ziele) {
+        if (!(bandOrdner[e.spr] ?? []).includes(z.ordner)) continue;
+        const zeilenText = textKarte(z.html()).text.split('\n').map((l) => l.trim());
+        if (zeilenText.some((l) => norm(l).includes(nN))) { hier.push({ z, schon: true }); continue; }
+        for (const anker of [e.nach, e.nachAlt].filter(Boolean)) {
+          const l = zeilenText.find((x) => norm(x) === norm(anker));
+          if (l) { hier.push({ z, anker: l }); break; }
+        }
+      }
+      if (hier.some((h) => h.schon)) { bericht.push({ stelle: e, status: 'schon' }); continue; }
+      if (hier.length !== 1) { bericht.push({ stelle: e, status: 'nicht gefunden', grund: e.nach ? 'Vorgänger nicht eindeutig' : 'neuer Absatz ohne Vorgänger' }); continue; }
+      const { z, anker } = hier[0];
+      let ok = 0;
+      for (const k of c.kopien.get(z.key)) {
+        const h = fuegeAbsatzEin(k.ziel[k.feld], anker, e.neu);
+        if (h) { k.ziel[k.feld] = h; packs[e.spr].geaendert.add(k.pack); ok++; }
+      }
+      c.absaetze?.delete(z.key);
+      bericht.push({ stelle: e, status: ok ? 'ok' : 'von Hand', wo: z.wo, grund: ok ? 'eingefügt' : 'Einfügen nicht möglich', neu: e.neu });
+      continue;
+    }
+    const A = e.alt, N = e.neu, nA = norm(A), nN = norm(N);
+    if (nA === nN) { bericht.push({ stelle: e, status: 'nur Form' }); continue; }
+    const c = (cache[e.spr] ??= nachtragsZiele(packs, e.spr));
+    const { ziele, kopien } = c;
+    // Absätze je Ziel, zwischengespeichert; nach einer Änderung wird nur dieses Ziel neu gelesen
+    c.absaetze ??= new Map();
+    const lies = (z) => c.absaetze.set(z.key, textKarte(z.html()).text.split('\n').filter((l) => l.trim()).map((l) => ({ z, l: l.trim(), n: norm(l) })));
+    for (const z of ziele) if (!c.absaetze.has(z.key)) lies(z);
+    const absaetze = [...c.absaetze.values()].flat();
+    if (nN.length >= 12 && absaetze.some((x) => x.n.includes(nN))) { bericht.push({ stelle: e, status: 'schon' }); continue; }
+    // Vorauswahl über gemeinsame Achtergruppen, dann genauer Vergleich
+    const gramme = new Set();
+    for (let i = 0; i + 8 <= nA.length; i += 4) gramme.add(nA.slice(i, i + 8));
+    const vor = absaetze.map((x) => ({ ...x, t: [...gramme].filter((g) => x.n.includes(g)).length })).filter((x) => x.t > 0).sort((x, y) => y.t - x.t);
+    vor.splice(Math.max(12, vor.findIndex((x) => x.t < vor[0].t * 0.8) + 1 || vor.length), Infinity);
+    vor.splice(60, Infinity);
+    const imBand = (x) => (bandOrdner[e.spr] ?? []).includes(x.z.ordner);
+    for (const x of vor) x.q = new Abgleich(nA, x.n).quote() + (imBand(x) ? 0.02 : 0);
+    vor.sort((x, y) => y.q - x.q);
+    // Außerhalb des Bandes nur lange, fast gleiche Absätze; kurze Absätze (etwa „Initiative 4“) nur im Band und nur auf einer
+    // Seite, auf der die Person oder Überschrift der Stelle vorkommt
+    const name = norm(e.ort.replace(/^Zeile \d+,\s*/, ''));
+    const seiteNorm = (z) => c.absaetze.get(z.key).map((x) => x.n).join('');
+    const passend = (x) => (imBand(x) || (nA.length >= 60 && x.q >= 0.9)) && (nA.length >= 40 || (imBand(x) && name.length >= 4 && seiteNorm(x.z).includes(name)));
+    const best = vor.find(passend);
+    if (!best || best.q < 0.6) { bericht.push({ stelle: e, status: 'nicht gefunden', grund: best ? `bester Absatz ${best.q.toFixed(2)}: ${best.z.wo}` : '' }); continue; }
+    if (new Abgleich(nN, best.n).quote() > best.q + 0.02) { bericht.push({ stelle: e, status: 'schon', wo: best.z.wo, grund: 'Journal ist näher an neu' }); continue; }
+    const u = uebertrage(A, N, best.l);
+    if (u.konflikt) { bericht.push({ stelle: e, status: 'von Hand', wo: best.z.wo, grund: u.konflikt, absatz: best.l }); continue; }
+    if (u.neu === best.l) { bericht.push({ stelle: e, status: 'schon', wo: best.z.wo }); continue; }
+    // Sicherung: keine Wortfolge doppelt, die weder im Journal noch in neu doppelt steht (Fehlzuordnung bei Wiederholungen)
+    const fuenfer = (t) => { const w = woerter(t).map(norm), m = new Map(); for (let i = 0; i + 5 <= w.length; i++) { const k = w.slice(i, i + 5).join(' '); m.set(k, (m.get(k) ?? 0) + 1); } return m; };
+    const fE = fuenfer(u.neu), fF = fuenfer(best.l), fN = fuenfer(N);
+    if ([...fE].some(([k, n]) => n > 1 && n > Math.max(fF.get(k) ?? 0, fN.get(k) ?? 0))) { bericht.push({ stelle: e, status: 'von Hand', wo: best.z.wo, grund: 'Übertragung unsicher (Wortfolge doppelt)', absatz: best.l }); continue; }
+    // Sicherung: das Ergebnis muss mindestens so nah an neu sein, wie der Absatz im Journal an alt war
+    const qErgebnis = new Abgleich(norm(u.neu), nN).quote(), qVorher = new Abgleich(best.n, nA).quote();
+    if (qErgebnis < qVorher - 0.02) { bericht.push({ stelle: e, status: 'von Hand', wo: best.z.wo, grund: `Übertragung unsicher (${qErgebnis.toFixed(2)} statt ${qVorher.toFixed(2)})`, absatz: best.l }); continue; }
+    const ergebnisse = [];
+    for (const k of kopien.get(best.z.key)) {
+      const r = ersetzeSatz(k.ziel[k.feld], best.l, u.neu);
+      if (r.status === 'ok') {
+        const vorher = k.feld === 'besonderheit' ? zeilen(k.ziel.besonderheit) : null;
+        k.ziel[k.feld] = r.html;
+        packs[e.spr].geaendert.add(k.pack);
+        if (vorher) for (const z of zeilen(k.ziel.besonderheit)) if (!vorher.some((v) => v.label === z.label && v.wert === z.wert)) zieheZahlenNach(k.ziel, z.label, z.wert);
+      }
+      ergebnisse.push(r);
+    }
+    lies(best.z);
+    // gleichnamige Seiten anderer Journale ohne diesen Absatz zählen nicht
+    const st = ergebnisse.some((r) => r.status === 'ok') && ergebnisse.every((r) => ['ok', 'fehlt'].includes(r.status)) ? 'ok' : ergebnisse.some((r) => r.status === 'von Hand') ? 'von Hand' : ergebnisse.map((r) => r.status).join('/');
+    bericht.push({ stelle: e, status: st, wo: best.z.wo, grund: ergebnisse.find((r) => r.grund)?.grund, absatz: best.l, neu: u.neu });
+  }
+  return bericht;
+}
+
+// Nachtragsdateien des Writers je Band (writer_nachtraege_<Band>.md) und die Ordner, in denen die Stellen zuerst gesucht werden
+export const NACHTRAG_BAENDE = {
+  Graue_Akten: 'graue-akten', Nordlicht_1977: 'nordlicht-1977', Die_Tuer: 'die-tuer', Horte_der_Welt: 'horte-der-welt',
+  Schnellstart: 'schnellstart', Fremdkoerper: 'fremdkoerper', Spielleiterbuch_Stausee: 'schnellstart',
+};
+
+// ---------------------------------------------------------------------------------------------------------------
 // Aufruf
 
 function vorschlaege(band) {
@@ -923,6 +1184,34 @@ function ladePacks() {
   return aus;
 }
 
+async function nachtraege(dateien, probelauf) {
+  const packs = ladePacks();
+  const z = {};
+  for (const datei of dateien) {
+    const band = NACHTRAG_BAENDE[/writer_nachtraege_(.+)\.md$/.exec(path.basename(datei))?.[1]];
+    const ordner = band ? { de: BAENDE[band].de.ordner, en: BAENDE[band].en.ordner } : {};
+    const stellen = leseNachtraege(fs.readFileSync(datei, 'utf8'));
+    console.log(`${path.basename(datei)}: ${stellen.length} Stellen`);
+    for (const b of wendeNachtraegeAn(stellen, packs, ordner)) {
+      z[b.status] = (z[b.status] ?? 0) + 1;
+      console.log(`  ${b.status} [${b.stelle.spr}] ${b.stelle.ort}${b.wo ? ` (${b.wo})` : ''}${b.grund ? `: ${b.grund}` : ''}`);
+    }
+  }
+  console.log(JSON.stringify(z));
+  if (probelauf) { console.log('Probelauf: nichts geschrieben.'); return; }
+  await schreibeGeaenderte(packs);
+}
+
+async function schreibeGeaenderte(packs) {
+  const { schreibePack } = await import('./packschreiber.mjs');
+  for (const spr of ['de', 'en']) {
+    for (const art of packs[spr].geaendert) {
+      await schreibePack(path.join(PACKORDNER, PACKS[spr][art]), packs[spr][art]);
+      console.log(`geschrieben: packs/${PACKS[spr][art]}`);
+    }
+  }
+}
+
 async function anwenden(baende, probelauf) {
   const packs = ladePacks();
   for (const band of baende) {
@@ -933,13 +1222,7 @@ async function anwenden(baende, probelauf) {
     for (const b of wendeAn(ja, packs)) console.log(`  ${b.id} ${b.status}${b.wo ? ` (${b.wo})` : ''}${b.grund ? `: ${b.grund}` : ''}`);
   }
   if (probelauf) { console.log('Probelauf: nichts geschrieben.'); return; }
-  const { schreibePack } = await import('./packschreiber.mjs');
-  for (const spr of ['de', 'en']) {
-    for (const art of packs[spr].geaendert) {
-      await schreibePack(path.join(PACKORDNER, PACKS[spr][art]), packs[spr][art]);
-      console.log(`geschrieben: packs/${PACKS[spr][art]}`);
-    }
-  }
+  await schreibeGeaenderte(packs);
 }
 
 /** Prüft die Freigabedateien: lesbar, ids eindeutig, jede Zeile vollständig. Rückgabe: Liste der Fehler */
@@ -947,7 +1230,7 @@ export function pruefeFreigaben(ordner = ZIEL) {
   const fehler = [];
   if (!fs.existsSync(ordner)) return fehler;
   const ids = new Set();
-  for (const f of fs.readdirSync(ordner).filter((f) => f.endsWith('.md') && f !== 'LIESMICH.md')) {
+  for (const f of fs.readdirSync(ordner).filter((f) => f.endsWith('.md') && f !== 'LIESMICH.md' && !f.startsWith('aenderungen_'))) {
     for (const e of leseFreigabe(fs.readFileSync(path.join(ordner, f), 'utf8'))) {
       if (ids.has(e.id)) fehler.push(`${f}: id ${e.id} doppelt`);
       ids.add(e.id);
@@ -960,9 +1243,14 @@ export function pruefeFreigaben(ordner = ZIEL) {
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const [befehl, wahl = 'alle', ...rest] = process.argv.slice(2);
+  if (befehl === 'nachtraege') {
+    await nachtraege([wahl, ...rest].filter((x) => !x.startsWith('--')), rest.includes('--probelauf'));
+    process.exit(0);
+  }
   const baende = wahl === 'alle' ? Object.keys(BAENDE) : [wahl];
   if (baende.some((b) => !BAENDE[b]) || !['vorschlaege', 'anwenden', 'pruefen'].includes(befehl)) {
-    console.error(`Aufruf: node werkzeuge/korrektur.mjs vorschlaege|anwenden|pruefen <${Object.keys(BAENDE).join('|')}|alle> [--probelauf]`);
+    console.error(`Aufruf: node werkzeuge/korrektur.mjs vorschlaege|anwenden|pruefen <${Object.keys(BAENDE).join('|')}|alle> [--probelauf]\n`
+      + '       node werkzeuge/korrektur.mjs nachtraege <writer_nachtraege_<Band>.md> … [--probelauf]');
     process.exit(1);
   }
   if (befehl === 'vorschlaege') for (const b of baende) vorschlaege(b);
