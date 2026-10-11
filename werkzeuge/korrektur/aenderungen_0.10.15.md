@@ -1,6 +1,6 @@
 # Änderungsprotokoll 0.10.15: Abenteuer und Gegner nach den überarbeiteten Bänden
 
-Erzeugt aus dem Vergleich der Kompendien mit dem Stand 0.10.14 (main), absatzweise. Gezeigt werden `odin-abenteuer(-en)` und `odin-gegner(-en)`;
+Erzeugt aus dem Vergleich der Kompendien mit dem Stand 0.10.14 (main), absatzweise. Gezeigt werden `odin-abenteuer(-en)`, `odin-gegner(-en)` und am Ende die Agenten;
 die Kopien in `odin-abenteuerpakete(-en)` haben denselben Text (geprüft). Quellen: Freigabelisten in diesem Ordner (Einträge mit „ja“),
 Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege`, Rest von Hand) und Zahlenfelder der Gegner nach den Werteblöcken der Bände.
 
@@ -1247,7 +1247,7 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Zwischen Teil A und Teil B liegt ein Zwischenjahr. Es verbindet die beiden Teile, einen Hinweis auf das Kloster gibt es darin nicht. Jeder Spieler erzählt eine Sache, die sein Agent in dieser Zeit tat; die Spielleitung erzählt die festen Ereignisse. Danach Alterung und Übergaben nach Kapitel 2.
 - neu: Zwischen Teil A und Teil B liegt ein Zwischenjahr. Es verbindet die beiden Teile, einen Hinweis auf das Kloster gibt es darin nicht. Jeder Spieler erzählt eine Sache, die sein Agent in dieser Zeit tat; die Spielleitung erzählt die festen Ereignisse. Danach Übergaben nach Kapitel 2. Die Alterung gilt erst zu Beginn von Abschnitt IV.
 
-## Journale Englisch (288 Absätze)
+## Journale Englisch (289 Absätze)
 
 ### After Nordlicht › Introduction
 
@@ -1850,6 +1850,11 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: (nichts)
 - neu: If a pointer is below 3, its door stays closed this night.
+
+### Nexus Shard › Opponents
+
+- alt: Horror Horrific (3) at first sight
+- neu: Horror Horrifying (3) at first sight
 
 ### 07 Basel › Elster’s Offer
 
@@ -2569,7 +2574,12 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 - alt: Zahlen: {"i":2,"v":1,"r":0,"lp":3,"g":1,"p":["Drängen 2+2/1"]}
 - neu: Zahlen: {"i":2,"v":1,"r":0,"lp":3,"g":2,"p":["Drängen 2+2/1"]}
 
-## Gegner Englisch (21 Absätze)
+## Gegner Englisch (22 Absätze)
+
+### Akteur Crystal Mutant beschreibung
+
+- alt: Armour: chitin. Horror: Horrific (3) at first sight.
+- neu: Armour: chitin. Horror: Horrifying (3) at first sight.
 
 ### Akteur Kjell Haugen besonderheit
 
@@ -2655,3 +2665,37 @@ Nachträge des Writers vom 11.10. (halbautomatisch mit `korrektur.mjs nachtraege
 
 - alt: Special: Appears in groups of 2D6. Grows with each host: After each scene in which it could feed, +2 HP
 - neu: Special: Hatches 1D6 from each stone. Grows with each host: After each scene in which it could feed, +2 HP
+
+## Agenten Deutsch (12 Agenten, Endwerte der Fertigkeiten)
+
+Nach dem Prüfbericht des Checkers vom 11.10. (104 Zeilen alt → neu, Werteblöcke über das Alter zugeordnet). Geändert sind nur die Punkte, Steigerungen und Attribute bleiben. Dieselben Werte in den Akteuren der Abenteuerpakete.
+
+- Garn (1947): Fahren 1 → 2, Fingerfertigkeit 0 → 2, Schusswaffen 2 → 3, Kryptografie 1 → 2, Menschenkenntnis 2 → 4, Überzeugen 2 → 3
+- Garn (1977): Fahren 1 → 2, Fingerfertigkeit 0 → 2, Schusswaffen 2 → 3, Kryptografie 3 → 4, Menschenkenntnis 4 → 6, Überzeugen 2 → 3
+- Lot (1947): Fahren 0 → 1, Akademisches Wissen 3 → 4, Chemie 2 → 3, Energiemanipulation 1 → 2, Ermittlung 0 → 1, Handwerk 1 → 2, Ingenieurwesen 2 → 3, Medizin 0 → 2, Navigation 2 → 3, Technik 3 → 4, Wahrnehmung 2 → 3
+- Lot (1977): Fahren 0 → 1, Akademisches Wissen 4 → 5, Chemie 3 → 4, Energiemanipulation 3 → 4, Ermittlung 0 → 1, Handwerk 1 → 2, Ingenieurwesen 3 → 4, Medizin 0 → 2, Navigation 3 → 4, Technik 5 → 6, Wahrnehmung 3 → 4
+- Möwe (1947): Fahren 0 → 1, Heimlichkeit 1 → 2, Akademisches Wissen 0 → 1, Geschichte 0 → 1, Medizin 1 → 2, Wahrnehmung 2 → 3, Konzentration 3 → 4, Überzeugen 1 → 3, Täuschung 0 → 2, Etikette 0 → 1, Psi-Kampf 1 → 2
+- Möwe (1977): Fahren 0 → 1, Heimlichkeit 1 → 2, Akademisches Wissen 0 → 1, Geschichte 0 → 1, Medizin 1 → 2, Wahrnehmung 3 → 4, Konzentration 5 → 6, Überzeugen 1 → 3, Täuschung 0 → 2, Etikette 0 → 1, Psi-Kampf 3 → 4
+- Salz (1947): Nahkampf 2 → 3, Heimlichkeit 1 → 2, Schusswaffen 4 → 5, Medizin 1 → 2, Wahrnehmung 2 → 3
+- Salz (1977): Nahkampf 2 → 3, Heimlichkeit 1 → 2, Schusswaffen 5 → 6, Medizin 1 → 2, Wahrnehmung 3 → 4
+- Schiefer (1947): Akademisches Wissen 2 → 4, Geschichte 1 → 3, Handwerk 0 → 1, Medizin 0 → 1, Menschenkenntnis 0 → 2, Wahrnehmung 1 → 2, Konzentration 3 → 4, Überzeugen 0 → 1, Alchemie 1 → 3
+- Schiefer (1977): Akademisches Wissen 3 → 5, Geschichte 1 → 3, Handwerk 0 → 1, Medizin 0 → 1, Menschenkenntnis 0 → 2, Wahrnehmung 2 → 3, Konzentration 4 → 5, Überzeugen 0 → 1, Alchemie 1 → 3
+- Zeuge (1947): Heimlichkeit 1 → 2, Schusswaffen 0 → 2, Sicherheitssysteme 0 → 1, Akademisches Wissen 0 → 1, Geschichte 1 → 2, Medizin 0 → 1, Okkultismus 2 → 3, Spurenlesen 2 → 3, Überzeugen 1 → 2, Einschüchtern 0 → 1
+- Zeuge (1977): Heimlichkeit 1 → 2, Schusswaffen 0 → 2, Sicherheitssysteme 0 → 1, Akademisches Wissen 0 → 1, Geschichte 1 → 2, Medizin 0 → 1, Okkultismus 4 → 5, Spurenlesen 3 → 4, Überzeugen 1 → 2, Einschüchtern 0 → 1
+
+## Agenten Englisch (12 Agenten, Endwerte der Fertigkeiten)
+
+Nach dem Prüfbericht des Checkers vom 11.10. (104 Zeilen alt → neu, Werteblöcke über das Alter zugeordnet). Geändert sind nur die Punkte, Steigerungen und Attribute bleiben. Dieselben Werte in den Akteuren der Abenteuerpakete.
+
+- Garn (1947): Driving 1 → 2, Sleight of Hand 0 → 2, Firearms 2 → 3, Cryptography 1 → 2, Insight 2 → 4, Persuasion 2 → 3
+- Garn (1977): Driving 1 → 2, Sleight of Hand 0 → 2, Firearms 2 → 3, Cryptography 3 → 4, Insight 4 → 6, Persuasion 2 → 3
+- Lot (1947): Driving 0 → 1, Academic Knowledge 3 → 4, Chemistry 2 → 3, Energy Manipulation 1 → 2, Investigation 0 → 1, Craft 1 → 2, Engineering 2 → 3, Medicine 0 → 2, Navigation 2 → 3, Technology 3 → 4, Perception 2 → 3
+- Lot (1977): Driving 0 → 1, Academic Knowledge 4 → 5, Chemistry 3 → 4, Energy Manipulation 3 → 4, Investigation 0 → 1, Craft 1 → 2, Engineering 3 → 4, Medicine 0 → 2, Navigation 3 → 4, Technology 5 → 6, Perception 3 → 4
+- Möwe (1947): Driving 0 → 1, Stealth 1 → 2, Academic Knowledge 0 → 1, History 0 → 1, Medicine 1 → 2, Perception 2 → 3, Concentration 3 → 4, Persuasion 1 → 3, Deception 0 → 2, Etiquette 0 → 1, Psi Combat 1 → 2
+- Möwe (1977): Driving 0 → 1, Stealth 1 → 2, Academic Knowledge 0 → 1, History 0 → 1, Medicine 1 → 2, Perception 3 → 4, Concentration 5 → 6, Persuasion 1 → 3, Deception 0 → 2, Etiquette 0 → 1, Psi Combat 3 → 4
+- Salz (1947): Melee 2 → 3, Stealth 1 → 2, Firearms 4 → 5, Medicine 1 → 2, Perception 2 → 3
+- Salz (1977): Melee 2 → 3, Stealth 1 → 2, Firearms 5 → 6, Medicine 1 → 2, Perception 3 → 4
+- Schiefer (1947): Academic Knowledge 2 → 4, History 1 → 3, Craft 0 → 1, Medicine 0 → 1, Insight 0 → 2, Perception 1 → 2, Concentration 3 → 4, Persuasion 0 → 1, Alchemy 1 → 3
+- Schiefer (1977): Academic Knowledge 3 → 5, History 1 → 3, Craft 0 → 1, Medicine 0 → 1, Insight 0 → 2, Perception 2 → 3, Concentration 4 → 5, Persuasion 0 → 1, Alchemy 1 → 3
+- Zeuge (1947): Stealth 1 → 2, Firearms 0 → 2, Security Systems 0 → 1, Academic Knowledge 0 → 1, History 1 → 2, Medicine 0 → 1, Occultism 2 → 3, Tracking 2 → 3, Persuasion 1 → 2, Intimidation 0 → 1
+- Zeuge (1977): Stealth 1 → 2, Firearms 0 → 2, Security Systems 0 → 1, Academic Knowledge 0 → 1, History 1 → 2, Medicine 0 → 1, Occultism 4 → 5, Tracking 3 → 4, Persuasion 1 → 2, Intimidation 0 → 1
