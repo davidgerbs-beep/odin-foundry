@@ -23,7 +23,7 @@ Hinweise ohne Vorschlag: 1.
 ### Journalsätze
 
 #### SS-de-c746af · „01 Das Haus am Stausee“ › „Bevor ihr anfangt“ · Band S. 4 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Ihr spielt Agentinnen und Agenten einer Organisation, die seit 1977 die Risse schließt.
 - neu: Ihr spielt Agentinnen und Agenten einer Organisation, die seit Jahrzehnten die Risse schließt.
@@ -31,7 +31,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 Das Haus am Stausee","Bevor ihr anfangt"]]} -->
 
 #### SS-de-df542d · „01 Das Haus am Stausee“ › „Wie es weitergeht“ · Band S. 33 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Das Grundregelwerk umfasst 88 Seiten und ist kostenlos.
 - neu: Das Grundregelwerk ist kostenlos.
@@ -39,7 +39,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 Das Haus am Stausee","Wie es weitergeht"]]} -->
 
 #### SS-de-0ffc5c · „01 Das Haus am Stausee“ › „Wie es weitergeht“ · Band S. 33 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Wer tiefer einsteigen will, findet sechs Klassenbücher, ein Arsenal mit 201 Gegenständen, ein Spielleiterbuch und die Kampagne „Die Tür“.
 - neu: Wer tiefer einsteigen will, findet sechs Klassenbücher, das Ausrüstungsbuch Arsenal, ein Spielleiterbuch und die Kampagne „Die Tür“.
@@ -64,7 +64,7 @@ Hinweise ohne Vorschlag: 1.
 ### Journalsätze
 
 #### SS-en-a7b653 · „01 The House by the Reservoir“ › „Before You Begin“ · Band S. 4 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: You play agents of an organisation that has been closing the rifts since 1977.
 - neu: You play agents of an organisation that has been closing the rifts for decades.
@@ -72,7 +72,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Before You Begin"]]} -->
 
 #### SS-en-d65b3e · „01 The House by the Reservoir“ › „What Happens Next“ · Band S. 5 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: The locations are already known.
 - neu: The locations are.
@@ -80,7 +80,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","What Happens Next"]]} -->
 
 #### SS-en-f60d50 · „01 The House by the Reservoir“ › „What Happens Next“ · Band S. 33 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Those who want to go deeper will find six class books, an arsenal with 201 items, a game master book and the campaign “The Door”.
 - neu: Those who want to go deeper will find six class books, the equipment book Arsenal, a game master book and the campaign “The Door”.
