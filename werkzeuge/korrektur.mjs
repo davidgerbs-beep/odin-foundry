@@ -1,0 +1,975 @@
+// Halbautomatische Korrektur der Abenteuer nach den überarbeiteten PDF-Bänden (Journalsätze und Gegnerwerte).
+//
+// Schritt 1, Vorschläge: node werkzeuge/korrektur.mjs vorschlaege <band|alle>
+//   Lädt die Bände von odin-rpg.pages.dev (Zwischenspeicher außerhalb des Repos: ODIN_BAENDE, sonst <tmp>/odin-baende),
+//   zieht den Text mit pdftotext (poppler) und vergleicht jeden Satz der Journalseiten und jede Zeile der Gegnerwerte
+//   mit dem Band. Ergebnis: werkzeuge/korrektur/<band>.md, je Sprache eine Liste „alt → neu“ mit Fundstelle
+//   (Journal und Seite, PDF-Seite) und einer Zeile „Freigabe: offen“ je Vorschlag. Ein neuer Lauf behält ja/nein bei.
+//   Fehltreffer durch den Zweispaltensatz (Text der Nachbarspalte, Fußzeilen, abgeschnittene Wörter am Rand,
+//   Spaltenumbruch mitten im Satz, reine Schreibweise) werden vorab aussortiert und nur gezählt.
+// Schritt 2, nach Freigabe: node werkzeuge/korrektur.mjs anwenden <band|alle> [--probelauf]
+//   Übernimmt nur Einträge mit „Freigabe: ja“ in odin-abenteuer(-en), die Journale und Akteure in
+//   odin-abenteuerpakete(-en) und odin-gegner(-en). Gegnerwerte ziehen die Zahlen nach (Verteidigung, Rüstung, LP,
+//   Initiative, Grauen, Würfel der Angriffe). Stellen, die über Formatierung oder Verweise laufen, meldet es als
+//   „von Hand“. Braucht classic-level (npm install --no-save classic-level@1.4.1), Foundry vorher beenden.
+// Prüfen: node werkzeuge/korrektur.mjs pruefen (Freigabedateien lesbar, ids eindeutig, „alt“ steht noch in den Packs)
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { lesePack } from './leveldb.mjs';
+
+const WURZEL = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const ZIEL = path.join(WURZEL, 'werkzeuge', 'korrektur');
+const QUELLE = 'https://odin-rpg.pages.dev/';
+
+// Bände in der gewünschten Reihenfolge. ordner: oberste Journalordner in odin-abenteuer(-en) und Gegnerordner in
+// odin-gegner(-en); abenteuer: Name im Kompendium der Abenteuerpakete; pdf: Band und Handouts.
+export const BAENDE = {
+  'graue-akten': {
+    kuerzel: 'GA', titel: 'Graue Akten',
+    de: { ordner: ['Graue Akten'], abenteuer: ['Graue Akten'], pdf: ['buecher/ODIN_14_Graue_Akten.pdf', 'buecher/ODIN_14_Graue_Akten_Handouts.pdf'] },
+    en: { ordner: ['Grey Files'], abenteuer: ['Grey Files'], pdf: ['en/books/ODIN_EN_14_Grey_Files.pdf', 'en/books/ODIN_EN_14_Grey_Files_Handouts.pdf'] },
+  },
+  'nordlicht-1977': {
+    kuerzel: 'NL', titel: 'Nordlicht 1977',
+    de: { ordner: ['Nordlicht 1977'], abenteuer: ['Nordlicht 1977'], pdf: ['buecher/ODIN_18_Nordlicht_1977.pdf', 'buecher/ODIN_18_Nordlicht_1977_Handouts.pdf'] },
+    en: { ordner: ['Nordlicht 1977'], abenteuer: ['Nordlicht 1977'], pdf: ['en/books/ODIN_EN_18_Nordlicht_1977.pdf', 'en/books/ODIN_EN_18_Nordlicht_1977_Handouts.pdf'] },
+  },
+  'die-tuer': {
+    kuerzel: 'DT', titel: 'Die Tür',
+    de: { ordner: ['Die Tür'], abenteuer: ['Die Tür'], pdf: ['buecher/ODIN_10_Kampagne_Die_Tuer.pdf', 'buecher/ODIN_11_Die_Tuer_Handouts.pdf'] },
+    en: { ordner: ['The Door'], abenteuer: ['The Door'], pdf: ['en/books/ODIN_EN_10_The_Door_Campaign.pdf', 'en/books/ODIN_EN_11_The_Door_Handouts.pdf'] },
+  },
+  'horte-der-welt': {
+    kuerzel: 'HW', titel: 'Horte der Welt',
+    de: { ordner: ['Horte der Welt'], abenteuer: ['Horte der Welt'], pdf: ['buecher/ODIN_16_Horte_der_Welt.pdf'] },
+    en: { ordner: ['Holds of the World'], abenteuer: ['Holds of the World'], pdf: ['en/books/ODIN_EN_16_Holds_of_the_World.pdf'] },
+  },
+  schnellstart: {
+    kuerzel: 'SS', titel: 'Schnellstart',
+    de: { ordner: ['Schnellstart'], abenteuer: ['Schnellstart'], pdf: ['buecher/ODIN_13_Schnellstart.pdf'] },
+    en: { ordner: ['Quickstart'], abenteuer: ['Quickstart'], pdf: ['en/books/ODIN_EN_13_Quickstart.pdf'] },
+  },
+  fremdkoerper: {
+    kuerzel: 'FK', titel: 'Fremdkörper (Gegner)', nurGegner: true,
+    de: { ordner: ['Fremdkörper'], abenteuer: [], pdf: ['buecher/ODIN_24_Fremdkoerper.pdf'] },
+    en: { ordner: ['Foreign Bodies'], abenteuer: [], pdf: ['en/books/ODIN_EN_24_Foreign_Bodies.pdf'] },
+  },
+};
+// Nur zum Abgleich: Werte und Sätze, die im Spielleiterbuch (Bedrohungsatlas) stehen, gelten als gefunden.
+const ABGLEICH = { de: 'buecher/ODIN_08_Spielleiterbuch.pdf', en: 'en/books/ODIN_EN_08_Game_Masters_Book.pdf' };
+const PACKS = {
+  de: { abenteuer: 'odin-abenteuer', pakete: 'odin-abenteuerpakete', gegner: 'odin-gegner' },
+  en: { abenteuer: 'odin-abenteuer-en', pakete: 'odin-abenteuerpakete-en', gegner: 'odin-gegner-en' },
+};
+const SPRACHE = { de: 'Deutsch', en: 'Englisch' };
+
+// Schwellen des Satzvergleichs (wie in der Bestandsaufnahme): ab 0,75 gleicher Satz mit Änderung, ab 0,85 „sicher“;
+// ab 0,6 „umformuliert“, wenn Anfang und Ende des Satzes im Band stehen
+const SCH = 10;
+const AEHNLICH = 0.75;
+const SICHER = 0.85;
+const UMFORMULIERT = 0.6;
+
+// ---------------------------------------------------------------------------------------------------------------
+// Vergleich von Folgen (wie difflib.SequenceMatcher ohne Junk-Heuristik), für Zeichen und für Wörter
+
+export class Abgleich {
+  constructor(a, b) {
+    this.a = a; this.b = b;
+    this.b2j = new Map();
+    for (let j = 0; j < b.length; j++) {
+      let l = this.b2j.get(b[j]);
+      if (!l) this.b2j.set(b[j], (l = []));
+      l.push(j);
+    }
+  }
+
+  laengste(alo, ahi, blo, bhi) {
+    let bi = alo, bj = blo, bn = 0;
+    let j2len = new Map();
+    for (let i = alo; i < ahi; i++) {
+      const neu = new Map();
+      for (const j of this.b2j.get(this.a[i]) ?? []) {
+        if (j < blo) continue;
+        if (j >= bhi) break;
+        const k = (j2len.get(j - 1) ?? 0) + 1;
+        neu.set(j, k);
+        if (k > bn) { bi = i - k + 1; bj = j - k + 1; bn = k; }
+      }
+      j2len = neu;
+    }
+    return [bi, bj, bn];
+  }
+
+  bloecke() {
+    if (this._bloecke) return this._bloecke;
+    const offen = [[0, this.a.length, 0, this.b.length]], fertig = [];
+    while (offen.length) {
+      const [alo, ahi, blo, bhi] = offen.pop();
+      const [i, j, k] = this.laengste(alo, ahi, blo, bhi);
+      if (!k) continue;
+      fertig.push([i, j, k]);
+      if (alo < i && blo < j) offen.push([alo, i, blo, j]);
+      if (i + k < ahi && j + k < bhi) offen.push([i + k, ahi, j + k, bhi]);
+    }
+    fertig.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+    const aus = [];
+    let [i1, j1, k1] = [0, 0, 0];
+    for (const [i2, j2, k2] of fertig) {
+      if (i1 + k1 === i2 && j1 + k1 === j2) k1 += k2;
+      else { if (k1) aus.push([i1, j1, k1]); [i1, j1, k1] = [i2, j2, k2]; }
+    }
+    if (k1) aus.push([i1, j1, k1]);
+    aus.push([this.a.length, this.b.length, 0]);
+    return (this._bloecke = aus);
+  }
+
+  schritte() {
+    const aus = [];
+    let i = 0, j = 0;
+    for (const [ai, bj, n] of this.bloecke()) {
+      const art = i < ai && j < bj ? 'ersetzen' : i < ai ? 'loeschen' : j < bj ? 'einfuegen' : null;
+      if (art) aus.push([art, i, ai, j, bj]);
+      i = ai + n; j = bj + n;
+      if (n) aus.push(['gleich', ai, i, bj, j]);
+    }
+    return aus;
+  }
+
+  quote() {
+    const m = this.bloecke().reduce((s, b) => s + b[2], 0);
+    const n = this.a.length + this.b.length;
+    return n ? (2 * m) / n : 1;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Texte
+
+const ALNUM = /[\p{L}\p{N}]/u;
+/** Nur Buchstaben und Ziffern, klein; dazu die Position jedes Zeichens im Original. */
+export function normMitIndex(t) {
+  let n = '';
+  const idx = [];
+  for (let i = 0; i < t.length; i++) {
+    const c = t[i];
+    if (!ALNUM.test(c)) continue;
+    const k = c.toLowerCase();
+    n += k;
+    for (let x = 0; x < k.length; x++) idx.push(i);
+  }
+  return [n, idx];
+}
+export const norm = (t) => normMitIndex(t)[0];
+
+// Kopf- und Fußzeilen wie „31 O.D.I.N. Graue Akten“ oder „O.D.I.N. Graue Akten 31“ (ohne Seitenzahl ist es eine Satzzeile)
+const FUSS = /^[ \t]*(?:\d{1,3}[ \t]+O\.D\.I\.N\.[ \t]+[^\n]{0,45}?|O\.D\.I\.N\.[ \t]+[^\n]{0,45}?[ \t]+\d{1,3})[ \t]*$/gm;
+/** Eine PDF-Seite aus pdftotext: Kopf- und Fußzeilen, Seitenzahlen und Silbentrennung heraus. */
+export function bereinigeSeite(t) {
+  // Seitenzahlen nur in der ersten und letzten Zeile (Zahlen allein auf einer Zeile sind sonst oft Tabellenwerte)
+  return t.replace(FUSS, '').replace(/^\s*\d{1,3}[ \t]*\n/, '').replace(/\n[ \t]*\d{1,3}\s*$/, '\n').replace(/\n{2,}/g, '\n')
+    .replace(/([\p{L}\p{N}_])-\n([\p{L}\p{N}_])/gu, '$1$2').normalize('NFC');
+}
+
+const ENTITAETEN = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', shy: '' };
+const BLOCKENDE = /^<(br|\/p|\/li|\/h\d|\/tr|\/blockquote|\/div)\b/i;
+
+/**
+ * Sichtbarer Text einer Journalseite mit Karte zurück ins HTML. Tags werden zu Leerzeichen (Blockenden zu Zeilenumbrüchen),
+ * Entitäten zu Zeichen, @UUID[…]{Name} zu Name. Jedes Zeichen kennt seine Stelle im HTML [von, bis) und ob es
+ * künstlich (Tag) oder Teil eines Verweises ist; Leerraum ist zu einem Leerzeichen bzw. einem Umbruch verdichtet.
+ */
+export function textKarte(html) {
+  const roh = [];
+  const schiebe = (c, von, bis, art = '') => roh.push({ c, von, bis, art });
+  let i = 0;
+  while (i < html.length) {
+    const c = html[i];
+    if (c === '<') {
+      const e = html.indexOf('>', i);
+      const ende = e < 0 ? html.length : e + 1;
+      schiebe(BLOCKENDE.test(html.slice(i, ende)) ? '\n' : ' ', i, ende, 'tag');
+      i = ende;
+      continue;
+    }
+    if (html.startsWith('@UUID[', i)) {
+      const m = /^@UUID\[[^\]]*\](?:\{([^}]*)\})?/.exec(html.slice(i));
+      if (m) {
+        const start = i + m[0].length - (m[1] !== undefined ? m[1].length + 1 : 0);
+        if (m[1] !== undefined) for (let k = 0; k < m[1].length; k++) schiebe(m[1][k], start + k, start + k + 1, 'verweis');
+        i += m[0].length;
+        continue;
+      }
+    }
+    if (c === '&') {
+      const m = /^&(#x[0-9a-f]+|#\d+|[a-z]+);/i.exec(html.slice(i, i + 12));
+      if (m) {
+        const n = m[1];
+        const z = n[0] === '#' ? String.fromCodePoint(n[1].toLowerCase() === 'x' ? parseInt(n.slice(2), 16) : parseInt(n.slice(1), 10)) : ENTITAETEN[n.toLowerCase()];
+        if (z !== undefined) {
+          for (const e of z.split('')) schiebe(e, i, i + m[0].length);
+          i += m[0].length;
+          continue;
+        }
+      }
+    }
+    schiebe(c, i, i + 1);
+    i++;
+  }
+  // Leerraum verdichten: ein Lauf wird zu „\n“, wenn er einen Umbruch enthält, sonst zu „ “
+  const zeichen = [];
+  for (let k = 0; k < roh.length;) {
+    if (!/\s/.test(roh[k].c)) {
+      zeichen.push({ ...roh[k], c: roh[k].c.normalize('NFC') });
+      k++;
+      continue;
+    }
+    let l = k, umbruch = false, tag = false;
+    while (l < roh.length && /\s/.test(roh[l].c)) { umbruch ||= roh[l].c === '\n'; tag ||= roh[l].art === 'tag'; l++; }
+    zeichen.push({ c: umbruch ? '\n' : ' ', von: roh[k].von, bis: roh[l - 1].bis, art: tag ? 'tag' : '' });
+    k = l;
+  }
+  // Zeilenränder ohne Leerzeichen
+  const aus = [];
+  for (let k = 0; k < zeichen.length; k++) {
+    const z = zeichen[k];
+    if (z.c === ' ' && (k === 0 || k === zeichen.length - 1 || zeichen[k - 1].c === '\n' || zeichen[k + 1].c === '\n')) continue;
+    aus.push(z);
+  }
+  return { text: aus.map((z) => z.c).join(''), zeichen: aus };
+}
+
+export const text = (html) => textKarte(html).text;
+
+/** Sätze einer Seite (wie in der Bestandsaufnahme): je Zeile an Satzenden getrennt, mindestens 25 Buchstaben. */
+export function saetze(t) {
+  const aus = [];
+  for (const zeile of t.split('\n')) {
+    for (let s of zeile.trim().split(/(?<=[.!?…])\s+(?=[A-ZÄÖÜ„"(])/)) {
+      s = s.trim();
+      if (s.replace(/[^\p{L}\p{N}_]/gu, '').length >= 25) aus.push(s);
+    }
+  }
+  return aus;
+}
+
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const kurzId = (...teile) => createHash('sha1').update(teile.join('\u0000')).digest('hex').slice(0, 6);
+
+// ---------------------------------------------------------------------------------------------------------------
+// PDF-Text: alle Seiten eines Bandes hintereinander, normalisiert, mit Seitenzahlen und Schindel-Index
+
+export class BandText {
+  /** dateien: [{ name, kurz, seiten: [text] }] */
+  constructor(dateien) {
+    let roh = '';
+    this.seiten = [];
+    for (const d of dateien) {
+      d.seiten.forEach((s, i) => {
+        this.seiten.push({ pos: roh.length, datei: d.name, kurz: d.kurz, seite: i + 1 });
+        roh += bereinigeSeite(s) + '\n';
+      });
+    }
+    this.roh = roh;
+    [this.N, this.NI] = normMitIndex(roh);
+    this.schindel = new Map();
+    for (let i = 0; i < this.N.length - SCH; i += 3) {
+      const k = this.N.slice(i, i + SCH);
+      const l = this.schindel.get(k);
+      if (l) l.push(i); else this.schindel.set(k, [i]);
+    }
+  }
+
+  /** Seite zu einer Stelle in roh */
+  seite(pos) {
+    let lo = 0, hi = this.seiten.length - 1;
+    while (lo < hi) {
+      const m = (lo + hi + 1) >> 1;
+      if (this.seiten[m].pos <= pos) lo = m; else hi = m - 1;
+    }
+    return this.seiten[lo];
+  }
+
+  /** Beste Stelle für einen normalisierten Satz: [quote, [s0, s1], innere Unterschiede] */
+  besteStelle(ns) {
+    const treffer = new Map();
+    for (let i = 0; i < Math.max(1, ns.length - SCH); i += 2) {
+      for (const p of this.schindel.get(ns.slice(i, i + SCH)) ?? []) {
+        const k = Math.floor((p - i) / 40);
+        treffer.set(k, (treffer.get(k) ?? 0) + 1);
+      }
+    }
+    if (!treffer.size) return [0, null, []];
+    let blk = null, best = 0;
+    for (const [k, n] of treffer) if (n > best) { best = n; blk = k; }
+    const N = this.N;
+    const a = Math.max(0, blk * 40 - 200), b = Math.min(N.length, blk * 40 + ns.length + 200);
+    const bl = new Abgleich(ns, N.slice(a, b)).bloecke().filter((x) => x[2] >= 4);
+    if (!bl.length) return [0, null, []];
+    const [a0, b0] = bl[0], [aL, bLe, nL] = bl[bl.length - 1];
+    const s0 = Math.max(0, a + b0 - a0), s1 = Math.min(N.length, a + bLe + nL + (ns.length - aL - nL));
+    const sm = new Abgleich(ns, N.slice(s0, s1));
+    const innen = sm.schritte().filter((o) => o[0] !== 'gleich')
+      .filter((o) => !(o[1] <= 3 && o[3] <= 3) && !(o[2] >= ns.length - 3 && o[4] >= s1 - s0 - 3));
+    // Kern: erster und letzter sicherer Treffer, dazu wie viel vom Satz davor und danach ohne Treffer bleibt
+    const kb = sm.bloecke().filter((x) => x[2] >= 6);
+    const kern = kb.length ? { von: s0 + kb[0][1], kopf: kb[0][0], bis: s0 + kb.at(-1)[1] + kb.at(-1)[2], schwanz: ns.length - kb.at(-1)[0] - kb.at(-1)[2] } : null;
+    return [sm.quote(), [s0, s1], innen, kern];
+  }
+
+  /**
+   * Originaltext (roh) zu einer normalisierten Spanne, auf ganze Wörter erweitert. Hat der Satz vorn oder hinten keinen
+   * Treffer, geht es im Band bis zum Satzanfang bzw. Satzende, wenn das nah genug liegt; sonst endet die Spanne am letzten
+   * Treffer (Spalten- oder Seitenumbruch), und der Rand ohne Treffer bleibt, wie er ist.
+   * Rückgabe: { von, bis, erweitert, randKopf, randSchwanz }
+   */
+  spanne(s0, s1, kern = null, satz = '') {
+    const { roh, NI } = this;
+    let von = NI[s0], bis = NI[Math.min(s1, NI.length) - 1] + 1, erweitert = false, randKopf = false, randSchwanz = false;
+    if (kern && kern.schwanz > 0) {
+      let ab = NI[kern.bis - 1] + 1;
+      while (ab > 0 && ALNUM.test(roh[ab]) && ALNUM.test(roh[ab - 1])) ab--; // Treffer endet mitten im Wort
+      if (/[.!?…]["“”»)]*\s$/.test(roh.slice(Math.max(0, ab - 3), ab))) ab -= 2; // Satzende direkt davor
+      const m = /[.!?…]["“”»)]*(?=\s|$)/.exec(roh.slice(ab, ab + kern.schwanz * 3 + 120));
+      if (m && /[.!?…]["“”»)]*$/.test(satz) && !/[▪•]/.test(roh.slice(ab, ab + m.index))) { bis = ab + m.index + m[0].length; erweitert ||= kern.schwanz > 3; } else if (kern.schwanz > 3) { bis = ab; randSchwanz = true; }
+    }
+    if (kern && kern.kopf > 0) {
+      let bis0 = NI[kern.von];
+      while (bis0 > 0 && ALNUM.test(roh[bis0 - 1]) && bis0 < roh.length && ALNUM.test(roh[bis0])) bis0++;
+      const vorne = roh.slice(Math.max(0, bis0 - kern.kopf * 2 - 20), bis0);
+      const m = [...vorne.matchAll(/[.!?…:]["“”»)]*\s+/g)].at(-1);
+      if (m && /^["„(]?[\p{Lu}\d]/u.test(satz) && !/[▪•]/.test(vorne.slice(m.index))) { von = bis0 - vorne.length + m.index + m[0].length; erweitert ||= kern.kopf > 3; } else if (kern.kopf > 3) { von = bis0; randKopf = true; }
+    }
+    while (von > 0 && ALNUM.test(roh[von - 1])) von--;
+    while (bis < roh.length && ALNUM.test(roh[bis])) bis++;
+    return { von, bis, erweitert, randKopf, randSchwanz };
+  }
+}
+
+/** Seiten einer PDF-Datei: zwischengespeichert, mit pdftotext -raw (Lesereihenfolge) gelesen */
+export function ladePdf(rel, { ordner = process.env.ODIN_BAENDE || path.join(os.tmpdir(), 'odin-baende') } = {}) {
+  fs.mkdirSync(ordner, { recursive: true });
+  const name = path.basename(rel);
+  const pdf = path.join(ordner, name);
+  if (!fs.existsSync(pdf)) {
+    console.log(`lade ${QUELLE}${rel}`);
+    execFileSync('curl', ['-sSfL', '--retry', '3', '-o', `${pdf}.teil`, QUELLE + rel]);
+    fs.renameSync(`${pdf}.teil`, pdf);
+  }
+  const txt = path.join(ordner, name.replace(/\.pdf$/, '.raw.txt'));
+  if (!fs.existsSync(txt) || fs.statSync(txt).mtimeMs < fs.statSync(pdf).mtimeMs) execFileSync('pdftotext', ['-raw', '-enc', 'UTF-8', pdf, txt]);
+  const seiten = fs.readFileSync(txt, 'utf8').split('\f');
+  if (seiten.length > 1 && !seiten[seiten.length - 1].trim()) seiten.pop();
+  const pruef = createHash('sha256').update(fs.readFileSync(pdf)).digest('hex').slice(0, 12);
+  return { name: name.replace(/\.pdf$/, ''), kurz: /Handouts/.test(name) ? 'Handouts' : 'Band', seiten, pruef };
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Foundry: Journalseiten und Gegner eines Bandes
+
+const PACKORDNER = path.join(WURZEL, 'packs');
+
+function ordnerWurzel(ordner) {
+  return (id) => {
+    let o = ordner.get(id);
+    while (o?.folder && ordner.get(o.folder)) o = ordner.get(o.folder);
+    return o?.name;
+  };
+}
+
+/** Journalseiten der Ordner eines Bandes aus odin-abenteuer(-en): [{ journal, seite, html }] */
+export function journalSeiten(spr, cfg, packs = PACKORDNER) {
+  const d = lesePack(path.join(packs, PACKS[spr].abenteuer));
+  const ordner = new Map(), seiten = new Map(), journale = [];
+  for (const [k, v] of d) {
+    if (k.startsWith('!folders!')) ordner.set(v._id, v);
+    else if (k.startsWith('!journal.pages!')) seiten.set(v._id, v);
+    else if (k.startsWith('!journal!')) journale.push(v);
+  }
+  const wurzel = ordnerWurzel(ordner);
+  const aus = [];
+  for (const j of journale.filter((j) => cfg.ordner.includes(wurzel(j.folder))).sort((a, b) => a.sort - b.sort || a.name.localeCompare(b.name))) {
+    for (const s of j.pages.map((id) => seiten.get(id)).filter(Boolean).sort((a, b) => a.sort - b.sort)) {
+      if (s.type === 'text' && s.text?.content) aus.push({ journal: j.name, seite: s.name, html: s.text.content });
+    }
+  }
+  return aus;
+}
+
+/** Gegner eines Bandes: Ordner in odin-gegner(-en) und Akteure der Abenteuerpakete, gleiche Fassung nur einmal */
+export function gegnerDesBandes(spr, cfg, packs = PACKORDNER) {
+  const aus = new Map();
+  const nimm = (a) => {
+    if (a.type !== 'gegner') return;
+    const k = `${a.name}\u0000${a.system?.besonderheit ?? ''}\u0000${a.system?.initiative ?? ''}`;
+    if (!aus.has(k)) aus.set(k, a);
+  };
+  const g = lesePack(path.join(packs, PACKS[spr].gegner));
+  const ordner = new Map([...g].filter(([k]) => k.startsWith('!folders!')).map(([, v]) => [v._id, v]));
+  const wurzel = ordnerWurzel(ordner);
+  for (const [k, a] of g) if (k.startsWith('!actors!') && cfg.ordner.includes(wurzel(a.folder))) nimm(a);
+  for (const ad of lesePack(path.join(packs, PACKS[spr].pakete)).values()) if (cfg.abenteuer.includes(ad.name)) (ad.actors ?? []).forEach(nimm);
+  return [...aus.values()];
+}
+
+/** Zeilen der Gegnerwerte aus dem Feld „besonderheit“: [{ label, wert, html }] */
+export function zeilen(html) {
+  const aus = [];
+  for (const m of (html ?? '').matchAll(/<p><strong>(.*?)<\/strong>\s*(.*?)<\/p>/gs)) {
+    const label = text(m[1]).trim().replace(/:$/, '').trim();
+    const wert = text(m[2]).replace(/\s+/g, ' ').trim();
+    if (wert && !/^(Stufe laut Buch|Level per book|Rank in the book)/.test(label)) aus.push({ label, wert, html: m[2] });
+  }
+  return aus;
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Vorschläge für Journalsätze
+
+const woerter = (t) => t.split(/\s+/).filter(Boolean);
+const istNurZeichen = (t) => !norm(t);
+
+/**
+ * Wortweiser Unterschied zwischen dem Satz in Foundry und dem Text im Band, mit Filter für Fehltreffer.
+ * Rückgabe: { neu, aenderungen: [[alt, neu]], verworfen: { grund: anzahl } }
+ * kontext: { seite: norm. Text der Journalseite, band: norm. Text aller Seiten des Bandes, pdf: BandText, von, bis }
+ */
+export function vergleicheSatz(alt, pdfText, kontext = {}) {
+  const aw = woerter(alt);
+  let pw = woerter(pdfText);
+  // Ein, zwei Wörter des nächsten oder vorigen Satzes am Rand weg (der Satz im Band ist kürzer)
+  const satzende = (w) => /[.!?…]["“”»)]*$/.test(w);
+  if (satzende(alt)) {
+    const k = pw.findLastIndex((w, i) => i < pw.length - 1 && satzende(w));
+    if (k >= 0 && k >= pw.length - 3) pw = pw.slice(0, k + 1);
+  }
+  if (/^["„(]?\p{Lu}/u.test(alt) && satzende(alt)) {
+    const k = pw.findIndex(satzende);
+    if (k >= 0 && k <= 1 && k < pw.length - 1 && !satzende(aw[k] ?? '')) pw = pw.slice(k + 1);
+  }
+  const sm = new Abgleich(aw.map(norm), pw.map(norm));
+  const verworfen = {};
+  const raus = (g) => { verworfen[g] = (verworfen[g] ?? 0) + 1; };
+  const ops = [];
+  for (const [art, i1, i2, j1, j2] of sm.schritte()) {
+    if (art === 'gleich') continue;
+    const vorher = aw.slice(i1, i2).join(' '), nachher = pw.slice(j1, j2).join(' ');
+    const nv = norm(vorher), nn = norm(nachher);
+    if (nv === nn) { raus('Schreibweise'); continue; }
+    // Rand: Ausschnitt im Band beginnt oder endet mitten in einem Wort oder ein, zwei Zeichen daneben
+    const rand = (i1 === 0 && j1 === 0) || (i2 === aw.length && j2 === pw.length);
+    if (rand && nv.length + nn.length <= 3) { raus('Rand'); continue; }
+    // Rand ohne Treffer im Band (Umbruch): was dort in Foundry steht, bleibt
+    if ((art === 'loeschen' && kontext.randKopf && i1 === 0 && j1 === 0) || (kontext.randSchwanz && i2 === aw.length && j2 === pw.length)) { raus('Spaltenumbruch'); continue; }
+    if (/O\.D\.I\.N\.[ \t]+[^\n]{0,45}[ \t]+\d{1,3}\b|\b\d{1,3}[ \t]+O\.D\.I\.N\./.test(nachher)) { raus('Fußzeile'); continue; }
+    // Aufzählungszeichen gibt es in den Journalen nicht: Text eines Kastens oder einer Liste daneben
+    if (/[▪•]/.test(nachher)) { raus('Nachbartext'); return { neu: alt, aenderungen: [], verworfen }; }
+    // Text der Nachbarspalte: steht so auf derselben Journalseite oder an anderer Stelle des Bandes in Foundry
+    const nachbar = nn.length >= 12 && (kontext.seite?.includes(nn) || (nn.length >= 20 && kontext.band?.includes(nn)));
+    // Spaltenumbruch: der fehlende Teil steht im Band kurz davor oder danach
+    // (Tabellenzeilen ohne Satzzeichen: auch kurze Teile, aber nur in der näheren Umgebung)
+    const tabelle = !/[.!?…:]/.test(alt);
+    const weit = tabelle ? 300 : 3000;
+    const umbruch = nv.length >= (tabelle ? 2 : rand ? 4 : 15) && kontext.pdf && kontext.pdf.N.slice(Math.max(0, kontext.von - weit), kontext.bis + weit).includes(nv)
+      && !kontext.pdf.N.slice(kontext.von, kontext.bis).includes(nv);
+    if (art === 'einfuegen' && nachbar) { raus('Nachbartext'); continue; }
+    if (art === 'loeschen' && umbruch) { raus('Spaltenumbruch'); continue; }
+    // ersetzt: der verdrängte Teil steht im Band gleich daneben (eingeschobener Text der Nachbarspalte)
+    // (der eingeschobene Text steht schon an anderer Stelle in Foundry, also genügt hier ein kürzerer Rest)
+    const nah = nv.length >= 6 && kontext.pdf && kontext.pdf.N.slice(Math.max(0, kontext.von - 3000), kontext.bis + 3000).includes(nv) && !kontext.pdf.N.slice(kontext.von, kontext.bis).includes(nv);
+    if (art === 'ersetzen' && nachbar && (!nv || umbruch || nah)) { raus('Nachbartext'); continue; }
+    if (art === 'loeschen' && rand && nv.length <= 3) { raus('Rand'); continue; }
+    // eine einzelne Zahl ohne weiteren Unterschied: Seitenzahl, Zelle oder Fußnote aus dem Satz
+    if (art !== 'ersetzen' && /^\d{1,3}$/.test(nv || nn)) { raus('Zahl aus dem Satz'); continue; }
+    // Tabellenzeile: eingefügte Wörter, die alle schon auf der Seite stehen (Spaltenköpfe, Nachbarzellen)
+    // (auch beim Ersetzen, solange keine Zahl dazukommt: dann sind nur Zellen vertauscht, etwa Überschrift und Spaltenkopf)
+    if (tabelle && art !== 'loeschen' && !/\d/.test(nachher) && kontext.seite && pw.slice(j1, j2).every((w) => !norm(w) || kontext.seite.includes(norm(w)) || norm(alt).includes(norm(w)))) { raus('Nachbartext'); continue; }
+    ops.push({ i1, i2, j1, j2, nachher: pw.slice(j1, j2) });
+  }
+  // Wörter neben einer Änderung übernehmen die Satzzeichen des Bandes (etwa ein neues Satzende)
+  const zeichenBand = new Map();
+  for (const [art, i1, i2, j1] of sm.schritte()) {
+    if (art !== 'gleich') continue;
+    for (let k = 0; k < i2 - i1; k++) zeichenBand.set(i1 + k, pw[j1 + k]);
+  }
+  const nachbarn = new Set(ops.flatMap((o) => [o.i1 - 1, o.i2]));
+  const nw = [];
+  let i = 0;
+  const gleich = (bis) => { for (; i < bis; i++) nw.push(nachbarn.has(i) && zeichenBand.has(i) ? zeichenBand.get(i) : aw[i]); };
+  for (const o of ops) {
+    gleich(o.i1);
+    nw.push(...o.nachher);
+    i = o.i2;
+  }
+  gleich(aw.length);
+  // Satzende aus Foundry behalten, wenn der Satz im Band weiterläuft
+  const ende = /[.!?…]["“”»)]*$/.exec(alt);
+  if (ende && ops.length && nw.length && !/[.!?…]["“”»)]*$/.test(nw.at(-1))) nw[nw.length - 1] = nw.at(-1).replace(/[,;:]$/, '') + ende[0];
+  return { neu: nw.join(' '), aenderungen: unterschiede(alt, nw.join(' ')), verworfen };
+}
+
+/** Wortweise Änderungen zwischen zwei Fassungen: [[alt, neu]] (leer, wenn gleich) */
+export function unterschiede(alt, neu) {
+  const aw = woerter(alt), nw = woerter(neu);
+  return new Abgleich(aw, nw).schritte().filter((o) => o[0] !== 'gleich').map(([, i1, i2, j1, j2]) => [aw.slice(i1, i2).join(' '), nw.slice(j1, j2).join(' ')]);
+}
+
+/** Satzvorschläge einer Sprache */
+export function satzVorschlaege(seiten, pdf, abgleich) {
+  const bandNorm = seiten.map((s) => norm(text(s.html))).join('\n');
+  const nachSatz = new Map();
+  const statistik = { seiten: seiten.length, saetze: 0, gleich: 0, verworfen: {}, nichtGefunden: 0 };
+  const hinweise = [];
+  for (const s of seiten) {
+    const seiteNorm = norm(`${s.journal} ${s.seite} ${text(s.html)}`);
+    for (const satzRoh of saetze(text(s.html))) {
+      const satz = satzRoh.replace(/\s+/g, ' ');
+      statistik.saetze++;
+      const ns = norm(satz);
+      if (pdf.N.includes(ns) || abgleich?.N.includes(ns)) { statistik.gleich++; continue; }
+      const [q, st, innen, kern] = pdf.besteStelle(ns);
+      // umformuliert: weniger ähnlich, aber Anfang und Ende des Satzes stehen im Band
+      const umformuliert = q < AEHNLICH && q >= UMFORMULIERT && kern && kern.kopf <= 3 && kern.schwanz <= 3;
+      if (q < AEHNLICH && !umformuliert) { statistik.nichtGefunden++; continue; }
+      if (!innen.length) { statistik.gleich++; continue; }
+      const { von, bis, erweitert, randKopf, randSchwanz } = pdf.spanne(st[0], st[1], kern, satz);
+      const imBand = pdf.roh.slice(von, bis).replace(/\s+/g, ' ').trim();
+      const ohneSatz = seiteNorm.replace(ns, ' ');
+      const v = vergleicheSatz(satz, imBand, { seite: ohneSatz, band: bandNorm.replace(ns, ' '), pdf, von: st[0], bis: st[1], randKopf, randSchwanz });
+      for (const [g, n] of Object.entries(v.verworfen)) if (!v.aenderungen.length) statistik.verworfen[g] = (statistik.verworfen[g] ?? 0) + n;
+      if (!v.aenderungen.length) continue;
+      const fund = pdf.seite(von);
+      // Fertigkeitslisten der Agenten (1947 und 1977 nebeneinander) sind im Zweispaltensatz nicht sicher zu lesen
+      if ((satz.match(/\p{L} \d[,.]/gu) ?? []).length >= 4 && v.aenderungen.length >= 2) {
+        hinweise.push(`„${s.journal}“ › „${s.seite}“, ${fundPdf(fund)}: Liste mit Werten weicht ab („${satz.slice(0, 80)}…“), bitte mit der Tabelle im Band vergleichen.`);
+        continue;
+      }
+      const alt = nachSatz.get(satz);
+      if (alt) { if (!alt.fundstellen.some(([j, x]) => j === s.journal && x === s.seite)) alt.fundstellen.push([s.journal, s.seite]); continue; }
+      nachSatz.set(satz, {
+        art: 'satz', alt: satz, neu: v.neu, quote: q,
+        umformuliert,
+        stufe: q >= SICHER && !erweitert && !Object.keys(v.verworfen).some((g) => g !== 'Schreibweise') ? 'sicher' : 'prüfen',
+        fundstellen: [[s.journal, s.seite]], pdf: fund,
+      });
+    }
+  }
+  return { vorschlaege: [...nachSatz.values()], hinweise: [...new Set(hinweise)], statistik };
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Vorschläge für Gegnerwerte
+
+/** Kurzname für die Suche im Band: ohne Jahreszahl, ohne Zusatz nach Komma oder „als“ */
+export const kurzname = (n) => n.replace(/\s*\((19\d\d)\)$/, '').split(/,| als | as | alias /)[0].trim();
+
+const labelMuster = (l) => new RegExp('(?:^|[\\s.])' + woerter(l).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s*') + '\\s*:?\\s', 'g');
+
+/** Wert einer Zeile im Werteblock des Bandes: Text nach dem Label bis zum nächsten bekannten Label */
+export function wertImBlock(block, label, alleLabels) {
+  const m = labelMuster(label).exec(block);
+  if (!m) return null;
+  const rest = block.slice(m.index + m[0].length, m.index + m[0].length + 700);
+  let ende = rest.length;
+  for (const l of alleLabels) {
+    if (l === label) continue;
+    const mm = labelMuster(l).exec(rest);
+    if (mm && mm.index < ende) ende = mm.index;
+  }
+  return rest.slice(0, ende).replace(/\s+/g, ' ').trim().replace(/[.;]$/, '');
+}
+
+const GRUNDLABEL = ['Initiative', 'Angriff', 'Attack', 'Verteidigung / Rüstung / LP', 'Defence / Armour / HP', 'Defense / Armor / HP', 'Grauen', 'Horror',
+  'Besonderheit', 'Special', 'Schwäche', 'Weakness', 'Verhalten', 'Behaviour', 'Behavior', 'Spuren', 'Signs', 'Traces', 'Kräfte', 'Powers', 'Fertigkeiten', 'Skills', 'Wert', 'Value', 'Angabe'];
+
+/** Gegnervorschläge einer Sprache */
+export function gegnerVorschlaege(gegner, pdf, abgleich) {
+  const vorschlaege = [], hinweise = [];
+  const statistik = { gegner: 0, zeilen: 0, gleich: 0 };
+  for (const a of gegner) {
+    const s = a.system ?? {};
+    const rows = zeilen(s.besonderheit);
+    if (s.initiative !== undefined && s.initiative !== null && typeof s.lp === 'object') rows.push({ label: 'Initiative', wert: String(s.initiative), html: null });
+    if (!rows.length) continue;
+    statistik.gegner++;
+    const name = norm(kurzname(a.name));
+    const lagen = [];
+    if (name.length >= 4) {
+      for (const q of [pdf, abgleich].filter(Boolean)) for (let p = q.N.indexOf(name); p >= 0; p = q.N.indexOf(name, p + 1)) lagen.push({ q, p });
+    }
+    if (!lagen.length) { hinweise.push(`Gegner „${a.name}“: Name im Band nicht gefunden, Werte nicht geprüft.`); continue; }
+    const bereich = lagen.map(({ q, p }) => q.N.slice(Math.max(0, p - 500), p + 5000)).join(' ');
+    const fehlt = [];
+    for (const r of rows) {
+      statistik.zeilen++;
+      const nw = norm(r.wert);
+      if (bereich.includes(nw) || (r.label === 'Initiative' && bereich.includes('initiative' + nw))) { statistik.gleich++; continue; }
+      fehlt.push(r);
+    }
+    if (!fehlt.length) continue;
+    // Werteblock im Band: ab dem Namen bis vor die nächste Initiative (der nächste Block), höchstens 5000 Zeichen.
+    // Gilt nur, wenn die Initiative bald nach dem Namen kommt und dazwischen kein Verweis auf den Bedrohungsatlas steht.
+    const labels = [...new Set([...rows.map((r) => r.label), ...GRUNDLABEL])];
+    let besterBlock = null, besteZahl = -1, atlas = false;
+    for (const { p } of lagen.filter((l) => l.q === pdf)) {
+      const von = pdf.NI[p];
+      // nur der Name als Überschrift: am Zeilenanfang, Zeile nicht viel länger als der Name
+      const zeile = pdf.roh.slice(pdf.roh.lastIndexOf('\n', von) + 1, (pdf.roh.indexOf('\n', von) + 1 || pdf.roh.length + 1) - 1);
+      if (!zeile.trimStart().startsWith(pdf.roh.slice(von, von + 1)) || zeile.trim().length > kurzname(a.name).length + 40) continue;
+      let block = pdf.roh.slice(von, von + 5000);
+      const ini = [...block.matchAll(/(?:^|\s)Initiative\b/g)];
+      if (!ini.length || ini[0].index > 1500) continue;
+      if (/Bedrohungsatlas|Threat Atlas/.test(block.slice(0, ini[0].index))) { atlas = true; continue; }
+      if (ini[1]) block = block.slice(0, ini[1].index);
+      const nb = norm(block);
+      const zahl = rows.filter((r) => nb.includes(norm(r.wert))).length;
+      if (zahl > besteZahl) { besteZahl = zahl; besterBlock = { block, von }; }
+    }
+    if (!besterBlock) {
+      hinweise.push(`Gegner „${a.name}“: ${atlas ? 'Der Band verweist auf Werte aus dem Bedrohungsatlas' : 'Kein Werteblock im Band gefunden'}; in Foundry ohne Gegenstück im Band: ${fehlt.map((r) => r.label).join(', ')}.`);
+      continue;
+    }
+    for (const r of fehlt) {
+      let neu = null;
+      if (besterBlock) {
+        if (r.label === 'Initiative') neu = /Initiative\s*:?\s*(\d+)/.exec(besterBlock.block)?.[1] ?? null;
+        else neu = wertImBlock(besterBlock.block, r.label, labels);
+      }
+      const passt = neu && (r.label === 'Initiative' || /\d\s*\/\s*\d/.test(r.wert) || new Abgleich(norm(r.wert), norm(neu)).quote() >= 0.35);
+      if (!passt) {
+        hinweise.push(`Gegner „${a.name}“, Zeile „${r.label}“: „${r.wert}“ steht so nicht im Band, Wert im Band nicht sicher gefunden.`);
+        continue;
+      }
+      if (norm(neu) === norm(r.wert)) continue;
+      if (/\.$/.test(r.wert) && !/[.!?]$/.test(neu)) neu += '.';
+      vorschlaege.push({
+        art: 'gegner', name: a.name, label: r.label, alt: r.wert, neu, stufe: 'prüfen',
+        pdf: pdf.seite(besterBlock.von + Math.max(0, besterBlock.block.indexOf(neu.slice(0, 12)))),
+      });
+    }
+  }
+  return { vorschlaege, hinweise, statistik };
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Freigabedatei (Markdown)
+
+export const eintragsId = (kuerzel, spr, v) => `${kuerzel}-${spr}-${kurzId(spr, v.art, v.art === 'gegner' ? v.name : '', v.art === 'gegner' ? v.label : '', v.alt)}`;
+const anzeige = (aenderungen) => aenderungen.map(([a, n]) => `«${a || '(nichts)'}» → «${n || '(gestrichen)'}»`).join('; ');
+function fundPdf(p) { return p ? `${p.kurz} S. ${p.seite}` : 'PDF ?'; }
+
+/** Liest eine Freigabedatei: [{ id, spr, art, freigabe, alt, neu, daten }] */
+export function leseFreigabe(md) {
+  const aus = [];
+  let spr = null, akt = null;
+  for (const zeile of md.split('\n')) {
+    const sp = /^## (Deutsch|Englisch)\b/.exec(zeile);
+    if (sp) { spr = sp[1] === 'Deutsch' ? 'de' : 'en'; akt = null; continue; }
+    if (/^##(#)? /.test(zeile)) { akt = null; continue; }
+    const kopf = /^#### (\S+)/.exec(zeile);
+    if (kopf) { akt = { id: kopf[1], spr, freigabe: 'offen' }; aus.push(akt); continue; }
+    if (!akt) continue;
+    let m;
+    if ((m = /^Freigabe:\s*(\S+)/.exec(zeile))) akt.freigabe = m[1].toLowerCase().replace(/[^a-zäöü]/g, '');
+    else if ((m = /^- alt: (.*)$/.exec(zeile))) akt.alt = m[1].trim();
+    else if ((m = /^- neu: (.*)$/.exec(zeile))) akt.neu = m[1].trim();
+    else if ((m = /^<!-- daten: (.*) -->$/.exec(zeile))) { akt.daten = JSON.parse(m[1]); akt.art = akt.daten.art; }
+  }
+  return aus;
+}
+
+/** Schreibt die Freigabedatei eines Bandes; vorhandene Entscheidungen (ja/nein) bleiben erhalten */
+export function schreibeFreigabe(band, cfg, teile, alt = []) {
+  const entscheidung = new Map(alt.filter((e) => e.freigabe !== 'offen').map((e) => [e.id, e]));
+  const z = [];
+  z.push(`# Korrekturvorschläge: ${cfg.titel}`, '');
+  z.push(`Erzeugt mit \`node werkzeuge/korrektur.mjs vorschlaege ${band}\` aus den Bänden auf odin-rpg.pages.dev (Prüfsummen unten je Sprache).`);
+  z.push('Verglichen wird jeder Satz der Journalseiten und jede Zeile der Gegnerwerte in Foundry mit dem Text des Bandes.', '');
+  z.push('**Freigabe:** In jedem Eintrag „Freigabe: offen“ durch „ja“ oder „nein“ ersetzen. Die Zeile „neu“ darf von Hand nachgebessert werden,');
+  z.push('übernommen wird genau dieser Text. Übernommen werden nur Einträge mit „ja“, mit');
+  z.push(`\`node werkzeuge/korrektur.mjs anwenden ${band} --probelauf\` lässt sich vorher ansehen, was sich ändern würde. Ein neuer Lauf von`);
+  z.push('„vorschlaege“ behält gesetzte Entscheidungen. „sicher“ heißt: derselbe Satz, nur Wörter getauscht; „prüfen“ heißt: größere Änderung');
+  z.push('oder eine Stelle, an der der Zweispaltensatz hineinspielen kann; „umformuliert“: Anfang und Ende stimmen, dazwischen ist viel neu.');
+  z.push('Gegnerwerte stehen immer auf „prüfen“. Sätze, die im Band ganz anders lauten oder fehlen, findet das Werkzeug nicht; dafür sind die');
+  z.push('Änderungslisten der Writer da.', '');
+  const benutzt = new Set();
+  for (const t of teile) {
+    z.push(`## ${SPRACHE[t.spr]}`, '');
+    const ss = t.saetze.statistik, gs = t.gegner?.statistik;
+    const verw = Object.entries(ss?.verworfen ?? {}).map(([g, n]) => `${g} ${n}`).join(', ') || 'keine';
+    z.push(`Bände: ${t.pdfs.map((p) => `${p.name} (Seiten ${p.seiten.length}, Prüfsumme ${p.pruef})`).join(', ')}.`, '');
+    if (ss) {
+      z.push(`Journalseiten ${ss.seiten}, Sätze ${ss.saetze}, davon gleich ${ss.gleich}, im Band nicht gefunden ${ss.nichtGefunden} (umgeschrieben, gestrichen oder nur in Foundry).`);
+      z.push(`Vorschläge zu Sätzen: ${t.saetze.vorschlaege.length} (sicher ${t.saetze.vorschlaege.filter((v) => v.stufe === 'sicher').length}). Als Fehltreffer aussortiert: ${verw}.`);
+    }
+    if (gs) z.push(`Gegner ${gs.gegner} mit ${gs.zeilen} Zeilen, gleich ${gs.zeilen ? gs.gleich : 0}; Vorschläge ${t.gegner.vorschlaege.length}.`);
+    z.push(`Hinweise ohne Vorschlag: ${(t.saetze.hinweise?.length ?? 0) + (t.gegner?.hinweise.length ?? 0)}.`);
+    z.push('');
+    const abschnitt = (titel, liste) => {
+      if (!liste.length) return;
+      z.push(`### ${titel}`, '');
+      for (const v of liste) {
+        let id = eintragsId(BAENDE[band].kuerzel, t.spr, v);
+        while (benutzt.has(id)) id += 'x';
+        benutzt.add(id);
+        const e = entscheidung.get(id);
+        const neu = e?.neu && e.alt === v.alt ? e.neu : v.neu;
+        const wo = v.art === 'satz' ? v.fundstellen.map(([j, s]) => (j === s ? `„${j}“` : `„${j}“ › „${s}“`)).join('; ') : `Gegner „${v.name}“, Zeile „${v.label}“`;
+        z.push(`#### ${id} · ${wo} · ${fundPdf(v.pdf)} · ${v.stufe}${v.umformuliert ? ', umformuliert' : ''}`);
+        z.push(`Freigabe: ${e?.freigabe ?? 'offen'}`, '');
+        z.push(`- alt: ${v.alt}`, `- neu: ${neu}`, `- Änderung: ${anzeige(unterschiede(v.alt, neu))}`);
+        const daten = v.art === 'satz' ? { art: 'satz', fundstellen: v.fundstellen } : { art: 'gegner', name: v.name, label: v.label };
+        z.push(`<!-- daten: ${JSON.stringify(daten)} -->`, '');
+      }
+    };
+    abschnitt('Journalsätze', t.saetze.vorschlaege);
+    abschnitt('Gegnerwerte', t.gegner?.vorschlaege ?? []);
+    const hinweise = [...(t.saetze.hinweise ?? []), ...(t.gegner?.hinweise ?? [])];
+    if (hinweise.length) {
+      z.push('### Hinweise ohne Vorschlag', '', 'Diese Stellen weichen ab, der Wert im Band ließ sich aber nicht sicher lesen. Bitte von Hand ansehen.', '');
+      for (const h of hinweise) z.push(`- ${h}`);
+      z.push('');
+    }
+  }
+  const verloren = [...entscheidung.keys()].filter((id) => !benutzt.has(id));
+  return { md: z.join('\n').replace(/\n+$/, '\n'), verloren };
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Anwenden
+
+/**
+ * Ersetzt einen Satz im HTML einer Journalseite wortweise, an jeder Stelle, an der er steht (ganze Wörter).
+ * Rückgabe { html, status: 'ok'|'schon'|'fehlt'|'von Hand', grund, stellen }
+ */
+export function ersetzeSatz(html, alt, neu) {
+  const { text: t, zeichen } = textKarte(html);
+  const flach = t.replace(/\n/g, ' ');
+  const lagen = [];
+  for (let p = flach.indexOf(alt); p >= 0; p = flach.indexOf(alt, p + alt.length)) {
+    if (!ALNUM.test(flach[p - 1] ?? ' ') && !ALNUM.test(flach[p + alt.length] ?? ' ')) lagen.push(p);
+  }
+  if (!lagen.length) return { html, status: flach.includes(neu) ? 'schon' : 'fehlt' };
+  const aw = woerter(alt), nw = woerter(neu);
+  const schritte = new Abgleich(aw, nw).schritte();
+  const edits = [];
+  for (const pos of lagen) {
+  // Wortgrenzen im Satz
+  const wo = [];
+  for (const m of alt.matchAll(/\S+/g)) wo.push([pos + m.index, pos + m.index + m[0].length]);
+  for (const [art, i1, i2, j1, j2] of schritte) {
+    if (art === 'gleich') continue;
+    const neuText = esc(nw.slice(j1, j2).join(' '));
+    let von, bis, rein;
+    if (i1 < i2) {
+      von = wo[i1][0]; bis = wo[i2 - 1][1]; rein = neuText;
+      if (j1 === j2) {
+        // gestrichene Wörter samt einem Leerzeichen
+        if (zeichen[bis]?.c === ' ' && zeichen[bis].art !== 'tag') bis++;
+        else if (zeichen[von - 1]?.c === ' ' && zeichen[von - 1].art !== 'tag') von--;
+      }
+    } else {
+      // Einfügen hinter dem vorigen Wort oder vor dem ersten
+      if (i1 > 0) { von = bis = wo[i1 - 1][1]; rein = ' ' + neuText; } else { von = bis = wo[0][0]; rein = neuText + ' '; }
+    }
+    const betroffen = zeichen.slice(von, bis);
+    if (betroffen.some((z) => z.art)) return { html, status: 'von Hand', grund: 'Änderung läuft über Formatierung oder einen Verweis' };
+    const hv = von < bis ? zeichen[von].von : (von > 0 ? zeichen[von - 1].bis : zeichen[0].von);
+    const hb = von < bis ? zeichen[bis - 1].bis : hv;
+    if (i1 === i2 && von > 0 && zeichen[von - 1].art) return { html, status: 'von Hand', grund: 'Einfügestelle an Formatierung oder Verweis' };
+    edits.push([hv, hb, rein]);
+  }
+  }
+  let aus = html;
+  for (const [hv, hb, rein] of edits.sort((x, y) => y[0] - x[0])) aus = aus.slice(0, hv) + rein + aus.slice(hb);
+  if (!textKarte(aus).text.replace(/\n/g, ' ').includes(neu)) return { html, status: 'von Hand', grund: 'Ergebnis nicht wie erwartet' };
+  return { html: aus, status: 'ok', stellen: lagen.length };
+}
+
+/** Zahlen aus einer Werte-Zeile in die Felder des Gegners übernehmen. Rückgabe: Liste der Änderungen als Text */
+export function zieheZahlenNach(system, label, wert) {
+  const aus = [];
+  const setze = (feld, neu, ziel = system) => {
+    if (ziel[feld] !== neu) { aus.push(`${feld}: ${JSON.stringify(ziel[feld])} → ${JSON.stringify(neu)}`); ziel[feld] = neu; }
+  };
+  if (/^(Verteidigung|Defen[cs]e)\b/.test(label)) {
+    const m = /(\d+)\s*\/\s*(\d+)[^/]*\/\s*(\d+)/.exec(wert);
+    if (m) {
+      setze('verteidigung', +m[1]); setze('ruestung', +m[2]);
+      system.lp ??= {};
+      if (system.lp.max !== +m[3]) { aus.push(`lp: ${system.lp.max} → ${+m[3]}`); system.lp.max = +m[3]; system.lp.value = +m[3]; }
+    } else aus.push('Verteidigung / Rüstung / LP nicht lesbar, Zahlen von Hand prüfen');
+  } else if (label === 'Initiative') {
+    if (/^\d+$/.test(wert)) setze('initiative', +wert);
+  } else if (/^(Grauen|Horror)$/.test(label)) {
+    const m = /\((\d+)\)/.exec(wert);
+    if (m) setze('grauen', +m[1]);
+    else if (/^(Kein|None|No )/.test(wert)) setze('grauen', 0);
+  } else if (/^(Angriff|Attack|Psi)/.test(label)) {
+    const angriffe = [...wert.matchAll(/(?:^|,\s*(?:oder|or)\s+|;\s*|,\s*)([^,;]+?)\s+(\d+)\s*\+\s*(\d+)(?:,\s*(?:Schaden|[Dd]amage)\s*(\d+))?/g)];
+    const pools = system.pools ?? [];
+    angriffe.forEach((m, i) => {
+      const name = m[1].replace(/^(oder|or)\s+/i, '').trim();
+      let pool = pools.find((p) => p.name.toLowerCase() === name.toLowerCase()) ?? (label === 'Psi' ? pools.find((p) => p.name === 'Psi') : null);
+      // umbenannte Waffe: gleiche Zahl von Angriffen und Pools, dann nach Reihenfolge
+      if (!pool && angriffe.length === pools.length && label !== 'Psi') {
+        pool = pools[i];
+        aus.push(`Pool „${pool.name}“ heißt jetzt „${name}“`);
+        pool.name = name;
+      }
+      if (!pool) { aus.push(`Würfel „${name} ${m[2]} + ${m[3]}“ ohne passenden Pool, von Hand prüfen`); return; }
+      for (const [f, v] of [['weiss', +m[2]], ['bunt', +m[3]], ...(m[4] ? [['schaden', +m[4]]] : [])]) {
+        if (pool[f] !== v) { aus.push(`${pool.name}.${f}: ${pool[f]} → ${v}`); pool[f] = v; }
+      }
+    });
+  }
+  return aus;
+}
+
+/** Ändert eine Zeile der Gegnerwerte (und die Zahlenfelder dazu). Rückgabe { status, nachgezogen } */
+export function ersetzeZeile(system, label, alt, neu) {
+  if (label === 'Initiative' && !zeilen(system.besonderheit).some((r) => r.label === 'Initiative')) {
+    if (String(system.initiative) === neu) return { status: 'schon', nachgezogen: [] };
+    if (String(system.initiative) !== alt) return { status: 'fehlt', nachgezogen: [] };
+    return { status: 'ok', nachgezogen: zieheZahlenNach(system, label, neu) };
+  }
+  const passend = zeilen(system.besonderheit).filter((x) => x.label === label);
+  if (passend.some((x) => x.wert === neu)) return { status: 'schon', nachgezogen: [] };
+  const r = passend.find((x) => x.wert === alt);
+  if (!r) return { status: 'fehlt', nachgezogen: [] };
+  if (/<[^>]+>|@UUID/.test(r.html)) return { status: 'von Hand', grund: 'Zeile enthält Formatierung oder Verweise', nachgezogen: [] };
+  const m = [...system.besonderheit.matchAll(/<p><strong>(.*?)<\/strong>(\s*)(.*?)<\/p>/gs)].find((x) => text(x[1]).trim().replace(/:$/, '').trim() === label && x[3] === r.html);
+  const start = m.index + m[0].length - 4 - m[3].length;
+  system.besonderheit = system.besonderheit.slice(0, start) + esc(neu) + system.besonderheit.slice(start + m[3].length);
+  return { status: 'ok', nachgezogen: zieheZahlenNach(system, label, neu) };
+}
+
+/** Übernimmt die freigegebenen Einträge eines Bandes in die Packs (Map key → doc, wird verändert). */
+export function wendeAn(eintraege, packs) {
+  const bericht = [];
+  for (const e of eintraege) {
+    const p = packs[e.spr];
+    const stellen = [];
+    if (e.art === 'satz') {
+      const fund = new Set(e.daten.fundstellen.map(([j, s]) => `${j}\u0000${s}`));
+      const journale = new Map([...p.abenteuer].filter(([k]) => k.startsWith('!journal!')).map(([, v]) => [v._id, v]));
+      for (const [k, s] of p.abenteuer) {
+        if (!k.startsWith('!journal.pages!')) continue;
+        const j = journale.get(k.slice(15).split('.')[0]);
+        if (j && fund.has(`${j.name}\u0000${s.name}`) && s.text?.content) stellen.push({ wo: `${PACKS[e.spr].abenteuer}: ${j.name} › ${s.name}`, seite: s, pack: 'abenteuer', key: k });
+      }
+      for (const [k, ad] of p.pakete) {
+        for (const j of ad.journal ?? []) for (const s of j.pages ?? []) {
+          if (fund.has(`${j.name}\u0000${s.name}`) && s.text?.content) stellen.push({ wo: `${PACKS[e.spr].pakete}: ${ad.name} › ${j.name} › ${s.name}`, seite: s, pack: 'pakete', key: k });
+        }
+      }
+      for (const st of stellen) {
+        const r = ersetzeSatz(st.seite.text.content, e.alt, e.neu);
+        if (r.status === 'ok') { st.seite.text.content = r.html; p.geaendert.add(st.pack); }
+        bericht.push({ id: e.id, wo: st.wo, status: r.status, grund: r.grund });
+      }
+    } else {
+      for (const [k, a] of p.gegner) if (k.startsWith('!actors!') && a.type === 'gegner' && a.name === e.daten.name) stellen.push({ wo: `${PACKS[e.spr].gegner}: ${a.name}`, akteur: a, pack: 'gegner' });
+      for (const ad of p.pakete.values()) for (const a of ad.actors ?? []) if (a.type === 'gegner' && a.name === e.daten.name) stellen.push({ wo: `${PACKS[e.spr].pakete}: ${ad.name} › ${a.name}`, akteur: a, pack: 'pakete' });
+      for (const st of stellen) {
+        const r = ersetzeZeile(st.akteur.system, e.daten.label, e.alt, e.neu);
+        if (r.status === 'ok') p.geaendert.add(st.pack);
+        bericht.push({ id: e.id, wo: st.wo, status: r.status, grund: [r.grund, ...r.nachgezogen].filter(Boolean).join('; ') });
+      }
+    }
+    if (!stellen.length) bericht.push({ id: e.id, wo: '', status: 'fehlt', grund: 'Fundstelle nicht in den Packs' });
+  }
+  return bericht;
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Aufruf
+
+function vorschlaege(band) {
+  const cfg = BAENDE[band];
+  const teile = [];
+  for (const spr of ['de', 'en']) {
+    const c = cfg[spr];
+    const pdfs = c.pdf.map((r) => ladePdf(r));
+    const pdf = new BandText(pdfs);
+    const abgleich = new BandText([ladePdf(ABGLEICH[spr])]);
+    const t = { spr, pdfs, saetze: { vorschlaege: [], statistik: null } };
+    if (!cfg.nurGegner) {
+      t.saetze = satzVorschlaege(journalSeiten(spr, c), pdf, abgleich);
+      t.saetze.vorschlaege.sort((a, b) => a.pdf.pos - b.pdf.pos);
+    }
+    t.gegner = gegnerVorschlaege(gegnerDesBandes(spr, c), pdf, abgleich);
+    teile.push(t);
+    console.log(`${band} ${spr}: Sätze ${t.saetze.vorschlaege.length}, Gegnerwerte ${t.gegner.vorschlaege.length}, Hinweise ${(t.saetze.hinweise?.length ?? 0) + t.gegner.hinweise.length}`);
+  }
+  fs.mkdirSync(ZIEL, { recursive: true });
+  const datei = path.join(ZIEL, `${band}.md`);
+  const alt = fs.existsSync(datei) ? leseFreigabe(fs.readFileSync(datei, 'utf8')) : [];
+  const { md, verloren } = schreibeFreigabe(band, cfg, teile, alt);
+  fs.writeFileSync(datei, md);
+  if (verloren.length) console.warn(`Achtung: Entscheidungen ohne passenden Vorschlag (nicht mehr in der Liste): ${verloren.join(', ')}`);
+}
+
+function ladePacks() {
+  const aus = {};
+  for (const spr of ['de', 'en']) {
+    aus[spr] = { geaendert: new Set() };
+    for (const [art, name] of Object.entries(PACKS[spr])) aus[spr][art] = lesePack(path.join(PACKORDNER, name));
+  }
+  return aus;
+}
+
+async function anwenden(baende, probelauf) {
+  const packs = ladePacks();
+  for (const band of baende) {
+    const datei = path.join(ZIEL, `${band}.md`);
+    if (!fs.existsSync(datei)) continue;
+    const ja = leseFreigabe(fs.readFileSync(datei, 'utf8')).filter((e) => e.freigabe === 'ja');
+    console.log(`${band}: ${ja.length} freigegebene Einträge`);
+    for (const b of wendeAn(ja, packs)) console.log(`  ${b.id} ${b.status}${b.wo ? ` (${b.wo})` : ''}${b.grund ? `: ${b.grund}` : ''}`);
+  }
+  if (probelauf) { console.log('Probelauf: nichts geschrieben.'); return; }
+  const { schreibePack } = await import('./packschreiber.mjs');
+  for (const spr of ['de', 'en']) {
+    for (const art of packs[spr].geaendert) {
+      await schreibePack(path.join(PACKORDNER, PACKS[spr][art]), packs[spr][art]);
+      console.log(`geschrieben: packs/${PACKS[spr][art]}`);
+    }
+  }
+}
+
+/** Prüft die Freigabedateien: lesbar, ids eindeutig, jede Zeile vollständig. Rückgabe: Liste der Fehler */
+export function pruefeFreigaben(ordner = ZIEL) {
+  const fehler = [];
+  if (!fs.existsSync(ordner)) return fehler;
+  const ids = new Set();
+  for (const f of fs.readdirSync(ordner).filter((f) => f.endsWith('.md') && f !== 'LIESMICH.md')) {
+    for (const e of leseFreigabe(fs.readFileSync(path.join(ordner, f), 'utf8'))) {
+      if (ids.has(e.id)) fehler.push(`${f}: id ${e.id} doppelt`);
+      ids.add(e.id);
+      if (!['offen', 'ja', 'nein'].includes(e.freigabe)) fehler.push(`${f}: ${e.id} Freigabe „${e.freigabe}“ (erlaubt: offen, ja, nein)`);
+      if (!e.alt || !e.neu || !e.daten || !e.spr) fehler.push(`${f}: ${e.id} unvollständig`);
+    }
+  }
+  return fehler;
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  const [befehl, wahl = 'alle', ...rest] = process.argv.slice(2);
+  const baende = wahl === 'alle' ? Object.keys(BAENDE) : [wahl];
+  if (baende.some((b) => !BAENDE[b]) || !['vorschlaege', 'anwenden', 'pruefen'].includes(befehl)) {
+    console.error(`Aufruf: node werkzeuge/korrektur.mjs vorschlaege|anwenden|pruefen <${Object.keys(BAENDE).join('|')}|alle> [--probelauf]`);
+    process.exit(1);
+  }
+  if (befehl === 'vorschlaege') for (const b of baende) vorschlaege(b);
+  else if (befehl === 'anwenden') await anwenden(baende, rest.includes('--probelauf'));
+  else {
+    const f = pruefeFreigaben();
+    console.log(f.length ? f.join('\n') : 'Freigabedateien in Ordnung.');
+    process.exit(f.length ? 1 : 0);
+  }
+}
