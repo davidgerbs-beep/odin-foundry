@@ -43,7 +43,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - neu: Name Rolle Passt in Einsatz
 
 - alt: Martin Hofer Ingenieur, baut Prototyp 0417 9, 10, 11, 12
-- neu: Dr. Martin Hofer Physiker des Instituts, baut den Detektor 0417 9, 10, 11, 12
+- neu: Dr. Martin Hofer Physicist des Instituts, baut den Detektor 0417 9, 10, 11, 12
 
 - alt: Name Rolle Einsätze
 - neu: Name Rolle Passt in Einsatz
@@ -822,7 +822,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 ### 06 Der Hauslehrer › Knoten 3: Das Kirchenbuch und das Pfarrhaus
 
 - alt: Das alte Kirchenbuch von Solberg, Pfarrer Mattias Berg, ein kleines Archiv im Pfarrhaus. Das Kirchenbuch hat einen Eintrag von 1871, der mitten im Satz abbricht. Im Archiv liegt eine Kiste mit alten Papieren, darunter der Zeitungsartikel von 1872 (Handout 6.1) und der Brief des Pfarrers (Handout 6.2).
-- neu: Pfarrer Mattias Berg, ein kleines Archiv im Pfarrhaus und darin eine beglaubigte Abschrift des alten Kirchenbuchs von Solberg. Das Original liegt im Landesarchiv Uppsala. Das Kirchenbuch hat einen Eintrag von 1871, der mitten im Satz abbricht. Im Archiv liegt eine Kiste mit alten Papieren, darunter der Zeitungsartikel von 1872 (Handout 6.1) und der Brief des Pfarrers (Handout 6.2).
+- neu: Pfarrer Mattias Berg, ein kleines Archiv im Pfarrhaus und darin eine beglaubigte Abschrift des alten Kirchenbuchs von Solberg. Das Original liegt im Landesarchiv Uppsala. Der Eintrag von 1871 bricht auch in der Abschrift mitten im Satz ab. Im Archiv liegt eine Kiste mit alten Papieren, darunter der Zeitungsartikel von 1872 (Handout 6.1) und der Brief des Pfarrers (Handout 6.2).
 
 ### 06 Der Hauslehrer › Knoten 1: Die Baustelle am See
 
@@ -1430,7 +1430,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 ### 06 The Tutor › Node 3: The Church Register and the Vicarage
 
 - alt: The old church register of Solberg, Pastor Mattias Berg, a small archive in the vicarage. The church register has an entry from 1871 that breaks off in the middle of a sentence. In the archive there is a box with old papers, including the newspaper article from 1872 (Handout 6.1) and the pastor’s letter (Handout 6.2).
-- neu: Pastor Mattias Berg, a small archive in the vicarage and in it a certified copy of the old church register of Solberg. The original lies in the Uppsala Regional Archive. The church register has an entry from 1871 that breaks off in the middle of a sentence. In the archive there is a box with old papers, including the newspaper article from 1872 (Handout 6.1) and the pastor’s letter (Handout 6.2).
+- neu: Pastor Mattias Berg, a small archive in the vicarage and in it a certified copy of the old church register of Solberg. The original lies in the Uppsala Regional Archive. The entry from 1871 breaks off in the middle of a sentence in the copy too. In the archive there is a box with old papers, including the newspaper article from 1872 (Handout 6.1) and the pastor’s letter (Handout 6.2).
 
 ### 06 The Tutor › Node 5: The Manor House
 
