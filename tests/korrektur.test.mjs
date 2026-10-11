@@ -10,7 +10,7 @@ import { lesePack } from '../werkzeuge/leveldb.mjs';
 import {
   Abgleich, normMitIndex, bereinigeSeite, textKarte, text, saetze, vergleicheSatz, unterschiede, BandText, satzVorschlaege,
   gegnerVorschlaege, wertImBlock, ersetzeSatz, ersetzeZeile, zieheZahlenNach, leseFreigabe, schreibeFreigabe, pruefeFreigaben,
-  zeilen, BAENDE, ZIEL,
+  zeilen, BAENDE, ZIEL, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
 } from '../werkzeuge/korrektur.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -132,7 +132,7 @@ test('Anwenden: Gegnerzeile ändern und Zahlen nachziehen', () => {
   assert.equal(r.status, 'ok');
   assert.deepEqual(system.pools.map((p) => [p.name, p.weiss, p.bunt, p.schaden]), [['Kompaktpistole', 3, 2, 2], ['Totschläger', 2, 2, 2]]);
   r = ersetzeZeile(system, 'Grauen', 'Unheimlich (1)', 'Keines. Würfelt selbst gegen Unheimlich (1)');
-  assert.equal(system.grauen, 1, 'Grauen des Gegners bleibt, die Zahl in Klammern ist der Wurf der Leute');
+  assert.equal(system.grauen, 0, 'Keines: der Gegner selbst hat kein Grauen, die Zahl in Klammern ist der Wurf der Leute');
   r = ersetzeZeile(system, 'Initiative', '3', '2');
   assert.equal(r.status, 'ok');
   assert.equal(system.initiative, 2);
@@ -166,16 +166,58 @@ test('Freigabedatei: schreiben, lesen, Entscheidungen bleiben', () => {
   assert.equal(neu[1].freigabe, 'offen');
 });
 
+test('Nachträge: Markdown der Buchquellen lesen', () => {
+  assert.equal(mdText('- **Hinweis:** Ein Satz mit *Betonung* und [Verweis](x).'), 'Hinweis: Ein Satz mit Betonung und Verweis.');
+  assert.equal(mdText('3 | Nummer 341 | Cardiff | Grau'), '3 Nummer 341 Cardiff Grau');
+  assert.equal(mdText('[entry - Owen Gwynne Pfandleiher · Menschen]'), 'Owen Gwynne Pfandleiher · Menschen');
+  const md = '# x\n\n## Deutsch\n\n### Zeile 3, Knoten\n\n**alt:** Alter Satz.\n\n**neu:** Neuer Satz.\n\n- ergänzen: Neuer Satz.\n\n## Englisch\n\n### Zeile 4, Node\n\n**neu:** - **Clue:** New.\n';
+  assert.deepEqual(leseNachtraege(md), [{ spr: 'de', ort: 'Zeile 3, Knoten', alt: 'Alter Satz.', neu: 'Neuer Satz.' }, { spr: 'en', ort: 'Zeile 4, Node', alt: '', neu: 'Clue: New.' }]);
+});
+
+test('Nachträge: Änderung auf einen abweichenden Absatz übertragen', () => {
+  // Journal hat schon einen Teil (solange), die Änderung des Bandes kommt dazu, Satzzeichen des Journals bleiben
+  const r = uebertrage('Er fand einen Kristall, der das Summen dämpfte, wenn er ihn festhielt. Er nahm ihn mit.',
+    'Er fand einen Kristall, der das Summen dämpfte, solange er ihn festhielt. Ließ er ihn los, kam es zurück. Linus nahm ihn mit.',
+    'Er fand einen Kristall, der das Summen dämpfte, solange er ihn festhielt. Er nahm ihn mit.');
+  assert.equal(r.neu, 'Er fand einen Kristall, der das Summen dämpfte, solange er ihn festhielt. Ließ er ihn los, kam es zurück. Linus nahm ihn mit.');
+  assert.equal(uebertrage('3 Nummer 341 Cardiff Grau', '3 Nummer 341 Cardiff Grau, kann rot werden', '3 Nummer 341 Cardiff Grau').neu, '3 Nummer 341 Cardiff Grau, kann rot werden');
+  assert.ok(uebertrage('Er kam am Montag zurück.', 'Er kam am Dienstag zurück.', 'Er kam am Freitag zurück.').konflikt, 'zu ändernde Stelle fehlt im Journal');
+  // Listen: Punkte einzeln, neue Punkte mit Vorgänger
+  const t = teileListe({ spr: 'de', ort: 'x', alt: 'Hinweis: Eins (führt zu A) - Hinweis: Zwei bleibt', neu: 'Hinweis: Eins (führt zu B) - Hinweis: Zwei bleibt - Hinweis: Drei ist neu' });
+  assert.deepEqual(t.map((x) => [x.alt, x.neu, x.nach ?? null]), [['Hinweis: Eins (führt zu A)', 'Hinweis: Eins (führt zu B)', null], [null, 'Hinweis: Drei ist neu', 'Hinweis: Zwei bleibt']]);
+  // Einfügen hinter dem Vorgänger, mit gleichem Etikett
+  assert.equal(fuegeAbsatzEin('<ul><li><b>Hinweis:</b> Zwei bleibt</li></ul>', 'Hinweis: Zwei bleibt', 'Hinweis: Drei & neu'),
+    '<ul><li><b>Hinweis:</b> Zwei bleibt</li><li><b>Hinweis:</b> Drei &amp; neu</li></ul>');
+  assert.equal(fuegeAbsatzEin('<p>A</p><p>A</p>', 'A', 'B'), null, 'Anker muss eindeutig sein');
+});
+
+test('Nachträge: in den Packs (im Speicher), nur im Band, gleichnamige Journale getrennt', () => {
+  const seite = (id, name, html) => ({ _id: id, name, type: 'text', sort: 0, text: { content: html } });
+  const abenteuer = new Map([
+    ['!folders!f1', { _id: 'f1', name: 'Band A' }], ['!folders!f2', { _id: 'f2', name: 'Band B' }],
+    ['!journal!j1', { _id: 'j1', name: 'Haus', folder: 'f1', pages: ['p1'] }], ['!journal!j2', { _id: 'j2', name: 'Haus', folder: 'f2', pages: ['p2'] }],
+    ['!journal.pages!j1.p1', seite('p1', 'Nachspiel', '<p><b>EP:</b> 5 pro Charakter, +1 für die Lösung mit der Wahrheit.</p>')],
+    ['!journal.pages!j2.p2', seite('p2', 'Nachspiel', '<p><b>EP:</b> 5 pro Charakter, +1 für die Lösung mit der Wahrheit.</p>')],
+  ]);
+  const pakete = new Map([['!adventures!a1', { name: 'Band A', actors: [], journal: [{ name: 'Haus', pages: [seite('p1', 'Nachspiel', '<p><b>EP:</b> 5 pro Charakter, +1 für die Lösung mit der Wahrheit.</p>')] }] }]]);
+  const packs = { de: { abenteuer, pakete, gegner: new Map(), geaendert: new Set() } };
+  const b = wendeNachtraegeAn([{ spr: 'de', ort: 'Zeile 1, Nachspiel', alt: 'EP: 5 pro Charakter, +1 für die Lösung mit der Wahrheit.', neu: 'EP: Grundwert 4 EP, +1 für die Lösung mit der Wahrheit.' }], packs, { de: ['Band A'] });
+  assert.equal(b[0].status, 'ok');
+  assert.equal(abenteuer.get('!journal.pages!j1.p1').text.content, '<p><b>EP:</b> Grundwert 4 EP, +1 für die Lösung mit der Wahrheit.</p>');
+  assert.equal(pakete.get('!adventures!a1').journal[0].pages[0].text.content, '<p><b>EP:</b> Grundwert 4 EP, +1 für die Lösung mit der Wahrheit.</p>');
+  assert.match(abenteuer.get('!journal.pages!j2.p2').text.content, /5 pro Charakter/, 'gleichnamiges Journal im anderen Band bleibt');
+});
+
 test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Packs', () => {
   assert.deepEqual(pruefeFreigaben(), []);
-  const dateien = fs.existsSync(ZIEL) ? fs.readdirSync(ZIEL).filter((f) => f.endsWith('.md')) : [];
+  const dateien = fs.existsSync(ZIEL) ? fs.readdirSync(ZIEL).filter((f) => f.endsWith('.md') && !f.startsWith('aenderungen_')) : [];
   assert.deepEqual(dateien.sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
   const packs = {};
   const pack = (n) => (packs[n] ??= lesePack(path.join(wurzel, 'packs', n)));
   const fehlt = [];
   for (const f of dateien) {
     for (const e of leseFreigabe(fs.readFileSync(path.join(ZIEL, f), 'utf8'))) {
-      if (e.freigabe === 'ja') continue; // nach dem Anwenden steht dort „neu“
+      if (e.freigabe !== 'offen') continue; // entschieden: „ja“ ist übernommen, „nein“-Stellen können von Hand gerichtet sein
       const en = e.spr === 'en' ? '-en' : '';
       if (e.art === 'satz') {
         const d = pack(`odin-abenteuer${en}`);
