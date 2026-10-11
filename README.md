@@ -12,7 +12,7 @@ https://github.com/davidgerbs-beep/odin-foundry/releases/latest/download/system.
 
 ### O.D.I.N. Core (no art): Kern ohne KI-Bilder
 
-Für die Paketliste von foundryvtt.com (und damit den Forge-Bazaar) gibt es das System zusätzlich als Kern ohne Illustrationen, eigene ID `odin-rpg-core`. Regeln, Bögen, Würfel (auch die 3D-Würfel), Einstellungen und alle Kompendien-Texte sind gleich; Porträts, Token, Szenen-, Artefakt- und Registraturbilder fehlen (Symbole des Foundry-Kerns statt Porträts). Lagepläne, Handouts und Karteikarten sind dabei. Welten lassen sich zwischen den beiden Systemen nicht tauschen. Manifest-URL:
+Für die Paketliste von foundryvtt.com (und damit den Forge-Bazaar) gibt es das System zusätzlich als Kern ohne Illustrationen, eigene ID `odin-rpg-core`. Regeln, Bögen, Würfel (auch die 3D-Würfel), Einstellungen und alle Kompendien-Texte sind gleich; Porträts, Token, Szenen-, Artefakt- und Registraturbilder fehlen (Symbole des Foundry-Kerns statt Porträts). Lagepläne, Handouts und Karteikarten sind dabei; einige Handouts enthalten mit KI erstellte Fotos. Welten lassen sich zwischen den beiden Systemen nicht tauschen. Manifest-URL:
 
 ```
 https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/kern/system.json
@@ -27,6 +27,10 @@ Knochen und Kürbis für Dice So Nice, schwarze Augen, auf der Sechs ein Kürbis
 ```
 https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/halloween/module.json
 ```
+
+### Abgleich der Abenteuer mit den Bänden (Werkzeug)
+
+`node werkzeuge/korrektur.mjs vorschlaege <band|alle>` vergleicht die Journalseiten und Gegnerwerte der Abenteuer mit den überarbeiteten PDF-Bänden auf odin-rpg.pages.dev (lädt sie in einen Zwischenspeicher außerhalb des Repos, braucht `pdftotext` aus poppler) und schreibt je Band eine Freigabedatei nach `werkzeuge/korrektur/`: Vorschläge „alt → neu“ mit Fundstelle, je Eintrag `Freigabe: offen`, `ja` oder `nein`. Fehltreffer durch den Zweispaltensatz sortiert es vorab aus. Nach der Freigabe übernimmt `node werkzeuge/korrektur.mjs anwenden <band> [--probelauf]` nur die Einträge mit `ja` in die Kompendien (braucht classic-level, Foundry vorher beenden). Geprüft mit `node --test tests/korrektur.test.mjs`.
 
 ## So sieht es aus
 

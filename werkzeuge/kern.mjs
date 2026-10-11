@@ -107,9 +107,9 @@ export function kernSystem(sys) {
     + 'character and enemy sheets, rolls with white and coloured dice (white succeed on 5+, coloured on 4+), combat, horror, psi '
     + 'and spells, class price, import from the character generator, compendia with rules, equipment, enemies and adventures as text. '
     + 'German and English. The illustrated edition (portraits, tokens, scene art) is installed separately via its manifest link on '
-    + 'odin-rpg.pages.dev; worlds are not interchangeable between the two. '
+    + 'odin-rpg.pages.dev; worlds are not interchangeable between the two. Some handouts contain photos created with AI. '
     + '/ Grundregeln für O.D.I.N. ohne Illustrationen: Bögen, Proben, Kampf, Grauen, Kompendien mit Texten. Die bebilderte Fassung '
-    + 'gibt es separat über ihren Manifest-Link auf odin-rpg.pages.dev.';
+    + 'gibt es separat über ihren Manifest-Link auf odin-rpg.pages.dev. Einige Handouts enthalten mit KI erstellte Fotos.';
   s.manifest = `https://raw.githubusercontent.com/${REPO}/main/kern/system.json`;
   s.download = `https://github.com/${REPO}/releases/download/core-v${s.version}/${ID}.zip`;
   for (const p of s.packs ?? []) delete p.banner;
