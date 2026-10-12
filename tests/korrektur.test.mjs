@@ -147,6 +147,9 @@ test('Anwenden: Gegnerzeile ändern und Zahlen nachziehen', () => {
   assert.equal(r.status, 'ok');
   assert.equal(system.initiative, 2);
   assert.equal(ersetzeZeile(system, 'Grauen', 'Etwas anderes', 'x').status, 'fehlt');
+  const s3 = { pools: [{ name: 'Berührung', weiss: 4, bunt: 3, schaden: 0 }] };
+  zieheZahlenNach(s3, 'Angriff', 'Berührung 4 + 3, Schaden 2 Belastung, wer berührt wird, hört das Lied');
+  assert.equal(s3.pools[0].schaden, 0, 'Schaden in Belastung ist kein LP-Schaden des Pools');
   const s2 = { grauen: 1 };
   zieheZahlenNach(s2, 'Grauen', 'Verstörend (2), wenn sie sich umdrehen');
   assert.equal(s2.grauen, 2);

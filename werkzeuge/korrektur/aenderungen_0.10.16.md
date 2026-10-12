@@ -1542,7 +1542,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Angriff: Pfefferspray 2 + 2, Schaden 1, Blendet
 - neu: Angriff: Pfefferspray 2 + 2, kein Schaden, das Ziel ist eine Runde lang geblendet (−2 Würfel)
 
-## Gegner Englisch (29 Absätze)
+## Gegner Englisch (28 Absätze)
 
 ### Akteur Kantor besonderheit
 
@@ -1622,9 +1622,6 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Weakness: A warding circle stops him. So does salt on the threshold.
 - neu: Weakness: A warding circle stops him. Salt on the threshold too.
-
-- alt: Zahlen: {"i":4,"v":3,"r":0,"lp":11,"g":0,"p":["Touch 4+3/0","Stealth 4+3/0","Perception 4+2/0"]}
-- neu: Zahlen: {"i":4,"v":3,"r":0,"lp":11,"g":0,"p":["Touch 4+3/2","Stealth 4+3/0","Perception 4+2/0"]}
 
 ### Akteur Josef Hartl besonderheit
 

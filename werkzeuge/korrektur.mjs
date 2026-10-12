@@ -865,7 +865,7 @@ export function zieheZahlenNach(system, label, wert) {
     if (/^(Kein|None|No\b)/.test(wert)) setze('grauen', 0);
     else if (m) setze('grauen', +m[1]);
   } else if (/^(Angriff|Attack|Psi)/.test(label)) {
-    const angriffe = [...wert.matchAll(/(?:^|,\s*(?:oder|or)\s+|;\s*|,\s*)([^,;]+?)\s+(\d+)\s*\+\s*(\d+)(?:,\s*(?:Schaden|[Dd]amage)\s*(\d+))?/g)];
+    const angriffe = [...wert.matchAll(/(?:^|,\s*(?:oder|or)\s+|;\s*|,\s*)([^,;]+?)\s+(\d+)\s*\+\s*(\d+)(?:,\s*(?:Schaden|[Dd]amage)\s*(\d+)(?!\s*(?:Belastung|strain)))?/g)];
     const pools = system.pools ?? [];
     angriffe.forEach((m, i) => {
       const name = m[1].replace(/^(oder|or)\s+/i, '').trim();
