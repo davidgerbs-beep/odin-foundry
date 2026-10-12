@@ -1737,17 +1737,12 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Raven Investigator, Paranormal Detective Read tracks and signs, Protection Ritual 10 10
 - neu: Raven Investigator, Paranormal Detective Read tracks and signs, Protective Ritual 10 10
 
-## Gegner Deutsch (9 Absätze)
+## Gegner Deutsch (8 Absätze)
 
 ### Akteur Kristalljäger besonderheit
 
 - alt: Angriff: Pistole 3 + 3, Schaden 3, oder Schrotflinte 3 + 3, Schaden 4, Nah
 - neu: Angriff: Pistole 3 + 3, Schaden 3, oder Schrotflinte 3 + 3, Schaden 4, Streuung
-
-### Akteur Kristallmutant besonderheit
-
-- alt: Grauen: Grauenhaft (3) beim ersten Anblick ¶ Besonderheit: Regeneriert 2 LP pro Runde, außer er wurde in dieser Runde durch Feuer oder Energiewaffen verletzt ¶ Zahlen: {"i":5,"v":2,"r":2,"lp":22,"g":3,"p":["Klauen 5+4/4"]}
-- neu: Grauen: Unheimlich (1) ¶ Besonderheit: Regeneriert 1 LP pro Runde. Fällt nicht bei 0 LP, sondern erst, wenn er in derselben Runde noch einmal getroffen wird ¶ Zahlen: {"i":5,"v":2,"r":2,"lp":22,"g":1,"p":["Klauen 5+4/4"]}
 
 ### Akteur Nadia El-Khoury besonderheit
 
@@ -1784,12 +1779,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Schwäche: Ein Helm, eine Kappe, ein Stück Legierung S. Ein Psychic Healer oder Telepath kann es beruhigen: WK + Telepathie gegen Schwer (3)
 - neu: Schwäche: Ein Helm, eine Kappe, ein Stück Legierung S. Ein Telepath kann es beruhigen: WK + Telepathie gegen Schwer (3). Ein Psychic Healer schafft es mit WK + Psychische Heilung gegen Schwer (3)
 
-## Gegner Englisch (72 Absätze)
-
-### Akteur Crystal Mutant besonderheit
-
-- alt: Special: Regenerates 2 HP per round, unless they were injured by fire or energy weapons this round
-- neu: Special: Regenerates 1 HP per round. Does not fall at 0 HP, but only when they are hit again in the same round
+## Gegner Englisch (71 Absätze)
 
 ### Akteur Crystal Hunter besonderheit
 
