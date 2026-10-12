@@ -10,7 +10,7 @@ import { lesePack } from '../werkzeuge/leveldb.mjs';
 import {
   Abgleich, normMitIndex, bereinigeSeite, textKarte, text, saetze, vergleicheSatz, unterschiede, BandText, satzVorschlaege,
   gegnerVorschlaege, wertImBlock, ersetzeSatz, ersetzeZeile, zieheZahlenNach, leseFreigabe, schreibeFreigabe, pruefeFreigaben,
-  zeilen, BAENDE, ZIEL, wendeAn, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
+  zeilen, BAENDE, ZIEL, wendeAn, begriffVorschlaege, ersetzeInFeldern, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
 } from '../werkzeuge/korrektur.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -155,6 +155,22 @@ test('Anwenden: Satz in der Beschreibung einer Kraft (Gegenstand)', () => {
   assert.equal(wendeAn([e], packs)[0].status, 'schon');
 });
 
+test('Englische Begriffe: Vorschlag nur, wo der Band die neue Form hat; Zellen und ganze Felder', () => {
+  const buch = ' horror test against uncanny (1) for everyone who enters | horror uncanny (1) special pack of | the lodge of the silent circle | damage 3 quiet | ';
+  const doc = { name: 'Escalation', system: { pools: [{ notiz: 'Silent' }] },
+    text: { content: '<p>Horror test against Eerie (1) for everyone who enters.</p><table><tr><td>Horror</td><td>Eerie (1)</td></tr><tr><td>Special</td><td>Pack of three</td></tr></table><p>The Lodge of the Silent Circle.</p>' } };
+  const { vorschlaege: v, hinweise } = begriffVorschlaege({ 'odin-abenteuer-en': new Map([['!x!1', doc]]) }, buch, [['Eerie (1)', 'Uncanny (1)'], ['Silent', 'Quiet']]);
+  assert.deepEqual(v.map((x) => [x.alt, x.neu, !!x.ganzesFeld]).sort(), [
+    ['>Eerie (1)<', '>Uncanny (1)<', false],
+    ['Silent', 'Quiet', true],
+    ['test against Eerie (1) for everyone who', 'test against Uncanny (1) for everyone who', false],
+  ]);
+  assert.equal(hinweise.length, 0, '„Silent Circle“ steht so im Band und bleibt');
+  for (const x of v) ersetzeInFeldern(doc, x.alt, x.neu, x.ganzesFeld);
+  assert.match(doc.text.content, /against Uncanny \(1\) for everyone.*<td>Uncanny \(1\)<\/td>.*Silent Circle/);
+  assert.equal(doc.system.pools[0].notiz, 'Quiet');
+});
+
 test('Freigabedatei: schreiben, lesen, Entscheidungen bleiben', () => {
   const cfg = BAENDE['graue-akten'];
   const teil = (neu) => ({
@@ -223,7 +239,8 @@ test('Nachträge: in den Packs (im Speicher), nur im Band, gleichnamige Journale
 test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Packs', () => {
   assert.deepEqual(pruefeFreigaben(), []);
   const dateien = fs.existsSync(ZIEL) ? fs.readdirSync(ZIEL).filter((f) => f.endsWith('.md') && !f.startsWith('aenderungen_')) : [];
-  assert.deepEqual(dateien.sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
+  assert.deepEqual(dateien.filter((f) => !f.endsWith('_nachlauf.md') && !f.startsWith('begriffe_')).sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
+  for (const f of dateien.filter((f) => f.endsWith('_nachlauf.md'))) assert.ok(BAENDE[f.replace(/_nachlauf\.md$/, '')], `${f}: Nachlauf zu einem bekannten Band`);
   const packs = {};
   const pack = (n) => (packs[n] ??= lesePack(path.join(wurzel, 'packs', n)));
   const fehlt = [];
@@ -237,6 +254,10 @@ test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Pa
         const ok = e.daten.fundstellen.some(([j, s]) => [...d].some(([k, v]) => k.startsWith('!journal.pages!') && journale.get(k.slice(15).split('.')[0]) === j && v.name === s
           && text(v.text?.content ?? '').replace(/\s+/g, ' ').includes(e.alt)));
         if (!ok) fehlt.push(`${f}: ${e.id}`);
+      } else if (e.art === 'begriff') {
+        const felder = (o, aus = []) => { if (typeof o === 'string') aus.push(o); else if (o && typeof o === 'object') for (const v of Object.values(o)) felder(v, aus); return aus; };
+        const doc = pack(e.daten.pack).get(e.daten.key);
+        if (!doc || !felder(doc).some((x) => (e.daten.ganzesFeld ? x === e.alt : x.includes(e.alt)))) fehlt.push(`${f}: ${e.id}`);
       } else if (e.art === 'gegenstand') {
         const ok = e.daten.fundstellen.some(([art, name]) => [...pack(`odin-${art}${en}`).values()].some((v) => v.name === name
           && text(v.system?.beschreibung ?? '').replace(/\s+/g, ' ').includes(e.alt)));
