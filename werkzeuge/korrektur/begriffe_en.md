@@ -7,13 +7,13 @@ Ausschnitt aus dem Feld (ohne HTML), ersetzt wird genau dieser Ausschnitt. Freig
 eventuell doppelt; wer zuerst kommt, ändert, der zweite Eintrag meldet „schon“. „sicher“: die Bände haben an dieser Stelle nur noch die
 neue Form; „prüfen“: ein Band hat sie neu, ein anderer noch alt.
 
-Begriffe: Eerie (1) → Uncanny (1), Horrific (3) → Horrifying (3), Accurate → Precise, Stunning → Stun, Crystal Warden → Crystal Guardian, Watcher → Spectator, Security System → Guard System, Scatter → Spread, Hand-to-hand → Brawling, Silent → Quiet.
+Begriffe: Eerie (1) → Uncanny (1), Horrific (3) → Horrifying (3), Accurate → Precise, Stunning → Stun, Crystal Warden → Crystal Guardian, Watcher → Spectator, Security System → Guard System, Scatter → Spread, Hand-to-hand → Brawling, Silent → Quiet, Taking the Children → Fetch the children, Keep the Silence → Preserve the silence, The Staircase → The stairs, The Page from 1871 → The page from 1871, The New Host → The new host, The Chimera → The chimera, A Seeker of Their Own → A Seeker of their own, The Second Site → The second site, No More Nexus Crystals → No more Nexus crystals, The Great Stone → The great stone, THE BAIT → THE LURE, The Bait → The Lure.
 
 Bände: ODIN_EN_01_Core_Rulebook (Prüfsumme 92f111ff85f5), ODIN_EN_08_Game_Masters_Book (Prüfsumme 332448b70f5e), ODIN_EN_10_The_Door_Campaign (Prüfsumme b06a413140cf), ODIN_EN_11_The_Door_Handouts (Prüfsumme 45caf093ec38), ODIN_EN_13_Quickstart (Prüfsumme 77389f6a0ee4), ODIN_EN_14_Grey_Files (Prüfsumme 426628108af2), ODIN_EN_14_Grey_Files_Handouts (Prüfsumme b4511790ec28), ODIN_EN_15_The_Other_Services (Prüfsumme f5a4b291045b), ODIN_EN_16_Holds_of_the_World (Prüfsumme 3c904cb7aa4b), ODIN_EN_18_Nordlicht_1977 (Prüfsumme 8e80095667c0), ODIN_EN_18_Nordlicht_1977_Handouts (Prüfsumme 7b19badb7e34), ODIN_EN_19_Shadow_Officers (Prüfsumme f55408678ed6), ODIN_EN_22_The_Registry (Prüfsumme ea9eee193353), ODIN_EN_24_Foreign_Bodies (Prüfsumme 598b2b6b1776).
 
 ## Englisch
 
-Vorschläge: 98. Hinweise ohne Vorschlag: 21.
+Vorschläge: 275. Hinweise ohne Vorschlag: 27.
 
 ### Eerie (1) → Uncanny (1)
 
@@ -715,21 +715,1290 @@ Freigabe: offen
 - neu: Quiet
 <!-- daten: {"art":"begriff","pack":"odin-waffen-en","key":"!items!TiP9WvzlHQYoMrUj","ganzesFeld":true} -->
 
+### Taking the Children → Fetch the children
+
+#### BG-en-b43231 · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open Ones) loses a skull. The
+- neu: “Fetch the children” (The Open Ones) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-62a55a · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open Ones) gains a skull. Kantor
+- neu: “Fetch the children” (The Open Ones) gains a skull. Kantor
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-540820 · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open Ones) gains a skull. The
+- neu: “Fetch the children” (The Open Ones) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-09df0d · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open
+- neu: “Fetch the children” (The Open
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-52d184 · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “Taking the Children”
+- neu: “Fetch the children”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-8c9b7f · odin-abenteuer-en › „Chapter V: Renegades and Collectors“ · prüfen
+Freigabe: offen
+
+- alt: “Taking the Children”
+- neu: “Fetch the children”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.QDqfeON6wJkrAPEh"} -->
+
+#### BG-en-53c155 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “Taking the Children”
+- neu: “Fetch the children”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!whe1s6EyShfOJq3X.HKU2v19L14BquSsl"} -->
+
+#### BG-en-97a6e1 · odin-abenteuer-en › „The Plan: “Taking the Children”“ · sicher
+Freigabe: offen
+
+- alt: Plan: “Taking the Children”
+- neu: Plan: “Fetch the children”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!whe1s6EyShfOJq3X.y9jJQemzc04W4tBy"} -->
+
+#### BG-en-63dd6a · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “Taking the Children”
+- neu: “Fetch the children”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-ccb268 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open Ones) loses a skull. The
+- neu: “Fetch the children” (The Open Ones) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-2651dc · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open Ones) gains a skull. Kantor
+- neu: “Fetch the children” (The Open Ones) gains a skull. Kantor
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-be0408 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open Ones) gains a skull. The
+- neu: “Fetch the children” (The Open Ones) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-f189e9 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “Taking the Children” (The Open
+- neu: “Fetch the children” (The Open
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-6e81c8 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: Plan: “Taking the Children”
+- neu: Plan: “Fetch the children”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### Keep the Silence → Preserve the silence
+
+#### BG-en-739cb1 · odin-abenteuer-en › „The Plan: “Keep the Silence”“ · sicher
+Freigabe: offen
+
+- alt: Plan: “Keep the Silence”
+- neu: Plan: “Preserve the silence”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!gZPzqcgbjVZF0ZrQ.3QcnKpswYt7Cxw9o"} -->
+
+#### BG-en-738160 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “Keep the Silence”
+- neu: “Preserve the silence”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!gZPzqcgbjVZF0ZrQ.4GK1VcSeR1Pw9rVd"} -->
+
+#### BG-en-0afcca · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “Keep the Silence” (Congregation of the Silent
+- neu: “Preserve the silence” (Congregation of the Silent
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-40dd43 · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “Keep the Silence” (Congregation of the Silent Word)
+- neu: “Preserve the silence” (Congregation of the Silent Word)
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-76f027 · odin-abenteuer-en › „Chapter IV: The Brotherhoods“ · prüfen
+Freigabe: offen
+
+- alt: “Keep the Silence”
+- neu: “Preserve the silence”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.WyMiwaK25MXpm58Q"} -->
+
+#### BG-en-de16d1 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “Keep the Silence”
+- neu: “Preserve the silence”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-372f88 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “Keep the Silence” (Congregation of the Silent
+- neu: “Preserve the silence” (Congregation of the Silent
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-b6bd22 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “Keep the Silence” (Congregation of the Silent Word)
+- neu: “Preserve the silence” (Congregation of the Silent Word)
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-631f40 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: Plan: “Keep the Silence”
+- neu: Plan: “Preserve the silence”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The Staircase → The stairs
+
+#### BG-en-0ed5b7 · odin-abenteuer-en › „Hooks and Outlook“ · sicher
+Freigabe: offen
+
+- alt: File “The Staircase”.
+- neu: File “The stairs”.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!CIptzbvTCrB1S2Kc.7mhugIwgG1uVAGxh"} -->
+
+#### BG-en-f33ef2 · odin-abenteuer-en › „The Plan: “The Staircase”“ · sicher
+Freigabe: offen
+
+- alt: Plan: “The Staircase”
+- neu: Plan: “The stairs”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!CIptzbvTCrB1S2Kc.Tj2kQesHoic26Bf7"} -->
+
+#### BG-en-939fe5 · odin-abenteuer-en › „Overview“ · sicher
+Freigabe: offen
+
+- alt: a relative, Grey File “The Staircase”,
+- neu: a relative, Grey File “The stairs”,
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!CIptzbvTCrB1S2Kc.jjU5xtbCzLOVQSKU"} -->
+
+#### BG-en-c1e0d0 · odin-abenteuer-en › „Overview“ · sicher
+Freigabe: offen
+
+- alt: “The Staircase”, starting value
+- neu: “The stairs”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!CIptzbvTCrB1S2Kc.jjU5xtbCzLOVQSKU"} -->
+
+#### BG-en-a541c7 · odin-abenteuer-en › „Expansion 5: Connections“ · sicher
+Freigabe: offen
+
+- alt: “The Staircase” (The
+- neu: “The stairs” (The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-97a41b · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “The Staircase”
+- neu: “The stairs”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-7adad3 · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “The Staircase”
+- neu: “The stairs”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-ec3242 · odin-abenteuer-en › „Chapter II: The Cults“ · prüfen
+Freigabe: offen
+
+- alt: “The Staircase”
+- neu: “The stairs”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.ldSBT3axQaztHfqH"} -->
+
+#### BG-en-881369 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Staircase”
+- neu: “The stairs”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-f3240a · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “The Staircase” (The
+- neu: “The stairs” (The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-20b9ff · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: a relative, Grey File “The Staircase”,
+- neu: a relative, Grey File “The stairs”,
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-cf83ca · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: “The Staircase”, starting value
+- neu: “The stairs”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-91e455 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: Plan: “The Staircase”
+- neu: Plan: “The stairs”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-886c90 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: File “The Staircase”.
+- neu: File “The stairs”.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The Page from 1871 → The page from 1871
+
+#### BG-en-73d496 · odin-abenteuer-en › „The Plan: “The Great Stone”“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent Circle) gains a
+- neu: “The page from 1871” (Lodge of the Silent Circle) gains a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!4HjJNmV7bnXoEmno.5vT4kGWTNYlzLro3"} -->
+
+#### BG-en-7640e7 · odin-abenteuer-en › „The Plan: “The Staircase”“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent Circle) gains a
+- neu: “The page from 1871” (Lodge of the Silent Circle) gains a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!CIptzbvTCrB1S2Kc.Tj2kQesHoic26Bf7"} -->
+
+#### BG-en-d3e330 · odin-abenteuer-en › „The Plan: “The Second Light”“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent Circle) gains a
+- neu: “The page from 1871” (Lodge of the Silent Circle) gains a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!D4z7m7SvMzmOX1NF.9vlqzaPiNW2QPr7Y"} -->
+
+#### BG-en-995f07 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: The Page from 1871, starting value
+- neu: The page from 1871, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!Rdgvcgwb19hFO93J.L6IVm5NrNxFNRkMc"} -->
+
+#### BG-en-390872 · odin-abenteuer-en › „The Plan: “The Page from 1871”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Page from 1871”
+- neu: Plan: “The page from 1871”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!Rdgvcgwb19hFO93J.nVOadduCG4lWN6pi"} -->
+
+#### BG-en-f62619 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent
+- neu: “The page from 1871” (Lodge of the Silent
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-51eb84 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent Circle) gains a
+- neu: “The page from 1871” (Lodge of the Silent Circle) gains a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-7dfb47 · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871”
+- neu: “The page from 1871”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-874fb0 · odin-abenteuer-en › „Chapter IV: The Brotherhoods“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871”
+- neu: “The page from 1871”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.WyMiwaK25MXpm58Q"} -->
+
+#### BG-en-0eb6dc · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871”
+- neu: “The page from 1871”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-9265da · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871”
+- neu: “The page from 1871”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-dfb0f9 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent
+- neu: “The page from 1871” (Lodge of the Silent
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-d8dabe · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Page from 1871” (Lodge of the Silent Circle) gains a
+- neu: “The page from 1871” (Lodge of the Silent Circle) gains a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-a687ba · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Page from 1871, starting value
+- neu: The page from 1871, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-c891f8 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Page from 1871”
+- neu: Plan: “The page from 1871”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The New Host → The new host
+
+#### BG-en-5ab3b5 · odin-abenteuer-en › „History and Goals“ · prüfen
+Freigabe: offen
+
+- alt: The plan “The New Host” does not belong to Dr. Albrecht. It
+- neu: The plan “The new host” does not belong to Dr. Albrecht. It
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.3mWgbA9wrOT1ipt9"} -->
+
+#### BG-en-0820a0 · odin-abenteuer-en › „The Plan: “The New Host”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The New Host”
+- neu: Plan: “The new host”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.HqajHtfXaaM04AUd"} -->
+
+#### BG-en-339861 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host”, starting value
+- neu: “The new host”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.OeiDx5HbT0gXPgGj"} -->
+
+#### BG-en-c71e12 · odin-abenteuer-en › „Hooks and Outlook“ · prüfen
+Freigabe: offen
+
+- alt: File “The New Host”.
+- neu: File “The new host”.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.UGTBrsPezqMSrRRb"} -->
+
+#### BG-en-bdfa7c · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host” (The Twelve of
+- neu: “The new host” (The Twelve of
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-1857e6 · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host”
+- neu: “The new host”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-8fe395 · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host”
+- neu: “The new host”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-d0ecc2 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host”
+- neu: “The new host”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-763901 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host” (The Twelve of
+- neu: “The new host” (The Twelve of
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-756f93 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The New Host”, starting value
+- neu: “The new host”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-b9380d · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The plan “The New Host” does not belong to Dr. Albrecht. It
+- neu: The plan “The new host” does not belong to Dr. Albrecht. It
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-0cd392 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The New Host”
+- neu: Plan: “The new host”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-527458 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: File “The New Host”.
+- neu: File “The new host”.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The Chimera → The chimera
+
+#### BG-en-006afe · odin-abenteuer-en › „The Plan: “The Great Stone”“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) loses a skull. The
+- neu: “The chimera” (Morrow Biologics) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!4HjJNmV7bnXoEmno.5vT4kGWTNYlzLro3"} -->
+
+#### BG-en-0a80a1 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera”, starting value
+- neu: “The chimera”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.SKVZWjXLoohMvT5a"} -->
+
+#### BG-en-0a4116 · odin-abenteuer-en › „History and Goals“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera is unstable. In spring it breaks out
+- neu: The chimera is unstable. In spring it breaks out
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.cRtw35ak0xYUS4zW"} -->
+
+#### BG-en-22f2d0 · odin-abenteuer-en › „Key Figures“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera recognises her and hesitates for one
+- neu: The chimera recognises her and hesitates for one
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.cT3NOu1o5ZJHNUGy"} -->
+
+#### BG-en-c431a1 · odin-abenteuer-en › „Hooks and Outlook“ · prüfen
+Freigabe: offen
+
+- alt: has sealed off the laboratory in Lyon. The Chimera has escaped and divided. The cell is
+- neu: has sealed off the laboratory in Lyon. The chimera has escaped and divided. The cell is
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.mXFrZl1ZMojgwQk4"} -->
+
+#### BG-en-56e89f · odin-abenteuer-en › „The Plan: “The Chimera”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Chimera”
+- neu: Plan: “The chimera”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.x8TItRioNNGPHREA"} -->
+
+#### BG-en-bd219c · odin-abenteuer-en › „The Plan: “The Chimera”“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera exists only as a cell culture in Lyon.
+- neu: The chimera exists only as a cell culture in Lyon.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.x8TItRioNNGPHREA"} -->
+
+#### BG-en-bb8897 · odin-abenteuer-en › „The Plan: “The Chimera”“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera grows and becomes restless. The
+- neu: The chimera grows and becomes restless. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.x8TItRioNNGPHREA"} -->
+
+#### BG-en-aba3d0 · odin-abenteuer-en › „The Plan: “The Chimera”“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera breaks out of its cage and kills two
+- neu: The chimera breaks out of its cage and kills two
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.x8TItRioNNGPHREA"} -->
+
+#### BG-en-19322f · odin-abenteuer-en › „The Plan: “The Chimera”“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera escapes from the laboratory in Lyon
+- neu: The chimera escapes from the laboratory in Lyon
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.x8TItRioNNGPHREA"} -->
+
+#### BG-en-287747 · odin-abenteuer-en › „The Plan: “The New Host”“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) gains a skull. A
+- neu: “The chimera” (Morrow Biologics) gains a skull. A
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.HqajHtfXaaM04AUd"} -->
+
+#### BG-en-f60973 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) gains a skull. A
+- neu: “The chimera” (Morrow Biologics) gains a skull. A
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-ae95aa · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow
+- neu: “The chimera” (Morrow
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-66e784 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) gains a skull. The
+- neu: “The chimera” (Morrow Biologics) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-707f3d · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) loses a skull. The
+- neu: “The chimera” (Morrow Biologics) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-c1ccf0 · odin-abenteuer-en › „Chapter I: Asklepios and Its Heirs“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera”
+- neu: “The chimera”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.29Fgfw9Gl3BvKRSe"} -->
+
+#### BG-en-c509e5 · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera”
+- neu: “The chimera”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-32e137 · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera”
+- neu: “The chimera”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-1869a7 · odin-abenteuer-en › „The Plan: “Taking the Children”“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) gains a skull. The
+- neu: “The chimera” (Morrow Biologics) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!whe1s6EyShfOJq3X.y9jJQemzc04W4tBy"} -->
+
+#### BG-en-6b475f · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera recognises her and hesitates for one
+- neu: The chimera recognises her and hesitates for one
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-bdd581 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera”
+- neu: “The chimera”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-fc3bce · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) gains a skull. A
+- neu: “The chimera” (Morrow Biologics) gains a skull. A
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-300b57 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow
+- neu: “The chimera” (Morrow
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-2730a7 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) gains a skull. The
+- neu: “The chimera” (Morrow Biologics) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-dcbdb3 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera” (Morrow Biologics) loses a skull. The
+- neu: “The chimera” (Morrow Biologics) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-7cee05 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Chimera”, starting value
+- neu: “The chimera”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-2ae107 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera is unstable. In spring it breaks out
+- neu: The chimera is unstable. In spring it breaks out
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-bcf8b0 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Chimera”
+- neu: Plan: “The chimera”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-eb2832 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera exists only as a cell culture in Lyon.
+- neu: The chimera exists only as a cell culture in Lyon.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-214af3 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera grows and becomes restless. The
+- neu: The chimera grows and becomes restless. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-236633 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera breaks out of its cage and kills two
+- neu: The chimera breaks out of its cage and kills two
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-550648 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera escapes from the laboratory in Lyon
+- neu: The chimera escapes from the laboratory in Lyon
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-ca9cac · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: has sealed off the laboratory in Lyon. The Chimera has escaped and divided. The cell is
+- neu: has sealed off the laboratory in Lyon. The chimera has escaped and divided. The cell is
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-ab42ef · odin-gegner-en › „Dr. Camille Favre“ · prüfen
+Freigabe: offen
+
+- alt: The Chimera recognises her and hesitates for one
+- neu: The chimera recognises her and hesitates for one
+<!-- daten: {"art":"begriff","pack":"odin-gegner-en","key":"!actors!CIUqxD97faPOVCxW"} -->
+
+#### BG-en-ec8aab · odin-gegner-en › „Chimera“ · prüfen
+Freigabe: offen
+
+- alt: did it in a laboratory in Lyon. The Chimera is not evil. They are hungry,
+- neu: did it in a laboratory in Lyon. The chimera is not evil. They are hungry,
+<!-- daten: {"art":"begriff","pack":"odin-gegner-en","key":"!actors!wlW5qGl07pKH7q5s"} -->
+
+#### BG-en-4816bb · odin-gegner-en › „Chimera“ · prüfen
+Freigabe: offen
+
+- alt: animal, half armour, still moving. The Chimera itself is seen late: an outline in a
+- neu: animal, half armour, still moving. The chimera itself is seen late: an outline in a
+<!-- daten: {"art":"begriff","pack":"odin-gegner-en","key":"!actors!wlW5qGl07pKH7q5s"} -->
+
+### A Seeker of Their Own → A Seeker of their own
+
+#### BG-en-864b7b · odin-abenteuer-en › „The Plan: “A Seeker of Their Own”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “A Seeker of Their Own”
+- neu: Plan: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!2SclJxOHkRGYiGm4.MTfbKgArxyHPNSNt"} -->
+
+#### BG-en-3890ac · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”, starting value
+- neu: “A Seeker of their own”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!2SclJxOHkRGYiGm4.ieU64lr6fQTifkgG"} -->
+
+#### BG-en-ea2309 · odin-abenteuer-en › „The Plan: “The Second Site”“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own” (STILLWATER) gains a skull. The
+- neu: “A Seeker of their own” (STILLWATER) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!JizZW4C50CD9ercf.Uv8dNxJqj64ws6RZ"} -->
+
+#### BG-en-957ffb · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”
+- neu: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-1c7f11 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own” (STILLWATER) gains a skull. The
+- neu: “A Seeker of their own” (STILLWATER) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-6846a4 · odin-abenteuer-en › „Chapter III: Foreign Services“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”
+- neu: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.6bltcp3F6bnHYeBM"} -->
+
+#### BG-en-5f25d9 · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”
+- neu: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-e9d8a3 · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”
+- neu: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-6a51cb · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”
+- neu: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-3424ae · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own” (STILLWATER) gains a skull. The
+- neu: “A Seeker of their own” (STILLWATER) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-5fe752 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “A Seeker of Their Own”, starting value
+- neu: “A Seeker of their own”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-65efeb · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “A Seeker of Their Own”
+- neu: Plan: “A Seeker of their own”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The Second Site → The second site
+
+#### BG-en-b4bf92 · odin-abenteuer-en › „The Plan: “The Great Stone”“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department 13) gains a skull.
+- neu: “The second site” (Department 13) gains a skull.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!4HjJNmV7bnXoEmno.5vT4kGWTNYlzLro3"} -->
+
+#### BG-en-2d8243 · odin-abenteuer-en › „The Plan: “The Second Site”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Second Site”
+- neu: Plan: “The second site”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!JizZW4C50CD9ercf.Uv8dNxJqj64ws6RZ"} -->
+
+#### BG-en-b28db3 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site”, starting value
+- neu: “The second site”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!JizZW4C50CD9ercf.iDWrhO6JdnVjFCm1"} -->
+
+#### BG-en-33f28c · odin-abenteuer-en › „The Plan: “No More Nexus Crystals”“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department 13) gains a skull. The
+- neu: “The second site” (Department 13) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!amW1bWA89r3nUl1u.cMWn3YioK25XOZ7F"} -->
+
+#### BG-en-0adc70 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department
+- neu: “The second site” (Department
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-09c4ba · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department 13) gains a skull. The
+- neu: “The second site” (Department 13) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-12e716 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department 13) gains a skull.
+- neu: “The second site” (Department 13) gains a skull.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-cc1d20 · odin-abenteuer-en › „Chapter III: Foreign Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site”
+- neu: “The second site”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.6bltcp3F6bnHYeBM"} -->
+
+#### BG-en-d85b2a · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site”
+- neu: “The second site”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-c994d7 · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site”
+- neu: “The second site”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-b9776c · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site”
+- neu: “The second site”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-72e583 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department
+- neu: “The second site” (Department
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-8e5b5d · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department 13) gains a skull. The
+- neu: “The second site” (Department 13) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-766490 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site” (Department 13) gains a skull.
+- neu: “The second site” (Department 13) gains a skull.
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-8802e3 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Second Site”, starting value
+- neu: “The second site”, starting value
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-9753b6 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Second Site”
+- neu: Plan: “The second site”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### No More Nexus Crystals → No more Nexus crystals
+
+#### BG-en-9d0dcd · odin-abenteuer-en › „The Plan: “The Staircase”“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (the Foundation in Basel) loses a
+- neu: “No more Nexus crystals” (the Foundation in Basel) loses a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!CIptzbvTCrB1S2Kc.Tj2kQesHoic26Bf7"} -->
+
+#### BG-en-259915 · odin-abenteuer-en › „The Plan: “No More Nexus Crystals”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “No More Nexus Crystals”
+- neu: Plan: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!amW1bWA89r3nUl1u.cMWn3YioK25XOZ7F"} -->
+
+#### BG-en-239972 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals”
+- neu: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!amW1bWA89r3nUl1u.q9FkOqUaV8PMtbEm"} -->
+
+#### BG-en-be05c6 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (The Foundation in Basel) loses a
+- neu: “No more Nexus crystals” (The Foundation in Basel) loses a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-dbf1b6 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (The Foundation in
+- neu: “No more Nexus crystals” (The Foundation in
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-d05e1f · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals”
+- neu: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-3dc73e · odin-abenteuer-en › „Chapter V: Renegades and Collectors“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals”
+- neu: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.QDqfeON6wJkrAPEh"} -->
+
+#### BG-en-92441b · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals”
+- neu: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-78b020 · odin-abenteuer-en › „The Plan: “Taking the Children”“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (The Foundation in Basel) loses a
+- neu: “No more Nexus crystals” (The Foundation in Basel) loses a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!whe1s6EyShfOJq3X.y9jJQemzc04W4tBy"} -->
+
+#### BG-en-20f606 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals”
+- neu: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-2554e0 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (The Foundation in Basel) loses a
+- neu: “No more Nexus crystals” (The Foundation in Basel) loses a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-f88f55 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (The Foundation in
+- neu: “No more Nexus crystals” (The Foundation in
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-506070 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “No More Nexus Crystals” (the Foundation in Basel) loses a
+- neu: “No more Nexus crystals” (the Foundation in Basel) loses a
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-27299f · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “No More Nexus Crystals”
+- neu: Plan: “No more Nexus crystals”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The Great Stone → The great stone
+
+#### BG-en-9f3dfc · odin-abenteuer-en › „The Plan: “The Great Stone”“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Great Stone”
+- neu: Plan: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!4HjJNmV7bnXoEmno.5vT4kGWTNYlzLro3"} -->
+
+#### BG-en-8a2f24 · odin-abenteuer-en › „Overview“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone”
+- neu: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!4HjJNmV7bnXoEmno.PEdqhwrhSfgaBsnN"} -->
+
+#### BG-en-3afa9b · odin-abenteuer-en › „The Plan: “The Chimera”“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (the Evening) gains a skull. Morrow
+- neu: “The great stone” (the Evening) gains a skull. Morrow
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.x8TItRioNNGPHREA"} -->
+
+#### BG-en-ec278c · odin-abenteuer-en › „The Plan: “The Second Site”“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) loses a skull. The
+- neu: “The great stone” (The Evening) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!JizZW4C50CD9ercf.Uv8dNxJqj64ws6RZ"} -->
+
+#### BG-en-c6b170 · odin-abenteuer-en › „The Plan: “No More Nexus Crystals”“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (the Evening) loses a skull. The
+- neu: “The great stone” (the Evening) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!amW1bWA89r3nUl1u.cMWn3YioK25XOZ7F"} -->
+
+#### BG-en-d9a074 · odin-abenteuer-en › „The Plan: “No More Nexus Crystals”“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (the Evening) gains a skull. The
+- neu: “The great stone” (the Evening) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!amW1bWA89r3nUl1u.cMWn3YioK25XOZ7F"} -->
+
+#### BG-en-5393ad · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) gains a skull. Morrow
+- neu: “The great stone” (The Evening) gains a skull. Morrow
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-b4c198 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) loses a skull. The
+- neu: “The great stone” (The Evening) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-e72de0 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) gains a skull. The
+- neu: “The great stone” (The Evening) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-bc0400 · odin-abenteuer-en › „Expansion 5: Connections“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The
+- neu: “The great stone” (The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.1xloBS3CEd7nxX8i"} -->
+
+#### BG-en-74d829 · odin-abenteuer-en › „The Situation Sheet“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone”
+- neu: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.PJKhyP4hXPwkSVad"} -->
+
+#### BG-en-7266d5 · odin-abenteuer-en › „Chapter V: Renegades and Collectors“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone”
+- neu: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.QDqfeON6wJkrAPEh"} -->
+
+#### BG-en-0dd8f4 · odin-abenteuer-en › „Overview of the Organisations“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone”
+- neu: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!mTsFHJimDNvMWi78.b3kKmPaewRyZuI2l"} -->
+
+#### BG-en-e4072c · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone”
+- neu: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-f3bb4b · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) gains a skull. Morrow
+- neu: “The great stone” (The Evening) gains a skull. Morrow
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-8559a7 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) loses a skull. The
+- neu: “The great stone” (The Evening) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-5d5b2c · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The Evening) gains a skull. The
+- neu: “The great stone” (The Evening) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-70fc79 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (The
+- neu: “The great stone” (The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-a33c91 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (the Evening) gains a skull. Morrow
+- neu: “The great stone” (the Evening) gains a skull. Morrow
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-d0ddae · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (the Evening) loses a skull. The
+- neu: “The great stone” (the Evening) loses a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-cf9385 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: “The Great Stone” (the Evening) gains a skull. The
+- neu: “The great stone” (the Evening) gains a skull. The
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+#### BG-en-b9b807 · odin-abenteuerpakete-en › „The Other Services“ · prüfen
+Freigabe: offen
+
+- alt: Plan: “The Great Stone”
+- neu: Plan: “The great stone”
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### THE BAIT → THE LURE
+
+#### BG-en-1ec68a · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!2SclJxOHkRGYiGm4.hD0t0pAMgi77OCmN"} -->
+
+#### BG-en-e5af53 · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!4HjJNmV7bnXoEmno.zvgEgE6uODkGxf3B"} -->
+
+#### BG-en-bbdcba · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!C911lln2u5DDfb9n.W2eKdFf8TaaC96gI"} -->
+
+#### BG-en-6b8934 · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!D4z7m7SvMzmOX1NF.rJydQcsk0HQtgMmd"} -->
+
+#### BG-en-9e4c3b · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!JizZW4C50CD9ercf.83j6RwbIqR2SqSM3"} -->
+
+#### BG-en-b3b15e · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!Rdgvcgwb19hFO93J.6nPC89ccRMaLj5mZ"} -->
+
+#### BG-en-5e6fe6 · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.tOWauCjGEeevrAnY"} -->
+
+#### BG-en-4cc0d9 · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!amW1bWA89r3nUl1u.b3hiaLPFyLaCA3yW"} -->
+
+#### BG-en-63931d · odin-abenteuer-en › „Relationship to O.D.I.N.“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!gZPzqcgbjVZF0ZrQ.xFnnek5zcTsCILcP"} -->
+
+#### BG-en-c172f5 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: >THE BAIT<
+- neu: >THE LURE<
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
+### The Bait → The Lure
+
+#### BG-en-ab19ba · odin-abenteuer-en › „The Plan: “Taking the Children”“ · sicher
+Freigabe: offen
+
+- alt: The Bait. A Psion of the cell finds in their
+- neu: The Lure. A Psion of the cell finds in their
+<!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!whe1s6EyShfOJq3X.y9jJQemzc04W4tBy"} -->
+
+#### BG-en-f85031 · odin-abenteuerpakete-en › „The Other Services“ · sicher
+Freigabe: offen
+
+- alt: The Bait. A Psion of the cell finds in their
+- neu: The Lure. A Psion of the cell finds in their
+<!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H"} -->
+
 ### Hinweise ohne Vorschlag
 
 Alte Form, deren Stelle in keinem Band sicher gefunden wurde. Bitte von Hand ansehen.
 
+- odin-abenteuer-en › „History and Goals“: „The Chimera“ in „The Chimera is created in Lyon. Dr. Favre“, Stelle im Band nicht gefunden
+- odin-abenteuer-en › „Relationship to O.D.I.N.“: „THE BAIT“ in „THE BAIT“, Stelle im Band nicht gefunden
 - odin-abenteuer-en › „Key Figures“: „Silent“ in „The Silent Brother“, Stelle im Band nicht gefunden
 - odin-abenteuer-en › „Hooks and Outlook“: „Silent“ in „a name that the Lodge of the Silent Circle has kept silent about“, Stelle im Band nicht gefunden
 - odin-abenteuer-en › „Floor Plan“: „Silent“ in „14 Silent Room.“, Stelle im Band nicht gefunden
 - odin-abenteuer-en › „Chapter III: Foreign Services“: „Silent“ in „Silent partners“, Stelle im Band nicht gefunden
 - odin-abenteuer-en › „Overview of the Organisations“: „Silent“ in „Silent partners“, Stelle im Band nicht gefunden
+- odin-abenteuer-en › „Relationship to O.D.I.N.“: „THE BAIT“ in „THE BAIT“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „Holds of the World“: „Silent“ in „14 Silent Room.“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „Holds of the World“: „Silent“ in „14: Silent Room“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „The Other Services“: „Silent“ in „Silent partners“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „The Other Services“: „Silent“ in „Silent partners“, Stelle im Band nicht gefunden
+- odin-abenteuerpakete-en › „The Other Services“: „The Chimera“ in „The Chimera is created in Lyon. Dr. Favre“, Stelle im Band nicht gefunden
+- odin-abenteuerpakete-en › „The Other Services“: „THE BAIT“ in „THE BAIT“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „The Other Services“: „Silent“ in „The Silent Brother“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „The Other Services“: „Silent“ in „a name that the Lodge of the Silent Circle has kept silent about“, Stelle im Band nicht gefunden
+- odin-abenteuerpakete-en › „The Other Services“: „THE BAIT“ in „THE BAIT“, Stelle im Band nicht gefunden
 - odin-abenteuerpakete-en › „Nordlicht 1977“: „Silent“ in „6: Silent cavity, Site 12, reported 194“, Stelle im Band nicht gefunden
 - odin-karten-en › „Silent Hour“: „Silent“ in „Silent Hour“, Stelle im Band nicht gefunden
 - odin-karten-en › „Silent Hour“: „Silent“ in „Silent Hour“, Stelle im Band nicht gefunden

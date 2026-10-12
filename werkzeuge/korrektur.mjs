@@ -802,6 +802,8 @@ export function ersetzeSatz(html, alt, neu) {
     if (!ALNUM.test(flach[p - 1] ?? ' ') && !ALNUM.test(flach[p + alt.length] ?? ' ')) lagen.push(p);
   }
   if (!lagen.length) return { html, status: flach.includes(neu) ? 'schon' : 'fehlt' };
+  // Satzanfang verloren: „alt“ beginnt groß, „neu“ klein (etwa wenn der Band den Satz an „O.D.I.N.“ getrennt hat)
+  if (/^\p{Lu}/u.test(alt) && /^\p{Ll}/u.test(neu)) return { html, status: 'von Hand', grund: '„neu“ beginnt klein, der Satzanfang fehlt wohl' };
   const aw = woerter(alt), nw = woerter(neu);
   const schritte = new Abgleich(aw, nw).schritte();
   const edits = [];
@@ -835,6 +837,10 @@ export function ersetzeSatz(html, alt, neu) {
   let aus = html;
   for (const [hv, hb, rein] of edits.sort((x, y) => y[0] - x[0])) aus = aus.slice(0, hv) + rein + aus.slice(hb);
   if (!textKarte(aus).text.replace(/\n/g, ' ').includes(neu)) return { html, status: 'von Hand', grund: 'Ergebnis nicht wie erwartet' };
+  // „neu“ reicht in den Nachbarsatz: derselbe Satz stünde danach doppelt
+  const zaehle = (t) => { const z = new Map(); for (const x of saetze(t.replace(/\n/g, ' ')).filter((x) => x.length > 30)) z.set(x, (z.get(x) ?? 0) + 1); return z; };
+  const vorher = zaehle(flach);
+  for (const [x, n] of zaehle(textKarte(aus).text)) if (n > 1 && n > (vorher.get(x) ?? 0)) return { html, status: 'von Hand', grund: `Ergebnis verdoppelt einen Satz („${x.slice(0, 50)}…“)` };
   return { html: aus, status: 'ok', stellen: lagen.length };
 }
 
@@ -1218,7 +1224,12 @@ export const NACHTRAG_BAENDE = {
 
 export const BEGRIFFE_EN = [['Eerie (1)', 'Uncanny (1)'], ['Horrific (3)', 'Horrifying (3)'], ['Accurate', 'Precise'], ['Stunning', 'Stun'],
   ['Crystal Warden', 'Crystal Guardian'], ['Watcher', 'Spectator'], ['Security System', 'Guard System'], ['Scatter', 'Spread'],
-  ['Hand-to-hand', 'Brawling'], ['Silent', 'Quiet']];
+  ['Hand-to-hand', 'Brawling'], ['Silent', 'Quiet'],
+  // Pläne der Organisationen (Die anderen Dienste, Spielleiterbuch): im Fließtext jetzt klein, Überschriften bleiben, wie im Band
+  ['Taking the Children', 'Fetch the children'], ['Keep the Silence', 'Preserve the silence'], ['The Staircase', 'The stairs'],
+  ['The Page from 1871', 'The page from 1871'], ['The New Host', 'The new host'], ['The Chimera', 'The chimera'],
+  ['A Seeker of Their Own', 'A Seeker of their own'], ['The Second Site', 'The second site'], ['No More Nexus Crystals', 'No more Nexus crystals'],
+  ['The Great Stone', 'The great stone'], ['THE BAIT', 'THE LURE'], ['The Bait', 'The Lure']];
 const BEGRIFF_PDFS = ['en/books/ODIN_EN_01_Core_Rulebook.pdf', 'en/books/ODIN_EN_08_Game_Masters_Book.pdf', 'en/books/ODIN_EN_10_The_Door_Campaign.pdf',
   'en/books/ODIN_EN_11_The_Door_Handouts.pdf', 'en/books/ODIN_EN_13_Quickstart.pdf', 'en/books/ODIN_EN_14_Grey_Files.pdf', 'en/books/ODIN_EN_14_Grey_Files_Handouts.pdf',
   'en/books/ODIN_EN_15_The_Other_Services.pdf', 'en/books/ODIN_EN_16_Holds_of_the_World.pdf', 'en/books/ODIN_EN_18_Nordlicht_1977.pdf',

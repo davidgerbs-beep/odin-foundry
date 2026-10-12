@@ -118,6 +118,16 @@ test('Anwenden: Satz im HTML wortweise ersetzen', () => {
   assert.equal(ersetzeSatz('<p>Anderer Text.</p>', 'Grauen Unheimlich (1)', 'Grauen Keines').status, 'fehlt');
 });
 
+test('Anwenden: Satzanfang verloren oder Satz verdoppelt geht an die Hand', () => {
+  const html = '<p>They look at doors differently. O.D.I.N. has sealed the five staircases, but the song can no longer be captured. It stays.</p>';
+  let r = ersetzeSatz(html, 'O.D.I.N. has sealed the five staircases, but the song can no longer be captured.', 'sealed the five staircases, but the song can no longer be contained.');
+  assert.equal(r.status, 'von Hand');
+  const h2 = '<p>He believes a stone can bring him back. He speaks slowly, with patience.</p>';
+  r = ersetzeSatz(h2, 'He believes a stone can bring him back.', 'He believes a sufficiently large stone can bring him back. He speaks slowly, with patience.');
+  assert.equal(r.status, 'von Hand');
+  assert.match(r.grund, /verdoppelt/);
+});
+
 test('Anwenden: Gegnerzeile ändern und Zahlen nachziehen', () => {
   const system = {
     initiative: 3, verteidigung: 2, ruestung: 0, grauen: 1, lp: { value: 5, max: 5 },
