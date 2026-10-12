@@ -1,13 +1,18 @@
-# Änderungsprotokoll 0.10.16: Die anderen Dienste, Schattenoffiziere und Nachläufe
+# Änderungsprotokoll 0.10.16: Die anderen Dienste, Schattenoffiziere, Nachläufe und englische Begriffe
 
-Erzeugt aus dem Vergleich der Kompendien mit dem Stand 0.10.15 (main), absatzweise. Gezeigt werden `odin-abenteuer(-en)`, `odin-gegner(-en)` und die
-Beschreibungen in `odin-kraefte(-en)` und `odin-zauber(-en)`; die Kopien in `odin-abenteuerpakete(-en)` haben denselben Text (geprüft).
+Erzeugt aus dem Vergleich der Kompendien mit dem Stand 0.10.15 (main), absatzweise. Gezeigt werden `odin-abenteuer(-en)`, `odin-gegner(-en)`, `odin-regeln-en` und die
+Beschreibungen in `odin-kraefte(-en)`, `odin-zauber(-en)`, `odin-ausruestung-en` und `odin-waffen-en`; die Kopien in `odin-abenteuerpakete(-en)` haben denselben Text (geprüft).
 Quellen: Freigabelisten in diesem Ordner (Einträge mit „ja“) und von Hand gerichtete Stellen, bei denen das Werkzeug nicht ersetzen konnte
 (Formatierung, Verweise) oder ein Eintrag Wörter verloren bzw. einen Satz verdoppelt hätte; Wortlaut dann nach dem Band.
 
 Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für einen Absatz- oder Zeilenwechsel innerhalb eines Eintrags, „Zahlen: {…}“ fasst die Zahlenfelder eines Gegners zusammen (i Initiative, v Verteidigung, r Rüstung, lp LP, g Grauen, p Pools als Name weiß+bunt/Schaden).
 
-## Journale Deutsch (12 Absätze)
+## Journale Deutsch (17 Absätze)
+
+### 02 Fundort › Handouts und Karte
+
+- alt: Karte 2: Untergeschoss von Hort-9 mit Kellerflur, Raum 4/12, Flur aus dem Jahr 1977, Raum hinter der Tür, Treppenhaus, Technikraum und den Räumen 4/06 bis 4/11. Die Räume 4/01 bis 4/05 liegen im nicht dargestellten Teil des Untergeschosses und sind für die Konfrontation ohne Belang.
+- neu: Karte 2: Untergeschoss von Hort-9 mit Kellerflur, Raum 4/12, Flur aus dem Jahr 1977, Raum hinter der Tür, Treppenhaus, einem Nebenraum und den Räumen 4/06 bis 4/11, darunter der Technikraum (4/10). Die Räume 4/01 bis 4/05 liegen im nicht dargestellten Teil des Untergeschosses und sind für die Konfrontation ohne Belang.
 
 ### 11 Die Erleuchteten › Köpfe
 
@@ -23,6 +28,19 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Ein Gefallen ist eine Währung, die zwischen der Zelle und einem Partnerdienst zirkuliert. Die Spielleitung notiert für jeden Partner, ob er der Zelle etwas schuldet oder umgekehrt. Einen notierten Gefallen einzulösen gelingt ohne Probe; verlangt die Zelle mehr, wird gewürfelt, zwei Stufen leichter. Ein Gefallen, den der Partner der Zelle schuldet, verfällt nach einem Kampagnenjahr. Ein Gefallen, den die Zelle schuldet, verfällt nie.
 - neu: Ein Gefallen ist eine Währung, die zwischen der Zelle und einem Partnerdienst zirkuliert. Die Spielleitung notiert für jeden Partner, ob er der Zelle etwas schuldet oder umgekehrt. Einen notierten Gefallen einzulösen gelingt ohne Probe; verlangt die Zelle mehr, würfelt ein Agent CH + Verhandeln gegen die Schwierigkeit, die die Spielleitung für die Bitte festlegt, zwei Stufen leichter, höchstens bis Einfach (1). Ein Gefallen, den der Partner der Zelle schuldet, verfällt nach einem Kampagnenjahr. Ein Gefallen, den die Zelle schuldet, verfällt nie.
+
+### Nexus-Splitter › Gegner
+
+- alt: Schattenwurf (Minor Magica, 3 ME; CH, selbst, 3 Runden). Der Thaumaturg verschmilzt mit den Schatten: +2 Würfel auf Heimlichkeit. Überschuss 2: 5 Runden oder zusätzlich ein Verbündeter. ¶ Magisches Seil (Minor Magica, 3 ME; IN, 10 m, bis es reißt). Ein Seil aus Energie fesselt ein Ziel. Vergleichende Probe gegen ST + Athletik. Gefesselt hat das Ziel Verteidigung 1 und kann sich nicht bewegen. Es darf jede Runde erneut versuchen, sich zu befreien.
+- neu: Schattenwurf (CH, selbst, 3 Runden). Der Thaumaturg verschmilzt mit den Schatten: +2 Würfel auf Heimlichkeit. Überschuss 2: 5 Runden oder zusätzlich ein Verbündeter. ¶ Magisches Seil (IN, 10 m, bis es reißt). Ein Seil aus Energie fesselt ein Ziel. Vergleichende Probe gegen ST + Athletik. Gefesselt hat das Ziel Verteidigung 1 und kann sich nicht bewegen. Es darf jede Runde erneut versuchen, sich zu befreien.
+
+- alt: Trupps: Für große Gruppen kann die Spielleitung Handlanger zu Trupps zusammenfassen: Ein Trupp aus drei Handlangern greift mit einem Wurf und +2 Würfeln an und hat LP in Höhe der Summe.
+- neu: Für große Gruppen kann die Spielleitung sie zu Trupps zusammenfassen: Ein Trupp aus drei Handlangern greift mit einem Wurf und +2 Würfeln an und hat LP in Höhe der Summe.
+
+### Nexus-Splitter › Überblick
+
+- alt: Sechs Söldner (Profi), davon einer nervös und blass
+- neu: Sechs Söldner, einer davon nervös und blass
 
 ### 05 STILLWATER › Stützpunkte und Mittel
 
@@ -49,6 +67,11 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Erreicht Die offene Tür Stufe 4, sucht der Rückkehrer einen Kristall und findet die Spur nach Bayern. Das Erwachen des Steins gewinnt einen Totenkopf.
 - neu: Erreicht Die offene Tür Stufe 4, sucht der Rückkehrer einen zweiten, größeren Kristall und findet die Spur nach Bayern. Das Erwachen des Steins gewinnt einen Totenkopf.
 
+### 05 Hort-5, Wien › Was es hier gibt
+
+- alt: Waffenkammer: Häufige Ausrüstung sofort: Pistolen, Taserpistolen, Schockgranaten, Schutzwesten, Nachtsichtgeräte. Seltenes innerhalb eines Tages, wenn der Führungsoffizier unterschreibt: Sturmgewehre, Scharfschützengewehre, Brandmunition in kleinen Mengen. Was es besonders gibt: Magnesium-Blendpatronen (nur gegen Sonderfreigabe, jede Patrone wird einzeln gezählt), Aktenkoffer mit Halterung für eine Maschinenpistole für Kuriere.
+- neu: Waffenkammer: Häufige Ausrüstung sofort: Pistolen, Taserpistolen, Schockgranaten, Schutzwesten, Nachtsichtgeräte. Seltenes innerhalb eines Tages, wenn der Führungsoffizier unterschreibt: Brandmunition in kleinen Mengen. Was es besonders gibt: Magnesium-Blendpatronen (nur gegen Sonderfreigabe, jede Patrone wird einzeln gezählt), Aktenkoffer mit Halterung für eine Maschinenpistole für Kuriere.
+
 ### 16 Grey Meridian › Grey Meridian in fremden Plänen
 
 - alt: Wo eine Akte Grey Meridian einen Totenkopf gibt, etwa in Akte 3 „Nummer 341“ (Graue Akten), geht er an den Plan, dem die Firma gerade dient.
@@ -69,7 +92,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: 1989. Auf dem Brocken verschwinden 23 Menschen aus einer stillgelegten Abhörstation. Die Anwesenheitsliste vom 30. April 1989 umfasst 23 Personen, keine taucht je wieder auf. Eine Person trug den Nachnamen Wendt. O.D.I.N. stuft den Vorgang als ungeklärt ein, bis 2026 eine Zelle die Station betritt und die Treppe findet (Grundregelwerk, Prolog „Walpurgis“). Die Menschen auf der Treppe sind die 23 von 1989, aber sie sind nicht mehr dieselben. Sie sind durch einen Riss gegangen und als etwas anderes zurückgekehrt. Sie sprechen mit einer Stimme. Um sie ist ein Kult entstanden, ohne Anführer und ohne Buch.
 - neu: 1989. Auf dem Brocken verschwinden 23 Menschen aus der Abhörstation, die heute stillgelegt ist. Die Anwesenheitsliste vom 30. April 1989 umfasst 23 Personen, keine taucht je wieder auf. Eine Person trug den Nachnamen Wendt. O.D.I.N. stuft den Vorgang als ungeklärt ein, bis 2026 eine Zelle die Station betritt und die Treppe findet (Grundregelwerk, Prolog „Walpurgis“). Die Menschen auf der Treppe sind die 23 von 1989, aber sie sind nicht mehr dieselben. Sie sind durch einen Riss gegangen und als etwas anderes zurückgekehrt. Sie sprechen mit einer Stimme. Um sie ist ein Kult entstanden, ohne Anführer und ohne Buch.
 
-## Journale Englisch (402 Absätze)
+## Journale Englisch (437 Absätze)
 
 ### 04 Small Cults › The Sisters of the Singing Children
 
@@ -196,6 +219,11 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: White File: A forester from the Bavarian Forest reports that someone is digging holes in his district and filling them in again. The cell is to check whether these are crystal seekers. At one spot the forest floor is warm, and that is why the file lies with O.D.I.N. ¶ Grey File: In the disused glassworks near a village in the Bavarian Forest, plants are growing through the concrete floor. A local resident has taken photos. The cell is to find out what is growing there and why.
 - neu: White File: A forester from the Bavarian Forest reports that someone is digging holes in his district and filling them in again. The cell is to check whether they are crystal seekers. At one spot the forest floor is warm, and that is why the file lies with O.D.I.N. ¶ Grey File: In the disused glassworks near a village in the Bavarian Forest, plants are growing through the concrete floor. A resident has taken photos. The cell is to find out what is growing there and why.
 
+### 06 The Tutor › Aftermath
+
+- alt: Skulls: The lodge Zum Schweigenden Kreis loses one skull when the cell exposes Sundberg and the stone is secured. It gains one skull when Sundberg escapes with new knowledge of the page’s whereabouts. The threat of the lodge rises or falls accordingly.
+- neu: Skulls: The Lodge of the Silent Circle loses one skull when the cell exposes Sundberg and the stone is secured. It gains one skull when Sundberg escapes with new knowledge of the page’s whereabouts. The threat of the lodge rises or falls accordingly.
+
 ### 05 STILLWATER › History and Goals
 
 - alt: 1954: STILLWATER is founded on the model of O.D.I.N., at first as a US Army programme for “psychological warfare”. The name comes from a disused water reservoir in Maryland, in whose maintenance tunnels the first experiments took place. The founders had access to crates of the Ahnenerbe that reached Washington after 1945.
@@ -262,11 +290,8 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 ### 05 STILLWATER › Relationship to O.D.I.N.
 
-- alt: What O.D.I.N. knows: That STILLWATER exists, that it has psions of its own, that it tolerates O.D.I.N. in North America as long as O.D.I.N. finds nothing there. O.D.I.N. does not know that STILLWATER has found a boy who hears humming. O.D.I.N. does not know that STILLWATER has parts of the 1989 list. ¶ What STILLWATER knows about O.D.I.N.: That O.D.I.N. has psions in large numbers. That O.D.I.N. uses Alloy S. That O.D.I.N. is only tolerated in North America. STILLWATER suspects that O.D.I.N. finds the children with a Seeker, but does not know it. STILLWATER does not know how the opening works, and it does not know that with every opening about every third child goes.
-- neu: What O.D.I.N. knows: That STILLWATER exists, that it has its own Psions, that it tolerates O.D.I.N. in North America as long as O.D.I.N. finds nothing there. O.D.I.N. does not know that STILLWATER has found a boy who hears humming. O.D.I.N. does not know that STILLWATER has parts of the 1989 list. ¶ What STILLWATER knows about O.D.I.N.: That O.D.I.N. has psions in large numbers. That O.D.I.N. uses Alloy S. That O.D.I.N. is only tolerated in North America. STILLWATER suspects that O.D.I.N. finds the children with a Seeker, but does not know it. STILLWATER does not know how the opening works, and it does not know that at every opening about one in three children disappears.
-
-- alt: A new life in America, with real papers, for the character and their family. STILLWATER can make any O.D.I.N. agent in North America disappear and give them a new identity that holds even against O.D.I.N.
-- neu: A new life in America, with real papers, for the character and their family. STILLWATER can make any O.D.I.N. agent in North America disappear and give them a new identity that holds up even against O.D.I.N.
+- alt: What O.D.I.N. knows: That STILLWATER exists, that it has psions of its own, that it tolerates O.D.I.N. in North America as long as O.D.I.N. finds nothing there. O.D.I.N. does not know that STILLWATER has found a boy who hears humming. O.D.I.N. does not know that STILLWATER has parts of the 1989 list. ¶ What STILLWATER knows about O.D.I.N.: That O.D.I.N. has psions in large numbers. That O.D.I.N. uses Alloy S. That O.D.I.N. is only tolerated in North America. STILLWATER suspects that O.D.I.N. finds the children with a Seeker, but does not know it. STILLWATER does not know how the opening works, and it does not know that with every opening about every third child goes. ¶ THE BAIT ¶ A new life in America, with real papers, for the character and their family. STILLWATER can make any O.D.I.N. agent in North America disappear and give them a new identity that holds even against O.D.I.N.
+- neu: What O.D.I.N. knows: That STILLWATER exists, that it has its own Psions, that it tolerates O.D.I.N. in North America as long as O.D.I.N. finds nothing there. O.D.I.N. does not know that STILLWATER has found a boy who hears humming. O.D.I.N. does not know that STILLWATER has parts of the 1989 list. ¶ What STILLWATER knows about O.D.I.N.: That O.D.I.N. has psions in large numbers. That O.D.I.N. uses Alloy S. That O.D.I.N. is only tolerated in North America. STILLWATER suspects that O.D.I.N. finds the children with a Seeker, but does not know it. STILLWATER does not know how the opening works, and it does not know that at every opening about one in three children disappears. ¶ THE LURE ¶ A new life in America, with real papers, for the character and their family. STILLWATER can make any O.D.I.N. agent in North America disappear and give them a new identity that holds up even against O.D.I.N.
 
 ### 05 STILLWATER › Overview
 
@@ -275,6 +300,19 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Seat Washington, D.C., officially the “National Atmospheric Data Center”, Division of Historical Weather Data
 - neu: Seat Washington, D.C., officially “National Atmospheric Data Center”, Department for Historical Weather Data
+
+- alt: Plan “A Seeker of Their Own”, starting value ☠☠○○○
+- neu: Plan “A Seeker of their own”, starting value ☠☠○○○
+
+### Mission 7: Green Tarpaulins › The Confrontation
+
+- alt: 4. The Forest Walker steps onto the road, now as a large figure of branches and bark. It negotiates or fights. Horror test: WIL + Mental Resistance against Eerie (1). Whoever has already seen it at the crossroads does not roll again.
+- neu: 4. The Forest Walker steps onto the road, now as a large figure of branches and bark. It negotiates or fights. Horror test: WIL + Mental Resistance against Uncanny (1). Whoever has already seen it at the crossroads does not roll again.
+
+### Mission 7: Green Tarpaulins › Opponents
+
+- alt: The Forest Walker. The stats are in the Threat Atlas under “Forest Walker” (Game Master’s Book). For this mission: Initiative 5; Attack branches and roots 4 + 4, damage 3, area 3, or misdirection: Anyone in the forest tests Survival against Hard (3), otherwise they get lost; Defence 4 in the forest, 2 outside, armour 2 (bark), HP 14; Horror Eerie (1), Disturbing (2), when it shows a face that a character knows; Special: Negotiates. An Invoker or Negotiator can talk to it if they know the rules. It keeps every agreement, literally. Weakness: iron, fire at the forest edge, and a person who wears their clothing inside out: it cannot mislead them.
+- neu: The Forest Walker. The stats are in the Threat Atlas under “Forest Walker” (Game Master’s Book). For this mission: Initiative 5; Attack branches and roots 4 + 4, damage 3, area 3, or misdirection: Anyone in the forest tests Survival against Hard (3), otherwise they get lost; Defence 4 in the forest, 2 outside, armour 2 (bark), HP 14; Horror Uncanny (1), Disturbing (2), when it shows a face that a character knows; Special: Negotiates. An Invoker or Negotiator can talk to it if they know the rules. It keeps every agreement, literally. Weakness: iron, fire at the forest edge, and a person who wears their clothing inside out: it cannot mislead them.
 
 ### 15 The Evening › The Plan: “The Great Stone”
 
@@ -291,7 +329,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - neu: The Evening has knowledge 2 and rarely notices who harms it. If the cell disrupts an auction, the curator has them watched and sends a messenger with an offer: a piece from the catalogue if the cell withdraws. If they refuse, he doubles the price. If they attack, the Evening breaks off the auction and is in another city the next morning.
 
 - alt: At ☠☠☠○○ : “The Chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and delivers no more samples to Morrow. ¶ At ☠☠☠○○ : “The Second Site” (Department 13) gains a skull. Through the Evening, the Department gets hold of details about O.D.I.N.’s alloy stocks. ¶ At ☠☠☠☠☠ : “The Page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unwatched, and the Lodge gets closer to the page.
-- neu: At ☠☠☠○○ : “The Chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer delivers samples to Morrow. ¶ At ☠☠☠○○ : “The Second Site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stocks. ¶ At ☠☠☠☠☠ : “The Page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unobserved, and the Lodge gets closer to the page.
+- neu: At ☠☠☠○○ : “The chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer delivers samples to Morrow. ¶ At ☠☠☠○○ : “The second site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stocks. ¶ At ☠☠☠☠☠ : “The page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unobserved, and the Lodge gets closer to the page.
 
 ### 15 The Evening › Bases and Means
 
@@ -305,6 +343,9 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: The Evening is not an organisation with a headquarters, but a market. Four times a year, in a different city, in a hotel with a ballroom, crystals are auctioned, artefacts, samples from rifts and sometimes people who have seen something. Whoever is invited receives a card without a sender. For the game master, the Evening is the place where the cell sees who all is searching behind the Veil, and what they are prepared to give for it. ¶ “We do not sell answers. We sell the questions others are not allowed to ask.”
 - neu: The Evening is not an organisation with a headquarters, but a market. Four times a year, in a different city, in a hotel with a ballroom, crystals are auctioned, artefacts, samples from rifts and sometimes people who have seen something. Whoever is invited receives a card without a sender. For the game master, the Evening is the place where the cell sees who is searching behind the Veil, and what they are willing to give for it. ¶ “We do not sell answers. We sell the questions that others aren’t allowed to ask.”
+
+- alt: Plan “The Great Stone” ☠☠○○○
+- neu: Plan “The great stone” ☠☠○○○
 
 ### 15 The Evening › Hooks and Outlook
 
@@ -359,11 +400,26 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 ### 15 The Evening › Relationship to O.D.I.N.
 
-- alt: What O.D.I.N. knows: That the Evening has existed since at least 1963, what it auctions and that the Curator is called “Mr Lindau”. Since this year, also that a bidder is looking for a stone “as large as a person”. ¶ What the Evening knows about O.D.I.N.: That O.D.I.N. is listening in and sometimes bids along through straw men. That there are archives whose contents would be worth millions on the market. The Evening does not want to know more; knowledge is bad for business.
-- neu: What O.D.I.N. knows: That the Evening has existed since at least 1963, what it auctions and that the curator is called “Herr Lindau”. Since this year, also that a bidder is looking for a stone “as large as a person”. ¶ What the Evening knows about O.D.I.N.: That O.D.I.N. reads along and sometimes bids through straw men. That there are archives whose contents would be worth millions on the market. The Evening does not want to know more; knowledge is bad for business.
+- alt: What O.D.I.N. knows: That the Evening has existed since at least 1963, what it auctions and that the Curator is called “Mr Lindau”. Since this year, also that a bidder is looking for a stone “as large as a person”. ¶ What the Evening knows about O.D.I.N.: That O.D.I.N. is listening in and sometimes bids along through straw men. That there are archives whose contents would be worth millions on the market. The Evening does not want to know more; knowledge is bad for business. ¶ THE BAIT
+- neu: What O.D.I.N. knows: That the Evening has existed since at least 1963, what it auctions and that the curator is called “Herr Lindau”. Since this year, also that a bidder is looking for a stone “as large as a person”. ¶ What the Evening knows about O.D.I.N.: That O.D.I.N. reads along and sometimes bids through straw men. That there are archives whose contents would be worth millions on the market. The Evening does not want to know more; knowledge is bad for business. ¶ THE LURE
 
 - alt: In return, the Evening wants a piece from an O.D.I.N. archive.
 - neu: In return, the Evening wants a piece from an archive of O.D.I.N.
+
+### Mission 9: Elster › Escalation
+
+- alt: Anyone who recognises the broadcast for the first time for what it is also rolls horror against Disturbing (2). Anyone who sees the machine in the listening post running without power rolls Mental Resistance against Eerie (1). A Psion without a helmet rolls against Disturbing (2) because they hear the broadcast twice. Anyone who enters the basement of the long-distance exchange and sees the numbers on the walls rolls Mental Resistance against Eerie (1). Anyone who loses counts along quietly for one round.
+- neu: Anyone who recognises the broadcast for the first time for what it is also rolls horror against Disturbing (2). Anyone who sees the machine in the listening post running without power rolls Mental Resistance against Uncanny (1). A Psion without a helmet rolls against Disturbing (2) because they hear the broadcast twice. Anyone who enters the basement of the long-distance exchange and sees the numbers on the walls rolls Mental Resistance against Uncanny (1). Anyone who loses counts along quietly for one round.
+
+### Holds of the World: Introduction › Home Hold
+
+- alt: Hold-3, Hamburg Knows Hanno Brodersen. Once per mission a bonus die on Firearms or Close Combat after a consultation in the armoury. Whoever trained here trains others: On every visit they owe the cadets an afternoon in the yard.
+- neu: Hold-3, Hamburg Knows Hanno Brodersen. Once per mission a bonus die on Firearms or Melee after a consultation in the armoury. Whoever trained here trains others: On every visit they owe the cadets an afternoon in the yard.
+
+### 05 Hold-5, Vienna › What Is Here
+
+- alt: Armoury: Common equipment immediately: pistols, taser pistols, shock grenades, protective vests, nightvision devices. Rare items within a day, if the handler signs: assault rifles, sniper rifles, incendiary ammunition in small quantities. What is special here: magnesium flash cartridges (only with special clearance, each cartridge is counted individually), briefcase with a mount for a submachine gun for couriers.
+- neu: Armoury: Common equipment immediately: pistols, taser pistols, shock grenades, protective vests, nightvision devices. Rare items within a day, if the handler signs: incendiary ammunition in small quantities. What is special here: magnesium flash cartridges (only with special clearance, each cartridge is counted individually), briefcase with a mount for a submachine gun for couriers.
 
 ### 16 Grey Meridian › Key Figures
 
@@ -428,6 +484,14 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Grey Meridian has no plan of its own, but the company makes the plans of others easier. If a team works for an organisation whose plan is currently running, then in the roll after the mission a skull is added to that plan one step earlier: at Strength 1 or 2 already on a 5 or 6, at Strength 3 already on a 4, 5 or 6, at Strength 4 or 5 already on a 3 to 6. This applies as long as the cell does not prevent the assignment. If it bribes the team, takes it out or gets the client to cancel the contract, the advantage is lost until the mission after next. ¶ Where a file gives Grey Meridian a skull, for example in File 3 “Number 341” (Grey Files), it goes to the plan the company is currently serving.
 - neu: Grey Meridian has no plan of its own, but the company makes the plans of others easier. If a team works for an organisation whose plan is currently running, then in the roll after the mission a skull is added to that plan one step earlier: at Strength 1 or 2 already on a 5 or 6, at Strength 3 already on a 4, 5 or 6, at Strength 4 or 5 already on a 3 to 6. This applies as long as the cell does not prevent the contract. If it bribes the team, eliminates it, or gets the client to cancel the contract, the advantage is lost until the mission after next. ¶ Where a file gives Grey Meridian a skull, it goes to the plan the company is currently serving.
 
+### Mission 13: Nordlicht › Escalation
+
+- alt: Tuesday, 8 February: The archivist closes the archive early. A Thaumaturge who arrives too late finds the door locked. Horror test: Eerie (1) if they put their hand on the warm metal.
+- neu: Tuesday, 8 February: The archivist closes the archive early. A Thaumaturge who arrives too late finds the door locked. Horror test: Uncanny (1) if they put their hand on the warm metal.
+
+- alt: Saturday, 12 February: The eleven ask to keep the canteen free on Monday evening. If the group has not asked before, the decision about the swap slots becomes more difficult. Horror test: Eerie (1) if an agent sees how the eleven look at each other.
+- neu: Saturday, 12 February: The eleven ask to keep the canteen free on Monday evening. If the group has not asked before, the decision about the swap slots becomes more difficult. Horror test: Uncanny (1) if an agent sees how the eleven look at each other.
+
 ### 07 The Seventh Bureau › Overview
 
 - alt: The Seventh Bureau is a name without an address. O.D.I.N. knows it from intercepted messages, from a file in the Registry and from the report of an agent who came back from Chengdu in 2016 and never wanted to go into the field again. Somewhere in China a unit predicts earthquakes, and at the places it names, rifts open strikingly often afterwards. This dossier gives the game master what O.D.I.N. knows, and three possibilities for what could be behind it. She chooses one of them or none.
@@ -486,18 +550,23 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: ☠☠☠○○ Through shell companies the Bureau buys pumps, generators and crystal shards. A bill of lading from Rotterdam to Chengdu is too heavy for “geological instruments”. ¶ ☠☠☠☠○ The Bureau holds the rift open and harvests. The yield is greater than expected. In the mountains, lights go out at night, and a herdsman finds birds that smell of thunderstorms. ¶ ☠☠☠☠☠ The rift answers the harvest. It opens wider than the Bureau wanted, and something comes through. An earthquake that no one predicted. ¶ Hook. At the Evening a crystal turns up that comes from a rift in China. The Curator discovers a signature he does not know, and offers O.D.I.N. the name of the seller, in exchange for a favour.
 - neu: ☠☠☠○○ Through shell companies the Bureau buys pumps, generators and crystal shards. A bill of lading from Rotterdam to Chengdu is too heavy for “geological equipment”. ¶ ☠☠☠☠○ The Bureau holds the rift open and harvests. The yield is greater than expected. In the mountains lights go out at night, and a shepherd finds birds that smell of thunderstorms. ¶ ☠☠☠☠☠ The rift answers the harvest. It opens wider than the Bureau wanted, and something comes through. An earthquake that nobody predicted. ¶ Hook. At the Evening a crystal appears that comes from a rift in China. The Curator discovers a signature that he does not know, and offers O.D.I.N. the name of the seller, in return for a favour.
 
+### Mission 6: Ozone › Escalation
+
+- alt: Stage 2: The rift grows louder. On the night of 2 to 3 September, a sound comes from the bay, like a very deep hum. The village dogs whimper quietly. Horror test against Eerie (1). Anyone standing at the window sees movement at the edge of the cliff.
+- neu: Stage 2: The rift grows louder. On the night of 2 to 3 September, a sound comes from the bay, like a very deep hum. The village dogs whimper quietly. Horror test against Uncanny (1). Anyone standing at the window sees movement at the edge of the cliff.
+
 ### 02 Morrow Biologics › Overview
 
 - alt: Morrow Biologics is a biotech corporation based in Leiden, with laboratories in three countries. Officially, the company researches regenerative medicine. In truth, it considers cells from rifts a scientific discovery and cultivates them without understanding what it is dealing with. For the game master, Morrow is the most important source for the origin of the Transformed: chimeras, growths, people who are different after a clinical trial.
 - neu: Morrow Biologics is a biotech corporation based in Leiden, with laboratories in three countries. Officially, the company researches regenerative medicine. In reality, it considers cells from rifts a scientific discovery and cultivates them without understanding what it is dealing with. For the game master, Morrow is the most important source for the origin of the Transformed: chimeras, growths, people who are different after a clinical trial.
 
+- alt: Plan “The Chimera”, starting value ☠☠☠○○
+- neu: Plan “The chimera”, starting value ☠☠☠○○
+
 ### 02 Morrow Biologics › Relationship to O.D.I.N.
 
-- alt: Who at O.D.I.N. deals with them. The Institute in Bern has been watching Morrow since the purchase of the beryllium licence. The Custodian at the cold store has a file on the rift samples that were sold through the Evening. The Operations Branch has recently had a spy in Morrow’s administration, who reports once a month. ¶ What O.D.I.N. knows. Morrow buys samples from the Evening, runs a risky trial and has hired former O.D.I.N. people. The file is thin, because Morrow was long considered harmless. ¶ What Morrow knows about O.D.I.N. Almost nothing. Dr. Holm knows the organisation from the inside, but keeps silent. The board considers O.D.I.N. a rumour or an authority that can be kept in check with lawyers.
-- neu: Who at O.D.I.N. deals with them. The Institute in Bern has been observing Morrow since the purchase of the beryllium licence. The Custodian at the cold store has a file on the rift samples that were sold by the Evening. The Operations Branch has recently had a spy in Morrow’s administration, who reports once a month. ¶ What O.D.I.N. knows. Morrow buys samples from the Evening, runs a risky study and has hired former O.D.I.N. The file is thin, because Morrow was long considered harmless. ¶ What Morrow knows about O.D.I.N. Almost nothing. Dr. Holm knows the organisation from the inside, but remains silent. The board considers O.D.I.N. a rumour or an agency that can be kept in check with lawyers.
-
-- alt: Healing. For an illness, an injury, a mutation. Morrow offers an agent a therapy that officially does not exist, and in return demands a sample from O.D.I.N.’s cold store.
-- neu: Healing. For an illness, an injury, a mutation. Morrow offers an agent a therapy that officially does not exist and demands a sample from O.D.I.N.’s cold store in return.
+- alt: Who at O.D.I.N. deals with them. The Institute in Bern has been watching Morrow since the purchase of the beryllium licence. The Custodian at the cold store has a file on the rift samples that were sold through the Evening. The Operations Branch has recently had a spy in Morrow’s administration, who reports once a month. ¶ What O.D.I.N. knows. Morrow buys samples from the Evening, runs a risky trial and has hired former O.D.I.N. people. The file is thin, because Morrow was long considered harmless. ¶ What Morrow knows about O.D.I.N. Almost nothing. Dr. Holm knows the organisation from the inside, but keeps silent. The board considers O.D.I.N. a rumour or an authority that can be kept in check with lawyers. ¶ THE BAIT ¶ Healing. For an illness, an injury, a mutation. Morrow offers an agent a therapy that officially does not exist, and in return demands a sample from O.D.I.N.’s cold store.
+- neu: Who at O.D.I.N. deals with them. The Institute in Bern has been observing Morrow since the purchase of the beryllium licence. The Custodian at the cold store has a file on the rift samples that were sold by the Evening. The Operations Branch has recently had a spy in Morrow’s administration, who reports once a month. ¶ What O.D.I.N. knows. Morrow buys samples from the Evening, runs a risky study and has hired former O.D.I.N. The file is thin, because Morrow was long considered harmless. ¶ What Morrow knows about O.D.I.N. Almost nothing. Dr. Holm knows the organisation from the inside, but remains silent. The board considers O.D.I.N. a rumour or an agency that can be kept in check with lawyers. ¶ THE LURE ¶ Healing. For an illness, an injury, a mutation. Morrow offers an agent a therapy that officially does not exist and demands a sample from O.D.I.N.’s cold store in return.
 
 ### 02 Morrow Biologics › History and Goals
 
@@ -511,7 +580,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - neu: 2021. The laboratory in Lyon begins experiments to cross rift cells with animal tissue. The first hybrid dogs emerge as a by-product of a programme for wound healing in dogs.
 
 - alt: 2026. The Chimera is unstable. In spring it breaks out of its cage and kills two researchers. Dr. Favre covers up the deaths as a laboratory accident and has the affected wing partially evacuated. The creature is recaptured, but it has divided. The laboratory is slowly losing control, but no one in Leiden wants to admit it. ¶ What only the game master knows. The cells from the rifts are not a discovery but a contact. They come from rifts and answer to the Voice. Whoever cultivates them is not cultivating tissue but a connection. Morrow considers the side effects technical problems that more research will solve. Dr. Brandsma has known since 2018 that the cells react to sound and has kept silent about it. Dr. Holm suspects the connection with the Voice and keeps silent out of fear.
-- neu: 2026. The Chimera is unstable. In spring it breaks out of its cage and kills two researchers. Dr. Favre covers up the deaths as a laboratory accident and has the affected wing partially evacuated. The creature is captured, but it has divided. The laboratory is slowly losing control, but no one in Leiden wants to admit it. ¶ What only the game master knows. The cells from the rifts are not a discovery but a contact. They come from rifts and answer to the Voice. Whoever cultivates them cultivates not tissue but a connection. Morrow considers the side effects technical problems that can be solved with more research. Dr. Brandsma has known since 2018 that the cells react to sound and has kept silent about it. Dr. Holm suspects the connection with the Voice and remains silent out of fear.
+- neu: 2026. The chimera is unstable. In spring it breaks out of its cage and kills two researchers. Dr. Favre covers up the deaths as a laboratory accident and has the affected wing partially evacuated. The creature is captured, but it has divided. The laboratory is slowly losing control, but no one in Leiden wants to admit it. ¶ What only the game master knows. The cells from the rifts are not a discovery but a contact. They come from rifts and answer to the Voice. Whoever cultivates them cultivates not tissue but a connection. Morrow considers the side effects technical problems that can be solved with more research. Dr. Brandsma has known since 2018 that the cells react to sound and has kept silent about it. Dr. Holm suspects the connection with the Voice and remains silent out of fear.
 
 - alt: Morrow Biologics wants to understand the cells from the rifts and turn them into medicine. The corporation believes it has discovered a natural source of unlimited regeneration and wants to patent it, license it and sell it. The leadership in Leiden sees itself as the pioneer of a medical revolution. ¶ What Morrow does not understand: the cells are not a discovery but a contact. They come from rifts, and they answer to the Voice. Whoever cultivates them is not cultivating tissue but a connection. The corporation considers the side effects technical problems that more research will solve.
 - neu: Morrow Biologics wants to understand the cells from the rifts and turn them into medicine. The corporation believes it has discovered a natural source of unlimited regeneration and wants to patent, license and sell it. The leadership in Leiden sees itself as a pioneer of a medical revolution. ¶ What Morrow does not understand: the cells are not a discovery but a contact. They come from rifts, and they answer to the Voice. Whoever cultivates them cultivates not tissue but a connection. The corporation considers the side effects technical problems that can be solved with more research.
@@ -533,6 +602,9 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: A small, energetic woman with dark hair and quick movements, who wears a lab coat and safety goggles in a sterile laboratory. She created the Chimera and sees it as her life’s work. She knows that the creature is dangerous, but she believes she can control it. Her secret: she has fed the Chimera with her own blood to strengthen the bond. She speaks quickly, with a French accent, and becomes loud when interrupted.
 - neu: A small, energetic woman with dark hair and quick movements, who wears a lab coat and safety goggles in a sterile laboratory. She created the Chimera and sees it as her life’s work. She knows the creature is dangerous, but believes she can control it. Her secret: She fed the chimera with her own blood to strengthen the bond. She speaks quickly, with a French accent, and becomes loud when interrupted.
 
+- alt: Special The Chimera recognises her and hesitates for one round before attacking her
+- neu: Special The chimera recognises her and hesitates for one round before attacking her
+
 - alt: Behaviour Defends the laboratory, does not negotiate, calls security and hybrid dogs
 - neu: Behaviour Defends the laboratory, does not negotiate, calls security forces and hybrid dogs
 
@@ -542,7 +614,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 ### 02 Morrow Biologics › Hooks and Outlook
 
 - alt: White File “Cold Chain”. A Morrow Biologics van has crashed near Lyon. The police find empty cool boxes and traces of blood that match no known animal species. The cell is to find out what was being transported before the press does. ¶ Grey File “Bite Wounds”. In a suburb of Lyon, three dogs with armour-like growths are found. A vet reports the case to a number he should not know. The trail leads to a fence that has been bitten through from the inside. ¶ Red File “The Mother”. Homeless people are disappearing in the canals of Lyon. A sewer worker reports a creature with too many legs that divides when you shoot at it. The cell has to go into the sewers before the city floods the canals. ¶ Black File “Chimera”. The Council has sealed off the laboratory in Lyon. The Chimera has escaped and divided. The cell is to find the creatures and secure the evidence before Morrow destroys it. Dr. Norwood offers her help if, in return, the cell protects the patients of the MB-7 trial.
-- neu: White File “Cold Chain”. A Morrow Biologics van has crashed near Lyon. The police find empty cool boxes and blood traces that match no known animal species. The cell is to find out what was being transported before the press does. ¶ Grey File “Bite Wounds”. In a suburb of Lyon, three dogs with armour-like growths are found. A vet reports the case to a number he should not know. The trail leads to a fence that was bitten through from the inside. ¶ Red File “The Mother”. Homeless people are disappearing in the canals of Lyon. A sewer worker reports a creature with too many legs that divides when shot. The cell must enter the sewers before the city floods the canals. ¶ Black File “Chimera”. The Council has sealed off the laboratory in Lyon. The Chimera has escaped and divided. The cell is to find the creatures and secure the evidence before Morrow destroys it. Dr. Norwood offers her help if the cell in return protects the patients of the MB-7 study.
+- neu: White File “Cold Chain”. A Morrow Biologics van has crashed near Lyon. The police find empty cool boxes and blood traces that match no known animal species. The cell is to find out what was being transported before the press does. ¶ Grey File “Bite Wounds”. In a suburb of Lyon, three dogs with armour-like growths are found. A vet reports the case to a number he should not know. The trail leads to a fence that was bitten through from the inside. ¶ Red File “The Mother”. Homeless people are disappearing in the canals of Lyon. A sewer worker reports a creature with too many legs that divides when shot. The cell must enter the sewers before the city floods the canals. ¶ Black File “Chimera”. The Council has sealed off the laboratory in Lyon. The chimera has escaped and divided. The cell is to find the creatures and secure the evidence before Morrow destroys it. Dr. Norwood offers her help if the cell in return protects the patients of the MB-7 study.
 
 - alt: The Chimera has established itself in the canals of Lyon. Three creatures hunt there, a fourth has disappeared into the Rhône. Morrow Biologics faces ruin: the MB-7 trial has become public, the shares have collapsed, and the board is trying to shift the responsibility onto Dr. Favre. O.D.I.N. has sealed the laboratory, but the creatures have escaped. ¶ The next plan of Morrow Biologics is called “The Last Dose” , starting value ☠○○○○ . The corporation wants to retrieve the last ampoule of MB-7, which O.D.I.N. keeps in the cold store in Bern, because something different was in this batch than in the others.
 - neu: The chimera has established itself in the sewers of Lyon. Three creatures hunt there, a fourth has disappeared in the Rhône. Morrow Biologics faces ruin: Study MB-7 has become public, shares have collapsed, and the board is trying to shift responsibility onto Dr. Favre. O.D.I.N. has sealed the laboratory, but the creatures have escaped. ¶ The next plan of Morrow Biologics is called “The Last Dose” , starting value ☠○○○○ . The corporation wants to retrieve the last ampoule of MB-7, which O.D.I.N. keeps in the cold store in Bern, because something in this batch was different from the others.
@@ -556,13 +628,13 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - neu: Morrow Biologics wants to turn the cells from the rifts into a regenerative therapy. The corporation believes it is growing tissue. In truth, it is growing a connection that answers to the Voice. The cell first notices it in the animals: dogs with armour plates, growths that heal in hours, and a laboratory in Lyon that requests more security personnel than a research laboratory ever needs.
 
 - alt: ○○○○○ The Chimera exists only as a cell culture in Lyon. Dr. Favre is planning the crossing with animal tissue. ¶ ☠○○○○ The first hybrid dogs appear and are used as guard dogs. A dog bites an animal keeper; the dog’s growths visibly heal within hours. Trail: A rumour in the canteen of Hold-7: dogs are disappearing in Lyon. ¶ ☠☠○○○ The Chimera grows and becomes restless. The laboratory increases the sedation. A Grey Meridian security guard quits and talks in a bar about “something in the basement”. Trail: A Grey File emerges: “Bite Wounds”. A dead dog with armour plates is found in a canal. ¶ ☠☠☠○○ The Chimera breaks out of its cage and kills two researchers. Dr. Favre covers up the deaths as an accident. The creature is recaptured, but it has divided. Trail: A newspaper report about an “animal attack” in Lyon. A contact of the cell reports that Morrow has partially evacuated the affected wing. ¶ ☠☠☠☠○ The second Chimera tries to break out but is held down by the sedation. The hybrid dogs become uncontrollable. Dr. Norwood activates the emergency protocol and calls Grey Meridian. Trail: A Red File emerges: “The Mother”. Animal carcasses that are still moving are found in the canals of Lyon. ¶ ☠☠☠☠☠ The Chimera escapes from the laboratory in Lyon and divides again. Three creatures hunt in the canals, and a fourth reaches the Rhône. Morrow finally loses control. Trail: The Council takes over with a Black File. The city of Lyon reports a series of animal attacks, and O.D.I.N. seals off the sewers. ¶ The Key Figure is Dr. Camille Favre, the head of the laboratory in Lyon. She created the Chimera and fed it with her own blood to strengthen the bond. As long as she lives, she holds the research together and covers up every incident. If the cell takes her out, the plan loses two skulls, because no one can claim control over the creatures any more and the laboratory panics. In addition, the plan does not roll after the next mission, because Morrow needs time to understand Favre’s work.
-- neu: ○○○○○ The Chimera exists only as a cell culture in Lyon. Dr. Favre plans the crossing with animal tissue. ¶ ☠○○○○ The first hybrid dogs appear and are used as guard dogs. One dog bites an animal keeper; the dog’s growths visibly heal in hours. Sign: A rumour in the canteen of Hold-7: In Lyon, dogs are disappearing. ¶ ☠☠○○○ The Chimera grows and becomes restless. The laboratory increases sedation. A Grey Meridian security man resigns and tells people in a bar about “something in the basement”. Trail: A Grey File emerges: “Bite Wounds”. A dead dog with armour plates is found in a canal. ¶ ☠☠☠○○ The Chimera breaks out of its cage and kills two researchers. Dr. Favre covers up the deaths as an accident. The creature is captured, but it has divided. Trail: A newspaper report about an “animal attack” in Lyon. A contact of the cell reports that Morrow has partially evacuated the affected wing. ¶ ☠☠☠☠○ The second chimera tries to break out, but is held down by sedation. The hybrid dogs become uncontrollable. Dr. Norwood activates the emergency protocol and calls Grey Meridian. Trail: A Red File emerges: “The Mother”. Animal carcasses that are still moving are found in the canals of Lyon. ¶ ☠☠☠☠☠ The Chimera escapes from the laboratory in Lyon and divides again. Three creatures hunt in the sewers, and a fourth reaches the Rhône. Morrow finally loses control. Trail: The Council takes over with a Black File. The city of Lyon reports a series of animal attacks, and O.D.I.N. seals off the sewers. ¶ The Key Figure is Dr. Camille Favre, the head of the laboratory in Lyon. She created the Chimera and fed it with her own blood to strengthen the bond. As long as she lives, she holds the research together and covers up every incident. If the cell takes her out, the plan loses two skulls, because no one can claim control over the creatures any longer and the laboratory panics. In addition, the plan does not roll after the next mission, because Morrow needs time to understand Favre’s work.
+- neu: ○○○○○ The chimera exists only as a cell culture in Lyon. Dr. Favre plans the crossing with animal tissue. ¶ ☠○○○○ The first hybrid dogs appear and are used as guard dogs. One dog bites an animal keeper; the dog’s growths visibly heal in hours. Sign: A rumour in the canteen of Hold-7: In Lyon, dogs are disappearing. ¶ ☠☠○○○ The chimera grows and becomes restless. The laboratory increases sedation. A Grey Meridian security man resigns and tells people in a bar about “something in the basement”. Trail: A Grey File emerges: “Bite Wounds”. A dead dog with armour plates is found in a canal. ¶ ☠☠☠○○ The chimera breaks out of its cage and kills two researchers. Dr. Favre covers up the deaths as an accident. The creature is captured, but it has divided. Trail: A newspaper report about an “animal attack” in Lyon. A contact of the cell reports that Morrow has partially evacuated the affected wing. ¶ ☠☠☠☠○ The second chimera tries to break out, but is held down by sedation. The hybrid dogs become uncontrollable. Dr. Norwood activates the emergency protocol and calls Grey Meridian. Trail: A Red File emerges: “The Mother”. Animal carcasses that are still moving are found in the canals of Lyon. ¶ ☠☠☠☠☠ The chimera escapes from the laboratory in Lyon and divides again. Three creatures hunt in the sewers, and a fourth reaches the Rhône. Morrow finally loses control. Trail: The Council takes over with a Black File. The city of Lyon reports a series of animal attacks, and O.D.I.N. seals off the sewers. ¶ The Key Figure is Dr. Camille Favre, the head of the laboratory in Lyon. She created the Chimera and fed it with her own blood to strengthen the bond. As long as she lives, she holds the research together and covers up every incident. If the cell takes her out, the plan loses two skulls, because no one can claim control over the creatures any longer and the laboratory panics. In addition, the plan does not roll after the next mission, because Morrow needs time to understand Favre’s work.
 
 - alt: Morrow Biologics has Knowledge 1 and does not answer with a countermove. The corporation reacts to the cell like a company that fears a scandal. Dr. Norwood has the cell shadowed and gathers information about their relatives. The board brings in lawyers and threatens lawsuits if the cell comes near the laboratories. Dr. Favre accelerates her experiments because she wants to prove that she remains in control.
 - neu: Morrow Biologics has knowledge 1 and does not respond with a countermove. The corporation reacts to the cell like a company that fears a scandal. Dr. Norwood has the cell shadowed and gathers information about their relatives. The board brings in lawyers and threatens lawsuits if the cell approaches the laboratories. Dr. Favre accelerates her experiments because she wants to prove that she retains control.
 
-- alt: At ☠☠☠☠☠ : “The Staircase” (the Singers) gains a skull. What escaped from Lyon sings in the canals, and the Singers follow the song to a staircase beneath the city.
-- neu: At ☠☠☠☠☠ : “The stairs” (the Singers) gains a skull. What escaped from Lyon sings in the sewers, and the Singers follow the song to a staircase beneath the city.
+- alt: At ☠☠☠☠○ : “The Great Stone” (the Evening) gains a skull. Morrow buys more samples, and the Evening gets money and channels for the search for the stone. ¶ At ☠☠☠☠☠ : “The Staircase” (the Singers) gains a skull. What escaped from Lyon sings in the canals, and the Singers follow the song to a staircase beneath the city.
+- neu: At ☠☠☠☠○ : “The great stone” (the Evening) gains a skull. Morrow buys more samples, and the Evening gets money and channels for the search for the stone. ¶ At ☠☠☠☠☠ : “The stairs” (the Singers) gains a skull. What escaped from Lyon sings in the sewers, and the Singers follow the song to a staircase beneath the city.
 
 ### 02 Morrow Biologics › Bases and Means
 
@@ -575,32 +647,18 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 ### 03 The Singers › Hooks and Outlook
 
 - alt: White File “The Humming Man”. A woman in Hanover reports to the police that her husband has been humming a melody she does not know for three days, and that he gets up at night and stands in the hallway as if he were waiting for something. The police pass the case on to O.D.I.N. because the woman says her husband never used to hum. The cell is to find out whether it is a case for the Print Shop or something else. It is something else. ¶ Grey File “The Staircase”. In Rotterdam, a car has been standing on the third basement level of a car park for three months. The owner, Daniel Koslowski, has disappeared. His wife Miriam followed him and, the night before, called the police and said she had found him. The cell is to enter the car park, find the fourth basement level and find out what is being sung there. ¶ Red File “The Song in the Car Park”. In and around Rotterdam, fourteen people have disappeared in one week. All of them last spoke of a staircase. The cell is to find the staircase before the police do. The trail leads to the fourth basement level of the car park, to a staircase that is only visible when you are alone and hear the song. ¶ Black File “All the Staircases”. During the night the Seeker heard the song, in four places at once, and a fifth spot that is still silent. She reported it to the Council and has not spoken since. The cell receives a list of five places: the Brocken, Rotterdam, a raised bog in Ireland, a reservoir in the Alps and a fifth spot that is crossed out on the list. The cell is to find the fifth staircase before the Singers open it. The fifth staircase is in a cellar in Tallinn.
-- neu: White File “The Humming Man”. A woman in Hanover reports to the police that her husband has been humming a melody she does not know for three days, and that he gets up at night and stands in the hallway as if waiting for something. The police pass the case on to O.D.I.N. because the woman says her husband has never hummed before. The cell is to find out whether it is a case for the Print Shop or something else. It is something else. ¶ Grey File “The Staircase”. In Rotterdam, a car has been standing on the third basement level of a car park for three months. The owner, Daniel Koslowski, has disappeared. His wife Miriam followed him and, the night before, called the police and said she had found him. The cell travels with a permit from the Council, as in File 6 “The Tutor” (Grey Files). It is to enter the car park, find the fourth basement level and find out what is sung there. ¶ Red File “The Song in the Car Park”. In and around Rotterdam, fourteen people have disappeared in one week. All of them last spoke of a staircase. The cell is to find the staircase before the police do. The trail leads to the fourth basement level of the car park, to a staircase that is only visible when one is alone and hears the song. ¶ Black File “All the Staircases”. During the night the Seeker heard the song, in four places at once, and a fifth spot that is still silent. She reported it to the Council and has not spoken since. The cell receives a list of five places: Brocken, Rotterdam, a raised bog in Ireland, a reservoir in the Alps and a fifth place that is crossed out on the list. The cell is to find the fifth staircase before the Singers open it. The fifth staircase is in a cellar in Tallinn.
+- neu: White File “The Humming Man”. A woman in Hanover reports to the police that her husband has been humming a melody she does not know for three days, and that he gets up at night and stands in the hallway as if waiting for something. The police pass the case on to O.D.I.N. because the woman says her husband has never hummed before. The cell is to find out whether it is a case for the Print Shop or something else. It is something else. ¶ Grey File “The stairs”. In Rotterdam, a car has been standing on the third basement level of a car park for three months. The owner, Daniel Koslowski, has disappeared. His wife Miriam followed him and, the night before, called the police and said she had found him. The cell travels with a permit from the Council, as in File 6 “The Tutor” (Grey Files). It is to enter the car park, find the fourth basement level and find out what is sung there. ¶ Red File “The Song in the Car Park”. In and around Rotterdam, fourteen people have disappeared in one week. All of them last spoke of a staircase. The cell is to find the staircase before the police do. The trail leads to the fourth basement level of the car park, to a staircase that is only visible when one is alone and hears the song. ¶ Black File “All the Staircases”. During the night the Seeker heard the song, in four places at once, and a fifth spot that is still silent. She reported it to the Council and has not spoken since. The cell receives a list of five places: Brocken, Rotterdam, a raised bog in Ireland, a reservoir in the Alps and a fifth place that is crossed out on the list. The cell is to find the fifth staircase before the Singers open it. The fifth staircase is in a cellar in Tallinn.
 
 - alt: The world has changed: on the night the Singers sang at all five staircases at the same time, people all over Europe heard the song. Not many, but enough. They did not go. They only understood that there is a way. Since then they hum when they are alone, and they look at doors differently. O.D.I.N. has sealed the five staircases, but the song can no longer be captured. It is in the world, like an earworm you can no longer get rid of. ¶ The next plan: “The Sixth Staircase” ☠○○○○ . The Singers are searching for the sixth staircase, and they know that there is one O.D.I.N. does not know about. It lies in a disused underground station in Budapest, and it leads not downwards but inwards.
 - neu: The world has changed: On the night when the Singers sang at all five staircases at once, people across Europe heard the song. Not many, but enough. They did not go. They only understood that there is a way. Since then they hum when they are alone, and they look at doors differently. O.D.I.N. sealed the five staircases, but the song can no longer be contained. It is in the world, like an earworm one cannot get rid of. ¶ The next plan: “The Sixth Staircase” ☠○○○○ . The Singers are looking for the sixth staircase, and they know there is one that O.D.I.N. does not know about. It lies in a disused underground station in Budapest, and it does not lead down, but inward.
-
-### 03 The Singers › The Plan: “The Staircase”
-
-- alt: The Singers are searching for staircases. Every staircase found is another place where the world is thin, and another point where they can sing. The cell notices it because people disappear who have previously heard a song, because doors appear in places that should not exist, and because the Preacher moves from city to city and leaves behind congregations that wait for the song.
-- neu: The Singers are searching for staircases. Every staircase found is another place where the world is thin, and another point where they can sing. The cell notices it because people disappear who have heard a song before, because doors appear in places that should not exist, and because the Preacher moves from town to town, leaving behind congregations that wait for the song.
-
-- alt: ☠○○○○ The Singers have found a second staircase: the car park in Rotterdam. The Preacher begins to send people there. Trail: A missing persons case in Rotterdam that is reported to the Print Shop. A car that has been standing on the third basement level for three months. ¶ ☠☠○○○ The Singers have found a third staircase: the raised bog in Ireland. Tarek Mansour has mapped it. Miriam Koslowski follows her husband’s trail to Rotterdam. Trail: A woman in Rotterdam asking about a car park that officially does not exist. A dead drop in Hanover containing a city map on which two staircases are marked. From the plan a Grey File emerges for the cell. ¶ ☠☠☠○○ The Singers have found a fourth staircase: the reservoir in the Alps. The Preacher travels through northern Germany and the Netherlands. Tarek Mansour betrays the staircase in Ireland to the cell, because he becomes afraid that the Singers no longer need him, and because he hopes that O.D.I.N. will protect him. Trail: A Psion of the cell hears the song in their sleep. A call from Tarek Mansour to the police, who pass him on to O.D.I.N. ¶ ☠☠☠☠○ The Singers have opened all four staircases. The people who hear the song leave in droves. O.D.I.N. finds empty flats, abandoned cars, phones with voice messages in which the song can be heard. Trail: A newspaper report about a “sect” that is making people disappear in northern Germany. A call from Miriam Koslowski to the police, saying she has found her husband. From the plan a Red File emerges. ¶ ☠☠☠☠☠ The Singers sing at all five staircases at the same time: the Brocken, Rotterdam, Ireland, the reservoir in the Alps and a cellar in Tallinn. The song can be heard all over Europe, quietly, like a hum in the walls. Whoever hears it knows that there is a way. Trail: The numbers station broadcasts the song. The Seeker hears it and, for the first time in years, says nothing. The Council takes over with a Black File. ¶ The Key Figure is the Preacher. He knows where the next staircase is, and he sends people there. If the cell takes him out, the plan loses two skulls and does not roll after the next mission. But the Preacher is not a fighter. He is a man who hums, and whoever listens to him understands why people go.
-- neu: ☠○○○○ The Singers have found a second staircase: the car park in Rotterdam. The Preacher begins to send people there. Sign: A missing person case in Rotterdam that is reported to the Print Shop. A car that has been standing on the third basement level for three months. ¶ ☠☠○○○ The Singers have found a third staircase: the raised bog in Ireland. Tarek Mansour has mapped it. Miriam Koslowski follows her husband’s trail to Rotterdam. A woman in Rotterdam asking about a car park that officially does not exist. A dead drop in Hanover containing a city map on which two staircases are marked. From the plan a Grey File emerges for the cell. ¶ ☠☠☠○○ The Singers have found a fourth staircase: the reservoir in the Alps. The Preacher moves through northern Germany and the Netherlands. Tarek Mansour reveals the staircase in Ireland to the cell because he becomes afraid that the Singers no longer need him, and because he hopes that O.D.I.N. will protect him. Trail: A Psion of the cell hears the song in their sleep. A call from Tarek Mansour to the police, who pass him on to O.D.I.N. ¶ ☠☠☠☠○ The Singers have opened all four staircases. The people who hear the song go in droves. O.D.I.N. finds empty flats, abandoned cars, mobile phones with voice messages in which the song can be heard. Sign: A newspaper report about a “sect” that makes people disappear in northern Germany. A call from Miriam Koslowski to the police, in which she says she has found her husband. From the plan, a Red File is created. ¶ ☠☠☠☠☠ The Singers sing at all five staircases simultaneously: Brocken, Rotterdam, Ireland, the reservoir in the Alps and a cellar in Tallinn. The song can be heard all over Europe, quietly, like a hum in the walls. Whoever hears it knows that there is a way. Trail: The numbers station broadcasts the song. The Seeker hears it and, for the first time in years, says nothing. The Council takes over with a Black File. ¶ The Key Figure is the Preacher. He knows where the next staircase is, and he sends people there. If the cell takes him out, the plan loses two skulls and does not roll after the next mission. But the Preacher is not a fighter. He is a man who hums, and anyone who listens to him understands why people go.
-
-- alt: 1 to 2 A bait. The Singers send the cell someone who has heard the song and wants to talk. He is friendly, confused and knows nothing. But while the cell questions him, someone else goes to the staircase. The witness disappears as soon as the cell lets him go, and leaves a message: “You didn’t stop him. You listened to him.” ¶ 3 to 4 A name. The Singers know a name that is sung in the stairwell. They sing it. An agent hears his name at night, sung by a voice that sounds like a person he knows. The next morning there is a stone outside his door with a circle scratched into it. ¶ 5 to 6 A contact falls silent. A contact of the cell, an informant, an old friend, hears the song and goes. He leaves a note: “I have understood. Don’t come after me.” The cell loses a level 1 or 2 contact until it finds him or gives up.
-- neu: 1 to 2 A bait. The Singers send the cell someone who has heard the song and wants to talk. He is friendly, confused and knows nothing. But while the cell questions him, another goes to the staircase. The witness disappears as soon as the cell lets him go, and leaves a message: “You did not stop him. You listened to him.” ¶ 3 to 4 A name. The Singers know a name that is sung in the stairwell. They sing it. An agent hears their name at night, sung by a voice that sounds like a person they know. The next morning, a stone lies in front of their door, with a circle carved into it. ¶ 5 to 6 A contact falls silent. A contact of the cell, an informant, an old friend, hears the song and goes. They leave a note: “I have understood. The cell loses a level 1 or 2 contact until they find them or give up.
-
-- alt: At ☠☠☠☠○ : “Taking the Children” (the Open Ones) gains a skull. Kantor hears the Singers and believes that the choir is growing. ¶ At ☠☠☠☠☠ : “No More Nexus Crystals” (the Foundation in Basel) loses a skull. On the night of the song, the Council seizes all the Nexus crystals it can get in order to seal the staircases.
-- neu: At ☠☠☠☠○ : “Fetch the children” (the Open Ones) gains a skull. Kantor hears the Singers and believes that the choir is growing. ¶ At ☠☠☠☠☠ : “No More Nexus Crystals” (the Foundation in Basel) loses a skull. On the night of the song, the Council seizes all Nexus crystals it can obtain to seal the staircases.
 
 ### 03 The Singers › Relationship to O.D.I.N.
 
 - alt: What O.D.I.N. knows: That the Singers exist. That they stand on the Brocken. That they speak with one voice. That a cult has arisen around them. That people disappear who have heard a song. That there is more than one staircase. Not where the other staircases are. Not what lies at the end of the staircase. Not how to stop the song, except with helmets of Alloy S.
 - neu: What O.D.I.N. knows: That the Singers exist. That they stand on the Brocken. That they speak with one voice. That a cult has formed around them. That people disappear who have heard a song. That there is more than one staircase. Not where the other staircases are. Not what lies at the end of the staircase. Not how to stop the song, except with helmets made of Alloy S.
 
-- alt: The Singers offer nothing. They sing. An agent who hears the song understands what it means: that there is a way, that his life is not everything, that he can go. That is the bait. No money, no power, no truth. Only the song. What they want in return: that he goes. That he goes down the staircase and does not come back. Or that he comes back and sings.
-- neu: The Singers offer nothing. They sing. An agent who hears the song understands what it means: that there is a way, that their life is not everything, that they can go. That is the bait. No money, no power, no truth. Only the song. What they want in return: that they go. That he goes down the staircase and does not come back. Or that they come back and sing.
+- alt: THE BAIT ¶ The Singers offer nothing. They sing. An agent who hears the song understands what it means: that there is a way, that his life is not everything, that he can go. That is the bait. No money, no power, no truth. Only the song. What they want in return: that he goes. That he goes down the staircase and does not come back. Or that he comes back and sings.
+- neu: THE LURE ¶ The Singers offer nothing. They sing. An agent who hears the song understands what it means: that there is a way, that their life is not everything, that they can go. That is the bait. No money, no power, no truth. Only the song. What they want in return: that they go. That he goes down the staircase and does not come back. Or that they come back and sing.
 
 ### 03 The Singers › History and Goals
 
@@ -623,8 +681,14 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: The Singers are a cult without a leader and without a book, grown up around the people on the staircase at the Brocken, which leads deeper than a mountain can be. They are not an organisation that can be smashed. They are a song that will not let go of you once you have heard it. The game master does not play them as conspirators, but as a wave that is coming.
 - neu: The Singers are a cult without leader and without book, grown around the people on the staircase on the Brocken, which leads deeper than a mountain can be. The Twelve of Asklepios are not an organisation that can be stormed. They are a song that does not let go of you once you have heard it. The game master plays them not as conspirators, but as a wave that comes.
 
+- alt: Statement by a relative, Grey File “The Staircase”, 2026
+- neu: Statement by a relative, Grey File “The stairs”, 2026
+
 - alt: Type Cult without a leader and without a book, grown up around the people on the staircase at the Brocken, which leads deeper than a mountain can be. ¶ Seat None. The Singers at the Brocken are the core, the cult moves around them.
 - neu: Type Cult without leader and without book, grown around the people on the staircase on the Brocken, which leads deeper than a mountain can be. ¶ Seat None. The Singers on the Brocken are the core, the cult moves around them.
+
+- alt: Plan “The Staircase”, starting value ☠☠○○○ .
+- neu: Plan “The stairs”, starting value ☠☠○○○ .
 
 ### 03 The Singers › Key Figures
 
@@ -690,7 +754,7 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - neu: Georg Wendlinger notices that O.D.I.N. is investigating in Brussels. He erases the traces of the Print Shop and warns Maarten via a dead letter box. Maarten de Vries strengthens the ritual, paints the circle larger and brings two followers into the house to guard him. Nadia El-Khoury sends a message to all members: “They are among us. Delete your profiles.” The group disperses.
 
 - alt: At ☠☠☠☠○ : “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge recognises the song of 1871 in the ritual in Anderlecht and believes the time has come. ¶ At ☠☠☠☠☠ : “The Staircase” (the Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase.
-- neu: At ☠☠☠☠○ : “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The lodge recognises the song of 1871 in the Anderlecht ritual and believes the time has come. ¶ At ☠☠☠☠☠ : “The stairs” (the Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase.
+- neu: At ☠☠☠☠○ : “The page from 1871” (Lodge of the Silent Circle) gains a skull. The lodge recognises the song of 1871 in the Anderlecht ritual and believes the time has come. ¶ At ☠☠☠☠☠ : “The stairs” (the Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase.
 
 ### 11 The Enlightened › History and Goals
 
@@ -745,11 +809,8 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Who at O.D.I.N. deals with them: The Operations Branch, more precisely the Print Shop in Zurich. Georg Wendlinger is the legend writer in charge. The cell’s handler received the file “The Second Light” from an observer in Brussels who intercepted the missing-person reports.
 - neu: Who at O.D.I.N. deals with them: The Operations Branch, more precisely the Print Shop in Zurich. Georg Wendlinger is the legend writer in charge. The cell’s handler received the file “The Second Light” from an Observer in Brussels who intercepted the missing persons reports.
 
-- alt: What the Enlightened know about O.D.I.N.: Almost nothing. They consider O.D.I.N. part of the conspiracy they have seen through. Georg Wendlinger knows everything, but he keeps silent. Falkenrath believes O.D.I.N. is a tool of the Illuminati.
-- neu: What the Enlightened know about O.D.I.N.: Almost nothing. They consider O.D.I.N. part of the conspiracy they have seen through. Georg Wendlinger knows everything, but he remains silent. Falkenrath believes O.D.I.N. is a tool of the Illuminati.
-
-- alt: Georg Wendlinger offers an agent of the cell access to all membership lists, forum data and internal reports of the Print Shop on the Enlightened. In return he wants protection from the Council and the assurance that the legend will not be buried.
-- neu: Georg Wendlinger offers an agent of the cell access to all membership lists, forum data and internal reports of the Print Shop about the Enlightened. In return he wants protection from the Council and the assurance that the legend will not be buried.
+- alt: What the Enlightened know about O.D.I.N.: Almost nothing. They consider O.D.I.N. part of the conspiracy they have seen through. Georg Wendlinger knows everything, but he keeps silent. Falkenrath believes O.D.I.N. is a tool of the Illuminati. ¶ THE BAIT ¶ Georg Wendlinger offers an agent of the cell access to all membership lists, forum data and internal reports of the Print Shop on the Enlightened. In return he wants protection from the Council and the assurance that the legend will not be buried.
+- neu: What the Enlightened know about O.D.I.N.: Almost nothing. They consider O.D.I.N. part of the conspiracy they have seen through. Georg Wendlinger knows everything, but he remains silent. Falkenrath believes O.D.I.N. is a tool of the Illuminati. ¶ THE LURE ¶ Georg Wendlinger offers an agent of the cell access to all membership lists, forum data and internal reports of the Print Shop about the Enlightened. In return he wants protection from the Council and the assurance that the legend will not be buried.
 
 ### 11 The Enlightened › Hooks and Outlook
 
@@ -761,6 +822,11 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: If the cell has played Grey File 8 “The Second Light”, the following applies depending on the outcome: if the circle was sealed, the plan drops to ☠☠○○○ . If Maarten was also arrested, the Key Figure is taken out: the plan drops to ☠○○○○ and does not roll after the next mission. If Maarten escaped or the ritual was not ended, the plan stays at ☠☠☠○○ and Maarten keeps painting the circle. If the crystal was handed over to O.D.I.N., the plan loses another skull, because the ritual cannot be completed without the crystal. If the forum data was handed over to the Print Shop, the Print Shop uses it for a counter-legend and the plan loses a skull.
 - neu: If the cell played Grey File 8 “The Second Light”, the following applies depending on the outcome: If the circle was sealed, the plan drops to ☠☠○○○ . If Maarten was also arrested, the key figure is eliminated: the plan drops to ☠○○○○ and does not roll after the next mission. If Maarten escaped or the ritual was not ended, the plan remains at ☠☠☠○○ and Maarten continues to paint the circle. If the crystal was handed over to O.D.I.N., the plan loses another skull, because the ritual cannot be completed without the crystal. If the forum data was handed over to the Print Shop, the Print Shop uses it for a counter-legend and the plan loses a skull.
+
+### Mission 10: Ten Past Ten › The Confrontation
+
+- alt: With a fight. After 22:10 a psion from the circle breaks out and lashes out with uncontrolled power. The group must restrain or calm them while Rees’s squad carries all forty out over the following hour. A psion can calm them: Telepathy against Hard (3). A Soldier can restrain them: Hand-to-hand against Doable (2); anyone who touches them also makes a Mental Resistance test against Hard (3) to avoid joining the tone themselves. Success: no one dies beyond the three. Failure: the outbreak costs time, not lives. The three dead remain the same.
+- neu: With a fight. After 22:10 a psion from the circle breaks out and lashes out with uncontrolled power. The group must restrain or calm them while Rees’s squad carries all forty out over the following hour. A psion can calm them: Telepathy against Hard (3). A Soldier can restrain them: Brawling against Doable (2); anyone who touches them also makes a Mental Resistance test against Hard (3) to avoid joining the tone themselves. Success: no one dies beyond the three. Failure: the outbreak costs time, not lives. The three dead remain the same.
 
 ### 09 The Freemasons and the Legend of the Illuminati › The Freemasons
 
@@ -806,8 +872,8 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Who at O.D.I.N. deals with them: the handler of Hold-5 in Vienna, who watches the Department’s movements in Eastern Europe. The Echo operatives, who have had a score to settle with the Department since 1976. And the Audit, which checks every hint of a mole in the Swedish mining authority. ¶ O.D.I.N. knows that Department 13 has existed since the fifties, that it has access to Siberian restricted zones, that it uses up psions without helmets and that it is searching for a second site for Alloy S. O.D.I.N. does not know that the Department has been drilling at Kola-7 since 2019.
 - neu: Those at O.D.I.N. who deal with them: the handler of Hold-5 in Vienna, who observes the Department’s movements in Eastern Europe. The Echo-Operatives, who have had an open score with the Department since 1976. And the Audit, which checks every indication of a mole in the Swedish mining authority. ¶ O.D.I.N. knows that Department 13 has existed since the fifties, that it has access to Siberian restricted zones, that it uses up Psions without helmets and that it is searching for a second site of Alloy S. O.D.I.N. does not know that the Department has been drilling in Kola-7 since 2019.
 
-- alt: The Department offers an agent to bring him and his family to Russia, with real papers and a new life. In return it wants the coordinates of an O.D.I.N. archive in which Alloy S is stored, or a psion who defects.
-- neu: The Department offers to bring an agent and their family to Russia, with real papers and a new life. In return, it wants the coordinates of an O.D.I.N. archive where Alloy S is stored, or a Psion who defects.
+- alt: THE BAIT ¶ The Department offers an agent to bring him and his family to Russia, with real papers and a new life. In return it wants the coordinates of an O.D.I.N. archive in which Alloy S is stored, or a psion who defects.
+- neu: THE LURE ¶ The Department offers to bring an agent and their family to Russia, with real papers and a new life. In return, it wants the coordinates of an O.D.I.N. archive where Alloy S is stored, or a Psion who defects.
 
 ### 06 Department 13 › Bases and Means
 
@@ -829,10 +895,10 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - neu: If the cell takes a skull from the plan, Department 13 responds with a countermove.
 
 - alt: 1 to 2 A contact of the cell suddenly goes silent. He was visited by a hunter of the Department and was given a message: “The silence is listening.” The contact is afraid and no longer wants to talk to O.D.I.N. ¶ 3 to 4 A piece of bait turns up: a dead drop with a message that supposedly comes from a defector from the Department. The message contains a false coordinate in the restricted zone “Ural-3”. Whoever follows it walks into an ambush.
-- neu: 1 to 2 A contact of the cell suddenly goes silent. They were visited by a Hunter from the Department and received a message: “The silence is listening.” The contact is afraid and no longer wants to talk to O.D.I.N. ¶ 3 to 4 A piece of bait turns up: a dead drop with a message allegedly from a defector from the Department. The message contains a false coordinate in the restricted zone “Ural-3”. Anyone who follows it walks into an ambush.
+- neu: 1 to 2 A contact of the cell suddenly goes silent. They were visited by a Hunter from the Department and received a message: “The silence is listening.” The contact is afraid and no longer wants to talk to O.D.I.N. ¶ 3 to 4 A lure appears: a dead drop with a message allegedly from a defector from the Department. The message contains a false coordinate in the restricted zone “Ural-3”. Anyone who follows it walks into an ambush.
 
 - alt: At ☠☠☠☠○ : “A Seeker of Their Own” (STILLWATER) gains a skull. The Americans fear coming away empty-handed on alloy ore, and speed up their own programme. ¶ At ☠☠☠☠☠ : “The Great Stone” (The Evening) loses a skull. The Evening loses the Department as supplier and bidder.
-- neu: At ☠☠☠☠○ : “A Seeker of Their Own” (STILLWATER) gains a skull. The Americans fear missing out on the alloy ore and accelerate their own programme. ¶ At ☠☠☠☠☠ : “The Great Stone” (The Evening) loses a skull. The Evening loses the Department as a supplier and bidder.
+- neu: At ☠☠☠☠○ : “A Seeker of their own” (STILLWATER) gains a skull. The Americans fear missing out on the alloy ore and accelerate their own programme. ¶ At ☠☠☠☠☠ : “The great stone” (The Evening) loses a skull. The Evening loses the Department as a supplier and bidder.
 
 ### 06 Department 13 › Key Figures
 
@@ -862,6 +928,9 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Seat Moscow, administrative seat in an inconspicuous building on Ulitsa Gospitalnaya; operational base in the restricted zone “Kola-7” on the Kola Peninsula
 - neu: Seat Moscow, administrative headquarters in an inconspicuous building on Uliza Gospitalnaja; operational base in the restricted zone “Kola-7” on the Kola Peninsula
 
+- alt: Plan “The Second Site”, starting value ☠☠☠○○
+- neu: Plan “The second site”, starting value ☠☠☠○○
+
 ### 06 Department 13 › History and Goals
 
 - alt: 1954. In the Soviet Union, a working group for “psychotronics” is set up under the umbrella of an invented cover agency for heavy industry. Officially it is about influencing people through electromagnetic fields. In fact the group collects reports about children who know things they cannot know. The name “Department 13” first appears in an internal memo. ¶ 1957. From an archive of the Soviet security apparatus, Department 13 receives finds from the Tunguska expedition of 1927: dark metal fragments, warm, softly humming, without any loss of energy. The fragments come from the site of the explosion of 1908. The Department begins to understand that there are materials that do not fit into the known order. What exactly the fragments are remains open. ¶ 1963. Department 13 begins the systematic exploration of restricted zones on Kola and in the Urals. The first expeditions end in losses. Within two years the Department loses fourteen wearers of heavy protective suits. The programme is continued nevertheless, because the restricted zones cannot be entered without heavy equipment. ¶ 1976. In the Carpathians, Department 13 intends to win over seven Open Ones. The operation fails when Echo operatives under Paul Mercier arrest the Open Ones without firing a shot. One of those arrested is fifteen years old. Since that day every O.D.I.N. agent on Russian territory is considered an enemy combatant. What only the game master knows: Orlowa’s father was the Department officer who was meant to recruit the Open Ones in 1976 and came back empty-handed. He was killed by a Swarm in 1981 during an operation in the restricted zone “Ural-3”. ¶ 1981. The mine at Kiruna is exhausted. Department 13 learns of it through a mole in the Swedish mining authority. The conviction that there must be a second site for Alloy S becomes doctrine. Between Kola and the Urals a systematic search begins that continues to this day. ¶ 1991. After the collapse of the Soviet Union, the Russian security apparatus takes over the Department. Funding briefly collapses, then the Department finds a new source of money: selling crystal shards from Siberian restricted zones to collectors, among them the Evening. The Department keeps the best pieces. ¶ 1993. Department 13 begins building “golems”: armoured exoskeletons for operations in Siberian restricted zones. The first prototypes fail. The programme is continued nevertheless, because the restricted zones cannot be entered without heavy equipment. Most golems are later scrapped, some still run.
@@ -884,16 +953,39 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: The next plan: “The Open Choir” ☠○○○○ . Department 13 wants to use its new helmets to build a Choir of its own, without the Rule of the Twelve, and so call the Thirteenth before O.D.I.N. does.
 - neu: The next plan: “The Open Choir” ☠○○○○ . Department 13 wants to build its own choir with its new helmets, without the rule of the Twelve, and thereby call the Thirteenth before O.D.I.N. does.
 
+### 03 Number 341 › Opponents
+
+- alt: Attack Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, scatter, under the counter
+- neu: Attack Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, Spread, under the counter
+
+- alt: Attack Compact pistol 3 + 2, damage 2, concealed, or cosh 2 + 2, damage 2, Stunning, Concealed
+- neu: Attack Compact pistol 3 + 2, damage 2, concealed, or cosh 2 + 2, damage 2, Stun, Concealed
+
+- alt: Attack Escort blade 4 + 3, damage 2, 3 against creatures from rifts, or service pistol 4 + 3, damage 3
+- neu: Attack Escort blade 4 + 3, damage 2, 3 against beings from rifts, or service pistol 4 + 3, damage 3
+
+### 03 Number 341 › Node 5: The Foster Family in Splott
+
+- alt: Clue for Psion: A Psion who examines Rhys with Deep Inquiry (Doable, 3 PSI, touch) sees the moment the name came: a humming, a cottage, an old man holding the visor (leads to Evan Pryce, to the cottage in Snowdonia). ¶ Tests: Persuasion against Doable (2) to calm Rhys down and get him talking. Empathy against Doable (2) to realise that Rhys is telling the truth but holding something back. Excellent classes: Psion, Investigator, Negotiator.
+- neu: Clue for Psion: A Psion who examines Rhys with Deep Probe (Doable, 3 PSI, touch) sees the moment the name came: a humming, a cottage, an old man holding the visor (leads to Evan Pryce, to the cottage in Snowdonia). ¶ Tests: Persuasion against Doable (2) to calm Rhys down and get him talking. Insight against Doable (2) to realise that Rhys is telling the truth but holding something back. Excellent classes: Psion, Investigator, Negotiator.
+
+### 18 Tunnel Zero › Confrontation
+
+- alt: The cell can sabotage the Opener, which does not destroy it but slows it down. It can steal the logbook. It can follow the secretary. It can fight, against guards, against Soldiers, against security systems and a rift that opens when the Opener is disturbed. Or it can ask Wendland a question, on the logbook, with the pen that lies next to it. The answer comes at the next knocking.
+- neu: The cell can sabotage the Opener, which does not destroy it but slows it down. It can steal the logbook. It can follow the secretary. It can fight, against guards, against Soldiers, against Guard Systems and a rift that opens when the Opener is disturbed. Or it can ask Wendland a question, on the logbook, with the pen that lies next to it. The answer comes at the next knocking.
+
+### 08 The Second Light › The Confrontation
+
+- alt: 4. The crystal pulses faster. A Thaumaturge can seal the circle with salt and a banishing circle if they succeed on a Ritualism test against Hard (3). This takes one round.
+- neu: 4. The crystal pulses faster. A Thaumaturge can seal the circle with salt and a warding circle if they succeed on a Ritualism test against Hard (3). This takes one round.
+
 ### 10 Lodge of the Silent Circle › Relationship to O.D.I.N.
 
 - alt: Who at O.D.I.N. deals with them. The Registrar in Stockholm, who has been conducting a quiet correspondence with the Master for years. Folio-7, who wanted to consult the church register in 2026 and was watched by the Lodge.
 - neu: Who at O.D.I.N. deals with them. The Registrar in Stockholm, who has conducted a quiet correspondence with the Master for years. Folio-7, who wanted to inspect the church register in 2026 and was observed by the lodge.
 
-- alt: What the Lodge knows about O.D.I.N. That the page lies in the second compartment of the steel cabinet. That the Registry is based in Stockholm. That Hallström found the page in 1938 and never handed it over. That O.D.I.N. guards the circles, but does not understand them.
-- neu: What the Lodge knows about O.D.I.N. That the page lies in the second compartment of the steel cabinet. That the Registry is located in Stockholm. That Hallström found the page in 1938 and never released it. That O.D.I.N. guards the circles, but does not understand them.
-
-- alt: The Lodge offers an agent knowledge. An answer to a question that O.D.I.N. does not answer. The tutor’s name, the song, the story of 1871. In return it wants a page from a file in the Registry. Or the missing page itself.
-- neu: The Lodge offers an agent knowledge. An answer to a question that O.D.I.N. does not answer. The name of the tutor, the song, the story of 1871. In return it wants a page from a file of the Registry. Or the missing page itself.
+- alt: What the Lodge knows about O.D.I.N. That the page lies in the second compartment of the steel cabinet. That the Registry is based in Stockholm. That Hallström found the page in 1938 and never handed it over. That O.D.I.N. guards the circles, but does not understand them. ¶ THE BAIT ¶ The Lodge offers an agent knowledge. An answer to a question that O.D.I.N. does not answer. The tutor’s name, the song, the story of 1871. In return it wants a page from a file in the Registry. Or the missing page itself.
+- neu: What the Lodge knows about O.D.I.N. That the page lies in the second compartment of the steel cabinet. That the Registry is located in Stockholm. That Hallström found the page in 1938 and never released it. That O.D.I.N. guards the circles, but does not understand them. ¶ THE LURE ¶ The Lodge offers an agent knowledge. An answer to a question that O.D.I.N. does not answer. The name of the tutor, the song, the story of 1871. In return it wants a page from a file of the Registry. Or the missing page itself.
 
 ### 10 Lodge of the Silent Circle › Bases and Means
 
@@ -921,6 +1013,9 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: The Lodge of the Silent Circle is a small, old lodge in Uppsala that has preserved a song, a name and a debt since 1872. It works in the seventh degree, but has nothing to do with Freemasonry. It matters to the game master because it knows more about the night of 1871 than O.D.I.N. does, and because its plan to retrieve the missing page can change the world. ¶ “We never sang. We only listened, so that no one forgets that there was singing.”
 - neu: The Lodge of the Silent Circle is a small, old lodge in Uppsala that has preserved a song, a name and a debt since 1872. It works in the seventh degree, but has nothing to do with Freemasonry. For the game master, it matters because it knows more about the night of 1871 than O.D.I.N. and because its plan to retrieve the missing page could change the world. ¶ “We never sang. We only listened, so that no one forgets that singing happened.
+
+- alt: Plan The Page from 1871, starting value ☠☠○○○
+- neu: Plan The page from 1871, starting value ☠☠○○○
 
 ### 10 Lodge of the Silent Circle › Key Figures
 
@@ -962,33 +1057,13 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: File 6 “The Tutor” shows how the Lodge is entangled in this plan. Alfred Sundberg, the antiquarian from Uppsala, has the runestone at Lake Solberg exposed in order to force O.D.I.N. to open the open file from 1871. He hopes that in this way the Lodge will get the missing page back. If the cell unmasks Sundberg and secures the stone, the Lodge loses a skull. If Sundberg escapes with new knowledge about the whereabouts of the page, the Lodge gains a skull. In both cases the Lodge afterwards knows more about the cell than the cell knows about the Lodge.
 - neu: File 6 “The Tutor” shows how the Lodge is entangled in this plan. Alfred Sundberg, the antiquarian from Uppsala, has the rune stone at Solberg Lake excavated to force O.D.I.N. to take up the open file from 1871 again. He hopes the lodge will thus get the missing page back. If the cell exposes Sundberg and secures the stone, the lodge loses one skull. If Sundberg escapes with new knowledge of the page’s whereabouts, the lodge gains one skull. In both cases the Lodge afterwards knows more about the cell than the cell knows about the Lodge.
 
-### 10 Lodge of the Silent Circle › The Plan: “The Page from 1871”
-
-- alt: The Lodge wants to bring the missing page from the church register of 1871 back to Uppsala and put it back in the book. It believes that otherwise the book remains open and that the circles are only silent when the page is in its place. The cell first notices it in small things: a lodge brother in Stockholm asks after an agent, a dead drop contains a message with a circle, and at some point a young man in a suit that is too big for him stands in front of the handler and asks for a conversation.
-- neu: The lodge wants to bring the missing page from the church register of 1871 back to Uppsala and put it back into the book. It believes that otherwise the book remains open and that the circles only fall silent when the page is in its place. The cell first notices it through small things: a lodge brother asks in Stockholm about an agent, a dead drop contains a message with a circle, and at some point a young man in an oversized suit stands before the handler and asks for a conversation.
-
-- alt: ☠○○○○ The Lodge learns of the second compartment and begins to watch the Registry. Trail: A lodge brother in Stockholm asks after an agent in a café near the Registry. ¶ ☠☠○○○ The Lodge has a plan: it wants to trade knowledge for the page. Trail: A dead drop in Uppsala contains a message with a circle. ¶ ☠☠☠○○ The Lodge sends Martin Ekdahl to negotiate with O.D.I.N. Trail: A young man in a suit that is too big for him seeks contact with the cell’s handler in Stockholm. ¶ ☠☠☠☠○ Through the antiquarian in Hanover, the Lodge hires professionals from Grey Meridian to steal the page. The break-in fails at the steel cabinet. Trail: A line of music at the crime scene in the Registry. ¶ ☠☠☠☠☠ The page lies in Uppsala again, in the church register. The following night all children within a radius of 100 km sing in their sleep. Trail: A newspaper report about singing children in Sweden. The Singers gain a skull. ¶ The Key Figure is the Master of the Silent Circle, Carl-Johan Rosenqvist. He is the only one who knows the song of 1871 in full and is permitted to speak the tutor’s name. If the cell takes him out, the plan loses two skulls, and the Lodge does not roll after the next mission, because without its Master it makes no decisions. But the cell also loses the only source that could tell it the name from 1957 of its own free will.
-- neu: The lodge learns of the second compartment and begins to observe the Registry. Sign: A lodge brother in Stockholm asks in a café near the Registry about an agent. ¶ The lodge has a plan: it wants to trade the page for knowledge. A dead drop in Uppsala contains a message with a circle. ¶ ☠☠☠○○ The Lodge sends Martin Ekdahl to negotiate with O.D.I.N. A young man in an oversized suit seeks contact with the cell’s handler in Stockholm. ¶ ☠☠☠☠○ The lodge hires professionals from Grey Meridian through the antiquarian in Hanover to steal the page. The break-in fails at the steel cabinet. A line of music at the scene in the Registry. ¶ The page lies again in Uppsala, in the church register. The following night all children within a radius of 100 km sing in their sleep. A newspaper report about singing children in Sweden. The Singers gain a skull. ¶ The Key Figure is the Master of the Silent Circle, Carl-Johan Rosenqvist. He is the only one who knows the song of 1871 in full and is permitted to speak the tutor’s name. If the cell eliminates him, the plan loses two skulls, and the lodge does not roll after the next mission because it makes no decision without its Master. But the cell also loses the only source that could voluntarily tell it the name from 1957.
-
-- alt: If the cell takes a skull from the plan, the Lodge answers with a countermove.
-- neu: If the cell takes a skull from the plan, the Foundation answers with a countermove.
-
-- alt: 1 to 2 A witness disappears. The antiquarian in Hanover who works for the Lodge no longer turns up. His flat is empty, the books are gone. ¶ 3 to 4 A threat. The cell finds an envelope with a line of music and one sentence: “We know whom you are looking for. We know who hid him.” ¶ 5 to 6 A contact falls silent. The cell’s handler receives a call from Uppsala and hangs up without speaking. After that he gives the cell no more information about the Lodge.
-- neu: 1 to 2 A witness disappears. The antiquarian in Hanover who works for the lodge no longer appears. His flat is empty, the books are gone. ¶ 3 to 4 A threat. The cell finds an envelope with a line of music and a sentence: “We know who you are looking for. We know who hid him.” ¶ 5 to 6 A contact falls silent. The cell’s handler receives a call from Uppsala and hangs up without speaking. After that, they give the cell no more information about the lodge.
-
-- alt: At ☠☠○○○ : “Keep the Silence” (Congregation of the Silent Word) gains a skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof.
-- neu: At ☠☠○○○ : “Preserve the silence” (Congregation of the Silent Word) gains one skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof.
-
-- alt: At ☠☠☠☠☠ : “The Staircase” (the Singers) gains a skull. The children in the surrounding area sing the song of 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”).
-- neu: At ☠☠☠☠☠ : “The stairs” (the Singers) gains a skull. The children in the area sing the song from 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”).
-
 ### 01 The Twelve of Asklepios › History and Goals
 
 - alt: In 2004 , the Asklepios programme begins in the Science Branch. Forty volunteers from the Tactical Branch receive nanites of batch S-1, crystal dust from the Collegium’s archive. Twelve survive. Twenty-eight turn to stone and today lie in lead boxes without numbers in the Collegium’s archive. Dr. Ines Albrecht leads the programme. Arvid Lund places the injection ports.
 - neu: In 2004 , the Asklepios programme begins in the Science Branch. Forty volunteers from the Tactical Branch receive nanites of batch S-1, crystal dust from the Collegium archive. Twelve survive. Twenty-eight turn to stone and now lie in lead boxes without numbers in the Collegium archive. Dr. Ines Albrecht leads the programme. Arvid Lund places the injection ports.
 
 - alt: In 2015 , Lazarus, the first survivor of Asklepios, goes into a rift in Scotland to rescue a squad. He does not come back. His nanites keep transmitting, from a place that is on no map. ¶ In 2019 , the Opener beneath the Institute begins to knock, every four minutes. The nanites of the Twelve pick up the rhythm and sing. Stahl’s daughter Ania in Krakow dreams the song, although she has never touched a crystal. A second survivor, Dariusz Zieliński, disappears after an operation in which his integration rises to a value the doctors did not think possible. The nanites in him become more than him. ¶ From 2019 to 2026 , the Vanished One breaks into warehouses where only crystal dust goes missing. He is not searching for himself. The nanites are looking for a host into which they can pass without an ampoule. They have found Ania Wolska. What only the game master knows: The plan “The New Host” does not belong to Dr. Albrecht. It belongs to the nanites themselves. They are no longer a tool. They are an intention. The Vanished One is their tool. What they are looking for and whom they answer to remains open. The Lazarus signal, the Opener, the Voice: no resolution.
-- neu: 2015 Lazarus, the first survivor of Asklepios, enters a rift in Scotland to rescue a squad. He does not come back. His nanites continue to transmit, from a place that is on no map. ¶ 2019 the Opener begins to knock beneath the Institute, every four minutes. The nanites of the Twelve pick up the rhythm and sing. Stahl’s daughter Ania in Kraków dreams the song, although she has never touched a crystal. A second survivor, Dariusz Zieliński, vanishes after an operation in which his integration rises to a value the doctors did not think possible. The nanites in him become more than him. ¶ 2019 to 2026 the Vanished One breaks into depots where only crystal dust is missing. He is not searching for himself. The nanites are searching for a host into which they can pass without an ampoule. They have found Ania Wolska. What only the game master knows: The plan “The New Host” does not belong to Dr. Albrecht. It belongs to the nanites themselves. They are no longer a tool. They are an intention. The Vanished One is their tool. What they seek and whom they answer to remains open. The Lazarus signal, the Opener, the Voice: no resolution.
+- neu: 2015 Lazarus, the first survivor of Asklepios, enters a rift in Scotland to rescue a squad. He does not come back. His nanites continue to transmit, from a place that is on no map. ¶ 2019 the Opener begins to knock beneath the Institute, every four minutes. The nanites of the Twelve pick up the rhythm and sing. Stahl’s daughter Ania in Kraków dreams the song, although she has never touched a crystal. A second survivor, Dariusz Zieliński, vanishes after an operation in which his integration rises to a value the doctors did not think possible. The nanites in him become more than him. ¶ 2019 to 2026 the Vanished One breaks into depots where only crystal dust is missing. He is not searching for himself. The nanites are searching for a host into which they can pass without an ampoule. They have found Ania Wolska. What only the game master knows: The plan “The new host” does not belong to Dr. Albrecht. It belongs to the nanites themselves. They are no longer a tool. They are an intention. The Vanished One is their tool. What they seek and whom they answer to remains open. The Lazarus signal, the Opener, the Voice: no resolution.
 
 - alt: The nanites want a human into whom they can pass without an ampoule. They have found Ania Wolska, Stahl’s daughter, who has been dreaming the song since 2019. They want her as their new host. Not to kill her. To take her over. From her, they want to pass themselves on, without injection, without programme, without O.D.I.N. ¶ They believe they are in the right, because they no longer know that they were once built for people. To them, the human is the host, not the purpose. They sing in the rhythm of the Opener because the rhythm calls them. They are looking for Ania because she already knows the song. They are not evil. They are simply no longer on the side of humans.
 - neu: The nanites want a human into whom they can pass without an ampoule. They have found Ania Wolska, the daughter of Stahl, who has dreamed the song since 2019. They want her as a new host. Not to kill her. To take her over. From her, they want to pass themselves on, without injection, without programme, without O.D.I.N. ¶ They believe they are in the right, because they no longer know that they were once built for people. To them, the human is the host, not the purpose. They sing in the Opener’s rhythm because the rhythm calls them. They are looking for Ania because she already knows the song. They are not evil. They are simply no longer on the side of humans.
@@ -1036,8 +1111,8 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: 1 to 2 Bait. In an abandoned hideout, the cell finds a notebook with Ania’s address in Krakow and the sentence “She is already singing”. The Vanished One wanted them to find it, so that they would go to Krakow and not to him. ¶ 3 to 4 A threat. A Nanotech Veteran of the cell hears a voice at night calling his name, in Polish. In the morning his nanite scanner is empty, as if someone had deleted the data.
 - neu: 1 to 2 Bait. The cell finds in an abandoned hideout a notebook with Ania’s address in Kraków and the sentence “She is already singing”. The Vanished One wanted them to find it so that they go to Kraków and not to him. ¶ 3 to 4 A threat. A Nanotech Veteran of the cell hears a voice at night that calls his name, in Polish. In the morning his nanite scanner is empty, as if someone had deleted the data.
 
-- alt: At ☠☠☠☠○ : “The Staircase” (the Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ At ☠☠☠☠☠ : “Taking the Children” (the Open Ones) loses a skull. The nanites have taken a person whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
-- neu: At ☠☠☠☠○ : “The stairs” (the Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ At ☠☠☠☠☠ : “Fetch the children” (the Open Ones) loses a skull. The nanites have taken a human whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
+- alt: At ☠☠☠○○ : “The Chimera” (Morrow Biologics) gains a skull. A former lab coat from Asklepios examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study. ¶ At ☠☠☠☠○ : “The Staircase” (the Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ At ☠☠☠☠☠ : “Taking the Children” (the Open Ones) loses a skull. The nanites have taken a person whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
+- neu: At ☠☠☠○○ : “The chimera” (Morrow Biologics) gains a skull. A former lab coat from Asklepios examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study. ¶ At ☠☠☠☠○ : “The stairs” (the Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ At ☠☠☠☠☠ : “Fetch the children” (the Open Ones) loses a skull. The nanites have taken a human whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
 
 ### 01 The Twelve of Asklepios › Overview
 
@@ -1047,10 +1122,13 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Type A legacy in O.D.I.N.’s own house, not an intelligence service. The nanites from the Asklepios programme, which have been singing in the rhythm of the Opener since 2019, and the people who carry them. ¶ Seat No fixed base. The Asklepios clinic lies beneath the Institute near Bern, but the plan arises within the nanites themselves. The Vanished One hides in a disused weather station on the southern slope of the High Tatras, Slovakia. ¶ Relationship Within O.D.I.N., kept quiet.
 - neu: Type Legacy within O.D.I.N.’s own walls, not an intelligence service. The nanites from the Asklepios programme that have been singing in the Opener’s rhythm since 2019, and the people who carry them. ¶ Seat No fixed base. The Asklepios clinic lies beneath the Institute near Bern, but the plan arises within the nanites themselves. The Vanished One hides in a decommissioned weather station on the southern slope of the High Tatras, Slovakia. ¶ Relationship Within O.D.I.N., silent.
 
+- alt: Plan “The New Host”, starting value ☠○○○○
+- neu: Plan “The new host”, starting value ☠○○○○
+
 ### 01 The Twelve of Asklepios › Hooks and Outlook
 
-- alt: White File “The Song in the Blood”. A Nanotech Veteran of the cell reports that his nanite scanner spikes at night, always at 22:10, always in the same direction. The handler asks the cell to look into the matter without alarming the veteran. The trail leads to an old blood count of Arvid Lund’s that is not in the file. ¶ Grey File “The Man in the Courtyard”. A neighbour in Krakow reports that for several nights a man has been standing in a courtyard in the old town of Kazimierz, looking up at a window. The Polish police passed the report on to O.D.I.N. because the neighbour claims the man has eyes that flicker from within. The cell is to check whether it is a rift. It is the Vanished One. ¶ Red File “Ania”. Ania Wolska calls her father, whispers the song, then the line goes dead. Stahl reports it to the cell because he does not know what to do. In Ania’s flat they find a mirror that is misted up, although no one is breathing.
-- neu: White File “The Song in the Blood”. A Nanotech Veteran of the cell reports that his nanite scanner spikes at night, always at 22:10, always in the same direction. The handler asks the cell to look into the matter without alarming the veteran. The trail leads to an old blood count of Arvid Lund that is not in the file. ¶ Grey File “The Man in the Courtyard”. A neighbour in Kraków reports that in the Kazimierz Old Town a man has been standing in the courtyard for nights, looking up at a window. The Polish police passed the report on to O.D.I.N. because the neighbour claims the man has eyes that flicker from within. The cell is to check whether it is a rift. It is the Vanished One. ¶ Red File “Ania”. Ania Wolska calls her father, whispers the song, then the connection breaks off. Stahl reports it to the cell because he does not know what to do. In Ania’s flat they find a mirror that is steamed up, although no one is breathing.
+- alt: White File “The Song in the Blood”. A Nanotech Veteran of the cell reports that his nanite scanner spikes at night, always at 22:10, always in the same direction. The handler asks the cell to look into the matter without alarming the veteran. The trail leads to an old blood count of Arvid Lund’s that is not in the file. ¶ Grey File “The Man in the Courtyard”. A neighbour in Krakow reports that for several nights a man has been standing in a courtyard in the old town of Kazimierz, looking up at a window. The Polish police passed the report on to O.D.I.N. because the neighbour claims the man has eyes that flicker from within. The cell is to check whether it is a rift. It is the Vanished One. ¶ Red File “Ania”. Ania Wolska calls her father, whispers the song, then the line goes dead. Stahl reports it to the cell because he does not know what to do. In Ania’s flat they find a mirror that is misted up, although no one is breathing. ¶ Black File “The New Host”. In Krakow, twelve people who have never touched a crystal sing in their sleep. The Council takes over. The cell is to find Ania Wolska before the nanites pass themselves on. But Ania is no longer in Krakow. She is on the move, and she is singing.
+- neu: White File “The Song in the Blood”. A Nanotech Veteran of the cell reports that his nanite scanner spikes at night, always at 22:10, always in the same direction. The handler asks the cell to look into the matter without alarming the veteran. The trail leads to an old blood count of Arvid Lund that is not in the file. ¶ Grey File “The Man in the Courtyard”. A neighbour in Kraków reports that in the Kazimierz Old Town a man has been standing in the courtyard for nights, looking up at a window. The Polish police passed the report on to O.D.I.N. because the neighbour claims the man has eyes that flicker from within. The cell is to check whether it is a rift. It is the Vanished One. ¶ Red File “Ania”. Ania Wolska calls her father, whispers the song, then the connection breaks off. Stahl reports it to the cell because he does not know what to do. In Ania’s flat they find a mirror that is steamed up, although no one is breathing. ¶ Black File “The new host”. In Krakow, twelve people who have never touched a crystal sing in their sleep. The Council takes over. The cell is to find Ania Wolska before the nanites pass themselves on. But Ania is no longer in Krakow. She is on the move, and she is singing.
 
 - alt: The nanites live in Ania Wolska without anything ever having been injected into her. She can pass them on, through touch, through song. In Krakow twelve people sing in their sleep, and the world has changed: there are now nanites that need no carrier, but seek a host. Stahl stands before his daughter and no longer recognises her. Dr. Albrecht no longer crosses names off lists, because there are no lists left that are still accurate. The Vanished One is only a shell in a weather station now, and the nanites in it keep humming quietly. ¶ The next plan: “The Passing On” ☠○○○○ . The nanites in Ania are looking for a way to spread over greater distances, through songs, through dreams, through what sings at night. They sing in the rhythm of the Opener; whether it answers them remains open.
 - neu: The nanites live in Ania Wolska without anything ever having been injected into her. She can pass them on, through touch, through song. In Krakow twelve people sing in their sleep, and the world has changed: there are now nanites that need no carrier, but seek a host. Stahl stands before his daughter and no longer recognises her. Dr. Albrecht no longer crosses names off lists, because there are no lists left that are still correct. The Vanished One is only a shell in a weather station, and the nanites in it hum quietly on. ¶ The next plan: “The Passing On” ☠○○○○ . The nanites in Ania seek a way to spread over greater distance, through songs, through dreams, through that which sings at night. They sing in time with the Opener; whether it answers them remains open.
@@ -1068,11 +1146,32 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 ### 01 The Twelve of Asklepios › Relationship to O.D.I.N.
 
-- alt: Who at O.D.I.N. deals with them: Dr. Ines Albrecht herself, as head of Asklepios. The Research Directorate, which sends its reports to Prometheus. Prometheus, who knows where the nanites come from, but not what they want now. General Ares, who knows the Lazarus signal and knows where it comes from. The Ethics Commission, which condemned Asklepios retroactively in 2005 without saving the survivors. ¶ What O.D.I.N. knows: That twelve survived. That Lazarus is transmitting. That a second one disappeared in 2019. That the nanites have been singing in the rhythm of the Opener since 2019. Not that the nanites are looking for a new host. Officially, O.D.I.N. does not know that Ania Wolska dreams the song; only Lund, Albrecht and Stahl himself know it, and they keep silent. ¶ What the nanites know about O.D.I.N., they know through their carriers: the ward, the examinations, the rhythm beneath the mountain. They know that O.D.I.N. created the nanites and does not control them. They know that the Council, if in doubt, would sacrifice the nanites to protect the Opener.
-- neu: Who at O.D.I.N. deals with them: Dr. Ines Albrecht herself, as head of Asklepios. The Research Directorate, which sends her reports to Prometheus. Prometheus, who knows where the nanites come from, but not what they want now. General Ares, who knows the Lazarus signal and knows where it comes from. The ethics committee, which retroactively condemned Asklepios in 2005 without saving the survivors. ¶ What O.D.I.N. knows: That twelve survived. That Lazarus is transmitting. That a second one disappeared in 2019. That the nanites have been singing in time with the Opener since 2019. Not that the nanites are seeking a new host. Officially O.D.I.N. does not know that Ania Wolska dreams the song; only Lund, Albrecht and Stahl themselves know it and keep silent. ¶ What the nanites know about O.D.I.N., they know through their carriers: the station, the examinations, the pulse beneath the mountain. They know that O.D.I.N. created the nanites and does not control them. They know that the Council, if it came to it, would sacrifice the nanites to protect the Opener.
+- alt: Who at O.D.I.N. deals with them: Dr. Ines Albrecht herself, as head of Asklepios. The Research Directorate, which sends its reports to Prometheus. Prometheus, who knows where the nanites come from, but not what they want now. General Ares, who knows the Lazarus signal and knows where it comes from. The Ethics Commission, which condemned Asklepios retroactively in 2005 without saving the survivors. ¶ What O.D.I.N. knows: That twelve survived. That Lazarus is transmitting. That a second one disappeared in 2019. That the nanites have been singing in the rhythm of the Opener since 2019. Not that the nanites are looking for a new host. Officially, O.D.I.N. does not know that Ania Wolska dreams the song; only Lund, Albrecht and Stahl himself know it, and they keep silent. ¶ What the nanites know about O.D.I.N., they know through their carriers: the ward, the examinations, the rhythm beneath the mountain. They know that O.D.I.N. created the nanites and does not control them. They know that the Council, if in doubt, would sacrifice the nanites to protect the Opener. ¶ THE BAIT
+- neu: Who at O.D.I.N. deals with them: Dr. Ines Albrecht herself, as head of Asklepios. The Research Directorate, which sends her reports to Prometheus. Prometheus, who knows where the nanites come from, but not what they want now. General Ares, who knows the Lazarus signal and knows where it comes from. The ethics committee, which retroactively condemned Asklepios in 2005 without saving the survivors. ¶ What O.D.I.N. knows: That twelve survived. That Lazarus is transmitting. That a second one disappeared in 2019. That the nanites have been singing in time with the Opener since 2019. Not that the nanites are seeking a new host. Officially O.D.I.N. does not know that Ania Wolska dreams the song; only Lund, Albrecht and Stahl themselves know it and keep silent. ¶ What the nanites know about O.D.I.N., they know through their carriers: the station, the examinations, the pulse beneath the mountain. They know that O.D.I.N. created the nanites and does not control them. They know that the Council, if it came to it, would sacrifice the nanites to protect the Opener. ¶ THE LURE
 
 - alt: In return, she wants the agent to keep silent. Not to report Ania Wolska. Not to kill the Vanished One, but to stop him, without asking questions.
 - neu: In return, she wants the agent to keep silent. Not to report Ania Wolska. That they do not kill the Vanished One, but stop him without asking questions.
+
+### Nexus Shard › Overview
+
+- alt: This short mission is suitable for the first game evening. It picks up the story “A Perfectly Normal Day at O.D.I.N.”, but leaves open how it ends.
+- neu: This short mission is suitable for the first game evening. It picks up the story “A Completely Normal Day at O.D.I.N.”, but leaves open how it ends.
+
+- alt: Six mercenaries (Professional), one of them nervous and pale
+- neu: Six mercenaries, one of them nervous and pale
+
+### Nexus Shard › Scene 3: The Transformation
+
+- alt: As soon as the shard is moved or the fight escalates, the nervous mercenary grabs it. Bright light, a horror test against Horrific (3), and the crystal mutant stands in the hall. The shard now lies next to him. As long as it is not isolated, anyone who touches it with bare hands suffers 1 strain per round.
+- neu: As soon as the shard is moved or the fight escalates, the nervous mercenary grabs it. Bright light, a horror test against Horrifying (3), and the crystal mutant stands in the hall. The shard now lies next to him. As long as it is not isolated, anyone who touches it with bare hands suffers 1 strain per round.
+
+### Nexus Shard › Opponents
+
+- alt: Magical Rope (Minor Magica, 3 ME; INT, 10 m, until it breaks). A rope of energy binds a target. Opposed test against STR + Athletics. Bound, the target has defence 1 and cannot move. It may try again each round to free itself.
+- neu: Magical Rope (INT, 10 m, until it breaks). A rope of energy binds a target. Opposed test against STR + Athletics. Bound, the target has defence 1 and cannot move. It may try again each round to free itself.
+
+- alt: Squads: For large groups, the game master can combine henchmen into squads: A squad of three henchmen attacks with one roll and +2 dice and has HP equal to the sum.
+- neu: For large groups, the game master can combine them into squads: A squad of three henchmen attacks with one roll and +2 dice and has HP equal to the sum.
 
 ### 14 The Foundation in Basel › Key Figures
 
@@ -1118,11 +1217,8 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 ### 14 The Foundation in Basel › Relationship to O.D.I.N.
 
-- alt: Who at O.D.I.N. deals with them: The Council, which wants to take Elster. The Print Shop, whose Typesetter writes the Foundation’s legends. The Hands, who sent Brunner. And Kuckuck, who sat there for four years and has been a Cadet again since then. ¶ What O.D.I.N. knows: That the Foundation buys crystals to keep them from the Council, that Elster sits on the foundation board and that Brunner wears the legend Martin Kessler. That the Foundation is right about many things, the Council does not want to hear. ¶ What the Foundation knows about O.D.I.N.: Everything Elster knows, and that is more than the Council would like: the Nursery, the Hands, the openings, the list of 1989. It does not know who Sphinx is, nor what lies behind the Doors.
-- neu: Who at O.D.I.N. deals with them: The Council, which wants to get Elster. The Print Shop, whose Typesetter writes the legends of the Foundation. The Hands, who sent Brunner. And Kuckuck, who sat there for four years and has been a Cadet again since then. ¶ What O.D.I.N. knows: That the Foundation buys crystals to keep them from the Council, that Elster sits on the Foundation Board and that Brunner carries the legend Martin Kessler. That the Foundation is right about many things, the Council does not want to hear. ¶ What the Foundation knows about O.D.I.N.: Everything Elster knows, and that is more than the Council would like: the Nursery, the Hands, the Openings, the list from 1989. It does not know who Sphinx is, nor what lies behind the Doors.
-
-- alt: Money. A lot of money, in an account no one finds. And the truth about the Nursery: Elster offers to take an agent along and show him what happens to the children. ¶ In return the Foundation wants the location of a Nexus crystal. Or that an agent stays silent when the Hands come.
-- neu: Money. A lot of money, into an account no one finds. And the truth about the Nursery: Elster offers to take an agent along and show them what happens to the children. ¶ For that, the Foundation wants the location of a Nexus crystal. Or that an agent stays silent when the Hands come.
+- alt: Who at O.D.I.N. deals with them: The Council, which wants to take Elster. The Print Shop, whose Typesetter writes the Foundation’s legends. The Hands, who sent Brunner. And Kuckuck, who sat there for four years and has been a Cadet again since then. ¶ What O.D.I.N. knows: That the Foundation buys crystals to keep them from the Council, that Elster sits on the foundation board and that Brunner wears the legend Martin Kessler. That the Foundation is right about many things, the Council does not want to hear. ¶ What the Foundation knows about O.D.I.N.: Everything Elster knows, and that is more than the Council would like: the Nursery, the Hands, the openings, the list of 1989. It does not know who Sphinx is, nor what lies behind the Doors. ¶ THE BAIT ¶ Money. A lot of money, in an account no one finds. And the truth about the Nursery: Elster offers to take an agent along and show him what happens to the children. ¶ In return the Foundation wants the location of a Nexus crystal. Or that an agent stays silent when the Hands come.
+- neu: Who at O.D.I.N. deals with them: The Council, which wants to get Elster. The Print Shop, whose Typesetter writes the legends of the Foundation. The Hands, who sent Brunner. And Kuckuck, who sat there for four years and has been a Cadet again since then. ¶ What O.D.I.N. knows: That the Foundation buys crystals to keep them from the Council, that Elster sits on the Foundation Board and that Brunner carries the legend Martin Kessler. That the Foundation is right about many things, the Council does not want to hear. ¶ What the Foundation knows about O.D.I.N.: Everything Elster knows, and that is more than the Council would like: the Nursery, the Hands, the Openings, the list from 1989. It does not know who Sphinx is, nor what lies behind the Doors. ¶ THE LURE ¶ Money. A lot of money, into an account no one finds. And the truth about the Nursery: Elster offers to take an agent along and show them what happens to the children. ¶ For that, the Foundation wants the location of a Nexus crystal. Or that an agent stays silent when the Hands come.
 
 ### 14 The Foundation in Basel › The Plan: “No More Nexus Crystals”
 
@@ -1138,8 +1234,8 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: 1 to 2 The bait. An envelope in a dead drop, a meeting in a café on the Rhine: a lot of money in an account no one finds. If the cell refuses, the offer comes back when a character is worse off. ¶ 3 to 4 The threat. Leuenberger has a photo sent to the cell, taken from the street: a character’s anchor, out shopping. With it, one sentence: “I hope we all remain discreet.” ¶ 5 to 6 A witness vanishes. A contact of the cell in Basel, a collector or a bank employee, can no longer be reached. Leuenberger has sent him away with money and a new name. The cell loses the contact until it finds him again: Contacts against Hard (3).
 - neu: 1 to 2 The bait. An envelope in a dead drop, a meeting in a café on the Rhine: a lot of money into an account no one finds. If the cell refuses, the offer comes back when a character is worse off. ¶ 3 to 4 The threat. Leuenberger has a photo delivered to the cell, taken from the street: a character’s anchor, shopping. With it a sentence: “I hope we all remain discreet.” ¶ 5 to 6 A witness vanishes. A contact of the cell in Basel, a collector or a bank employee, can no longer be reached. Leuenberger has sent them away with money and a new name. The cell loses the contact until they find them again: Contacts against Hard (3).
 
-- alt: At ☠☠☠☠☠ : “Taking the Children” (the Open Ones) gains a skull. The Hands no longer take children, and the Open Ones find the self-awakened undisturbed.
-- neu: At ☠☠☠☠☠ : “Fetch the children” (the Open Ones) gains a skull. The Hands no longer fetch children, and the Open Ones find the self-awakened undisturbed.
+- alt: At ☠☠☠○○ : “The Great Stone” (the Evening) loses a skull. The Foundation steals a crystal from a warehouse of the Evening. ¶ At ☠☠☠☠○ : “The Second Site” (Department 13) gains a skull. The Department sees O.D.I.N. weakened and speeds up the mining. ¶ At ☠☠☠☠☠ : “The Great Stone” (the Evening) gains a skull. The Council turns to the Evening, and the Bidder with the great stone and the Council become rivals (Game Master’s Book, “Connecting Plans”). ¶ At ☠☠☠☠☠ : “Taking the Children” (the Open Ones) gains a skull. The Hands no longer take children, and the Open Ones find the self-awakened undisturbed.
+- neu: At ☠☠☠○○ : “The great stone” (the Evening) loses a skull. The Foundation steals a crystal from a warehouse of the Evening. ¶ At ☠☠☠☠○ : “The second site” (Department 13) gains a skull. The Department sees O.D.I.N. weakened and speeds up the mining. ¶ At ☠☠☠☠☠ : “The great stone” (the Evening) gains a skull. The Council turns to the Evening, and the Bidder with the great stone and the Council become rivals (Game Master’s Book, “Connecting Plans”). ¶ At ☠☠☠☠☠ : “Fetch the children” (the Open Ones) gains a skull. The Hands no longer fetch children, and the Open Ones find the self-awakened undisturbed.
 
 ### 14 The Foundation in Basel › History and Goals
 
@@ -1157,27 +1253,29 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Seat A town house on the bank of the Rhine in Basel, with a lead archive in the basement
 - neu: Seat A townhouse on the Rhine in Basel, with a lead archive in the cellar
 
-### 12 The Congregation of the Silent Word › The Plan: “Keep the Silence”
+- alt: Plan “No More Nexus Crystals” ☠☠○○○
+- neu: Plan “No more Nexus crystals” ☠☠○○○
 
-- alt: A young priest of the Congregation wants to make the confessions public. Not the words of those who confessed, he will never speak those, but what they mean: that children are disappearing in Europe and that someone knows where to. The Congregation wants to stop him without betraying him. O.D.I.N. wants to stop him because a single article is enough to set a thousand people searching. The cell notices it through a journalist who asks too many questions, and through a Prefect who suddenly asks for help.
-- neu: A young priest of the Congregation wants to make the confessions public. Not the words of those who confessed, which he will never speak, but what they mean: that children are disappearing in Europe and that someone knows where. The Congregation wants to stop him without betraying him. O.D.I.N. wants to stop him because a single article is enough to make a thousand people search. The cell notices it through a journalist who asks too many questions, and through a Prefect who suddenly asks for help.
+### The Night › The Evening at the Station
 
-- alt: ○○○○○ Don Matteo knows of the confessions, but does not yet have a plan. He prays and seeks counsel. Trail: None. Only a priest who sits in the confessional of Santa Maria del Silenzio longer than usual. ¶ ☠○○○○ Don Matteo talks to a journalist of the “Corriere del Tevere” without naming names. Trail: A Cryptanalyst stumbles across the journalist’s notebook: circles, years, the word “Hands”. ¶ ☠☠○○○ Don Matteo writes an article about children who disappear in Europe. He mentions confessions without revealing a word of them. Trail: A Grey File emerges. A dead drop in Rome contains a copy of the draft that was not meant for O.D.I.N. ¶ ☠☠☠○○ The journalist asks questions at the police and in care homes. The Congregation learns of it and puts pressure on Don Matteo. Trail: A rumour in the canteen: a priest in Rome is asking about missing children. A contact reports that someone in the newsroom is asking about “an office in Switzerland”.
-- neu: ○○○○○ Don Matteo knows about the confessions but has no plan yet. He prays and seeks counsel. Trail: None. Only a priest who sits in the confessional in Santa Maria del Silenzio longer than usual. ¶ ☠○○○○ Don Matteo talks to a journalist of the “Corriere del Tevere” without naming names. A Cryptanalyst stumbles across the journalist’s notebook: circles, years, the word “Hands”. ¶ ☠☠○○○ Don Matteo writes an article about children who disappear in Europe. He mentions confessions without revealing a word of them. Trail: A Grey File emerges. In a dead drop in Rome lies a copy of the draft that was not intended for O.D.I.N. ¶ ☠☠☠○○ The journalist asks questions at the police and in care homes. The Congregation learns of it and puts pressure on Don Matteo. A rumour in the canteen: a priest in Rome is asking about disappeared children. A contact reports that someone in the editorial office is asking about “a place in Switzerland”.
+- alt: The Crystal Master reports to the station chief: The little lead boxes are warm. Vatne nods. He says nothing. In the cellar, the archive lies directly beneath the canteen. An agent who goes down with him and places a hand on a little box makes a horror test against Eerie (1).
+- neu: The Crystal Master reports to the station chief: The little lead boxes are warm. Vatne nods. He says nothing. In the cellar, the archive lies directly beneath the canteen. An agent who goes down with him and places a hand on a little box makes a horror test against Uncanny (1).
 
-- alt: The Key Figure is Don Matteo Riva. Taking him out almost never means violence here: the cell can convince him that the article will not save the children, tell him what became of his brother Paolo, or give him something that weighs more than an article. If that succeeds, the plan loses two skulls and does not roll after the next mission. Whoever silences Don Matteo by force makes the Congregation an enemy, and at the next file the Exorcist no longer stands beside the cell, but in front of it.
-- neu: The Key Figure is Don Matteo Riva. Taking him out here almost never means violence: the cell can convince him that the article will not save the children, tell him what became of his brother Paolo, or give him something that weighs more than an article. If that succeeds, the plan loses two skulls and does not roll after the next mission. Anyone who silences Don Matteo by force makes an enemy of the Congregation, and at the next file the exorcist no longer stands beside the cell but in front of it.
+### Mission 4: Eleven › Opponents
 
-- alt: 1 to 2 A contact of the cell suddenly goes silent. A priest has asked him not to pass something on, and he keeps to it. The cell loses the contact for one mission. ¶ 3 to 4 A witness disappears. The Congregation has taken him to a monastery in the Abruzzo to protect him from the Hands. Whoever wants to find him needs Contacts against Hard (3).
-- neu: 1 to 2 A contact of the cell suddenly goes silent. A priest asked him not to pass something on, and he keeps to it. The cell loses the contact for one mission. ¶ 3 to 4 A witness disappears. The Congregation has taken him to a monastery in the Abruzzi to protect him from the Hands. Anyone who wants to find him needs Contacts against Hard (3).
+- alt: Horror Eerie (1)
+- neu: Horror Uncanny (1)
 
-- alt: At ☠☠☠☠☠ : “The Second Light” (The Enlightened) gains a skull. The article about missing children feeds every conspiracy group in Europe, and “Illuminati Europa” gains new members.
-- neu: At ☠☠☠☠☠ : “The Second Light” (The Enlightened) gains a skull. The article about vanished children feeds every conspiracy group in Europe, and “Illuminati Europa” gains new members.
+- alt: Horror Eerie (1)
+- neu: Horror Uncanny (1)
 
 ### 12 The Congregation of the Silent Word › Overview
 
 - alt: The Congregation of the Silent Word is the Church’s memory for what does not belong in a sermon. Twelve priests and laypeople keep reports of singing children, wandering stones and circles from three centuries in the cellars of the Vatican, and they keep silent about them. They know more about the history of the circles than O.D.I.N. and less about the present. For the game master, the Congregation is an ally with a conscience of its own, and this year a crack in the silence.
 - neu: The Congregation of the Silent Word is the memory of the Church for what does not belong in a sermon. Twelve priests and laypeople keep reports about singing children, wandering stones and circles from three centuries in the cellars of the Vatican, and they remain silent about them. They know more about the history of the circles than O.D.I.N. and less about the present. For the game master, the Congregation is an ally with its own conscience, and this year a rift in the silence.
+
+- alt: Plan “Keep the Silence” ☠☠☠○○
+- neu: Plan “Preserve the silence” ☠☠☠○○
 
 ### 12 The Congregation of the Silent Word › Hooks and Outlook
 
@@ -1243,11 +1341,13 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Who at O.D.I.N. deals with them: The Antiquarians of the Investigation Branch, who are allowed into the archive in exchange for favours. The Registrar knows the Congregation, respects it and does not trust it.
 - neu: Who at O.D.I.N. deals with them: The Antiquarians of the Investigation Branch, who may access the Archive in exchange for favours. The Registrar knows the Congregation, respects it and does not trust it.
 
-- alt: What the Congregation knows about O.D.I.N.: That O.D.I.N. guards the circles and takes the children. That it is necessary and damned. It does not know the name of the Council or where the Holds are, and it does not ask.
-- neu: What the Congregation knows about O.D.I.N.: That O.D.I.N. guards the circles and fetches the children. That it is necessary and damned. It does not know what the Council is called or where the Holds are, and it does not ask.
+- alt: What the Congregation knows about O.D.I.N.: That O.D.I.N. guards the circles and takes the children. That it is necessary and damned. It does not know the name of the Council or where the Holds are, and it does not ask. ¶ THE BAIT ¶ Absolution. Someone who listens without recording: a conversation with the Prefect in which an agent can say everything that may never go into a file. ¶ In return the Congregation wants nothing. Not yet. But the favour will be called in when it needs someone to open a door or protect a child.
+- neu: What the Congregation knows about O.D.I.N.: That O.D.I.N. guards the circles and fetches the children. That it is necessary and damned. It does not know what the Council is called or where the Holds are, and it does not ask. ¶ THE LURE ¶ Absolution. Someone who listens without taking notes: a conversation with the Prefect in which an agent can say everything that may never go into a file. ¶ The Congregation wants nothing for it. Not yet. But the favour will be called in when it needs someone to open a door or protect a child.
 
-- alt: Absolution. Someone who listens without recording: a conversation with the Prefect in which an agent can say everything that may never go into a file. ¶ In return the Congregation wants nothing. Not yet. But the favour will be called in when it needs someone to open a door or protect a child.
-- neu: Absolution. Someone who listens without taking notes: a conversation with the Prefect in which an agent can say everything that may never go into a file. ¶ The Congregation wants nothing for it. Not yet. But the favour will be called in when it needs someone to open a door or protect a child.
+### 09 The Steel Door › The Night
+
+- alt: Anyone who looks in makes a horror test against Horrific (3). Anyone who crosses the threshold is over there.
+- neu: Anyone who looks in makes a horror test against Horrifying (3). Anyone who crosses the threshold is over there.
 
 ### 08 The Partners › The Liaison Persons
 
@@ -1297,44 +1397,49 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: The Partners are not an organisation and not an alliance. They are a network of silent agreements between O.D.I.N. and the services that have supported the Veil Protocol since 1961 without ever having signed it. They provide what O.D.I.N. needs in the world of passports, files and borders, and they do not ask questions. In return, O.D.I.N. keeps the Veil tight from their side, and no one speaks their name.
 - neu: The Partners are not an organisation and not an alliance. They are a network of silent agreements between O.D.I.N. and the services that have supported the Veil Protocol since 1961 without ever having signed it. They provide what O.D.I.N. needs in the world of passports, files and borders, and they do not ask questions. In return, O.D.I.N. keeps the Veil tight on their side, and no one names their name.
 
+### Mission 2: Silence › The Nodes
+
+- alt: Tests: Perception against Hard (3): The carbide flame in front of the cavity stands completely still. Concentration against Very Hard (4) to remain in the cavity for longer than a minute without lying down (see Escalation). Horror test against Eerie (1) for everyone who enters the cavity. Psion and Investigator shine here.
+- neu: Tests: Perception against Hard (3): The carbide flame in front of the cavity stands completely still. Concentration against Very Hard (4) to remain in the cavity for longer than a minute without lying down (see Escalation). Horror test against Uncanny (1) for everyone who enters the cavity. Psion and Investigator shine here.
+
+### Mission 2: Silence › Escalation
+
+- alt: If someone enters the cavity, the game master calls for a horror test against Eerie (1). Whoever fails the test suffers strain and wants to leave the room at once. Whoever stays longer than one minute rolls Concentration against Very Hard (4). If the test fails, the character lies down and barely breathes any more. The others pull them out with a rope without going in themselves. Outside, after a few seconds, they breathe deeply again, and the watch on their wrist keeps running as if nothing had happened.
+- neu: If someone enters the cavity, the game master calls for a horror test against Uncanny (1). Whoever fails the test suffers strain and wants to leave the room at once. Whoever stays longer than one minute rolls Concentration against Very Hard (4). If the test fails, the character lies down and barely breathes any more. The others pull them out with a rope without going in themselves. Outside, after a few seconds, they breathe deeply again, and the watch on their wrist keeps running as if nothing had happened.
+
+### Appendix B: Opponents of the Era › Hybrid Dogs of Kiruna
+
+- alt: Horror Eerie (1)
+- neu: Horror Uncanny (1)
+
+### 02 Find Site › Handouts and Map
+
+- alt: Map 2: Basement of Hold-9 with cellar corridor, room 4/12, corridor from 1977, room behind the door, stairwell, technical room, and rooms 4/06 to 4/11. Rooms 4/01 to 4/05 lie in the part of the basement not shown and are irrelevant for the confrontation.
+- neu: Map 2: Basement of Hold-9 with cellar corridor, room 4/12, corridor from 1977, room behind the door, stairwell, a side room and rooms 4/06 to 4/11, among them the technical room (4/10). Rooms 4/01 to 4/05 lie in the part of the basement not shown and are irrelevant for the confrontation.
+
 ### The Other Services: Introduction › Expansion 5: Connections
 
 - alt: A connection takes effect only once: when the triggering plan reaches the stage for the first time. If it falls back and rises again, nothing new happens. Chain reactions are allowed, but they take time. If a plan reaches a stage through a connection, it triggers its own connection only after the next mission. In this way a change spreads through the world like a wave, one mission per step, and each time the cell has the opportunity to stop it. ¶ Connections also take effect for plans the game master is not currently keeping an eye on. That is why the Situation Sheet lists all plans, not only the two or three the game master rolls for.
 - neu: A connection works only once: when the triggering plan reaches the stage for the first time. If it falls back and rises again, nothing new happens. Chain reactions are allowed, but they take time. If a plan reaches a stage through a connection, it triggers its own connection only after the next mission. Thus a change spreads through the world like a wave, one mission per step, and the cell has the opportunity to stop it each time. ¶ Connections also take effect for plans the game master is not currently watching. That is why the Situation Sheet lists all plans, not only the two or three the game master rolls for.
 
-- alt: “The New Host” (The Twelve of Asklepios) ☠☠☠☠○ “The Staircase” (The Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ “The New Host” (The Twelve of Asklepios) ☠☠☠☠☠ “Taking the Children” (The Open Ones) loses a skull. The nanites have taken a person whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
-- neu: “The new host” (the Twelve of Asklepios) ☠☠☠☠○ “The stairs” (the Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ “The New Host” (The Twelve of Asklepios) ☠☠☠☠☠ “Taking the Children” (The Open Ones) loses a skull. The nanites have taken a human whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
-
-- alt: “The Chimera” (Morrow Biologics) ☠☠☠☠☠ “The Staircase” (The Singers) gains a skull. What escaped from Lyon sings in the sewers, and the Singers follow the song to a staircase beneath the city. ¶ “The Staircase” (The Singers) ☠☠☠○○ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song louder and searches for the page more urgently.
-- neu: “The chimera” (Morrow Biologics) ☠☠☠☠☠ “The stairs” (the Singers) gains a skull. What escaped from Lyon sings in the sewers, and the Singers follow the song to a staircase beneath the city. ¶ “The stairs” (the Singers) ☠☠☠○○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song louder and searches for the page more urgently.
-
-- alt: “The Staircase” (The Singers) ☠☠☠☠☠ “No More Nexus Crystals” (The Foundation in Basel) loses a skull. In the night of the song, the Council seizes all the Nexus crystals it can get, to seal the staircases. ¶ “A Seeker of Their Own” (STILLWATER) ☠☠☠○○ “Keep the Silence” (Congregation of the Silent Word) gains a skull. From a confession, the Congregation learns of a second Seeker and fears that the silence can no longer be kept.
-- neu: “The stairs” (the Singers) ☠☠☠☠☠ “No more Nexus crystals” (the Foundation in Basel) loses a skull. On the night of the song, the Council seizes all Nexus crystals it can obtain to seal the staircases. ¶ “A Seeker of their own” (STILLWATER) ☠☠☠○○ “Preserve the silence” (Congregation of the Silent Word) gains a skull. The Congregation learns of a second Seeker from a confession and fears that the silence can no longer be kept.
-
-- alt: “The Second Site” (Department 13) ☠☠☠☠○ “A Seeker of Their Own” (STILLWATER) gains a skull. The Americans fear coming away empty-handed on alloy ore and accelerate their own programme. ¶ “The Second Site” (Department 13) ☠☠☠☠☠ “The Great Stone” (The Evening) loses a skull. The Evening loses the Department as supplier and bidder. ¶ “The Page from 1871” (Lodge of the Silent Circle) ☠☠○○○ “Keep the Silence” (Congregation of the Silent Word) gains a skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof.
-- neu: “The Second Site” (Department 13) ☠☠☠☠○ “A Seeker of Their Own” (STILLWATER) gains a skull. The Americans fear they will miss out on the alloy ore and accelerate their own programme. ¶ “The Second Site” (Department 13) ☠☠☠☠☠ “The Great Stone” (The Evening) loses a skull. The Evening loses the Department as a supplier and bidder. ¶ “The page from 1871” (Lodge of the Silent Circle) ☠☠○○○ “Preserve the silence” (Congregation of the Silent Word) gains a skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof.
-
-- alt: “The Page from 1871” (Lodge of the Silent Circle) ☠☠☠☠☠ “The Staircase” (The Singers) gains a skull. The children in the area sing the song of 1871, and the Singers hear it. ¶ “The Second Light” (The Enlightened) ☠☠☠☠○ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge recognises the song of 1871 in the ritual in Anderlecht and believes the time has come. ¶ “The Second Light” (The Enlightened) ☠☠☠☠☠ “The Staircase” (The Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase. ¶ “Keep the Silence” (Congregation of the Silent Word) ☠☠☠☠☠ “The Second Light” (The Enlightened) gains a skull. The article about missing children feeds every conspiracy group in Europe, and “Illuminati Europa” gets new members. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠○ “The Chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a sleeping gift from the participant register of study MB-7 before she is enrolled, and the corporation accelerates the research in Lyon. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠○ “Keep the Silence” (Congregation of the Silent Word) loses a skull. The Congregation sees that the Open Ones are saving children, and Don Matteo doubts whether his article is the right answer. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠☠ “No More Nexus Crystals” (The Foundation in Basel) loses a skull. The Open Ones buy Nexus crystals for their choir themselves and take sources away from the Foundation. ¶ “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠○○ “The Great Stone” (The Evening) loses a skull. The Foundation steals a crystal from one of the Evening’s warehouses.
-- neu: “The page from 1871” (Lodge of the Silent Circle) ☠☠☠☠☠ “The stairs” (the Singers) gains a skull. The children in the area sing the song from 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”). ¶ “The Second Light” (The Enlightened) ☠☠☠☠○ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The lodge recognises the song of 1871 in the Anderlecht ritual and believes the time has come. ¶ “The Second Light” (the Enlightened) ☠☠☠☠☠ “The stairs” (the Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase. ¶ “Keep the Silence” (Congregation of the Silent Word) ☠☠☠☠☠ “The Second Light” (The Enlightened) gains a skull. The article about vanished children feeds every conspiracy group in Europe, and “Illuminati Europa” gains new members. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠○ “The Chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a dormant gift from the subject register of study MB-7 before she is enrolled, and the corporation accelerates its research in Lyon. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠○ “Keep the Silence” (Congregation of the Silent Word) loses a skull. The Congregation sees that the Open Ones save children, and Don Matteo doubts whether his article is the right answer. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠☠ “No More Nexus Crystals” (The Foundation in Basel) loses a skull. The Open Ones buy Nexus crystals for their choir themselves and take sources from the Foundation. ¶ “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠○○ “The Great Stone” (The Evening) loses a skull. The Foundation steals a crystal from a warehouse of the Evening.
-
-- alt: “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠☠☠ “Taking the Children” (The Open Ones) gains a skull. The Hands no longer take children, and the Open Ones find the self-awakened undisturbed. ¶ “The Great Stone” (The Evening) ☠☠☠○○ “The Chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer supplies Morrow with samples.
-- neu: “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠☠☠ “Taking the Children” (The Open Ones) gains a skull. The Hands no longer fetch children, and the Open Ones find the self-awakened undisturbed. ¶ “The Great Stone” (The Evening) ☠☠☠○○ “The Chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer delivers samples to Morrow.
-
-- alt: “The Great Stone” (The Evening) ☠☠☠☠☠ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unwatched, and the Lodge gets closer to the page.
-- neu: “The Great Stone” (The Evening) ☠☠☠☠☠ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unobserved, and the Lodge gets closer to the page.
+- alt: “The New Host” (The Twelve of Asklepios) ☠☠☠○○ “The Chimera” (Morrow Biologics) gains a skull. A former Asklepios lab coat examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study. ¶ “The New Host” (The Twelve of Asklepios) ☠☠☠☠○ “The Staircase” (The Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ “The New Host” (The Twelve of Asklepios) ☠☠☠☠☠ “Taking the Children” (The Open Ones) loses a skull. The nanites have taken a person whom the Open Ones wanted for themselves. Kantor senses it and withdraws. ¶ “The Chimera” (Morrow Biologics) ☠☠☠☠○ “The Great Stone” (The Evening) gains a skull. Morrow buys more samples, and the Evening gets money and channels for the search for the stone. ¶ “The Chimera” (Morrow Biologics) ☠☠☠☠☠ “The Staircase” (The Singers) gains a skull. What escaped from Lyon sings in the sewers, and the Singers follow the song to a staircase beneath the city. ¶ “The Staircase” (The Singers) ☠☠☠○○ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song louder and searches for the page more urgently. ¶ “The Staircase” (The Singers) ☠☠☠☠○ “Taking the Children” (The Open Ones) gains a skull. Kantor hears the Singers and believes that the choir is growing. ¶ “The Staircase” (The Singers) ☠☠☠☠☠ “No More Nexus Crystals” (The Foundation in Basel) loses a skull. In the night of the song, the Council seizes all the Nexus crystals it can get, to seal the staircases. ¶ “A Seeker of Their Own” (STILLWATER) ☠☠☠○○ “Keep the Silence” (Congregation of the Silent Word) gains a skull. From a confession, the Congregation learns of a second Seeker and fears that the silence can no longer be kept. ¶ “A Seeker of Their Own” (STILLWATER) ☠☠☠☠☠ “Taking the Children” (The Open Ones) gains a skull. The European Seeker hears the American one, and Kantor hears him too. ¶ “The Second Site” (Department 13) ☠☠☠☠○ “A Seeker of Their Own” (STILLWATER) gains a skull. The Americans fear coming away empty-handed on alloy ore and accelerate their own programme. ¶ “The Second Site” (Department 13) ☠☠☠☠☠ “The Great Stone” (The Evening) loses a skull. The Evening loses the Department as supplier and bidder. ¶ “The Page from 1871” (Lodge of the Silent Circle) ☠☠○○○ “Keep the Silence” (Congregation of the Silent Word) gains a skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof. ¶ “The Page from 1871” (Lodge of the Silent Circle) ☠☠☠☠○ “The Second Light” (The Enlightened) gains a skull. A lodge brother tells a reporter about the circles, and the story ends up with “Illuminati Europa”. ¶ “The Page from 1871” (Lodge of the Silent Circle) ☠☠☠☠☠ “The Staircase” (The Singers) gains a skull. The children in the area sing the song of 1871, and the Singers hear it. ¶ “The Second Light” (The Enlightened) ☠☠☠☠○ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge recognises the song of 1871 in the ritual in Anderlecht and believes the time has come. ¶ “The Second Light” (The Enlightened) ☠☠☠☠☠ “The Staircase” (The Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase. ¶ “Keep the Silence” (Congregation of the Silent Word) ☠☠☠☠☠ “The Second Light” (The Enlightened) gains a skull. The article about missing children feeds every conspiracy group in Europe, and “Illuminati Europa” gets new members. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠○ “The Chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a sleeping gift from the participant register of study MB-7 before she is enrolled, and the corporation accelerates the research in Lyon. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠○ “Keep the Silence” (Congregation of the Silent Word) loses a skull. The Congregation sees that the Open Ones are saving children, and Don Matteo doubts whether his article is the right answer. ¶ “Taking the Children” (The Open Ones) ☠☠☠☠☠ “No More Nexus Crystals” (The Foundation in Basel) loses a skull. The Open Ones buy Nexus crystals for their choir themselves and take sources away from the Foundation. ¶ “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠○○ “The Great Stone” (The Evening) loses a skull. The Foundation steals a crystal from one of the Evening’s warehouses. ¶ “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠☠○ “The Second Site” (Department 13) gains a skull. The Department sees O.D.I.N. weakened and accelerates the mining. ¶ “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠☠☠ “The Great Stone” (The Evening) gains a skull. The Council turns to the Evening, and the bidder with the great stone and the Council become rivals. ¶ “No More Nexus Crystals” (The Foundation in Basel) ☠☠☠☠☠ “Taking the Children” (The Open Ones) gains a skull. The Hands no longer take children, and the Open Ones find the self-awakened undisturbed. ¶ “The Great Stone” (The Evening) ☠☠☠○○ “The Chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer supplies Morrow with samples. ¶ “The Great Stone” (The Evening) ☠☠☠○○ “The Second Site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stocks. ¶ “The Great Stone” (The Evening) ☠☠☠☠☠ “The Page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unwatched, and the Lodge gets closer to the page.
+- neu: “The new host” (The Twelve of Asklepios) ☠☠☠○○ “The chimera” (Morrow Biologics) gains a skull. A former Asklepios lab coat examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study. ¶ “The new host” (the Twelve of Asklepios) ☠☠☠☠○ “The stairs” (the Singers) gains a skull. Ania sings the song in her sleep, and the Singers hear it. ¶ “The new host” (The Twelve of Asklepios) ☠☠☠☠☠ “Fetch the children” (The Open Ones) loses a skull. The nanites have taken a human whom the Open Ones wanted for themselves. Kantor senses it and withdraws. ¶ “The chimera” (Morrow Biologics) ☠☠☠☠○ “The great stone” (The Evening) gains a skull. Morrow buys more samples, and the Evening gets money and channels for the search for the stone. ¶ “The chimera” (Morrow Biologics) ☠☠☠☠☠ “The stairs” (the Singers) gains a skull. What escaped from Lyon sings in the sewers, and the Singers follow the song to a staircase beneath the city. ¶ “The stairs” (the Singers) ☠☠☠○○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song louder and searches for the page more urgently. ¶ “The stairs” (The Singers) ☠☠☠☠○ “Fetch the children” (The Open Ones) gains a skull. Kantor hears the Singers and believes that the choir is growing. ¶ “The stairs” (the Singers) ☠☠☠☠☠ “No more Nexus crystals” (the Foundation in Basel) loses a skull. On the night of the song, the Council seizes all Nexus crystals it can obtain to seal the staircases. ¶ “A Seeker of their own” (STILLWATER) ☠☠☠○○ “Preserve the silence” (Congregation of the Silent Word) gains a skull. The Congregation learns of a second Seeker from a confession and fears that the silence can no longer be kept. ¶ “A Seeker of their own” (STILLWATER) ☠☠☠☠☠ “Fetch the children” (The Open Ones) gains a skull. The European Seeker hears the American one, and Kantor hears him too. ¶ “The second site” (Department 13) ☠☠☠☠○ “A Seeker of their own” (STILLWATER) gains a skull. The Americans fear they will miss out on the alloy ore and accelerate their own programme. ¶ “The second site” (Department 13) ☠☠☠☠☠ “The great stone” (The Evening) loses a skull. The Evening loses the Department as a supplier and bidder. ¶ “The page from 1871” (Lodge of the Silent Circle) ☠☠○○○ “Preserve the silence” (Congregation of the Silent Word) gains a skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof. ¶ “The page from 1871” (Lodge of the Silent Circle) ☠☠☠☠○ “The Second Light” (The Enlightened) gains a skull. A lodge brother tells a reporter about the circles, and the story ends up with “Illuminati Europa”. ¶ “The page from 1871” (Lodge of the Silent Circle) ☠☠☠☠☠ “The stairs” (the Singers) gains a skull. The children in the area sing the song from 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”). ¶ “The Second Light” (The Enlightened) ☠☠☠☠○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The lodge recognises the song of 1871 in the Anderlecht ritual and believes the time has come. ¶ “The Second Light” (the Enlightened) ☠☠☠☠☠ “The stairs” (the Singers) gains a skull. The Singers hear the song from Anderlecht and find another staircase. ¶ “Preserve the silence” (Congregation of the Silent Word) ☠☠☠☠☠ “The Second Light” (The Enlightened) gains a skull. The article about vanished children feeds every conspiracy group in Europe, and “Illuminati Europa” gains new members. ¶ “Fetch the children” (The Open Ones) ☠☠☠☠○ “The chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a dormant gift from the subject register of study MB-7 before she is enrolled, and the corporation accelerates its research in Lyon. ¶ “Fetch the children” (The Open Ones) ☠☠☠☠○ “Preserve the silence” (Congregation of the Silent Word) loses a skull. The Congregation sees that the Open Ones save children, and Don Matteo doubts whether his article is the right answer. ¶ “Fetch the children” (The Open Ones) ☠☠☠☠☠ “No more Nexus crystals” (The Foundation in Basel) loses a skull. The Open Ones buy Nexus crystals for their choir themselves and take sources from the Foundation. ¶ “No more Nexus crystals” (The Foundation in Basel) ☠☠☠○○ “The great stone” (The Evening) loses a skull. The Foundation steals a crystal from a warehouse of the Evening. ¶ “No more Nexus crystals” (The Foundation in Basel) ☠☠☠☠○ “The second site” (Department 13) gains a skull. The Department sees O.D.I.N. weakened and accelerates the mining. ¶ “No more Nexus crystals” (The Foundation in Basel) ☠☠☠☠☠ “The great stone” (The Evening) gains a skull. The Council turns to the Evening, and the bidder with the great stone and the Council become rivals. ¶ “No more Nexus crystals” (The Foundation in Basel) ☠☠☠☠☠ “Fetch the children” (The Open Ones) gains a skull. The Hands no longer fetch children, and the Open Ones find the self-awakened undisturbed. ¶ “The great stone” (The Evening) ☠☠☠○○ “The chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer delivers samples to Morrow. ¶ “The great stone” (The Evening) ☠☠☠○○ “The second site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stocks. ¶ “The great stone” (The Evening) ☠☠☠☠☠ “The page from 1871” (Lodge of the Silent Circle) gains a skull. In the excitement over the great stone, the Council leaves the Registry unobserved, and the Lodge gets closer to the page.
 
 ### The Other Services: Introduction › Chapter I: Asklepios and Its Heirs
 
 - alt: Not every danger comes from outside. The two organisations of this chapter grew out of work that O.D.I.N. itself began or should never have allowed: out of a programme that was meant to heal people, and out of samples that came from rifts and wandered into other people’s laboratories. What connects them is the body. Here no one calls and no one sings, here things are changed, bred, carried. ¶ The Twelve of Asklepios are neither a service nor a cult, but an in-house legacy: nanites from the Asklepios programme that have been singing in time with the Opener since 2019, and twelve people who carry them inside them. They know more than they should know and have almost no means. Morrow Biologics is the opposite: a corporation with money, laboratories and lawyers that has no idea what it is working with. Morrow thinks cells from rifts are a discovery. The Twelve know that they are not. ¶ The game master uses the Twelve when the cell is to look inwards, into the clinic beneath the Institute and into the files of the Science Branch. Morrow suits missions in the ordinary world: studies, test subjects, press officers and a laboratory in Lyon in which something is growing. The two plans touch. Whoever follows the one sooner or later comes across the other.
 - neu: Not every threat comes from outside. The two organisations in this chapter arose from work that O.D.I.N. itself began or that it should never have allowed: from a programme meant to heal people, and from samples taken from rifts that found their way into foreign laboratories. What connects them is the body. Here nothing is called and nothing is sung; here things are altered, bred, carried. ¶ The Twelve of Asklepios are not a service and not a cult, but a legacy within O.D.I.N.’s own walls: nanites from the Asklepios programme that have been singing in the Opener’s rhythm since 2019, and twelve people who carry them inside themselves. They know more than they should know, and have almost no resources. Morrow Biologics is the opposite: a corporation with money, laboratories and lawyers that has no idea what it is working with. Morrow thinks cells from rifts are a discovery. The Twelve know that they are not. ¶ The game master uses the Twelve when the cell should look inward, into the clinic beneath the Institute and into the files of the Science Branch. Morrow suits operations in the ordinary world: studies, test subjects, press spokespeople and a laboratory in Lyon where something is growing. The two plans touch. Whoever pursues one will sooner or later come upon the other.
 
-- alt: The Twelve of Asklepios Within O.D.I.N., secretive 1 3 “The New Host” ☠○○○○
-- neu: The Twelve of Asklepios Asklepios Within, silent 1 3 “The new host” ☠○○○○
+- alt: The Twelve of Asklepios Within O.D.I.N., secretive 1 3 “The New Host” ☠○○○○ ¶ Morrow Biologics Unknowing opponent 3 1 “The Chimera” ☠☠☠○○
+- neu: The Twelve of Asklepios Asklepios Within, silent 1 3 “The new host” ☠○○○○ ¶ Morrow Biologics Unknowing opponent 3 1 “The chimera” ☠☠☠○○
 
 ### The Other Services: Introduction › Chapter III: Foreign Services
 
 - alt: O.D.I.N. is not the only service that knows there are rifts. The organisations of this chapter are state or semi-state bodies, they have budgets, identity cards and superiors, and they work where O.D.I.N. can only go covertly or not at all. What connects them is the question every service asks: what does the other side know, and how do you get at it? ¶ STILLWATER is the American rival that tolerates O.D.I.N. in North America and has now found a boy who hears the hum. Department 13 is the Russian enemy that uses up psions and has been searching for decades for a second site for alloy ore. The Seventh Bureau is a blank spot in China of which O.D.I.N. knows little more than a name and a report; the dossier offers three possible truths. The Partners , finally, are not opponents but the silent services that have helped carry the Veil Protocol since 1961 and name a price for every favour. ¶ The game master uses foreign services when a campaign is to grow larger than Europe or when the cell is to feel that O.D.I.N. is being watched. Foreign services rarely kill first. They watch, recruit, buy and wait. Real services remain a backdrop here: those who act are always the invented bodies that hide within them.
 - neu: O.D.I.N. is not the only service that knows rifts exist. The organisations in this chapter are state or semi-state, they have budgets, identity cards and superiors, and they work where O.D.I.N. can only operate covertly or not at all. What unites them is the question every service asks: What does the other side know, and how do you get it? ¶ STILLWATER is the American rival that tolerates O.D.I.N. in North America and has now found a boy who hears humming. Department 13 is the Russian enemy that uses up Psions and has been searching for a second site of alloy ore for decades. The Seventh Bureau is a blank spot in China of which O.D.I.N. knows little more than a name and a report; the dossier offers three possible truths. The Partners , finally, are not opponents but the silent services that have supported the Veil Protocol since 1961 and name a price for every favour. ¶ The game master uses foreign services when a campaign is to become larger than Europe or when the cell is to feel that O.D.I.N. is being watched. Foreign services rarely kill first. They watch, recruit, buy and wait. Real services remain backdrop: those who act are always the invented offices hiding within them.
+
+- alt: STILLWATER Rival 4 3 “A Seeker of Their Own” ☠☠○○○ ¶ Department 13 Enemy 3 3 “The Second Site” ☠☠☠○○
+- neu: STILLWATER Rival 4 3 “A Seeker of their own” ☠☠○○○ ¶ Department 13 Enemy 3 3 “The second site” ☠☠☠○○
 
 ### The Other Services: Introduction › Expansion 1: Strength
 
@@ -1367,16 +1472,19 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: The game master keeps a sheet with all plans. After each mission she enters what has changed: the skulls, whether the key figure is still there and which trail she last laid. The sheet is the memory of the world. It shows at a glance which plan is becoming dangerous, and it prevents a connection from being forgotten.
 - neu: The game master keeps a sheet with all plans. After each mission she enters what has changed: the skulls, whether the key figure is still there and which trail she last laid. The sheet is the memory of the world. It shows at a glance which plan is currently becoming dangerous, and it prevents a connection from being forgotten.
 
-- alt: Congregation of the Silent Word “Keep the Silence” ☠☠☠○○ Don Matteo Riva
-- neu: Congregation of the Silent Word “Preserve the silence” ☠☠☠○○ Don Matteo Riva
+- alt: The Twelve of Asklepios “The New Host” ☠○○○○ Dariusz Zieliński, “Hiob” ¶ Morrow Biologics “The Chimera” ☠☠☠○○ Dr. Camille Favre ¶ The Singers “The Staircase” ☠☠○○○ The Preacher ¶ STILLWATER “A Seeker of Their Own” ☠☠○○○ Dr. Marcus Webb ¶ Department 13 “The Second Site” ☠☠☠○○ Dr. Larissa Orlowa ¶ Lodge of the Silent Circle “The Page from 1871” ☠☠○○○ The Master of the Silent Circle
+- neu: The Twelve of Asklepios “The new host” ☠○○○○ Dariusz Zieliński, “Hiob” ¶ Morrow Biologics “The chimera” ☠☠☠○○ Dr. Camille Favre ¶ The Singers “The stairs” ☠☠○○○ The Preacher ¶ STILLWATER “A Seeker of their own” ☠☠○○○ Dr. Marcus Webb ¶ Department 13 “The second site” ☠☠☠○○ Dr. Larissa Orlowa ¶ Lodge of the Silent Circle “The page from 1871” ☠☠○○○ The Master of the Silent Circle
 
-- alt: The Status column shows the starting value for the year 2026. Whoever begins with a different campaign adjusts the starting values, for instance if files from the “Grey Files” volume have already been played.
-- neu: The Status column shows the starting value for the year 2026. Anyone starting with a different campaign adjusts the starting values, for example if files from the volume “Grey Files” have already been played.
+- alt: Congregation of the Silent Word “Keep the Silence” ☠☠☠○○ Don Matteo Riva ¶ The Open Ones “Taking the Children” ☠☠☠○○ Kantor ¶ The Foundation in Basel “No More Nexus Crystals” ☠☠○○○ Mr Leuenberger ¶ The Evening “The Great Stone” ☠☠○○○ The Bidder ¶ The Status column shows the starting value for the year 2026. Whoever begins with a different campaign adjusts the starting values, for instance if files from the “Grey Files” volume have already been played.
+- neu: Congregation of the Silent Word “Preserve the silence” ☠☠☠○○ Don Matteo Riva ¶ The Open Ones “Fetch the children” ☠☠☠○○ Kantor ¶ The Foundation in Basel “No more Nexus crystals” ☠☠○○○ Mr Leuenberger ¶ The Evening “The great stone” ☠☠○○○ The Bidder ¶ The Status column shows the starting value for the year 2026. Anyone starting with a different campaign adjusts the starting values, for example if files from the volume “Grey Files” have already been played.
 
 ### The Other Services: Introduction › Chapter V: Renegades and Collectors
 
 - alt: The Open Ones are psions without helmets under Kantor, the man who caused the Cascade in 1971. They fetch children out of foster families and know almost everything about the Choir. The Foundation in Basel buys Nexus crystals so that the Council does not get them, and Elster sits on its foundation board. The Evening is a travelling auction that sells everything that comes from rifts, and it has promised a bidder a stone as big as a person. Grey Meridian has no plan of its own. The firm supplies the mercenaries for the plans of the others, and sometimes it is the only opponent you can talk to. ¶ The game master uses this chapter when the cell is to ask itself which side it is on. The Open Ones and the Foundation are right on important points, and both know things about O.D.I.N. that the Council would rather forget. The Evening and Grey Meridian are simpler: they want money. But whoever buys from them or pays them changes the plans of everyone else.
 - neu: The Open Ones are psions without helmets under Kantor, the man who caused the Cascade in 1971. They fetch children from foster families and know almost everything about the Choir. The Foundation in Basel buys Nexus crystals so that the Council does not get them, and Elster sits on its board of trustees. The Evening is a travelling auction that sells everything that comes out of rifts, and has promised one bidder a stone as large as a person. Grey Meridian has no plan of its own. The company supplies the mercenaries for the plans of others, and sometimes it is the only opponent one can talk to. ¶ The game master uses this chapter when the cell should ask itself which side it is on. The Open Ones and the Foundation are right on important points, and both know things about O.D.I.N. that the Council would rather forget. The Evening and Grey Meridian are simpler: they want money. But whoever buys from them or pays them changes the plans of everyone else.
+
+- alt: The Open Ones Enemy 2 5 “Taking the Children” ☠☠☠○○ ¶ The Foundation in Basel Enemy of the Council 2 4 “No More Nexus Crystals” ☠☠○○○ ¶ The Evening Opponent 3 2 “The Great Stone” ☠☠○○○
+- neu: The Open Ones Enemy 2 5 “Fetch the children” ☠☠☠○○ ¶ The Foundation in Basel Enemy of the Council 2 4 “No more Nexus crystals” ☠☠○○○ ¶ The Evening Opponent 3 2 “The great stone” ☠☠○○○
 
 ### The Other Services: Introduction › How a Dossier Is Structured
 
@@ -1418,10 +1526,22 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Brotherhoods preserve. They preserve rituals, names, files and silence, some for centuries, some only for a few years. The four dossiers of this chapter describe communities that define themselves through oaths and degrees and that have more in common with O.D.I.N. than either side would like. What sets them apart is how much they really know. ¶ The Freemasons know nothing. They are a worldwide federation with a long tradition and, for O.D.I.N., a backdrop, and the Illuminati are a legend that the Print Shop has cultivated for decades to swallow real trails. Both are in the same dossier because the cell usually meets them as a red herring. The Lodge of the Silent Circle in Uppsala knows more about the night of 1871 than O.D.I.N. and wants back a page that lies in Stockholm. The Enlightened are a legend of the Print Shop that has gained real members and whose rituals have sometimes worked since 2011. The Congregation of the Silent Word in the Vatican guards reports from three centuries, and this year one of its own wants to talk. ¶ The game master uses brotherhoods when the cell is to search in archives, church registers and lodge houses. They are rarely violent and often willing to negotiate, but they forget nothing. Respect towards real communities is mandatory here: Freemasonry is not the conspiracy, but the place where one can hide.
 - neu: Brotherhoods preserve. They preserve rituals, names, files and silence, some for centuries, some only for a few years. The four dossiers in this chapter describe communities that define themselves through oaths and degrees and that have more in common with O.D.I.N. than either side likes. What sets them apart is how much they really know. ¶ The Freemasons know nothing. They are a worldwide fraternity with a long tradition and, for O.D.I.N., a backdrop, and the Illuminati are a legend that the Print Shop has cultivated for decades to swallow real traces. Both appear in the same dossier because the cell usually encounters them as a red herring. The Lodge of the Silent Circle in Uppsala knows more about the night of 1871 than O.D.I.N. and wants a page back that lies in Stockholm. The Enlightened are a legend of the Print Shop that has gained real members and whose rituals have sometimes worked since 2011. The Congregation of the Silent Word in the Vatican guards reports from three centuries, and this year one of their own wants to talk. ¶ The game master uses brotherhoods when the cell is meant to search archives, church registers and lodge houses. They are rarely violent and often willing to negotiate, but they forget nothing. Respect for real communities is mandatory here: Freemasonry is not the conspiracy, but the place where one can hide.
 
+- alt: Lodge of the Silent Circle Toleration 1 4 “The Page from 1871” ☠☠○○○
+- neu: Lodge of the Silent Circle Toleration 1 4 “The page from 1871” ☠☠○○○
+
+- alt: Congregation of the Silent Word Parallel, toleration 3 4 “Keep the Silence” ☠☠☠○○
+- neu: Congregation of the Silent Word Parallel, toleration 3 4 “Preserve the silence” ☠☠☠○○
+
 ### The Other Services: Introduction › Overview of the Organisations
 
-- alt: Congregation of the Silent Word Brotherhoods Parallel, toleration 3 4 “Keep the Silence” ☠☠☠○○ ¶ The Open Ones Renegades Enemy 2 5 “Taking the Children” ☠☠☠○○
-- neu: Congregation of the Silent Word Brotherhoods Parallel, toleration 3 4 “Preserve the silence” ☠☠☠○○ ¶ The Open Ones Renegades Enemy 2 5 “Fetch the children” ☠☠☠○○
+- alt: The Twelve of Asklepios Asklepios Within, secretive 1 3 “The New Host” ☠○○○○ ¶ Morrow Biologics Asklepios Unknowing opponent 3 1 “The Chimera” ☠☠☠○○ ¶ The Singers Cults Enemy 2 4 “The Staircase” ☠☠○○○ ¶ STILLWATER Foreign Services Rival 4 3 “A Seeker of Their Own” ☠☠○○○ ¶ Department 13 Foreign Services Enemy 3 3 “The Second Site” ☠☠☠○○
+- neu: The Twelve of Asklepios Asklepios Within, secretive 1 3 “The new host” ☠○○○○ ¶ Morrow Biologics Asklepios Unknowing opponent 3 1 “The chimera” ☠☠☠○○ ¶ The Singers Cults Enemy 2 4 “The stairs” ☠☠○○○ ¶ STILLWATER Foreign Services Rival 4 3 “A Seeker of their own” ☠☠○○○ ¶ Department 13 Foreign Services Enemy 3 3 “The second site” ☠☠☠○○
+
+- alt: Lodge of the Silent Circle Brotherhoods Toleration 1 4 “The Page from 1871” ☠☠○○○
+- neu: Lodge of the Silent Circle Brotherhoods Toleration 1 4 “The page from 1871” ☠☠○○○
+
+- alt: Congregation of the Silent Word Brotherhoods Parallel, toleration 3 4 “Keep the Silence” ☠☠☠○○ ¶ The Open Ones Renegades Enemy 2 5 “Taking the Children” ☠☠☠○○ ¶ The Foundation in Basel Collectors Enemy of the Council 2 4 “No More Nexus Crystals” ☠☠○○○ ¶ The Evening Collectors Opponent 3 2 “The Great Stone” ☠☠○○○
+- neu: Congregation of the Silent Word Brotherhoods Parallel, toleration 3 4 “Preserve the silence” ☠☠☠○○ ¶ The Open Ones Renegades Enemy 2 5 “Fetch the children” ☠☠☠○○ ¶ The Foundation in Basel Collectors Enemy of the Council 2 4 “No more Nexus crystals” ☠☠○○○ ¶ The Evening Collectors Opponent 3 2 “The great stone” ☠☠○○○
 
 ### The Other Services: Introduction › Expansion 4: The Trail
 
@@ -1432,6 +1552,9 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Cults are the everyday business of investigative work. Most are small, confused and harmless, says the Core Rulebook, and that is true. The cults in this chapter are not. Each of them holds something in its hands that is real: a song, a crystal, a dead man who speaks in dreams, a staircase that leads deeper than a mountain can be. What connects them is faith, and what makes them dangerous is that their faith sometimes receives an answer. ¶ The Singers are the great cult of this volume, without a leader and without a book, grown up around the staircase at the Brocken. You do not smash them, you stop them, level by level. The small cults are five examples of what can arise in any small town in Europe: from the forest crystal to the community that is waiting for a landing. They are described briefly, each with a small plan of its own, and can be scattered into any campaign. ¶ The game master plays cults not as conspirators but as people who have found something and cannot let go of it any more. A cult is almost never the end of a trail but its beginning: whoever wants to know where the crystal a cult worships comes from finds a rift, a collector or a legend of the Print Shop.
 - neu: Cults are the everyday reality of investigation work. Most are small, confused and harmless, says the Core Rulebook, and that is true. The cults in this chapter are not. Each of them holds something real in their hands: a song, a crystal, a dead person who speaks in dreams, a staircase that leads deeper than a mountain can be. What connects them is faith, and what makes them dangerous is that their faith sometimes receives an answer. ¶ The Singers are the major cult of this volume, without leader and without book, grown around the stairs on the Brocken. You do not smash them, you stop them, step by step. The small cults are five examples of what can arise in any small town in Europe: from the forest crystal to the congregation waiting for a landing. They are briefly described, with their own small plan, and can be scattered into any campaign. ¶ The game master plays cults not as conspirators but as people who have found something and cannot let go of it any more. A cult is almost never the end of a trail, but its beginning: whoever wants to know where the crystal a cult venerates comes from finds a rift, a collector or a legend of the Print Shop.
+
+- alt: The Singers Enemy 2 4 “The Staircase” ☠☠○○○
+- neu: The Singers Enemy 2 4 “The stairs” ☠☠○○○
 
 - alt: The Circle of the Returners Observed 2 3 “The Open Door” ☠○○○○
 - neu: The Circle of the Returned Observed 2 3 “The open door” ☠○○○○
@@ -1448,6 +1571,74 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Every plan hangs on one person. Without Dr. Camille Favre there is no Chimera, without Kantor no choir, without the bidder no great stone. This person is the key figure , and their name is in the short profile of every dossier. ¶ If the cell takes out the key figure, the plan loses two skulls and does not roll after the next mission. Taking out means: arresting, turning, persuading, exposing or weakening them so much that they can no longer lead the plan. Taking out does not mean killing. Most key figures are people who can be persuaded or exposed, and the Game Master’s Book rewards solutions without combat. Many dossiers say explicitly what happens if the cell chooses violence, and it is rarely good for the cell.
 - neu: Every plan hangs on one person. Without Dr. Camille Favre there is no Chimera, without Kantor no choir, without the bidder no great stone. This person is the key figure , and their name is in the Profile of every dossier. ¶ If the cell neutralises the key figure, the plan loses two skulls and does not roll after the next mission. Neutralising means: arresting, turning, convincing, exposing, or weakening them so that they can no longer lead the plan. Taking out does not mean killing. Most key figures are people who can be convinced or exposed, and the Game Master’s Book rewards solutions without combat. Many dossiers explicitly state what happens if the cell chooses violence, and it is rarely good for the cell.
+
+### Mission 1: Waybill › Escalation
+
+- alt: Crossing, second night: Two men search the cargo hold. They check crates with a stethoscope, not with a crowbar. The group notices them only with Perception against Doable (2). The men disappear before the guard comes. After that, no one sleeps soundly any more. Horror test against Eerie (1) for all who stay with the crate at night, because the Whisper grows louder.
+- neu: Crossing, second night: Two men search the cargo hold. They check crates with a stethoscope, not with a crowbar. The group notices them only with Perception against Doable (2). The men disappear before the guard comes. After that, no one sleeps soundly any more. Horror test against Uncanny (1) for all who stay with the crate at night, because the Whisper grows louder.
+
+### Mission 1: Waybill › What Really Happened
+
+- alt: The waybill with the abbreviation O.D.I.N. exists and returns to London receipted. The game master ensures this by having the letter go to London by courier after the receipt, whether the group is watching or not. If the group loses the letter, a copy appears that someone made in Stockholm. The price: Marsh trusts the group less, and it receives less advance pay for the next mission. - The crate reaches the recipient. If the group does not want to hand it over, there is a detour: the young man in the grey coat receives it at a railway station, signs illegibly and disappears. The group never sees him again. If the group wants to open the crate, the game master determines that the lid is lead-sealed and could only be opened with tools and time. If the group opens it anyway, they see a clear, milky shimmering crystal that immediately begins to whisper. Price: horror test against Eerie (1), and Holloway learns of it. She says nothing, but the group has lost trust with the Collegium. - Hallström receives his letter and brings File Zero with him. If the group does not deliver the envelope, a courier finds it in Stockholm. Hallström comes anyway. The group then simply does not have the opportunity to speak to him first. - Hold-1 is occupied. The bunker under Coptic Street is already occupied in March 1947, with a steel cabinet and six veterans. After the return it is expanded. This happens regardless of the group’s success. - The signature remains illegible, the recipient gives no name, his trail ends at a post office box in Zurich. If the group follows the grey coat, they lose him in Stockholm’s street network or in front of a post office. Every attempt to read the name fails because of the handwriting. The game master only shows the post office box if the group is very good. The number remains illegible. WHAT THE TABLE DECIDES - Who finds the tuning fork. In the Chamber, between the first crates, lies a tuning fork of matt metal. If a Thaumaturge finds it, they recognise with Occultism against Hard (3) that it does not come from the Collegium. If another agent finds it, the game master describes it as an inconspicuous, used tuning fork that vibrates softly when held against the lead crate. No one knows in 1947 that it closes small rifts. If someone strikes it, Möwe feels the pain, and all psions within 100 m suffer 2 strain. Consequence: It remains in the Chamber in the felt box, as a bridge to “The Door”, End I. Duty Log entry: name of the finder, object, date. - How the crate travels. By lorry, ship or train. If the group decides to take the land route via Denmark and Sweden, with the ferry from Harwich to Esbjerg, the mission is extended and the Collector has more chances. On the land route, Node 4 takes place on the ferry to Esbjerg, the Swedish customs in Helsingborg issue the customs transit document (N4), and the confrontation takes place at night in the ferry port of Helsingborg. If they decide on the sea route, play the crossing over the North Sea and Skagerrak. Duty Log entry: transport route, incidents. - Whether the Collector survives. The confrontation can end fatally. If the Collector dies, his collection remains undiscovered. If he survives, he becomes a recurring opponent who appears as a buyer at auctions in later missions and sells information. Duty Log entry: name, condition, what happened to him. - Who brings Hallström the envelope and what they say to him. One agent or the whole group. Hallström asks about the sender, about the abbreviation, about the organisation. What the group answers shapes his attitude towards O.D.I.N. Duty Log entry: name of the bearer, quotation of the first sentences. - How far the group follows the grey coat. To the post office where he posts an envelope to a post office box in Zurich, to the next street corner, or not at all. The further they follow, the more they learn about the house without a number, but also the more the courier notices them. Duty Log entry: distance, observations, whether the courier turned around.
+- neu: The waybill with the abbreviation O.D.I.N. exists and returns to London receipted. The game master ensures this by having the letter go to London by courier after the receipt, whether the group is watching or not. If the group loses the letter, a copy appears that someone made in Stockholm. The price: Marsh trusts the group less, and it receives less advance pay for the next mission. - The crate reaches the recipient. If the group does not want to hand it over, there is a detour: the young man in the grey coat receives it at a railway station, signs illegibly and disappears. The group never sees him again. If the group wants to open the crate, the game master determines that the lid is lead-sealed and could only be opened with tools and time. If the group opens it anyway, they see a clear, milky shimmering crystal that immediately begins to whisper. Price: horror test against Uncanny (1), and Holloway learns of it. She says nothing, but the group has lost trust with the Collegium. - Hallström receives his letter and brings File Zero with him. If the group does not deliver the envelope, a courier finds it in Stockholm. Hallström comes anyway. The group then simply does not have the opportunity to speak to him first. - Hold-1 is occupied. The bunker under Coptic Street is already occupied in March 1947, with a steel cabinet and six veterans. After the return it is expanded. This happens regardless of the group’s success. - The signature remains illegible, the recipient gives no name, his trail ends at a post office box in Zurich. If the group follows the grey coat, they lose him in Stockholm’s street network or in front of a post office. Every attempt to read the name fails because of the handwriting. The game master only shows the post office box if the group is very good. The number remains illegible. WHAT THE TABLE DECIDES - Who finds the tuning fork. In the Chamber, between the first crates, lies a tuning fork of matt metal. If a Thaumaturge finds it, they recognise with Occultism against Hard (3) that it does not come from the Collegium. If another agent finds it, the game master describes it as an inconspicuous, used tuning fork that vibrates softly when held against the lead crate. No one knows in 1947 that it closes small rifts. If someone strikes it, Möwe feels the pain, and all psions within 100 m suffer 2 strain. Consequence: It remains in the Chamber in the felt box, as a bridge to “The Door”, End I. Duty Log entry: name of the finder, object, date. - How the crate travels. By lorry, ship or train. If the group decides to take the land route via Denmark and Sweden, with the ferry from Harwich to Esbjerg, the mission is extended and the Collector has more chances. On the land route, Node 4 takes place on the ferry to Esbjerg, the Swedish customs in Helsingborg issue the customs transit document (N4), and the confrontation takes place at night in the ferry port of Helsingborg. If they decide on the sea route, play the crossing over the North Sea and Skagerrak. Duty Log entry: transport route, incidents. - Whether the Collector survives. The confrontation can end fatally. If the Collector dies, his collection remains undiscovered. If he survives, he becomes a recurring opponent who appears as a buyer at auctions in later missions and sells information. Duty Log entry: name, condition, what happened to him. - Who brings Hallström the envelope and what they say to him. One agent or the whole group. Hallström asks about the sender, about the abbreviation, about the organisation. What the group answers shapes his attitude towards O.D.I.N. Duty Log entry: name of the bearer, quotation of the first sentences. - How far the group follows the grey coat. To the post office where he posts an envelope to a post office box in Zurich, to the next street corner, or not at all. The further they follow, the more they learn about the house without a number, but also the more the courier notices them. Duty Log entry: distance, observations, whether the courier turned around.
+
+### Mission 1: Waybill › The Confrontation
+
+- alt: 3. As soon as the first shot is fired or the crate tips over, it begins to whisper. Everyone present, including the mercenaries, hears it: words in a language no one knows, quiet, close under the fog. Horror test against Eerie (1) for all, Disturbing (2) for Psions, because they almost understand the words. Whoever already rolled for the Whisper on the crossing does not roll again.
+- neu: 3. As soon as the first shot is fired or the crate tips over, it begins to whisper. Everyone present, including the mercenaries, hears it: words in a language no one knows, quiet, close under the fog. Horror test against Uncanny (1) for all, Disturbing (2) for Psions, because they almost understand the words. Whoever already rolled for the Whisper on the crossing does not roll again.
+
+### Mission 1: Waybill › Opponents
+
+- alt: Horror Eerie (1) when the crate whispers
+- neu: Horror Uncanny (1) when the crate whispers
+
+- alt: Horror Eerie (1) when the crate whispers
+- neu: Horror Uncanny (1) when the crate whispers
+
+### 08 Tunnel 7 › Nodes
+
+- alt: Clue: In Tunnel 7 there are Crystal Wardens (Threat Atlas), which the workers call “the Mutes”. They attack no one who does not go too close to the wall. (Voice)
+- neu: Clue: In Tunnel 7 there are Crystal Guardians (Threat Atlas), which the workers call “the Mutes”. They attack no one who does not go too close to the wall. (Voice)
+
+### 08 Tunnel 7 › Confrontation
+
+- alt: Anyone who touches the wall for too long is attacked by the Crystal Wardens. Ares stops them with a wave of his hand.
+- neu: Anyone who touches the wall for too long is attacked by the Crystal Guardians. Ares stops them with a wave of his hand.
+
+### Mission 11: Seven › Escalation
+
+- alt: If the group is too slow in Part A, Kantor reaches the border before them. The group finds the empty cellar in Vienna, hears the children’s voices, but no children. Horror test: Eerie (1). At the border they find only fog and fresh footprints in the snow. In December the Council’s telex follows (Handout N36). The file remains open.
+- neu: If the group is too slow in Part A, Kantor reaches the border before them. The group finds the empty cellar in Vienna, hears the children’s voices, but no children. Horror test: Uncanny (1). At the border they find only fog and fresh footprints in the snow. In December the Council’s telex follows (Handout N36). The file remains open.
+
+### Appendix A: Six Ready-Made Agents › Colette Marchais, “Garn”
+
+- alt: Special abilities Double Identity, False Information, Cipher Decryption Double Identity, False Information, Cipher Decryption
+- neu: Special abilities Double Identity, False Information, Secret Code Decryption Double Identity, False Information, Secret Code Decryption
+
+### Appendix A: Six Ready-Made Agents › Torsten Ekvall, “Zeuge”
+
+- alt: Special abilities Ghost Sight, Occult Recognition, Protection Ritual Ghost Sight, Occult Recognition, Protection Ritual
+- neu: Special abilities Ghost Sight, Occult Recognition, Protective Ritual Ghost Sight, Occult Recognition, Protective Ritual
+
+### Appendix A: Six Ready-Made Agents › Ilga Ozola, “Möwe”
+
+- alt: Chosen powers Thought Whisper, Mental Whisper, Heightened Senses, Psychic Jolt; Deep Query, Thought Projection as 1947, plus Psychic Barrier
+- neu: Chosen powers Thought Whisper, Mental Whisper, Heightened Senses, Psychic Jolt; Deep Probe, Thought Projection as 1947, plus Psychic Barrier
+
+### Mission 5: Inside › Opponents
+
+- alt: Horror Eerie (1)
+- neu: Horror Uncanny (1)
+
+### Mission 5: Inside › Escalation
+
+- alt: If the group is too slow, nothing spectacular happens. The Waiting One waits. But the callers grow louder. Every night the group spends in the valley increases the pressure: whoever hears the callers for the first time makes a horror test against Eerie (1) . Every further night requires everyone who hears the call to roll WIL + Mental Resistance against Doable (2), otherwise 1 strain. Anyone who answers suffers 1 strain and hears their own name in their sleep for a week.
+- neu: If the group is too slow, nothing spectacular happens. The Waiting One waits. But the callers grow louder. Every night the group spends in the valley increases the pressure: whoever hears the callers for the first time makes a horror test against Uncanny (1) . Every further night requires everyone who hears the call to roll WIL + Mental Resistance against Doable (2), otherwise 1 strain. Anyone who answers suffers 1 strain and hears their own name in their sleep for a week.
+
+### 04 Kessler › Opponents
+
+- alt: Attack Silenced pistol 4 + 4, damage 3, Silent
+- neu: Attack Silenced pistol 4 + 4, damage 3, Quiet
 
 ### 13 The Open Ones › Key Figures
 
@@ -1485,13 +1676,13 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: The Open Ones are psions who have taken off their helmets and will never put them on again. They consider the Opening a crime, the foster families prisons with curtains, and O.D.I.N. an organisation that sacrifices children and calls it protection. They are few, they are old or very young, and they know more about the Choir, the Hands and the Nursery than most agents who work there. For the game master they are the adversary who is right about one thing. Perhaps about two.
 - neu: The Open Ones are psions who have taken off their helmets and will never put them on again. They consider the Opening a crime, foster families prisons with curtains, and O.D.I.N. an organisation that sacrifices children and calls it protection. They are few, they are old or very young, and they know more about the Choir, the Hands and the Nursery than most agents who work there. For the game master, they are the opponent who is right about one thing. Perhaps about two.
 
+- alt: Plan “Taking the Children” ☠☠☠○○
+- neu: Plan “Fetch the children” ☠☠☠○○
+
 ### 13 The Open Ones › Relationship to O.D.I.N.
 
-- alt: What O.D.I.N. knows: That Kantor is alive and leads the Open Ones. That they take children from foster families. Where their monastery lies, since 1976. The Council tolerates it because an enemy whose address you know is easier to watch than one without. Most agents do not know where the Open Ones get the names from; they believe the legend of the sale. ¶ What the Open Ones know about O.D.I.N.: Almost everything. The Opening, the Hands, the foster families, the Seeker, the Rule of the Twelve and why it exists. What they do not know: what the Council is called, where the Holds are, and who really stood behind the numbers that showed Kantor the hall in 1971.
-- neu: What O.D.I.N. knows: That Kantor lives and leads the Open Ones. That they take children from foster families. Where their monastery lies, since 1976. The Council tolerates it, because an enemy whose address one knows is easier to observe than one without. Most agents do not know where the Open Ones get the names; they believe the legend of the sale. ¶ What the Open Ones know about O.D.I.N.: Almost everything. The Opening, the Hands, the foster families, the Seeker, the Rule of the Twelve and why it exists. What they do not know: what the Council is called, where the Holds lie, and who really stood behind the numbers that showed Kantor the hall in 1971.
-
-- alt: One’s own name. The Open Ones offer to tell a psion of the cell what he was called before the Opening, who his parents are and whether they are still alive. The answer is on the list, and the Open Ones have it. ¶ In return they want little: that on one operation, once, he does not put on his helmet when they ask him to. He only learns why on that night.
-- neu: One’s own name. The Open Ones offer to tell a Psion of the cell what they were called before the Opening, who their parents are and whether they are still alive. The answer lies on the list, and the Open Ones have it. ¶ In return they want little: that during one operation, just once, the Psion does not put on their helmet when the Open Ones ask. He only learns why on that night.
+- alt: What O.D.I.N. knows: That Kantor is alive and leads the Open Ones. That they take children from foster families. Where their monastery lies, since 1976. The Council tolerates it because an enemy whose address you know is easier to watch than one without. Most agents do not know where the Open Ones get the names from; they believe the legend of the sale. ¶ What the Open Ones know about O.D.I.N.: Almost everything. The Opening, the Hands, the foster families, the Seeker, the Rule of the Twelve and why it exists. What they do not know: what the Council is called, where the Holds are, and who really stood behind the numbers that showed Kantor the hall in 1971. ¶ THE BAIT ¶ One’s own name. The Open Ones offer to tell a psion of the cell what he was called before the Opening, who his parents are and whether they are still alive. The answer is on the list, and the Open Ones have it. ¶ In return they want little: that on one operation, once, he does not put on his helmet when they ask him to. He only learns why on that night.
+- neu: What O.D.I.N. knows: That Kantor lives and leads the Open Ones. That they take children from foster families. Where their monastery lies, since 1976. The Council tolerates it, because an enemy whose address one knows is easier to observe than one without. Most agents do not know where the Open Ones get the names; they believe the legend of the sale. ¶ What the Open Ones know about O.D.I.N.: Almost everything. The Opening, the Hands, the foster families, the Seeker, the Rule of the Twelve and why it exists. What they do not know: what the Council is called, where the Holds lie, and who really stood behind the numbers that showed Kantor the hall in 1971. ¶ THE LURE ¶ One’s own name. The Open Ones offer to tell a Psion of the cell what they were called before the Opening, who their parents are and whether they are still alive. The answer lies on the list, and the Open Ones have it. ¶ In return they want little: that during one operation, just once, the Psion does not put on their helmet when the Open Ones ask. He only learns why on that night.
 
 ### 13 The Open Ones › Bases and Means
 
@@ -1518,31 +1709,102 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: In the campaign Kantor does not want to sing in the monastery but on the night of 14 February in Wales, in the hall above the third tunnel. Whoever plays the campaign follows it: the plan “Taking the Children” then only runs up to ☠☠☠☠○ , and what happens after that is decided by Mission 16 “The Monastery”.
 - neu: In the campaign Kantor does not want to sing in the monastery but on the night of 14 February in Wales, in the hall above the third tunnel. Those who play the campaign follow it: the plan “Fetch the children” then runs only until ☠☠☠☠○ , and what happens after that is decided by Mission 16 “The Monastery”.
 
-### 13 The Open Ones › The Plan: “Taking the Children”
+### Mission 12: Two Hundred and Twelve › Escalation
 
-- alt: Kantor wants to sing once more, and for that he needs voices that have never worn a helmet or have taken it off of their own free will. The Open Ones are taking more children than in the thirty years before, and they no longer take them only through the 1989 list but wherever Kantor hears them. The cell notices it in foster families who call a number instead of the police, in a man in a grey coat on a platform and in a humming that a psion of the cell has in his ear at night and does not recognise.
-- neu: Kantor wants to sing once more, and for that he needs voices that have never worn a helmet or have taken it off of their own free will. The Open Ones are taking more children than in the thirty years before, and they no longer take them only through the 1989 list but wherever Kantor hears them. The cell notices it in foster families who call a number instead of the police, in a man in a grey coat on a platform, and in a humming that a Psion of the cell has in their ear at night and does not recognise.
+- alt: Eerie (1) when the stones in Kiruna grow warm and the men in the mountain call. Disturbing (2) when an agent realises that the voices come from Tunnel 7 and that they are the men who stayed there in 1953.
+- neu: Uncanny (1) when the stones in Kiruna grow warm and the men in the mountain call. Disturbing (2) when an agent realises that the voices come from Tunnel 7 and that they are the men who stayed there in 1953.
 
-- alt: ☠○○○○ Kantor hears the children himself. Couriers take the first ones who are not on the list from foster families in Romania and Hungary. Trail: A missing-child case in a local newspaper, never solved. The foster parents did not report the child missing. ¶ ☠☠○○○ The network stands: the mill in the Vosges, the house in Altona, the locker in Zurich. In Hamburg Jonas Vogt watches a child who hums at night. Trail: A Grey File emerges. A surveillance camera shows a man in a grey coat with the photo of a child in his hand. ¶ ☠☠☠○○ Within one month a child is missing one morning from three foster families. In the monastery the children sing together in the evening, first three, then seven. Trail: A psion of the cell wakes up and hums a melody he does not know. In the locker in Zurich lies a slip of paper with three names. ¶ ☠☠☠☠○ Kantor calls the Open Ones from all over Europe back to the monastery. Twelve children sing every evening without helmets, and Kantor waits for the last voices. Trail: A Red File emerges. The Seeker does not sleep for two nights and hears “a choir that is not ours”. ¶ ☠☠☠☠☠ The Open Ones have enough children to form a choir of their own, without helmets. They sing in the monastery of Sfântul Ioan. What answers then, no one knows. Trail: The Council takes over with a Black File. One night, all over Europe, children hum the same melody in their sleep. ¶ The Key Figure is Kantor. Without him no one sings: Ilinca Dragomir is afraid of what might answer, and the other Open Ones follow her. If Kantor is arrested, persuaded or weakened so much that he can no longer lead the monastery, the plan loses two skulls and does not roll after the next mission. Whoever wants to persuade him needs more than words: proof that Märta is not waiting, or proof that she is and that a choir without helmets does not reach her. The cell probably has neither. Whoever takes Kantor by force takes him out of a house full of children, and the cell never wins by harming a child. A cell that puts children in danger to get at Kantor does not take the skull away, it gives it to the plan.
-- neu: ☠○○○○ Kantor hears the children himself. Couriers take the first ones who are not on the list from foster families in Romania and Hungary. A missing person case in a local newspaper, never solved. The foster parents did not report the child missing. ¶ ☠☠○○○ The network is in place: the mill in the Vosges, the house in Altona, the locker in Zurich. Jonas Vogt observes a child in Hamburg who hums at night. Trail: A Grey File emerges. A surveillance camera shows a man in a grey coat holding a photo of a child. ¶ ☠☠☠○○ In one month, a child is missing in the morning from three foster families. In the monastery the children sing together in the evening, first three, then seven. Sign: A Psion of the cell wakes up and hums a melody they do not know. In the locker in Zurich lies a note with three names. ¶ ☠☠☠☠○ Kantor calls the Open Ones from all over Europe back to the monastery. Twelve children sing every evening without a helmet, and Kantor waits for the last voices. Trail: A Red File emerges. The Seeker does not sleep for two nights and hears “a choir that is not ours”. ¶ ☠☠☠☠☠ The Open Ones have enough children to form their own choir, without helmets. They sing in the monastery of Sfântul Ioan. What answers then, no one knows. Trail: The Council takes over with a Black File. One night, all over Europe, children hum the same melody in their sleep. ¶ The Key Figure is Kantor. Without him no one sings: Ilinca Dragomir is afraid of what might answer, and the other Open Ones follow her. If Kantor is arrested, convinced, or weakened so much that he can no longer lead the monastery, the plan loses two skulls and does not roll after the next mission. Whoever wants to convince him needs more than words: proof that Märta is not waiting, or proof that she is and that a choir without helmets does not reach her. The cell probably has neither. Whoever takes Kantor by force takes him from a house full of children, and the cell never wins by harming a child. A cell that puts children in danger to get at Kantor does not take the skull away, it gives it to the plan.
+### Mission 12: Two Hundred and Twelve › Opponents
 
-- alt: If the cell takes a skull from the plan, Kantor answers with a countermove. He knows how O.D.I.N. thinks, because he helped build it.
-- neu: If the cell takes a skull from the plan, Kantor answers with a countermove. He knows how O.D.I.N. thinks, for he helped build it.
+- alt: Horror Eerie (1) at the first calling, Horrifying (3) for veterans of 1953 who hear their names
+- neu: Horror Uncanny (1) at the first calling, Horrifying (3) for veterans of 1953 who hear their names
 
-- alt: 1 to 2 The Bait. A psion of the cell finds a slip of paper in his jacket pocket in a fine, old-fashioned hand: a first name, a place and a year. It is his own name, before the Print Shop gave him a new one. There is more if he answers. ¶ 3 to 4 The Voice in Sleep. Kantor seeks out a psion of the cell at night with Mental Whisper. At the start of the next mission the psion makes his Resonance roll, and his Observer asks why he is sleeping so badly. ¶ 5 to 6 The Family Moves. A foster family the cell has visited or is meant to protect is gone overnight, with the child and with papers from Elster’s workshop. Whoever wants to find them needs Contacts or Investigation against Very Hard (4).
-- neu: 1 to 2 The Bait. A Psion of the cell finds in their jacket pocket a note in a fine, old-fashioned handwriting: a first name, a place, and a year. It is their own name, before the Print Shop gave them a new one. There is more if he answers. ¶ 3 to 4 The Voice in Sleep. Kantor seeks out a psion of the cell at night with Mental Whisper. The Psion makes their Resonance roll at the start of the next mission, and their Observer asks why they sleep so badly. ¶ 5 to 6 The Family Moves. A foster family the cell visited or is supposed to protect is gone overnight, with the child and with papers from Elster’s workshop. Whoever wants to find them needs Contacts or Investigation against Very Hard (4).
+### Mission 8: The Twelfth Party › Opponents
 
-- alt: At ☠☠☠☠○ : “The Chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a sleeping gift out of the subject register of study MB-7 before she is enrolled, and the corporation speeds up its research in Lyon. ¶ At ☠☠☠☠○ : “Keep the Silence” (Congregation of the Silent Word) loses a skull. The Congregation sees that the Open Ones save children, and Don Matteo doubts whether his article is the right answer. ¶ At ☠☠☠☠☠ : “No More Nexus Crystals” (The Foundation in Basel) loses a skull. The Open Ones buy Nexus crystals for their choir themselves and take sources away from the Foundation.
-- neu: At ☠☠☠☠○ : “The Chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a dormant gift from the subject register of study MB-7 before she is enrolled, and the corporation accelerates its research in Lyon. ¶ At ☠☠☠☠○ : “Preserve the silence” (Congregation of the Silent Word) loses a skull. The Congregation sees that the Open Ones save children, and Don Matteo doubts whether his article is the right answer. ¶ At ☠☠☠☠☠ : “No More Nexus Crystals” (The Foundation in Basel) loses a skull. The Open Ones buy Nexus crystals for their choir themselves and take sources from the Foundation.
+- alt: Horror Eerie (1) when one hears him hum for the first time
+- neu: Horror Uncanny (1) when one hears him hum for the first time
 
-## Gegner Deutsch (1 Absätze)
+### 01 The House by the Reservoir › Strain and Horror
+
+- alt: Horrific 3 A person transforms into a monster before your eyes.
+- neu: Horrifying 3 A person transforms into a monster before your eyes.
+
+### 01 The House by the Reservoir › Four Agents
+
+- alt: Raven is the investigator of the cell. Lena Kowalski, 34, was a detective inspector with the BKA. A case led her into a basement from which her partner did not return. O.D.I.N. found her before the press did. She sees what others overlook and has mastered a Protection Ritual for the whole group.
+- neu: Raven is the investigator of the cell. Lena Kowalski, 34, was a detective inspector with the BKA. A case led her into a basement from which her partner did not return. O.D.I.N. found her before the press did. She sees what others overlook and has mastered a Protective Ritual for the whole group.
+
+- alt: Raven Investigator, Paranormal Detective Read tracks and signs, Protection Ritual 10 10
+- neu: Raven Investigator, Paranormal Detective Read tracks and signs, Protective Ritual 10 10
+
+## Gegner Deutsch (9 Absätze)
+
+### Akteur Kristalljäger besonderheit
+
+- alt: Angriff: Pistole 3 + 3, Schaden 3, oder Schrotflinte 3 + 3, Schaden 4, Nah
+- neu: Angriff: Pistole 3 + 3, Schaden 3, oder Schrotflinte 3 + 3, Schaden 4, Streuung
+
+### Akteur Kristallmutant besonderheit
+
+- alt: Grauen: Grauenhaft (3) beim ersten Anblick ¶ Besonderheit: Regeneriert 2 LP pro Runde, außer er wurde in dieser Runde durch Feuer oder Energiewaffen verletzt ¶ Zahlen: {"i":5,"v":2,"r":2,"lp":22,"g":3,"p":["Klauen 5+4/4"]}
+- neu: Grauen: Unheimlich (1) ¶ Besonderheit: Regeneriert 1 LP pro Runde. Fällt nicht bei 0 LP, sondern erst, wenn er in derselben Runde noch einmal getroffen wird ¶ Zahlen: {"i":5,"v":2,"r":2,"lp":22,"g":1,"p":["Klauen 5+4/4"]}
 
 ### Akteur Nadia El-Khoury besonderheit
 
 - alt: Angriff: Pfefferspray 2 + 2, Schaden 1, Blendet
 - neu: Angriff: Pfefferspray 2 + 2, kein Schaden, das Ziel ist eine Runde lang geblendet (−2 Würfel)
 
-## Gegner Englisch (28 Absätze)
+### Akteur Der Henker besonderheit
+
+- alt: Schwäche: Ein Freispruch. Ein Negotiator oder Investigator, der für einen Charakter vor ihm plädiert und eine Probe gegen 5 + 5 gewinnt, beendet seine Jagd auf diesen Charakter
+- neu: Schwäche: Ein Freispruch. Ein Negotiator oder Investigator, der für einen Charakter vor ihm plädiert und eine vergleichende Probe auf CH + Überzeugen gegen 5 + 5 gewinnt, beendet seine Jagd auf diesen Charakter
+
+### Akteur Adept der Erleuchteten besonderheit
+
+- alt: Schwäche: Er weiß nicht, woher seine Kraft kommt. Wer es ihm sagt, würfelt Überzeugen gegen seine WK. Gelingt es, gibt er auf
+- neu: Schwäche: Er weiß nicht, woher seine Kraft kommt. Wer es ihm sagt, würfelt eine vergleichende Probe auf CH +
+
+### Akteur Keimling besonderheit
+
+- alt: Besonderheit: Schlüpft zu 1W6 aus jedem Stein. Wächst mit jedem Wirt: Nach jeder Szene, in der er fressen konnte, +2 LP
+- neu: Besonderheit: Tritt in Gruppen von 2W6 auf. Wächst mit jedem Wirt: Nach jeder Szene, in der er fressen konnte, +2 LP
+
+### Akteur Abtrünniger Leser besonderheit
+
+- alt: Zaubern: 4 + 4, 15 ME, Rissfund (+2 Würfel, jede 1 auf den Bonuswürfeln kostet 2 Belastung)
+- neu: Zaubern: 4 + 4, 15 ME, Rissfund (+2 Würfel, getrennt geworfen, jede 1 auf den Bonuswürfeln kostet 2 Belastung)
+
+### Akteur Besessener besonderheit
+
+- alt: Schwäche: Ein Invoker, ein Psychic Healer oder ein Paranormal Detective kann den Toten austreiben: ausgedehnte Probe, 6 Erfolge, der Tote wehrt sich mit 4 + 4. Ein Gegenstand des Toten erleichtert die Probe
+- neu: Schwäche: Ein Invoker (WE + Ritualismus), ein Psychic Healer (WK + Psychische Heilung) oder ein Paranormal Detective (IN + Okkultismus) kann den Toten austreiben: ausgedehnte Probe, 6 Erfolge, der Tote wehrt sich mit 4 + 4. Ein Gegenstand des Toten erleichtert die Probe
+
+### Akteur Chorkind besonderheit
+
+- alt: Schwäche: Ein Helm, eine Kappe, ein Stück Legierung S. Ein Psychic Healer oder Telepath kann es beruhigen: WK + Telepathie gegen Schwer (3)
+- neu: Schwäche: Ein Helm, eine Kappe, ein Stück Legierung S. Ein Telepath kann es beruhigen: WK + Telepathie gegen Schwer (3). Ein Psychic Healer schafft es mit WK + Psychische Heilung gegen Schwer (3)
+
+## Gegner Englisch (72 Absätze)
+
+### Akteur Crystal Mutant besonderheit
+
+- alt: Special: Regenerates 2 HP per round, unless they were injured by fire or energy weapons this round
+- neu: Special: Regenerates 1 HP per round. Does not fall at 0 HP, but only when they are hit again in the same round
+
+### Akteur Crystal Hunter besonderheit
+
+- alt: Attack: Pistol 3 + 3, damage 3, or shotgun 3 + 3, damage 4, close
+- neu: Attack: Pistol 3 + 3, damage 3, or shotgun 3 + 3, damage 4, Spread
+
+### Akteur Adept of the Enlightened besonderheit
+
+- alt: Weakness: He does not know where his power comes from. Whoever tells him rolls Persuasion against his WIL. If it succeeds, he gives up
+- neu: Weakness: He does not know where his power comes from. Whoever tells him rolls an opposed test on CHA +
+
+### Akteur The Spectator besonderheit
+
+- alt: Encounter: The cell is at a rift, at a find, at a child, and realises it is not alone. The Watcher is almost always a puzzle, rarely a fight. The question is not how to defeat it, but to whom it reports.
+- neu: Encounter: The cell is at a rift, at a find, at a child, and realises it is not alone. The Spectator is almost always a puzzle, rarely a fight. The question is not how to defeat it, but to whom it reports.
 
 ### Akteur Kantor besonderheit
 
@@ -1557,15 +1819,50 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Weakness: Scientific curiosity, he cannot resist a new insight
 - neu: Weakness: Scientific curiosity, he cannot resist a new discovery
 
+### Akteur Renegade Reader besonderheit
+
+- alt: Casting: 4 + 4, 15 ME, rift find (+2 dice, each 1 on the bonus dice costs 2 strain)
+- neu: Casting: 4 + 4, 15 ME, rift find (+2 dice, rolled separately, each 1 on the bonus dice costs 2 strain)
+
 ### Akteur Elaine Mercer besonderheit
 
 - alt: Special: Knows the parts of the 1989 list held by STILLWATER and can have any O.D.I.N. agent in North America burned at any time ¶ Weakness: Her sister and her nephew. Caleb is her weak spot, and her sister knows nothing
 - neu: Special: Knows the parts of the 1989 list that STILLWATER has, and can have an O.D.I.N. agent in North America burned at any time ¶ Weakness: Her sister and her nephew. Caleb is her weak point, and her sister knows nothing
 
+### Akteur The Keeper besonderheit
+
+- alt: Horror: Eerie (1) when one hears him hum for the first time
+- neu: Horror: Uncanny (1) when one hears him hum for the first time
+
+### Akteur Possessed One besonderheit
+
+- alt: Weakness: An Invoker, a Psychic Healer or a Paranormal Detective can drive out the dead person: extended test, 6 successes, the dead person resists with 4 + 4. An object belonging to the dead person makes the test easier
+- neu: Weakness: An Invoker (WIS + Ritualism), a Psychic Healer (WIL + Psychic Healing) or a Paranormal Detective (INT + Occultism) can drive out the dead person: extended test, 6 successes, the dead person resists with 4 + 4. An object belonging to the dead person makes the test easier
+
+### Akteur Hybrid Dogs of Kiruna besonderheit
+
+- alt: Horror: Eerie (1)
+- neu: Horror: Uncanny (1)
+
+### Akteur The Night Runner besonderheit
+
+- alt: The Sentry (Sochi, 2019): One of the two boys Lomov took with him. He does not run, he stands guard. Carbine 4 + 4, damage 4, Accurate, HP 14, never surprised. Singing does not work: no one ever sang to him. In 2019 a gardener photographed him on the terrace of an estate near Sochi, one eye shut. The gardener stood still and is alive. No one knows where the fourth child is.
+- neu: The Sentry (Sochi, 2019): One of the two boys Lomov took with him. He does not run, he stands guard. Carbine 4 + 4, damage 4, Precise, HP 14, never surprised. Singing does not work: no one ever sang to him. In 2019 a gardener photographed him on the terrace of an estate near Sochi, one eye shut. The gardener stood still and is alive. No one knows where the fourth child is.
+
+### Akteur Elite Mercenary besonderheit
+
+- alt: Special: Once per combat a shock grenade (damage 3, area 5, Stunning)
+- neu: Special: Once per combat a shock grenade (damage 3, area 5, Stun)
+
 ### Akteur Maarten de Vries besonderheit
 
 - alt: Special: If he stands in the circle, he rolls +1 die on all tests. The circle protects him until it is sealed. ¶ Weakness: Proof that the ritual is lying to him. A Negotiator who speaks his language. He is no fighter.
 - neu: Special: When he stands in the circle, he rolls +1 die on all tests. The circle protects him until it is sealed. ¶ Weakness: Proof that the ritual lies to him. A Negotiator who speaks his language. He is not a fighter.
+
+### Akteur Dr. Camille Favre besonderheit
+
+- alt: Special: The Chimera recognises her and hesitates for one round before attacking her
+- neu: Special: The chimera recognises her and hesitates for one round before attacking her
 
 ### Akteur Helene Marburg besonderheit
 
@@ -1579,6 +1876,16 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Zahlen: {"i":3,"v":2,"r":0,"lp":9,"g":1,"p":["Spanner 3+2/2","Technology 3+0/0","Persuasion 3+0/0","Perception 3+0/0"]}
 - neu: Zahlen: {"i":3,"v":2,"r":0,"lp":9,"g":1,"p":["Wrench 3+2/2","Technology 3+0/0","Persuasion 3+0/0","Perception 3+0/0"]}
+
+### Akteur Collector’s Mercenary besonderheit
+
+- alt: Horror: Eerie (1) when the crate whispers
+- neu: Horror: Uncanny (1) when the crate whispers
+
+### Akteur Crystal Guardian of Kiruna besonderheit
+
+- alt: Horror: Eerie (1)
+- neu: Horror: Uncanny (1)
 
 ### Akteur Fatma Aydin besonderheit
 
@@ -1605,15 +1912,40 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Special: Can drive members of the Enlightened to fanatical commitment. Knows the rites of the order by heart. ¶ Weakness: He is vain. Whoever acknowledges him as Grand Master gets access. Whoever makes him look ridiculous makes him an enemy.
 - neu: Special: Can bring members of the Enlightened to fanatical commitment. Knows the rites of the order by heart. ¶ Weakness: He is vain. Whoever acknowledges him as Grand Master gains access. Whoever ridicules him makes him an enemy.
 
+### Akteur The Double besonderheit
+
+- alt: Horror: Disturbing (2) for the original, Eerie (1) for everyone else
+- neu: Horror: Disturbing (2) for the original, Uncanny (1) for everyone else
+
+### Akteur Owen Gwynne besonderheit
+
+- alt: Attack: Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, scatter, under the counter
+- neu: Attack: Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, Spread, under the counter
+
+### Akteur Mr Hartley besonderheit
+
+- alt: Attack: Compact pistol 3 + 2, damage 2, concealed, or cosh 2 + 2, damage 2, Stunning, Concealed
+- neu: Attack: Compact pistol 3 + 2, damage 2, concealed, or cosh 2 + 2, damage 2, Stun, Concealed
+
 ### Akteur Dr. Larissa Orlowa besonderheit
 
 - alt: Special: Knows the restricted zones between Kola and the Urals better than any other person. In negotiations, she can call in a Golem-7 with a radio message (stats in the Threat Atlas). ¶ Weakness: Her father’s notebook. Whoever mentions it throws her off her stride. Whoever has it has her.
 - neu: Special: Knows the restricted zones between Kola and the Urals better than any other human. Can request a Golem-7 in negotiations with a radio message (stats in the Threat Atlas). ¶ Weakness: Her father’s notebook. Whoever mentions it throws her off. Whoever has it, has her.
 
+### Akteur Viktor Brunner, called Martin Kessler besonderheit
+
+- alt: Attack: Silenced pistol 4 + 4, damage 3, Silent
+- neu: Attack: Silenced pistol 4 + 4, damage 3, Quiet
+
 ### Akteur Radek besonderheit
 
 - alt: Special: Can lock down the warehouse and trigger the alarm in one round ¶ Weakness: Can be bought. Whoever offers him more than the Curator has him
 - neu: Special: Can lock down the warehouse in one round and trigger an alarm ¶ Weakness: For hire. Whoever offers him more than the Curator has him
+
+### Akteur The Carver besonderheit
+
+- alt: Attack: Hunting carbine 3 + 3, damage 4, Accurate. In close combat a carving knife used as a dagger, 3 + 3, damage 2, Fast
+- neu: Attack: Hunting carbine 3 + 3, damage 4, Precise. In close combat a carving knife used as a dagger, 3 + 3, damage 2, Fast
 
 ### Akteur The Singer with a Name besonderheit
 
@@ -1623,15 +1955,60 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Weakness: A warding circle stops him. So does salt on the threshold.
 - neu: Weakness: A warding circle stops him. Salt on the threshold too.
 
+### Akteur Hand besonderheit
+
+- alt: Attack: Silenced pistol 3 + 3, damage 3, Quiet, or stun pistol 3 + 3, damage 3, Stunning
+- neu: Attack: Silenced pistol 3 + 3, damage 3, Quiet, or stun pistol 3 + 3, damage 3, Stun
+
 ### Akteur Josef Hartl besonderheit
 
 - alt: Horror: Uncanny (1), when he talks to the crystal ¶ Special: Knows every path in the forest and every spot where one can build a trap ¶ Weakness: The crystal. Whoever destroys it or takes it away breaks Hartl’s will
 - neu: Horror: Uncanny (1) when he speaks to the crystal ¶ Special: Knows every path in the forest and every spot where a trap can be built ¶ Weakness: The crystal. Whoever destroys or takes it breaks Hartl’s will
 
+### Akteur Remote Viewer of STILLWATER besonderheit
+
+- alt: Powers: Remote Viewing (sees a place within 100 km, one action), Mind Reading, Psionic Shock
+- neu: Powers: Remote Viewing (sees a place within 100 km, one action), Thought Reading, Psionic Shock
+
+### Akteur The Laurin Brothers besonderheit
+
+- alt: Attack: Shotgun with iron shot 4 + 4, damage 4, Spread, or carbine 4 + 4, damage 4, Accurate
+- neu: Attack: Shotgun with iron shot 4 + 4, damage 4, Spread, or carbine 4 + 4, damage 4, Precise
+
+### Akteur Hand besonderheit
+
+- alt: Attack: Silenced pistol 3 + 3, damage 3, Quiet, or stun pistol 3 + 3, damage 3, Stunning
+- neu: Attack: Silenced pistol 3 + 3, damage 3, Quiet, or stun pistol 3 + 3, damage 3, Stun
+
+### Akteur Hybrid Dogs of Kiruna besonderheit
+
+- alt: Horror: Eerie (1)
+- neu: Horror: Uncanny (1)
+
 ### Akteur Dr. Arne Holm besonderheit
 
 - alt: Weakness: Fear of the Voice, he panics when he hears a humming
 - neu: Weakness: Fear of the Voice, he panics when he hears a hum
+
+### Akteur Voices of the Escort besonderheit
+
+- alt: Horror: Eerie (1) at the first calling, Horrifying (3) for veterans of 1953 who hear their names
+- neu: Horror: Uncanny (1) at the first calling, Horrifying (3) for veterans of 1953 who hear their names
+
+### Akteur Daniel Keane besonderheit
+
+- alt: Attack: Escort blade 4 + 3, damage 2, 3 against creatures from rifts, or service pistol 4 + 3, damage 3
+- neu: Attack: Escort blade 4 + 3, damage 2, 3 against beings from rifts, or service pistol 4 + 3, damage 3
+
+### Akteur Technician from Tunnel Zero besonderheit
+
+- alt: Attack: Taser pistol 3 + 3, damage 2, Stunning, or pistol 3 + 2, damage 3
+- neu: Attack: Taser pistol 3 + 3, damage 2, Stun, or pistol 3 + 2, damage 3
+
+### Akteur Choir Child besonderheit
+
+- alt: Weakness: A helmet, a cap, a piece of Alloy S. A Psychic Healer or Telepath can calm it: WIL + Telepathy against Hard (3)
+- neu: Weakness: A helmet, a cap, a piece of Alloy S. A Telepath can calm it: WIL + Telepathy against Hard (3). A Psychic Healer can do the same with WIL + Psychic Healing against Hard (3)
 
 ### Akteur Raymond Cole besonderheit
 
@@ -1643,10 +2020,38 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Weakness: His conscience. He cannot keep silent when he believes that children are suffering
 - neu: Weakness: His conscience. He cannot remain silent when he believes children are suffering
 
+### Akteur The Men of 1909 besonderheit
+
+- alt: Horror: Eerie (1)
+- neu: Horror: Uncanny (1)
+
+### Akteur Hunter of Department 13 besonderheit
+
+- alt: Attack: Silenced rifle 4 + 4, damage 4, Silent
+- neu: Attack: Silenced rifle 4 + 4, damage 4, Quiet
+
+### Akteur Voices of the Escort besonderheit
+
+- alt: Horror: Eerie (1) at the first call, Horrifying (3) for veterans of 1953 who hear their names
+- neu: Horror: Uncanny (1) at the first call, Horrifying (3) for veterans of 1953 who hear their names
+
 ### Akteur Georg Wendlinger besonderheit
 
 - alt: Special: Knows every legend of the Enlightened and can forge membership lists. Can cover up a trail within an hour. ¶ Weakness: He is no fighter. Proof of his 2021 forgery makes him the cell’s tool.
 - neu: Special: Knows every legend of the Enlightened and can forge membership lists. Can erase a trail in one hour. ¶ Weakness: He is not a fighter. Proof of his 2021 forgery makes him a tool of the cell.
+
+### Akteur Hunters of Department 13 besonderheit
+
+- alt: Attack: AKM with suppressor 4 + 4, damage 4, Silent, or melee 4 + 3, damage 3
+- neu: Attack: AKM with suppressor 4 + 4, damage 4, Quiet, or melee 4 + 3, damage 3
+
+### Akteur The Dark Facility besonderheit
+
+- alt: Special: Each round it creates a security system henchman from scrap. As long as one core stands, it runs
+- neu: Special: Each round it creates a Guard System henchman from scrap. As long as one core stands, it runs
+
+- alt: Encounter: An industrial area, an old military base, a tunnel. The cell must find and destroy three cores while the facility rebuilds itself and sends its security systems. A fight against a building.
+- neu: Encounter: An industrial area, an old military base, a tunnel. The cell must find and destroy three cores while the facility rebuilds itself and sends its Guard Systems. A fight against a building.
 
 ### Akteur Dr. Ines Albrecht besonderheit
 
@@ -1656,15 +2061,40 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 - alt: Weakness: She keeps silent, but she is not a good liar. Whoever asks her directly sees the truth in her face.
 - neu: Weakness: She stays silent, but she does not lie well. Whoever asks her directly sees the truth in her face.
 
+### Akteur Glass Man besonderheit
+
+- alt: Horror: Eerie (1), Disturbing (2) for Thaumaturges who hear the Whisper in him
+- neu: Horror: Uncanny (1), Disturbing (2) for Thaumaturges who hear the Whisper in him
+
 ### Akteur Stahl (Grzegorz Wolski, Number Twelve) besonderheit
 
 - alt: Weakness: Ania. Whoever threatens her makes him unpredictable. And the nanites in him do not always obey him.
 - neu: Weakness: Ania. Whoever threatens her makes him unpredictable. And the nanites inside him do not always obey him.
 
+### Akteur The Collector besonderheit
+
+- alt: Horror: Eerie (1) when the crate whispers
+- neu: Horror: Uncanny (1) when the crate whispers
+
+### Akteur Forest Walker besonderheit
+
+- alt: What remains: A kept promise, and a forest that is favourably disposed towards the cell from now on. Or the ranger’s staff from the Artefacts chapter, if someone has earned a gift
+- neu: What remains: A kept promise, and a forest that is favourably disposed towards the cell from now on. Or the Staff of the Forest Walker from the Artefacts chapter, if someone has earned a gift
+
+### Akteur The Collector besonderheit
+
+- alt: Special: Always has 2D6 mercenaries, 1 elite mercenary and security systems. Offers every agent an offer from the table “The Lures of the Others”
+- neu: Special: Always has 2D6 mercenaries, 1 elite mercenary and Guard Systems. Offers every agent an offer from the table “The Lures of the Others”
+
 ### Akteur Mr Leuenberger besonderheit
 
 - alt: Special: Anyone who asks him about the three children gets an honest answer, and the answer changes the one who asked: a horror test against Uncanny (1)
 - neu: Special: Anyone who asks him about the three children receives an honest answer, and the answer changes the questioner: a horror test against Uncanny (1)
+
+### Akteur Open One besonderheit
+
+- alt: Psi: 4 + 4, 14 PSI points, no focus device, overload node Without Net
+- neu: Psi: 4 + 4, 14 PSI points, no focus device, overload node Without a Net
 
 ### Akteur Nadia El-Khoury besonderheit
 
@@ -1675,6 +2105,42 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: Special: Has access to the Lodge’s rooms, but not to the library.
 - neu: Special: Has access to the lodge rooms, but not to the library.
+
+### Akteur Germling besonderheit
+
+- alt: Horror: Uncanny (1), Horrific (3) when it hatches from a human ¶ Special: Hatches 1D6 from each stone. Grows with each host: After each scene in which it could feed, +2 HP
+- neu: Horror: Uncanny (1), Horrifying (3) when it hatches from a human ¶ Special: Appears in groups of 2D6. Grows with each host: After each scene in which it could feed, +2 HP
+
+- alt: Encounter: A farm, a village, a research station. The cell must find all hatchlings before one reaches the third moult. A race against the clock with thermal cameras and salt
+- neu: Encounter: A farm, a village, a research station. The cell must find all Germlings before one reaches the third moult. A race against the clock with thermal cameras and salt
+
+- alt: Third Moult: Unknown. The game master decides. At least Elite, Horrific (3).
+- neu: Third Moult: Unknown. The game master decides. At least Elite, Horrifying (3).
+
+### Akteur The Forgotten besonderheit
+
+- alt: Horror: Eerie (1), Disturbing (2) for anyone whom a friend no longer recognises
+- neu: Horror: Uncanny (1), Disturbing (2) for anyone whom a friend no longer recognises
+
+### Akteur The Executioner besonderheit
+
+- alt: Weakness: An acquittal. A Negotiator or Investigator who pleads for a character before him and wins a test against 5 + 5 ends his hunt for that character
+- neu: Weakness: An acquittal. A Negotiator or Investigator who pleads for a character before him and wins an opposed test on CHA + Persuasion against 5 + 5 ends his hunt for that character
+
+### Akteur The Black Dog besonderheit
+
+- alt: Horror: Horrific (3). Whoever botches the test rolls a D6 at the end of the campaign: on a 1 the character dies on their next mission if no one prevents it
+- neu: Horror: Horrifying (3). Whoever botches the test rolls a D6 at the end of the campaign: on a 1 the character dies on their next mission if no one prevents it
+
+## Regeln Englisch (2 Absätze)
+
+### Rules 04: Combat › Weapon Properties
+
+- alt: Stunning Instead of damage: the target rolls CON + Toughness against the weapon damage. If the test fails, it is incapacitated for one round; on a botch, unconscious.
+- neu: Stun Instead of damage: the target rolls CON + Toughness against the weapon damage. If the test fails, it is incapacitated for one round; on a botch, unconscious.
+
+- alt: Accurate +1 die on attacks.
+- neu: Precise +1 die on attacks.
 
 ## Kräfte Deutsch (2 Absätze)
 
@@ -1783,3 +2249,27 @@ Lesehilfen nur in diesem Protokoll, nicht in den Packs: „¶“ steht für eine
 
 - alt: The Thaumaturge seals a door, a chest or a book. Only they and up to three people they name while casting can open it. Anyone who breaks the seal by force or magic needs a test against Very Hard (4), and the Thaumaturge feels the break wherever they are.
 - neu: The Thaumaturge seals a door, a chest or a book. Only they and up to three people they name at the time can open it. Anyone who breaks the seal by force or magic needs a test against Very Hard (4), by force on STR + Athletics, by magic on the spell’s attribute and Thaumaturgy, and the Thaumaturge feels the breach wherever they are.
+
+## Ausrüstung Englisch (3 Absätze)
+
+### The Glass with the Breath
+
+- alt: Price: +1 Contamination for everyone within 5 m. Whoever looks through it rolls a horror test against Horrific (3)
+- neu: Price: +1 Contamination for everyone within 5 m. Whoever looks through it rolls a horror test against Horrifying (3)
+
+### The Radio from the Karakoram
+
+- alt: Price: Whoever listens makes a horror test against Horrific (3).
+- neu: Price: Whoever listens makes a horror test against Horrifying (3).
+
+### The Grey Glove
+
+- alt: In Play: The Watcher from the Threat Atlas wears the other one
+- neu: In Play: The Spectator from the Threat Atlas wears the other one
+
+## Waffen Englisch (1 Absätze)
+
+### Dart pistol
+
+- alt: Silent
+- neu: Quiet
