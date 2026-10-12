@@ -24,7 +24,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### HW-de-a81f7d · „05 Hort-5, Wien“ › „Was es hier gibt“ · Band S. 35 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Seltenes innerhalb eines Tages, wenn der Führungsoffizier unterschreibt: Sturmgewehre, Scharfschützengewehre, Brandmunition in kleinen Mengen.
 - neu: Seltenes innerhalb eines Tages, wenn der Führungsoffizier unterschreibt: Brandmunition in kleinen Mengen.
@@ -43,7 +43,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### HW-en-910c95 · „Holds of the World: Introduction“ › „Home Hold“ · Band S. 6 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Once per mission a bonus die on Firearms or Close Combat after a consultation in the armoury.
 - neu: Once per mission a bonus die on Firearms or Melee after a consultation in the armoury.
@@ -51,7 +51,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Holds of the World: Introduction","Home Hold"]]} -->
 
 #### HW-en-77874a · „05 Hold-5, Vienna“ › „What Is Here“ · Band S. 35 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Rare items within a day, if the handler signs: assault rifles, sniper rifles, incendiary ammunition in small quantities.
 - neu: Rare items within a day, if the handler signs: incendiary ammunition in small quantities.

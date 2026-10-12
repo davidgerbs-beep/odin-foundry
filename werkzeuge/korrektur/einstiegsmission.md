@@ -23,7 +23,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### EM-de-827feb · „Nexus-Splitter“ › „Gegner“ · Band S. 63 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Schattenwurf (Minor Magica, 3 ME; CH, selbst, 3 Runden).
 - neu: Schattenwurf (CH, selbst, 3 Runden).
@@ -31,7 +31,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus-Splitter","Gegner"]]} -->
 
 #### EM-de-71119f · „Nexus-Splitter“ › „Gegner“ · Band S. 63 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Magisches Seil (Minor Magica, 3 ME; IN, 10 m, bis es reißt).
 - neu: Magisches Seil (IN, 10 m, bis es reißt).
@@ -39,7 +39,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus-Splitter","Gegner"]]} -->
 
 #### EM-de-c57d21 · „Nexus-Splitter“ › „Gegner“ · Band S. 76 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Trupps: Für große Gruppen kann die Spielleitung Handlanger zu Trupps zusammenfassen: Ein Trupp aus drei Handlangern greift mit einem Wurf und +2 Würfeln an und hat LP in Höhe der Summe.
 - neu: Für große Gruppen kann die Spielleitung sie zu Trupps zusammenfassen: Ein Trupp aus drei Handlangern greift mit einem Wurf und +2 Würfeln an und hat LP in Höhe der Summe.
@@ -47,10 +47,10 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus-Splitter","Gegner"]]} -->
 
 #### EM-de-0c938c · „Nexus-Splitter“ › „Überblick“ · Band S. 79 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Sechs Söldner (Profi), davon einer nervös und blass
-- neu: Sechs Söldner (Profi), davon nervös und blass
+- neu: Sechs Söldner, einer davon nervös und blass
 - Änderung: «einer» → «(gestrichen)»
 <!-- daten: {"art":"satz","fundstellen":[["Nexus-Splitter","Überblick"]]} -->
 
@@ -66,7 +66,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### EM-en-408c4a · „Nexus Shard“ › „Opponents“ · Band S. 60 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Magical Rope (Minor Magica, 3 ME; INT, 10 m, until it breaks).
 - neu: Magical Rope (INT, 10 m, until it breaks).
@@ -74,7 +74,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus Shard","Opponents"]]} -->
 
 #### EM-en-17e4b5 · „Nexus Shard“ › „Opponents“ · Band S. 73 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Squads: For large groups, the game master can combine henchmen into squads: A squad of three henchmen attacks with one roll and +2 dice and has HP equal to the sum.
 - neu: For large groups, the game master can combine them into squads: A squad of three henchmen attacks with one roll and +2 dice and has HP equal to the sum.
@@ -82,7 +82,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus Shard","Opponents"]]} -->
 
 #### EM-en-43d6c7 · „Nexus Shard“ › „Overview“ · Band S. 76 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: It picks up the story “A Perfectly Normal Day at O.D.I.N.”, but leaves open how it ends.
 - neu: It picks up the story “A Completely Normal Day at O.D.I.N.”, but leaves open how it ends.
@@ -90,7 +90,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus Shard","Overview"]]} -->
 
 #### EM-en-a26ef3 · „Nexus Shard“ › „Overview“ · Band S. 76 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Six mercenaries (Professional), one of them nervous and pale
 - neu: Six mercenaries, one of them nervous and pale
@@ -98,7 +98,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["Nexus Shard","Overview"]]} -->
 
 #### EM-en-f1663d · „Nexus Shard“ › „Scene 3: The Transformation“ · Band S. 76 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Bright light, a horror test against Horrific (3), and the crystal mutant stands in the hall.
 - neu: Bright light, a horror test against Horrifying (3), and the crystal mutant stands in the hall.

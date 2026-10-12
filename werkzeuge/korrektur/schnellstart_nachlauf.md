@@ -39,7 +39,7 @@ Hinweise ohne Vorschlag: 1.
 ### Journalsätze
 
 #### SS-en-1288e3 · „01 The House by the Reservoir“ › „Strain and Horror“ · Band S. 11 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Horrific 3 A person transforms into a monster before your eyes.
 - neu: Horrifying 3 A person transforms into a monster before your eyes.
@@ -47,7 +47,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Strain and Horror"]]} -->
 
 #### SS-en-3a54b1 · „01 The House by the Reservoir“ › „Four Agents“ · Band S. 15 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: She sees what others overlook and has mastered a Protection Ritual for the whole group.
 - neu: She sees what others overlook and has mastered a Protective Ritual for the whole group.
@@ -55,7 +55,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Four Agents"]]} -->
 
 #### SS-en-4efd6d · „01 The House by the Reservoir“ › „Four Agents“ · Band S. 15 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Raven Investigator, Paranormal Detective Read tracks and signs, Protection Ritual 10 10
 - neu: Raven Investigator, Paranormal Detective Read tracks and signs, Protective Ritual 10 10

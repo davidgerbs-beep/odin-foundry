@@ -24,10 +24,10 @@ Hinweise ohne Vorschlag: 1.
 ### Journalsätze
 
 #### GA-de-e57b5d · „02 Fundort“ › „Handouts und Karte“ · Band S. 23 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Karte 2: Untergeschoss von Hort-9 mit Kellerflur, Raum 4/12, Flur aus dem Jahr 1977, Raum hinter der Tür, Treppenhaus, Technikraum und den Räumen 4/06 bis 4/11.
-- neu: Karte 2: Untergeschoss von Hort-9 mit Kellerflur, Raum 4/12, Flur aus dem Jahr 1977, Raum hinter der Tür, Treppenhaus, einem Nebenraum und den Räumen 4/06 bis 4/11.
+- neu: Karte 2: Untergeschoss von Hort-9 mit Kellerflur, Raum 4/12, Flur aus dem Jahr 1977, Raum hinter der Tür, Treppenhaus, einem Nebenraum und den Räumen 4/06 bis 4/11, darunter der Technikraum (4/10).
 - Änderung: «Technikraum» → «einem Nebenraum»
 <!-- daten: {"art":"satz","fundstellen":[["02 Fundort","Handouts und Karte"]]} -->
 
@@ -49,15 +49,15 @@ Hinweise ohne Vorschlag: 2.
 ### Journalsätze
 
 #### GA-en-04bc84 · „02 Find Site“ › „Handouts and Map“ · Band S. 23 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Map 2: Basement of Hold-9 with cellar corridor, room 4/12, corridor from 1977, room behind the door, stairwell, technical room, and rooms 4/06 to 4/11.
-- neu: Map 2: Basement of Hold-9 with cellar corridor, room 4/12, corridor from 1977, room behind the door, stairwell, a side room and rooms 4/06 to 4/11.
+- neu: Map 2: Basement of Hold-9 with cellar corridor, room 4/12, corridor from 1977, room behind the door, stairwell, a side room and rooms 4/06 to 4/11, among them the technical room (4/10).
 - Änderung: «technical room,» → «a side room»
 <!-- daten: {"art":"satz","fundstellen":[["02 Find Site","Handouts and Map"]]} -->
 
 #### GA-en-ce2d5a · „03 Number 341“ › „Node 5: The Foster Family in Splott“ · Band S. 29 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Clue for Psion: A Psion who examines Rhys with Deep Inquiry (Doable, 3 PSI, touch) sees the moment the name came: a humming, a cottage, an old man holding the visor (leads to Evan Pryce, to the cottage in Snowdonia).
 - neu: Clue for Psion: A Psion who examines Rhys with Deep Probe (Doable, 3 PSI, touch) sees the moment the name came: a humming, a cottage, an old man holding the visor (leads to Evan Pryce, to the cottage in Snowdonia).
@@ -65,7 +65,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 Number 341","Node 5: The Foster Family in Splott"]]} -->
 
 #### GA-en-f0f5b0 · „03 Number 341“ › „Node 5: The Foster Family in Splott“ · Band S. 29 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Empathy against Doable (2) to realise that Rhys is telling the truth but holding something back.
 - neu: Insight against Doable (2) to realise that Rhys is telling the truth but holding something back.
@@ -73,7 +73,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 Number 341","Node 5: The Foster Family in Splott"]]} -->
 
 #### GA-en-80195a · „03 Number 341“ › „Opponents“ · Band S. 31 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Attack Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, scatter, under the counter
 - neu: Attack Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, Spread, under the counter
@@ -81,7 +81,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 Number 341","Opponents"]]} -->
 
 #### GA-en-06636c · „03 Number 341“ › „Opponents“ · Band S. 32 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Attack Escort blade 4 + 3, damage 2, 3 against creatures from rifts, or service pistol 4 + 3, damage 3
 - neu: Attack Escort blade 4 + 3, damage 2, 3 against beings from rifts, or service pistol 4 + 3, damage 3
@@ -89,7 +89,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 Number 341","Opponents"]]} -->
 
 #### GA-en-7851f0 · „06 The Tutor“ › „Aftermath“ · Band S. 59 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Skulls: The lodge Zum Schweigenden Kreis loses one skull when the cell exposes Sundberg and the stone is secured.
 - neu: Skulls: The Lodge of the Silent Circle loses one skull when the cell exposes Sundberg and the stone is secured.
@@ -97,7 +97,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["06 The Tutor","Aftermath"]]} -->
 
 #### GA-en-0c213d · „08 The Second Light“ › „The Confrontation“ · Band S. 76 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: A Thaumaturge can seal the circle with salt and a banishing circle if they succeed on a Ritualism test against Hard (3).
 - neu: A Thaumaturge can seal the circle with salt and a warding circle if they succeed on a Ritualism test against Hard (3).
@@ -107,7 +107,7 @@ Freigabe: offen
 ### Gegnerwerte
 
 #### GA-en-99b334 · Gegner „Owen Gwynne“, Zeile „Attack“ · Band S. 31 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, scatter, under the counter
 - neu: Hammer 2 + 1, damage 2, or shotgun 2 + 2, damage 4, Spread, under the counter
@@ -115,7 +115,7 @@ Freigabe: offen
 <!-- daten: {"art":"gegner","name":"Owen Gwynne","label":"Attack"} -->
 
 #### GA-en-5e6b7b · Gegner „Mr Hartley“, Zeile „Attack“ · Band S. 31 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Compact pistol 3 + 2, damage 2, concealed, or cosh 2 + 2, damage 2, Stunning, Concealed
 - neu: Compact pistol 3 + 2, damage 2, concealed, or cosh 2 + 2, damage 2, Stun, Concealed
@@ -123,7 +123,7 @@ Freigabe: offen
 <!-- daten: {"art":"gegner","name":"Mr Hartley","label":"Attack"} -->
 
 #### GA-en-ad42f5 · Gegner „Viktor Brunner, called Martin Kessler“, Zeile „Attack“ · Band S. 41 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Silenced pistol 4 + 4, damage 3, Silent
 - neu: Silenced pistol 4 + 4, damage 3, Quiet
@@ -131,7 +131,7 @@ Freigabe: offen
 <!-- daten: {"art":"gegner","name":"Viktor Brunner, called Martin Kessler","label":"Attack"} -->
 
 #### GA-en-a3feea · Gegner „Daniel Keane“, Zeile „Attack“ · Band S. 32 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Escort blade 4 + 3, damage 2, 3 against creatures from rifts, or service pistol 4 + 3, damage 3
 - neu: Escort blade 4 + 3, damage 2, 3 against beings from rifts, or service pistol 4 + 3, damage 3

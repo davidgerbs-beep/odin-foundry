@@ -33,7 +33,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### DT-en-871fa2 · „08 Tunnel 7“ › „Nodes“ · Band S. 17 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Clue: In Tunnel 7 there are Crystal Wardens (Threat Atlas), which the workers call “the Mutes”.
 - neu: Clue: In Tunnel 7 there are Crystal Guardians (Threat Atlas), which the workers call “the Mutes”.
@@ -41,7 +41,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["08 Tunnel 7","Nodes"]]} -->
 
 #### DT-en-799e67 · „08 Tunnel 7“ › „Confrontation“ · Band S. 18 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Anyone who touches the wall for too long is attacked by the Crystal Wardens.
 - neu: Anyone who touches the wall for too long is attacked by the Crystal Guardians.
@@ -49,7 +49,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["08 Tunnel 7","Confrontation"]]} -->
 
 #### DT-en-21fd28 · „18 Tunnel Zero“ › „Confrontation“ · Band S. 31 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: It can fight, against guards, against Soldiers, against security systems and a rift that opens when the Opener is disturbed.
 - neu: It can fight, against guards, against Soldiers, against Guard Systems and a rift that opens when the Opener is disturbed.

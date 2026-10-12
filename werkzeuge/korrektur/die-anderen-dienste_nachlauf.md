@@ -33,7 +33,7 @@ Hinweise ohne Vorschlag: 28.
 ### Journalsätze
 
 #### AD-en-6b7844 · „04 Small Cults“ › „The Community of the Dreamer“ · Band S. 25 · prüfen
-Freigabe: offen
+Freigabe: nein
 Hinweis (Coder): Der Vorschlag griff über einen Seitenumbruch im Band („the White File: A …“). „neu“ ist deshalb gleich „alt“; Vorschlag: nein.
 
 - alt: The group believes the Dreamer is a prophet who shows them the way to a better world.
@@ -42,7 +42,7 @@ Hinweis (Coder): Der Vorschlag griff über einen Seitenumbruch im Band („the W
 <!-- daten: {"art":"satz","fundstellen":[["04 Small Cults","The Community of the Dreamer"]]} -->
 
 #### AD-en-48f764 · „05 STILLWATER“ › „Bases and Means“ · Band S. 34 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: They house the Psionics Department of STILLWATER: a laboratory, a room with copper wire cages in which Psions without helmets are examined, and an archive with drawings by the Remote Viewer.
 - neu: It houses the Psionics Department of STILLWATER: a laboratory, a room with copper wire cages in which Psions without helmets are examined, and an archive with drawings by the Remote Viewer.
@@ -50,7 +50,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["05 STILLWATER","Bases and Means"]]} -->
 
 #### AD-en-211005 · „06 Department 13“ › „The Plan: “The Second Site”“ · Band S. 40 · prüfen
-Freigabe: offen
+Freigabe: ja
 Hinweis (Coder): Tabellenzelle; der Vorschlag schnitt den Anfang ab. „neu“ nach dem Band (S. 40): „A lure appears:“.
 
 - alt: 3 to 4 A piece of bait turns up: a dead drop with a message allegedly from a defector from the Department.
