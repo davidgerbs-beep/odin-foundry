@@ -10,7 +10,7 @@ import { lesePack } from '../werkzeuge/leveldb.mjs';
 import {
   Abgleich, normMitIndex, bereinigeSeite, textKarte, text, saetze, vergleicheSatz, unterschiede, BandText, satzVorschlaege,
   gegnerVorschlaege, wertImBlock, ersetzeSatz, ersetzeZeile, zieheZahlenNach, leseFreigabe, schreibeFreigabe, pruefeFreigaben,
-  zeilen, BAENDE, ZIEL, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
+  zeilen, BAENDE, ZIEL, wendeAn, begriffVorschlaege, ersetzeInFeldern, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
 } from '../werkzeuge/korrektur.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -118,6 +118,16 @@ test('Anwenden: Satz im HTML wortweise ersetzen', () => {
   assert.equal(ersetzeSatz('<p>Anderer Text.</p>', 'Grauen Unheimlich (1)', 'Grauen Keines').status, 'fehlt');
 });
 
+test('Anwenden: Satzanfang verloren oder Satz verdoppelt geht an die Hand', () => {
+  const html = '<p>They look at doors differently. O.D.I.N. has sealed the five staircases, but the song can no longer be captured. It stays.</p>';
+  let r = ersetzeSatz(html, 'O.D.I.N. has sealed the five staircases, but the song can no longer be captured.', 'sealed the five staircases, but the song can no longer be contained.');
+  assert.equal(r.status, 'von Hand');
+  const h2 = '<p>He believes a stone can bring him back. He speaks slowly, with patience.</p>';
+  r = ersetzeSatz(h2, 'He believes a stone can bring him back.', 'He believes a sufficiently large stone can bring him back. He speaks slowly, with patience.');
+  assert.equal(r.status, 'von Hand');
+  assert.match(r.grund, /verdoppelt/);
+});
+
 test('Anwenden: Gegnerzeile ändern und Zahlen nachziehen', () => {
   const system = {
     initiative: 3, verteidigung: 2, ruestung: 0, grauen: 1, lp: { value: 5, max: 5 },
@@ -137,10 +147,41 @@ test('Anwenden: Gegnerzeile ändern und Zahlen nachziehen', () => {
   assert.equal(r.status, 'ok');
   assert.equal(system.initiative, 2);
   assert.equal(ersetzeZeile(system, 'Grauen', 'Etwas anderes', 'x').status, 'fehlt');
+  const s3 = { pools: [{ name: 'Berührung', weiss: 4, bunt: 3, schaden: 0 }] };
+  zieheZahlenNach(s3, 'Angriff', 'Berührung 4 + 3, Schaden 2 Belastung, wer berührt wird, hört das Lied');
+  assert.equal(s3.pools[0].schaden, 0, 'Schaden in Belastung ist kein LP-Schaden des Pools');
   const s2 = { grauen: 1 };
   zieheZahlenNach(s2, 'Grauen', 'Verstörend (2), wenn sie sich umdrehen');
   assert.equal(s2.grauen, 2);
   assert.deepEqual(zeilen('<p><strong>Stufe laut Buch:</strong> Profi</p><p><strong>Psi:</strong> 4 + 4</p>').map((z) => z.label), ['Psi']);
+});
+
+test('Anwenden: Satz in der Beschreibung einer Kraft (Gegenstand)', () => {
+  const kraft = { name: 'Schwerer Griff', system: { beschreibung: '<p>Er wirft sie einmal: Angriff gegen die Verteidigung, Schaden 5.</p>' } };
+  const packs = { de: { geaendert: new Set(), kraefte: new Map([['!items!abc', kraft]]) } };
+  const e = { id: 'SO-de-x', spr: 'de', art: 'gegenstand', alt: 'Er wirft sie einmal: Angriff gegen die Verteidigung, Schaden 5.',
+    neu: 'Er wirft sie einmal: Angriff mit den Erfolgen der Kraftprobe gegen die Verteidigung, Schaden 5.', daten: { art: 'gegenstand', fundstellen: [['kraefte', 'Schwerer Griff']] } };
+  const [b] = wendeAn([e], packs);
+  assert.equal(b.status, 'ok');
+  assert.match(kraft.system.beschreibung, /mit den Erfolgen der Kraftprobe/);
+  assert.ok(packs.de.geaendert.has('kraefte'));
+  assert.equal(wendeAn([e], packs)[0].status, 'schon');
+});
+
+test('Englische Begriffe: Vorschlag nur, wo der Band die neue Form hat; Zellen und ganze Felder', () => {
+  const buch = ' horror test against uncanny (1) for everyone who enters | horror uncanny (1) special pack of | the lodge of the silent circle | damage 3 quiet | ';
+  const doc = { name: 'Escalation', system: { pools: [{ notiz: 'Silent' }] },
+    text: { content: '<p>Horror test against Eerie (1) for everyone who enters.</p><table><tr><td>Horror</td><td>Eerie (1)</td></tr><tr><td>Special</td><td>Pack of three</td></tr></table><p>The Lodge of the Silent Circle.</p>' } };
+  const { vorschlaege: v, hinweise } = begriffVorschlaege({ 'odin-abenteuer-en': new Map([['!x!1', doc]]) }, buch, [['Eerie (1)', 'Uncanny (1)'], ['Silent', 'Quiet']]);
+  assert.deepEqual(v.map((x) => [x.alt, x.neu, !!x.ganzesFeld]).sort(), [
+    ['>Eerie (1)<', '>Uncanny (1)<', false],
+    ['Silent', 'Quiet', true],
+    ['test against Eerie (1) for everyone who', 'test against Uncanny (1) for everyone who', false],
+  ]);
+  assert.equal(hinweise.length, 0, '„Silent Circle“ steht so im Band und bleibt');
+  for (const x of v) ersetzeInFeldern(doc, x.alt, x.neu, x.ganzesFeld);
+  assert.match(doc.text.content, /against Uncanny \(1\) for everyone.*<td>Uncanny \(1\)<\/td>.*Silent Circle/);
+  assert.equal(doc.system.pools[0].notiz, 'Quiet');
 });
 
 test('Freigabedatei: schreiben, lesen, Entscheidungen bleiben', () => {
@@ -211,7 +252,8 @@ test('Nachträge: in den Packs (im Speicher), nur im Band, gleichnamige Journale
 test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Packs', () => {
   assert.deepEqual(pruefeFreigaben(), []);
   const dateien = fs.existsSync(ZIEL) ? fs.readdirSync(ZIEL).filter((f) => f.endsWith('.md') && !f.startsWith('aenderungen_')) : [];
-  assert.deepEqual(dateien.sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
+  assert.deepEqual(dateien.filter((f) => !f.endsWith('_nachlauf.md') && !f.startsWith('begriffe_')).sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
+  for (const f of dateien.filter((f) => f.endsWith('_nachlauf.md'))) assert.ok(BAENDE[f.replace(/_nachlauf\.md$/, '')], `${f}: Nachlauf zu einem bekannten Band`);
   const packs = {};
   const pack = (n) => (packs[n] ??= lesePack(path.join(wurzel, 'packs', n)));
   const fehlt = [];
@@ -224,6 +266,14 @@ test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Pa
         const journale = new Map([...d].filter(([k]) => k.startsWith('!journal!')).map(([, v]) => [v._id, v.name]));
         const ok = e.daten.fundstellen.some(([j, s]) => [...d].some(([k, v]) => k.startsWith('!journal.pages!') && journale.get(k.slice(15).split('.')[0]) === j && v.name === s
           && text(v.text?.content ?? '').replace(/\s+/g, ' ').includes(e.alt)));
+        if (!ok) fehlt.push(`${f}: ${e.id}`);
+      } else if (e.art === 'begriff') {
+        const felder = (o, aus = []) => { if (typeof o === 'string') aus.push(o); else if (o && typeof o === 'object') for (const v of Object.values(o)) felder(v, aus); return aus; };
+        const doc = pack(e.daten.pack).get(e.daten.key);
+        if (!doc || !felder(doc).some((x) => (e.daten.ganzesFeld ? x === e.alt : x.includes(e.alt)))) fehlt.push(`${f}: ${e.id}`);
+      } else if (e.art === 'gegenstand') {
+        const ok = e.daten.fundstellen.some(([art, name]) => [...pack(`odin-${art}${en}`).values()].some((v) => v.name === name
+          && text(v.system?.beschreibung ?? '').replace(/\s+/g, ' ').includes(e.alt)));
         if (!ok) fehlt.push(`${f}: ${e.id}`);
       } else {
         const akteure = [...pack(`odin-gegner${en}`).values(), ...[...pack(`odin-abenteuerpakete${en}`).values()].flatMap((a) => a.actors ?? [])];
