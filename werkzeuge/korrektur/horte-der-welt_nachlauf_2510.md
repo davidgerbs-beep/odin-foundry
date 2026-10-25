@@ -24,7 +24,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### HW-de-0bc792 · „02 Hort-2, Cardiff“ › „Hort-2, Cardiff“ · Band S. 14 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Wer nach Cardiff kommt, kommt wegen eines Stücks Metall oder eines jungen Psionen und bleibt meist länger, als er wollte.
 - neu: Wer nach Cardiff kommt, kommt wegen eines Stücks Metall oder eines jungen Psions und bleibt meist länger, als er wollte.
@@ -36,7 +36,7 @@ Freigabe: offen
 Stellen, die der Satzvergleich nicht findet (Angaben des Writers, mit dem Band abgeglichen). Ein neuer Lauf lässt sie stehen.
 
 #### HW-de-w01 · „06 Hort-7, Lyon“ › „Was es hier gibt“ · Band S. 40 · Writer (h), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Ein Dienstwagen mit Tarnkennzeichen, ein Motorrad, ein Transporter.
 - neu: Ein Dienstwagen mit Tarnkennzeichen und ein Motorrad.
@@ -56,7 +56,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### HW-en-5ad4ce · „06 Hold-7, Lyon“ › „What Is Here“ · Band S. 40 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: A service car with cover plates, a motorcycle, a van.
 - neu: A service car with cover plates and a motorcycle.
@@ -64,7 +64,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["06 Hold-7, Lyon","What Is Here"]]} -->
 
 #### HW-en-b20305 · „06 Hold-7, Lyon“ › „Daily Life and Customs“ · Band S. 40 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Once per mission they receive a bonus dice in Lyon on a test for Stealth or Perception.
 - neu: Once per mission they receive a bonus die in Lyon on a test for Stealth or Perception.

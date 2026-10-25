@@ -33,7 +33,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### DT-en-2deb3c · „11 Raunacht“ › „Aftermath“ · Band S. 21 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Next to each name is the same note: “Opening brought forward to night of 14.2., on Prometheus’ orders.” The Council wants to have eleven children opened at once that night, in the Silent Ones, to the beat of the Opener.
 - neu: Next to each name is the same note: “Opening brought forward to night of 14.2., on Prometheus’ orders.” The Council wants to have eleven children opened at once that night, in the Silences, to the beat of the Opener.
@@ -41,7 +41,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["11 Raunacht","Aftermath"]]} -->
 
 #### DT-en-cfba04 · „16 The Monastery“ › „Overview“ · Band S. 28 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: On the second day, a squad of Echo-Operative arrives, a good fifty years after the 1976 operation, at the same place.
 - neu: On the second day, a squad of Echo-Operatives arrives, a good fifty years after the 1976 operation, at the same place.
@@ -49,7 +49,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["16 The Monastery","Overview"]]} -->
 
 #### DT-en-21c300 · „18 Tunnel Zero“ › „Confrontation“ · Band S. 31 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: To do this, eleven children are to be opened in the same night, in the Silent, in time with the Opener. “We are the only ones who are ready.
 - neu: To do this, eleven children are to be opened in the same night, in the Silences, in time with the Opener. “We are the only ones who are ready.
@@ -61,7 +61,7 @@ Freigabe: offen
 Stellen, die der Satzvergleich nicht findet (Angaben des Writers, mit dem Band abgeglichen). Ein neuer Lauf lässt sie stehen.
 
 #### DT-en-w01 · „10 The Evening“ › „Nodes“ · Band S. 20 · Writer (k), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: The Collector with the Large Stone.
 - neu: The Collector with the great stone.

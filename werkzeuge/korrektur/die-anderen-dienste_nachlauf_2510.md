@@ -24,7 +24,7 @@ Hinweise ohne Vorschlag: 0.
 ### Journalsätze
 
 #### AD-de-376546 · „14 Die Stiftung in Basel“ › „Der Plan: „Keine Nexus-Kristalle mehr““ · Band S. 80 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Der Seeker meldet, dass sie mehr Kinder hört, die niemand holt.
 - neu: Der Seeker meldet, dass er mehr Kinder hört, die niemand holt.
@@ -36,7 +36,7 @@ Freigabe: offen
 Stellen, die der Satzvergleich nicht findet (Angaben des Writers, mit dem Band abgeglichen). Ein neuer Lauf lässt sie stehen.
 
 #### AD-de-w01 · „04 Kleine Kulte“ › „Die Erwartenden von Pilsen“ · Band S. 29 · Writer (l), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Ein Anwohner hat Blut auf den Gleisen gefunden.
 - neu: Ein Anwohner hat zwischen den Waggons einen großen, grauen Mann gesehen, der nicht blinzelte.
@@ -55,7 +55,7 @@ Hinweise ohne Vorschlag: 28.
 ### Journalsätze
 
 #### AD-en-798a18 · „03 The Singers“ › „Key Figures“ · Band S. 21 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Weakness He is neither a fighter nor a believer.
 - neu: Weakness He is not a fighter and not a believer.
@@ -63,7 +63,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 The Singers","Key Figures"]]} -->
 
 #### AD-en-f8997a · „05 STILLWATER“ › „Hooks and Outlook“ · Band S. 32 · prüfen, umformuliert
-Freigabe: offen
+Freigabe: nein
 
 - alt: STILLWATER uses its own Seeker to search for children in North America.
 - neu: STILLWATER uses it to put pressure on O.D.I.N. in North America.
@@ -72,7 +72,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["05 STILLWATER","Hooks and Outlook"]]} -->
 
 #### AD-en-a5c3ed · „05 STILLWATER“ › „The Plan: “A Seeker of Their Own”“; „05 STILLWATER“ › „Hooks and Outlook“ · Band S. 35 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: In O.D.I.N.’s canteen the rumour goes round that STILLWATER is active in Alaska.
 - neu: canteen, the rumour spreads that STILLWATER is active in Alaska.
@@ -81,7 +81,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["05 STILLWATER","The Plan: “A Seeker of Their Own”"],["05 STILLWATER","Hooks and Outlook"]]} -->
 
 #### AD-en-dbf01b · „06 Department 13“ › „The Plan: “The Second Site”“ · Band S. 40 · sicher
-Freigabe: offen
+Freigabe: nein
 
 - alt: ☠☠☠☠☠ Department 13 has alloy ore of its own in sufficient quantity.
 - neu: ☠☠☠☠☠ Department 13 has its own alloy ore in sufficient quantity.
@@ -90,7 +90,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["06 Department 13","The Plan: “The Second Site”"]]} -->
 
 #### AD-en-d0089e · „02 Morrow Biologics“ › „Bases and Means“ · Band S. 43 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: The board, the administration and Dr.
 - neu: Its head is the Administrator, an old man without a name in the house without a number, who walks barefoot because he wants to feel the earth.
@@ -99,7 +99,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["02 Morrow Biologics","Bases and Means"]]} -->
 
 #### AD-en-df9bcd · „07 The Seventh Bureau“ › „In Play“ · Band S. 44 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: There is a house without a number in Stockholm too.
 - neu: There is also a house without a number in Stockholm too.
@@ -108,7 +108,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["07 The Seventh Bureau","In Play"]]} -->
 
 #### AD-en-7bf4d9 · „08 The Partners“ › „How the Protocol Works“ · Band S. 45 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: Because every favour has a price.
 - neu: For every favour has a price.
@@ -117,7 +117,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["08 The Partners","How the Protocol Works"]]} -->
 
 #### AD-en-b67120 · „11 The Enlightened“ › „Key Figures“ · Band S. 58 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: He speaks in clipped phrases, suspiciously, and repeats himself.
 - neu: He speaks haltingly, suspiciously, repeats himself.
@@ -126,7 +126,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["11 The Enlightened","Key Figures"]]} -->
 
 #### AD-en-fb3e27 · „13 The Open Ones“ › „Key Figures“ · Band S. 69 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: He was Ilse Marek’s successor and the man who caused the Cascade.
 - neu: He was the successor of Ilse Marek and the man who caused the Cascade.
@@ -135,7 +135,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["13 The Open Ones","Key Figures"]]} -->
 
 #### AD-en-7568b8 · „13 The Open Ones“ › „History and Goals“ · Band S. 70 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: Who really stood behind the numbers, he does not know.
 - neu: Who really stood behind the numbers that showed Kantor the hall in 1971.
@@ -144,7 +144,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["13 The Open Ones","History and Goals"]]} -->
 
 #### AD-en-2a616f · „13 The Open Ones“ › „Relationship to O.D.I.N.“ · Band S. 70 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: He only learns why on that night.
 - neu: The Psion learns why only on that night.
@@ -152,7 +152,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["13 The Open Ones","Relationship to O.D.I.N."]]} -->
 
 #### AD-en-d2bf93 · „14 The Foundation in Basel“ › „Key Figures“ · Band S. 74 · prüfen
-Freigabe: offen
+Freigabe: nein
 
 - alt: He wears the legend Martin Kessler and the tie with reindeer, because it is part of it.
 - neu: He carries the legend Martin Kessler and the reindeer tie because it is part of it.
@@ -165,7 +165,7 @@ Freigabe: offen
 Stellen, die der Satzvergleich nicht findet (Angaben des Writers, mit dem Band abgeglichen). Ein neuer Lauf lässt sie stehen.
 
 #### AD-en-w01 · „03 The Singers“ › „Hooks and Outlook“ · Band S. 24 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Black File “All the Staircases”. During the night the Seeker heard the song, in four places at once, and a fifth spot that is still silent.
 - neu: Black File “All Stairs”. The Seeker heard the song during the night, in four places at once, and a fifth place that is still silent.
@@ -174,7 +174,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 The Singers","Hooks and Outlook"]],"hand":true} -->
 
 #### AD-en-w02 · „03 The Singers“ › „Hooks and Outlook“ · Band S. 24 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: The next plan: “The Sixth Staircase”
 - neu: The next plan: “The sixth staircase”
@@ -183,7 +183,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["03 The Singers","Hooks and Outlook"]],"hand":true} -->
 
 #### AD-en-w03 · odin-abenteuer-en › „The Plan: “The New Host”“ (3 Stellen) · Band S. 11 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Krakow
 - neu: Kraków
@@ -192,7 +192,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.HqajHtfXaaM04AUd","hand":true} -->
 
 #### AD-en-w04 · odin-abenteuer-en › „Hooks and Outlook“ (3 Stellen) · Band S. 12 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Krakow
 - neu: Kraków
@@ -201,7 +201,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!SmlEcAatwXceVUI0.UGTBrsPezqMSrRRb","hand":true} -->
 
 #### AD-en-w05 · odin-abenteuerpakete-en › „The Other Services“ (7 Stellen) · Band S. 10 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Krakow
 - neu: Kraków
@@ -210,7 +210,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H","hand":true} -->
 
 #### AD-en-w06 · odin-gegner-en › „The Returner“ (2 Stellen) · Band S. 29 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: The Returner
 - neu: The Returned
@@ -220,7 +220,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-gegner-en","key":"!actors!7gSz8DJsbv8qTOsN","ganzesFeld":true,"hand":true} -->
 
 #### AD-en-w07 · odin-abenteuerpakete-en › „The Other Services“ (2 Stellen) · Band S. 29 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: The Returner
 - neu: The Returned
@@ -229,7 +229,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H","ganzesFeld":true,"hand":true} -->
 
 #### AD-en-w08 · odin-abenteuer-en › „Adversaries“ (1 Stelle) · Band S. 29 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: {The Returner}
 - neu: {The Returned}
@@ -238,7 +238,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!188oP4VMeDF0yM2O.Iav6hEIpDPDMEX5Y","hand":true} -->
 
 #### AD-en-w09 · odin-abenteuerpakete-en › „The Other Services“ (1 Stelle) · Band S. 29 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: {The Returner}
 - neu: {The Returned}
@@ -247,7 +247,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H","hand":true} -->
 
 #### AD-en-w10 · odin-abenteuer-en › „The Circle of the Returners“ (2 Stellen) · Band S. 18 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: The Circle of the Returners
 - neu: The Circle of the Returned
@@ -257,7 +257,7 @@ Freigabe: offen
 <!-- daten: {"art":"begriff","pack":"odin-abenteuer-en","key":"!journal.pages!188oP4VMeDF0yM2O.kywCgd2oCL3fBoeh","hand":true} -->
 
 #### AD-en-w11 · odin-abenteuerpakete-en › „The Other Services“ (2 Stellen) · Band S. 18 · Writer (Schritt 3), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: The Circle of the Returners
 - neu: The Circle of the Returned

@@ -39,7 +39,7 @@ Hinweise ohne Vorschlag: 1.
 ### Journalsätze
 
 #### SS-en-6db5e0 · „01 The House by the Reservoir“ › „Combat“ · Band S. 10 · prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Attacker is wounded (half HP or less) −1
 - neu: Attacker is battered (half HP or less) −1
@@ -47,7 +47,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Combat"]]} -->
 
 #### SS-en-97c58f · „01 The House by the Reservoir“ › „Node 5: The House“ · Band S. 30 · sicher
-Freigabe: offen
+Freigabe: ja
 
 - alt: Clue: Cold Spot, an EMF detector or a Telepath confirm: there is something here, and it is a dead person, not a being from a rift.
 - neu: Clue: Cold Spot, an EMF detector or a Telepath confirms: there is something here, and it is a dead person, not a being from a rift.
@@ -59,7 +59,7 @@ Freigabe: offen
 Stellen, die der Satzvergleich nicht findet (Angaben des Writers, mit dem Band abgeglichen). Ein neuer Lauf lässt sie stehen.
 
 #### SS-en-w01 · „01 The House by the Reservoir“ › „Combat“ · Band S. 11 · Writer (j), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Wounded: If HP drop
 - neu: Battered: If HP drop
@@ -68,7 +68,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Combat"]],"hand":true} -->
 
 #### SS-en-w02 · „01 The House by the Reservoir“ › „Psi Powers and Magic“ · Band S. 13 · Writer (j), prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Crystal Crack
 - neu: Crystal Rift
@@ -77,7 +77,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Psi Powers and Magic"]],"hand":true} -->
 
 #### SS-en-w03 · „01 The House by the Reservoir“ › „Psi Powers and Magic“ · Band S. 12 · aus dem Band, nicht vom Writer, prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Mind Reading, Force Push
 - neu: Thought Reading, Force Push
@@ -86,7 +86,7 @@ Freigabe: offen
 <!-- daten: {"art":"satz","fundstellen":[["01 The House by the Reservoir","Psi Powers and Magic"]],"hand":true} -->
 
 #### SS-en-w04 · odin-regeln-en › „Categories and Costs“ (1 Stelle) · Band S. 12 · aus dem Band, nicht vom Writer, prüfen
-Freigabe: offen
+Freigabe: ja
 
 - alt: Mind Reading, Force Push
 - neu: Thought Reading, Force Push
