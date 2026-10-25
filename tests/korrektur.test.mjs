@@ -4,12 +4,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lesePack } from '../werkzeuge/leveldb.mjs';
 import {
   Abgleich, normMitIndex, bereinigeSeite, textKarte, text, saetze, vergleicheSatz, unterschiede, BandText, satzVorschlaege,
   gegnerVorschlaege, wertImBlock, ersetzeSatz, ersetzeZeile, zieheZahlenNach, leseFreigabe, schreibeFreigabe, pruefeFreigaben,
+  freigabeDateien, gleicheAbsaetzeAb,
   zeilen, BAENDE, ZIEL, wendeAn, begriffVorschlaege, ersetzeInFeldern, mdText, leseNachtraege, uebertrage, teileListe, fuegeAbsatzEin, wendeNachtraegeAn,
 } from '../werkzeuge/korrektur.mjs';
 
@@ -104,8 +106,13 @@ test('Anwenden: Satz im HTML wortweise ersetzen', () => {
   const r = ersetzeSatz(html, 'Kessler würfelt auf Täuschung gegen Schwer (3).', 'Kessler würfelt auf Wahrnehmung gegen Schwer (3).');
   assert.equal(r.status, 'ok');
   assert.equal(r.html, '<p>Kessler würfelt auf Wahrnehmung gegen <em>Schwer</em> (3).</p><p>Noch ein Satz &amp; mehr.</p>');
-  // über Formatierung hinweg: nicht automatisch
-  assert.equal(ersetzeSatz(html, 'Kessler würfelt auf Täuschung gegen Schwer (3).', 'Kessler würfelt auf Täuschung gegen Machbar (2).').status, 'von Hand');
+  // über eine Formatierungsgrenze: an der Grenze geteilt, jede Hälfte bleibt auf ihrer Seite
+  assert.equal(ersetzeSatz(html, 'Kessler würfelt auf Täuschung gegen Schwer (3).', 'Kessler würfelt auf Täuschung gegen Machbar (2).').html,
+    '<p>Kessler würfelt auf Täuschung gegen <em>Machbar</em> (2).</p><p>Noch ein Satz &amp; mehr.</p>');
+  assert.equal(ersetzeSatz('<p>Morrow finally loses control. <strong>Trail:</strong> The Council takes over.</p>', 'Morrow finally loses control. Trail: The Council takes over.',
+    'Morrow loses control for good. Sign: The Council takes over.').html, '<p>Morrow loses control for good. <strong>Sign:</strong> The Council takes over.</p>');
+  // nur noch ein Wort innerhalb der Formatierung, aber zwei Wörter ersetzt: nicht automatisch
+  assert.equal(ersetzeSatz('<p>Er geht <em>schnell</em> weg.</p>', 'Er geht schnell weg.', 'Er geht fort.').status, 'von Hand');
   // Streichen samt Leerzeichen, Einfügen, Sonderzeichen
   assert.equal(ersetzeSatz('<p>Das Grundregelwerk umfasst 88 Seiten und ist kostenlos.</p>', 'Das Grundregelwerk umfasst 88 Seiten und ist kostenlos.', 'Das Grundregelwerk ist kostenlos.').html,
     '<p>Das Grundregelwerk ist kostenlos.</p>');
@@ -252,8 +259,9 @@ test('Nachträge: in den Packs (im Speicher), nur im Band, gleichnamige Journale
 test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Packs', () => {
   assert.deepEqual(pruefeFreigaben(), []);
   const dateien = fs.existsSync(ZIEL) ? fs.readdirSync(ZIEL).filter((f) => f.endsWith('.md') && !f.startsWith('aenderungen_')) : [];
-  assert.deepEqual(dateien.filter((f) => !f.endsWith('_nachlauf.md') && !f.startsWith('begriffe_')).sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
-  for (const f of dateien.filter((f) => f.endsWith('_nachlauf.md'))) assert.ok(BAENDE[f.replace(/_nachlauf\.md$/, '')], `${f}: Nachlauf zu einem bekannten Band`);
+  const nachlauf = /_(nachlauf(_[\w-]+)?|absaetze_(de|en)(_(de|en))?(_[\w-]+)?)\.md$/;
+  assert.deepEqual(dateien.filter((f) => !nachlauf.test(f) && !f.startsWith('begriffe_')).sort(), Object.keys(BAENDE).map((b) => `${b}.md`).sort(), 'je Band eine Freigabedatei');
+  for (const f of dateien.filter((f) => nachlauf.test(f))) assert.ok(BAENDE[f.replace(nachlauf, '')], `${f}: Nachlauf zu einem bekannten Band`);
   const packs = {};
   const pack = (n) => (packs[n] ??= lesePack(path.join(wurzel, 'packs', n)));
   const fehlt = [];
@@ -271,6 +279,9 @@ test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Pa
         const felder = (o, aus = []) => { if (typeof o === 'string') aus.push(o); else if (o && typeof o === 'object') for (const v of Object.values(o)) felder(v, aus); return aus; };
         const doc = pack(e.daten.pack).get(e.daten.key);
         if (!doc || !felder(doc).some((x) => (e.daten.ganzesFeld ? x === e.alt : x.includes(e.alt)))) fehlt.push(`${f}: ${e.id}`);
+      } else if (e.art === 'gegnertext') {
+        const akteure = [...pack(`odin-gegner${en}`).values(), ...[...pack(`odin-abenteuerpakete${en}`).values()].flatMap((a) => a.actors ?? [])];
+        if (!akteure.some((a) => a.name === e.daten.name && text(a.system?.beschreibung ?? '').split('\n').some((z) => z.replace(/\s+/g, ' ').trim() === e.alt))) fehlt.push(`${f}: ${e.id}`);
       } else if (e.art === 'gegenstand') {
         const ok = e.daten.fundstellen.some(([art, name]) => [...pack(`odin-${art}${en}`).values()].some((v) => v.name === name
           && text(v.system?.beschreibung ?? '').replace(/\s+/g, ' ').includes(e.alt)));
@@ -283,4 +294,46 @@ test('Freigabedateien im Repo: lesbar, eindeutig, „alt“ steht noch in den Pa
     }
   }
   assert.deepEqual(fehlt, []);
+});
+
+test('Freigabedatei: von Hand ergänzte Einträge bleiben bei einem neuen Lauf', () => {
+  const cfg = BAENDE['graue-akten'];
+  const teil = { spr: 'de', pdfs: [{ name: 'ODIN_14_Graue_Akten', seiten: [1], pruef: 'abc' }],
+    saetze: { statistik: { seiten: 1, saetze: 1, gleich: 1, nichtGefunden: 0, verworfen: {} }, hinweise: [], vorschlaege: [] },
+    gegner: { statistik: { gegner: 0, zeilen: 0, gleich: 0 }, hinweise: [], vorschlaege: [] } };
+  const hand = '## Deutsch\n\n### Von Hand ergänzt\n\n#### GA-de-w01 · „07 Die Vitrine“ › „Eskalation“ · Band S. 68 · Writer (g), prüfen\nFreigabe: ja\n\n'
+    + '- alt: Wenn ein Psion das Summen\n- neu: Wenn jemand das Summen\n- Änderung: x\n- Hinweis: vom Writer\n<!-- daten: {"art":"satz","fundstellen":[["07 Die Vitrine","Eskalation"]],"hand":true} -->\n';
+  const { md, verloren } = schreibeFreigabe('graue-akten', cfg, [teil], leseFreigabe(hand), '2510');
+  assert.deepEqual(verloren, []);
+  const e = leseFreigabe(md);
+  assert.equal(e.length, 1);
+  assert.deepEqual([e[0].id, e[0].freigabe, e[0].alt, e[0].neu, e[0].hinweise[0], e[0].daten.hand], ['GA-de-w01', 'ja', 'Wenn ein Psion das Summen', 'Wenn jemand das Summen', 'vom Writer', true]);
+  assert.match(md, /vorschlaege graue-akten --nachlauf=2510/);
+  assert.match(md, /#### GA-de-w01 · „07 Die Vitrine“ › „Eskalation“ · Band S\. 68 · Writer \(g\), prüfen/);
+});
+
+test('Freigabedateien eines Bandes: Hauptliste, Nachläufe, Absatzlisten', () => {
+  const o = fs.mkdtempSync(path.join(os.tmpdir(), 'korrektur-'));
+  for (const f of ['graue-akten.md', 'graue-akten_nachlauf.md', 'graue-akten_nachlauf_2510.md', 'graue-akten_absaetze_en_2510.md', 'die-tuer.md', 'begriffe_en.md', 'begriffe_en_2510.md']) fs.writeFileSync(path.join(o, f), '');
+  assert.deepEqual(freigabeDateien('graue-akten', o).map((f) => path.basename(f)), ['graue-akten.md', 'graue-akten_absaetze_en_2510.md', 'graue-akten_nachlauf.md', 'graue-akten_nachlauf_2510.md']);
+  assert.deepEqual(freigabeDateien('begriffe', o).map((f) => path.basename(f)), ['begriffe_en.md', 'begriffe_en_2510.md']);
+});
+
+test('Absatzabgleich: Text zwischen den Ankern aus dem Band, Mischsätze bleiben', () => {
+  const band = new BandText([{ name: 'B', kurz: 'Band', seiten: [
+    'The Laboratory in Lyon is an old clinic building in the east of the city.\nAn Infiltrator with Security Systems against Hard (3) gets through.\n'
+    + 'Sign: The Council takes over with a Black File, and the city reports animal attacks.\nThe animal pens and the room where the Chimera is kept are in the basement.\n'
+    + 'Nobody in Leiden knows the real name of the Administrator who runs the house.\n'] }], '\u00ad');
+  const bloecke = ['The Laboratory in Lyon is an old clinic building in the east of the city.', 'An Infiltrator with Technology against Hard (3) gets through.',
+    'Trail: The Council takes over with a Black File, and the city reports animal attacks.', 'In the basement are the animal pens and the room in which the Chimera is kept.',
+    'Nobody in Leiden knows the real name of the Administrator who runs the house.'];
+  const r = gleicheAbsaetzeAb(bloecke, band, new Set());
+  assert.equal(r.neu[1], 'An Infiltrator with Security Systems against Hard (3) gets through.');
+  assert.equal(r.neu[2], 'Sign: The Council takes over with a Black File, and the city reports animal attacks.');
+  assert.equal(r.neu[3], bloecke[3], 'umgestellter Satz: bleibt, steht als Hinweis');
+  assert.ok(r.hinweise.some((h) => /Unsicher, bleibt/.test(h)));
+  assert.equal(r.neu[0], bloecke[0]);
+  // nur ganze Zeilen: ein kurzer Absatz ändert nicht denselben Text in einem längeren
+  const html = '<h3>The Returner</h3><p>The Returner is searching for a place.</p>';
+  assert.equal(ersetzeSatz(html, 'The Returner', 'The Returned', { ganzeZeile: true }).html, '<h3>The Returned</h3><p>The Returner is searching for a place.</p>');
 });
