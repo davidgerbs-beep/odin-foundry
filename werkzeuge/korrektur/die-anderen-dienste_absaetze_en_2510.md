@@ -308,8 +308,9 @@ Freigabe: nein
 Freigabe: ja
 
 - alt: At ☠☠☠○○ : “The chimera” (Morrow Biologics) gains a skull. A former lab coat from Asklepios examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study.
-- neu: At : “The chimera” (Morrow Biologics) gains a skull. A former Lab Coat from Asklepios examines the blood sample of Arvid Lund at Morrow and finds something that does not fit the study.
+- neu: At ☠☠☠○○ : “The chimera” (Morrow Biologics) gains a skull. A former Lab Coat from Asklepios examines the blood sample of Arvid Lund at Morrow and finds something that does not fit the study.
 - Änderung: «Arvid Lund’s» → «the»; «(nichts)» → «of Arvid Lund»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["01 The Twelve of Asklepios","The Plan: “The New Host”"]],"absatz":true} -->
 
 #### AD-en-Afcbd65 · „01 The Twelve of Asklepios“ › „Hooks and Outlook“ · Band S. 12 · prüfen
@@ -1340,8 +1341,9 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: At ☠☠☠☠☠ : “Fetch the children” (the Open Ones) gains a skull. The European Seeker hears the American one, and Kantor hears him too (Game Master’s Book, “Connecting Plans”).
-- neu: At : “Fetch the children” (the Open Ones) gains one skull. The European Seeker hears the American one, and Kantor hears him too (Game Master’s Book, “Connecting Plans”).
+- neu: At ☠☠☠☠☠ : “Fetch the children” (the Open Ones) gains one skull. The European Seeker hears the American one, and Kantor hears him too (Game Master’s Book, “Connecting Plans”).
 - Änderung: «a» → «one»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["05 STILLWATER","The Plan: “A Seeker of Their Own”"]],"absatz":true} -->
 
 #### AD-en-A750a9f · „05 STILLWATER“ › „Hooks and Outlook“ · Band S. 36 · prüfen
@@ -2036,24 +2038,27 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: At ☠☠○○○ : “Preserve the silence” (Congregation of the Silent Word) gains one skull. Don Matteo Riva learns of the Lodge and its knowledge of 1871 and sees in it further proof.
-- neu: At : “Preserve the silence” (Congregation of the Silent Word) gains one skull. Don Matteo Riva learns of the lodge and its knowledge of 1871 and sees it as further proof.
+- neu: At ☠☠○○○ : “Preserve the silence” (Congregation of the Silent Word) gains one skull. Don Matteo Riva learns of the lodge and its knowledge of 1871 and sees it as further proof.
 - Änderung: «in» → «(gestrichen)»; «(nichts)» → «as»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["10 Lodge of the Silent Circle","The Plan: “The Page From 1871”"]],"absatz":true} -->
 
 #### AD-en-A064e89 · „10 Lodge of the Silent Circle“ › „The Plan: “The Page From 1871”“ · Band S. 56 · sicher
 Freigabe: ja
 
 - alt: At ☠☠☠☠○ : “The Second Light” (the Enlightened) gains a skull. A lodge brother tells a reporter about the circles, and the story ends up with “Illuminati Europa”.
-- neu: At : “The Second Light” (the Enlightened) gains one skull. A lodge brother tells a reporter about the circles, and the story ends up with “Illuminati Europa”.
+- neu: At ☠☠☠☠○ : “The Second Light” (the Enlightened) gains one skull. A lodge brother tells a reporter about the circles, and the story ends up with “Illuminati Europa”.
 - Änderung: «a» → «one»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["10 Lodge of the Silent Circle","The Plan: “The Page From 1871”"]],"absatz":true} -->
 
 #### AD-en-Afc58fd · „10 Lodge of the Silent Circle“ › „The Plan: “The Page From 1871”“ · Band S. 56 · sicher
 Freigabe: ja
 
 - alt: At ☠☠☠☠☠ : “The stairs” (the Singers) gains a skull. The children in the area sing the song from 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”).
-- neu: At : “The stairs” (the Singers) gains one skull. The children in the area sing the song from 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”).
+- neu: At ☠☠☠☠☠ : “The stairs” (the Singers) gains one skull. The children in the area sing the song from 1871, and the Singers hear it (Game Master’s Book, “Connecting Plans”).
 - Änderung: «a» → «one»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["10 Lodge of the Silent Circle","The Plan: “The Page From 1871”"]],"absatz":true} -->
 
 #### AD-en-Aee0033 · „10 Lodge of the Silent Circle“ › „Hooks and Outlook“ · Band S. 56 · prüfen
@@ -2076,8 +2081,9 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: The next plan: “Keep the Song” ☠○○○○ . The lodge wants to prevent the song from falling into the wrong hands and begins to collect all copies it has ever sold.
-- neu: The next plan: “Preserve the song” . The lodge wants to prevent the song from falling into the wrong hands and begins to collect all copies it has ever sold.
+- neu: The next plan: “Preserve the song” ☠○○○○ . The lodge wants to prevent the song from falling into the wrong hands and begins to collect all copies it has ever sold.
 - Änderung: «“Keep» → «“Preserve»
+- Hinweis: Beim Anwenden (25.10.) Totenkopf-Leiste ☠○○○○ wie in Foundry stehen gelassen; der Wortlaut des Writers ist sonst unverändert übernommen (pdftotext liest die Leiste aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["10 Lodge of the Silent Circle","Hooks and Outlook"]],"absatz":true} -->
 
 #### AD-en-A3ba7b1 · „11 The Enlightened“ › „Overview“ · Band S. 57 · sicher
@@ -2260,8 +2266,9 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: The next plan: “The Hundred Rings” ○○○○○ . The copies of the signet ring with the eye, which the Print Shop had made in 1968, begin to work. Whoever wears a ring hears the Voice. The Enlightened are looking for the rings.
-- neu: The next plan: “The hundred rings” . The copies of the signet ring with the eye, which the Print Shop had made in 1968, begin to work. Whoever wears a ring hears the voice. The Enlightened are searching for the rings.
+- neu: The next plan: “The hundred rings” ○○○○○ . The copies of the signet ring with the eye, which the Print Shop had made in 1968, begin to work. Whoever wears a ring hears the voice. The Enlightened are searching for the rings.
 - Änderung: «looking» → «searching»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["11 The Enlightened","Hooks and Outlook"]],"absatz":true} -->
 
 #### AD-en-Aaea1c2 · „12 The Congregation of the Silent Word“ › „Overview“ · Band S. 61 · sicher
@@ -2676,8 +2683,9 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: At ☠☠☠☠○ : “The chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a dormant gift from the subject register of study MB-7 before she is enrolled, and the corporation accelerates its research in Lyon.
-- neu: At : “The chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a dormant gift from the subject register of study MB-7 before she is enrolled, and the corporation accelerates research in Lyon.
+- neu: At ☠☠☠☠○ : “The chimera” (Morrow Biologics) gains a skull. The Open Ones take a young woman with a dormant gift from the subject register of study MB-7 before she is enrolled, and the corporation accelerates research in Lyon.
 - Änderung: «its» → «(gestrichen)»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["13 The Open Ones","The Plan: “Fetch the Children”"]],"absatz":true} -->
 
 #### AD-en-A8808a6 · „13 The Open Ones“ › „Hooks and Outlook“ · Band S. 71 · sicher
@@ -2700,8 +2708,9 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: File 1 “Foster Child” takes place while the plan is at ☠☠☠○○ . If the cell saves Linus, the plan loses a skull. If Jonas Vogt escapes with Linus, the plan gains a skull, and Linus is one of the children who sing in the monastery in the evening. If the cell persuades Vogt without a fight, Kantor remembers it: the next lure goes to the psion who spoke with Vogt.
-- neu: File 1 “Foster Child” takes place while the plan is at . If the cell saves Linus, the plan loses a skull. If Jonas Vogt escapes with Linus, the plan gains a skull, and Linus is one of the children who sing in the monastery in the evening. If the cell convinces Vogt without a fight, Kantor remembers it: the next lure goes to the Psion who spoke with Vogt.
+- neu: File 1 “Foster Child” takes place while the plan is at ☠☠☠○○ . If the cell saves Linus, the plan loses a skull. If Jonas Vogt escapes with Linus, the plan gains a skull, and Linus is one of the children who sing in the monastery in the evening. If the cell convinces Vogt without a fight, Kantor remembers it: the next lure goes to the Psion who spoke with Vogt.
 - Änderung: «persuades» → «convinces»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["13 The Open Ones","Hooks and Outlook"]],"absatz":true} -->
 
 #### AD-en-A2567c3 · „14 The Foundation in Basel“ › „Overview“ · Band S. 72 · prüfen
@@ -2908,16 +2917,18 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: The next plan: “Saving the Children” ○○○○○ . The Foundation wants to find the children whose gift awakens on its own and bring them to the Open Ones before the Thirteenth hears them. It has money, people and connections. It has no Hands and no time.
-- neu: The next plan: “Save the children” . The Foundation wants to find the children whose gift awakens on its own and bring them to the Open Ones before the Thirteenth hears them. It has money, people, and connections. It has no hands and no time.
+- neu: The next plan: “Save the children” ○○○○○ . The Foundation wants to find the children whose gift awakens on its own and bring them to the Open Ones before the Thirteenth hears them. It has money, people, and connections. It has no hands and no time.
 - Änderung: «“Saving» → «“Save»
+- Hinweis: Beim Anwenden (25.10.) Totenkopf-Leiste ○○○○○ wie in Foundry stehen gelassen; der Wortlaut des Writers ist sonst unverändert übernommen (pdftotext liest die Leiste aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["14 The Foundation in Basel","Hooks and Outlook"]],"absatz":true} -->
 
 #### AD-en-A09ae9b · „14 The Foundation in Basel“ › „Hooks and Outlook“ · Band S. 76 · sicher
 Freigabe: ja
 
 - alt: File 4 “Kessler” takes place in the Foundation while the plan stands at ☠☠○○○ . If the cell secures the Nexus crystal and hands it over to O.D.I.N., the plan loses a skull. If they hand Elster over to the Council, the Open Ones lose a skull, and Leuenberger works without restraint from then on: the Foundation rolls as if it had strength 3. If Elster flees with the Courier of the Open Ones, the plan stays where it is, and the Open Ones have an old woman who knows everything about the Nursery.
-- neu: File 4 “Kessler” takes place in the Foundation while the plan is at . If the cell secures the Nexus crystal and hands it over to O.D.I.N., the plan loses a skull. If they hand Elster over to the Council, the Open Ones lose a skull, and Leuenberger works without restraint from then on: the Foundation rolls as if it had strength 3. If Elster flees with the Courier of the Open Ones, the plan stays where it is, and the Open Ones have an old woman who knows everything about the Nursery.
+- neu: File 4 “Kessler” takes place in the Foundation while the plan is at ☠☠○○○ . If the cell secures the Nexus crystal and hands it over to O.D.I.N., the plan loses a skull. If they hand Elster over to the Council, the Open Ones lose a skull, and Leuenberger works without restraint from then on: the Foundation rolls as if it had strength 3. If Elster flees with the Courier of the Open Ones, the plan stays where it is, and the Open Ones have an old woman who knows everything about the Nursery.
 - Änderung: «stands» → «is»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["14 The Foundation in Basel","Hooks and Outlook"]],"absatz":true} -->
 
 #### AD-en-Af05a5e · „15 The Evening“ › „Overview“ · Band S. 77 · sicher
@@ -3044,8 +3055,9 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: At ☠☠☠○○ : “The chimera” (Morrow Biologics) loses a skull. The Evening ties up all couriers and channels for the stone and no longer delivers samples to Morrow.
-- neu: At : “The chimera” (Morrow Biologics) loses a skull. The Evening binds all couriers and channels for the stone and no longer delivers samples to Morrow.
+- neu: At ☠☠☠○○ : “The chimera” (Morrow Biologics) loses a skull. The Evening binds all couriers and channels for the stone and no longer delivers samples to Morrow.
 - Änderung: «ties up» → «binds»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["15 The Evening","The Plan: “The Great Stone”"]],"absatz":true} -->
 
 #### AD-en-A6f9291 · „15 The Evening“ › „Hooks and Outlook“ · Band S. 80 · sicher
@@ -3228,48 +3240,54 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: “The new host” (The Twelve of Asklepios) ☠☠☠○○ “The chimera” (Morrow Biologics) gains a skull. A former Asklepios lab coat examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study.
-- neu: “The new host” (the Twelve of Asklepios) “The chimera” (Morrow Biologics) gains a skull. A former Lab Coat from Asklepios examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study.
+- neu: “The new host” (the Twelve of Asklepios) ☠☠☠○○ “The chimera” (Morrow Biologics) gains a skull. A former Lab Coat from Asklepios examines Arvid Lund’s blood sample at Morrow and finds something that does not fit the study.
 - Änderung: «(nichts)» → «Lab Coat from»; «lab coat» → «(gestrichen)»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","Expansion 5: Connections"]],"absatz":true} -->
 
 #### AD-en-Acfd8f5 · „The Other Services: Introduction“ › „Expansion 5: Connections“ · Band S. 87 · sicher
 Freigabe: ja
 
 - alt: “The new host” (The Twelve of Asklepios) ☠☠☠☠☠ “Fetch the children” (The Open Ones) loses a skull. The nanites have taken a human whom the Open Ones wanted for themselves. Kantor senses it and withdraws.
-- neu: “The new host” (the Twelve of Asklepios) “Fetch the children” (the Open Ones) loses a skull. The nanites have taken a human the Open Ones wanted for themselves. Kantor senses it and withdraws.
+- neu: “The new host” (the Twelve of Asklepios) ☠☠☠☠☠ “Fetch the children” (the Open Ones) loses a skull. The nanites have taken a human the Open Ones wanted for themselves. Kantor senses it and withdraws.
 - Änderung: «whom» → «(gestrichen)»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","Expansion 5: Connections"]],"absatz":true} -->
 
 #### AD-en-Ac41ab5 · „The Other Services: Introduction“ › „Expansion 5: Connections“ · Band S. 87 · sicher
 Freigabe: ja
 
 - alt: “The chimera” (Morrow Biologics) ☠☠☠☠○ “The great stone” (The Evening) gains a skull. Morrow buys more samples, and the Evening gets money and channels for the search for the stone.
-- neu: “The chimera” (Morrow Biologics) “The great stone” (the Evening) gains a skull. Morrow buys more samples, and the Evening receives money and channels for the search for the stone.
+- neu: “The chimera” (Morrow Biologics) ☠☠☠☠○ “The great stone” (the Evening) gains a skull. Morrow buys more samples, and the Evening receives money and channels for the search for the stone.
 - Änderung: «gets» → «receives»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","Expansion 5: Connections"]],"absatz":true} -->
 
 #### AD-en-A7f317c · „The Other Services: Introduction“ › „Expansion 5: Connections“ · Band S. 87 · sicher
 Freigabe: ja
 
 - alt: “The stairs” (the Singers) ☠☠☠○○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song louder and searches for the page more urgently.
-- neu: “The stairs” (the Singers) “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song more loudly and searches for the page more urgently.
+- neu: “The stairs” (the Singers) ☠☠☠○○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge hears the song more loudly and searches for the page more urgently.
 - Änderung: «louder» → «more loudly»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","Expansion 5: Connections"]],"absatz":true} -->
 
 #### AD-en-A7945d6 · „The Other Services: Introduction“ › „Expansion 5: Connections“ · Band S. 88 · prüfen
 Freigabe: ja
 
 - alt: “The Second Light” (The Enlightened) ☠☠☠☠○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The lodge recognises the song of 1871 in the Anderlecht ritual and believes the time has come.
-- neu: “The Second Light” (the Enlightened) “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge recognises the song from 1871 in the ritual of Anderlecht and believes the time has come.
+- neu: “The Second Light” (the Enlightened) ☠☠☠☠○ “The page from 1871” (Lodge of the Silent Circle) gains a skull. The Lodge recognises the song from 1871 in the ritual of Anderlecht and believes the time has come.
 - Änderung: «of» → «from»; «(nichts)» → «ritual of»; «ritual» → «(gestrichen)»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","Expansion 5: Connections"]],"absatz":true} -->
 
 #### AD-en-A95f007 · „The Other Services: Introduction“ › „Expansion 5: Connections“ · Band S. 89 · sicher
 Freigabe: ja
 
 - alt: “The great stone” (The Evening) ☠☠☠○○ “The second site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stocks.
-- neu: “The great stone” (the Evening) “The second site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stockpiles.
+- neu: “The great stone” (the Evening) ☠☠☠○○ “The second site” (Department 13) gains a skull. Through the Evening, the Department obtains information about O.D.I.N.’s alloy stockpiles.
 - Änderung: «stocks.» → «stockpiles.»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","Expansion 5: Connections"]],"absatz":true} -->
 
 #### AD-en-A4cb22e · „The Other Services: Introduction“ › „The Situation Sheet“ · Band S. 89 · prüfen
@@ -3300,32 +3318,36 @@ Freigabe: ja
 Freigabe: ja
 
 - alt: 1. The cell plays File 8 “The Second Light” and ends the ritual in Anderlecht. The Enlightened lose a skull and stand at ☠☠○○○ . With Knowledge 2 they do not notice who it was; there is no countermove. After the mission the game master rolls: STILLWATER has strength 4 and rises to ☠☠☠○○ on a 5. The connection triggers: the Congregation of the Silent Word learns of a second Seeker from a confession and rises to ☠☠☠☠○ , although nobody had an eye on it. A Red File emerges. The Open Ones roll a 3; with Strength 2 they need a 6.
-- neu: 1. The cell plays File 8 “The Second Light” and ends the ritual in Anderlecht. The Enlightened lose a skull and stand at . With knowledge 2 they do not notice who it was; there is no countermove. After the mission the game master rolls: STILLWATER has strength 4 and rises to on a 5. The connection triggers: the Congregation of the Silent Word learns of a second Seeker from a confession and rises to , although nobody had an eye on it. A Red File is created. The Open Ones roll a 3; with strength 2 they need a 6.
+- neu: 1. The cell plays File 8 “The Second Light” and ends the ritual in Anderlecht. The Enlightened lose a skull and stand at ☠☠○○○ . With knowledge 2 they do not notice who it was; there is no countermove. After the mission the game master rolls: STILLWATER has strength 4 and rises to ☠☠☠○○ on a 5. The connection triggers: the Congregation of the Silent Word learns of a second Seeker from a confession and rises to ☠☠☠☠○ , although nobody had an eye on it. A Red File is created. The Open Ones roll a 3; with strength 2 they need a 6.
 - Änderung: «emerges.» → «is created.»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","A Year in the World"]],"absatz":true} -->
 
 #### AD-en-A1f1a6f · „The Other Services: Introduction“ › „A Year in the World“ · Band S. 90 · prüfen
 Freigabe: ja
 
 - alt: 4. The cell takes the Red File of the Open Ones and reaches two of the three children on the note from the Zurich locker before the couriers. The Open Ones fall to ☠☠☠○○ . With knowledge 5 they know exactly who it was: the countermove is a 4, the voice in sleep. A Psion of the cell makes their Resonance roll at the start of the next mission. Rolls: STILLWATER rolls a 4 and is back at ☠☠☠○○ ; the connection to the Congregation does not take effect again. The Open Ones roll a 1. Now the waiting connection of Morrow takes effect: the Evening gets money and channels and rises to ☠☠☠○○ . Its own connections wait.
-- neu: 4. The cell takes the Red File of the Open Ones and reaches two of the three children on the note from the Zurich locker before the couriers. The Open Ones drop to . With knowledge 5 they know exactly who it was: the countermove is a 4, the voice in sleep. A Psion of the cell makes their Resonance roll at the start of the next mission. Rolls: STILLWATER rolls a 4 and is back at ; the connection to the Congregation does not trigger a second time. The Open Ones roll a 1. Now the waiting connection of Morrow takes effect: the Evening gets money and channels and rises to . Its own connections wait.
+- neu: 4. The cell takes the Red File of the Open Ones and reaches two of the three children on the note from the Zurich locker before the couriers. The Open Ones drop to ☠☠☠○○ . With knowledge 5 they know exactly who it was: the countermove is a 4, the voice in sleep. A Psion of the cell makes their Resonance roll at the start of the next mission. Rolls: STILLWATER rolls a 4 and is back at ☠☠☠○○ ; the connection to the Congregation does not trigger a second time. The Open Ones roll a 1. Now the waiting connection of Morrow takes effect: the Evening gets money and channels and rises to ☠☠☠○○ . Its own connections wait.
 - Änderung: «fall» → «drop»; «take effect again.» → «trigger a second time.»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","A Year in the World"]],"absatz":true} -->
 
 #### AD-en-A5b9623 · „The Other Services: Introduction“ › „A Year in the World“ · Band S. 90 · prüfen
 Freigabe: ja
 
 - alt: 5. The Red File left lying from Morrow Biologics: animal carcasses are moving in the sewers of Lyon. The cell exposes Dr. Camille Favre with the files on the dead researchers, and the corporation dismisses her. The key figure is taken out, Morrow falls to ☠☠○○○ . With knowledge 1 the corporation has no idea who is behind it and sends mercenaries from Grey Meridian to the wrong place. Rolls: STILLWATER rolls a 6 and stands at ☠☠☠☠○ ; a Red File is created. The Open Ones roll a 2. Then the connections of the Evening take effect: Morrow gets no more samples and drops to ☠○○○○ , and Department 13 obtains details of O.D.I.N.’s alloy stocks through the Evening and rises to ☠☠☠☠○ . Another Red File.
-- neu: 5. The Red File left lying from Morrow Biologics: in the sewers of Lyon, animal carcasses are moving. The cell exposes Dr. Camille Favre with the files on the dead researchers, and the corporation dismisses her. The key figure is out of play, Morrow drops to . With knowledge 1 the corporation has no idea who is behind it and sends mercenaries from Grey Meridian to the wrong place. Rolls: STILLWATER rolls a 6 and stands at ; a Red File is created. The Open Ones roll a 2. Then the connections of the Evening take effect: Morrow gets no more samples and drops to , and Department 13 obtains details of O.D.I.N.’s alloy stocks through the Evening and rises to . Another Red File.
+- neu: 5. The Red File left lying from Morrow Biologics: in the sewers of Lyon, animal carcasses are moving. The cell exposes Dr. Camille Favre with the files on the dead researchers, and the corporation dismisses her. The key figure is out of play, Morrow drops to ☠☠○○○ . With knowledge 1 the corporation has no idea who is behind it and sends mercenaries from Grey Meridian to the wrong place. Rolls: STILLWATER rolls a 6 and stands at ☠☠☠☠○ ; a Red File is created. The Open Ones roll a 2. Then the connections of the Evening take effect: Morrow gets no more samples and drops to ☠○○○○ , and Department 13 obtains details of O.D.I.N.’s alloy stocks through the Evening and rises to ☠☠☠☠○ . Another Red File.
 - Änderung: «Lyon.» → «Lyon, animal carcasses are moving.»; «taken out,» → «out of play,»; «falls» → «drops»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","A Year in the World"]],"absatz":true} -->
 
 #### AD-en-A3aa535 · „The Other Services: Introduction“ › „A Year in the World“ · Band S. 90 · sicher
 Freigabe: ja
 
 - alt: 6. The Red File of STILLWATER leads into the maintenance tunnels in Maryland. The cell cannot get to Dr. Webb, but it destroys the documents for the procedure. The plan falls to ☠☠☠○○ . Rolls: the Open Ones roll a 6 and are back at ☠☠☠☠○ ; their connections have already taken effect. Then the connection of Department 13 takes effect: the Americans fear coming away empty-handed on the alloy ore, and STILLWATER rises to ☠☠☠☠○ again.
-- neu: 6. The Red File of STILLWATER leads into the maintenance tunnels in Maryland. The cell cannot get to Dr. Webb, but it destroys the documents for the procedure. The plan drops to . Rolls: the Open Ones roll a 6 and are back at ; their connections have already taken effect. Then the connection of Department 13 takes effect: the Americans fear coming away empty-handed on the alloy ore, and STILLWATER rises to again.
+- neu: 6. The Red File of STILLWATER leads into the maintenance tunnels in Maryland. The cell cannot get to Dr. Webb, but it destroys the documents for the procedure. The plan drops to ☠☠☠○○ . Rolls: the Open Ones roll a 6 and are back at ☠☠☠☠○ ; their connections have already taken effect. Then the connection of Department 13 takes effect: the Americans fear coming away empty-handed on the alloy ore, and STILLWATER rises to ☠☠☠☠○ again.
 - Änderung: «falls» → «drops»
+- Hinweis: Beim Anwenden (25.10.) die Totenkopf-Leisten wie in Foundry an derselben Stelle wieder eingesetzt; sonst genau der Wortlaut des Writers (pdftotext liest die Leisten aus dem Band nicht mit).
 <!-- daten: {"art":"satz","fundstellen":[["The Other Services: Introduction","A Year in the World"]],"absatz":true} -->
 
 ### Gegnerwerte

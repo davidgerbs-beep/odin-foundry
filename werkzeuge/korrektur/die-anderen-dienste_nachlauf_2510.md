@@ -265,6 +265,33 @@ Freigabe: ja
 - Hinweis: Abenteuerpaket: Name und Überschrift derselben Seite.
 <!-- daten: {"art":"begriff","pack":"odin-abenteuerpakete-en","key":"!adventures!58kgeC6QBlfCBf1H","hand":true} -->
 
+#### AD-en-w12 · „01 The Twelve of Asklepios“ › „The Plan: “The New Host”“ · Band S. 11 · Writer 25.10. (Hinweis 1), prüfen
+Freigabe: ja
+
+- alt: If the cell takes a skull from the plan, the Foundation answers with a countermove.
+- neu: If the cell takes a skull from the plan, the organisation responds with a countermove.
+- Änderung: «Foundation answers» → «organisation responds»
+- Hinweis: Ersatz für AD-en-Ae3884a (nein): der Band hat für die drei Pläne drei verschiedene Sätze. Freigegeben vom Writer am 25.10., über ODIN Coder.
+<!-- daten: {"art":"satz","fundstellen":[["01 The Twelve of Asklepios","The Plan: “The New Host”"]],"hand":true} -->
+
+#### AD-en-w13 · „05 STILLWATER“ › „The Plan: “A Seeker of Their Own”“ · Band S. 36 · Writer 25.10. (Hinweis 1), prüfen
+Freigabe: ja
+
+- alt: If the cell takes a skull from the plan, the Foundation answers with a countermove.
+- neu: If the cell takes one skull from the plan, STILLWATER responds with a countermove.
+- Änderung: «a» → «one»; «the Foundation answers» → «STILLWATER responds»
+- Hinweis: Ersatz für AD-en-Ae3884a (nein). Freigegeben vom Writer am 25.10., über ODIN Coder.
+<!-- daten: {"art":"satz","fundstellen":[["05 STILLWATER","The Plan: “A Seeker of Their Own”"]],"hand":true} -->
+
+#### AD-en-w14 · „10 Lodge of the Silent Circle“ › „The Plan: “The Page From 1871”“ · Band S. 56 · Writer 25.10. (Hinweis 1), prüfen
+Freigabe: ja
+
+- alt: If the cell takes a skull from the plan, the Foundation answers with a countermove.
+- neu: If the cell takes a skull from the plan, the lodge responds with a countermove.
+- Änderung: «Foundation answers» → «lodge responds»
+- Hinweis: Ersatz für AD-en-Ae3884a (nein). Freigegeben vom Writer am 25.10., über ODIN Coder. In Basel (14) bleibt „the Foundation answers“, dort stimmt es.
+<!-- daten: {"art":"satz","fundstellen":[["10 Lodge of the Silent Circle","The Plan: “The Page From 1871”"]],"hand":true} -->
+
 ### Hinweise ohne Vorschlag
 
 Diese Stellen weichen ab, der Wert im Band ließ sich aber nicht sicher lesen. Bitte von Hand ansehen.
