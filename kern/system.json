@@ -2,7 +2,7 @@
   "id": "odin-rpg-core",
   "title": "O.D.I.N. Core (no art)",
   "description": "Core rules for O.D.I.N., the pen-and-paper RPG of occult agents (Second Edition), without illustrations: character and enemy sheets, rolls with white and coloured dice (white succeed on 5+, coloured on 4+), combat, horror, psi and spells, class price, import from the character generator, compendia with rules, equipment, enemies and adventures as text. German and English. The illustrated edition (portraits, tokens, scene art) is installed separately via its manifest link on odin-rpg.pages.dev; worlds are not interchangeable between the two. Some handouts contain photos created with AI. / Grundregeln für O.D.I.N. ohne Illustrationen: Bögen, Proben, Kampf, Grauen, Kompendien mit Texten. Die bebilderte Fassung gibt es separat über ihren Manifest-Link auf odin-rpg.pages.dev. Einige Handouts enthalten mit KI erstellte Fotos.",
-  "version": "0.10.17",
+  "version": "0.10.18",
   "compatibility": {
     "minimum": "14",
     "verified": "14.368"
@@ -115,7 +115,7 @@
   "socket": false,
   "url": "https://github.com/davidgerbs-beep/odin-foundry",
   "manifest": "https://raw.githubusercontent.com/davidgerbs-beep/odin-foundry/main/kern/system.json",
-  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/core-v0.10.17/odin-rpg-core.zip",
+  "download": "https://github.com/davidgerbs-beep/odin-foundry/releases/download/core-v0.10.18/odin-rpg-core.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "packs": [
