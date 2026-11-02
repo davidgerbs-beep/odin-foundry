@@ -16,6 +16,14 @@ Diese Version bringt die englischen Kompendien auf den Wortlaut der Bände nach 
 
 Übernommen aus einer älteren Liste ist AD-en-212b22 („the order he was carrying“), nur Wortlaut.
 
+**Teil 3, Prüfliste des Writers (31.10.):** Nach dem Neubau der VTT-Daten aus diesem Stand habe ich `Stil_EN_VTT_alt_neu.csv` (564 Stellen) nach Wortlaut geprüft. Sieben Stellen standen noch alt in den Packs und sind jetzt nachgezogen, je in `odin-abenteuer-en`, `odin-abenteuerpakete-en` oder `odin-tabellen-en`:
+
+- Nordlicht 1977, Briefing: „Everyone else secures the area. the area.“ hatte einen doppelten Rest aus dem Stil-Lauf, jetzt „Everyone else secures the area.“
+- Horte der Welt, How O.D.I.N. Travels: „a silent route for couriers“ → „a quiet route for couriers“.
+- Zufallsakten (fünf Tabellenzeilen): „sand that smells of ozone trickles“, „but on top lies a piece of paper“, „a note with a password is stuck on the keyboard“, „in the wrong colours“, „a horror test with WIL + Mental Resistance“.
+
+Eine Suche nach doppelten Wortfolgen über alle Packs gegen main findet danach nichts mehr.
+
 Insgesamt in Teil 2: 47 Absätze in `odin-abenteuer(-en)` und `odin-gegner(-en)`; die Kopien in `odin-abenteuerpakete(-en)` tragen denselben Text.
 
 ## odin-abenteuer
