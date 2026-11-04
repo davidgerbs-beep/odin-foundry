@@ -48,7 +48,7 @@ test('Würfelseiten: sechs Augen und sechs Reliefs, 512 × 512, auf der Sechs et
   }
   // Die Sechs ist das Gesicht, keine Augen: Sie weicht in mehr als einem Zehntel der Fläche von der Fünf ab
   const a = (n) => path.join(ordner, 'assets', `augen_${n}.png`);
-  const anders = Number(spawnSync('compare', ['-metric', 'AE', a(5), a(6), 'null:'], { encoding: 'utf8' }).stderr);
+  const anders = parseFloat(spawnSync('compare', ['-metric', 'AE', a(5), a(6), 'null:'], { encoding: 'utf8' }).stderr);
   assert.ok(anders > 0.1 * 512 * 512, `nur ${anders} Pixel anders`);
 });
 
